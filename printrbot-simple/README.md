@@ -17,8 +17,8 @@ Modifications
 TODO
 ----
 
-* LED lights near nozzle
 * Raspberry Pi mounted, running Octoprint on WiFi
-* Webcam mounted and connected to RPi
+* Webcam w/LED lights mounted, connected to RPi
+* Relay for turning on/off printer from RPi
 
 
