@@ -7,7 +7,11 @@ Modifications
 --------------
 
 * [Tower with filament spool](http://help.printrbot.com/Guide/Installing+the+Simple+Tower+%28or+Tower+Tall%29/65)
-* Autoleveling probe [FreeCAD file](./autolevelprobe-mount.fcstd) [STL](./autolevelprobe-mount.stl)
+* Autoleveling probe
+| [Thingiverse](http://www.thingiverse.com/thing:456027)
+| [FreeCAD](./autolevelprobe-mount.fcstd)
+| [STL](./autolevelprobe-mount.stl)
+|
 
 
 TODO
