@@ -1,0 +1,16 @@
+{
+  "name": "contracts-programming",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter spec --compilers .coffee:coffee-script/register *.coffee"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "chai": "^1.9.1",
+    "coffee-script": "^1.8.0",
+    "mocha": "^1.21.4"
+  }
+}
