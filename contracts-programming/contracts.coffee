@@ -20,6 +20,13 @@
 # http://www.coffeelint.org/
 # https://github.com/jashkenas/coffeescript/issues/1466
 # - Allow a single pre/post/class-invar func in addition to array
+#
+# Random:
+# - Should contracts and their use be registered globally, for dependency tracking?
+# Could allow tracking whether they are all set up statically or not
+# Also how many of them are excersised by tests. Also a registration target for a test?
+# - 
+
 
 # Framework
 class ContractFailed extends Error
