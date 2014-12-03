@@ -1,7 +1,9 @@
 
 LIBMYPAINT="/home/jon/contrib/code/mypaint/brushlib"
 INCLUDES=`pkg-config --libs --cflags glib-2.0` -I $(LIBMYPAINT)/tests -I $(LIBMYPAINT)
-FLAGS=-O3 -std=c99 -fopenmp -Wall -Werror
+FLAGS=-O3 -std=c99 -fopenmp -Wall -Werror 
+# -Wa,-adhln -g
+# -S
 
 all: check
 
