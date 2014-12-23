@@ -6,7 +6,6 @@ Mostly made with [FreeCAD](http://www.freecadweb.org/)
 Wishlist
 --------
 
-* Indicator for keys, to distinguish which door they are for
 * Bottle/item holder for shower
 
 Done
@@ -14,6 +13,8 @@ Done
 
 * Hook for hanging ovenmitts etc on kichen door handle.
 [FreeCAD](./handle-hook.fcstd)|[STL](./handle-hook.stl)
+* Indicator for keys, to distinguish which door they are for
+[FreeCAD](./triowing-keycap-identifier.fcstd)|[STL](./triowing-keycap-identifier.stl)
 
 Stock items printed
 ----------

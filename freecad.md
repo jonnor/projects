@@ -38,14 +38,25 @@ Can be done manually by creating a set of `Cube` and using `Intersection boolean
 
 Macro in progress
 
+    import math
+
     doc = App.ActiveDocument
 
     target = Gui.Selection.getSelection()[0]
     assert(target)
+    bounds = target.Shape.BoundBox
 
-    size = (60, 60, 60) # TODO: accept from GUI?
-    origin = (-60, -60, 0) # TODO: calculate from target bounds
-    tiles = (2, 2, 0) # TODO: calculate from target bounds
+    # TODO: accept size from GUI?
+    # TODO: consider size only as a maximum
+    size = (60, 60, 60)
+    origin = (bounds.XMin, bounds.YMin, bounds.ZMin)
+    tiles = (int(math.ceil((bounds.XMax-bounds.XMin)/size[0])),
+	         int(math.ceil((bounds.YMax-bounds.YMin)/size[1])),
+	         int(math.ceil((bounds.ZMax-bounds.ZMin)/size[2]))
+    )
+
+    # TODO: make tiles be symmetric to centerline of object?
+    # TODO: export as .stl files for 3d-printing (or wirecutting/milling)?
 
     objects = []
 
