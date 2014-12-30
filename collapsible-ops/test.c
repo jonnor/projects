@@ -11,6 +11,8 @@ TODO:
 #include "mypaint-benchmark.c"
 
 
+
+// Note: solid approach to deciding how to unroll http://stackoverflow.com/a/21559407/1967571
 static void
 pixels_mul_inplace(const float * restrict a,
                    const float * restrict b,
