@@ -1,6 +1,41 @@
 
 3d-printed tools designed around snap-off, replacable blades.
 
+
+Tools
+=====
+
+
+Simple scissors
+-----------------
+[Thingiverse](http://www.thingiverse.com/thing:638602)|[FreeCAD source](./simple-scissors.fcstd)|[STL](./export/simple-scissors-test-5.stl)
+
+![Picture of assembled scissors](./doc/scissors-rev5.jpg)
+
+
+Works OK for medium- and thick paper, as well as cardboard.
+Thin paper and other soft/flexible material does not work well when attempting to use shearing motion, but the blades are so sharp that they are easily cut just by slicing though.
+Also succesfully tested cutting small electronics wires, small plastic pieces, including 2.85 mm PLA filament.
+
+Vitamins needed:
+
+* 2x 18 mm snap-off blades
+* 1x M5 locknut
+* 1x M5 bolt 16mm+
+* 2x M5 washers
+
+Print 2 pieces of the simple-scissors STL (approx 15-20 mins per piece).
+Snap off 3 pieces of each blade before inserting into slot in printed part.
+
+Possible improvements:
+
+* Angle the blades slightly towards eachother
+* Devise mechanism to make clamping it down cause blades to tighten towards eachother.
+
+
+Reference
+=========
+
 Blades
 ------
 
@@ -22,7 +57,7 @@ Sources
 * [Biltema.no: 10 pack 9 mm (20 NOK)](http://biltema.no/no/Verktoy/Handverktoy/Kniv-og-Hovel/Brytebladkniv-9-mm-191054/)
 
 Ideas
---------
+======
 
 Tools
 
