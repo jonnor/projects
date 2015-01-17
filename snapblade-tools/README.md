@@ -33,6 +33,27 @@ Possible improvements:
 * Devise mechanism to make clamping it down cause blades to tighten towards eachother.
 
 
+Small blade shears
+-------------------
+
+[Thingiverse](http://www.thingiverse.com/thing:640411)|[FreeCAD source](./blade-shears.fcstd)|[STL](./export/blade-shears-4.stl)
+
+Vitamins needed
+
+* 1x 18 mm snap-off blade, split in two
+
+Instructions:
+
+* Print, using 50% infill
+* Cut open the support using a blade to.
+
+Possible improvements:
+
+* Angle the blades slightly torwards eachother
+* Add some holes for adding set-screws for fitting blades
+* Have a little gap in the support to guide cut 
+
+
 Reference
 =========
 
@@ -61,7 +82,6 @@ Ideas
 
 Tools
 
-* Scissors / shears
 * Knives
 * Plane (hand/finger)
 * Guiliotine (paper/cardboard)
