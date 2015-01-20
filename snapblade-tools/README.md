@@ -38,6 +38,8 @@ Small blade shears
 
 [Thingiverse](http://www.thingiverse.com/thing:640411)|[FreeCAD source](./blade-shears.fcstd)|[STL](./export/blade-shears-4.stl)
 
+![Picture of assembled blade shears](./doc/blade-shears.jpg)
+
 Vitamins needed
 
 * 1x 18 mm snap-off blade, split in two
@@ -45,13 +47,15 @@ Vitamins needed
 Instructions:
 
 * Print, using 50% infill
-* Cut open the support using a blade to.
+* Cut open the support in interior wall using a blade
+* Press-fit the blades
 
 Possible improvements:
 
 * Angle the blades slightly torwards eachother
+* Oversize the Z-axis of blade socket a little bit to ease mounting
 * Add some holes for adding set-screws for fitting blades
-* Have a little gap in the support to guide cut 
+* Have a little gap in the support to guide cutting
 
 
 Reference
