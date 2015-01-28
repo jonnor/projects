@@ -87,3 +87,32 @@ Origin should default to lower left in plane
 In simple mode could just select object, (max) size for a tile,
 
 
+Movable parts & Animation
+---------------------
+
+When building things which have moving parts, like scissors or a folding knife,
+one needs to design geometry which accomodates the moving part at multiple positions,
+and the transitions between them.
+
+Uses
+
+* Animation, for product visualization
+* Finding geometry which the moving object traces, for cutout
+* Evaluating fit at each stationary point
+
+Common cases
+
+* Motion around pivot point
+* Linear motion constrained to path
+
+Implementation idea?
+
+* Define path for object/point to follow.
+* Define Poses along this path `0.0 - 1.0`
+* GUI to jump between poses
+* GUI to slide along them continiously
+* Be able to set up simple timeline with drivers of poses
+
+
+
+
