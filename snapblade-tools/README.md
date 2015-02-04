@@ -2,8 +2,37 @@
 3d-printed tools designed around snap-off, replacable blades.
 
 
-Tools
-=====
+Status
+======
+
+Printed & functional
+
+* Scissors
+* Blade shears
+
+In development
+
+* Food slicer
+* Folding knife
+
+Planned
+
+* Guiliotine for paper/cardboard
+* Mandolin/foodslicer for Julienne cuts
+* Compass (circle-maker) for paper/cardboard
+* Dragknife for CNC mill
+* Hand/finger plane for soft woods
+* Plain knife
+* Adjustable blade knife (typical for snap-off blades)
+
+Probably bad/unsafe ideas
+
+* Safety razor
+* Potato peeler
+
+
+Functional tools
+===============
 
 
 Simple scissors
@@ -81,22 +110,4 @@ Sources
 * [Biltema.no: 10 pack 18 mm (20 NOK)](http://biltema.no/no/Verktoy/Handverktoy/Kniv-og-Hovel/Brytebladkniv-191053)
 * [Biltema.no: 10 pack 9 mm (20 NOK)](http://biltema.no/no/Verktoy/Handverktoy/Kniv-og-Hovel/Brytebladkniv-9-mm-191054/)
 
-Ideas
-======
 
-Tools
-
-* Knives
-* Plane (hand/finger)
-* Guiliotine (paper/cardboard)
-* Compass / circle-maker
-
-Kitchen utensils
-
-* Cheese slicer/plane
-* Mandolin (also for julienne)
-* Potato peeler
-
-Personal
-
-* Safety razor
