@@ -137,3 +137,15 @@ Scissors
 Folding knife
 
 ![Decorated folding knife](./doc/inspiration-foldingknife.jpg)
+
+
+
+Stories
+============
+
+When the OpenROV people did a workshop in a rural (but technologically developed) area,
+they had brought all the materials and tools needed - apart from scissors.
+Sourcing the scissors took several hours and hampered the workshop.
+
+Source: Jakob Nilson, Bitraf
+
