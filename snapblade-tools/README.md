@@ -31,8 +31,9 @@ Probably bad/unsafe ideas
 * Potato peeler
 
 
-Functional tools
+Tools
 ===============
+Functional: Printed & tested.
 
 
 Simple scissors
@@ -87,6 +88,21 @@ Possible improvements:
 * Have a little gap in the support to guide cutting
 
 
+In progress
+===========
+
+Food slicer
+----------
+
+![First food slicer test on grapes](./doc/foodslicer-functionaltest1.jpg)
+
+
+Folding knife
+----------
+
+![Initial 3d-model of folding knife](./doc/foldingknife-initialmodel.png)
+
+
 Reference
 =========
 
@@ -111,3 +127,13 @@ Sources
 * [Biltema.no: 10 pack 9 mm (20 NOK)](http://biltema.no/no/Verktoy/Handverktoy/Kniv-og-Hovel/Brytebladkniv-9-mm-191054/)
 
 
+Inspiration
+------------
+
+Scissors
+
+![Decorated scissors/blade-shears](./doc/inspiration-scissors.jpg)
+
+Folding knife
+
+![Decorated folding knife](./doc/inspiration-foldingknife.jpg)
