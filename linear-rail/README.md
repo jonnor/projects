@@ -31,9 +31,10 @@ Electromotor section
 * Wires from magnets coming directly through PCB
 * Serial data bus + power connectors between section PCBs
 * Optional direct power connection
-* Addressable latch, parallel-out
-* IC or discrete transitor buffers
-* Efficiency a secondary concern, power losses accepted
+* Addressable latch, parallel-out with IC buffers/driver, or
+* stepper motor drivers, or switched-reluctance driver
+* Efficiency a secondary concern, power losses accepted for now
+* Levitation effect not initially targetted
 
 Rail mechanics
 ---------------
@@ -80,3 +81,5 @@ References
 * [Hackaday: Linear tubular motor](http://hackaday.com/2013/02/04/building-a-linear-motor)
 * [Reprap: Wire wound] (http://forums.reprap.org/read.php?88,12556)
 * [Reprap: Printable linear drives](http://forums.reprap.org/read.php?1,5898) (pictures of working commercial design)
+* [Texas Instuments: Switched Reluctance Motor Control](http://www.ti.com/lit/an/spra420a/spra420a.pdf)
+* [Good diagrams of stator/rotor teeth](http://www.alciro.org/alciro/Plotter-Router-Fresadora-CNC_1/Motores-reluctancia-variable_42_en.htm)
