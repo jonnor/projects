@@ -119,6 +119,61 @@ Since it will be possible to print whole components in some cases, like
 connectors, a way of representing and manipulating such components would be needed.
 Having a resuable (ideally shareable) library should significantly speed up development process.
 
+Tools
+------
+* Finite Domain Solver (fd.js) for calculating lengths/crossection
+
+
+Calculating connections
+-----------------------
+
+Assuming cross-section same along whole path
+
+    R = ρL/A
+
+    R: fixed by requirements in circuit design.
+       Ratios to others might be more important than exact value
+    ρ: fixed by material property. Likely need calibration
+    L: variable, highly influenced by component positions 
+    A: variable, constrained downwards by minimum nozzle/lines,
+       constrained upwards by size limits of single conductor
+       0.4*0.4mm <-> 4*4mm, factor 10*10 = 100
+
+Challenge: resistance of paths different between layers than within a layer.
+Try to keep them the same for all paths?
+
+Possible strategy:
+
+1) Attempt to solve for A, keeping L constant
+2) Modify path to be longer by not following path directly
+
+Step 2 can potentially be done in discrete steps:
+
+
+Direct line along path
+
+    *-----------------------*
+
+Multiple lines parallel to direction of path. N lines, X % of path
+
+      -------------------
+      |                 |
+    *-|  ---------------    *
+         |                  |
+         ---------------------
+
+Multiple lines perpendicular to direction of path. N lines, Y millimeter extension
+
+      --- ---
+      | | | |
+    *-| | | | |-*
+        | | | |
+        --- ---
+
+All these are periodic, allows to calculate effective resistance per period then multiplying.
+Could also do more complex paths in 3D.
+
+
 Possible testcases
 -------------
 
