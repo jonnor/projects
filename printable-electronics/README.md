@@ -121,8 +121,9 @@ Having a resuable (ideally shareable) library should significantly speed up deve
 
 Tools
 ------
-* Finite Domain Solver (fd.js) for calculating lengths/crossection
-
+* Finite Domain Solver (fd.js) for calculating lengths/crossection/resistance
+* [KiCAD](http://www.kicad-pcb.org/): EDA tool, including schematic capture, and many component 3d-models
+* DigiKey, has huge [repository of 3d-models](http://www.digikey.com/en/resources/3d-models)
 
 Calculating connections
 -----------------------
@@ -170,8 +171,28 @@ Multiple lines perpendicular to direction of path. N lines, Y millimeter extensi
         | | | |
         --- ---
 
-All these are periodic, allows to calculate effective resistance per period then multiplying.
+All these are periodic patterns, which allows to calculate effective resistance per period
+then multiplying up to get total for path.
 Could also do more complex paths in 3D.
+
+
+Coping with variance in conductivity
+--------------------
+
+Run various testcases on conductivity.
+Establish relationships between
+
+* Resistance versus number of lines
+* Resistance versus number of layers
+* Resistance versus length
+* Resistance variability/repeatabilit
+* Resistance versus temperature, w/without curing
+* Resistance over time
+
+Trimmable.
+Circular/linear track with viper (potmeter)
+Cutting off pieces of pattern, or joining together
+
 
 
 Possible testcases
