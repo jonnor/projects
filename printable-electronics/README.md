@@ -1,4 +1,5 @@
 
+
 Additive digital manufacturing technicues (3d-printing) brings
 many new possibilities and challenges to electronics.
 
@@ -11,6 +12,55 @@ that enable afforable additive manufacturing of conductive material
 
 It may also be possible to print channels in non-conductive
 material and then fill these with low viscocity conductive material (ex: Bare Conductive).
+
+
+
+Experiments
+===========
+
+High-power active switch
+--------------------------
+
+![First working power switch](./doc/power-switch-first.jpg)
+
+[FreeCAD](./power-switch.fcstd)
+
+The high-current paths of circuit are connected directly to/from the IC
+instead of going through deposited traces, side-stepping issues of poor conductivity.
+Power handling mostly limited by not having a heat-sink.
+Traces currently done using channels in the PLA filled with Bare Conductive ink.
+Dedicated resistors uneccesary as trace-lengths are adapted to make suitable resistivity.
+
+Vitamins required:
+
+* 1x TO220 N-channel MOSFET with pinout Gate,Drain,Source (ex: IRF244, BUZ10/11/12)
+* 3x M3 screws
+
+TODO:
+
+* Attach top part to bottom part. Press/click-fit?
+* Close wire holes on backside
+* Design way to attach Gate-leg as spring in Vin+ hole
+* Find way to document which port is what. Embed +, -, O (out) into frontwall?
+* Tweak button surface, better indicate where to press, rigidity
+* Add external input for gate signal!
+* Fix traces to be producable by printed mask w/Bare Conductive
+* Run high-current test
+* **Publish on Thingiverse**
+* Ensure printable with ProtoPasta (pending delivery...)
+* Test more advanced control configs, captouch,toggle/RF/timer etc
+
+Similar technique could for instance be used to create:
+
+* Audio power amplifiers, using LM3886 or similar
+* Stepper-motor drivers, using microcontroller + H-bridges [avrstmd](http://www.avrstmd.com)
+
+
+
+Braindump
+=========
+
+
 
 Key process parameters
 --------------------
