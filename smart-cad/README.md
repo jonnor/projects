@@ -114,5 +114,52 @@ Implementation idea?
 * Be able to set up simple timeline with drivers of poses
 
 
+Working from reference data
+-----------------------
 
+Especially when creating replacement, augmentation or connecting parts,
+working from reference images is extremely handy.
+Smarter handling could drastically reduce modelling time,
+and potentially allow effective modelling with less precise user interfaces (mobile, augmented),
+or by less adept users.
+
+Image could be of actual object from camera/smartphone,
+from image on Internet, but also be imported technical drawing.
+
+Image workbench in FreeCAD allows importing image as plane in 3d-view.
+This is already useful for reference, by approx rescaling to physical size,
+then using as backdrop when creating Sketch/Draft objects.
+
+* Scale image to fit physical world dimensions
+* Align line horizontally/vertically
+* Apply lens distortion correction
+* Apply perspective correction
+
+Computer vision / feature detection
+
+* Detect outlines/contours
+* Detect holes
+* Detect text / OCR
+* Detect dimensions (in tech drawing)
+* Detect bounding box, centerline
+
+Allow selecting features to go into different "layers" -> sketches, polylines
+Likely that computer-vision will do better with a bit of input from user,
+particularly to adjust sensitivity levels.
+In general should assume that user chose a sane image,
+and increase sensitivity until at least some features are found.
+Maybe allow to set "these features I want", and "these are not features" constraints.
+Feature-free constaint could be done by marking a whole area
+And then let algorithm try different variations until both are satisfied
+Could also allow to specify "points outside object", and which are "inside" contour
+Process must be iterative and non-destructive
+
+When user takes picture in-the-moment, live feedback could be very useful
+Different lighting conditions, background, angles can severely influence effectiveness of CV.
+
+
+Resources:
+
+* [Finding rectangles, correct perspective](http://opencv-code.com/tutorials/automatic-perspective-correction-for-quadrilateral-objects/)
+* [Converting between Bezier curves and lines+arcs](http://itc.ktu.lt/itc354/Riskus354.pdf)
 
