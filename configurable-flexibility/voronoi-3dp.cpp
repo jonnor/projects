@@ -130,23 +130,9 @@ void print_vector(vector<string> strs) {
     }
 }
 
-int main( int, char** )
+vector<Point3f>
+parse_points(vector<char> file)
 {
-    help();
-
-    // TODO: calculate bounding box of model
-    Scalar active_facet_color(0, 0, 255), delaunay_color(255,255,255);
-    Rect rect(0, 0, 1000, 1000);
-
-    Subdiv2D subdiv(rect);
-    Mat img(rect.size(), CV_8UC3);
-
-    img = Scalar::all(0);
-    string win = "Delaunay Demo";
-    imshow(win, img);
-
-    // Read in from file
-    vector<char> file = readFile("voronoi-input-test1.txt"); // TODO: pass as stdin
 
     vector<Point3f> input_points;
     vector<string> lines;
@@ -175,48 +161,85 @@ int main( int, char** )
         }
     }
 
+    return input_points;
+}
+
+// XXX: replace with something stock
+Rect
+calculate_xy_bounds(vector<Point3f> points)
+{
+    float x0 = points.at(0).x;
+    float y0 = points.at(0).y;
+    float x1 = x0;
+    float y1 = y0;
+    for (int i=0; i<points.size(); i++) {
+        Point3f p = points[i];
+        if (p.x < x0) {
+            x0 = p.x;
+        }
+        if (p.x > x1) {
+            x1 = p.x;
+        }
+        if (p.y < y0) {
+            y0 = p.y;
+        }
+        if (p.y > y1) {
+            y1 = p.y;
+        }
+    }
+
+    return Rect(x0, y0, x1-x0, y1-y0);
+}
+
+int main( int, char** )
+{
+    // TODO: calculate bounding box of model
+    Scalar active_facet_color(0, 0, 255), delaunay_color(255,255,255);
+    Rect rect(0, 0, 1000, 1000);
+
+    Subdiv2D subdiv(rect);
+    Mat img(rect.size(), CV_8UC3);
+
+    img = Scalar::all(0);
+    string win = "Delaunay Demo";
+    imshow(win, img);
+
+    // Read in from file
+    vector<char> file = readFile("voronoi-input-test1.txt"); // TODO: pass as stdin
+    vector<Point3f> input_points = parse_points(file);
+    // Rect model_bounds = calculate_xy_bounds(input_points);
+    Rect bounds(-40, -12, 40*2, 12*2); // TODO: specify from outside.
+    // FIXME: code to do mesh intersect? OR let Cura handle it
 
     cout << "number of points " << input_points.size() << "\n";
-    Point2f translate(200.f, 300.f);
-    Point2f scale(3.f, 3.f);
+    cout << "bounding box" << bounds << "\n";
+
+    // TODO: autocenter/scale
+    Point2f translate(500, 500);
+//    Point2f scale(6.f, 6.f);
+    Point2f scale(rect.width/bounds.width, rect.height/bounds.height);
 
     for( int i = 0; i < input_points.size(); i++ )
     {
-        Point2f fp( (float)(rand()%(rect.width-10)+5),
-                    (float)(rand()%(rect.height-10)+5));
 
         // Use inputs instead
         const Point3f ip = input_points.at(i);
-        fp = (Point2f(ip.x, ip.y) + translate);
-        fp.x *= scale.x;
-        fp.y *= scale.y;
-        // cout << "i: " << i << " " << fp.x << ", " << fp.y << "\n";
+        Point2f fp = Point2f(ip.x, ip.y);
 
         // Clip to bounds
-        if (fp.x < rect.x || fp.y < rect.y ||
-            fp.x > (rect.x+rect.width) || fp.y > (rect.y+rect.height)) {
+        if (fp.x < bounds.x || fp.y < bounds.y ||
+            fp.x > (bounds.x+bounds.width) || fp.y > (bounds.y+bounds.height)) {
             continue;
         }
 
+        fp.x *= scale.x;
+        fp.y *= scale.y;
+        fp = fp+translate;
+        // cout << "i: " << i << " " << fp.x << ", " << fp.y << "\n";
+
         locate_point( img, subdiv, fp, active_facet_color );
 
-    /*    
-        imshow( win, img );
-
-        if( waitKey( 100 ) >= 0 )
-            break;
-    */
-
         subdiv.insert(fp);
-    /*
-        img = Scalar::all(0);
-        draw_subdiv( img, subdiv, delaunay_color );
-        imshow( win, img );
-
-        if( waitKey( 100 ) >= 0 )
-            break;
-    */
-
     }
 
     img = Scalar::all(0);
