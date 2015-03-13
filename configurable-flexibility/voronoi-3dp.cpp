@@ -11,6 +11,7 @@
 using namespace cv;
 using namespace std;
 
+/* Visualization */
 const int FILLED = -1;
 const int LINE_8 = 8;
 const int LINE_AA = 16;
@@ -54,7 +55,7 @@ static void locate_point( Mat& img, Subdiv2D& subdiv, Point2f fp, Scalar active_
 {
     int e0=0, vertex=0;
 
-    cout << "locate: " << fp << "\n";
+//    cout << "locate: " << fp << "\n";
     subdiv.locate(fp, e0, vertex);
 
     if( e0 > 0 )
@@ -65,7 +66,7 @@ static void locate_point( Mat& img, Subdiv2D& subdiv, Point2f fp, Scalar active_
             Point2f org, dst;
             if( subdiv.edgeOrg(e, &org) > 0 && subdiv.edgeDst(e, &dst) > 0 )
 
-                line( img, org, dst, active_color, 3, LINE_AA, 0 );
+                // line( img, org, dst, active_color, 3, LINE_AA, 0 );
 
             e = subdiv.getEdge(e, Subdiv2D::NEXT_AROUND_LEFT);
         }
@@ -73,16 +74,12 @@ static void locate_point( Mat& img, Subdiv2D& subdiv, Point2f fp, Scalar active_
     }
 
     // interactive drawing
-    draw_subdiv_point( img, fp, active_color );
+//    draw_subdiv_point( img, fp, active_color );
 }
 
 
-static void paint_voronoi( Mat& img, Subdiv2D& subdiv )
+static void paint_voronoi( Mat& img, vector<vector<Point2f> > &facets, vector<Point2f> &centers)
 {
-    vector<vector<Point2f> > facets;
-    vector<Point2f> centers;
-    subdiv.getVoronoiFacetList(vector<int>(), facets, centers);
-
     vector<Point> ifacet;
     vector<vector<Point> > ifacets(1);
 
@@ -106,7 +103,19 @@ static void paint_voronoi( Mat& img, Subdiv2D& subdiv )
     }
 }
 
+void
+show_results(Rect rect, vector<vector<Point2f> > &facets, vector<Point2f> &centers)
+{
+    Mat img(rect.size(), CV_8UC3);
+    std::string win = "Voronoi";
 
+    img = Scalar::all(0);
+    paint_voronoi(img, facets, centers);
+    imshow( win, img );
+}
+
+
+/* utils */
 std::vector<char> readFile(const char *path) {
     std::ifstream file(path, std::ios::binary);
     file.seekg(0, std::ios::end);
@@ -193,16 +202,7 @@ calculate_xy_bounds(vector<Point3f> points)
 
 int main( int, char** )
 {
-    // TODO: calculate bounding box of model
-    Scalar active_facet_color(0, 0, 255), delaunay_color(255,255,255);
     Rect rect(0, 0, 1000, 1000);
-
-    Subdiv2D subdiv(rect);
-    Mat img(rect.size(), CV_8UC3);
-
-    img = Scalar::all(0);
-    string win = "Delaunay Demo";
-    imshow(win, img);
 
     // Read in from file
     vector<char> file = readFile("voronoi-input-test1.txt"); // TODO: pass as stdin
@@ -215,14 +215,12 @@ int main( int, char** )
     cout << "bounding box" << bounds << "\n";
 
     // TODO: autocenter/scale
+    Subdiv2D subdiv(rect);
     Point2f translate(500, 500);
 //    Point2f scale(6.f, 6.f);
     Point2f scale(rect.width/bounds.width, rect.height/bounds.height);
-
     for( int i = 0; i < input_points.size(); i++ )
     {
-
-        // Use inputs instead
         const Point3f ip = input_points.at(i);
         Point2f fp = Point2f(ip.x, ip.y);
 
@@ -232,20 +230,20 @@ int main( int, char** )
             continue;
         }
 
+        // Position for display
         fp.x *= scale.x;
         fp.y *= scale.y;
         fp = fp+translate;
         // cout << "i: " << i << " " << fp.x << ", " << fp.y << "\n";
 
-        locate_point( img, subdiv, fp, active_facet_color );
-
         subdiv.insert(fp);
     }
 
-    img = Scalar::all(0);
-    paint_voronoi( img, subdiv );
-    imshow( win, img );
+    vector<vector<Point2f> > facets;
+    vector<Point2f> centers;
+    subdiv.getVoronoiFacetList(vector<int>(), facets, centers);
 
+    show_results(rect, facets, centers);
     waitKey(0);
 
     return 0;
