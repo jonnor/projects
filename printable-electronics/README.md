@@ -21,7 +21,7 @@ Experiments
 High-power active switch
 --------------------------
 
-![First working power switch](./doc/power-switch-first.jpg)
+![First working power switch](./doc/powerswitch-first.jpg)
 
 [FreeCAD](./power-switch.fcstd)
 
@@ -33,7 +33,7 @@ Dedicated resistors uneccesary as trace-lengths are adapted to make suitable res
 
 Vitamins required:
 
-* 1x TO220 N-channel MOSFET with pinout Gate,Drain,Source (ex: IRF244, BUZ10/11/12)
+* 1x TO220 N-channel MOSFET with pinout Gate,Drain,Source (ex: IRF244N, BUZ10/11/12)
 * 3x M3 screws
 
 TODO:
