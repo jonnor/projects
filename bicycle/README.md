@@ -4,7 +4,16 @@ Projects around or involving bikes/bicycles.
 I worked for 6 years a bike salesman and mechanic at
 Din Sykkel / [Sykkellåven](http://www.sykkellaven.no/) in Tønsberg while studying.
 
-Projects
+Tools
+=====
+
+Casette removal tool
+---------------------
+
+For Shimano, CS-HS80-9 and similar.
+
+
+Ideas
 =====
 
 Electricity generator
@@ -38,6 +47,7 @@ TODO:
 
 * Design initial concept models
 
+
 3d-printed parts
 ------------------
 
@@ -47,8 +57,11 @@ Bigger structural elements like the frame, is considered a separate project, see
 
 Some things are quite safety critical, like brake, propulsion and steering system.
 
+
+
 Exists on Thingiverse, by other people:
 
+* Pedal wrench 15mm [1](http://www.thingiverse.com/thing:90605)
 * Pads for keeping hydraulic brakes safe when disc is out. [1](http://www.thingiverse.com/thing:471166)
 * Crank bolt tool [1](http://www.thingiverse.com/thing:92353)
 * Chain protection rings
@@ -67,6 +80,13 @@ TODO:
 * Drop-out. Hugely beneficial to 3d-print, due to hundreds of variations
 * Remotes for suspension-forks
 
+Research:
+
+* Shimano patent on sprokets [US patent no 4889521](http://www.google.com/patents/US4889521) expired in 2008.
+* Bike [chains](http://en.wikipedia.org/wiki/Bicycle_chain#Sizes)/[sprokets](http://www.gizmology.net/sprockets.htm)
+are #40 of ISO, 12.7mm pitch, 7.65mm roller diam, roller width 1/8" or 3/32", extern thickness depending on N-speed
+* [Rear deraillurs](http://en.wikipedia.org/wiki/Derailleur_gears#Rear_derailleurs)
+* Radius of sproked with N teeth of given pitch: r=(N*pitch)/(2*pi)
 
 3d-printed bicycle structure
 ----------------
@@ -89,4 +109,27 @@ Parts:
 * Handlebars and stem
 * Crank-arms
 
+Crank-arms:
+
+A conceptual sketch of a 175mm crank-arm (25 mm tall), using the simplest possible geometry,
+estimated to 2-3 hours print time on an Ultimaker.
+In addition to the strength of the arm itself,
+the connections to both the bottom bracket and the pedals are challenging.
+On the bottom bracket side, a system like ISIS with higher surface area might
+be preferrable over the typical 4-sided press-fit.
+
+Pedal connections could be enforced with a steel insert with threads,
+as found on commercial composite crankarms. 
+Preferably one could thread directly in printed part.
+Using custom pedals, one could put the bearings into the crank arm instead of pedal,
+allowing to avoid threads in the arm.
+
+Due to problems with poor layer bonding, making Hollowtech style cranks seems very hard.
+
+
+Frame:
+
+A medium (54cps) frame hybrid frame is approx 2.7 meters of tubing, front-fork excluded. 2800mm/200mm = 14 pieces.
+Assuming a 60 mm outer diameter for all tubes, with single takes approx 1.5 hour per piece,
+for a total of 14*1.5 = 21 hours printing time, or ~6 hours on 4 printers.
 
