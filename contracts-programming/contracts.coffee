@@ -94,7 +94,6 @@ class NotImplemented extends Error
         @message = 'Body function not implemented'
 
 
-# TODO: allow .pre, .post shorthands
 class FunctionContract
     constructor: (@name, @parent, @options) ->
         @postconditions = []
@@ -163,6 +162,9 @@ class FunctionContract
                 throw new ClassInvariantViolated if not pass
 
         return ret
+
+    pre: () -> @precondition.apply @, arguments
+    post: () -> @postcondition.apply @, arguments
 
 agree.function = (name, parent, options) ->
     return new FunctionContract name, parent, options
@@ -279,8 +281,8 @@ agree.Class 'Foo'
 # TODO: allow to reuse/name the contract, and use different body/name
 agree.function 'setPropCorrect'
 .add examples.Foo.prototype
-.precondition noUndefined
-.postcondition [attributeEquals 'prop1', 'bar']
+.pre noUndefined
+.post [attributeEquals 'prop1', 'bar']
 .body () ->
     @prop1 = 'bar'
 
