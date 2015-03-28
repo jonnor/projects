@@ -107,17 +107,20 @@ class FunctionContract
         @options = defaultOptions # FIXME: don't override
 
     ## Fluent construction
+    post: () -> @postcondition.apply @, arguments
     postcondition: (conditions) ->
         conditions = [conditions] if not conditions.length
         for c in conditions
             @postconditions.push c
         return this
 
-    # TODO: also accept a fail value/callback
-    precondition: (conditions) ->
+    pre: () -> @precondition.apply @, arguments
+    precondition: (conditions, onFail) ->
         conditions = [conditions] if not conditions.length
         for c in conditions
-            @preconditions.push c
+            o = { predicate: c }
+            o.onFail = onFail if onFail
+            @preconditions.push o
         return this
 
     body: (f) ->
@@ -149,7 +152,12 @@ class FunctionContract
                 throw new ClassInvariantViolated if not pass
         if options.checkPrecond
             for cond in @preconditions
-                throw new PreconditionFailed @name, cond if not cond.apply instance, args
+                preconditionPassed = cond.predicate.apply instance, args
+                if not preconditionPassed
+                    if cond.onFail
+                        return cond.onFail()
+                    else
+                        throw new PreconditionFailed @name, cond
 
         ret = @func.apply instance, args
 
@@ -163,8 +171,8 @@ class FunctionContract
 
         return ret
 
-    pre: () -> @precondition.apply @, arguments
-    post: () -> @postcondition.apply @, arguments
+    getClass: () ->
+        return @parent?.getClass()
 
 agree.function = (name, parent, options) ->
     return new FunctionContract name, parent, options
@@ -173,7 +181,7 @@ class ClassContract
     constructor: (@name, @options) ->
         @invariants = []
         @initializer = () ->
-            console.log 'ClassContract default initializer'
+            # console.log 'ClassContract default initializer'
 
         self = this
         construct = (instance, args) =>
@@ -221,6 +229,9 @@ class ClassContract
                 throw new ClassInvariantViolated if not invariant.apply instance
         return instance
 
+    getClass: ->
+        return @klass
+
 agree.Class = (name) ->
     return new ClassContract name
 
@@ -235,6 +246,11 @@ agree.Class = (name) ->
 noUndefined = () ->
     for a in arguments
         return false if not a?
+    return true
+
+numbersOnly = () ->
+    for a in arguments
+        return false if typeof a != 'number'
     return true
 
 # parametric functions, returns a predicate
@@ -293,12 +309,13 @@ agree.function 'setPropWrong'
 .body () ->
     @prop1 = 'nobar'
 
-# Invalid
+# Invalid init
 agree.Class 'InvalidInit'
 .invariant neverNull 'prop1'
 .init () ->
     @prop1 = null
 .add examples
+
 
 main = () ->
 
@@ -312,12 +329,35 @@ main = () ->
         it 'method with valid arguments should succeed', ->
             chai.expect(f.addNumbers(1, 2)).to.equal 3
         it 'method with failing precondition should throw', ->
-            chai.expect(() -> f.addNumbers undefined, 0).to.throw PreconditionFailed
-
+            cons = () ->
+                f.addNumbers undefined, 0
+            chai.expect(cons).to.throw PreconditionFailed
         it 'method violating postcondition should throw', ->
             chai.expect(() -> f.setPropWrong 1).to.throw PostconditionFailed
         it 'method not violating postcondition should succeed', ->
             chai.expect(f.setPropCorrect()).to.equal "bar"
+
+    describe 'precondition failure callbacks', ->
+        c = null
+        onUndefined = null
+        onNonNumber = null
+        PreconditionCallbacks = agree.Class 'PreconditionCallbacks'
+        .method 'callMe'
+        .precondition(noUndefined, () -> onUndefined())
+        .precondition(numbersOnly, () -> onNonNumber())
+        .body (f) ->
+            chai.expect(false).to.equal true, 'body called'
+        .getClass()
+        beforeEach () ->
+            c = new PreconditionCallbacks
+        it 'failing first precondition should call only first callback', (done) ->
+            onNonNumber = () -> chai.expect(false).to.equal true, 'onNonNumber called'
+            onUndefined = done
+            c.callMe undefined
+        it 'failing second precondition should call only second callback', (done) ->
+            onUndefined = () -> chai.expect(false).to.equal true, 'onUndefined called'
+            onNonNumber = done
+            c.callMe "a string"
 
     describe 'ClassContract', ->
         f = null
