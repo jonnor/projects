@@ -9,8 +9,12 @@
 # - http://dlang.org/contracts.html built-in support for contracts in D
 #
 # Differences from existing implementions
-# - contracts can be introspected
+# - contracts, and functions/classes built with contracts, can be introspected
 # - preconditions can, and should be, used for input validation at runtime
+#
+# Goals
+# - the fact that contracts are used is completely transparent to consuming code
+# - JavaScript-friendly API (even if written with CoffeeScript)
 #
 # Usecases
 # - NoFlo components: verifying data on inports, specifying component behavior
@@ -82,7 +86,8 @@ class PostconditionFailed extends ContractFailed
        @message = "#{name}: #{cond?.name}"
 
 class ClassInvariantViolated extends ContractFailed
-    constructor: () ->
+    constructor: (name, cond) ->
+       @message = "#{name}: #{cond?.name}"
 
 class NotImplemented extends Error
     constructor: () ->
@@ -91,7 +96,7 @@ class NotImplemented extends Error
 
 # TODO: allow .pre, .post shorthands
 class FunctionContract
-    constructor: (@name, @options) ->
+    constructor: (@name, @parent, @options) ->
         @postconditions = []
         @preconditions = []
         @func = () ->
@@ -109,6 +114,7 @@ class FunctionContract
             @postconditions.push c
         return this
 
+    # TODO: also accept a fail value/callback
     precondition: (conditions) ->
         conditions = [conditions] if not conditions.length
         for c in conditions
@@ -120,22 +126,28 @@ class FunctionContract
         return this
 
     # Register as ordinary function on
-    add: (context) ->
+    add: (context, name) ->
+        name = @name if not name?
         call = (instance, args) =>
-            @call instance, args
+            @call instance, args, name
         func = () ->
             call this, arguments
         func.contract = this # back-reference for introspection
-        context[@name] = func
+        context[name] = func
         return this
 
+    # Chain up to parent to continue fluent flow there
+    method: () ->
+        return @parent.method.apply @parent, arguments if @parent
+
     # Executing
-    call: (instance, args) ->
+    call: (instance, args, name) ->
         options = @options
 
-        if options.checkClassInvariants
-            for invariant in instance.invariants
-                throw new ClassInvariantViolated if not invariant.apply instance
+        if options.checkClassInvariants and instance.contract?
+            for invariant in instance.contract.invariants
+                pass = invariant.apply instance
+                throw new ClassInvariantViolated if not pass
         if options.checkPrecond
             for cond in @preconditions
                 throw new PreconditionFailed @name, cond if not cond.apply instance, args
@@ -145,14 +157,71 @@ class FunctionContract
         if options.checkPostcond
             for cond in @postconditions
                 throw new PostconditionFailed @name, cond if not cond.apply instance, args
-        if options.checkClassInvariants
-            for invariant in instance.invariants
-                throw new ClassInvariantViolated if not invariant.apply instance
+        if options.checkClassInvariants and instance.contract?
+            for invariant in instance.contract.invariants
+                pass = invariant.apply instance
+                throw new ClassInvariantViolated if not pass
 
         return ret
 
-agree.function = (name) ->
-    return new FunctionContract name
+agree.function = (name, parent, options) ->
+    return new FunctionContract name, parent, options
+
+class ClassContract
+    constructor: (@name, @options) ->
+        @invariants = []
+        @initializer = () ->
+            console.log 'ClassContract default initializer'
+
+        self = this
+        construct = (instance, args) =>
+            @construct instance, args
+        @klass = () ->
+            this.contract = self # back-reference for introspection
+            construct this, arguments
+        @klass.contract = this # back-reference for introspection
+
+        defaultOptions =
+            checkPrecond: true
+            checkClassInvariants: true
+            checkPostcond: true
+        @options = defaultOptions # FIXME: don't override
+
+    # add a method
+    method: (name) ->
+        f = agree.function "#{@name}.#{name}", this
+        return f.add @klass.prototype, name
+
+    # add constructor
+    init: (f) ->
+        @initializer = f
+        return this
+
+    # add class invariant
+    invariant: (conditions) ->
+        conditions = [conditions] if not conditions.length
+        for cond in conditions
+            @invariants.push cond
+        return this
+
+    # register ordinary constructor
+    add: (context, name) ->
+        name = @name if not name
+        context[name] = @klass
+        return this
+
+    construct: (instance, args) ->
+        @initializer.apply instance, args
+
+        # Check class invariants
+        if @options.checkClassInvariants
+            for invariant in instance.contract?.invariants
+                throw new ClassInvariantViolated if not invariant.apply instance
+        return instance
+
+agree.Class = (name) ->
+    return new ClassContract name
+
 
 # Predicates, can be used as class invariants, pre- or post-conditions
 # Some of these can be generic and provided by framework, parametriced to 
@@ -180,47 +249,43 @@ attributeTypeEquals = (attribute, type) ->
         return typeof this[attribute] == type
 
 
-# Example
-# TODO: add a class wrapper with method convenience which adds function automatically
-class Foo
-    invariants: [
-        neverNull 'prop1'
-        attributeTypeEquals 'numberProp', 'number'
-    ]
+# Examples
+examples = {}
 
-    constructor: () ->
-        @prop1 = "foo"
-        @numberProp = 1
+agree.Class 'Foo'
+.add examples
+.init () ->
+    @prop1 = "foo"
+    @numberProp = 1
+.invariant neverNull 'prop1'
+.invariant attributeTypeEquals 'numberProp', 'number'
 
-agree.function 'setNumberWrong'
-.add Foo.prototype
+.method 'setNumberWrong'
 .precondition noUndefined
 .postcondition [attributeEquals 'prop1', 'bar']
 .body (arg1, arg2) ->
     @prop1 = null
 
-agree.function 'setPropNull'
-.add Foo.prototype
+.method 'setPropNull'
 .precondition noUndefined
 .body (arg1, arg2) ->
     @prop1 = null
 
-agree.function 'addNumbers'
-.add Foo.prototype
+.method 'addNumbers'
 .precondition noUndefined
 .body (arg1, arg2) ->
     return arg1+arg2
 
 # TODO: allow to reuse/name the contract, and use different body/name
 agree.function 'setPropCorrect'
-.add Foo.prototype
+.add examples.Foo.prototype
 .precondition noUndefined
 .postcondition [attributeEquals 'prop1', 'bar']
 .body () ->
     @prop1 = 'bar'
 
 agree.function 'setPropWrong'
-.add Foo.prototype
+.add examples.Foo.prototype
 .precondition noUndefined
 .postcondition [attributeEquals 'prop1', 'bar']
 .body () ->
@@ -231,10 +296,14 @@ main = () ->
 
     chai = require 'chai'
 
+    # TODO: split up in pre, post, class-invariant cases
     describe 'Contracts', ->
         f = null
         beforeEach ->
-            f = new Foo
+            f = new examples.Foo
+
+        it 'initializer shall be called', ->
+            chai.expect(f.prop1).to.equal "foo"
         it 'method with valid arguments should succeed', ->
             chai.expect(f.addNumbers(1, 2)).to.equal 3
         it 'method with failing precondition should throw', ->
@@ -251,7 +320,7 @@ main = () ->
     describe 'Predicates', ->
         f = null
         beforeEach ->
-            f = new Foo
+            f = new examples.Foo
         # TODO: should be autogen from example
         it 'method violating attributeTypeEqual', () ->
             chai.expect(() -> f.setNumberWrong()).to.throw ContractFailed
