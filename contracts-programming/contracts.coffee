@@ -293,31 +293,43 @@ agree.function 'setPropWrong'
 .body () ->
     @prop1 = 'nobar'
 
+# Invalid
+agree.Class 'InvalidInit'
+.invariant neverNull 'prop1'
+.init () ->
+    @prop1 = null
+.add examples
 
 main = () ->
 
     chai = require 'chai'
 
-    # TODO: split up in pre, post, class-invariant cases
-    describe 'Contracts', ->
+    describe 'FunctionContract', ->
+        f = null
+        beforeEach ->
+            f = new examples.Foo
+
+        it 'method with valid arguments should succeed', ->
+            chai.expect(f.addNumbers(1, 2)).to.equal 3
+        it 'method with failing precondition should throw', ->
+            chai.expect(() -> f.addNumbers undefined, 0).to.throw PreconditionFailed
+
+        it 'method violating postcondition should throw', ->
+            chai.expect(() -> f.setPropWrong 1).to.throw PostconditionFailed
+        it 'method not violating postcondition should succeed', ->
+            chai.expect(f.setPropCorrect()).to.equal "bar"
+
+    describe 'ClassContract', ->
         f = null
         beforeEach ->
             f = new examples.Foo
 
         it 'initializer shall be called', ->
             chai.expect(f.prop1).to.equal "foo"
-        it 'method with valid arguments should succeed', ->
-            chai.expect(f.addNumbers(1, 2)).to.equal 3
-        it 'method with failing precondition should throw', ->
-            chai.expect(() -> f.addNumbers undefined, 0).to.throw PreconditionFailed
-
+        it 'initializer violating class invariant should throw', ->
+            chai.expect(examples.InvalidInit).to.throw ClassInvariantViolated
         it 'method violating class invariant should throw', ->
             chai.expect(() -> f.setPropNull 2, 3).to.throw ClassInvariantViolated
-
-        it 'method violating postcondition should throw', ->
-            chai.expect(() -> f.setPropWrong 1).to.throw PostconditionFailed
-        it 'method not violating postcondition should succeed', ->
-            chai.expect(f.setPropCorrect()).to.equal "bar"
     
     describe 'Predicates', ->
         f = null
