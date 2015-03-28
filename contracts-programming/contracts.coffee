@@ -19,6 +19,7 @@
 #
 # Unresolved questions:
 # - should it be a goal to enable piece-wise/step-by-step integration into existing functions/classes?
+# - should class invariants be explicit on class, or implicit derived from contract-based properties or both?
 #
 # Documentation
 # - allow to generate API docs including pre,post,classinvariants
@@ -66,48 +67,92 @@
 # Also how many of them are excersised by tests. Also a registration target for a test?
 # - 
 
+# FIXME: move everything into this namespace
+agree = {}
+
 # Framework
 class ContractFailed extends Error
 
 class PreconditionFailed extends ContractFailed
-    constructor: () ->
+    constructor: (name, cond) ->
+       @message = "#{name}: #{cond?.name}"
 
 class PostconditionFailed extends ContractFailed
-    constructor: () ->
+    constructor: (name, cond) ->
+       @message = "#{name}: #{cond?.name}"
 
 class ClassInvariantViolated extends ContractFailed
     constructor: () ->
 
-# should not be possible to disable except for in extreme cases for performance
-# at that point should probably avoid the function hops too
-checkPrecond = true
-# should be disabled in non-debug mode
-checkClassInvariants = true
-checkPostcond = true
+class NotImplemented extends Error
+    constructor: () ->
+        @message = 'Body function not implemented'
 
-# Factory function for contracts-based methods
-method = (preconditions, postconditions, body) ->
-    Method = () ->
-        instance = this
-        if checkClassInvariants
+
+# TODO: allow .pre, .post shorthands
+class FunctionContract
+    constructor: (@name, @options) ->
+        @postconditions = []
+        @preconditions = []
+        @func = () ->
+            throw new NotImplemented
+        defaultOptions =
+            checkPrecond: true
+            checkClassInvariants: true
+            checkPostcond: true
+        @options = defaultOptions # FIXME: don't override
+
+    ## Fluent construction
+    postcondition: (conditions) ->
+        conditions = [conditions] if not conditions.length
+        for c in conditions
+            @postconditions.push c
+        return this
+
+    precondition: (conditions) ->
+        conditions = [conditions] if not conditions.length
+        for c in conditions
+            @preconditions.push c
+        return this
+
+    body: (f) ->
+        @func = f
+        return this
+
+    # Register as ordinary function on
+    add: (context) ->
+        call = (instance, args) =>
+            @call instance, args
+        func = () ->
+            call this, arguments
+        func.contract = this # back-reference for introspection
+        context[@name] = func
+        return this
+
+    # Executing
+    call: (instance, args) ->
+        options = @options
+
+        if options.checkClassInvariants
             for invariant in instance.invariants
                 throw new ClassInvariantViolated if not invariant.apply instance
-        if checkPrecond
-            for cond in preconditions
-                throw new PreconditionFailed if not cond.apply instance, arguments
+        if options.checkPrecond
+            for cond in @preconditions
+                throw new PreconditionFailed @name, cond if not cond.apply instance, args
 
-        ret = body.apply(instance, arguments)
+        ret = @func.apply instance, args
 
-        if checkPostcond
-            for cond in postconditions
-                throw new PostconditionFailed if not cond.apply instance, arguments
-        if checkClassInvariants
+        if options.checkPostcond
+            for cond in @postconditions
+                throw new PostconditionFailed @name, cond if not cond.apply instance, args
+        if options.checkClassInvariants
             for invariant in instance.invariants
                 throw new ClassInvariantViolated if not invariant.apply instance
 
         return ret
 
-    return Method
+agree.function = (name) ->
+    return new FunctionContract name
 
 # Predicates, can be used as class invariants, pre- or post-conditions
 # Some of these can be generic and provided by framework, parametriced to 
@@ -115,7 +160,7 @@ method = (preconditions, postconditions, body) ->
 #
 # TODO: generalize the composition/parametrization of predicates?
 # - look up an identifier (string, number) in some context (arguments, this)
-# - take a value for the instance of a set (types, values) to check for
+# - take a value for the instance of a set (types, values) to check for 
 noUndefined = () ->
     for a in arguments
         return false if not a?
@@ -136,6 +181,7 @@ attributeTypeEquals = (attribute, type) ->
 
 
 # Example
+# TODO: add a class wrapper with method convenience which adds function automatically
 class Foo
     invariants: [
         neverNull 'prop1'
@@ -146,21 +192,39 @@ class Foo
         @prop1 = "foo"
         @numberProp = 1
 
-    addNumbers: method [noUndefined], [], (arg1, arg2) ->
-        return arg1+arg2
+agree.function 'setNumberWrong'
+.add Foo.prototype
+.precondition noUndefined
+.postcondition [attributeEquals 'prop1', 'bar']
+.body (arg1, arg2) ->
+    @prop1 = null
 
-    setPropNull: method [noUndefined], [], (arg1, arg2) ->
-        @prop1 = null
+agree.function 'setPropNull'
+.add Foo.prototype
+.precondition noUndefined
+.body (arg1, arg2) ->
+    @prop1 = null
 
-    setPropWrong: method [noUndefined], [attributeEquals 'prop1', 'bar'], () ->
-        @prop1 = "bar2"
+agree.function 'addNumbers'
+.add Foo.prototype
+.precondition noUndefined
+.body (arg1, arg2) ->
+    return arg1+arg2
 
-    setPropCoorect: method().pre
-    setPropCorrect: method [noUndefined], [attributeEquals 'prop1', 'bar'], () ->
-        @prop1 = "bar"
+# TODO: allow to reuse/name the contract, and use different body/name
+agree.function 'setPropCorrect'
+.add Foo.prototype
+.precondition noUndefined
+.postcondition [attributeEquals 'prop1', 'bar']
+.body () ->
+    @prop1 = 'bar'
 
-    setNumberWrong: method [], [], () ->
-        @numberProp = "should-be-number"
+agree.function 'setPropWrong'
+.add Foo.prototype
+.precondition noUndefined
+.postcondition [attributeEquals 'prop1', 'bar']
+.body () ->
+    @prop1 = 'nobar'
 
 
 main = () ->
