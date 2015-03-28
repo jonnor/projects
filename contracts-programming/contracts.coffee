@@ -8,6 +8,8 @@
 # - http://disnetdev.com/contracts.coffee/ custom syntax+compiler based on coffee-script
 #
 # TODO:
+# - Prototype a way to declare and verify symmetrical functions, ie ones which cancel eachother out
+# - Sketch out a way to provide default for pre/post/invar, as an executable coding-style
 # - Add possibily for human-readable doc/description on predicates,
 # attach the info to exceptions
 # - Investigate how to generate useful documentation, both
@@ -19,7 +21,12 @@
 # http://coffeescript.org/documentation/docs/nodes.html
 # http://www.coffeelint.org/
 # https://github.com/jashkenas/coffeescript/issues/1466
+#
+# - Add some type checking predicates
 # - Allow a single pre/post/class-invar func in addition to array
+# - Allow to not specify pre/post at all
+# - Consider moving to a fluent interface ala https://www.npmjs.com/package/blueprint
+# - Consider adding first-class support for Promises instead of functions
 #
 # Random:
 # - Should contracts and their use be registered globally, for dependency tracking?
