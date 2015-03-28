@@ -243,26 +243,30 @@ agree.Class = (name) ->
 # TODO: generalize the composition/parametrization of predicates?
 # - look up an identifier (string, number) in some context (arguments, this)
 # - take a value for the instance of a set (types, values) to check for 
-noUndefined = () ->
+
+conditions = {}
+agree.conditions = conditions
+
+conditions.noUndefined = () ->
     for a in arguments
         return false if not a?
     return true
 
-numbersOnly = () ->
+conditions.numbersOnly = () ->
     for a in arguments
         return false if typeof a != 'number'
     return true
 
 # parametric functions, returns a predicate
-neverNull = (attribute) ->
+conditions.neverNull = (attribute) ->
     return () ->
         return this[attribute]?
 
-attributeEquals = (attribute, value) ->
+conditions.attributeEquals = (attribute, value) ->
     return () ->
         return this[attribute] == value
 
-attributeTypeEquals = (attribute, type) ->
+conditions.attributeTypeEquals = (attribute, type) ->
     return () ->
         return typeof this[attribute] == type
 
@@ -275,43 +279,43 @@ agree.Class 'Foo'
 .init () ->
     @prop1 = "foo"
     @numberProp = 1
-.invariant neverNull 'prop1'
-.invariant attributeTypeEquals 'numberProp', 'number'
+.invariant conditions.neverNull 'prop1'
+.invariant conditions.attributeTypeEquals 'numberProp', 'number'
 
 .method 'setNumberWrong'
-.precondition noUndefined
-.postcondition [attributeEquals 'prop1', 'bar']
+.precondition conditions.noUndefined
+.postcondition [conditions.attributeEquals 'prop1', 'bar']
 .body (arg1, arg2) ->
     @prop1 = null
 
 .method 'setPropNull'
-.precondition noUndefined
+.precondition conditions.noUndefined
 .body (arg1, arg2) ->
     @prop1 = null
 
 .method 'addNumbers'
-.precondition noUndefined
+.precondition conditions.noUndefined
 .body (arg1, arg2) ->
     return arg1+arg2
 
 # TODO: allow to reuse/name the contract, and use different body/name
 agree.function 'setPropCorrect'
 .add examples.Foo.prototype
-.pre noUndefined
-.post [attributeEquals 'prop1', 'bar']
+.pre conditions.noUndefined
+.post [conditions.attributeEquals 'prop1', 'bar']
 .body () ->
     @prop1 = 'bar'
 
 agree.function 'setPropWrong'
 .add examples.Foo.prototype
-.precondition noUndefined
-.postcondition [attributeEquals 'prop1', 'bar']
+.precondition conditions.noUndefined
+.postcondition [conditions.attributeEquals 'prop1', 'bar']
 .body () ->
     @prop1 = 'nobar'
 
 # Invalid init
 agree.Class 'InvalidInit'
-.invariant neverNull 'prop1'
+.invariant conditions.neverNull 'prop1'
 .init () ->
     @prop1 = null
 .add examples
@@ -343,8 +347,8 @@ main = () ->
         onNonNumber = null
         PreconditionCallbacks = agree.Class 'PreconditionCallbacks'
         .method 'callMe'
-        .precondition(noUndefined, () -> onUndefined())
-        .precondition(numbersOnly, () -> onNonNumber())
+        .precondition(conditions.noUndefined, () -> onUndefined())
+        .precondition(conditions.numbersOnly, () -> onNonNumber())
         .body (f) ->
             chai.expect(false).to.equal true, 'body called'
         .getClass()
