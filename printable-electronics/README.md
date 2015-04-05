@@ -8,7 +8,10 @@ that enable afforable additive manufacturing of conductive material
 (and thus basic electronics):
 
 * Specialized printers for electronics. Ex: Voxel 8
-* Electronically conductive filament for normal FDM/FFF printers. Ex: ProtoPasta, Leapfrog Exotic
+* Electronically conductive filament for normal FDM/FFF printers.
+Ex: [ProtoPasta](http://www.proto-pasta.com/shop/conductive-pla-preorder),
+Leapfrog Exotic,
+[Functionalize](http://functionalize.com/shop/)
 
 It may also be possible to print channels in non-conductive
 material and then fill these with low viscocity conductive material (ex: Bare Conductive).
