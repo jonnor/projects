@@ -19,7 +19,6 @@ def detect_circles(image, sketch):
 
     for line in output.split("\n"):
         tok = line.split(' ')
-        print 'tokens', tok
         if len(tok) >= 4 and tok[0] == 'circle':
             x = float(tok[1])
             y = float(tok[2])
@@ -28,6 +27,26 @@ def detect_circles(image, sketch):
             sketch.addGeometry(circle)
 
     return sketch
+
+def correct_perspective(image, sketch):
+
+    # assumes image is positioned at 0,0,0
+    topRight = App.Vector(-image.XSize/2, image.YSize/2, 0)
+
+    points = []
+    for v in sketch.Geometry:
+        points.append(v.x-topRight.x)
+        points.append(topRight.y-v.y)
+
+    args = [base+'/correct-perspective', image.ImageFile]
+    args += [str(p) for p in points]
+    output = subprocess.check_output(args)
+
+    oldfile = image.ImageFile
+    filename = output.strip()
+    image.ImageFile = filename
+
+    return oldfile
 
 if __name__ == '__main__':
     pass
