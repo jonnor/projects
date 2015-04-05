@@ -56,6 +56,23 @@ Similar technique could for instance be used to create:
 * Stepper-motor drivers, using microcontroller + H-bridges [avrstmd](http://www.avrstmd.com)
 
 
+AC power switch
+--------------
+
+[FreeCAD](./mains-powerplug.fcstd)
+
+For EU type plug. 
+[Socket C](http://www.worldstandards.eu/electricity/plugs-and-sockets/c/)
+/[Socket F](http://www.worldstandards.eu/electricity/plugs-and-sockets/f/)
+
+A simple+cheap 230V off-line inductorless DC regulator
+like [Supertex SR036] (http://www.mouser.com/catalog/specsheets/sr03.pdf)
+would be useful to embed for powering electronics.
+
+Using microcontroller, plus standard 250 VAC coil- or solid-state relay,
+could potentially make a generic remote controllable switch.
+Example: [JZC-11F](https://www.sparkfun.com/datasheets/Components/General/JZC-11F-05VDC-1Z%20EN.pdf)
+
 
 Braindump
 =========
@@ -254,6 +271,7 @@ Sensors
 * Proximity (inductive?)
 * Vibration, low-frequency
 * Vibration, audio
+* Current consumption
 
 Control systems
 
