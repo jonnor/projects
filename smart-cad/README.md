@@ -58,7 +58,9 @@ Input=resolution in physical unit (can be default or presets, 0.1mm or so)
 * Cropping/selecting area of interest.
 Possibly done N times, for multiple objects from single image
 * Adaptive feature extractors.
-Maybe including image pre-processing priming/normalization (contrast,levels)
+Maybe including image normalization (contrast,levels)
+Filtering, gaussian/box/blur
+Morphopogical noise removal, erosion/dilation/opening/closing
 Allow specifying constraints, on both number of features, which areas have features/not
 * Higher-level features, derived on basic features
 Combining multiple lines into one.
@@ -68,7 +70,9 @@ Ideas
 
 * Use printed, smart tag sticker as a reference for size and projection?
 Standard size, rectangular points. Stick onto object plane, detect using computer vision.
-* Store the 
+* Store the objects in a database with image descriptors, perform lookup
+* Use multi-view (like Google Lens Blur) to build depth-map to assist in
+* Use saliency/foreground extraction to better determine which part of image is "the object" or not
 * Have presets for common tasks, templates for interfacing/joinery. Allow to build/save new ones.
 
 
@@ -88,9 +92,11 @@ Development
 
 Resources:
 
-* [Finding rectangles, correct perspective](http://opencv-code.com/tutorials/automatic-perspective-correction-for-quadrilateral-objects/)
 * [Converting between Bezier curves and lines+arcs](http://itc.ktu.lt/itc354/Riskus354.pdf)
-
+* [Error propagation in geometry-based grouping](http://www.freidok.uni-freiburg.de/volltexte/2932/pdf/thesis_a5_9pt.pdf),
+good info on camera models, joining line segments, detecting orthogonal and revolved bodies
+* [Nexus 5 insintric camera parameters](http://rkdasari.com/2013/02/14/camera-calibration-matrix-finding-intrinsic-parameters/)
+* [4-point perpective calibration](http://w3.impa.br/~zang/qtcalib/nochess.html)
 
 Movable parts & Animation
 ---------------------
