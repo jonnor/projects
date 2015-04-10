@@ -129,7 +129,21 @@ Due to problems with poor layer bonding, making Hollowtech style cranks seems ve
 
 Frame:
 
-A medium (54cps) frame hybrid frame is approx 2.7 meters of tubing, front-fork excluded. 2800mm/200mm = 14 pieces.
-Assuming a 60 mm outer diameter for all tubes, with single takes approx 1.5 hour per piece,
+A medium (54cps) frame standard hybrid frame is approx 2.7 meters of tubing, front-fork excluded.
+2800mm/200mm = 14 pieces.
+Assuming a 60 mm outer diameter for all tubes, with single wall takes approx 1.5 hour per piece,
 for a total of 14*1.5 = 21 hours printing time, or ~6 hours on 4 printers.
+
+
+Wheels:
+
+A standard 26" inch wheel (559mm) would require approx 9 pieces.
+Can be done with just one joint between center piece and the rim.
+A 622mm wheel would probably require 16, and require multiple joints, and thus much less suitable.
+With semi-slim tyres ~1.75"/47mm, the rim width for a clincher profile should be 19-25mm.
+
+* http://en.wikipedia.org/wiki/ISO_5775
+* [Clincer rim profile](http://en.wikipedia.org/wiki/Bicycle_tire#/media/File:Sezione_cerchione_bicicletta.svg)
+
+
 
