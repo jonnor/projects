@@ -80,6 +80,10 @@ TODO:
 * Drop-out. Hugely beneficial to 3d-print, due to hundreds of variations
 * Remotes for suspension-forks
 
+Work by other people:
+
+* [3d-printed friction gear lever](https://www.youtube.com/watch?v=fLMA-8aSsDM)
+
 Research:
 
 * Shimano patent on sprokets [US patent no 4889521](http://www.google.com/patents/US4889521) expired in 2008.
@@ -94,6 +98,9 @@ are #40 of ISO, 12.7mm pitch, 7.65mm roller diam, roller width 1/8" or 3/32", ex
 Bigger structural elements are particularly challenging to 3d-print on a
 standard ~20x20x20cm RepRap-style printer.
 Both due to the sizes of the objects, and requirements for structural integrity.
+
+Several plastic-based (usually injection molded) bikes have been attempted,
+[most failed](http://en.wikipedia.org/wiki/Plastic_bicycle).
 
 Ideas:
 
@@ -134,6 +141,10 @@ A medium (54cps) frame standard hybrid frame is approx 2.7 meters of tubing, fro
 Assuming a 60 mm outer diameter for all tubes, with single wall takes approx 1.5 hour per piece,
 for a total of 14*1.5 = 21 hours printing time, or ~6 hours on 4 printers.
 
+Here is couple of videos of failed headtube design
+[1](https://www.youtube.com/watch?v=4stXilZLl7o),
+[2](https://www.youtube.com/watch?v=OgAwC1GCYJQ)
+
 
 Wheels:
 
@@ -144,6 +155,6 @@ With semi-slim tyres ~1.75"/47mm, the rim width for a clincher profile should be
 
 * http://en.wikipedia.org/wiki/ISO_5775
 * [Clincer rim profile](http://en.wikipedia.org/wiki/Bicycle_tire#/media/File:Sezione_cerchione_bicicletta.svg)
-
+* [Carbon MTB wheel profile, DT Swiss](http://en.wikipedia.org/wiki/File:Carbon_composite_MTB_wheel.JPG)
 
 
