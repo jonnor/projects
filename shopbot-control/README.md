@@ -21,7 +21,7 @@ Testing done over one evening 20 February 2015.
 What we know
 
 * How to set up Shopbot and the software so we can intercept the communication
-* That the Shopbot does not use GCode, HPGL or similar protocols between host and machine
+* That the Shopbot does not use GCode, HPGL, [OpenSBP](http://www.opensbp.org/) or similar high-level protocol
 * Roughly what happens during device init
 * How the values of the digital inputs work
 * How to set value of digital outputs
@@ -85,7 +85,8 @@ Findings from man-in-the-middle
 --------------
 Script: [shopbot-mim.py](./tools/shopbot-mim.py)
 
-For details, see the annotated data dumps: [shopbot-movement-notes.md](./data/shopbot-movement1-notes.md)
+For details, see the annotated data dumps:
+[shopbot-movement1-notes.md](./shopbot-movement1-notes.md)
 
 Looks like setting outputs gjøres med 0xf0 commando followed by the bit value of the register.
 
