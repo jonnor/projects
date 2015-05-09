@@ -88,7 +88,7 @@ Script: [shopbot-mim.py](./tools/shopbot-mim.py)
 For details, see the annotated data dumps:
 [shopbot-movement1-notes.md](./shopbot-movement1-notes.md)
 
-Looks like setting outputs gjøres med 0xf0 commando followed by the bit value of the register.
+Looks like setting outputs is done using 0xf0 command followed by the bit value of the register.
 
     -> 6 '\xf0\x01\x00\xff\xff\xff'
     <- 50 '\xda\x0f\x03\x00\x00\x00\xe0\x00\x08\x15\x03\x05\x00\x00\x00\x00\xff\xff\x00\x01S\xd4\x00\x00\xc0\xba\x00\x00\x16\xe9\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x002\xdd\x00\x00\x00\x01'
@@ -99,6 +99,22 @@ Looks like setting outputs gjøres med 0xf0 commando followed by the bit value o
     <- 50 '\xda\x0f\x03\x00\x00\x00\xe0\x00\x08\x16\x03\x04\x00\x00\x00\x00\xff\xff\x00\x01S\xd4\x00\x00\xc0\xba\x00\x00\x16\xe9\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x002\xdd\x00\x00\x00\x02'
 
     -> 6 '\xf0\x00\x00\xff\xff\xff'
+
+Periodic pong messages seem to contain values of all axes, and the digital input pin registers.
+
+    PING
+    <- 50 : da 0f 03 00 00 00 e0 00 08 13 03 06 00 00 00 00 ff ff 00 01 5b 77 00 00 c0 ba 00 00 16 e9 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3a 80 00 00 00 08
+							          X? XX XX XX
+									      Y? YY YY YY
+				       						      Z? Z? ZZ ZZ
+	       I
+				       ?? ?? ??     seems to fluctuate
+																	        ?? ?? ?? ?? ?? ?? seems to vary over different move values. Checksum??
+
+    I: input pins. Active low?
+    X/Y: axis values. val = position_mm * 97.749
+    Z: axis values. val = position_mm * 117.3
+
 
 Looks like most of path planning is on computer side (not firmware/controlbox):
 
@@ -111,3 +127,6 @@ This makes understanding the protocol trickier (as it might not be a straight fo
 and re-implementing the host control software (as it needs to be near-real-time capable, and handle the kinematics)
 
 Looks almost as if control software is just sending registers/commands for the different stepper motors directly.
+
+
+
