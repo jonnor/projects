@@ -76,6 +76,8 @@ Some things are quite safety critical, like brake, propulsion and steering syste
 Exists on Thingiverse, by other people:
 
 * Chain protection rings
+* LED read light mount [1](http://www.thingiverse.com/thing:226475)
+* Bottle mount [1](https://www.youmagine.com/designs/bike-bottle-mount)
 
 Thingiverse searches:
 
@@ -106,6 +108,7 @@ are #40 of ISO, 12.7mm pitch, 7.65mm roller diam, roller width 1/8" or 3/32", ex
 * [Rear deraillurs](http://en.wikipedia.org/wiki/Derailleur_gears#Rear_derailleurs)
 * Radius of sproked with N teeth of given pitch: r=(N*pitch)/(2*pi)
 * [Indexed shifting reference](http://en.wikibooks.org/wiki/Bicycles/Maintenance_and_Repair/Gear-changing_Dimensions)
+2.8mm pull for 7-8 gears rear.
 * Rachet+prawl, mechanism to convert rotation->linear action:
 [Thingiverse](http://www.thingiverse.com/search?q=Ratchet&sa=)
 [Wikipedia](http://en.wikipedia.org/wiki/Ratchet_(device))
@@ -124,8 +127,10 @@ Several plastic-based (usually injection molded) bikes have been attempted,
 
 Ideas:
 
-* Use glass/carbon/bio fiber+resin reinforcement on 3d-printed shell.
-Vacuum-bag-form for production speed.
+* Use glass/carbon/bio fiber+resin reinforcement on 3d-printed shell. Existing research:
+[1](http://www.thingiverse.com/thing:91464)
+* Use Vacuum-bag-forming of fiber for production speed?
+
 
 Parts:
 
