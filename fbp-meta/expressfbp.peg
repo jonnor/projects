@@ -1,0 +1,68 @@
+
+// Grammar for PEG.js, https://github.com/dmajda/pegjs
+{
+  var parser = this;
+  //parser.debug = true;  
+
+  parser.data = {
+  }
+
+  var iip = function(process, port, data) {
+    return {
+      data: data,
+      tgt: {
+        port: port,
+        process: process
+      }
+    }
+  };
+
+  parser.operation = function(op, a, b) {
+    var graph = {
+      // FIXME: fbp parser should instead return empty arrays?
+      exports: undefined,
+      inports: undefined,
+      outports: undefined,
+      processes: {},
+      connections: []
+    }
+    // FIXME: respect op. Lookup in a map? return symbolic name?
+    var process = "1";
+    graph.processes[process] = {component: 'Multiply'};
+    graph.connections.push(
+      iip(process, 'a', a),
+      iip(process, 'b', b)
+    );
+    return graph;
+  }
+}
+
+
+start
+  = expression
+_
+  = (" "*)?
+__
+  = " "+
+  
+anychar
+  = [^\n\r\u2028\u2029]
+
+newline
+  = [\n\r\u2028\u2029]
+
+comment
+  = _ "#" (anychar)*
+
+string
+  = "\"" anychar* "\""
+
+operator
+  = [-=*]
+constant
+  = [0-9]+
+
+expression
+  = a:constant _ op:operator _ b:constant { return parser.operation(op, a.join(''), b.join('')); }
+
+
