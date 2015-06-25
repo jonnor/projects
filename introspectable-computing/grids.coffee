@@ -42,7 +42,7 @@ class Variable
   constructor: (@ctx, @id) ->
     @properties =
       type: 'number'
-      name: @id
+      label: @id
       unit: ''
       description: ''
 
@@ -51,31 +51,33 @@ class Variable
 
   # Chain up to parent
   set: (value) ->
-    debug 'Variable.set', @id, value
     @ctx.set @id, value
     return this
 
-  function: (inputs, func) ->
-    debug 'Variable.function', @id, inputs
-    return @ctx.function @id, inputs, func
-
-  var: (name) ->
-    return @ctx.var name
-
+  # Context modifiers
   parent: () ->
     return @ctx
+  var: (name) ->
+    return @ctx.var name
+  function: (inputs, func) ->
+    return @ctx.function @id, inputs, func
 
 class Function
   constructor: (@func, @ctx) ->
     @properties =
-      description: ''
+      label: ''
+      description: @func.toString()
 
     for attr of @properties
-      addChainedAttributeAccessor(this, 'properties', attr)  
+      addChainedAttributeAccessor this, 'properties', attr
 
-  # Chain up to parent
+  # Context modifiers
   parent: () ->
     return @ctx
+  var: (name) ->
+    return @ctx.var name
+  function: (inputs, func) ->
+    return @ctx.function @id, inputs, func
 
 # A context which computations can be done in
 # Holds multiple Variable and Function
@@ -88,12 +90,12 @@ class Computation
       description: ''
 
     for attr of @properties
-      addChainedAttributeAccessor(this, 'properties', attr)  
+      addChainedAttributeAccessor this, 'properties', attr
 
     # variables
     @variables = {} # varname -> Variable
     # expressions
-    @dependencies = {}
+    @dependencies = {} # 
     @functions = {} # targetvarname -> Function
     # transaction state
     @data = {}
@@ -145,10 +147,12 @@ class Computation
   # functions
   function: (target, inputs, func) ->
     func = new Function func, this if typeof func == 'function'
+    func.ctx = this
     func.inputs = inputs # hack
     @_implicitTransaction "#{target}=f(#{inputs.join(',')})", () =>
       for input in inputs
-        @dependencies[input] = target
+        @dependencies[input] = [] if not @dependencies[input]
+        @dependencies[input].push target
         @dirty.push
           var: input
       @functions[target] = func
@@ -164,6 +168,7 @@ class Computation
     for c in @dirty
       changes[c.var] = c.value if @data[c.var] != c.value
       @data[c.var] = c.value if c.value?
+    @dirty = []
     changes = Object.keys changes
     debug 'changes in transaction', changes
 
@@ -172,17 +177,42 @@ class Computation
       dependants = @dependencies[v]
       continue if not dependants
       for d in dependants
+        debug "calculating #{d}", dependants, Object.keys(@functions)
         f = @functions[d]
         args = f.inputs.map((i) => @data[i])
         args.unshift args.slice()
-        debug "calculating #{d} from #{f.inputs}", args
+        debug "from #{f.inputs}", args
         res = f.func.apply this, args
-        debug 'got', res
+        debug 'got result', res
         @data[d] = res
-      
+        @dirty.push
+          var: d
+
+    @_resolve() if @dirty.length
 
 Computation.create = (id) ->
   return new Computation id
+
+generateFunctions = () ->
+  fs = require 'fs'
+  path = require 'path'
+
+  code = ""
+  for op in ['+', '-', '*', '/']
+    f = "exports['#{op}'] = function(v, a, b) { return a#{op}b; };\n"
+    code += f
+
+  filepath = path.join __dirname, 'generated.js'
+  fs.writeFileSync filepath, code, 'utf-8'
+
+  p = path.join __dirname, 'generated.js'
+  functions = {}
+  exported = require p
+  for op, f of exported
+    func = new Function f
+    func.label "a#{op}b"
+    functions[op] = func
+  return functions
 
 tests = () ->
   chai = require 'chai'
@@ -194,7 +224,7 @@ tests = () ->
           .description 'Make things as simple as they can be, but no simpler'
           .var('a').set 1
           .var('b').set 2
-          .var('c').function ['a', 'b'], (v, a, b) -> console.log 'f', v, a, b; return a + b
+          .var('c').function ['a', 'b'], (v, a, b) -> return a + b
           .parent()
       chai.expect(da.data['c']).to.eql 3
 
@@ -203,7 +233,33 @@ tests = () ->
         @set 'a', 2
       chai.expect(da.data['c']).to.eql 4
 
+  describe 'guv proportional scaling', ->
+    it '', ->
+      f = generateFunctions()
+      c = Computation.create('proportional')
+        .var('N').label('jobs in queue')
+        .var('p').label('processing time')
+        .var('ta').label('target time')
+        .var('T_w').label('waiting time').function(['N', 'p'], f['*'])
+        .var('T_a').label('available time').function(['ta', 'p'], f['-'])
+        .var('W').label('required workers').function(['T_w', 'T_a'], f['/'])
+        .parent()
+      c.open().set('N', 100).set('p', 10).set('ta', 52).close()
+      chai.expect(Math.ceil(c.data['W'])).to.equal 24
+###
+min = (a, b) -> if a < b then a else b
+max = (a, b) -> if a > b then a else b
+bound = (v, lower, upper) -> return min(max(v, lower), upper)
 
-
+scale = (config, queueLength) ->
+  estimate = proportional config, queueLength
+  debug 'estimate for', queueLength, estimate
+  workers = Math.ceil(estimate)
+  # TODO: estimate higher than max should be a warning
+  # TODO: add code for estimating how long it will take to catch up (given feed rate estimates)
+  workers = bound workers, config.minimum, config.maximum
+  debug 'bounded', workers
+  return workers
+###
 
 tests()
