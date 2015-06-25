@@ -196,24 +196,31 @@ class Computation
 Computation.create = (id) ->
   return new Computation id
 
-renderAsciiMathML = (comp, target) ->
+
+innerAsciiMathML = (comp, target, symbolic = true) ->
   variable = comp.variables[target]
   func = comp.functions[target]
   data = comp.data[target]
   
   if func
-    out = "#{target}"
     label = func.properties.label
-    if label
-      label = label.replace('a', func.inputs[0])
-      label = label.replace('b', func.inputs[1])
-      out += "=(#{label})"
+    markers = ['#a', '#b', '#c'] # HACK
+    func.inputs.forEach (input, idx) ->
+      marker = markers[idx]
+      rep = innerAsciiMathML comp, input      
+      label = label.replace(marker, rep)
+    return "(#{label})"
+  else if symbolic
+    return target
   else
-    out = "#{target}"     
-    out += "=#{data}" if data
+    return "#{data}"
 
   return out
   
+renderAsciiMathML = (comp, target, symbolic) ->
+  t = innerAsciiMathML comp, target, symbolic
+  return "#{target} = #{t}"
+
 
 generateFunctions = () ->
   fs = require 'fs'
@@ -232,7 +239,7 @@ generateFunctions = () ->
   exported = require p
   for op, f of exported
     func = new Function f
-    func.label "a#{op}b"
+    func.label "#a#{op}#b"
     functions[op] = func
   return functions
 
@@ -242,10 +249,10 @@ addDefaultFunctions = (f) ->
   min = (a, b) -> if a < b then a else b
   max = (a, b) -> if a > b then a else b
   bound = (v, lower, upper) -> return min(max(v, lower), upper)
-  f['min'] = Function.create(min).label('min(a,b)')
-  f['max'] = Function.create(max).label('max(a,b)')
-  f['bound'] = Function.create(bound).label('bound(a,b)')
-  f['ceiling'] = Function.create(Math.ceil).label('ceiling(a)')
+  f['min'] = Function.create(min).label('min(#a,#b)')
+  f['max'] = Function.create(max).label('max(#a,#b)')
+  f['bound'] = Function.create(bound).label('bound(#a,#b,#c)')
+  f['ceil'] = Function.create(Math.ceil).label('ceil(#a)')
 
 addDefaultFunctions functions
 
@@ -283,17 +290,21 @@ tests = () ->
       chai.expect(Math.ceil(c.data['W'])).to.equal 24
     it 'render T_w as ascii MathML', ->
       render = renderAsciiMathML c, 'T_w'
-      chai.expect(render).to.equal 'T_w=(N*p)'
+      chai.expect(render).to.equal 'T_w = (N*p)'
 
     it 'should solve for W_b', ->
       c.var('min').label('worker minimum').set 2
       c.var('max').label('worker maximum').set 12
-      c.var('W_r').function(['W'], f['ceiling'])
+      c.var('W_r').function(['W'], f['ceil'])
       c.var('W_b').label('workers').function(['W_r', 'max', 'min'], f['bound'])
       chai.expect(c.data['W_b']).to.equal 12
 
-    it.skip 'render W as ascii MathML', ->
+    it 'render W as ascii MathML', ->
       render = renderAsciiMathML c, 'W'
-      chai.expect(render).to.equal ''
+      chai.expect(render).to.equal 'W = ((N*p)/(ta-p))'
+
+    it 'render W_b as ascii MathML', ->
+      render = renderAsciiMathML c, 'W_b'
+      chai.expect(render).to.equal 'W_b = (bound((ceil(((N*p)/(ta-p)))),max,min))'
 
 tests()
