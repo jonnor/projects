@@ -79,6 +79,9 @@ class Function
   function: (inputs, func) ->
     return @ctx.function @id, inputs, func
 
+Function.create = (f) ->
+  return new Function f
+
 # A context which computations can be done in
 # Holds multiple Variable and Function
 class Computation
@@ -193,6 +196,25 @@ class Computation
 Computation.create = (id) ->
   return new Computation id
 
+renderAsciiMathML = (comp, target) ->
+  variable = comp.variables[target]
+  func = comp.functions[target]
+  data = comp.data[target]
+  
+  if func
+    out = "#{target}"
+    label = func.properties.label
+    if label
+      label = label.replace('a', func.inputs[0])
+      label = label.replace('b', func.inputs[1])
+      out += "=(#{label})"
+  else
+    out = "#{target}"     
+    out += "=#{data}" if data
+
+  return out
+  
+
 generateFunctions = () ->
   fs = require 'fs'
   path = require 'path'
@@ -214,6 +236,19 @@ generateFunctions = () ->
     functions[op] = func
   return functions
 
+functions = generateFunctions()
+
+addDefaultFunctions = (f) ->
+  min = (a, b) -> if a < b then a else b
+  max = (a, b) -> if a > b then a else b
+  bound = (v, lower, upper) -> return min(max(v, lower), upper)
+  f['min'] = Function.create(min).label('min(a,b)')
+  f['max'] = Function.create(max).label('max(a,b)')
+  f['bound'] = Function.create(bound).label('bound(a,b)')
+  f['ceiling'] = Function.create(Math.ceil).label('ceiling(a)')
+
+addDefaultFunctions functions
+
 tests = () ->
   chai = require 'chai'
 
@@ -234,32 +269,31 @@ tests = () ->
       chai.expect(da.data['c']).to.eql 4
 
   describe 'guv proportional scaling', ->
-    it '', ->
-      f = generateFunctions()
-      c = Computation.create('proportional')
-        .var('N').label('jobs in queue')
-        .var('p').label('processing time')
-        .var('ta').label('target time')
-        .var('T_w').label('waiting time').function(['N', 'p'], f['*'])
-        .var('T_a').label('available time').function(['ta', 'p'], f['-'])
-        .var('W').label('required workers').function(['T_w', 'T_a'], f['/'])
-        .parent()
+    f = functions
+    c = Computation.create('proportional')
+      .var('N').label('jobs in queue')
+      .var('p').label('processing time')
+      .var('ta').label('target time')
+      .var('T_w').label('waiting time').function(['N', 'p'], f['*'])
+      .var('T_a').label('available time').function(['ta', 'p'], f['-'])
+      .var('W').label('required workers').function(['T_w', 'T_a'], f['/'])
+      .parent()
+    it 'should solve for W', ->
       c.open().set('N', 100).set('p', 10).set('ta', 52).close()
       chai.expect(Math.ceil(c.data['W'])).to.equal 24
-###
-min = (a, b) -> if a < b then a else b
-max = (a, b) -> if a > b then a else b
-bound = (v, lower, upper) -> return min(max(v, lower), upper)
+    it 'render T_w as ascii MathML', ->
+      render = renderAsciiMathML c, 'T_w'
+      chai.expect(render).to.equal 'T_w=(N*p)'
 
-scale = (config, queueLength) ->
-  estimate = proportional config, queueLength
-  debug 'estimate for', queueLength, estimate
-  workers = Math.ceil(estimate)
-  # TODO: estimate higher than max should be a warning
-  # TODO: add code for estimating how long it will take to catch up (given feed rate estimates)
-  workers = bound workers, config.minimum, config.maximum
-  debug 'bounded', workers
-  return workers
-###
+    it 'should solve for W_b', ->
+      c.var('min').label('worker minimum').set 2
+      c.var('max').label('worker maximum').set 12
+      c.var('W_r').function(['W'], f['ceiling'])
+      c.var('W_b').label('workers').function(['W_r', 'max', 'min'], f['bound'])
+      chai.expect(c.data['W_b']).to.equal 12
+
+    it.skip 'render W as ascii MathML', ->
+      render = renderAsciiMathML c, 'W'
+      chai.expect(render).to.equal ''
 
 tests()
