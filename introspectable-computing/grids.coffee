@@ -207,7 +207,7 @@ innerAsciiMathML = (comp, target, symbolic = true) ->
     markers = ['#a', '#b', '#c'] # HACK
     func.inputs.forEach (input, idx) ->
       marker = markers[idx]
-      rep = innerAsciiMathML comp, input      
+      rep = innerAsciiMathML comp, input, symbolic
       label = label.replace(marker, rep)
     return "(#{label})"
   else if symbolic
@@ -217,9 +217,12 @@ innerAsciiMathML = (comp, target, symbolic = true) ->
 
   return out
   
-renderAsciiMathML = (comp, target, symbolic) ->
+renderAsciiMathML = (comp, target, symbolic=true) ->
   t = innerAsciiMathML comp, target, symbolic
-  return "#{target} = #{t}"
+  out = "#{target} = #{t}"
+  data = comp.data[target]
+  out += " = #{data}" if not symbolic
+  return out
 
 
 generateFunctions = () ->
@@ -288,7 +291,7 @@ tests = () ->
     it 'should solve for W', ->
       c.open().set('N', 100).set('p', 10).set('ta', 52).close()
       chai.expect(Math.ceil(c.data['W'])).to.equal 24
-    it 'render T_w as ascii MathML', ->
+    it 'render T_w as ascii MathML symbolically', ->
       render = renderAsciiMathML c, 'T_w'
       chai.expect(render).to.equal 'T_w = (N*p)'
 
@@ -299,12 +302,17 @@ tests = () ->
       c.var('W_b').label('workers').function(['W_r', 'max', 'min'], f['bound'])
       chai.expect(c.data['W_b']).to.equal 12
 
-    it 'render W as ascii MathML', ->
+    it 'render W as ascii MathML symbolically', ->
       render = renderAsciiMathML c, 'W'
       chai.expect(render).to.equal 'W = ((N*p)/(ta-p))'
 
-    it 'render W_b as ascii MathML', ->
+    it 'render W_b as ascii MathML symbolically', ->
       render = renderAsciiMathML c, 'W_b'
       chai.expect(render).to.equal 'W_b = (bound((ceil(((N*p)/(ta-p)))),max,min))'
+
+    it 'render solved W_b as ascii MathML', ->
+      render = renderAsciiMathML c, 'W_b', false
+      chai.expect(render).to.equal 'W_b = (bound((ceil(((100*10)/(52-10)))),12,2)) = 12'
+
 
 tests()
