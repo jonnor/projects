@@ -17,13 +17,13 @@
 # - can be visualized and manipulated in UI, both statically and live
 # - usable by non-tech audiences with live data coming from live production systems
 #
-# TODO: add richer metadata to cells
-# TODO: add support for units
-# TODO; add metadata to functions
-# TODO: add some sort of selectors, including multi-value/ranges
+# TODO: move into a proper library
 # TODO: use in http://github.com/the-grid/guv ?
+# TODO: add function for 'rendering' variable descriptions
+# TODO: add support for units
+# TODO: add some sort of selectors, including multi-value/ranges
 # TODO: add NoFlo integration
-# TODO: add a simple DSL, and extensible function library
+# TODO: add a simple DSL?
 # TODO: add some UI prototypes
 # XXX: optional integration with WebWorker?
 debug = () ->
@@ -209,6 +209,7 @@ innerAsciiMathML = (comp, target, symbolic = true) ->
       marker = markers[idx]
       rep = innerAsciiMathML comp, input, symbolic
       label = label.replace(marker, rep)
+    # TODO: don't put () if a function
     return "(#{label})"
   else if symbolic
     return target
@@ -258,6 +259,38 @@ addDefaultFunctions = (f) ->
   f['ceil'] = Function.create(Math.ceil).label('ceil(#a)')
 
 addDefaultFunctions functions
+
+# TODO: allow to generate a function, with free variables as arguments
+generateCProgram = (comp, target) ->
+  fs = require 'fs'
+
+  variables = []
+  for n, v of comp.variables
+    data = comp.data[n]
+    variables.push "\tfloat #{n} = #{data};\n"
+  variables = variables.join ''
+
+  equation = renderAsciiMathML comp, target, true # HACK
+
+  body = ""
+  body += variables
+  body += '\t'+equation+';\n'
+  body += "\tprintf(\"#{target}=%.2f\\n\", #{target});"
+
+  prog = """
+  #include <math.h>
+  #include <stdio.h>
+  #include "functions.c"
+
+  int main() {
+
+    #{body}
+
+  }
+
+  """
+  fs.writeFileSync('prog.c', prog, 'utf-8')
+  return prog
 
 tests = () ->
   chai = require 'chai'
@@ -314,5 +347,12 @@ tests = () ->
       render = renderAsciiMathML c, 'W_b', false
       chai.expect(render).to.equal 'W_b = (bound((ceil(((100*10)/(52-10)))),12,2)) = 12'
 
+    it 'should generate C code with same solution', (done) ->
+      generateCProgram c, 'W_b'
+      { exec } = require 'child_process'
+      exec 'gcc -o prog -lm prog.c && ./prog', (err, stdout) ->
+        chai.expect(err).to.not.exist
+        chai.expect(stdout).to.equal "W_b=12.00\n"
+        done()
 
 tests()
