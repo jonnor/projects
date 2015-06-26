@@ -9,27 +9,41 @@ addChainedAttributeAccessor = (obj, propertyAttr, attr) ->
             obj
 
 # Common declaration
-primitives =
+binaries =
   'eq': '=='
   'neq': '!='
   'lt': '<'
   'gt': '>'
   'lte': '<='
   'gte': '>='
-  'num': '='
+commands = [
+  'invalid'
+  'header'
+  'declare'
+  'domain'
+]
+commands = commands.concat Object.keys(binaries)
 
 generateC = () ->
   declarec = require 'declarec'
   fs = require 'fs'
 
-  enums =
-    'INVALID': 0
-  count = 0
-  for p, v of primitives
-    int = count += 1
-    enums[p.toUpperCase()] = int
+  ccode = ""
 
-  ccode = declarec.generateEnum 'CsConstraint', 'CS_', enums
+  enums = {}
+  count = 0
+  for p in commands
+    enums[p.toUpperCase()] = count
+    count++
+  ccode += declarec.generateEnum 'Command', 'CMD_', enums
+
+  enums = {}
+  count = 0
+  for p, v of binaries
+    enums[p.toUpperCase()] = count
+    count++
+  ccode += declarec.generateEnum 'ConstraintType', 'CS_', enums
+
   console.log 'loc', ccode
   fs.writeFileSync 'cstrain_declarations.h', ccode, 'utf-8'
 
@@ -44,11 +58,19 @@ class Domain
     # Add the API for primitive constraints
     addPrimitiveChained = (op) =>
       return (varA, varB) =>
-        @constraints.push [ op, varA, varB ]
+        @constraints.push [ op, varA, varB, null ]
         return self
 
-    for name, v of primitives
+    for name, v of binaries
       this[name] = addPrimitiveChained name
+
+  decl: (name, lower, upper) ->
+    @constraints.push ['declare', name, null, null]
+    @constraints.push ['domain', name, lower, upper]
+    return this
+  konst: (name, value) ->
+    @decl name, value, value
+    return this
 
 Domain.create = (id) ->
   return new Domain id
@@ -60,20 +82,21 @@ buildVariableMapping = (constraints) ->
   reverse = {}
 
   for cont in constraints
-    cont.forEach (arg, idx) ->
-      # first is opcode
-      if idx > 0 and typeof arg == 'string' and not mapping[arg]?
-        int += 1
-        mapping[arg] = int
-        reverse[int] = arg
+    [op, varname] = cont
+    if op == 'declare'
+      throw new Error "variable declared twice #{varname}" if mapping[varname]?
+      int += 1
+      mapping[varname] = int
+      reverse[int] = varname
 
   return { forward: mapping, reverse: reverse }
 
-buildOpMapping = (ops) ->
+buildOpMapping = () ->
   int = 0
   mapping = {}
   reverse = {}
-  for p, ignored of primitives
+
+  for p in commands
     int += 1
     mapping[p] = int
     reverse[int] = p
@@ -83,13 +106,17 @@ operations = buildOpMapping()
 console.log 'op mapping', operations
 
 serialize = (constraints, mapping) ->
+  commands = constraints.slice()
+  rels = constraints.filter((c) -> ( c[0] != 'declare' and c[0] != 'domain') )
+  commands.unshift [ 'header', Object.keys(mapping.forward).length, rels.length, null ]
+
   bytesPerCommand = 4*4
-  buf = new Buffer bytesPerCommand*constraints.length
+  buf = new Buffer bytesPerCommand*commands.length
   maybeMap = (val) ->
     return if typeof val == 'number' then val else mapping.forward[val]
-  constraints.forEach (args, idx) ->
-    throw new Error 'Contraint op must be 3 long' if not args.length == 3
-    [op, a, b] = args
+  commands.forEach (args, idx) ->
+    throw new Error 'Contraint op must be 4 long' if not args.length == 4
+    [op, a, b, c] = args
     op = operations.forward[op]
     a = maybeMap a
     b = maybeMap b
@@ -98,7 +125,7 @@ serialize = (constraints, mapping) ->
     buf.writeInt32LE op, pos+(0*4)
     buf.writeInt32LE a, pos+(1*4)
     buf.writeInt32LE b, pos+(2*4)
-    buf.writeInt32LE 0, pos+(3*4)
+    buf.writeInt32LE c, pos+(3*4)
 
   return buf
 
@@ -109,15 +136,17 @@ deserialize = (stream, mapping) ->
   for idx in [0...numCommands]
     pos = (idx*bytesPerCommand)
     op = stream.readInt32LE pos+(0*4)
-    console.log idx, pos, op
-    op = operations.reverse[op.toString()]
     a = stream.readInt32LE pos+(1*4)
-    a = mapping.reverse[a.toString()]
     b = stream.readInt32LE pos+(2*4)
-    if not op == 'num'
+    c = stream.readInt32LE pos+(3*4)
+
+    op = operations.reverse[op.toString()]
+    if not op == 'header'
+      a = mapping.reverse[a.toString()]
+    if not op == 'domain'
       b = mapping.reverse[b.toString()]
-    padding = stream.readInt32LE pos+(3*4)
-    ops.push [op, a, b]
+      c = mapping.reverse[c.toString()]
+    ops.push [op, a, b, c]
 
   return ops
 
@@ -131,6 +160,15 @@ solveOne = (dom, callback) ->
   ops = deserialize stream, mapping
   console.log 'deserialized', ops
 
+  { exec } = require 'child_process'
+  filename = 'out.csp.bin'
+  # HACK: should be passed over stdin
+  require('fs').writeFileSync filename, stream
+  exec "./cstrain_kernel #{filename}", (err, stdout, stderr) ->
+    console.log 'out', err, stdout, stderr
+    return callback err if err
+
+
 tests = () ->
   chai = require 'chai'
 
@@ -138,10 +176,11 @@ tests = () ->
     it 'should solve', (done) ->
       d = Domain.create('trivial')
         .eq 'a', 'b'
-        .num 'a', 5
+        .konst 'a', 5
 
       console.log 'constraints',   d.constraints
-      solveOne d, (solution) ->
+      solveOne d, (err, solution) ->
+        chai.expect(err).to.not.exist
         chai.expect(solution['b'] == 5)
         done()
 

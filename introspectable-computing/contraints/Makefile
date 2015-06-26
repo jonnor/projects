@@ -2,10 +2,10 @@
 all: check native emscripten
 
 native:
-	gcc -o cstrain_kernel -Wall -Werror cstrain.c
+	gcc -o cstrain_kernel --std=c99 -Wall -Werror cstrain.c
 
 emscripten:
 	emcc -o cstrain_kernel.js -Wall -Werror cstrain.c
 
-check:
+check: native
 	./node_modules/.bin/mocha --compilers=coffee:coffee-script/register cstrain.coffee

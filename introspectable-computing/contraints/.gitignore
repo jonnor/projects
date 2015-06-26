@@ -2,5 +2,6 @@
 cstrain
 node_modules
 cstrain_declarations.h
-cstrain_kernel.js
+cstrain_kernel*
+*.bin
 
