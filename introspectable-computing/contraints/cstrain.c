@@ -16,6 +16,13 @@ Core implementation ideas:
 #include <math.h>
 #include "cstrain_declarations.h"
 
+struct CsCommand {
+    int32_t op; // a CsConstraint
+    int32_t a; // a 
+    int32_t b; // in case of num, is a value instead of
+    int32_t padding[1];
+}
+
 int
 main(int argc, char *argv[]) {
 
