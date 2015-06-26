@@ -44,6 +44,8 @@ generateC = () ->
     count++
   ccode += declarec.generateEnum 'ConstraintType', 'CS_', enums
 
+  ccode += declarec.generateStringMap 'constraint_names', enums
+
   console.log 'loc', ccode
   fs.writeFileSync 'cstrain_declarations.h', ccode, 'utf-8'
 
@@ -97,9 +99,9 @@ buildOpMapping = () ->
   reverse = {}
 
   for p in commands
-    int += 1
     mapping[p] = int
     reverse[int] = p
+    int += 1
   return { forward: mapping, reverse: reverse }
 
 operations = buildOpMapping()

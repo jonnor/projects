@@ -45,6 +45,7 @@ typedef struct {
 typedef struct {
     Constraint *constraints;
     uint32_t n_constraints;
+    uint32_t current_constraint;
 
     uint32_t n_variables;
     Domain *domains;
@@ -92,6 +93,7 @@ solver_init(Solver *self)
 {
     self->constraints = NULL;
     self->n_constraints = 0;
+    self->current_constraint = 0;
 
     self->n_variables = 0;
     self->values = NULL;
@@ -122,21 +124,54 @@ solver_naive(Solver *self)
     return true;
 }
 
+void
+solver_parse_cmd(Solver *self, CommandData *data) {
+
+    if (data->cmd == CMD_HEADER) {
+        printf("vars=%d, constraints=%d\n", data->a, data->b);
+        self->n_variables = data->a;
+        self->n_constraints = data->b;
+        self->constraints = malloc(sizeof(int32_t)*self->n_constraints);
+        self->values = malloc(sizeof(int32_t)*self->n_variables);
+        self->domains = malloc(sizeof(int32_t)*self->n_variables);
+    } else if (data->cmd == CMD_DECLARE) {
+        printf("declared %d\n", data->a);
+        // FIXME: check duplicate commands on same varid
+//        const VariableId var = data->a;
+//        self->values[var] = data->b;
+    } else if (data->cmd == CMD_DOMAIN) {
+        // FIXME: check duplicate commands on same varid
+        const VariableId var = data->a;
+        printf("domain for %d is [%d, %d]\n", data->a, data->b, data->c);
+        self->domains[var].lower = data->b;
+        self->domains[var].upper = data->c;
+    } else if (data->cmd >= CMD_EQ && data->cmd <= CMD_GTE) {
+        // FIXME: check duplicate commands on same varid
+        const enum ConstraintType type = (data->cmd - CMD_EQ);
+        Constraint c = { type, data->a, data->b };
+        printf("constraint %s between %d and %d\n", constraint_names[c.type], c.a, c.b);
+        self->constraints[self->current_constraint++] = c;
+    } else {
+
+    }
+}
+
 bool
 solver_read_file(Solver *self, const char *fname)
 {
     static const size_t CMD_SIZE = 4*4;
     unsigned char buffer[CMD_SIZE];
     FILE *f = fopen(fname, "rb");
-
-    if (!f) { return false; }
-
+    if (!f) { 
+        return false;
+    }
     size_t read = 0;
     do {
         read = fread(buffer, CMD_SIZE, 1, f);
         if (read) {
             CommandData* cmd = (CommandData *)(&buffer);
             printf("op=%d \n", cmd->cmd);
+            solver_parse_cmd(self, cmd);
         }
     } while (read > 0);
 
