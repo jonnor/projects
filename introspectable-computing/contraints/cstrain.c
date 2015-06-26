@@ -52,7 +52,6 @@ typedef struct {
     int32_t *values;
 } Solver;
 
-
 static bool
 check_constraint(int32_t *values, Constraint c)
 {
@@ -117,16 +116,49 @@ solver_destroy(Solver *self)
     }
 }
 
+void
+print_values(int32_t *v, int n)
+{
+    for (int i=0; i<n; i++) {
+        printf("%d|%d\n", i, v[i]);
+    }
+}
+
+bool
+next_world(Solver *self)
+{
+    for (int id=0; id<self->n_variables; id++) {
+        const int32_t val = self->values[id];
+        Domain d = self->domains[id];
+        printf("checking var=%d, value=%d, domain=[%d, %d] \n", id, val, d.lower, d.upper);
+        if (val < d.upper) {
+            self->values[id] = val+1;
+            return true;
+        }
+    }
+    return false; // no more possible worlds
+}
+
 bool
 solver_naive(Solver *self)
 {
-    check_constraints(self->values, self->constraints, self->n_constraints);
-    return true;
+    int round = 0;
+    while (true) {
+        const bool more = next_world(self);
+        const bool passed = check_constraints(self->values,
+                self->constraints, self->n_constraints);
+        printf("round=%d more=%s passed=%s\n",
+                round, (more) ? "TRUE" : "FALSE", (passed) ? "TRUE" : "FALSE");
+        round += 1;
+        if (!more) break;
+        if (passed) return true;
+    }
+    return false;
 }
 
 void
-solver_parse_cmd(Solver *self, CommandData *data) {
-
+solver_parse_cmd(Solver *self, CommandData *data)
+{
     if (data->cmd == CMD_HEADER) {
         printf("vars=%d, constraints=%d\n", data->a, data->b);
         self->n_variables = data->a;
@@ -137,18 +169,18 @@ solver_parse_cmd(Solver *self, CommandData *data) {
     } else if (data->cmd == CMD_DECLARE) {
         printf("declared %d\n", data->a);
         // FIXME: check duplicate commands on same varid
-//        const VariableId var = data->a;
+//        const VariableId var = (data->a-1);
 //        self->values[var] = data->b;
     } else if (data->cmd == CMD_DOMAIN) {
         // FIXME: check duplicate commands on same varid
-        const VariableId var = data->a;
+        const VariableId var = (data->a - 1);
         printf("domain for %d is [%d, %d]\n", data->a, data->b, data->c);
         self->domains[var].lower = data->b;
         self->domains[var].upper = data->c;
     } else if (data->cmd >= CMD_EQ && data->cmd <= CMD_GTE) {
         // FIXME: check duplicate commands on same varid
         const enum ConstraintType type = (data->cmd - CMD_EQ);
-        Constraint c = { type, data->a, data->b };
+        Constraint c = { type, (data->a-1), (data->b-1) };
         printf("constraint %s between %d and %d\n", constraint_names[c.type], c.a, c.b);
         self->constraints[self->current_constraint++] = c;
     } else {
@@ -170,7 +202,7 @@ solver_read_file(Solver *self, const char *fname)
         read = fread(buffer, CMD_SIZE, 1, f);
         if (read) {
             CommandData* cmd = (CommandData *)(&buffer);
-            printf("op=%d \n", cmd->cmd);
+ //           printf("op=%d \n", cmd->cmd);
             solver_parse_cmd(self, cmd);
         }
     } while (read > 0);
@@ -180,9 +212,30 @@ solver_read_file(Solver *self, const char *fname)
     return true;
 }
 
+void
+write_cmd(FILE *f, CommandData *d)
+{
+    fwrite(d, sizeof(CommandData), 1, f);
+}
+
+// FIXME: write to stout
+void
+write_results(Solver *self, bool solved)
+{
+    // TODO: add number of iterations
+    FILE *f = fopen("result.csp.bin", "wb");
+    CommandData h = { CMD_RESULT, solved, self->n_variables, 0 };
+    write_cmd(f, &h);
+    for (int i=0; i<self->n_variables; i++) {
+        CommandData r = { CMD_VALUE, (i+1), self->values[i], 0 };
+        write_cmd(f, &r);
+    }
+    fclose(f);
+}
+
 int
-main(int argc, char *argv[]) {
- 
+main(int argc, char *argv[])
+{ 
     if (argc != 2) {
         fprintf(stderr, "Expected 2 arguments\n");
         exit(1);
@@ -194,6 +247,12 @@ main(int argc, char *argv[]) {
 
     printf("reading %s\n", fname);
     solver_read_file(&solver, fname);
+
+    const bool solution_found = solver_naive(&solver);
+    if (solution_found) {
+        print_values(solver.values, solver.n_variables);
+    }
+    write_results(&solver, solution_found);
 
     solver_destroy(&solver);
 }

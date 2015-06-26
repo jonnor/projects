@@ -21,6 +21,9 @@ commands = [
   'header'
   'declare'
   'domain'
+
+  'result' # responses
+  'value' # responses
 ]
 commands = commands.concat Object.keys(binaries)
 
@@ -143,9 +146,9 @@ deserialize = (stream, mapping) ->
     c = stream.readInt32LE pos+(3*4)
 
     op = operations.reverse[op.toString()]
-    if not op == 'header'
+    if op != 'header'
       a = mapping.reverse[a.toString()]
-    if not op == 'domain'
+    if op != 'domain' and op != 'value'
       b = mapping.reverse[b.toString()]
       c = mapping.reverse[c.toString()]
     ops.push [op, a, b, c]
@@ -153,6 +156,8 @@ deserialize = (stream, mapping) ->
   return ops
 
 solveOne = (dom, callback) ->
+  fs = require 'fs'
+
   mapping = buildVariableMapping dom.constraints
   console.log 'mappings', mapping
 
@@ -165,11 +170,22 @@ solveOne = (dom, callback) ->
   { exec } = require 'child_process'
   filename = 'out.csp.bin'
   # HACK: should be passed over stdin
-  require('fs').writeFileSync filename, stream
+  fs.writeFileSync filename, stream
   exec "./cstrain_kernel #{filename}", (err, stdout, stderr) ->
     console.log 'out', err, stdout, stderr
     return callback err if err
 
+    # FIXME: communicate over stdin
+    res = fs.readFileSync 'result.csp.bin'
+    results = deserialize res, mapping
+    variables = {}
+    for res in results
+      [op, a, b, c] = res
+      if op == 'results' and not a
+        return callback new Error 'Could not solve'
+      if op == 'value'
+        variables[a] = b
+    return callback null, variables
 
 tests = () ->
   chai = require 'chai'
@@ -177,8 +193,9 @@ tests = () ->
   describe 'hello world', ->
     it 'should solve', (done) ->
       d = Domain.create('trivial')
-        .eq 'a', 'b'
         .konst 'a', 5
+        .decl 'b', 0, 10
+        .eq 'a', 'b'
 
       console.log 'constraints',   d.constraints
       solveOne d, (err, solution) ->
