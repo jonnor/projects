@@ -77,6 +77,50 @@ could potentially make a generic remote controllable switch.
 Example: [JZC-11F](https://www.sparkfun.com/datasheets/Components/General/JZC-11F-05VDC-1Z%20EN.pdf)
 
 
+Testing ProtoPasta Conductive PLA
+--------------
+Test1: 0.4 mm nozzle extrusion in free air
+
+- at 220 deg C
+- Measuring as close as possible. ~400 ohm. Estimate for contact resistance
+- Measuring at ~1 cm, 3500 ohm.
+- Stretching the extuded part increases resistance!
+
+Test 2: 1x10x50 mm rod
+
+- 0.2 mm layer height (5 layers). 50 deg C buildplate.
+- Contact resistante varies a lot with applied pressure.
+Between low and high pressure on multimeter pins, variation over 2000 ohms.
+- Unable to reproduce 400 ohm contact resistance, getting ~800, ohms now
+- Bending the substrate first deforms up to 15. Does not snap violently, but instead tears up like dry rubber.
+- Seems to be able to physically handle a fair amount of mild bends (< 15 deg)
+
+Test 3: Bonding to paper
+
+- 1x10x50 mm rod
+- Post-it note taped down on build surface
+- Running first layer a bit lower than normal (extra "squeeze")
+- Sticks reasonably well, approx as how two posts-its stick to eachother
+- Bends pretty well with paper for mild bends
+
+Test 4: Bonding to paper with paper-glue
+
+- Using thin layer of 'UHU stic'
+- 0.5x5x50 mm rod
+- Substrate follows paper very well, have to force it apart starting at the edges
+- Can bend rod 180 degrees around middle
+- Still not perfect for flexible parts due to rigidity
+- Note: in ideal electronics 0.5x5 should have had 4 times the resistance of 1x10.
+Real results were only 2x, 3k versus 1.5k ohm. Contact resistance of 700 ohms does not explain all. Sub-optimal layer2layer resistance?
+
+TODO:
+
+- Test bonding to electronics components
+- Test solder-ability
+- Test bonding to PLA
+- Compare increasing width versus height (layers)
+
+
 Braindump
 =========
 
