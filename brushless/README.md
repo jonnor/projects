@@ -45,3 +45,6 @@ Drawbacks
 * Calculate appropriate number of windings
 * Manufacture, assemble and test prototype
 
+## References
+
+* [Thingiverse: Open Motor](http://www.thingiverse.com/thing:46428)

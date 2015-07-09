@@ -75,9 +75,7 @@ Some things are quite safety critical, like brake, propulsion and steering syste
 
 Exists on Thingiverse, by other people:
 
-* Chain protection rings
-* LED read light mount [1](http://www.thingiverse.com/thing:226475)
-* Bottle mount [1](https://www.youmagine.com/designs/bike-bottle-mount)
+
 
 Thingiverse searches:
 
@@ -98,7 +96,18 @@ TODO:
 
 Work by other people:
 
-* [3d-printed friction gear lever](https://www.youtube.com/watch?v=fLMA-8aSsDM)
+* [Brake handle](http://www.thingiverse.com/thing:243633)
+* [Friction gear lever](https://www.youtube.com/watch?v=fLMA-8aSsDM)
+* [Barrel adjuster](http://www.thingiverse.com/thing:87391)
+* [Handlebar grip](http://www.thingiverse.com/thing:825566)
+* [Deraillur guide wheel](http://www.thingiverse.com/thing:46393)
+
+Accessories:
+
+* [Mudguard](http://www.thingiverse.com/thing:355386)
+* Chain protection rings
+* LED read light mount [1](http://www.thingiverse.com/thing:226475)
+* Bottle mount [1](https://www.youmagine.com/designs/bike-bottle-mount)
 
 Research:
 
