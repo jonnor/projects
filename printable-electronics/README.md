@@ -93,7 +93,7 @@ Test 2: 1x10x50 mm rod
 Between low and high pressure on multimeter pins, variation over 2000 ohms.
 - Unable to reproduce 400 ohm contact resistance, getting ~800, ohms now
 - Bending the substrate first deforms up to 15. Does not snap violently, but instead tears up like dry rubber.
-- Seems to be able to physically handle a fair amount of mild bends (< 15 deg)
+- Seems to be able to physically handle a fair amount of mild bends (~15 deg)
 
 Test 3: Bonding to paper
 
@@ -113,10 +113,31 @@ Test 4: Bonding to paper with paper-glue
 - Note: in ideal electronics 0.5x5 should have had 4 times the resistance of 1x10.
 Real results were only 2x, 3k versus 1.5k ohm. Contact resistance of 700 ohms does not explain all. Sub-optimal layer2layer resistance?
 
+Test 5: Solderability
+
+- Using regular 15 watt hand-soldering iron, 40-60 solder
+- Attempted to solder edge of broken 1x10mm rod
+- Plastic melts and deforms away from the solder. No sign of wicking action
+- Seems impossible to solder, at least in conventional terms
+- Can probably use soldering iron to join two conductive plastic parts together
+
+Test 6: Rotary potmeter (FIXME: add picture)
+
+- End-to-end resistance of track was 2.8 k ohm
+- However even with medium pressure on viper, the resistance was often over 5-10k ohm
+- Using a metal viper did not reduce the variability significantly, though it elimitated extra reistance of viper
+- Using water/spit on the track also helped suprisingly little
+- Any practical design will need to
+1) Ensure high and constant pressure between wiper (using springs etc)
+2) Have a high resistance in track, on order of 100-500k ohm, to make the relative effect low.
+- Work by others: http://www.thingiverse.com/thing:172845
+- Holding two pieces of filament perpendicularly against eachother has much less variance.
+However trying to piece them back together where broken off yields higher and variable resistance.
+Suggesting that the surface a lot to say.
+
 TODO:
 
 - Test bonding to electronics components
-- Test solder-ability
 - Test bonding to PLA
 - Compare increasing width versus height (layers)
 
