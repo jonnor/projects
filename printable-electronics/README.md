@@ -9,17 +9,40 @@ that enable afforable additive manufacturing of conductive material
 
 * Specialized printers for electronics. Ex: Voxel 8
 * Electronically conductive filament for normal FDM/FFF printers.
-Ex: [ProtoPasta](http://www.proto-pasta.com/shop/conductive-pla-preorder),
+Ex: [ProtoPasta](http://www.proto-pasta.com/products/conductive-pla),
 Leapfrog Exotic,
-[Functionalize](http://functionalize.com/shop/)
+[Functionalize](http://functionalize.com/shop/),
+PolyMaker Conductive(http://www.polymaker.com/shop/conductive-graphene-filament/)
 
 It may also be possible to print channels in non-conductive
 material and then fill these with low viscocity conductive material (ex: Bare Conductive).
 
 
-
 Experiments
 ===========
+
+Electret microphone
+---------------------
+
+Status: Prototyped working with hand-wired electronics.
+
+[FreeCAD](./microphone-electret.fcstd)
+
+Has body diameter of 20.5 mm (13/16 inch), same as many commercial elecret/measurement microphones.
+For compatibility with accessories etc.
+
+Vitamins required:
+
+- 1x 9.5 mm electret microphone capsure (adaptable for 6-14 mm)
+- 1x 1uF-100uF capacitor. Polarized OK
+- 1x M4x20 screw
+- 1x M4 nut
+- 1x AA battery
+
+For usage, hook up with jack cable (6.3mm 1/8inch) to a mixer/recorder/sound-card **with preamp**.
+Future versions might include an integrated pre-amp circuit.
+
+Designed for printing with ProtoPasta Conductive.
 
 High-power active switch
 --------------------------
@@ -341,6 +364,11 @@ Sensors
 * Vibration, audio
 * Current consumption
 
+Sensor interfacing/conditioning
+
+* Piezo microphone preamp
+* Electret microphone. Can print shotgun mic!
+
 Control systems
 
 * Momentary switch (non/inverted)
@@ -349,10 +377,20 @@ Control systems
 * Timers (astable, monostable)
 * RF controlled switch (433Mhz/BT/WiFi)
 
+Signal connectors
+
+* 1/4" 6.3mm 'jack'. Male/female
+* 1/8" 3.5mm 'minijack', Male/female
+
 Power connectors
 
 * Mains/Wall socket plug. 110/230V
 * USB male&female. 5V
+* Car/sigarrette adapter. 12V
+
+Battery connectors. Note: tons of designs already on Thingiverse!
+
+* 9V. AAA, AA. CRxxXX
 
 It would be beneficial to establish best-practices for
 various classes of electronics (sub) circuits:
