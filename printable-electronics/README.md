@@ -26,7 +26,7 @@ Electret microphone
 
 Status: First working version printed and tested.
 
-![First working version](./doc/mic-elecret.jpg)
+![First working version](./doc/mic-electret.jpg)
 
 [DEMO VIDEO on Youtube](https://www.youtube.com/watch?v=UtWn3Vl2V2k&feature=youtu.be)
 
