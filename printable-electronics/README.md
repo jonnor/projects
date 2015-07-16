@@ -10,9 +10,9 @@ that enable afforable additive manufacturing of conductive material
 * Specialized printers for electronics. Ex: Voxel 8
 * Electronically conductive filament for normal FDM/FFF printers.
 Ex: [ProtoPasta](http://www.proto-pasta.com/products/conductive-pla),
-Leapfrog Exotic,
-[Functionalize](http://functionalize.com/shop/),
-PolyMaker Conductive(http://www.polymaker.com/shop/conductive-graphene-filament/)
+[Functionalize F-Electric](http://functionalize.com/shop/),
+[PolyMaker Conductive](http://www.polymaker.com/shop/conductive-graphene-filament/),
+[BlackMagic Conductive Graphene](https://www.blackmagic3d.com/ProductDetails.asp?ProductCode=GRPHN-175)
 
 It may also be possible to print channels in non-conductive
 material and then fill these with low viscocity conductive material (ex: Bare Conductive).
@@ -24,7 +24,11 @@ Experiments
 Electret microphone
 ---------------------
 
-Status: Prototyped working with hand-wired electronics.
+Status: First working version printed and tested.
+
+![First working version](./doc/mic-elecret.jpg)
+
+[DEMO VIDEO on Youtube](https://www.youtube.com/watch?v=UtWn3Vl2V2k&feature=youtu.be)
 
 [FreeCAD](./microphone-electret.fcstd)
 
@@ -33,16 +37,18 @@ For compatibility with accessories etc.
 
 Vitamins required:
 
-- 1x 9.5 mm electret microphone capsure (adaptable for 6-14 mm)
+- 1x 9.5 mm electret microphone capsule
 - 1x 1uF-100uF capacitor. Polarized OK
-- 1x M4x20 screw
-- 1x M4 nut
 - 1x AA battery
 
 For usage, hook up with jack cable (6.3mm 1/8inch) to a mixer/recorder/sound-card **with preamp**.
 Future versions might include an integrated pre-amp circuit.
 
-Designed for printing with ProtoPasta Conductive.
+[Suitable mic capsule](http://no.farnell.com/multicomp/mckpcm-97h67-40db-4809/microphone/dp/1758435)
+
+Designed for printing with ProtoPasta Conductive PLA. Will probably work with filaments with less resistance as well. Dual-extrusion not required!
+Alternatively, one could use single-core copper conductors ~1.5mm diameter put into the channels manually (solder to components).
+Would need to replace the thinnest trace in the top with a 1k-3.3k Ohm resitor, and probably tweak the springs for the jack socket.
 
 High-power active switch
 --------------------------
