@@ -19,7 +19,7 @@ Ideas
 Electricity generator
 -----------------------
 
-To keep in shape while being on the computer, and make the electricity useful instead of just going to.
+To keep in shape while being on the computer, and make the electricity useful instead of just going to waste.
 
 Coupling:
 
@@ -71,12 +71,6 @@ Bigger structural elements like the frame, is considered a separate project, see
 
 Some things are quite safety critical, like brake, propulsion and steering system.
 
-
-
-Exists on Thingiverse, by other people:
-
-
-
 Thingiverse searches:
 
 * [Shimano](http://www.thingiverse.com/search/page:1?q=shimano&sa=)
@@ -109,6 +103,11 @@ Accessories:
 * LED read light mount [1](http://www.thingiverse.com/thing:226475)
 * Bottle mount [1](https://www.youmagine.com/designs/bike-bottle-mount)
 
+Non-open 3d-printable work
+
+* [Bar-ends](http://www.shapeways.com/product/25ZVUMHBJ/handlebar-bicycle-accessories?li=search-results-6&optionId=42109292)
+* [Chainring for GT2 belt](http://www.shapeways.com/product/9X6E35ZMN/strida-belt-wheel-for-5-bolt-130-mm-spider?li=search-results-12&optionId=11994392)
+
 Research:
 
 * Shimano patent on sprokets [US patent no 4889521](http://www.google.com/patents/US4889521) expired in 2008.
@@ -131,8 +130,12 @@ Bigger structural elements are particularly challenging to 3d-print on a
 standard ~20x20x20cm RepRap-style printer.
 Both due to the sizes of the objects, and requirements for structural integrity.
 
-Several plastic-based (usually injection molded) bikes have been attempted,
+Several commercial plastic-based (usually injection molded) bikes have been attempted,
 [most failed](http://en.wikipedia.org/wiki/Plastic_bicycle).
+
+Existing work:
+
+* [ColorFabb: 3d-printed bike (using alu tubing)](http://www.thingiverse.com/thing:892442)
 
 Ideas:
 
