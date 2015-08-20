@@ -21,6 +21,14 @@ material and then fill these with low viscocity conductive material (ex: Bare Co
 Experiments
 ===========
 
+USB lights
+-----------
+
+
+References:
+
+* [Seeed Studio: USB PCB connector](http://www.seeedstudio.com/recipe/30-usb-pcb-business-card.htm)
+
 Electret microphone
 ---------------------
 
