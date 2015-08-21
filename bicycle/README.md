@@ -12,6 +12,16 @@ Casette removal tool
 
 For Shimano, CS-HS80-9 and similar.
 
+![Cassette remover](doc/shimano-cassette-tool.jpg)
+
+Meant for use with a 15mm (pedal) wrench.
+
+For removing a cassette you will need a chain-whip,
+or some other means of preventing the casette from turning.
+In the mounting direction, the casette stops naturally.
+
+Printed and tested for fit. Have not used it yet.
+
 
 Ideas
 =====
@@ -61,6 +71,8 @@ Exists Thingiverse
 TODO
 
 * thumb-screw for 1/4" bits 
+* triangle for 4,5,6mm allen key (using standard bits?)
+* pump, using one-way / check-valves and Ninjaflex gasket
 
 3d-printed parts
 ------------------
@@ -71,9 +83,18 @@ Bigger structural elements like the frame, is considered a separate project, see
 
 Some things are quite safety critical, like brake, propulsion and steering system.
 
+In progress:
+
+* Grip Shift indexed shifter
+* Rear derailleur
+* V-brake
+
 Thingiverse searches:
 
 * [Shimano](http://www.thingiverse.com/search/page:1?q=shimano&sa=)
+* [Avid](http://www.thingiverse.com/search/page:1?q=avid&sa=)
+* [Rockshox](http://www.thingiverse.com/search?q=rockshox&sa=)
+* [SRAM](http://www.thingiverse.com/search?q=sram&sa=)
 * [Bike](http://www.thingiverse.com/search?q=bike&sa=)
 * [Bicycle](http://www.thingiverse.com/search?q=bicycle&sa=)
 
@@ -95,6 +116,9 @@ Work by other people:
 * [Barrel adjuster](http://www.thingiverse.com/thing:87391)
 * [Handlebar grip](http://www.thingiverse.com/thing:825566)
 * [Deraillur guide wheel](http://www.thingiverse.com/thing:46393)
+* [Rockshox topcap replacement](http://www.thingiverse.com/thing:216280)
+* [Avid break bar clamp](http://www.thingiverse.com/thing:375601)
+* [Avid Elexir brake lever](http://www.thingiverse.com/thing:278216)
 
 Accessories:
 
@@ -121,7 +145,8 @@ are #40 of ISO, 12.7mm pitch, 7.65mm roller diam, roller width 1/8" or 3/32", ex
 [Thingiverse](http://www.thingiverse.com/search?q=Ratchet&sa=)
 [Wikipedia](http://en.wikipedia.org/wiki/Ratchet_(device))
 * [Belt-driven bicycle](http://en.wikipedia.org/wiki/Belt-driven_bicycle)
-* Looks like a drop-out is 10-25 USD to 3d-print in plastic (Shapeoko, Ponoko, Sculpteo)
+* Looks like a drop-out is 10-25 USD to 3d-print in plastic (Shapeways, Ponoko, Sculpteo)
+* [Shimano grip shifter](http://www.google.com/patents/US6718844)
 
 3d-printed bicycle structure
 ----------------
