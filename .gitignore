@@ -1,2 +1,7 @@
 *~
 *.fcstd1
+*.gcode
+*.pyc
+
+*.dxf
+*.stl
