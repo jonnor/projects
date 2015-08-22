@@ -23,6 +23,37 @@ In the mounting direction, the casette stops naturally.
 Printed and tested for fit. Have not used it yet.
 
 
+# In progress
+
+## Rear derailleur
+
+Status: *Prototyping*. Parallelogram motion and chain tensioner principle tested OK.
+
+![Rear derailleur concept](doc/rd-concept.jpg)
+
+Ideas
+
+* Use heads of standard m3 screws as the glide parts of paralleogram pivots
+* Be compatible with existing (Shimano) systems, dropout attachment
+
+TODO: 
+
+* Buy/design+fit idler wheels
+* Add a fastener for attaching to frame (M10 towards dropout?)
+* First functional test, w/ friction shifter
+* Make parallelogram a bit longer to preload spring better
+* Make wire pull distance compatible with Shimano
+* Verify/fix angle for following sprockets
+* Add adjustable stopper screws
+
+Vitamins needed
+
+* Stretch spring. Source: Clas Ohlson
+* Torque spring. Source, Clas Ohlson
+* 4x M3-16 screws
+* 1x M6-50 bolt
+
+
 Ideas
 =====
 
@@ -86,8 +117,9 @@ Some things are quite safety critical, like brake, propulsion and steering syste
 In progress:
 
 * Grip Shift indexed shifter
-* Rear derailleur
-* V-brake
+* V-braket
+
+
 
 Thingiverse searches:
 
@@ -112,7 +144,7 @@ TODO:
 Work by other people:
 
 * [Brake handle](http://www.thingiverse.com/thing:243633)
-* [Friction gear lever](https://www.youtube.com/watch?v=fLMA-8aSsDM)
+* Friction gear shifter [Thingiverse](http://www.thingiverse.com/thing:112602) [video](https://www.youtube.com/watch?v=fLMA-8aSsDM)
 * [Barrel adjuster](http://www.thingiverse.com/thing:87391)
 * [Handlebar grip](http://www.thingiverse.com/thing:825566)
 * [Deraillur guide wheel](http://www.thingiverse.com/thing:46393)
@@ -145,8 +177,8 @@ are #40 of ISO, 12.7mm pitch, 7.65mm roller diam, roller width 1/8" or 3/32", ex
 [Thingiverse](http://www.thingiverse.com/search?q=Ratchet&sa=)
 [Wikipedia](http://en.wikipedia.org/wiki/Ratchet_(device))
 * [Belt-driven bicycle](http://en.wikipedia.org/wiki/Belt-driven_bicycle)
-* Looks like a drop-out is 10-25 USD to 3d-print in plastic (Shapeways, Ponoko, Sculpteo)
-* [Shimano grip shifter](http://www.google.com/patents/US6718844)
+* Looks like a drop-out is 9-25 USD to 3d-print in plastic (Shapeways, Ponoko, Sculpteo)
+* [Shimano grip shifter patent](http://www.google.com/patents/US6718844)
 
 3d-printed bicycle structure
 ----------------
