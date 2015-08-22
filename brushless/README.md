@@ -45,6 +45,13 @@ Drawbacks
 * Calculate appropriate number of windings
 * Manufacture, assemble and test prototype
 
+## Reseach
+
+* [3d-printed transformer](http://3dprint.com/80379/3d-printed-power-transformer), says electromagnets with ProtoPasta Magnetic Iron not working well.
+
 ## References
 
 * [Thingiverse: Open Motor](http://www.thingiverse.com/thing:46428)
+* [15-deg stepper motor (halfstep capable)](https://www.youtube.com/watch?v=v2FNUNALSTw)
+
+
