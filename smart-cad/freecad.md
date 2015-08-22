@@ -87,3 +87,14 @@ Origin should default to lower left in plane
 
 In simple mode could just select object, (max) size for a tile,
 
+
+Considering structural strength of parts
+------------------------------
+
+For 3d-printing, direction when producing matters a lot.
+Having a visualization of the intended printing direction,
+and thus the layer direction.
+
+Rules of thumb
+
+
