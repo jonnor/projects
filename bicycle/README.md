@@ -53,6 +53,29 @@ Vitamins needed
 * 4x M3-16 screws
 * 1x M6-50 bolt
 
+## Remote for dampener lock-out
+
+For RockShox SID.
+
+Status: *Prototyping*. Lower part fits OK, works as replacement for manual operation. Top parts needs designing.
+
+
+Ideas
+
+* Remote to be usable with different dampeners by switching lower part (that goes onto dampener),
+including rear suspensions
+
+TODO
+
+* Design upper part. Two-way friction lever, or spring on one side?
+* May need to modify lower part, so that wire is supported when being pushed
+* Decide if wire ball goes on bottom or upper end
+* Test!
+
+Vitamins needed
+
+* Bicycle gear wire and Bowden tube. ~1 meter
+
 
 Ideas
 =====
