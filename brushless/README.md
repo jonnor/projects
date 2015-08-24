@@ -51,7 +51,9 @@ Drawbacks
 
 ## References
 
+* [Coil winding machine](http://www.thingiverse.com/thing:981327)
 * [Thingiverse: Open Motor](http://www.thingiverse.com/thing:46428)
 * [15-deg stepper motor (halfstep capable)](https://www.youtube.com/watch?v=v2FNUNALSTw)
+* [Another printed brushless](http://3dprint.com/89359/3d-print-brushless-pulse-motor)
 
 
