@@ -203,6 +203,17 @@ are #40 of ISO, 12.7mm pitch, 7.65mm roller diam, roller width 1/8" or 3/32", ex
 * Looks like a drop-out is 9-25 USD to 3d-print in plastic (Shapeways, Ponoko, Sculpteo)
 * [Shimano grip shifter patent](http://www.google.com/patents/US6718844)
 
+Continous variable transmission
+
+* References [wiki](https://en.wikipedia.org/wiki/Continuously_variable_transmission)
+* To be used in combination with belt-drive.
+* Principle: 2 variable-diameter pulleys, connected by belt. To shift, make one pulley bigger, other smaller.
+* Commonly used in scooters. Then with automatic regulation of gearing, using springs influenced by rotation speed.
+* + Forces distributed over relatively large areas. Should be reproducible without speciality parts.
+* Some [sketch models](./transmission-pulley-cvt.fcstd) of testing jig
+* Existing models [cone-based CVT](http://www.thingiverse.com/thing:531481)
+* Challenge: making compact enough?
+
 3d-printed bicycle structure
 ----------------
 
