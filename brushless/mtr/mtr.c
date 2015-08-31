@@ -23,6 +23,32 @@ mtr_fullstep_sequence[] = {
 };
 const uint8_t mtr_fullstep_length = MTR_STATIC_ARRAY_LENGTH(mtr_fullstep_sequence);
 
+uint8_t
+mtr_sequence_atwrapped(int8_t idx, int8_t *out_idx) {
+    if (idx < 0) {
+        idx = 3;
+    }
+    if (idx > 3) {
+        idx = 0;
+    } 
+
+    if (out_idx) {
+        *out_idx = idx;
+    }
+    return mtr_fullstep_sequence[idx];
+}
+
+int8_t
+mtr_sequence_find(uint8_t bits) {
+    int8_t sequence_no = -1;
+    for (int i=0; i<4; i++) {
+        if (mtr_fullstep_sequence[i] == bits) {
+            sequence_no = i;
+        }
+    }
+    return sequence_no;
+}
+
 
 // Parser
 typedef enum MtrCommandType_ {
@@ -94,27 +120,19 @@ mtr_stepper_calculate(MtrStepper *self, MtrBridge *out_bridge) {
     // XXX: hardcoded full-stepping
     if (distance_from_destination <= step_size) {
         // clockwise
-        self->sequence_no += 1;
-        if (self->sequence_no > 3) {
-            self->sequence_no = 0;
-        }
+        bridge_next.bits = mtr_sequence_atwrapped(self->sequence_no+1, &self->sequence_no);
         self->current_position += step_size;
     } else if (distance_from_destination >= step_size) {
         // counter-clockwise
-        self->sequence_no -= 1;
-        if (self->sequence_no < 0) {
-            self->sequence_no = 3;
-        }
+        bridge_next.bits = mtr_sequence_atwrapped(self->sequence_no-1, &self->sequence_no);
         self->current_position -= step_size;
     } else {
         // approximately there
     }
-    // FIXME: set bridge_next
     
     //MTR_DEBUG("dist, steps2go %d, %d\n", distance_from_destination, steps_to_dest);
     //MTR_DEBUG("sequence_no %d\n", self->sequence_no);
 
-    bridge_next.bits = mtr_fullstep_sequence[self->sequence_no];
     if (out_bridge) {
         *out_bridge = bridge_next;
     }
@@ -172,38 +190,19 @@ mtr_emu_step(MtrEmulator *self, MtrBridge step) {
     // TODO: return error/warn for illegal inputs
 
     // calculate which direction we are moving
-    // XXX: hardcoded full-step sequence
-    int8_t current_sequence_no = -1;
-    for (int i=0; i<4; i++) {
-        if (mtr_fullstep_sequence[i] == self->state.bits) {
-            current_sequence_no = i;
-        }
-    }
-
+    int8_t current_sequence_no = mtr_sequence_find(self->state.bits);
     if (current_sequence_no < 0) {
         MTR_DEBUG("ERROR: invalid current sequence no: %d", current_sequence_no);
     }
 
-    // moving clockwise?
-    int8_t next_sequence_no = current_sequence_no+1;
-    if (next_sequence_no > 3) {
-        next_sequence_no = 0;
-    }
-
-    if (mtr_fullstep_sequence[next_sequence_no] == step.bits) {
+    if (mtr_sequence_atwrapped(current_sequence_no+1, NULL) == step.bits) {
+        // moving clockwise
         self->current_position += step_size;
+    } else if (mtr_sequence_atwrapped(current_sequence_no-1, NULL) == step.bits) {
+        // moving counter-clockwise
+        self->current_position -= step_size;
     } else {
-        // moving counter-clockwise?
-        next_sequence_no = current_sequence_no-1;
-        if (next_sequence_no < 0) {
-            next_sequence_no = 3;
-        }
-        if (mtr_fullstep_sequence[next_sequence_no] == step.bits) {
-            self->current_position -= step_size;
-        } else {
-            MTR_DEBUG("ERROR: Invalid step %d, %d, %d\n",
-                next_sequence_no, mtr_fullstep_sequence[next_sequence_no], step.bits);
-        }
+        MTR_DEBUG("ERROR: Invalid step %d \n", step.bits);
     }
 
     MTR_DEBUG("current: %d %d %d\n", current_sequence_no, self->current_position, step_size); 
