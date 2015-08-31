@@ -15,3 +15,22 @@
 
 ## Status
 Just words
+
+## TODO
+
+0.0.1, proof of concept
+
+* Implement basic full-step control
+* Test with hardware
+
+0.1.0, Minimally useful
+
+* Implement configurable acceleration
+* Implement microstepping
+* Complete in a working single-axis machine
+
+
+0.2.0, Syncronized multi-axis
+
+* Implement shared-clock syncronization
+* 

@@ -176,14 +176,13 @@ mtr_print_steps(uint8_t bits) {
 void
 mtr_emu_step(MtrEmulator *self, MtrBridge step) {
     if (self->state.bits == 255) {
-        self->state.bits = step.bits;
+        self->state.bits = step.bits; // reset from init
     }
-
     if (self->state.bits == step.bits) {
         return; // no-op
     }
 
-    mtr_print_steps(step.bits);
+    //mtr_print_steps(step.bits);
 
     const int step_size = self->config.distance_per_step;
 
@@ -205,7 +204,7 @@ mtr_emu_step(MtrEmulator *self, MtrBridge step) {
         MTR_DEBUG("ERROR: Invalid step %d \n", step.bits);
     }
 
-    MTR_DEBUG("current: %d %d %d\n", current_sequence_no, self->current_position, step_size); 
+    //MTR_DEBUG("current: %d %d %d\n", current_sequence_no, self->current_position, step_size); 
     
     // TODO: calculated acceleration / speteed
     // TODO: consider microstepping

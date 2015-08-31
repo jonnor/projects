@@ -36,7 +36,7 @@ main(int argc, char *argv[])
             mtr_stepper_calculate(stepper, &step);
             mtr_emu_step(emulator, step);
         }
-        printf("stepper position: %d, %d, %d\n",
+        printf("stepper position: %d == %d == %d\n",
             cmds[i].arg2,
             stepper->current_position,
             mtr_emu_position(emulator));
