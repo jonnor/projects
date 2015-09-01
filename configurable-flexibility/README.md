@@ -27,6 +27,7 @@ Refererence
 
 * http://3dprint.com/83277/3d-printed-footprint-footwear/
 * http://www.demilked.com/japanese-inspired-wrap-around-shoes-furoshiki-vibram/
+* http://www.zappos.com/measure-your-shoe-size. Mens size 40 is 244mm, 42 is 260mm
 
 # Tests
 
@@ -47,15 +48,41 @@ After removing print, NinjaFlex adheres OK to the cotton. At 1mm thick, it follo
 Using UHU stick glue on the cotton improves adhesion both during print and afterwards,
 but does not significantly improve resistance to peeling.
 
-
-# Ideas
-
-## Thermalbonding NinjaFlex to fibres
+## Thermalbonding NinjaFlex to synthetic fibres
 
 If the melting point is ~200 degrees, might be able to fuse the materials together.
 This will form a much stronger bond than gluing.
 
-http://www.engr.utk.edu/mse/Textiles/Polyester%20fiber.htm suggests polyester fiber has ~250 deg C melting point.
-http://www.swicofil.com/polypropylene.html suggests that polypropylene fibers have ~170 deg C melting points.
-https://www.huvis.com/eng/product/prod_info.asp?num=&f=21&s=4&t=50&p=109 suggests that a range of 'low melt woven fibres' exist, with melting points 110-200 deg C.
+* http://www.engr.utk.edu/mse/Textiles/Polyester%20fiber.htm suggests polyester fiber has ~250 deg C melting point.
+* http://www.swicofil.com/polypropylene.html suggests that polypropylene fibers have ~170 deg C melting points.
+* https://www.huvis.com/eng/product/prod_info.asp?num=&f=21&s=4&t=50&p=109 suggests that a range of 'low melt woven fibres' exist, with melting points 110-200 deg C.
+* http://cameo.mfa.org/wiki/Acrylic_fiber
+
+A couple of tests fabrics were gotten at a local store, one "100% polyester" and one "polyester/nylon".
+The second material we were able to melt by pressing against the printer nozzle.
+
+Attempted to thermobond by setting heatbed to 70 degrees, hotend at 235 (15 higher than normal for NinjaFlex).
+The resulting bonding was significntly better than for cotton, but there was no 'fusing action' - and the
+bonding is still relatively easily peeled off.
+
+![Ninjaflex printed on polyester "Ninjaflex printed on polyester, was unable to thermobond"](./doc/ninjaflex-polyester.jpg)
+
+
+## Multi-part print to improve bonding
+
+Could then bond NinjaFlex to NinjaFlex, side-stepping issues of bonding to textile.
+
+* Print bottom part
+* Cut textile, including some holes for NinjaFlex to come through
+* Put textile into printer, on top of bottom print
+* Print upper part, bonding to lower through holes.
+* Effectively: embedding the fabric into the print
+
+Major benefits are that this is super-strong, and can be done with any textile material.
+
+![Embedding NinjaFlex in textile "Embedding NinjaFlex in textile: very successful"](./doc/ninjaflex-textile-embedding.jpg)
+
+# Ideas
+
+* Test a NinjaFlex+fabric shoe design. Possibly downscaled
 
