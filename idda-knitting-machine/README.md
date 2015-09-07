@@ -20,9 +20,10 @@ Motivation
 Status
 --------
 **Paused**
+
 The [Circular Knitic](http://www.varvarag.info/circular-knitic)
-[Github](https://github.com/var-mar/circular_knitic)
-[documentation](http://issuu.com/marcanet/docs/circular_knitic_documentation)
+[(Github)](https://github.com/var-mar/circular_knitic)
+[(docs)](http://issuu.com/marcanet/docs/circular_knitic_documentation)
 is an open source functional implementation of the same mechanism as Idda.
 
 We propose that further development is done as improvements to the base provided by the Circular Knitic.
