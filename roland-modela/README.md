@@ -4,6 +4,8 @@ Designed for Roland Modela MDX-15 at [Bitraf](http://bitraf.no) hackerspace.
 
 ## Clamping system
 
+![Clamping system "Clamping system"](./doc/clamping-system.jpg)
+
 Designed to be milled on the Modela itself, from 5-8 mm material. The roundclamp is 3d-printed.
 
 The base doubles as a sacrificial layer, and can be planed by the mill to ensure perfect flatness.
@@ -28,7 +30,7 @@ Parts:
 | [FreeCAD](./clamping-roundpuck.fcstd)
 | [STL](./export/rml-roundclamp-2.stl)
 
-![Clamping system "Clamping system"](./doc/clamping-system.jpg)
+
 
 
 ## TODO
