@@ -16,6 +16,20 @@ Vitamins needed:
 * 20 M4 nuts (for underside)
 * 2 M4x10mm Allen screws
 
+Parts:
+
+* Base 2x
+| [DXF](./export/rml-clampbase-half-1.dxf)
+| [FreeCAD](./clamping.fcstd)
+* Sideclamps
+| [DXF](./export/rml-sideclamp-1.dxf)
+| [FreeCAD](./clamping-sideclamp.fcstd)
+* Roundclamp
+| [FreeCAD](./clamping-roundpuck.fcstd)
+| [STL](./export/rml-roundclamp-2.stl)
+
+![Clamping system "Clamping system"](./doc/clamping-system.jpg)
+
 
 ## TODO
 
