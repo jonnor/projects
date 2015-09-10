@@ -45,11 +45,20 @@ Drawbacks
 * Calculate appropriate number of windings
 * Manufacture, assemble and test prototype
 
-## Reseach
+
+# Fabricated stepper motor
+
+* Should be able to mill 0.5mm silicone iron on Shopbot
+* Using 2mm bit, tooth spacing of ~3mm
+* 200/6 = 33 steps = 10.8 deg -> diameter = 32 mm
+* 200/4 = 50 steps = 7.2 deg -> diameter = 48 mm
+
+
+# Reseach
 
 * [3d-printed transformer](http://3dprint.com/80379/3d-printed-power-transformer), says electromagnets with ProtoPasta Magnetic Iron not working well.
 
-## References
+# References
 
 * [Coil winding machine](http://www.thingiverse.com/thing:981327)
 * [Thingiverse: Open Motor](http://www.thingiverse.com/thing:46428)

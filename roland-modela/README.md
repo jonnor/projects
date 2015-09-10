@@ -6,11 +6,13 @@ Designed for Roland Modela MDX-15 at [Bitraf](http://bitraf.no) hackerspace.
 
 ![Clamping system "Clamping system"](./doc/clamping-system.jpg)
 
-Designed to be milled on the Modela itself, from 5-8 mm material. The roundclamp is 3d-printed.
+Designed to be milled on the Modela itself, from 5-8 mm material, using ~2mm endmill.
+The roundclamp is 3d-printed.
 
 The base doubles as a sacrificial layer, and can be planed by the mill to ensure perfect flatness.
-Full worksize plates can be fixed with the sideclamps only, smaller pieces.
-You can still use double-sided tape, if that is preferred.
+Full worksize plates can be fixed with the sideclamps only,
+smaller pieces with the roundclamps or combination of side+roundclamp.
+You can still use double-sided tape, if that is preferred. 
 
 Vitamins needed:
 

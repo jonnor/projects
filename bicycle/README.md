@@ -121,6 +121,7 @@ Exists Thingiverse
 * Pads for keeping hydraulic brakes safe when disc is out. [1](http://www.thingiverse.com/thing:471166)
 * Crank bolt tool [1](http://www.thingiverse.com/thing:92353)
 * Ratchet/thumb-screw 1/4" bits (for 8,9,10mm bolts) [1](http://www.thingiverse.com/thing:207389)
+* [Dummy hub for maintenance/transport](http://www.thingiverse.com/thing:985382)
 
 TODO
 
@@ -227,6 +228,9 @@ Several commercial plastic-based (usually injection molded) bikes have been atte
 Existing work:
 
 * [ColorFabb: 3d-printed bike (using alu tubing)](http://www.thingiverse.com/thing:892442)
+* Aenimal BHULCK by Eurocompositi: Fully PLA-printed frame.
+[news](http://www.3ders.org/articles/20150901-eurocompositis-3d-printed-pla-bike-frame--made-from-plants--wins-eurobike-gold-award.html)
+[website](http://www.aenimal.it/)
 
 Ideas:
 

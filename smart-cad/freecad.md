@@ -1,5 +1,36 @@
 
-Throughs and learnings around FreeCAD
+# Throughs and learnings around FreeCAD
+
+# TODO
+
+* Test wether FreeCAD macros are picked up when in subdirectories
+* Create separate repo for FreeCAD macros
+* Maybe also add custom workbench setup?
+
+# Wanted
+
+* Tools/scripts for creating joinery.
+Everything from simple dowel+hole/mortise+tendon, finger-joints and cross-laps.
+https://en.wikipedia.org/wiki/Woodworking_joints
+Related to below idea about sectioning models, as in that case joinery could be automatically made.
+Related to Daniel. working on scripts for doing living-hinge type things.
+Look at how people do this in advanced tools like Rhino/Grasshopper, AutoCAD etc?
+* Better exporting tools.
+Produce all the 'deliverables'. Could be a script/macro.
+Should be runnable both from within GUI and commandline (for use on Travis CI).
+Could for instance walk through document, and export everything with names
+'part.stl', 'mypart.dxf' and 'ppp.step,stl'. Should have option for the prefix. Maybe default to 'export/$project-' ?
+* Tools for unrolling a sketch line. For use with PathArray where one is a complex geometry, and
+one is the same just linear. Should update length of linear line to match sketch geometry.
+Maybe related: http://www.freecadweb.org/wiki/index.php?title=Macro_unrollRuledSurface
+
+* A parametric/connected 'cross-section tool'.
+Currently the Part::CrossSection creates a copy which is not updated on changes to the part it comes from.
+I often used this for DXF export (for lasercut/milling). Then it is irritating (and error-prone) that
+it does not update...
+
+
+# Learned
 
 Rebasing part features
 ----------------------
