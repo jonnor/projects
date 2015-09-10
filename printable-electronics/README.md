@@ -18,6 +18,7 @@ It may also be possible to print channels in non-conductive
 material and then fill these with low viscocity conductive material (ex: Bare Conductive).
 
 
+
 Experiments
 ===========
 
@@ -182,6 +183,10 @@ TODO:
 Braindump
 =========
 
+Ideas for pieces
+--------
+
+* An electronic windchime, where conductive filament is used to sense wind/movement?
 
 
 Key process parameters
@@ -253,7 +258,7 @@ Traditional manufacturing methods also have very well established quality assura
 Successful commercial use of additive manufacturing will likely require the same.
 Some additional challenges are introduced because of the currently still unmature/developing
 nature of the materials and processes. Designing ways to do effective & efficient QA on
-a low-quantity scale is seemingly an unsolved problem.
+a low-quantity scale is seemingly an unsolved and untackled problem.
 
 **Recycling**
 
@@ -295,6 +300,7 @@ Tools
 ------
 * Finite Domain Solver (fd.js) for calculating lengths/crossection/resistance
 * [KiCAD](http://www.kicad-pcb.org/): EDA tool, including schematic capture, and many component 3d-models
+* [eaglepcb2freecad](http://sourceforge.net/projects/eaglepcb2freecad) for importing KiCAD into FreeCAD
 * DigiKey, has huge [repository of 3d-models](http://www.digikey.com/en/resources/3d-models)
 
 Calculating connections
