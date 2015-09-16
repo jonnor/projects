@@ -1,6 +1,38 @@
 
 # Mtr convenience
+class Stepper
+  constructor: () ->
+    @_self = Module['_mtr_stepper_new']()
+
+  free: () ->
+    Module['_mtr_stepper_free'] @_self
+
+
+# DOM helpers
+id = (name) ->
+  document.getElementById name
+
+# Main
+main = () ->
+  console.log 'main'
+
+  stepper = new Stepper()
+  stepper.free()
+
+  Module['_mtr_run_smokecheck']()
+
+  #id('runButton').onclick = runTests
+
+  console.log 'main done'
+
+main()
+
+
+
+
+
 ###
+TODO: automate creation of wrapper objects
 createApiWrapper = (prefix, methodnames, module) ->
   module = Module if not module
   
@@ -28,24 +60,8 @@ autoApiWrapper = (prefix, module) ->
   obj = {}
 
   for name, func of module
-    if name.indexOf(prefix) == 0
-###   
+    if name.indexOf(prefix) == 0 
 
 Stepper = createApiWrapper '_mtr_stepper', ['new', 'free']
 StepperEmulator = createApiWrapper '_mtr_emu', ['new', 'free']
-
-# DOM helpers
-id = (name) ->
-  document.getElementById name
-
-# Main
-main = () ->
-  console.log 'main'
-
-  console.log Object.keys Module
-
-  #id('runButton').onclick = runTests
-
-  console.log 'main done'
-
-main()
+###

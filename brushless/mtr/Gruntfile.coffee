@@ -39,21 +39,37 @@ module.exports = ->
       server:
         options:
           port: 8000
+          open: 'http://localhost:8000/ui/index.html'
+
+    watch:
+      src:
+        files: [
+          "ui/**/*"
+          "*.c"
+          "spec/**/*"
+        ]
+        tasks: "test"
+        options:
+          livereload: true
 
   # Grunt plugins used for building
   @loadNpmTasks 'grunt-exec'
 
   # Grunt plugins used for testing
   @loadNpmTasks 'grunt-contrib-connect'
-
+  @loadNpmTasks 'grunt-contrib-watch'
 
   # Our local tasks
   @registerTask 'build', 'Buld', (target = 'all') =>
     @task.run 'exec:host'
     @task.run 'exec:emscripten'
 
-  @registerTask 'test', 'Build MicroFlo and run automated tests', (target = 'all') =>
+  @registerTask 'test', 'Build run automated tests', (target = 'all') =>
     @task.run 'build'
+
+  @registerTask 'dev', 'Interactive developement', (target = 'all') =>
+    @task.run 'connect'
+    @task.run 'watch'
 
   @registerTask 'default', ['test']
 

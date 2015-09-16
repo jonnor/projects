@@ -2,3 +2,4 @@ _mtr_emu_new
 _mtr_emu_free
 _mtr_stepper_new
 _mtr_stepper_free
+_mtr_run_smokecheck
