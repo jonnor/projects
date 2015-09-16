@@ -57,6 +57,8 @@ mtr_machine_xy_init(MtrMachineXY *self) {
     mtr_emu_init(&self->emu_x);
     mtr_emu_init(&self->emu_y);
 
+    mtr_gcodeparser_init(&self->gcode_parser);
+
     // FIXME: unhardcode config, allow setting over commands
     MtrConfig config;
     config.time_per_clock = 10;
@@ -73,6 +75,7 @@ mtr_machine_xy_init(MtrMachineXY *self) {
 MtrMachineXY *
 mtr_machine_xy_new() {
     MtrMachineXY *self = MTR_NEW(MtrMachineXY);
+    mtr_machine_xy_init(self);
     return self;
 }
 
@@ -81,10 +84,10 @@ void
 mtr_machine_xy_sendgcode(MtrMachineXY *self, const char *str) {
     MtrCommand cmd;
     
-    for (int i=0; i<strlen(str); i++) { 
+    for (int i=0; i<=strlen(str); i++) { 
         const char byte = str[i];
         const bool cmd_ready = mtr_gcodeparser_parse(&self->gcode_parser, byte, &cmd);
-        if (cmd_ready) {
+        if (cmd_ready && cmd.type == MtrMove) {
             MtrStepper *target = (cmd.arg3 == MtrXAxis) ? &self->stepper_x : &self->stepper_y;
             MtrEmulator *target_emu = (cmd.arg3 == MtrXAxis) ? &self->emu_x : &self->emu_y;
             mtr_stepper_pushcmd(target, cmd);
@@ -159,14 +162,15 @@ void mtr_run_smokecheck_single() {
 void mtr_run_smokecheck_xy() {
     MtrMachineXY *machine = mtr_machine_xy_new();
     const char * cmds[] = {
-        "G1 X11",
-        "G1 Y33",
-        "G1 X22",
-        "G1 Y22"
+        "G1 X1100 ",
+        "G1 Y3300 ",
+        "G1 X2200 ",
+        "G1 Y2200 "
     };
     for (int i=0; i<MTR_STATIC_ARRAY_LENGTH(cmds); i++) {
         mtr_machine_xy_sendgcode(machine, cmds[i]);
-        printf("position: %s\n",
+        printf("'%s ' -> %s\n",
+            cmds[i],
             mtr_machine_xy_current_position(machine)
         );
     }

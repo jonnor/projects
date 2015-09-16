@@ -2,6 +2,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <stdlib.h>
+#include <string.h>
 #include <math.h>
 
 #define MTR_STATIC_ARRAY_LENGTH(arr) sizeof(arr)/sizeof(arr[0])
@@ -53,7 +54,8 @@ mtr_sequence_find(uint8_t bits) {
 typedef enum _MtrAxis {
     MtrXAxis = 0,
     MtrYAxis,
-    MtrZAxis
+    MtrZAxis,
+    MtrAxis_Invalid
 } MtrAxis;
 
 
@@ -71,6 +73,15 @@ typedef struct MtrCommand_ {
     int32_t arg3;
 } MtrCommand;
 
+void
+mtr_command_print(MtrCommand cmd) {
+    if (cmd.type == MtrMove) {
+        printf("Command(Move): speed=%d pos=%d axis=%d\n",
+            cmd.arg1, cmd.arg2, cmd.arg3);
+    } else {
+        printf("Command(Invalid)\n");
+    }
+}
 
 // Stepper
 typedef struct MtrBridge_ {
@@ -200,7 +211,7 @@ mtr_emu_step(MtrEmulator *self, MtrBridge step) {
     // calculate which direction we are moving
     int8_t current_sequence_no = mtr_sequence_find(self->state.bits);
     if (current_sequence_no < 0) {
-        MTR_DEBUG("ERROR: invalid current sequence no: %d", current_sequence_no);
+        MTR_DEBUG("ERROR: invalid current sequence no: %d\n", current_sequence_no);
     }
 
     if (mtr_sequence_atwrapped(current_sequence_no+1, NULL) == step.bits) {
@@ -229,21 +240,142 @@ mtr_emu_position(MtrEmulator *self) {
 // Trivial gcode (subset) parser.
 // Only intended for testing/demo
 typedef enum _MtrGcodeParserState {
-  MtrGcodeAwaitCommand = 0,
+  MtrGcodeAwaitCommandLetter = 0,
+  MtrGcodeAwaitCommandNumber,
+  MtrGcodeAwaitParameterLetter,
+  MtrGcodeAwaitParameterValue,
+
+  MtrGcodeCommandCompleted,
+
   MtrGcodeInvalid  
 } MtrGcodeParserState;
 
+#define MTR_GCODE_BUFFER_LENGTH 20
 typedef struct _MtrGcodeParser {
+    MtrGcodeParserState state;
+    char buffer[MTR_GCODE_BUFFER_LENGTH];
+    uint8_t buffer_index;
+
     MtrCommand cmd;
 } MtrGcodeParser;
+
+static void
+mtr_gcodeparser_reset(MtrGcodeParser *self) {
+    memset(self->buffer, 0, MTR_GCODE_BUFFER_LENGTH);
+    self->buffer_index = 0;
+    self->state = MtrGcodeAwaitCommandLetter;
+
+    self->cmd = (MtrCommand){ MtrCommand_Invalid, -1, -1, -1};
+}
+
+void
+mtr_gcodeparser_init(MtrGcodeParser *self) {
+    mtr_gcodeparser_reset(self);
+}
+
+static bool
+compare_last(MtrGcodeParser *self, int number, const char *value) {
+    const int start_index = self->buffer_index-number;
+    if (start_index < 0) {
+        return false;
+    }
+    for (int i=0; i>number; i++) {
+        const char a = value[i];
+        const char b = self->buffer[start_index+i];
+        if (a != b) {
+            return false;
+        }
+    }
+    return true;
+}
+
+static void
+clear_buffer(MtrGcodeParser *self) {
+    memset(self->buffer, '\0', MTR_GCODE_BUFFER_LENGTH);
+    self->buffer_index = 0;
+}
+
+void
+mtr_gcodeparser_parse_print(MtrGcodeParser *self, char input) {
+    printf("gcodeparser(state=%d, %d): '", self->state, self->buffer_index);
+    for (int i=0; i<=self->buffer_index; i++) {
+        printf("%c", self->buffer[i]);
+    }
+    printf("[%c]'", input);
+    printf("\n");
+}
 
 // returns true if a command has been completed
 bool
 mtr_gcodeparser_parse(MtrGcodeParser *self, char byte, MtrCommand *out_cmd) {
 
-    if (out_cmd) {
-        *out_cmd = self->cmd;
+
+    switch (self->state) {
+    case MtrGcodeAwaitCommandLetter:
+        if (byte == 'G') {
+           self->state = MtrGcodeAwaitCommandNumber;
+        }
+        break;
+    case MtrGcodeAwaitCommandNumber:
+        if (byte == ' ' || byte == '\n') {
+           if (compare_last(self, 2, "G2")) {
+              self->cmd.type = MtrMove;
+           }
+           clear_buffer(self);
+           self->state = MtrGcodeAwaitParameterLetter;
+        }
+        break;
+    case MtrGcodeAwaitParameterLetter:
+        {
+        const char axis = self->buffer[self->buffer_index-1];
+        if (axis == 'X' || axis == 'Y') {
+           self->state = MtrGcodeAwaitParameterValue;
+           if (axis == 'X') {
+                self->cmd.arg3 = MtrXAxis;
+           } else if (axis == 'Y') {
+                self->cmd.arg3 = MtrYAxis;
+           }
+           clear_buffer(self);
+        }
+        }
+        break;
+    case MtrGcodeAwaitParameterValue:
+        if (byte == ' ') {
+           float val = -11;
+           const char *str = self->buffer;
+           // TODO: interpret as millimeter, not coordinates
+           const bool success = (sscanf(str, "%f", &val) == 1);
+           if (success) {
+               self->cmd.arg1 = 0;
+               self->cmd.arg2 = val;
+               self->state = MtrGcodeCommandCompleted;
+           } else {
+              mtr_gcodeparser_reset(self);
+           }
+        }
+        break;
+
+    case MtrGcodeCommandCompleted:
+        break;
+    case MtrGcodeInvalid:
+        break;
     }
+
+    if (self->buffer_index+1 < MTR_GCODE_BUFFER_LENGTH) {
+        self->buffer[self->buffer_index++] = byte;
+    } else {
+        mtr_gcodeparser_reset(self);
+        return false;
+    }
+
+    if (self->state == MtrGcodeCommandCompleted) {
+        if (out_cmd) {
+            *out_cmd = self->cmd;
+        }
+        mtr_gcodeparser_reset(self);
+        return true;
+    }
+
     return false;
 }
 
