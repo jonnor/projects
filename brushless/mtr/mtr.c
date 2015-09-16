@@ -49,6 +49,13 @@ mtr_sequence_find(uint8_t bits) {
     return sequence_no;
 }
 
+// Common
+typedef enum _MtrAxis {
+    MtrXAxis = 0,
+    MtrYAxis,
+    MtrZAxis
+} MtrAxis;
+
 
 // Parser
 typedef enum MtrCommandType_ {
@@ -61,6 +68,7 @@ typedef struct MtrCommand_ {
     MtrCommandType type;
     int32_t arg1;
     int32_t arg2;
+    int32_t arg3;
 } MtrCommand;
 
 
@@ -137,6 +145,7 @@ mtr_stepper_calculate(MtrStepper *self, MtrBridge *out_bridge) {
         *out_bridge = bridge_next;
     }
 }
+
 
 bool
 mtr_stepper_done(MtrStepper *self) {
@@ -216,3 +225,26 @@ int
 mtr_emu_position(MtrEmulator *self) {
     return self->current_position;
 }
+
+// Trivial gcode (subset) parser.
+// Only intended for testing/demo
+typedef enum _MtrGcodeParserState {
+  MtrGcodeAwaitCommand = 0,
+  MtrGcodeInvalid  
+} MtrGcodeParserState;
+
+typedef struct _MtrGcodeParser {
+    MtrCommand cmd;
+} MtrGcodeParser;
+
+// returns true if a command has been completed
+bool
+mtr_gcodeparser_parse(MtrGcodeParser *self, char byte, MtrCommand *out_cmd) {
+
+    if (out_cmd) {
+        *out_cmd = self->cmd;
+    }
+    return false;
+}
+
+
