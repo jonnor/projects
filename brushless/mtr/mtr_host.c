@@ -107,78 +107,9 @@ char *
 mtr_machine_xy_current_position(MtrMachineXY *self) {
     size_t MAX_LEN = 100;
     char *str = malloc(MAX_LEN+1);
-    snprintf(str, MAX_LEN, "X: %.2f X: %.2f",
+    snprintf(str, MAX_LEN, "X: %8.2f Y: %8.2f",
             (float)mtr_emu_position(&self->emu_x),
             (float)mtr_emu_position(&self->emu_y)
     );
     return str;
-}
-
-
-
-
-void mtr_run_smokecheck_single() {
-
-    MtrEmulator s_emulator;
-    MtrEmulator *emulator = &s_emulator;
-    mtr_emu_init(emulator);
-
-    MtrStepper s_stepper;
-    MtrStepper *stepper = &s_stepper;
-    mtr_stepper_init(stepper);
-
-    MtrConfig config;
-    config.time_per_clock = 10;
-    config.distance_per_step = 13;
-
-    stepper->config = config;
-    emulator->config = config;
-
-    // would normally come from I2C or gcode+USB/serial
-    MtrCommand cmds[] = {
-        { MtrMove, 0, 31*10 },
-        { MtrMove, 0, 53*10 },
-        { MtrMove, 0, 1*10 }
-    };
-
-    for (int i=0; i<MTR_STATIC_ARRAY_LENGTH(cmds); i++) {
-        mtr_stepper_pushcmd(stepper, cmds[i]);
-        while (!mtr_stepper_done(stepper)) {
-            MtrBridge step;
-            mtr_stepper_calculate(stepper, &step);
-            mtr_emu_step(emulator, step);
-        }
-        printf("stepper position: %d == %d == %d\n",
-            cmds[i].arg2,
-            stepper->current_position,
-            mtr_emu_position(emulator));
-    }
-
-    mtr_stepper_destroy(stepper);
-    mtr_emu_destroy(emulator);
-}
-
-
-void mtr_run_smokecheck_xy() {
-    MtrMachineXY *machine = mtr_machine_xy_new();
-    const char * cmds[] = {
-        "G1 X1100 ",
-        "G1 Y3300 ",
-        "G1 X2200 ",
-        "G1 Y2200 "
-    };
-    for (int i=0; i<MTR_STATIC_ARRAY_LENGTH(cmds); i++) {
-        mtr_machine_xy_sendgcode(machine, cmds[i]);
-        printf("'%s ' -> %s\n",
-            cmds[i],
-            mtr_machine_xy_current_position(machine)
-        );
-    }
-}
-
-void
-mtr_run_smokecheck() {
-    mtr_run_smokecheck_xy();
-
-    mtr_run_smokecheck_single();
 }

@@ -29,7 +29,7 @@ module.exports = ->
     # BDD tests on Node.js
     mochaTest:
       nodejs:
-        src: ['test/*.coffee']
+        src: ['spec/*.coffee']
         options:
           reporter: 'spec'
           require: 'coffee-script/register'
@@ -56,6 +56,7 @@ module.exports = ->
   @loadNpmTasks 'grunt-exec'
 
   # Grunt plugins used for testing
+  @loadNpmTasks 'grunt-mocha-test'
   @loadNpmTasks 'grunt-contrib-connect'
   @loadNpmTasks 'grunt-contrib-watch'
 
@@ -66,6 +67,7 @@ module.exports = ->
 
   @registerTask 'test', 'Build run automated tests', (target = 'all') =>
     @task.run 'build'
+    @task.run 'mochaTest'
 
   @registerTask 'dev', 'Interactive developement', (target = 'all') =>
     @task.run 'connect'
