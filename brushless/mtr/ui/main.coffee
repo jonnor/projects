@@ -1,12 +1,5 @@
 
 # Mtr convenience
-class Stepper
-  constructor: () ->
-    @_self = Module['_mtr_stepper_new']()
-
-  free: () ->
-    Module['_mtr_stepper_free'] @_self
-
 
 # DOM helpers
 id = (name) ->
@@ -16,10 +9,12 @@ id = (name) ->
 main = () ->
   console.log 'main'
 
-  stepper = new Stepper()
-  stepper.free()
+  machine = new mtr.MachineXY()
+  machine.send ' '
 
-  Module['_mtr_run_smokecheck']()
+  # TODO: allow to input gcode
+  # TODO: add a visualiztion of movement
+  # use a tick+callback based API
 
   #id('runButton').onclick = runTests
 

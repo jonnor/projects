@@ -1,20 +1,6 @@
 
-mtr = require '../browser/mtr.js'
+mtr = require '../mtr.coffee'
 chai = require 'chai'
-
-# TODO: move into library
-class MachineXY
-  constructor: () ->
-    @instance = mtr.ccall 'mtr_machine_xy_new', 'number', [], []
-
-  send: (gcode) ->
-    mtr.ccall 'mtr_machine_xy_sendgcode', null, ['number', 'string'], [@instance, gcode]
-  position: () ->
-    str = mtr.ccall 'mtr_machine_xy_current_position', 'string', ['number'], [@instance]
-    pos =
-      x: parseFloat str.slice(2, 2+9)
-      y: parseFloat str.slice(14, 14+9)
-    return pos
 
 cases = [
   { gcode: "G1 X1100 ", x: 1100, y: 0 }
@@ -24,7 +10,7 @@ cases = [
 ]
 
 describe 'XY machine', ->
-  machine = new MachineXY
+  machine = new mtr.MachineXY
 
   describe 'sending serial of gcode commands', ->
     cases.forEach (tcase, idx) ->
@@ -33,6 +19,6 @@ describe 'XY machine', ->
         it "should move to #{tcase.x}, #{tcase.y}", ->
           machine.send tcase.gcode
           pos = machine.position()
-          delta = 34
+          delta = 34 # FIXME: make a lot lower when moving to mm instead of machinecords
           chai.expect(pos.x).to.be.closeTo tcase.x, delta
           chai.expect(pos.y).to.be.closeTo tcase.y, delta
