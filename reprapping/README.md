@@ -4,6 +4,8 @@
 Experiment in super low-cost XY stage, for uses in digital fabrication techniques
 which have minimal weight and forces on head (laser engraving, 3d-printing).
 
+[Youtube VIDEO](https://www.youtube.com/watch?v=5F9-HIbBYwc)
+
 ![TapeXY first prototype](./doc/tapexy-first.jpg)
 
 Key features:
