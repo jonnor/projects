@@ -31,6 +31,7 @@ TODO:
 * Design a proper belt/line attachment and tensioning system
 * Add mounting holes for endstops
 * Mount laser diode, run tests
+* Prototype a fabbable bearing, also using Kapton tape?
 * Maybe use double plates on gantry for stiffness. Also for base?
 * Design some self-adjusting system for friction parts
 
