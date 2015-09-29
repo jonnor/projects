@@ -3,6 +3,7 @@
 
 Experiment in super low-cost XY stage, for uses in digital fabrication techniques
 which have minimal weight and forces on head (laser engraving, 3d-printing).
+Inspired by the [RishaLaser](http://rishalaser.org) project.
 
 [Youtube VIDEO](https://www.youtube.com/watch?v=5F9-HIbBYwc)
 
@@ -31,10 +32,16 @@ TODO:
 * Design a proper belt/line attachment and tensioning system
 * Add mounting holes for endstops
 * Mount laser diode, run tests
-* Prototype a fabbable bearing, also using Kapton tape?
 * Maybe use double plates on gantry for stiffness. Also for base?
 * Design some self-adjusting system for friction parts
 
 Later:
 
 * Reduce number of screws used, by having lasercut pins instead
+* Prototype a fabbable bearing, also using Kapton tape?
+
+Research
+
+* Coefficient of friction.
+[Table](http://www.goodfellow.com/catalogue/GFCat2C.php?ewd_token=Q4ZIFOAVRhE2dSOYkbUxPMdSBZyxXk&n=Ab6sV0qHM8iAeitFJGlgDA1qjQCrhQ&ewd_urlNo=GFCat26&type=30&prop=3)
+Kapton/Polyimide: 0.45, Teflon/PTFE: 0.05-0.2, UHMW PE: 0.1-0.2.
