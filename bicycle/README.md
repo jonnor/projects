@@ -4,6 +4,29 @@ Projects around or involving bikes/bicycles.
 I worked for 6 years a bike salesman and mechanic at
 Din Sykkel / [Sykkellåven](http://www.sykkellaven.no/) in Tønsberg while studying.
 
+## License
+
+All files in this folder are available under the [CC-BY 4.0](http://creativecommons.org/licenses/by/4.0/) license.
+
+    You are free to:
+
+        Share —
+          copy and redistribute the material in any medium or format
+        Adapt —
+          remix, transform, and build upon the material for any purpose, even commercially.
+
+    Under the following terms:
+
+        Attribution —
+          You must give appropriate credit, provide a link to the license, and indicate if changes were made.
+          You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+
+        No additional restrictions —
+          You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+
+
+Please attribute to `Jon Nordby`, with a link to `https://github.com/jonnor/projects/tree/master/bicycle`.
+
 Tools
 =====
 
@@ -175,6 +198,7 @@ Work by other people:
 * [Rockshox topcap replacement](http://www.thingiverse.com/thing:216280)
 * [Avid break bar clamp](http://www.thingiverse.com/thing:375601)
 * [Avid Elexir brake lever](http://www.thingiverse.com/thing:278216)
+* [Brake cable tensioner](http://www.thingiverse.com/thing:1023143)
 
 Accessories:
 
