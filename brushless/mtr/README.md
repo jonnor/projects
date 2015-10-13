@@ -34,3 +34,23 @@ Just words
 
 * Implement shared-clock syncronization
 * 
+
+
+# Research
+
+### Raster-engraving
+
+Some custom Marlin-derivative firmware have support for raster-engraving using `G7`
+
+    G7 N0 L68 DAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhaGBUQFRiZ0ZPVExARUU6RTpITD1GU05Q
+
+      N: new line: increments Y axis by LASER_RASTER_MM_PER_PULSE *
+    LASER_RASTER_ASPECT_RATIO from Configuration.h 0 = negative movement
+    in the X axis, 1 = positive X axis movement.
+      L: byte length of the packed pixel set
+      D: data, base 64 encoded 0-255/pixel 
+
+* https://groups.google.com/forum/#!topic/lansing-makers-network/h4-NNiaeNv0
+* http://wiki.lansingmakersnetwork.org/equipment/buildlog_laser_cutter
+* https://github.com/wreality/imagetogcode
+
