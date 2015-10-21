@@ -94,3 +94,27 @@ I am of the opinion that
     playing off peoples want/need to associate with tribes or classes,
     and fear of not being accepted.
 
+
+# Automated production machines
+
+Open source
+
+* Linear knitting machine.
+[Knitic](http://www.knitic.com/),
+[OpenKnit](http://makezine.com/2014/02/27/openknit-an-open-source-knitting-machine/)
+* Circular knitting machine [Circular Knitic](http://www.knitic.com/2014/12/27/circular-knitic/)
+* Pattern-making software [Valentina](http://valentinaproject.bitbucket.org/) [KnitWeb](https://github.com/fashiontec/knitweb)
+* Communities
+[FashionTec](https://fashiontec.wordpress.com/)
+OpenSourceEcology [wiki](http://opensourceecology.org/wiki/Clothes) [discussion](http://forum.opensourceecology.org/discussion/563/textiles-and-clothing/p1)
+[OpensourceTextiles](http://opensourcetextiles.org/)
+* Jacquard loom [osloom](http://www.osloom.org/)
+* Embroidery machine mod (XY stage) for existing sewing machine.
+[Openbuilds](http://www.openbuilds.com/builds/embroidery-machine-with-xy-belt-and-pinion-drive.691/)
+* Spinning machines. [Electric Eel](http://www.electriceelwheel.com/wp/)
+
+Existing in industry
+
+* Pocket attachers. Manual loading. [video](https://youtu.be/oaOtX1btpUM?t=75)
+* Pattern/programmale sewing machine. [4-axis](https://youtu.be/r7HhCmeCIy8?t=72) [2-axis](https://youtu.be/c9YANXdc_DY?t=102)
+* Industrial loom [how it works](https://www.youtube.com/watch?v=TyhDkd8Iabs)
