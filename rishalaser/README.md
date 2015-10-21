@@ -2,6 +2,10 @@
 November 2014 I started building a [Risha](http://rishalaser.org) open source laser cutter,
 for use at [Bitraf](http://bitraf.no) hackerspace in Oslo, Norway.
 
+Status
+========
+Not happy with XY mechanics, I started to build [TapeXY](../reprapping) instead.
+Probably will not continue this.
 
 Customizations
 ============
@@ -16,33 +20,35 @@ and because portability is not that important.
 * Custom laser diode driver (details TBD)
 * Using M5 threaded-rod instead of 5mm slick rod for slave axel
 
-TODO
-=====
-
-* Print rest of parts
-* Complete mechanical assembly
-* Test drive without laser
-* Test using A9288 stepper driver as current source
-* (possibly) Adapt laser mount to fit customization
-* Test drive with laser
-* Implement laser heatsink
-* Adapt eletronics enclosure to fit customizations
-* Write docs/procedures for safe use
-* Run BSU workshop
-
 Worklog
 ========
 
-December 1. 2 hour
+### September
+
+Stopped project in favor of TapeXY.
+
+### September 17, 2015. 8 hours.
+
+
+* Assembled X axis complete, Y axis missing belts, no endstops.
+* Sourced heatsink, designed & printed mounts.
+* Roughed in focus. Proper focus may still require moving laser further up.
+* Tested laser diode with lab power supply, on various materials. Max 900mA (can go 1800mA)
+* Synthetic textiles cut very nicely, on low power with small kerf, can probably be cut pretty fast.
+* Wood and grey-cardboard engraves OK. Was unable to cut the grey cardboard. Solid 1mm thick.
+* Moved XY axis around manually, and the Y axis seems prone to binding. Single LMU8 might cause it.
+
+
+### December 1, 2014. 2 hour
 Documentation of ideas
 
-November 29+30. 8 hours
+### November 29+30. 8 hours
 Fixed and tuned the two Ultimaker 3d-printers at Bitraf.
 Printed around half of the parts.
 Used "line" type support in Cura, worked very nicely. 33% infill.
 The parts are in general very printable.
 
-November 25. 6 hours
+### November 25. 6 hours
 Researched the various options for laser diodes.
 Ordered all electronics and hardware parts that cannot be sourced locally.
 Estimated delivery for all parts between 10-20 December.
@@ -50,8 +56,15 @@ Most mechanical parts should however be in place first week of December.
 Sourced from Amazon, Makeblock, E3D, DealExtreme EU.
 Local sourcing planned from Clas Ohlson.
 
-October
-Talked to Moushira about project at Open Hardware Summit Rome.
+### October
+Talked to Rishalaser founder Moushira, at Open Hardware Summit Rome.
+
+TODO
+=====
+
+* Test the other lens
+* Test using A9288 stepper driver as current source
+* Test PWM control of diode
 
 Ideas
 ======
