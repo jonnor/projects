@@ -62,6 +62,21 @@ Of mine
 * [Clothing](../clothing)
 * [Rishalaser](../rishalaser)
 
+## TapeZ
+
+Moving-bed Z-axis stage for laserengraver/3d-printer to go with TapeXY.
+Also uses Kapton tape and braided Nylon wire.
+
+Existing wire/belt Z-axis:
+
+* [Sli3dr](http://richrap.blogspot.co.uk/2014/07/3d-printers-big-printers-small-printers.html)
+* [Igentis](https://www.youmagine.com/designs/ingentis-a-tantillus-variant)
+* [Printxel](http://printxel.blogspot.ca/2012/12/printxel-community.html)
+* http://forums.reprap.org/read.php?177,310249
+* http://forums.reprap.org/read.php?160,170024
+* http://forums.reprap.org/read.php?177,192178
+* http://forums.reprap.org/read.php?14,319321
+* http://forums.reprap.org/read.php?279,188149
 
 ## Experiments
 
