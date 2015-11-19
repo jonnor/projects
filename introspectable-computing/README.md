@@ -14,12 +14,12 @@ typically in programming, which usually is limited to very primitive information
 
 There are 3 primary motivations for this work. From most concrete to most speculative:
 
-1) Increasing the ability of experienced programmers to reason about
+1. Increasing the ability of experienced programmers to reason about
 non-trivial systems, and write more advanced and robust software.
-2) Helping blur the lines between 'programmers' and 'non-programmers' (domain experts, interested users),
+2. Helping blur the lines between 'programmers' and 'non-programmers' (domain experts, interested users),
 by making the system more inviting and self-describing.
-3) Open up the possibility for self-governing systems and intelligent agents.
-Where the entity using the introspection information
+3. Open up the possibility for self-governing systems and intelligent agents.
+Where the entity using the introspection information 
 
 
 # Areas of research
