@@ -118,3 +118,65 @@ Existing in industry
 * Pocket attachers. Manual loading. [video](https://youtu.be/oaOtX1btpUM?t=75)
 * Pattern/programmale sewing machine. [4-axis](https://youtu.be/r7HhCmeCIy8?t=72) [2-axis](https://youtu.be/c9YANXdc_DY?t=102)
 * Industrial loom [how it works](https://www.youtube.com/watch?v=TyhDkd8Iabs)
+
+
+# Automated industrial loom
+
+For use with locally sourced material. For instance (in Norway), wool and linen.
+Focus on ability to make clothing, or technical textiles. Decorative secondary, for now.
+
+References
+
+* [Lego small mechanical loom](https://www.youtube.com/watch?annotation_id=annotation_215425851&feature=iv&src_vid=i6RJN3l6q4w&v=WC6wM_XsWO4)
+
+## Heddle movement (shaft)
+
+
+Motion: 
+Shape of heddles can be digitally fabricated (printed/lasercut).
+Altenatively, one can use a (preferably metal) loop to form the 'eye', attached with string at top+bottom.
+
+## Weft insertion
+
+When using a rapier, also need scissors to cut the weft thread after insertion.
+With a flying shuttle this is not needed, as the thread loops back, and the weft is essentially continious.
+
+References
+
+* [Youtube: Types of weft insertion](https://www.youtube.com/watch?v=s0W0iDj7_hc)
+* [Thingiverse: Simple rack&pinion OpenSCAD](http://www.thingiverse.com/thing:172508/#files)
+
+## Weft pull
+
+Reed needs to be very fine for fine textile. Often steel profiles are used.
+For coarser weaving, should be digitally fabricatable. Could for instance make the reeds fairly deep,
+like those used for projectile-based weft insertion. Depending on required
+
+TODO: find out what weft pull is required
+
+Motion: 
+
+## Warp/cloth rollers
+
+The warp threads come from bobbins, over a roller to guide and maintain tension.
+
+TODO: find out typical warp tension
+
+## Motion syncronization
+
+Each of the mechanical parts must act in unity with the others if the machine is to work reliably.
+Can be done entirely mechanically. Advantage is only needing a single motor,
+disadvantage is many complex parts in motion, and dependencies between sub-systems.
+
+
+
+## Solenoid for Jacquard loom
+
+Individual control over heddles on a Jacquard loom, requires a cheap/reproducable device.
+Since only two states (up & down) are needed, can use a solenoid.
+
+References
+
+* http://www.hydraforce.com/electro/Elec-pdf/3-440-1.pdf
+* http://hyperphysics.phy-astr.gsu.edu/hbase/electric/indsol.html
+* http://www.qsl.net/pa2ohh/jslcimp.htm

@@ -86,3 +86,22 @@ Major benefits are that this is super-strong, and can be done with any textile m
 
 * Test a NinjaFlex+fabric shoe design. Possibly downscaled
 
+## Embedding textiles in 3d print
+
+Example of a combined additive+subtractive digital fabrication process.
+Textile can be lasercut or cut with dragknife.
+
+Braindump. 
+
+Possible properties
+
+* Strength. Fibres in textile stiffness of PLA/ABS
+* Shock absorption and grip/friction of NinjaFlex
+* Texture/pattern. Using textile to avoid or combine with typical FDM texture
+* Replace stitching with 3d printed seams.
+* 3 dimensional structure in clothing
+* Using conductive filament for active wearables
+* 'Textile' could also be paper. Or fibreglass/carbonfibre. Epoxying later?
+
+
+
