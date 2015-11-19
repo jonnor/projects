@@ -34,7 +34,7 @@ In rough order of time spent / maturity.
 - Finite State Automata/Machines: [Finito](https://github.com/jonnor/finito)
 - [Design by Contract](https://en.wikipedia.org/wiki/Design_by_contract)
 / Contracts Programming: [Agree](https://github.com/jonnor/agree)
-- Equations & "spreadsheets": [1](./grids.coffee)
+- Equations & "spreadsheets": [Formulate](https://github.com/jonnor/formulate)
 - Constraint Satisfaction: [1](./cstrain.coffee)
 - Promises incl chains/composition
 - Functional programming/composition
