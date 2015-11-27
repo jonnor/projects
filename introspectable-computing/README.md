@@ -60,3 +60,7 @@ Established
 
 - [Python docstrings](https://en.wikipedia.org/wiki/Docstring), `doc()` and `help()` functions
 
+Research
+
+- [metamodels for structured interaction with machine intelligence](http://ppig.org/sites/default/files/2015-PPIG-26th-Sarkar-2.pdf).
+Many good references to work on interactive machine learning, and end-user programming/debugging. No sure I buy premise of 'goal being ill-defined'.
