@@ -1,17 +1,51 @@
 # Clothing
 
-## Personalization using digital fabrication
+All files here, unless noted otherwise, are released under [CC-BY](http://creativecommons.org/licenses/by/4.0/).
 
-Having personalized clothing is tricky&expensive when buying from niche,
+# Designs
+
+## Textile watchband
+
+![Textile watchband in use](./img/watchband-textile-use.jpg)
+
+Designed for laser-cutting. Key ideas:
+
+* Using a fold of doubled fabric as connecting loop, for strength
+* Using laser to fuse synthetic fabric, to avoid fraying edge and sewing
+
+Made in collaboration with [Annika Rockenberger](http://www.annikarockenberger.com/).
+
+Process:
+
+* Take a piece of Polyester, or similar synthetic textile
+* Optional, recommended: Use gluestick PVA/like for paper, on the fabric, to ease folding
+* Fold it over to make a loop, pressing the two sides firmly together
+* Tape the textile onto a piece of wood, stetched out evenly
+* Load the DXF file, position the pieces with fold/watch-side aligned vertically
+* Run the job such that the origin is slightly before the fold. This to avoid cutting off the fold
+* Open up the fold, insert here pins and attach to watch
+* Attach clasp by putting pin through stitch holes (other end of short piece)
+
+We had best fusing results when moving the laser slightly out of focus (13.5 mm instead of perfect-focus 10.5mm),
+and when having air-assist turned off. On our Redsail 60w laser, we used 30 mm/second speed and 3% power.
+
+Made for a Casio digital watch, but can be adapted to most watches. Length is parametric in the source files.
+We reused the existing clasp, but one can probably 3d-print one.
+
+
+## Ideas
+
+### Retrofitted personalization using digital fabrication
+
+Having personalized clothing is tricky&expensive when buying from niche stores,
 and creating things from scratch is time-consuming & skill-intensive
 due to lack of widely available automated fabrication of clothes.
 
 So instead, lets try to "hack" 'standard' clothing to become more
-inline with a peronal/niche style, using modern digital fabrication tools
+inline with a personal/niche style, using modern & accessible digital fabrication tools
 like the 3d-printer and laser-cutter.
 
 Falls into existing traditions of clothes modding, for instance by punks in the 80ies.
-
 
 But with a focus on designs which can be easily reproduces across the world,
 using standardized tools&material. The existing pieces of clothing become 'vitamins'
@@ -45,9 +79,9 @@ Items one could hack on existing clothing to gothify it:
 ### Technique ideas
 
 * Lasercut holes in one side only,
-by placing a hard-to-cut. For instanace into a sleeve
+by placing a hard-to-cut material inbetween (wood etc). For instanace into a sleeve, leg or body of tshirt.
 * Print pieces two-sided, a visible front-piece and a backing which goes on inside of cloth.
-Have the two pieces snap into eachother, glue or sow together - embedding the cloth in it.
+Have the two pieces snap into eachother, glue or sew together - embedding the cloth in it.
 * Design in holes/loops in pieces to be attached, which thread can easily catch from inside.
 Can be either be hidden, or visible, possibly with intricate patterns with a colored thread.
 * Use lasercutter to etch patterns, by removing (existing) dyes.
@@ -57,7 +91,7 @@ Maybe one can also using some activation chemical for coloring, similar to metal
 
 ## Utilitarian ideas
 
-Not as in 'utility instead of beauty' but 'utility as beauty'.
+Not as in 'utility instead of beauty' but '*utility as beauty*'.
 Where the function of the piece is primary, and embelishment are secondary or tertiary.
 
 Consider for instance items usually carried on ones person, like:
@@ -72,6 +106,7 @@ Ideas:
 
 * Credit-card or mobile-phone holder in sleave, or as bracers.
 Could be a quick-release, magician style - that one can flick open.
+If using non-contact payment systems (NFC etc), the card does not even need to come out.
 
 ### Fictional/Fantasy utilitarian
 
@@ -92,7 +127,7 @@ I am of the opinion that
     Modern-day 'fashion' is a facism driven by coorporations,
     trying to control what people wear in an attempt to make (more) money,
     playing off peoples want/need to associate with tribes or classes,
-    and fear of not being accepted.
+    and fear of not being acceptaled.
 
 
 # Automated production machines
