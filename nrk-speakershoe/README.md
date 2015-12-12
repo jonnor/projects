@@ -55,7 +55,7 @@ Footnotes:
 ## Design files
 
 The faceplate which was cut on the laser was designed mostly in FreeCAD,
-with [signature](./sko-signature.svg) and ['soundwaves effect']((./shoe-soundwaves.svg) done in Inkscape.
+with [signature](./sko-signature.svg) and [soundwaves effect]((./shoe-soundwaves.svg) done in Inkscape.
 Project files here: | [FreeCAD](./shoe.fcstd) | [Exported DXF](./shoe-total-4.dxf)
 
 Electronics was entirely ad-libbed, so no schematics for that.
@@ -94,6 +94,7 @@ For drawing the faceplate outline, I took a picture of bottom of the shoe with m
 imported in FreeCAD and drew the rough outline on top.
 Then cut a couple of tests in some old posters (to not waste acrylic), adjusting it til fit was good.
 A couple of material test were needed on acrylic to get the right settings for the engraving.
+Mostly done very fast, low power, at 0.2 mm line-size with laser in focus, for a softly engraved but textured look.
 
 After assembling the speaker and faceplate,
 soldered up the connections between the power supply, amplifier, input cable, and speakers.
