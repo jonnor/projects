@@ -55,8 +55,8 @@ Footnotes:
 ## Design files
 
 The faceplate which was cut on the laser was designed mostly in FreeCAD,
-with [signature](./sko-signature.svg) and ['soundwave']((./sko-signature.svg) effect done in Inkscape.
-Project files here: | [FreeCAD](./sko.fcstd) | [Exported DXF](./sko-total-4.dxf)
+with [signature](./sko-signature.svg) and ['soundwaves effect']((./shoe-soundwaves.svg) done in Inkscape.
+Project files here: | [FreeCAD](./shoe.fcstd) | [Exported DXF](./shoe-total-4.dxf)
 
 Electronics was entirely ad-libbed, so no schematics for that.
 
