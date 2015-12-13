@@ -8,6 +8,7 @@ Wishlist
 
 * Wine saver
 * Docking station for Dell XPS 13
+* UK-to-EU power adapter. Pressing in ground to open socket
 * Bottle/item holder for shower
 
 Done
@@ -17,6 +18,12 @@ Done
 [FreeCAD](./handle-hook.fcstd)|[STL](./handle-hook.stl)
 * Indicator for keys, to distinguish which door they are for
 [FreeCAD](./triowing-keycap-identifier.fcstd)|[STL](./triowing-keycap-identifier.stl)
+
+## In progress
+
+[Earplugs](./earplugs.fcstd) out of NinjaFlex. In-ear hearing protection.
+Similar [exiting work](http://www.thingiverse.com/thing:484562/#files), does not print the earbud itself.
+
 
 Stock items printed
 ----------
