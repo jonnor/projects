@@ -35,6 +35,24 @@ We reused the existing clasp, but one can probably 3d-print one.
 
 ## Ideas
 
+## 3d-printed embeddable buttons
+
+![Embeddable buttons](./img/embeddable-buttons.png)
+
+Example: Simple round, spike.
+For a more real design these could be anything one can print on 3d-printer,
+and be tailored for the design of the overall garment.
+
+Reinforced and fitted by using a M3\[1] countersunk screw,
+so it is not plastic taking whole load. This should make it durable, also if ripped etc.
+Can catch either in fabric with keyhole, like buttons usually do.
+Alternatively could design embeddable catches as well.
+For instance making springy designs from plastic geometry.
+
+
+1) Or M2.5/M2, but that is speciality hardware.
+
+
 ### Retrofitted personalization using digital fabrication
 
 Having personalized clothing is tricky&expensive when buying from niche stores,
@@ -154,6 +172,13 @@ Existing in industry
 * Pattern/programmale sewing machine. [4-axis](https://youtu.be/r7HhCmeCIy8?t=72) [2-axis](https://youtu.be/c9YANXdc_DY?t=102)
 * Industrial loom [how it works](https://www.youtube.com/watch?v=TyhDkd8Iabs)
 
+Clothing production steps
+
+* Fibre production. Extraction of natural fibres (flax,cotton,hemp,wool ...)
+* `fibre -> yarn`. Carding, spinning
+* `yarn -> fabric`. Weaving
+* `fabric -> clothing`. Sewing
+* Other processing: Dying, filting
 
 # Automated industrial loom
 
