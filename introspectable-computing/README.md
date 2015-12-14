@@ -5,7 +5,10 @@ That is, *programs that know what they are* and *how they work*,
 and provide facilities for *viewing*, *extracting* and *querying* this
 information.
 
-And with these capabilities in place, what
+And with these capabilities in place, how can we represent problems & solutions
+in a better way. Can we make programs more *understandable*, faster to get to a useful level, and more robust?
+Can we use these properties to make programming more widely applicable and accessible,
+also as a tool outside software development?
 
 Note that this is a broader use of the word 'introspection' compared to
 typically in programming, which usually is limited to very primitive information, like types.
@@ -19,7 +22,7 @@ non-trivial systems, and write more advanced and robust software.
 2. Helping blur the lines between 'programmers' and 'non-programmers' (domain experts, interested users),
 by making the system more inviting and self-describing.
 3. Open up the possibility for self-governing systems and intelligent agents.
-Where the entity using the introspection information 
+Where the entity using the introspection information is another program, instead of a human.
 
 
 # Areas of research
@@ -56,11 +59,16 @@ Opinions that I bring to the table in relation to this work.
 
 # References
 
-Established
-
-- [Python docstrings](https://en.wikipedia.org/wiki/Docstring), `doc()` and `help()` functions
-
 Research
 
 - [metamodels for structured interaction with machine intelligence](http://ppig.org/sites/default/files/2015-PPIG-26th-Sarkar-2.pdf).
 Many good references to work on interactive machine learning, and end-user programming/debugging. No sure I buy premise of 'goal being ill-defined'.
+
+Presentations
+
+> ... The reason programming is so hard is because it is unobservable
+[In Search of Tomorrow, by creator of LightTable](https://www.youtube.com/watch?v=VZQoAKJPbh8).
+
+Established
+
+- [Python docstrings](https://en.wikipedia.org/wiki/Docstring), `doc()` and `help()` functions
