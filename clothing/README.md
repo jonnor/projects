@@ -107,6 +107,10 @@ Maybe one can also using some activation chemical for coloring, similar to metal
 * 3d-print positive and negative, use to emboss foil/sheets parts. Tin, copper etc.
 * 3d-print, conductive material or pant -> electroplate with silver
 
+By others
+
+* [Iron-on 3d-printed artworks](http://www.thingiverse.com/thing:25318)
+
 ## Utilitarian ideas
 
 Not as in 'utility instead of beauty' but '*utility as beauty*'.

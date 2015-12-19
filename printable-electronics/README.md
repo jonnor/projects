@@ -187,6 +187,8 @@ Ideas for pieces
 --------
 
 * An electronic windchime, where conductive filament is used to sense wind/movement?
+* Joystick 4/8-way
+* Microswitch for use as endstops
 
 
 Key process parameters
@@ -420,4 +422,10 @@ various classes of electronics (sub) circuits:
 * Embedded microcontrollers.
 * Power electronics
 
+
+## Related
+
+Work by others
+
+* [Servo mount for lightswitch](http://www.thingiverse.com/thing:1156995)
 

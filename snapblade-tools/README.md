@@ -24,6 +24,7 @@ Planned
 * Hand/finger plane for soft woods
 * Plain knife
 * Adjustable blade knife (typical for snap-off blades)
+* Cheese cutter/slicer. Maybe using non-sharp side or dulled blade
 
 Probably bad/unsafe ideas
 

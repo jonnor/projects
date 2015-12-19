@@ -56,6 +56,7 @@ Production techniques
 * 3d-printing
 * Molding
 * Extrusion & CNC mill
+* Foam-production and cutting
 
 Polymer sources
 ----------------
@@ -167,6 +168,10 @@ due to its low consumption of energy and high conversion rate, which is of about
 * [Chemistry: What is alum](http://chemistry.about.com/od/moleculescompounds/f/What-Is-Alum.htm)
 * [Bioplasticsinfo.com: PHA appications](http://bioplasticsinfo.com/polyhydroxy-alkonates/applications-of-pha-as-bioplastic/)
 * [Casein; its preparation and technical utilization](https://archive.org/details/caseinitsprepara00scherich)
+* [Quest for bio-styrene, foam from PLA/PHA](http://greenchemicalsblog.com/2013/02/17/the-quest-for-bio-polystyrene/)
+* [Polylactic acid foaming](http://www.sciencedirect.com/science/article/pii/S0079670014000392)
+[PDF](www.researchgate.net/profile/MReza_Nofar/publication/261372821_Poly_%28lactic_acid%29_foaming/links/5436f64d0cf2dc341db4c5ff.pdf)
+* [Foamed PLA Shows Promise In Biodegradable Meat Trays](http://www.ptonline.com/articles/foamed-pla-shows-promise-in-biodegradable-meat-trays)
 
 
 Politics

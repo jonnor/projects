@@ -47,7 +47,6 @@ Also disabled retract and printed in 'one-by-one mode' to minimize need for retr
 **Caution**: FDM 3d-prints are quite porous. This *may* offer bacteria better growing ground
 compared to commercial molded-silicon-based earbuds. Consider replacing them regularly.
 
-
 Similar to [exiting work](http://www.thingiverse.com/thing:484562/#files), but this is 100% printed.
 
 ## In progress

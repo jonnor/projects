@@ -62,6 +62,11 @@ Of mine
 * [Clothing](../clothing)
 * [Rishalaser](../rishalaser)
 
+Of others
+
+* [MPlus One](http://www.thingiverse.com/thing:1104249) Cantilevered, moving bed like PrinterBot Simple and Smartrap, with lasered/milled structure.
+Maybe has potential in combination with tape principle, possibly making even cheaper than a CoreXY?
+
 ## TapeZ
 
 Moving-bed Z-axis stage for laserengraver/3d-printer to go with TapeXY.
@@ -69,6 +74,7 @@ Also uses Kapton tape and braided Nylon wire.
 
 Existing wire/belt Z-axis:
 
+* [SmartRapCore alternative Z](http://www.thingiverse.com/thing:896556)
 * [Sli3dr](http://richrap.blogspot.co.uk/2014/07/3d-printers-big-printers-small-printers.html)
 * [Igentis](https://www.youmagine.com/designs/ingentis-a-tantillus-variant)
 * [Printxel](http://printxel.blogspot.ca/2012/12/printxel-community.html)
@@ -117,3 +123,14 @@ never be as good as a proper bearing.
 So that one can just snap along these edges, and widen hole with hand-drill. To make more reprappable.
 Challenge: limits design to straight external edges?
 
+### Cheap closed-loop solutions
+
+Have camera on head. Optical recognition.
+For laser cutter. First move slowly, 
+
+
+## References
+
+Work by others
+
+* [3d-printed bushing](http://www.thingiverse.com/thing:1196801), replaces speciality linear bearings

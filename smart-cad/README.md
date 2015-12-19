@@ -46,7 +46,7 @@ Different lighting conditions, background, angles can severely influence effecti
 Pipeline
 
 * Camera/lens correction. Noise removal.
-Input=camera/lens-model or calibration/characterization data. Use heuristics to provide default
+Input=camera/lens-model or calibration/characterization data. Use heuristics based on metadata to provide default
 * Projection correction.
 Input=4 points forming a rectangle.
 Computer-vision could suggest defaults.
