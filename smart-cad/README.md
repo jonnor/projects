@@ -143,3 +143,52 @@ Examples:
 * Mortise in one part, tendon in another, 3d-printed.
 * Finger or dovetail-joints between two pieces mounted 90 degrees on eachother
 * [Halved joint](http://en.wikipedia.org/wiki/Halved_joint)
+
+
+## UX concept ideas
+
+### Input types
+
+* Touchscreeen. Finger or (bad) stylus
+* Projector with marker pointing device
+* Mouse + keyboard
+
+Everything is currently focused on mouse+keyboard, restricting "serious" CAD work to primarily
+desktop/laptop. To open possibilities for mobile personal device, and collaborative tables
+- the two other ones are very interesting.
+
+### Context aware actions
+
+Based primarily on current selection (number of objects, types).
+Presented as a visual menu, easily reachable with pointing device.
+Each action in the menu has an accociated keyboard accelerator,
+a character which ideally is a nemonic of the action name.
+
+May need some sub-menu for when many actions are applicable.
+Such a group could presented as an action in the top-level menu.
+
+Ideally it is primarily a direct manipulation of the objects.
+
+The same action-list should be filter/searchable by typing in words on keyboard.
+If the query is specific enough basically becomes a command.
+Hitting enter would then trigger it.
+
+Examples would be when working with Sketches:
+adding/manipulating geometry, adding and manipulating constraints.
+
+Triggering an action should then allow entering its parameters (if any).
+This should (at least allow), on-canvas preview&manipulation.
+
+Open questions:
+How to let user know that with current selection, a certain action cannot be performed
+- that they need to change their selection first?
+If there is space in the group, maybe can show grayed out - with explanations of needed selection/context?
+
+Implementation ideas:
+Actions should be an atomic unit, a 'component', registered with introspection data.
+Open code of action component, should be accessible in program.
+Actions installable though plugins (as a collection).
+Actions described as contracts??
+Is a triggered action which is still being edited like an opened, but not committed transaction?
+Can one use state diffing (kinda React-style), to implement undo-system (and revision control)?
+Indirection between state produced by action, and canonical state of program.
