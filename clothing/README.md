@@ -110,6 +110,14 @@ Maybe one can also using some activation chemical for coloring, similar to metal
 By others
 
 * [Iron-on 3d-printed artworks](http://www.thingiverse.com/thing:25318)
+* [3d lasercut textiles](http://blog.ponoko.com/2010/08/03/3d-laser-cut-textiles-by-camilla-diedrich/)
+[2](http://blog.ponoko.com/2009/06/20/neocon09-coverage-3form/)
+* [geometric cutouts for extra flex in areas of textile](http://blog.ponoko.com/2009/12/30/nike-sphere-macro-react/)
+* [intricate cutout patterns](http://insideout.topshop.com/images/old/6a01053695b916970c0147e0266235970b-550wi.jpg)
+* [interlocking geometry to replace seams](http://fabtextiles.org/seamless/)
+* [laserengraving denim](https://www.youtube.com/watch?v=amMdH6Mm6Ac)
+* [lasercut multilayer, semitranslucent fabric](http://blog.sketchlasercutting.co.uk/2014/multi-layered-laser-cut-fabric-by-threeasfour-ss14-new-york/)
+* [lasercut interlocking "chainmail"](http://blog.ponoko.com/2014/11/07/laser-cut-scales/)
 
 ## Utilitarian ideas
 
