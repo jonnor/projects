@@ -144,6 +144,11 @@ Examples:
 * Finger or dovetail-joints between two pieces mounted 90 degrees on eachother
 * [Halved joint](http://en.wikipedia.org/wiki/Halved_joint)
 
+## Freeform / assisted drawing
+
+References:
+
+* [Collection of assisted drawing research](https://medium.com/@samim/assisted-drawing-7b26c81daf2dd)
 
 ## UX concept ideas
 
