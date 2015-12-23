@@ -54,3 +54,6 @@ Some custom Marlin-derivative firmware have support for raster-engraving using `
 * http://wiki.lansingmakersnetwork.org/equipment/buildlog_laser_cutter
 * https://github.com/wreality/imagetogcode
 
+### Printer drivers
+
+[Node.js implementation of IPP protocol](https://github.com/watson/ipp-printer)
