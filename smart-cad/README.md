@@ -197,3 +197,10 @@ Actions described as contracts??
 Is a triggered action which is still being edited like an opened, but not committed transaction?
 Can one use state diffing (kinda React-style), to implement undo-system (and revision control)?
 Indirection between state produced by action, and canonical state of program.
+
+## next level constraints
+
+Right now only on geometry. Should be able to define in terms of production costs (or time), generality, performance.
+
+References:
+* https://github.com/kragen/laserboot/blob/master/README.md
