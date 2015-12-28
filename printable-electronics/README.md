@@ -177,7 +177,36 @@ TODO:
 
 - Test bonding to electronics components
 - Test bonding to PLA
-- Compare increasing width versus height (layers)
+- Compare resistance when increasing width versus height (layers)
+
+## Electroplating conductive filament
+
+Previously people have [electroplated 3d-prints by painting](http://bryancera.blogspot.com.au/2014/09/copper-electroplatingforming-3d-prints.html)
+with conductive graphite paint. The failed [Orbit1 Kickstarter](https://www.kickstarter.com/projects/1499748748/orbit1-a-tabletop-electroplater-turns-your-ideas-i)
+used similar concept.
+
+We wanted to see if one could do it directly on conductive filament, like ProtoPasta Conductive.
+Experiement done by [Kim Øyhus](http://kim.oyhus.no/), borrowing some filament from me.
+
+After some attempts, an even coat was achieved.
+
+![Succesful electroplating of filament](./doc/electroplate-filament.jpg)
+
+The rightmost sample was created by using:
+
+* About 1/300 solution of copper sulfate in water
+* Copper cable as donation anode
+* Depositing time was around 12 hours for rightmost (best result).
+* A magnetic stirrer to keep solution circulating
+
+It looked like a thinner solution gave more even deposition, and that circulation is critical.
+
+Further investigation:
+
+* Can one solder the filament with deposited copper?
+* Are there practical ways of depositing on each trace of a electronic circuit?
+Maybe have joining traces which are then broken off? Or just a bed-of-nails type connection setup?
+* Can one plate copper onto a combination of components and traces, to skip soldering completely?
 
 
 Braindump
