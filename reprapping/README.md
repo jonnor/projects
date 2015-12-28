@@ -84,6 +84,43 @@ Existing wire/belt Z-axis:
 * http://forums.reprap.org/read.php?14,319321
 * http://forums.reprap.org/read.php?279,188149
 
+A challenge is that Z-resolution/precision might be a bit low without gearing.
+The hold-torque of a NEMA17 stepper might also not be enough to keep bed up.
+Reduction gearing of between 1/4 and 1/9 is desirable.
+
+## TapeCrane
+
+My dad wants to build a cheap, large-scale 3d-printer (workspace with sides of 50-100cm)
+which could be stowed away when not in used. For this he had two ideas for the kinematics.
+One being a robot arm with two joints (elbow and wrist), working in the XY plane. Like SCARA.
+The arm up/down or the bed would move to form Z axis.
+The effector is cantilevered, making it tricky to keep rigid, and there are multiple
+solutions for the inverse kinematics and singularity points.
+
+The other idea was more like a crane, a [cylindrical robot](https://www.google.no/search?q=cylindrical+robot&tbm=isch).
+It has the advantages of much simpler inverse kinematics (because no articulated joints),
+and that the structure can be made more rigid in various ways:
+Using tensioned wires (like a guy-wire), by supporting the far end, and/or using a (moving) counterbalance.
+
+The most common configuration, has a rotating base. Alternatively, one can rotate just the (elevated) arm.
+Either the whole arm can move back & forth to move end-effector, or the effector can travel along a static arm.
+
+Unlike a cartesian or delta robot, several cylindrial robots could work into the same workarea.
+They could potentially collaborate on a single (large) part, either for speed or multi-filament.
+Or indepentently making different parts, or multiple instances of the same part.
+
+Challenges:
+
+* Mimizing weight of rotating joint, keeping it close to center of axis. For maximum speed
+* Implementing the IK for cylindrical in firmware
+* Cylindrical sectioned build area
+* Decreasing precision at long-reach
+
+TODO:
+
+* Sketch a rough concept
+* Test an arm beam, with tensioned wires on top+bottom for ridigity
+
 ## Experiments
 
 ### Kapton 608 bearing
@@ -128,6 +165,33 @@ Challenge: limits design to straight external edges?
 Have camera on head. Optical recognition.
 For laser cutter. First move slowly, 
 
+### Ninjaflex belted gearbox
+
+Most 3d-printed gearboxes use meshing gears of PLA/ABS/Nylon.
+Using a flexible timing belt to connect them instead has advantages:
+* Less wear, since belts distribute force over a larger area.
+Most wear should be on belt, allowing independent replacement. Also more wear tolerant.
+* More silent, since belts are of softer material
+* More tolerant for bad bearings (excentric or axial motion)
+
+If well designed, could also be more overload tolerant as well
+- belt should slip before damaging pulleys.
+
+The belt could be printed out of NinjaFlex ([work by others](http://www.thingiverse.com/search/page:1?q=ninjaflex+belt&sa=)).
+With some clever work on axel, bearings and belt-tensioner, it may be possible to make it zero-vitamins.
+
+One application for such a gearbox, would be for a belted Z-axis of a printer using NEMA17 stepper.
+
+## Printed belt tensioner
+
+The standard solution for tightening belts is to have the bearing/pulley axel in a slot,
+and then a bolt which the axel rests against, on the side the belt pulls.
+Tightening the bolt, pushes the axel further up in the slot, and tightens the belt.
+This works well, but requires a couple of vitamins (bolt, nut)
+
+An excentric wheel, where radius increases when turning, could replace the bolt.
+To keep it from just rotating, a ratcheting mechanism on a spring would lock it.
+To loosen belt one would push out the ratchet.
 
 ## References
 
