@@ -53,8 +53,31 @@ Drawbacks
 * 200/6 = 33 steps = 10.8 deg -> diameter = 32 mm
 * 200/4 = 50 steps = 7.2 deg -> diameter = 48 mm
 
+## Stator etching
 
-# Reseach
+Tin-can materials are magnetic (3/3 tested). A thickness of 0.3 mm (approx 0.012") seems to be common.
+The material is some form of steel.
+
+Steel can be etched using a acid and electrical current.
+Here is one [etching steel with vinegar, salt and 12v battery charged](https://www.youtube.com/watch?v=zhWNmNYT-Q4).
+Another electro etch [using a metallic electrolyte](http://www.nontoxicprint.com/electroetching.htm).
+
+Creating an etch mask can be done with the laser, like with PCB production:
+[1](http://www.instructables.com/id/PCB-plastic-mask-etching-with-CO2-laser/)
+[2](http://www.instructables.com/id/Custom-PCB-Prototyping-using-a-Laser-Cutter)
+
+Using a 15ish percent vinegar solution (diluted from 35% percent with hot tapwater)
+with approx 1 table spoons salt per 1 dl. Current was around 0.60 - 0.70 amps,
+driven by a 12v power supply.
+
+Was able to etch through the 0.3 mm 'tin can' in less than 30 minutes.
+The mask was open on each side, so to get through etch is only 0.15 mm deep.
+This requires precise registration of two-sided mask.
+The fast etch time, suggest that maybe doing a one-sided etch is possible as well.
+
+
+
+# Research
 
 * [3d-printed transformer](http://3dprint.com/80379/3d-printed-power-transformer), says electromagnets with ProtoPasta Magnetic Iron not working well.
 
