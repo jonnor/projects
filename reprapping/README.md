@@ -20,10 +20,13 @@ Like on Tantillus and some Delta printers.
 
 Parts:
 
-* Base [FreeCAD](./tapexy.fcstd)
+* Frame [FreeCAD](./tapexy-frame.fcstd)
 * Gantry [FreeCAD](./tapexy-gantry.fcstd)
+* Head [FreeCAD](./tapexy-head.fcstd)
 * Pulleys. NinjaFlex/SemiFlex for friction. [FreeCAD](./pulley-ninjaflex.fcstd)
-* Idlers. 8 pieces, consisting of 1x 608 bearing, 1x M8-40mm bolt and 2x [sideguides](http://www.thingiverse.com/thing:31216)
+* Idlers. 8 pieces, each consisting of 1x 608 bearing, 1x M8-40mm bolt and 2x [sideguides](http://www.thingiverse.com/thing:31216)
+
+Assembly: [FreeCAD](./tapexy.fcstd)
 
 Done
 
@@ -34,20 +37,23 @@ TODO:
 
 * Make second iteration (with belts/pulleys in single plane)
 * Design a proper belt/line attachment and tensioning system
-* Design and make mount laser diode
+* Design and make mount for laser diode
 * Add mounting holes for endstops
 * Run tests with laser
 * Design some self-adjusting system for friction parts
+* Create schematic and document laser diode driver
 
 Later:
 
+* Devise some way of testing tape friction coefficient
+* Test alternative tapes, like packaging 'Scotch' and PET
 * Test cutting Kapton tape with laser. Both CO2 and with the 445nm diode
 * Test removing idler bearings, and just let Nylon wire slide on Kapton?
 * Reduce number of screws used, by having lasercut pins instead
 * Prototype a matching Z-bed/table design
 * Test FDM printing
 * Test some lightweight CNC milling, like wax, PCB traces or engraving.
-* Test a full-size laser envelope
+* Test a build for full-size laser envelope
 
 Research
 
@@ -59,8 +65,8 @@ Kapton/Polyimide: 0.45, Teflon/PTFE: 0.05-0.2, UHMW PE: 0.1-0.2.
 
 Of mine
 
-* [Clothing](../clothing)
-* [Rishalaser](../rishalaser)
+* [Clothing](../clothing), various techniques rely on laser
+* [Rishalaser](../rishalaser), build of existing open-source low-powered laserengraver
 
 Of others
 
