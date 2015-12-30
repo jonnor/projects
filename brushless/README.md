@@ -45,6 +45,9 @@ Drawbacks
 * Calculate appropriate number of windings
 * Manufacture, assemble and test prototype
 
+## References
+
+* [Good video explanation](https://www.youtube.com/watch?feature=player_detailpage&v=C1-klL3B9LU#t=734)
 
 # Fabricated stepper motor
 
@@ -53,7 +56,9 @@ Drawbacks
 * 200/6 = 33 steps = 10.8 deg -> diameter = 32 mm
 * 200/4 = 50 steps = 7.2 deg -> diameter = 48 mm
 
-## Stator etching
+[FreeCAD project file](./stepper-motor.fcstd)
+
+## Etching steel
 
 Tin-can materials are magnetic (3/3 tested). A thickness of 0.3 mm (approx 0.012") seems to be common.
 The material is some form of steel.
@@ -66,6 +71,8 @@ Creating an etch mask can be done with the laser, like with PCB production:
 [1](http://www.instructables.com/id/PCB-plastic-mask-etching-with-CO2-laser/)
 [2](http://www.instructables.com/id/Custom-PCB-Prototyping-using-a-Laser-Cutter)
 
+Some [safety considerations using NaCL-based etching](http://www.es.crujera.com/publicaciones/articulos/the-basis-of-electro-etchin/appendix-b---practical.html).
+
 Using a 15ish percent vinegar solution (diluted from 35% percent with hot tapwater)
 with approx 1 table spoons salt per 1 dl. Current was around 0.60 - 0.70 amps,
 driven by a 12v power supply.
@@ -75,7 +82,26 @@ The mask was open on each side, so to get through etch is only 0.15 mm deep.
 This requires precise registration of two-sided mask.
 The fast etch time, suggest that maybe doing a one-sided etch is possible as well.
 
+Without a permantent magnet one can only build a [reluctance motor](https://en.wikipedia.org/wiki/Reluctance_motor) with this steel,
+like a stepper based on [switched reluctance motor](https://en.wikipedia.org/wiki/Switched_reluctance_motor).
+By adding a circular, axially oriented magnet in the center, one can build a
+[hybrid stepper motor](http://www.nmbtc.com/step-motors/engineering/construction-and-operating-theory/),
+like the typical NEMA17 used in 3d-printers. Excellent [video explanation](https://www.youtube.com/watch?feature=player_detailpage&v=Qc8zcst2blU#t=1823)
 
+![First attempt at etching stepper motor parts](./doc/etch-first-stepper-parts.jpg)
+Caliper is set to NEMA17 size (1.7" / 42 mm), for reference.
+
+Removing resist with laser worked pretty well, but the acrylic spray-pain partly dissolved in the electrolyte - causing uneven etch.
+Another problem is that material which have been etched sticks in the gaps, making it seem as if it has not etched through when it has
+(possibly also interfering with etching action).
+A pump/nozzle which would 'shoot' the electrolyte at the plate with a bit of force would likely improve that.
+
+Would need to find a better spray (laquer is mentioned online), or use a tape.
+Maybe regular scotch packaging tape,or wide PET/Kapton as used in 3d-printing.
+Etching time was approx 30 minutes, from one side, with 1.5 amp current in 10% vinegar solution.
+
+A flipping-jig would be needed to do two-sided masks (and etch).
+A challenge in using recycled can material is that it is not flat, causing focus problems on laser. Finding straight
 
 # Research
 
