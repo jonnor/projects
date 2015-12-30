@@ -57,17 +57,16 @@ The box itself was a bit quickly made, and is optional. It needs to be glued alo
 and the cutouts for the top should be glued back on for an even edge (and nice checkerboard effect).
 Exercise for the prospective maker; make a better box which does not require gluing.
 
-[FreeCAD project source](./bobbinholder.fcstd)
-DXF files for [box](./export/bobbinholder-box-1.dxf)
-DXF files for lid:
-* [top](./export/bobbinplate-top-1.dxf)
-* [bottom](./export/bobbinplate-bottom-1.dxf)
-* [spacers](./export/bobbinplate-spacers-1.dxf)
-* [spike short](./export/bobbinplate-spike-1.dxf)
-* [spike long](./export/bobbinplate-spike-long-1.dxf)
-* [tfastener](./export/bobbinplate-tfastener-3.dxf)
-* [wedge](./export/bobbinplate-wedge-3.dxf)
-[FreeCAD file for tfastener / wedge](./bobbinholder-twedge.fcstd)
+FreeCAD project sources [lid](./bobbinholder.fcstd)|[T-fastener/wedge](./bobbinholder-twedge.fcstd)
+Exported DXF files:
+* [lid top](./export/bobbinplate-top-1.dxf)
+* [lid bottom](./export/bobbinplate-bottom-1.dxf)
+* [lid spacers](./export/bobbinplate-spacers-1.dxf)
+* [lid spike short](./export/bobbinplate-spike-1.dxf)
+* [lid spike long](./export/bobbinplate-spike-long-1.dxf)
+* [lid tfastener](./export/bobbinplate-tfastener-3.dxf)
+* [lid wedge](./export/bobbinplate-wedge-3.dxf)
+* [box](./export/bobbinholder-box-1.dxf)
 
 
 # Ideas
