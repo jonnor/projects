@@ -144,6 +144,82 @@ Examples:
 * Finger or dovetail-joints between two pieces mounted 90 degrees on eachother
 * [Halved joint](http://en.wikipedia.org/wiki/Halved_joint)
 
+## Cutsheet autolayout
+
+When working with multi-part designs on CNC router or lasercutter,
+need to layout parts into a cutsheet for a job. This can take a significant amount of time to do manually.
+An automated tool could help:
+
+* Avoid having to layout normal job manually.
+Especially useful when having parametric parts, possibly being changed iteratively.
+* Reuse material which is usually thrown away.
+By quickly adopting a cutsheet to left-over/already-cut material, or adding parts to a planned sheet.
+* Making efficient use of machines. Both keeping high uptime, maximizing items made when runnnig job.
+
+Computationally, this is a 2d polygon version of the [packing problem](https://en.wikipedia.org/wiki/Packing_problems)
+
+For reusing material, tool should allow:
+
+* Take camera picture of leftover materials
+* Or, remember left-over geometry from past jobs.
+One could for instance 'label' (etch/pocket) left-over material for easy retrieval.
+
+Avoidance areas, for bad material, for instance finish or structural deficiencies.
+Avoidance area can also be used to auto-add parts around an existing, manually laid out, job.
+
+It should be possible to specifying number of instances desired per part,
+instead of having to duplicate the part geometry.
+
+Tools should be able to calculate
+
+* Given a set of parts, and a particular material, lay them out
+* Given a particular material, find parts that fit from a library, and lay them out
+* Given a library of parts, and library of left-over materials, show which things can be made?
+
+Some complex considerations: material grain direction, sharing cutlines
+
+Tool should be usable with any combination of CAD / CAM software (independent),
+but integration with scriptable packages should be possible.
+
+### Possible implementation
+
+Take a set of DXF files (one per part) as input.
+Filenames can indicate numbers of instances of each part (part-rev2-3x.dxf).
+Takes material geometry either as a JPEG/PNG file (from camera), or a DXF file
+Internally both of these material inputs gets converted into same representation.
+Material geometry would need to have real-world dimensions set. Unless overridden, use DPI metadata.
+Unless overridden, image origin should coincide with job origin, with same X,Y axis.
+
+Optionally a DXF file (or image?) can be used to specify avoidance areas.
+Effective available area, is avoidance area subtracted from material area.
+
+Tool should have mode to observe filesystem for changes in the files?
+
+CAD/CAM integration could be plugin which exports geometry from program into appropriate file layout,
+then runs the program to produce output file, then loads this into program.
+
+### Challenges
+
+* Need to build up library of *useful*  (or at least desirable) parts
+* Different material requirements for parts.
+Examples: Type of material (plywood, MDF, acrylic), thickness of material
+* Different CAM settings for part geometry.
+Examples: cutting speeds, laser power. Raster versus vector, pocket versus cut. Pocket/cut depth
+
+### Related ideas
+
+* Could expand this to 3d-printing / additive manufacturing.
+An example of wasted materials there is supports. Instead of printing only some throw-away structure,
+could insert some useful parts to make up the bulk. The orientation of parts could be set
+* Have a queue of desired objects ("wishlist"), which would be first-priority when attempting to add filler-objects.
+Should be super-easy for anyone with access to add to list, maybe by referring to a URL to part.
+Should then get a notification once part has been produced.
+
+### Possible codenames
+
+Misteltein, Norwegian name for [Mistletoe](https://en.wikipedia.org/wiki/Mistletoe).
+Because the added part geometries can be seen as parasites on the job being run, adding more useful things.
+
 ## Freeform / assisted drawing
 
 References:
