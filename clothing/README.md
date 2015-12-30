@@ -57,7 +57,8 @@ The box itself was a bit quickly made, and is optional. It needs to be glued alo
 and the cutouts for the top should be glued back on for an even edge (and nice checkerboard effect).
 Exercise for the prospective maker; make a better box which does not require gluing.
 
-FreeCAD project sources [lid](./bobbinholder.fcstd)|[T-fastener/wedge](./bobbinholder-twedge.fcstd)
+FreeCAD project sources [lid](./bobbinholder.fcstd)|[T-fastener/wedge](./bobbinholder-twedge.fcstd).
+
 Exported DXF files:
 * [lid top](./export/bobbinplate-top-1.dxf)
 * [lid bottom](./export/bobbinplate-bottom-1.dxf)
