@@ -32,8 +32,45 @@ and when having air-assist turned off. On our Redsail 60w laser, we used 30 mm/s
 Made for a Casio digital watch, but can be adapted to most watches. Length is parametric in the source files.
 We reused the existing clasp, but one can probably 3d-print one.
 
+# Tools
 
-## Ideas
+## Bobbin box
+
+![Bobbin holder box](./img/bobbinholder.jpg)
+
+![Opened bobbin holder box](./img/bobbinholder-open-front.jpg)
+
+For holding bobbins of thread used for sewing.
+Mostly for the semi-large ones, to go on top for easy access, but with ample space inside for more.
+If you have many of the small ones (for underthread inside sewing machine for instance),
+might want to also 3d-print some of [these bobbin holders](http://www.thingiverse.com/thing:38357).
+
+Designed as a present, originally made for my mother for Christmas.
+The lid can be flipped upside down, with the spikes going down into the box.
+Then you can engrave some nice words for recipient there, or just your signature/brand.
+
+Designed for 6 mm material (plywood/poppel/MDF/acrylic). Source included for adapting to other thicknesses.
+The top lid requires no extra parts, and can be assembled without tools.
+Lasercut: 1 top, 1 bottom, 1 spacers, 4+ tfastener, 4+ wedge, 35+ spike (can mix short and long).
+
+The box itself was a bit quickly made, and is optional. It needs to be glued along each side,
+and the cutouts for the top should be glued back on for an even edge (and nice checkerboard effect).
+Exercise for the prospective maker; make a better box which does not require gluing.
+
+[FreeCAD project source](./bobbinholder.fcstd)
+DXF files for [box](./export/bobbinholder-box-1.dxf)
+DXF files for lid:
+* [top](./export/bobbinplate-top-1.dxf)
+* [bottom](./export/bobbinplate-bottom-1.dxf)
+* [spacers](./export/bobbinplate-spacers-1.dxf)
+* [spike short](./export/bobbinplate-spike-1.dxf)
+* [spike long](./export/bobbinplate-spike-long-1.dxf)
+* [tfastener](./export/bobbinplate-tfastener-3.dxf)
+* [wedge](./export/bobbinplate-wedge-3.dxf)
+[FreeCAD file for tfastener / wedge](./bobbinholder-twedge.fcstd)
+
+
+# Ideas
 
 ## 3d-printed embeddable buttons
 
