@@ -106,6 +106,11 @@ But with a focus on designs which can be easily reproduces across the world,
 using standardized tools&material. The existing pieces of clothing become 'vitamins'
 (in the Reprap terminology), and should be source-able locally from generic stores.
 
+Examples by others:
+
+* [tshirt into cardigan](http://www.instructables.com/id/DIY-No-Sew-Cardigan/)
+* lacing
+
 ### Gothic ideas
 
 I am particularly fond of 'gothic' style clothing.
