@@ -5,6 +5,8 @@ Sakko is an old game, played by people of the Lyngen area.
 It was [rediscovered](http://www.fablab.no/index.php/news-nyheter/229-206) at MIT Fablab Norway,
 and you can fabricate the pieces & board [with a mill](http://www.inference.phy.cam.ac.uk/cs482/fablab/projects/sakko/).
 
+Some oldish pieces can be found [at Norsk Folkemuseum](http://digitaltmuseum.no/011023295017).
+
 Made at Nordic Fablab Bootcamp 2015.
 
 ## Figurines
