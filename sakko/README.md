@@ -12,7 +12,7 @@ was to make a personalized set of pieces from each of the participants.
 
 ## Figurines
 
-[Figurines in use](./img/figurines-in-use.jpg)
+![Figurines in use](./img/figurines-in-use.jpg)
 
 ## Process
 
@@ -31,7 +31,7 @@ and Difference to cut of some excess parts. Then a pin for insertion into the ba
 
 The parts are cut out of 3mm acrylic, and the siluttes are fitted onto base with a press-fit.
 
-[Inkscape project, siluettes](./figurines.svg) | 
+[Inkscape project, siluettes](./figures.svg) | 
 [FreeCAD source, for base](./sakko-solider.fcstd) |
 
 ## How to play the game
@@ -47,7 +47,7 @@ The dice is special in Sakko, it has only four sides showing "eyes" (see photo a
 
 The Monarch piece is a pyramidal shape slightly larger than the soldier-pieces, and the top is always dragged out to a larger or smaller hook. (Obviously not necessary if you want to recreate it - the main thing is to keep track of which pieces is which). The two players troops were labeled in order to distinguish between them, either by giving the different colors, or by carving into one of the players sets.
 
-[Board & pieces](./img/gamerules-board-pieces.png)
+![Board & pieces](./img/gamerules-board-pieces.png)
 
 ### Game Rules
 
