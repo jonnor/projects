@@ -2,29 +2,41 @@
 # Sakko
 
 Sakko is an old game, played by people of the Lyngen area.
-It was [rediscovered](http://www.fablab.no/index.php/news-nyheter/229-206) at MIT Fablab Norway,
+It was recently [rediscovered](http://www.fablab.no/index.php/news-nyheter/229-206) at MIT Fablab Norway,
 and you can fabricate the pieces & board [with a mill](http://www.inference.phy.cam.ac.uk/cs482/fablab/projects/sakko/).
 
 Some oldish pieces can be found [at Norsk Folkemuseum](http://digitaltmuseum.no/011023295017).
 
-Made at Nordic Fablab Bootcamp 2015.
+At the Nordic Fablab Bootcamp 2016, we picked up the game again. One of the things we did,
+was to make a personalized set of pieces from each of the participants.
 
 ## Figurines
 
-The figurines were created by taking pictures of people, lit up by a flashlight, against a white background (a toolshed).
+[Figurines in use](./img/figurines-in-use.jpg)
+
+## Process
+
+We took pictures of each person, with a flashlight to project a shadow on a white wall.
+This captures their silluette, making for a super-simple '2d scanning' technique.
 
 The shadow-play type setup also made participants quite creative. I told them to imagine themselves as an action figurine.
-Using a mobile phone camera. Noise from the sensor made cleanup a bit difficult.
+Using a standard smartphone camera. Noise from the sensor made cleanup a bit difficult, focus
+and the impromptu light-setup had a spot which was a bit smaller than desirable.
+Using a proper camera with a tripod, and putting the light onto a tripod would make it easier to take
+the photographs, and require less post-processing.
 
-This captures their silluette, making for a super-simple '2d scanning' technique.
 Then the images was imported into Inkscape, and using [Trace Bitmap](https://inkscape.org/en/doc/tracing/tutorial-tracing.html)
-to convert it into vector shapes.
+to convert it into vector shapes. Some cleanup was done, primarily using boolean operations like Intersection to isolate the shape,
+and Difference to cut of some excess parts. Then a pin for insertion into the base was added using Union.
 
-[Inkscape project file](./figurines.svg)
+The parts are cut out of 3mm acrylic, and the siluttes are fitted onto base with a press-fit.
 
-## Game rules
+[Inkscape project, siluettes](./figurines.svg) | 
+[FreeCAD source, for base](./sakko-solider.fcstd) |
 
-*Originally in Norwegian, unknown author. Translation by Zenna Fiscella*
+## How to play the game
+
+*Originally in Norwegian, unknown author. Translation by Zenna Fiscella, January 2016.*
 
 Sakko is a board game with dice and game pieces which has been in use in some areas of Norweigan northern Troms even contemporarily, although it is uncertain exactly how old the game is. Sakko could be an indigenous game, but it could also be that they have inherited it, since it seems to be mostly spread in coastal areas. Sakko may be from the era of Vikings but the shape of the royal piece pointing in a direction that it could be from Catholic times in Norway, then the top of the King piece is reminiscent of a pastoral staff.
 
@@ -37,7 +49,7 @@ The Monarch piece is a pyramidal shape slightly larger than the soldier-pieces, 
 
 [Board & pieces](./img/gamerules-board-pieces.png)
 
-Game Rules
+### Game Rules
 
 Two participants play against each other with 12 soldiers. To decide on who starts one flips a coin, or trows the dice. If one decides by dice the first player to roll X (Sakko) gets to start. The game uses two dice.
 
