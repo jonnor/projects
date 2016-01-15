@@ -1,7 +1,7 @@
 
-# Sakko
+# Sakko game
 
-Sakko is an old game, played by people of the Lyngen area.
+Sakko is an old game, played by people of northern Norway.
 It was recently [rediscovered](http://www.fablab.no/index.php/news-nyheter/229-206) at MIT Fablab Norway,
 and you can fabricate the pieces & board [with a mill](http://www.inference.phy.cam.ac.uk/cs482/fablab/projects/sakko/).
 
@@ -14,7 +14,7 @@ was to make a personalized set of pieces from each of the participants.
 
 ![Figurines in use](./img/figurines-in-use.jpg)
 
-## Process
+### Process
 
 We took pictures of each person, with a flashlight to project a shadow on a white wall.
 This captures their silluette, making for a super-simple '2d scanning' technique.
@@ -31,8 +31,22 @@ and Difference to cut of some excess parts. Then a pin for insertion into the ba
 
 The parts are cut out of 3mm acrylic, and the siluttes are fitted onto base with a press-fit.
 
+### Sources
+
 [Inkscape project, siluettes](./figures.svg) | 
 [FreeCAD source, for base](./sakko-solider.fcstd) |
+[DXF, for base](./export/figure-base-5.dxf) |
+
+The export uses +0.5 mm for the press fit.
+You may want to adjust the base to be smaller/bigger depending on the kerf of your laser.
+
+### To make it
+
+Select 12 favorite pieces, cut out 12 bases and selected figure siluettes with one color, then another 12 with another color (for team too).
+Then make 1 figure (base and siluette) in a third color, to be the king.
+
+Press the siluette carefully and evenly into the base.
+Will require a bit of force. Best done by placing the base onto the table.
 
 ## How to play the game
 
