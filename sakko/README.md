@@ -29,6 +29,8 @@ Then the images was imported into Inkscape, and using [Trace Bitmap](https://ink
 to convert it into vector shapes. Some cleanup was done, primarily using boolean operations like Intersection to isolate the shape,
 and Difference to cut of some excess parts. Then a pin for insertion into the base was added using Union.
 
+![Steps of making final vector, from picture of shadow](./img/siluette-process-medium.png)
+
 The parts are cut out of 3mm acrylic, and the siluttes are fitted onto base with a press-fit.
 
 ### Sources
