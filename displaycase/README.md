@@ -53,3 +53,29 @@ To be able to slide the front window out, the top plate groves should be cut all
 * (optional) Use 2 brackets to fasten top plate to column, or add two wedges to prevent sideways motion.
 
 
+# QR description tags
+
+We want to have a physical description tag, which is linked to online documentation for more information.
+
+[Example QR doc template](./img/qrdoc-template.png)
+
+This allows viewers to quickly get to the story behind the, and for digitally fabricated objects,
+to the files needed to reproduce it.
+
+If you are deploying this, also consider providing a device which have a QR code reader included,
+for instance an old smartphone and tablet. This allows people to scan without needing to
+have a smartphone with installed app. Sadly QR-code apps, and user knowledge, is not that common yet...
+
+## How to create new tag
+
+[SVG template](./qrdoc-template.svg). Recommended print size: 80x40 mm
+
+To create a new one:
+1. Put your documentation online, with some URL
+2. Generate a QR code for the URL, ex using [online tool](http://qr-code-generator.com/)
+3. Open SVG template in [Inkscape](http://inkscape.org/)
+4. Replace the URL, description, medium and QR-code with your data
+5. Print out, or laser-engrave the label
+6. Place onto object, or where object is displayed
+
+
