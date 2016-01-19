@@ -53,6 +53,7 @@ Opinions that I bring to the table in relation to this work.
 - Polyglot programming
 - Static or quasi-static verification
 - Model-based programming
+- Self-documenting
 - Behavior testing over unit-testing
 - Data-driven and generative tests
 - Integrated testing
