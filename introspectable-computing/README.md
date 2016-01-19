@@ -33,7 +33,7 @@ but often having a component of C/C++ and low-level/hardware/electronics compone
 
 In rough order of time spent / maturity.
 
-- Dataflow/flow-based -programming [Flowhub](http;//flowhub.io) + [MicroFlo](http://microflo.org)
+- Dataflow/flow-based-programming [Flowhub](http://flowhub.io) + [MicroFlo](http://microflo.org)
 - Finite State Automata/Machines: [Finito](https://github.com/jonnor/finito)
 - [Design by Contract](https://en.wikipedia.org/wiki/Design_by_contract)
 / Contracts Programming: [Agree](https://github.com/jonnor/agree)
