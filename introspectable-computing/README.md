@@ -70,6 +70,10 @@ Presentations
 > ... The reason programming is so hard is because it is unobservable
 [In Search of Tomorrow, by creator of LightTable](https://www.youtube.com/watch?v=VZQoAKJPbh8).
 
-Established
+Established ideas
 
 - [Python docstrings](https://en.wikipedia.org/wiki/Docstring), `doc()` and `help()` functions
+
+Recent development
+
+- [Node machines, spec for declaring meta info about JavaScript functions](http://node-machine.org/), and [Treeline](https://treeline.io/), a visual IDE built on top of it.
