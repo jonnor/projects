@@ -33,7 +33,7 @@ but often having a component of C/C++ and low-level/hardware/electronics compone
 
 In rough order of time spent / maturity.
 
-- Dataflow/flow-based -programming [Flowhub](http;//flowhub.io) + [MicroFlo](http://microflo.org)
+- Dataflow/flow-based-programming [Flowhub](http://flowhub.io) + [MicroFlo](http://microflo.org)
 - Finite State Automata/Machines: [Finito](https://github.com/jonnor/finito)
 - [Design by Contract](https://en.wikipedia.org/wiki/Design_by_contract)
 / Contracts Programming: [Agree](https://github.com/jonnor/agree)
@@ -53,6 +53,7 @@ Opinions that I bring to the table in relation to this work.
 - Polyglot programming
 - Static or quasi-static verification
 - Model-based programming
+- Self-documenting
 - Behavior testing over unit-testing
 - Data-driven and generative tests
 - Integrated testing
@@ -69,6 +70,10 @@ Presentations
 > ... The reason programming is so hard is because it is unobservable
 [In Search of Tomorrow, by creator of LightTable](https://www.youtube.com/watch?v=VZQoAKJPbh8).
 
-Established
+Established ideas
 
 - [Python docstrings](https://en.wikipedia.org/wiki/Docstring), `doc()` and `help()` functions
+
+Recent development
+
+- [Node machines, spec for declaring meta info about JavaScript functions](http://node-machine.org/), and [Treeline](https://treeline.io/), a visual IDE built on top of it.
