@@ -1,5 +1,29 @@
+# Linear constant-current source
 
-## Referencs
+Useful for driving LEDs, laser diodes, or performing electrolysis.
+Each module can deliver up to 2 amps of current, but can also be parallel coupled to share a larger load.
+
+Designed for easy reproduction in a fablab or makerspace, with a CNC-millable single-layer PCB and no special components.
+The board has 0.1" DIP style connectors, and can be used directly in a breadboard, or easily used as a 
+
+Can be digitally controlled using PWM (ex using a microcontroller/Arduino),
+both setting target/max current and performing high-frequency pulsing.
+Or the target current can be set using any other voltage reference, like a zener diode.
+
+Since this is a linear, good cooling is required. Power dissipated in the transistor is 
+
+## Status
+In development
+
+## TODO
+
+* Complete board layout
+* Verify module functionality, including Iset and PWM from microcontroller
+* Verify current sharing using multiple modules
+* Test with laser diode
+* Test with a power LED
+
+## References
 
 Calculators
 
