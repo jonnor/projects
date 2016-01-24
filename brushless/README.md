@@ -111,6 +111,31 @@ A hydraulic piston with solid steel top and bottom plates, could possibly be use
 * [L297 stepper controller, app note](http://www.st.com/st-web-ui/static/active/en/resource/technical/document/application_note/CD00003803.pdf).
 Describes how PWM chopping with H-bridge current sensing, is used to control current in motor.
 
+# Servomechanisms
+
+The closed-loop nature of [servomechanisms](https://en.wikipedia.org/wiki/Servomechanism)
+can be beneficial to locally fabricated machines, because it can be used to compansate for or correct errors.
+This could allow to use cheaper/simple production methods and materials.
+Also, it can allow machines to run closer to their theoretical limits - because there is
+a way to detect & correct errors. Current generation Repraps 3d-printers will just continue running obliviously
+after missing step(s), often leading to broken models.
+Robotic arms with many degrees of freedom typically also rely on servos/feedback in order to accurately position their limbs.
+
+Two types of systems are interesting:
+
+1) Servo/feedback mechansism in motor. Either stepper motors, or 'servos' based on geared brushless DC motors
+Typically [rotary encoders](https://en.wikipedia.org/wiki/Rotary_encoder) are used for this.
+2) Servo/feedback mechanism in larger machine, like the position of a 3d-printer head along an axis.
+Typically [linear encoders](https://en.wikipedia.org/wiki/Linear_encoder).
+
+And, it is interesting to figure out:
+
+1) How to integrate cheap, off-the-shelf encoders to form a closed loop system.
+2) How to fabricate encoders using typical fablab equipment.
+Using lasercutter to make optical systems, or using PCB etching for conductive both seems promising avenues.
+
+Probably it makes sense to start with a usecase which does not require sub-millimeter precision.
+
 # Research
 
 * [3d-printed transformer](http://3dprint.com/80379/3d-printed-power-transformer), says electromagnets with ProtoPasta Magnetic Iron not working well.
