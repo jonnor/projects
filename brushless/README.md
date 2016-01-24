@@ -48,6 +48,8 @@ Drawbacks
 ## References
 
 * [Good video explanation](https://www.youtube.com/watch?feature=player_detailpage&v=C1-klL3B9LU#t=734)
+* [Atmel: Sensorless commutation of brushless motor using back-EMF implemented in uC](http://www.gaw.ru/pdf/Atmel/app/avr/AVR440.pdf).
+Also shows use of tapered air-gaps to ensure known starting position of rotor (and direction?).
 
 # Fabricated stepper motor
 
@@ -101,7 +103,13 @@ Maybe regular scotch packaging tape,or wide PET/Kapton as used in 3d-printing.
 Etching time was approx 30 minutes, from one side, with 1.5 amp current in 10% vinegar solution.
 
 A flipping-jig would be needed to do two-sided masks (and etch).
-A challenge in using recycled can material is that it is not flat, causing focus problems on laser. Finding straight
+A challenge in using recycled can material is that it is not flat, causing focus problems on laser.
+A hydraulic piston with solid steel top and bottom plates, could possibly be used to squeeze material flat.
+
+## References
+
+* [L297 stepper controller, app note](http://www.st.com/st-web-ui/static/active/en/resource/technical/document/application_note/CD00003803.pdf).
+Describes how PWM chopping with H-bridge current sensing, is used to control current in motor.
 
 # Research
 
@@ -114,4 +122,9 @@ A challenge in using recycled can material is that it is not flat, causing focus
 * [15-deg stepper motor (halfstep capable)](https://www.youtube.com/watch?v=v2FNUNALSTw)
 * [Another printed brushless](http://3dprint.com/89359/3d-print-brushless-pulse-motor)
 
+# Related projects
 
+* [Current source](../currentsource), electronics module for digitally controllable constant current source.
+Could possibly be used for 2-phase unipolar motors. But possibly better, would be to take that concept
+and create H-bridge modules with current sensing/control. Such H-bridge could replace them entirely,
+but also be used for stepper-motors and brushless DC-motors. Forming a generic, software-defined 'drive' system.
