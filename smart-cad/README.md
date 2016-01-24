@@ -280,3 +280,14 @@ Right now only on geometry. Should be able to define in terms of production cost
 
 References:
 * https://github.com/kragen/laserboot/blob/master/README.md
+
+
+## Digital calipers as input device
+
+Another possible tool in getting away from desktop-oriented CAD.
+Needs to input precise measurements. These often come from calipers anyway,
+so why not use that input device directly instead of reading and entering in machine.
+Possible with [digital calipers](https://en.wikipedia.org/wiki/Calipers#Digital_caliper).
+Seems most rely on a RS232/USB cable, which is a bit of a bummer.
+But perhaps one could fabricate some, using PCB etching, with wireless support??
+
