@@ -50,6 +50,8 @@ Drawbacks
 * [Good video explanation](https://www.youtube.com/watch?feature=player_detailpage&v=C1-klL3B9LU#t=734)
 * [Atmel: Sensorless commutation of brushless motor using back-EMF implemented in uC](http://www.gaw.ru/pdf/Atmel/app/avr/AVR440.pdf).
 Also shows use of tapered air-gaps to ensure known starting position of rotor (and direction?).
+* [uC centric, well documented brushless motor driver board](http://danstrother.com/2011/01/12/brushless-dc-motor-controller-board/)
+* [DIY brushless motor implemented on PCB](https://www.youtube.com/watch?v=dSkj-OdujoU)
 
 # Fabricated stepper motor
 
@@ -108,8 +110,11 @@ A hydraulic piston with solid steel top and bottom plates, could possibly be use
 
 ## References
 
+* [LiniStepper, (old) open-source stepper controller](http://www.romanblack.com/lini.htm)
 * [L297 stepper controller, app note](http://www.st.com/st-web-ui/static/active/en/resource/technical/document/application_note/CD00003803.pdf).
 Describes how PWM chopping with H-bridge current sensing, is used to control current in motor.
+* [Open Source Ecology, quest for open stepper motor](http://opensourceecology.org/wiki/Open_Source_Stepper_Motor_Controller)
+* [Open Source Ecology, quest for open stepper controller](http://opensourceecology.org/wiki/Open_Source_Stepper_Motor_Controller)
 
 # Servomechanisms
 
@@ -135,6 +140,66 @@ And, it is interesting to figure out:
 Using lasercutter to make optical systems, or using PCB etching for conductive both seems promising avenues.
 
 Probably it makes sense to start with a usecase which does not require sub-millimeter precision.
+
+# Linear motors
+
+Most [Linear motors](https://en.wikipedia.org/wiki/Linear_motor) are like rotary motors, just unfolded.
+Therefor the common variations exist, including linear stepper motors, linear brushless, linear permanent magnet.
+
+## Linear stepper motor
+
+Linear stepper motor. Simplest example is [Sawyer](http://machinedesign.com/linear-motion/linear-motors-step-out),
+a hybrid stepper (variable reluctance with single magnet).
+Windings are on the moving part (called 'forcer), so cables have to be carried along.
+
+The grid structure required for variable reluctance is easier to manufacture with a CNC when linear,
+because it can be done from above as straight pockets.
+
+## Brushless linear motor
+
+The magnets are in the track, and windings in the moving forcer.
+Typically a flat strip with forcer on top, or a U-profile with forcer inside.
+Coupled with a linear encoder, can get a high-precision linear servo motor.
+They are used for high-end pick&place, laser and water cutters.
+Commercially available from [H2W](http://www.h2wtech.com/category/brushless-linear#productInfo1) [vid](https://www.youtube.com/watch?v=TPCgbfWZ6IQ),
+[MITSUBISHI](https://www.youtube.com/watch?v=2pbYb5HNJ2M).
+
+[Linear motor applications, includes section on commutation](https://www.aerotech.com/media/136335/linear-motors-application-en.pdf])
+
+
+## Voice coil actuator
+
+Voice coil actuator or [Voice coil motor](http://www.moticont.com/voice-coil-motor.htm).
+Short throw, up to couple inches. Designed for a set throw distance.
+http://electronicdesign.com/components/what-s-difference-between-voice-coil-actuators-and-solenoids
+
+* [Instructable, voice coil, equations](http://www.instructables.com/id/Electromagnetic-Actuator/step4/Wind-bobbin/#step1)
+
+## Tubular motor
+
+Also called linear shaft motors.
+Commercially available from Faulhaber, Moticon and LinMot.
+Rod-magnets placed inside tube, each repelling eachother. `N/S<->S/N<->N/S<->S/N`
+Either rod or circular casing can be stationary.
+
+Could be good for moving the shuttle/rapier when doing weft insertion on a loom.
+Could possibly be used for controlling the heddles.
+
+If minimized and made cheap, potentially also individual heddle control, for Jaquis/digital loom.
+Coupled with a linear encoder, could maybe be used for a shape display.
+
+* [YouTube: Simple DIY version](https://www.youtube.com/watch?v=3PLWTF_6odc). Quite jerky motion.
+* [YouTube: DIY version with sinusoidal commutation](https://www.youtube.com/watch?v=PXybuXsqEWo)
+* [Youtube: DIY controller with position control](https://www.youtube.com/watch?v=PWSf_NWGty8)
+* Background on [shaft motors](https://electromate.wordpress.com/2012/01/29/linear-motor-lowdown/)
+
+
+# Servomotor
+
+There are some RepRap designs for servos, including a delta.
+
+If one can fabricate a precise rotary encoder.
+Either resistive, capacitive or inductive
 
 # Research
 
