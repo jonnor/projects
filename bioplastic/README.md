@@ -146,6 +146,87 @@ Sourcing locally in Oslo/Norway
 * Infraheater: [Biltema](http://www.biltema.no/no/Bygg/VVS/Radiator-og-varme/Radiator-El/Infravarmer-1000-W-46214) / [Clas Ohlson](http://www.clasohlson.com/no/Infravarmer/36-4056)
 * White alum, Ammonium aluminium sulfate, ammonium alum, "alun": or farmacy
 
+# Protein-based plastic
+
+[Galalith](https://en.wikipedia.org/wiki/Galalith) was name of the commercial casein-based, formaldehyde-cured plastic popular just before WW2.
+Used for button on textiles, details on furniture, and as an imitation of ivory.
+It is a thermosetting plastic, so cannot be thermoformed, and not molded after having first set.
+Its popularity faded due to lack of moldability, milk-shortage during war, and never recovered afterwards, due to availability of petroleum-based plastics.
+
+Maybe there also exists [synthetic rubber](https://en.wikipedia.org/wiki/Synthetic_rubber) based on proteins?
+
+## Possible uses
+
+Hardplastic objects, as replacement to doing them out of acrylic/polyurethane.
+Possibly especially interesting where wanting ivory or gemstone type imitation.
+There was active research in 40ies around making textiles with it, but never seemed to get to product stage.
+
+## Creation
+
+Basic steps (some are in practice interlinked)
+
+* Extract and purify protein
+* Preticipate and polymerize the protein
+* Extract all water
+* Hardening
+* Make shape
+* After-curing
+
+One can of course add dyes and pigments.
+Probably also use plasticiers and other additives to adjust material properties.
+Can we add filler materials somehow? In which stage would it be done?
+
+Protein preticipate, creation of solid material from a solution. For protein this action is often called [astringent](https://en.wikipedia.org/wiki/Astringent).
+[Tannins](https://en.wikipedia.org/wiki/Tannin), some inorganic salts, among other things, have this effect.
+
+
+## Making useful objects
+
+Either one makes standard-sized blocks or sheets, then CNC mills into desired objects afterwards.
+However this will lead to a lot of waste, and not bring many benefits over just buying plastics.
+Instead one could, direct molding into usable object, or molding of customized stock.
+This roughly shaped stock can then be CNC-milled afterwards.
+
+May have speed and material efficiency benefits, when making several objects of the same 'class',
+either as part of one production series, or because one often makes similar objects.
+As an example, 3d-milled busts/portraits could benefit from a custom stock instead of being a block.
+Making use of this advantage may require particular CNC toolpath generation, however.
+
+
+The mold could be a two-sided mold of wood, which is then put in a press.
+Holes will likely be needed to let water escape.
+
+Or, lay material around a negative shape - then use vacum-bagging to pull it tight.
+Will water escape into vacum pump?
+
+## References
+
+* [US Patent: Process of insoluzibiling protein fibres during manufacture](http://www.google.com/patents/US2297397).
+Cites use of chrome salts (chrome alun) used in process.
+"pass through a second bath of aluminium salts and of sodium chloride,
+with or without formaldehyde, wherein the filaments are restrained and preliminarily hardened by the astringent action of aluminium salts,
+this action being helped-on and accelerated by the presence of the sodium chloride".
+* [UK Patent:  The hardening of films, fibres, filaments and fabrics made from non-cellulosic hydrophilic polymers](http://patent.ipexl.com/GB/716542-a.html).
+Describes isocyanate addition and heating process to improves hardening. But also refes to other existing practices:
+"Enhanced effects are obtained if the heating step is effected in the presence of an amide, thioamide, sulphonamide, amidine or aminotriazine, e.g., urea, ..."
+"Treatment with other hardening agents, e.g., aldehydes, thermo-setting condensates, aluminium or chromium salts, may be applied before, simultaneously with or after the reaction product".
+* [US Patent: Production of artificial protein threads, fibres, filaments and the like](https://www.google.com/patents/US2897044)
+"It is known to produce threads from proteins by extruding an alkaline solution of the protein into a coagulating bath containing an acid, usually sulphuric acid,
+and one or more salts having an astringent action on the freshly extruded threads, for example sodium sulphate and aluminium sulphate."
+"he threads are then generally hardened, that is to say, rendered insoluble in water at ordinary temperatures,
+stretched and hardened once more as described in British patent specification No. 502,710;
+finally, the threads are usually subjected to an insolubilising process which renders the threads resistant to the action of boiling water or hot aqueous solutions."
+* [US Patent: Tanning Process](http://www.google.com/patents/US2061063)
+"It is known that tanning agents such as tannic acid, formaldehyde, formaldehyde polymers, acetaldehyde, oak extract, alum, chromium salts and similar materials will
+react with casein, animal glue. vegetable proteins, hide substance and other proteins and protein containing substances to render the protein hard and more or less insoluble in water."
+"in preparing insoluble films on paper, making adhesives, paints and in plastics manufacture.
+A common practice is to prepare first, a film from an aqueous solution of casein which contains an alkaline agent, such as borax, for rendering the casein soluble.
+The film then is dried and treated with formaldehyde, tannic acid or similar hardening agent, which causes the film to become relatively insoluble in water. "
+"We have discovered that when a protein is subjected to the action of a protein hardening material in $5 the presence of a fatty acid amide, the hardening efiect is markedly inhibited or delayed." -
+implying that it helps the hardening agent go deeper into the material.
+
+
+
 References
 ------------
 
@@ -173,6 +254,28 @@ due to its low consumption of energy and high conversion rate, which is of about
 [PDF](www.researchgate.net/profile/MReza_Nofar/publication/261372821_Poly_%28lactic_acid%29_foaming/links/5436f64d0cf2dc341db4c5ff.pdf)
 * [Foamed PLA Shows Promise In Biodegradable Meat Trays](http://www.ptonline.com/articles/foamed-pla-shows-promise-in-biodegradable-meat-trays)
 
+
+
+PLA production
+
+* [Youtube exlanation](https://www.youtube.com/watch?feature=player_detailpage&v=99DeqVBEDFI#t=128),
+both Ring-opening polymerization using metal-catalyzed lactide, and Direct Polycondenzation of Lactic Acid.
+Includes references to a Direct Polycondensation step without catalysts, reaching 1.49*10^-22 kg,
+also produced Lactide as a side-effect. And a section on blending with other biodegradable.
+PCL, rubbery-like. With Dextrene. Collagene
+Zinc, Titanium, Tin (or Tin Octuate). Sodium Carbonate is used to extract the Tin Octuate afterwards.
+
+* [Youtube lab demo of PLA syntheis](https://www.youtube.com/watch?v=lKJUFV2pSpk). Silent with french subs..
+Lactic acid is mixed with sulhuric acid. Heated to 110 C and left there for 30 mins.
+
+Polymers general
+
+* Condensation Polymers: [Polyesters](https://www.youtube.com/watch?v=usRnJP8lDxM)
+* Condensation Polymers: [Polyamides](https://www.youtube.com/watch?v=ILy-Jlfnonw)
+
+Automation
+
+* [Industrial robotic system for polymer synthesis](https://www.youtube.com/watch?v=Bdrrr48oVP0). Software defined, Operator programmable.
 
 Politics
 ----------
