@@ -144,7 +144,7 @@ Sourcing locally in Oslo/Norway
 * Sorbitol: ??
 * Ammonia: Meny/grocery??
 * Infraheater: [Biltema](http://www.biltema.no/no/Bygg/VVS/Radiator-og-varme/Radiator-El/Infravarmer-1000-W-46214) / [Clas Ohlson](http://www.clasohlson.com/no/Infravarmer/36-4056)
-* White alum, Ammonium aluminium sulfate, ammonium alum, "alun": or farmacy
+* [Alum](https://en.wikipedia.org/wiki/Alum). White alum, Ammonium aluminium sulfate, ammonium alum, "alun". or farmacy
 
 # Protein-based plastic
 
@@ -153,13 +153,15 @@ Used for button on textiles, details on furniture, and as an imitation of ivory.
 It is a thermosetting plastic, so cannot be thermoformed, and not molded after having first set.
 Its popularity faded due to lack of moldability, milk-shortage during war, and never recovered afterwards, due to availability of petroleum-based plastics.
 
-Maybe there also exists [synthetic rubber](https://en.wikipedia.org/wiki/Synthetic_rubber) based on proteins?
+By using sulfur, one can also make a kind-of [synthetic rubber](https://en.wikipedia.org/wiki/Synthetic_rubber). [How to video](https://www.youtube.com/watch?v=VzEujd7iEHU).
 
 ## Possible uses
 
 Hardplastic objects, as replacement to doing them out of acrylic/polyurethane.
 Possibly especially interesting where wanting ivory or gemstone type imitation.
-There was active research in 40ies around making textiles with it, but never seemed to get to product stage.
+
+There was active research in 40ies around making textiles with it, but never seemed to get to product stage?
+Some mentions of producs lanital, (Italy), and aralac (USA).
 
 ## Creation
 
@@ -171,6 +173,9 @@ Basic steps (some are in practice interlinked)
 * Hardening
 * Make shape
 * After-curing
+
+If already have pure casein, seem to need a strong base to make an alkali solution.
+Rubber milk video uses Potassium Hydroxide (KOH).
 
 One can of course add dyes and pigments.
 Probably also use plasticiers and other additives to adjust material properties.
@@ -224,15 +229,45 @@ A common practice is to prepare first, a film from an aqueous solution of casein
 The film then is dried and treated with formaldehyde, tannic acid or similar hardening agent, which causes the film to become relatively insoluble in water. "
 "We have discovered that when a protein is subjected to the action of a protein hardening material in $5 the presence of a fatty acid amide, the hardening efiect is markedly inhibited or delayed." -
 implying that it helps the hardening agent go deeper into the material.
-
+* [Plastic Historical Society: Casein](http://www.plastiquarian.com/index.php?id=60)
+* [Using ammonium alum surfate as hardener](http://www.apug.org/forums/archive/index.php/t-24912.html)
+* [Chemistry: What is alum](http://chemistry.about.com/od/moleculescompounds/f/What-Is-Alum.htm)
+* [Rubber from milk protein (casein)](https://www.youtube.com/watch?v=VzEujd7iEHU).
+Applied to cloth, and filled with carbon to make conductive ink which bonds well to plastic.
+* [Making Fake Ivory And Casein Milk Plastics, Glues and Paints](https://www.youtube.com/watch?v=BnXGZKCrktE).
+Says to not use much acid when precipitating, because it causes casein to form very tiny clumps.
+Says that purification is key to get high-quality plastic.
+Basic purification can be done by dissolving in alkali (for instance ammonia), stir it up with, then make acidic to precipitate again.
+Better is to dissolve in methanol or ethanol. Will split out salts, break up acids and release water. Methanol can then be decantered or filtered off.
+Then can use hot water and mashing it a round a bit, to encourage polymerization and release impurities. Change water and keep it hot.
+Also shows briefly a near-see through thin-ish plastic.
+* [ Waterproof Cloth With Tea And Milk - Biopolymers - Casein](https://www.youtube.com/watch?v=bdIhRyONYP4).
+Uses Borax to make it more glue-like, and glyserin as plastizier. 10 gram casein, 5 gram Borax, 1 tsp glyserine.
+Becomes a thin-film. Tannin (from tea, or tannic acid) to fix it and make it waterproof.
+* [Casein; its preparation and technical utilization](https://archive.org/details/caseinitsprepara00scherich).
+200-page book from 1907 with lots of practical recipes. Interesting bits include.
+'FIBEPROOF CELLULOSE SUBSTITUTE'. Uses Alum and Aluminum acetate while making.
+"The moulded articles are dipped into a bath of 
+10 parts of phosphoric acid and 100 of water, and are after- 
+wards dried, polished and varnished with a solution of 
+shellac, consisting of 3 parts of shellac, 1 of borax and 2".
+"that can be made as hard as  leather by passing it through a solution of alum after drying"
+* [An Alternative Homemade Plastic - PVA and Borax](https://www.youtube.com/watch?v=Xyrl__BVCqA).
+PVA is regular wood-glue. Borax acts as polymerization agent. Talkum powder used as filler. Also example with sand.
+Filler must be added before polymerization! Quite strong and takes some time to dissolve in water.
+* [ Terry Hope - Casting Thin, Tough Bioplastics Casein](https://www.youtube.com/watch?feature=player_detailpage&v=nWeXmO1fe5Q#t=129).
+Showing a very thin, rigid, see-through thin film.
+* [Preparation of Casein from Skim Milk](http://drinc.ucdavis.edu/dairychem2.htm).
+Well-described protocol. Use weak acid, heat solution up to 43 C, but not higher, add acid slowly and stop when casein forms. Filter with isopropanol or ethanol.
+* [Making casein glue, modern and historical ways](http://www.rocks4brains.com/glue.pdf)
+* http://encyclopedia2.thefreedictionary.com/Protein+Plastics
+* http://encyclopedia.thefreedictionary.com/galalith
 
 
 References
 ------------
 
 * http://polymerinnovationblog.com/thermoplastic-starch-a-renewable-biodegradable-bioplastic/
-* [Rubber from milk protein](https://www.youtube.com/watch?v=VzEujd7iEHU)
-* [Bioplastic from milk protein](https://www.youtube.com/watch?v=BnXGZKCrktE)
 * [Moulding recycled HDPE into sheets](https://www.youtube.com/watch?v=vO2b9iMitQY)
 * [DIY algea/agar bioplastic](http://green-plastics.net/posts/39/how-to-make-algae-bioplastic/)
 * [How to make starch bioplastic](https://www.youtube.com/watch?v=LskPNBvbuqM)
@@ -244,16 +279,15 @@ References
 * [SigmaAldrich: List of hydrophobic polymers](http://www.sigmaaldrich.com/materials-science/material-science-products.html?TablePage=16372120)
 * [Starch-based plastic review](http://www.biodeg.net/fichiers/Starch-based_Plastics.pdf): "PLA seems to be the only plastic from vegetal source with chances to be commercialized,
 due to its low consumption of energy and high conversion rate, which is of about 80% of each kilo of sugar."
-* [Plastic Historical Society: Casein](http://www.plastiquarian.com/index.php?id=60)
-* [Using ammonium alum surfate as hardener](http://www.apug.org/forums/archive/index.php/t-24912.html)
-* [Chemistry: What is alum](http://chemistry.about.com/od/moleculescompounds/f/What-Is-Alum.htm)
 * [Bioplasticsinfo.com: PHA appications](http://bioplasticsinfo.com/polyhydroxy-alkonates/applications-of-pha-as-bioplastic/)
-* [Casein; its preparation and technical utilization](https://archive.org/details/caseinitsprepara00scherich)
 * [Quest for bio-styrene, foam from PLA/PHA](http://greenchemicalsblog.com/2013/02/17/the-quest-for-bio-polystyrene/)
 * [Polylactic acid foaming](http://www.sciencedirect.com/science/article/pii/S0079670014000392)
 [PDF](www.researchgate.net/profile/MReza_Nofar/publication/261372821_Poly_%28lactic_acid%29_foaming/links/5436f64d0cf2dc341db4c5ff.pdf)
 * [Foamed PLA Shows Promise In Biodegradable Meat Trays](http://www.ptonline.com/articles/foamed-pla-shows-promise-in-biodegradable-meat-trays)
-
+* [How To Make A Gelatin Foam ](https://www.youtube.com/watch?v=FDAiX9mxvCI). Based on a [long tutorial](https://www.youtube.com/watch?v=u4rxnovwN_0).
+100 ml gelatin / 50 ml water, 50 ml honey and 100 ml glyserin plastizer. Need to heat, but not boil, to dissolve.
+Using washing liquid as foaming agent, kitchen machine to whip it. Gelatin sets below 45 deg C, and is reheatable.
+Using 5 ml Listerine (mouth wash) as an anti-bacterial agent.
 
 
 PLA production
