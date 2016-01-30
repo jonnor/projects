@@ -10,7 +10,6 @@ but is hopefully practical and powerful enough to be useful in realistic scenari
 ![Model](./doc/outrunner-rev0.png)
 ![PCB](./doc/pcb-rev0.png)
 
-
 ## Notable changes
 
 * Integrated driver electronics. Standard components, designed for reuse.
@@ -141,6 +140,20 @@ Using lasercutter to make optical systems, or using PCB etching for conductive b
 
 Probably it makes sense to start with a usecase which does not require sub-millimeter precision.
 
+## Encoder
+
+References
+* Farnell: [Photointerruptors](http://no.farnell.com/webapp/wcs/stores/servlet/Search?catalogId=15001&langId=47&storeId=10169&categoryId=700000005979&sort=P_PRICE&pageSize=25&showResults=true&aa=true&pf=111784929,111784930,111784932,111784933,111784934,111784935,111899261,112041178&max=111784935)
+5 - 10 NOK/piece, 0.5 - 0.15 mm aperture.
+* [Quadrature encoder from two photointerruptors](https://frobotme.wordpress.com/2014/05/25/a-simple-diy-quadrature-encoder-for-arduino-using-optical-sensors/), by offsetting them from eachother.
+* [How Quadrature encoders work](http://www.dynapar.com/Technology/Encoder_Basics/Quadrature_Encoder/)
+* [ServoStrap](https://github.com/danithebest91/ServoStrap), 3d-printer based on closed-loop DC motors salvaged from printer.
+* [HackADay: Closed loop control for 3d-printer](https://hackaday.com/2015/01/20/closed-loop-control-for-3d-printers/#more-144269). Based on ServoStrap.
+* [DigiKey: Designers guide to Encoders](http://www.digikey.com/en/articles/techzone/2012/apr/a-designers-guide-to-encoders)
+* [Linear position tracking with (off-the-shelf) quadrature encoder](http://benkrasnow.blogspot.no/2010/02/linear-position-tracking-with.html)
+* [DIY differential optical encoder](http://groups.csail.mit.edu/mac/users/pmitros/encoder/)
+* [OpenEncoder, rotary magnet encoder PCB](http://www.openservo.com/OpenEncoder)
+
 # Linear motors
 
 Most [Linear motors](https://en.wikipedia.org/wiki/Linear_motor) are like rotary motors, just unfolded.
@@ -196,10 +209,14 @@ Coupled with a linear encoder, could maybe be used for a shape display.
 
 # Servomotor
 
-There are some RepRap designs for servos, including a delta.
+There are some RepRap designs for servos, including some deltas like [Enemy](http://reprap.org/wiki/Enemy_Delta_Robot).
 
 If one can fabricate a precise rotary encoder.
 Either resistive, capacitive or inductive
+
+## References
+
+* [OpenServo, PCB/encoder replacement for servos](http://www.openservo.com/FrontPage)
 
 # Research
 
