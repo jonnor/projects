@@ -414,6 +414,7 @@ Sensors
 * Vibration, low-frequency
 * Vibration, audio
 * Current consumption
+* Rotary encoder, for user input
 
 Sensor interfacing/conditioning
 
@@ -439,7 +440,7 @@ Power connectors
 * USB male&female. 5V
 * Car/sigarrette adapter. 12V
 
-Battery connectors. Note: tons of designs already on Thingiverse!
+Battery connectors. Note: tons of designs for non-conductive already on Thingiverse!
 
 * 9V. AAA, AA. CRxxXX
 
