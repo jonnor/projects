@@ -107,6 +107,24 @@ A flipping-jig would be needed to do two-sided masks (and etch).
 A challenge in using recycled can material is that it is not flat, causing focus problems on laser.
 A hydraulic piston with solid steel top and bottom plates, could possibly be used to squeeze material flat.
 
+### Mask making
+
+Using plast tape selectively removed by laser-cutter to create masks was partially successful.
+The tricky thing is finding settings/materials where the tape *and* its glue gets removed cleanly,
+without causing too much removal (widens etchline) or bubbling of the plastic on edges.
+
+Other techniques which may be worth trying instead for selective-laser removal is:
+
+* Coating with paraffin/stearine, for instance from melted candles
+* Coating with spay/fluid wax used for polishing (usually carnauba-wax). [Example](http://www.clasohlson.com/no/Hurtigvoks-/34-917)
+* Coating with a varnish. Examples: [1](http://www.clasohlson.com/no/Original-Ferniss/34-1316)
+[2](http://www.clasohlson.com/no/Winsor-&amp;-Newton-blank-maleferniss/34-4612)
+[3](http://www.clasohlson.com/no/Liquitex-medium-og-ferniss/34-4085)
+
+In [etching](https://en.wikipedia.org/wiki/Etching), the material laid down to protect against the etchant is called the *ground*.
+This page has many [modern alternatives for ground](http://www.nontoxicprint.com/hardandsoftground.htm),
+including a type of commonly found acrylic wood finishing.
+
 ## References
 
 * [LiniStepper, (old) open-source stepper controller](http://www.romanblack.com/lini.htm)
@@ -221,6 +239,7 @@ Either resistive, capacitive or inductive
 # Research
 
 * [3d-printed transformer](http://3dprint.com/80379/3d-printed-power-transformer), says electromagnets with ProtoPasta Magnetic Iron not working well.
+* Another magnetic 3d-printer material, from Graphene 3D. [Announcement](http://3dprint.com/115769/graphene-3d-magnetic-filament/)
 
 # References
 

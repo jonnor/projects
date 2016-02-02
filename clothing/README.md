@@ -109,7 +109,7 @@ using standardized tools&material. The existing pieces of clothing become 'vitam
 Examples by others:
 
 * [tshirt into cardigan](http://www.instructables.com/id/DIY-No-Sew-Cardigan/)
-* lacing
+* Lacing
 
 ### Gothic ideas
 
@@ -294,3 +294,14 @@ References
 * http://www.hydraforce.com/electro/Elec-pdf/3-440-1.pdf
 * http://hyperphysics.phy-astr.gsu.edu/hbase/electric/indsol.html
 * http://www.qsl.net/pa2ohh/jslcimp.htm
+
+# Fiber production
+
+* [Making Rayon (artificial silk)](https://www.youtube.com/watch?v=f_AvqnMTJjg).
+Cellulose is used as input. Final fibers are made by extruding into a bath of sulphuric acid. Could this be used to directly manufacture
+
+# Related
+
+Work by others
+
+* [3d-printed Textile fastener](http://www.thingiverse.com/thing:7544), can be used without puncturing textile. For clothing or technical uses.

@@ -140,6 +140,11 @@ Folding knife
 ![Decorated folding knife](./doc/inspiration-foldingknife.jpg)
 
 
+Work by others
+---------------
+
+* [Thingiverse: EAB (Exchange-A-Blade) Folding Utility Knife](http://www.thingiverse.com/thing:1298487)
+
 
 Stories
 ============

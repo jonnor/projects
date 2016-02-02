@@ -459,3 +459,7 @@ Work by others
 
 * [Servo mount for lightswitch](http://www.thingiverse.com/thing:1156995)
 
+Commercial offerings
+
+* [Computer-controlled micropipette with conductive glue](http://www.sonoplot.com/printed-electronics).
+Using ultrasound (probably piezo), to control dispensing.

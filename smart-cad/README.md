@@ -291,3 +291,22 @@ Possible with [digital calipers](https://en.wikipedia.org/wiki/Calipers#Digital_
 Seems most rely on a RS232/USB cable, which is a bit of a bummer.
 But perhaps one could fabricate some, using PCB etching, with wireless support??
 
+
+
+# Inspiration
+
+[Design at Large- Stefanie Mueller](https://www.youtube.com/watch?v=cLUyTK72xXU)
+
+In order to enable non-professional users to digitally fabricate, we need to:
+* increase the
+* 
+Need to move to 'direct '
+
+LaserOrigimi, folding to make 3d objects
+LaserSheet
+WirePrint 
+
+http://crossfab-workshop.com/
+
+
+

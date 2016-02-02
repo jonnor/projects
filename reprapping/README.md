@@ -204,3 +204,8 @@ To loosen belt one would push out the ratchet.
 Work by others
 
 * [3d-printed bushing](http://www.thingiverse.com/thing:1196801), replaces speciality linear bearings
+
+# Interesting designs
+
+* [Delta-T, rail-free, wire-based delta](http://forums.reprap.org/read.php?1,525804)
+* [SkyDelta, rail-free, wire-based delta](https://groups.google.com/forum/#!topic/deltabot/Jj6vyPf7jJ8)

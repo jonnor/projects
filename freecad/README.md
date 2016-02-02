@@ -1,7 +1,27 @@
 
-# Throughs and learnings around FreeCAD
+# FreeCAD tools & learnings
 
-# TODO
+[FreeCAD](http://freecadweb.org/) is an excellent open source parametric solid modelling CAD software,
+which I use for almost all my modelling. Here are some tools, tips & tricks that I've developed.
+
+## Macros
+
+## Image scale to reference
+
+When you import an image into 3d-view using a ImagePlane, the image is sized based on DPI*pixels.
+If the image is a photograph of an object, this is unlikely to be the correct physical length.
+The [imageScaleReference](./macros/imageScaleReference.FCMacro) macro lets you *scale image
+by specifying the distance between two points*.
+Very useful when working with images as references, to trace complex curves,
+design something that fits or interfaces.
+
+
+## Tools
+
+* RML-format CAM post-processor, [for Roland MDX](https://github.com/FreeCAD/FreeCAD/blob/master/src/Mod/Path/PathScripts/rml_post.py)
+
+
+## TODO
 
 * Test wether FreeCAD macros are picked up when in subdirectories
 * Create separate repo for FreeCAD macros
@@ -9,7 +29,7 @@
 
 # Wanted
 
-## Creating joinery.
+### Creating joinery.
 Tools/scripts for creating everything from simple dowel+hole/mortise+tendon, finger-joints and cross-laps.
 
 * https://en.wikipedia.org/wiki/Woodworking_joints
@@ -20,7 +40,7 @@ Related to Daniel. working on scripts for doing living-hinge type things.
 Look at how people do this in advanced tools like Rhino/Grasshopper, AutoCAD etc?
 [FreeCAD forum discussion](http://forum.freecadweb.org/viewtopic.php?f=8&t=13023&p=104266#p104266)
 
-## On-canvas labelling of parts
+### On-canvas labelling of parts
 
 A good 3d-model is useful for illustrating a concept.
 But to make it really understandable, would be nice to be able to have text labels pointing at the individual parts.
@@ -29,27 +49,28 @@ Could use the names of objects. Needs no extra UI and encourages good naming.
 Related, it could be desirable to name a constraint, and show that name as well.
 Especially for parametric models that are designed for customization.
 
-## Better exporting tools
+### Better exporting tools
 
 Produce all the 'deliverables'. Could be a script/macro.
 Should be runnable both from within GUI and commandline (for use on Travis CI).
 Could for instance walk through document, and export everything with names
 'part.stl', 'mypart.dxf' and 'ppp.step,stl'. Should have option for the prefix. Maybe default to 'export/$project-' ?
 
-## Unrolling a sketch line
+### Unrolling a sketch line
 
 For use with PathArray where one is a complex geometry, and
 one is the same just linear. Should update length of linear line to match sketch geometry.
 Maybe related: http://www.freecadweb.org/wiki/index.php?title=Macro_unrollRuledSurface
 
-## A parametric/connected 'cross-section tool'.
+### A parametric/connected 'cross-section tool'.
 Currently the Part::CrossSection creates a copy which is not updated on changes to the part it comes from.
 I often used this for DXF export (for lasercut/milling). Then it is irritating (and error-prone) that
 it does not update...
 
 It may be that Draft::Shape2dView does update
 
-# Learned
+
+## Learned
 
 Rebasing part features
 ----------------------
