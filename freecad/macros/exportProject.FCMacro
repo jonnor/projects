@@ -8,6 +8,8 @@ to individual files in a export directory. Default prefix: 'export/$project-'
 Can be ran both as a macro from the FreeCAD UI and as a script on commandline.
 """
 
+# TODO: support some kind of preview. Maybe using the recent camera macros?
+
 import sys, os
 import re
 partTypeRegex = re.compile(r'^(.*)\[([,\w]+)\].*$')
@@ -15,14 +17,25 @@ partTypeRegex = re.compile(r'^(.*)\[([,\w]+)\].*$')
 sys.path.insert(0, '/usr/lib/freecad/')
 import FreeCAD
 
-
+def exportMesh(objs, p):
+    import Mesh
+    Mesh.export(objs, p)
+def exportDxf(objs, p):
+    import importDXF
+    importDXF.export(objs, p)
+def exportStep(objs, p):
+    # XXX: will overwrite file if called with multiple args.. Last write wins
+    for o in objs
+        shape = o.Shape
+        shape.exportStep(p)
 
 # TODO: support CAM and post-processors like: rml, spb
-supportedTypes = [
-    'stl',
-    'step',
-    'dxf',
-]
+supportedTypes = {
+    'stl': exportMesh,
+    'obj': exportMesh,
+    'step': exportStep,
+    'dxf': exportDxf,
+}
 
 def extractTypes(label):
     match = re.search(partTypeRegex, label)
@@ -36,22 +49,29 @@ def extractTypes(label):
 
 
 def exportDocument(doc, exportdir):
+    exported = []
+
     docdir = os.path.dirname(doc.FileName)
     docname = os.path.splitext(os.path.basename(doc.FileName))[0]
     for obj in doc.Objects:
         partname, types = extractTypes(obj.Label)
         #print "obj %s %s" % (obj.Label, types)
         for t in types:
+            exporter = supportedTypes[t]
             filename = "%s-%s.%s" % (docname, partname, t)
             filename = os.path.join(docdir, exportdir, filename)
-            print filename
+            exporter([obj], filename)
+            exported.append(filename)
+
+    return exported
 
 
 def main():
     projectfile = sys.argv[1]
     print 'Opening project', projectfile
     doc = FreeCAD.openDocument(projectfile)
-    exportDocument(doc, 'export/')
+    files = exportDocument(doc, 'export/')
+    print files
 
 if __name__ == '__main__':
     main()
