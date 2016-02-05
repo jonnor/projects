@@ -1,10 +1,10 @@
-# Copyright 2015, Jon Nordby <jononor@gmail.com>. Licensed MIT & LGPLv2+
+# Copyright 2016, Jon Nordby <jononor@gmail.com>. Licensed LGPLv2+ & MIT
 #
 # scaleReference:
-# Given a selection of an ImagePlane and a draft Line,
-# rescales the ImagePlane to make the distance between two points of the Line
+# Given a selection of an ImagePlane and a MeasureDistance,
+# rescales the ImagePlane to make the distance between two points of the MeasureDistance
 # match a given real-life distance.
-# The draft Line is then deleted.
+# The MeasureDistance is then deleted.
 
 import FreeCADGui
 script = "scaleReference"
@@ -23,33 +23,47 @@ def getInput(title=None, text=None, default=0.0):
     return val
 
 def isImagePlane(obj):
-    return hasattr(obj, "XSize")
+    return obj.TypeId == 'Image::ImagePlane'
+def isMeasurement(obj):
+    return obj.TypeId == 'App::MeasureDistance'
 
-def scaleReference():
+def scaleReference(image, measurement, current, actual):
 
+    # Calculate image scaling and apply
+    scale = actual/current
+    image.XSize = image.XSize*scale
+    image.YSize = image.YSize*scale
+
+    # TODO: Update measurement to match instead of deleting
+    measurement.Document.removeObject(measurement.Name)
+    #measurement.P1 = (measurement.P1-image.Placement.Base).scale(scale, scale, 1)
+    #measurement.P2 = (measurement.P2-image.Placement.Base).scale(scale, scale, 1)
+    #measurement.Label = "Distance: %.3d" % (measurement.Distance,)
+
+def scaleReferenceFromSelection():
     # Extract objects from in selection
     selection = FreeCADGui.Selection.getSelection()
     if len(selection) != 2:
-        show(text="Expected 2 selected objects, got %d" % (len(selection),))
+        show(text= script + ": %d objects were selected. Need to select 2: one ImagePlane and one Distance." % (len(selection),))
         return
     
-    image, line = None, None
+    image, measurement = None, None
     if isImagePlane(selection[0]):
-        image, line = selection
+        image, measurement = selection
     else:
-        line, image = selection
-    
-    # Current and actual/desired lengths
-    current = line.Start.distanceToPoint(line.End)
-    actual, ok = getInput(title="Actual length")
+        measurement, image = selection
+
+    if not isMeasurement(measurement) or not isImagePlane(image):
+        err = script+": Selected objects have wrong type. Got [%s, %s] - expected [Image::ImagePlane, App::MeasureDistance]" \
+            % (measurement.TypeId, image.TypeId)
+        show(text=err)
+
+    current = measurement.P1.distanceToPoint(measurement.P2)
+    actual, ok = getInput(title="Actual length", default=current)
     if not ok:
         # User aborted
         return
 
-    # Calculate scaling and apply
-    scale = actual/current
-    image.XSize = image.XSize*scale
-    image.YSize = image.YSize*scale
-    line.Document.removeObject(line.Name)
+    return scaleReference(image, measurement, current, actual)
 
-scaleReference()
+scaleReferenceFromSelection()
