@@ -206,6 +206,16 @@ Examples: Type of material (plywood, MDF, acrylic), thickness of material
 * Different CAM settings for part geometry.
 Examples: cutting speeds, laser power. Raster versus vector, pocket versus cut. Pocket/cut depth
 
+## Objects
+
+Objects suitable or designed for fabrication from scrap material
+
+* [Trashcan](../random/thrasbin.fcstd) designed to only use short staves. Inspired by Waste Bin by Astrid Lubsen
+* [SketchChair](http://www.sketchchair.cc/), slice-based open source chair, could possibly be suited
+* [POD by Samuelle Javelle](http://teobonobo.blogspot.no/2013/12/pod-samuel-javelle_6.html)
+* Pintres: CNC'ed furniture inspiration [1](https://www.pinterest.com/pin/478789004105748170/)
+
+
 ### Related ideas
 
 * Could expand this to 3d-printing / additive manufacturing.
@@ -225,6 +235,35 @@ Because the added part geometries can be seen as parasites on the job being run,
 References:
 
 * [Collection of assisted drawing research](https://medium.com/@samim/assisted-drawing-7b26c81daf2dd)
+
+## Slicing for fabricating
+
+For users it can be very challenging to design, especially when having to construct
+3D shapes as 2D geometry suitable for CNC/laser.
+Also, often it is desirable to not design something from scratch
+- but reuse existing models, or scanned geometry.
+
+Instead can design in 3D, and then slice it automatically into 2d geometry realizable on laser or CNC.
+
+123D Make is example of propriatary software for this purpose.
+It is also not cross-platform, for instance does not work on Linux.
+
+Done well, would have very strong synergies with the auto-layout and joinery generation
+- because then any 3d-model could potentially be used for making things from scrap
+- not just objects designed for this purpose.
+
+Existing open work
+
+* [Uinsg Skeinforge to slice STL into SVG](http://www.nycresistor.com/2012/02/27/laser-slicing/)
+* [Slicing 3D CAD Model in STL Format and Laser Path Generation](http://www.ijimt.org/papers/431-M1007.pdf) (paper)
+* [SketchChair: Online parametric chair-generator based on slices for CNC](http://www.sketchchair.cc/)
+* [PuzzleCut: OpenSCAD library that cuts objects into interlocking pieces](http://www.thingiverse.com/thing:35834)
+* [Slicing sides of model with OpenSCAD for faster/detailed printing](http://geekygulati.com/2014/05/10/slicing-and-dicing-with-openscad/)
+
+Related
+
+* [Papercraft: Unfolding STL models to make laser cut patterns](https://github.com/osresearch/papercraft) [website](https://trmm.net/Unfolding_STL)
+
 
 ## UX concept ideas
 
