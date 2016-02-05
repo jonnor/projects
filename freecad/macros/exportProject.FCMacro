@@ -1,0 +1,57 @@
+# Copyright 2016, Jon Nordby <jononor@gmail.com>. Licensed LGPLv2+ & MIT
+
+"""
+exportProject:
+
+Exports all files in document which has names like "mypart [dxf]" or "otherpart[stl,step]"
+to individual files in a export directory. Default prefix: 'export/$project-'
+Can be ran both as a macro from the FreeCAD UI and as a script on commandline.
+"""
+
+import sys, os
+import re
+partTypeRegex = re.compile(r'^(.*)\[([,\w]+)\].*$')
+
+sys.path.insert(0, '/usr/lib/freecad/')
+import FreeCAD
+
+
+
+# TODO: support CAM and post-processors like: rml, spb
+supportedTypes = [
+    'stl',
+    'step',
+    'dxf',
+]
+
+def extractTypes(label):
+    match = re.search(partTypeRegex, label)
+    if match:
+        types = match.group(2).split(',')
+        part = match.group(1)
+    else:
+        part = label
+        types = []
+    return [part, types]
+
+
+def exportDocument(doc, exportdir):
+    docdir = os.path.dirname(doc.FileName)
+    docname = os.path.splitext(os.path.basename(doc.FileName))[0]
+    for obj in doc.Objects:
+        partname, types = extractTypes(obj.Label)
+        #print "obj %s %s" % (obj.Label, types)
+        for t in types:
+            filename = "%s-%s.%s" % (docname, partname, t)
+            filename = os.path.join(docdir, exportdir, filename)
+            print filename
+
+
+def main():
+    projectfile = sys.argv[1]
+    print 'Opening project', projectfile
+    doc = FreeCAD.openDocument(projectfile)
+    exportDocument(doc, 'export/')
+
+if __name__ == '__main__':
+    main()

@@ -18,6 +18,17 @@ by specifying the distance between two points*.
 Very useful when working with images as references, to trace complex curves,
 design something that fits or interfaces.
 
+## Export project
+
+Exports all files in document which has names like [dxf] or [stl,step]
+to individual files in a export directory. Default prefix: 'export/$project-'
+Can be ran both as a macro from the FreeCAD UI and as a script on commandline.
+
+[exportProject](./macros/exportProject.FCMacro)
+
+This allows treating the FreeCAD file as a single-source-of-truth,
+and to automate the tedious and error-prone task of updating derivative/exported files.
+
 
 ## Tools
 
@@ -51,13 +62,6 @@ Could use the names of objects. Needs no extra UI and encourages good naming.
 
 Related, it could be desirable to name a constraint, and show that name as well.
 Especially for parametric models that are designed for customization.
-
-### Better exporting tools
-
-Produce all the 'deliverables'. Could be a script/macro.
-Should be runnable both from within GUI and commandline (for use on Travis CI).
-Could for instance walk through document, and export everything with names
-'part.stl', 'mypart.dxf' and 'ppp.step,stl'. Should have option for the prefix. Maybe default to 'export/$project-' ?
 
 ### Unrolling a sketch line
 
