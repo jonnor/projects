@@ -50,8 +50,9 @@ def extractTypes(label):
 
 def exportDocument(doc, exportdir):
     exported = []
+    if not os.path.exists(exportdir):
+        os.makedirs(exportdir)
 
-    docdir = os.path.dirname(doc.FileName)
     docname = os.path.splitext(os.path.basename(doc.FileName))[0]
     for obj in doc.Objects:
         partname, types = extractTypes(obj.Label)
@@ -59,28 +60,42 @@ def exportDocument(doc, exportdir):
         for t in types:
             exporter = supportedTypes[t]
             filename = "%s-%s.%s" % (docname, partname, t)
-            filename = os.path.join(docdir, exportdir, filename)
-            exporter([obj], filename)
+            filepath = os.path.join(exportdir, filename)
+            exporter([obj], filepath)
             exported.append(filename)
 
     return exported
 
 
+def fileListing(files):
+    return '\n'.join("\t"+f for f in files)
+
 def scriptmain():
     projectfile = sys.argv[1]
-    print 'Opening project', projectfile
     doc = FreeCAD.openDocument(projectfile)
-    files = exportDocument(doc, 'export/')
-    print files
+
+    if len(sys.argv) >= 3:
+        exportdir = sys.argv[2]
+    else:
+        docdir = os.path.dirname(doc.FileName)
+        exportdir = os.path.join(docdir, 'export/')
+
+    print 'Opening project', projectfile
+    files = exportDocument(doc, exportdir)
+    print "Exported %d files to '%s'\n%s" % (len(files), exportdir, fileListing(files))
 
 def showText(title, text):
     from PySide import QtGui
     QtGui.QMessageBox.information(None, title, text)
 
+# TODO: allow specifying export directory in UI
 def macromain():
     doc = FreeCAD.ActiveDocument
-    files = exportDocument(doc, 'export/')
-    showText('Project export', "Exported %d files:\n%s" % ( len(files), str(files) ))
+    docdir = os.path.dirname(doc.FileName)
+    exportdir = os.path.join(docdir, 'export/')
+
+    files = exportDocument(doc, exportdir)
+    showText('Project export', "Exported %d files to %s\n%s" % ( len(files), exportdir, fileListing(files)))
     print files
 
 if __name__ == '__main__':
