@@ -25,7 +25,7 @@ def exportDxf(objs, p):
     importDXF.export(objs, p)
 def exportStep(objs, p):
     # XXX: will overwrite file if called with multiple args.. Last write wins
-    for o in objs
+    for o in objs:
         shape = o.Shape
         shape.exportStep(p)
 
@@ -66,12 +66,25 @@ def exportDocument(doc, exportdir):
     return exported
 
 
-def main():
+def scriptmain():
     projectfile = sys.argv[1]
     print 'Opening project', projectfile
     doc = FreeCAD.openDocument(projectfile)
     files = exportDocument(doc, 'export/')
     print files
 
+def showText(title, text):
+    from PySide import QtGui
+    QtGui.QMessageBox.information(None, title, text)
+
+def macromain():
+    doc = FreeCAD.ActiveDocument
+    files = exportDocument(doc, 'export/')
+    showText('Project export', "Exported %d files:\n%s" % ( len(files), str(files) ))
+    print files
+
 if __name__ == '__main__':
-    main()
+    if FreeCAD.GuiUp:
+        macromain()
+    else:
+        sys.exit(scriptmain())
