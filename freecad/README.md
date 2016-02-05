@@ -8,10 +8,13 @@ which I use for almost all my modelling. Here are some tools, tips & tricks that
 
 ## Image scale to reference
 
-When you import an image into 3d-view using a ImagePlane, the image is sized based on DPI*pixels.
+When you import an image into 3d-view using a ImagePlane, the image is sized based on DPI x pixels.
 If the image is a photograph of an object, this is unlikely to be the correct physical length.
 The [imageScaleReference](./macros/imageScaleReference.FCMacro) macro lets you *scale image
 by specifying the distance between two points*.
+
+![Image scale reference](./img/freecad-imagescaleref-crop.png)
+
 Very useful when working with images as references, to trace complex curves,
 design something that fits or interfaces.
 
