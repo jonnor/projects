@@ -18,16 +18,27 @@ by specifying the distance between two points*.
 Very useful when working with images as references, to trace complex curves,
 design something that fits or interfaces.
 
+Usage:
+
+1. import Image Plane
+2. Create Measurement between two points
+3. Select ImagePlane and Measurement
+4. Execute macro, and insert actual/real size.
+
+[Youtube demo](https://www.youtube.com/watch?v=feM51aIdLGo)
+
 ## Export project
 
-Exports all files in document which has names like [dxf] or [stl,step]
+Exports all files in document which has names like `mypart [dxf]` or `thing [stl,step]`
 to individual files in a export directory. Default prefix: 'export/$project-'
 Can be ran both as a macro from the FreeCAD UI and as a script on commandline.
 
-[exportProject](./macros/exportProject.FCMacro)
+Download: [exportProject](./macros/exportProject.FCMacro)
 
 This allows treating the FreeCAD file as a single-source-of-truth,
 and to automate the tedious and error-prone task of updating derivative/exported files.
+
+After having annotated the FreeCAD file, run `python2 exportProject.FCMacro myfile.fcstd`
 
 
 ## Tools
