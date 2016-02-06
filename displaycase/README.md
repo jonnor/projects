@@ -71,6 +71,7 @@ have a smartphone with installed app. Sadly QR-code apps, and user knowledge, is
 [SVG template](./qrdoc-template.svg). Recommended print size: 80x40 mm
 
 To create a new one:
+
 1. Put your documentation online, with some URL
 2. Generate a QR code for the URL, ex using [online tool](http://qr-code-generator.com/)
 3. Open SVG template in [Inkscape](http://inkscape.org/)
