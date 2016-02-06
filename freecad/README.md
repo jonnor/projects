@@ -57,7 +57,89 @@ Or you can use the commandline:
 * Create separate repo for FreeCAD macros
 * Maybe also add custom workbench setup?
 
-# Wanted
+# Common issues
+
+* Cannot unset the support of a sketch in UI (only map it to somethingnew). Needed when refactoring.
+Expected: This would be a editable property under 'Data' listing.
+Workaround, use Python console. Copying into a separate project, then copying back might also work.
+* Accidentially
+* Leaving an editing action open, bunch of . Problematic because it is invisible, on other tab behind.
+Better: 
+
+## Ideas
+
+### Continous integration for CAD
+
+Continious integration (CI) is a best-pratice in software development. A CI system picks up
+very change made to source/project files in a shared revisioning system (like git).
+It then runs a bunch of automated tasks, including verification, documentation generation.
+If all checks pass, and - publishes the results to an accessible place online (intra/internet).
+It helps in keeping quality up because all the tedious (and error-prone) aspects of quality assurance
+and publishing are automated.
+
+What would such a workflow look like for CAD?
+Particularly one centered on open source digital fabrication?
+
+And overall flow could be like this:
+
+* Check in changes in git, push to something like Github
+* A CI service, something like Travis picks up the changes
+* Export individual artifacts from the project sources.
+3d-models, renders/previews (images/interactive), fabrication data (CNC/laser cutsheets), assembly drawings.
+* Generate documentation from sources + other descriptions.
+Webpage(s) describing the model/project, including links/embedding exported artifacts.
+* Verifies that the outputs are good.
+Individual models checks like watertightness, etc.
+Checking project-wide constraints like stable 'interfaces' of parts, assemblies fitting together, maximum material or cost budgets.
+FEM analysis.
+* If checks pass, publishes/deploys the results.
+To local website, but also to sharing services like
+
+#### Export
+See 'export project' macro
+
+* TODO: allow exporting preview, both 2d-image (PNG) and 3d interactive (HTML5)
+* TODO: integrate with CAM support, for directly exporting machine code
+
+#### Documentation generation
+
+* TODO: generate links/embeds to exported artifacts, as Markdown
+* TODO: tool for merging this with human-written Markdown about the project.
+Alt: Extract title/description etc from FreeCAD file.
+* TODO: test building resulting Markdown with a static-HTML website-builder like Jekyll
+
+#### Testing, Verification
+
+* TODO: research existing methods, best-practices, available open source tools
+
+#### Publishing
+
+* TODO: Script for publishing to Thingiverse, Youmagine, etc
+http://www.thingiverse.com/developers/rest-api-reference
+https://www.youmagine.com/api
+
+The script should allow 'syncronizing' a new version, not just publishing new things once (to get fixes etc in).
+This could be done by embedding (and reading back) some sort of object id.
+Could be any unique string, but a UUID would do fine unless manually specified.
+Releasing a new thing would then imply changing the object ID.
+
+Should link back to website as the canonical home of the project.
+
+#### CI integration
+
+* TODO: make the tools easily installable
+* TODO: document how to set up on Travis CI
+
+#### Related
+
+Related work
+
+* [Fellesverkstedet Fablab documentation guidelines](https://github.com/fellesverkstedet/documentation)
+* [Documentation is futile, make machines do it](https://gist.github.com/jonnor/33f5bf53646fab84bb2d)
+* [Machines that document](https://github.com/jonnor/random/blob/master/digital-fabrication/machines-that-document.md)
+
+
+## Wanted
 
 ### Creating joinery.
 Tools/scripts for creating everything from simple dowel+hole/mortise+tendon, finger-joints and cross-laps.
@@ -90,7 +172,8 @@ Currently the Part::CrossSection creates a copy which is not updated on changes 
 I often used this for DXF export (for lasercut/milling). Then it is irritating (and error-prone) that
 it does not update...
 
-It may be that Draft::Shape2dView does update
+Draft::Shape2dView does update, but often gives not the results wanted.
+For instance, duplicate lines projected etc. Also a bit trickier/not-so-nice to use, due to bad preview.
 
 
 ## Learned
