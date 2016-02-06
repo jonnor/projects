@@ -452,7 +452,6 @@ various classes of electronics (sub) circuits:
 * Embedded microcontrollers.
 * Power electronics
 
-
 ## Related
 
 Work by others
@@ -463,3 +462,7 @@ Commercial offerings
 
 * [Computer-controlled micropipette with conductive glue](http://www.sonoplot.com/printed-electronics).
 Using ultrasound (probably piezo), to control dispensing.
+
+References
+
+* [Jeri Ellsworth: Resistive Multi-touch Pad Prototype](https://www.youtube.com/watch?v=eP0PUwS4jzI)

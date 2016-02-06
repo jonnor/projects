@@ -79,4 +79,11 @@ To create a new one:
 5. Print out, or laser-engrave the label
 6. Place onto object, or where object is displayed
 
+## TODO
 
+* Test writing QR-codes using laser-cutter. Especiallly in coode
+
+
+## Related
+
+* [Introspectable objects](https://github.com/jonnor/random/blob/master/digital-fabrication/introspectable-objects.md)

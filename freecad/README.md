@@ -93,7 +93,7 @@ Individual models checks like watertightness, etc.
 Checking project-wide constraints like stable 'interfaces' of parts, assemblies fitting together, maximum material or cost budgets.
 FEM analysis.
 * If checks pass, publishes/deploys the results.
-To local website, but also to sharing services like
+To local website, but also to sharing services like Thingiverse/Youmagine or production services like Shapeways/Ponoko/Sculpteo
 
 #### Export
 See 'export project' macro
@@ -117,6 +117,10 @@ Alt: Extract title/description etc from FreeCAD file.
 * TODO: Script for publishing to Thingiverse, Youmagine, etc
 http://www.thingiverse.com/developers/rest-api-reference
 https://www.youmagine.com/api
+* TODO: Also support publishing to Shapeways/Sculpteo/Ponoko
+http://developers.shapeways.com/
+http://www.sculpteo.com/en/developer/webapi/
+http://www.ponoko.com/app-gateway/api-documentation
 
 The script should allow 'syncronizing' a new version, not just publishing new things once (to get fixes etc in).
 This could be done by embedding (and reading back) some sort of object id.
@@ -137,7 +141,7 @@ Related work
 * [Fellesverkstedet Fablab documentation guidelines](https://github.com/fellesverkstedet/documentation)
 * [Documentation is futile, make machines do it](https://gist.github.com/jonnor/33f5bf53646fab84bb2d)
 * [Machines that document](https://github.com/jonnor/random/blob/master/digital-fabrication/machines-that-document.md)
-
+* [Introspectable objects](https://github.com/jonnor/random/blob/master/digital-fabrication/introspectable-objects.md)
 
 ## Wanted
 
