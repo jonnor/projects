@@ -214,6 +214,12 @@ Objects suitable or designed for fabrication from scrap material
 * [SketchChair](http://www.sketchchair.cc/), slice-based open source chair, could possibly be suited
 * [POD by Samuelle Javelle](http://teobonobo.blogspot.no/2013/12/pod-samuel-javelle_6.html)
 * Pintres: CNC'ed furniture inspiration [1](https://www.pinterest.com/pin/478789004105748170/)
+* [Sanding blocks](http://www.thingiverse.com/thing:23863). [Remix](http://www.thingiverse.com/thing:1273771)
+* [Customizable hexagonal shelves](http://www.thingiverse.com/thing:1199930)
+* [Drawer organizer/divider](http://www.thingiverse.com/thing:1003796)
+* [Rack](http://www.thingiverse.com/thing:875448)
+* [Parametric bookshelf](http://www.thingiverse.com/thing:1108893)
+* [](http://www.thingiverse.com/thing:1373)
 
 
 ### Related ideas

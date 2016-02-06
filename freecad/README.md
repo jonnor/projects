@@ -35,10 +35,15 @@ Can be ran both as a macro from the FreeCAD UI and as a script on commandline.
 
 Download: [exportProject](./macros/exportProject.FCMacro)
 
+![Export project parts](./img/freecad-exportproject.png)
+
 This allows treating the FreeCAD file as a single-source-of-truth,
 and to automate the tedious and error-prone task of updating derivative/exported files.
 
-After having annotated the FreeCAD file, run `python2 exportProject.FCMacro myfile.fcstd`
+After having annotated the FreeCAD file, run the macro from the FreeCAD GUI.
+Or you can use the commandline:
+
+    python2 exportProject.FCMacro myfile.fcstd
 
 
 ## Tools
