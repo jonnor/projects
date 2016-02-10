@@ -5,70 +5,85 @@ Everyone comfortable with using the laser as a tool
 Give a wide overview of possibilities, inspiration
 Encourage experimentation, just-try-it-out
 Encourage combination of techniques. Old&new
-Encourage innovation, know what is already done, take it one-step further
 Encourage sharing, both of techniques and designs
+Encourage innovation, know what is already done, take it one-step further
 
 ## Day 1
 
 Basic safe usage, first cuts
 
-Laser fundamentals
+## Laser fundamentals
 
-* Operation principle, how does a laser work
-* implications for usage & design
-** suitable material
-** flat-ish surfaces, due to narrow range of focus
-** non-zero cut width (kerf)
-** v/angled cut profile due to focus
-** hard-to-control
-* comparison to 3d-printing
-* comparison to CNC milling
+### Operation princeiple
 
-* Raster versus engraving
+How does a laser work
+
+* running: https://www.youtube.com/watch?v=wPWBrISBOtA
+* overview: http://am.co.za/picture/cnc-laser-system.png alt, http://cnccheap.com/image/pic/image095.jpg
+* epilog https://www.epiloglaser.com/assets/img/products/fusion-motion.jpg
+* focusing, http://www.rowmark.com/MARK/laser_guide/images/intrlsr/Lsrop.jpg alt, http://www.spikenzielabs.com/SpikenzieLabs/Laser_How_To_files/Picture%2017.png
+
+### Implications for usage & design
+
+* flat-ish surfaces, due to narrow range of focus
+* not all material burns nicely
+* non-zero cut width (kerf)
+* v/angled cut profile due to focus
+* hard-to-control depth
+
+### Comparison to 3d-printing
+
+* subtractive instead of additive
+* much faster
+
+#### Comparison to CNC-milling
+
+* less settings
+* faster setup-time
+
+#### Controlling the laser
+
+* gcode / instructions, hand-write
+* CAD, designing/drawing the geometry
+* CAM, program converts design to code/instructions
+* Raster versus vector
+* Cutting versus engraving
 * Settings. Speed, power, line-width
 
-Safety
+## What can it do
+
+* https://www.google.no/search?q=laser+cut+design&source=lnms&tbm=isch
+* https://www.google.no/search?q=laser+cut+textile&source=lnms&tbm=isch
+
+## Safety
 
 * Fire hazard
 * Fume/gas hazard
 * Mechanical hazards
 
-Basic usage, demo/walkthrough
+## Basic usage, demo/walkthrough
 
 * Making a simple design
-* Creating toolpaths
-** selecting appropriate settings
-* Running the job
-** zeroing Z-axis
-** setting job origin
+* Transferring over to laser PC
 
-First cuts
+Creating toolpaths
+
+* selecting appropriate settings
+
+Running the job
+
+* pre-checks
+* zeroing Z-axis
+* setting job origin
+
+
+## First cuts
 
 * each participant designs simple object
 * makes it themselves on the laser
 * supervised/guided by teacher
 
-
-## Day 2
-
-Design inspirations
-
-TODO: add pictures/links
-
-* no-sew, especially interesting for products which materials are reusable later.
-* folding techniques: ex 14, 15 pillows
-www.buzzfeed.com/peggy/easy-diy-projects-you-wont-believe-are-no-sew 
-
-* cut and weave, 25
-http://www.buzzfeed.com/juliegerstein/easy-no-sew-diy-clothing-hacks
-* latticing
-* lacing
-
-
-
-* Finding existing designs online.
-* License considerations
-* Publishing designs online. Thingiverse/Umagine, Instructables
+## Inkscape
 
 2d vector design
 
@@ -88,6 +103,7 @@ http://www.buzzfeed.com/juliegerstein/easy-no-sew-diy-clothing-hacks
 * widening cutlines by stroke-to-path engraving
 * using layers to organize
 * using groups
+* distributing elements
 * path offsets
 * boolean operations
 * exporting to laser considerations
@@ -98,6 +114,27 @@ seamless repetition http://verysimpledesigns.com/vectors/inkscape-tutorial-seaml
 pattern along path http://tavmjong.free.fr/INKSCAPE/MANUAL/html/Paths-LivePathEffects-PatternAlongPath.html
 * tweak tool, brush-type vectors molding
 http://en.flossmanuals.net/inkscape/ch008_tweak-tool/
+
+## Day 2
+
+Design inspirations
+
+TODO: add pictures/links
+
+* no-sew, especially interesting for products which materials are reusable later.
+* folding techniques: ex 14, 15 pillows
+www.buzzfeed.com/peggy/easy-diy-projects-you-wont-believe-are-no-sew 
+
+* cut and weave, 25
+http://www.buzzfeed.com/juliegerstein/easy-no-sew-diy-clothing-hacks
+* latticing
+* lacing
+
+* folding, [slippers](http://www.thingiverse.com/thing:29880)
+
+* Finding existing designs online.
+* License considerations
+* Publishing designs online. Thingiverse/Umagine, Instructables
 
 Working with textiles
 
@@ -115,7 +152,6 @@ Working with textiles
 * fusing of 
 * TODO: find out if one can laser anti-fraying glues
 * creating stenciles for dyeing, painting etc
-
 * creating lines for seam-allowance (offset)
 
 Lasering techniques
@@ -136,10 +172,10 @@ Advanced toolpathy things
 * Hatching
 
 
-
 ## Day 3
 
-Beyond 2d, making 3d objects. Combining textile
+Beyond 2d, making 3d objects.
+Combining textile, making tools, combining traditional
 
 Design inspirations
 
@@ -163,9 +199,18 @@ Making tools
 * Leather stiching pony, like http://www.amazon.com/gp/product/B008885TUW
 
 
+
+
+
+
 ## Extras
+
+Other techniques
 
 * [Ink transfer](http://thegraphicsfairy.com/12-easy-image-transfer-methods-for-diy-projects)
 
 
+Design inspiration
+
+* Dovetails using lasercutter, http://thomaspearceinnovations.blogspot.no/2016/01/treasure-chest.html
 
