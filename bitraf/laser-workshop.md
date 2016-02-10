@@ -102,6 +102,7 @@ Object tools
 * basic geometry, rectangles, circles
 * aligning elements
 * using elements/lines as guides
+* ordering elements
 
 Beziers
 
@@ -200,8 +201,11 @@ Lasering techniques
 
 Advanced toolpathy things
 
-* Hatching
+* [Hatching using pattern](http://graphicdesign.stackexchange.com/questions/45577/create-hatching-in-inkscape)
+[Sketch & Hatch path effects tutorial](http://verysimpledesigns.com/vectors/inkscape-tutorial-sketch-and-hatch.html)
 
+* [Patter fill](https://tucsonlabs.com/2009/03/19/patterns-with-inkscape/)
+* [Envelope deformation path effect](http://www.designmarkgraphics.co.uk/blog/articles/2013/06/18/draw-a-rippling-chequered-flag-in-inkscape.html)
 
 ## Day 3
 
@@ -218,12 +222,16 @@ www.buzzfeed.com/peggy/easy-diy-projects-you-wont-believe-are-no-sew
 * textile as holder , 14 book sling
 http://www.brit.co/no-sew-projects/
 
+
 Construction techniques
 
 * Accounting for laser kerf
 * Building 3d objects from 2d sheets
 * Joinery & fitting
 * Glue/screws assembly
+* Living hinges
+[Ponoko: how to design living hinge](http://blog.ponoko.com/2015/07/06/how-to-design-a-living-hinge/)
+[Makezine: Living hinge acrylic](http://makezine.com/projects/creating-living-hinges)
 
 Making tools
 
