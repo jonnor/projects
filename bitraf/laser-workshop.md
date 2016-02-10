@@ -1,12 +1,17 @@
 
 # Extended course
 
-Everyone comfortable with using the laser as a tool
-Give a wide overview of possibilities, inspiration
-Encourage experimentation, just-try-it-out
-Encourage combination of techniques. Old&new
-Encourage sharing, both of techniques and designs
-Encourage innovation, know what is already done, take it one-step further
+Goals
+
+* Everyone comfortable with using the laser as a tool
+* Give a wide overview of possibilities, inspiration
+
+Style
+
+* Encourage experimentation, just-try-it-out
+* Encourage combination of techniques. Old&new
+* Encourage sharing, both of techniques and designs
+* Encourage innovation, know what is already done, take it one-step further
 
 ## Day 1
 
@@ -18,10 +23,11 @@ Basic safe usage, first cuts
 
 How does a laser work
 
-* running: https://www.youtube.com/watch?v=wPWBrISBOtA
-* overview: http://am.co.za/picture/cnc-laser-system.png alt, http://cnccheap.com/image/pic/image095.jpg
-* epilog https://www.epiloglaser.com/assets/img/products/fusion-motion.jpg
-* focusing, http://www.rowmark.com/MARK/laser_guide/images/intrlsr/Lsrop.jpg alt, http://www.spikenzielabs.com/SpikenzieLabs/Laser_How_To_files/Picture%2017.png
+* Running [video](https://www.youtube.com/watch?v=wPWBrISBOtA)
+* Principle [1](http://am.co.za/picture/cnc-laser-system.png) [alt](http://cnccheap.com/image/pic/image095.jpg)
+* [Epilog picture](https://www.epiloglaser.com/assets/img/products/fusion-motion.jpg)
+* Focused beam [1](http://www.rowmark.com/MARK/laser_guide/images/intrlsr/Lsrop.jpg)
+[2](http://www.spikenzielabs.com/SpikenzieLabs/Laser_How_To_files/Picture%2017.png)
 
 ### Implications for usage & design
 
@@ -34,6 +40,7 @@ How does a laser work
 ### Comparison to 3d-printing
 
 * subtractive instead of additive
+* more materials
 * much faster
 
 #### Comparison to CNC-milling
@@ -89,26 +96,50 @@ Running the job
 
 * in Inkscape
 * document setup for laser. use mm, set workarea to piece or machine
+
+Object tools
+
 * basic geometry, rectangles, circles
 * aligning elements
 * using elements/lines as guides
+
+Beziers
+
 * node editing
-* bezier paths
-** splitting nodes
-** node types 
+* control points
+* splitting nodes
+* node types 
+
+Working precicely
+
 * specifying precise measurements
 * measuring/verifying sizes/distances
+
+Text
+
 * text tools
 * tracing bitmaps into vector. Ex from web, books or hand-drawings
 * widening cutlines by stroke-to-path engraving
+
+Organizing
+
 * using layers to organize
 * using groups
 * distributing elements
+
+Other tools
+
 * path offsets
 * boolean operations
-* exporting to laser considerations
-** converting objects to path
-** line width requirements for vector cutting
+
+Exporting to laser
+
+* SVG for Epilog, other machines use DXF
+* converting objects to path
+* line width requirements for vector cutting
+
+Advanced
+
 * working with patterns
 seamless repetition http://verysimpledesigns.com/vectors/inkscape-tutorial-seamless-patterns.html
 pattern along path http://tavmjong.free.fr/INKSCAPE/MANUAL/html/Paths-LivePathEffects-PatternAlongPath.html
@@ -197,10 +228,6 @@ Construction techniques
 Making tools
 
 * Leather stiching pony, like http://www.amazon.com/gp/product/B008885TUW
-
-
-
-
 
 
 ## Extras
