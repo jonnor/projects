@@ -70,6 +70,10 @@ Presentations
 > ... The reason programming is so hard is because it is unobservable
 [In Search of Tomorrow, by creator of LightTable](https://www.youtube.com/watch?v=VZQoAKJPbh8).
 
+Books
+
+* [Data oriented design](http://www.dataorienteddesign.com/dodmain/)
+
 Established ideas
 
 - [Python docstrings](https://en.wikipedia.org/wiki/Docstring), `doc()` and `help()` functions
