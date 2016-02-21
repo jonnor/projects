@@ -129,4 +129,15 @@ and re-implementing the host control software (as it needs to be near-real-time 
 Looks almost as if control software is just sending registers/commands for the different stepper motors directly.
 
 
+## References
+
+Coastermelt project by Micha Scott, reversing Blu-ray devices
+[1](https://www.youtube.com/watch?v=UTUYl-2g-r4)
+[2](https://www.youtube.com/watch?v=U7MTnbXXyVY) has some great references to reverse engineering tools and techniques:
+
+* Using pxm image format, and Hilbert curve space-filling algorithm to make images to help understand binary dumps (firmware images, memory etc).
+* Interactive/piece-wise dissassembly using IDA [alternatives](http://reverseengineering.stackexchange.com/questions/1817/is-there-any-disassembler-to-rival-ida-pro).
+* Creating an emulator for the processor on computer, then wiring it up to effectively stub out the processor completely (but preserve interaction with rest).
+* Creating an interactive shell which compiles, uploads and executes code in the target
+* Using the firmware-updaters as basis for understanding how changing the code works
 
