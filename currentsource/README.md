@@ -44,6 +44,18 @@ Also maximum use the finite DAC precision, and allows using a potmeter with a vo
 * 1uF filtering capacitor (optional, Iset PWM->DAC filter)
 * 1206 resistors
 
+## Ideas
+
+For producing PCB with solder mask (and SMD solder/paste application)
+
+* Mill the PCB traces
+* Apply a thin heat-resistant tape (Kapton etc)
+* Use lasercutter to selectively open holes in tape for solder pads
+* Squigee/scrape on solderpaste
+* Assemble components -> solder with hotair or oven
+
+Might want to take extra care add test-probe pads to circuits made in this manner.
+
 ## References
 
 Calculators
