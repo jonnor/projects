@@ -109,9 +109,13 @@ A hydraulic piston with solid steel top and bottom plates, could possibly be use
 
 ### Mask making
 
-Using plast tape selectively removed by laser-cutter to create masks was partially successful.
+Using plastic tape selectively removed by laser-cutter to create masks was partially successful.
 The tricky thing is finding settings/materials where the tape *and* its glue gets removed cleanly,
 without causing too much removal (widens etchline) or bubbling of the plastic on edges.
+
+Actually heat-resistant PET plastic, sometimes used as replacement for Kapton on 3d-printers,
+appears to cut very nicely. However 2 passes seems to be way to go, one to deconstruct the plastic, and one to clean up.
+Used 20%, 0.1mm linewidth, 200 mm/s on Redsail 60w.
 
 Other techniques which may be worth trying instead for selective-laser removal is:
 
