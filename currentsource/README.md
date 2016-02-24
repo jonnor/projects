@@ -46,15 +46,38 @@ Also maximum use the finite DAC precision, and allows using a potmeter with a vo
 
 ## Ideas
 
-For producing PCB with solder mask (and SMD solder/paste application)
+### Solder and paste mask using laser
+
+For producing PCB with solder mask, (and SMD solder/paste application)
 
 * Mill the PCB traces
-* Apply a thin heat-resistant tape (Kapton etc)
-* Use lasercutter to selectively open holes in tape for solder pads
+* Apply a thin heat-resistant tape, to become soldermask (Kapton)
+* Apply a thicker tape, used for solderpaste deposit (Ductape)
+* Use lasercutter to selectively open holes in tape
 * Squigee/scrape on solderpaste
-* Assemble components -> solder with hotair or oven
+* Remove the upper tape, leaving the lower tape in place
+* Place components -> solder with hotair or oven
 
-Might want to take extra care add test-probe pads to circuits made in this manner.
+Initial testing done, February 23, 2015
+
+* Heat-reistive PET cut very nicely on the laser. Using raster engrave to vaporize whole areas.
+Kapton was harder, leaving a bit of dark burnt material behind. Maybe settings tweaking can improve it.
+* 2 passes needed for clean(ish) surface afterwards. It *may* be that cleaning is needed for good solder.
+* Used 20%, 0.1mm linewidth, 200mm/s on PET, 40% on Kapton
+* Heat-resistive PET tape was spectacular fail: melted and shrank in solderoven, leaving a horrible mess.
+* Kapton tape worked OK in oven, no melting.
+* Kapton/PET tapes way too thin for applying solderpaste.
+Need separate layer of thicker tape. Ducttape tested, seems suitable thickness.
+
+Next steps
+
+* Do complete test one PCB with CNC-milled traces
+* Research more safety of lasering reflective materials
+* Make some jig for having good registration between CNC mill and lasercutter.
+[fellesverkstedet/tool-connections](https://github.com/fellesverkstedet/tool-connections) good basis.
+
+Might want to take extra care add test-probe pads to circuits made in this manner, cause
+otherwise they will be underneath the soldermask.
 
 ## References
 
