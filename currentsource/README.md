@@ -21,28 +21,60 @@ Compact size (20x40mm), including two M3 mounting holes (1.5" spacing).
 ## Status
 In development
 
+## Done
+
+* Mill and assemble first board. Basic functionality verification, including `Iset` and `PWM` from microcontroller.
+MOSFET pinout was wrong, otherwise worked OK. This has now been rectified.
+
 ## TODO
 
-* Mill and assemble first board
-* Verify module functionality, including `Iset` and `PWM` from microcontroller
 * Verify current sharing using multiple modules
-* Consider adding a voltage divider for `Iset` input.
-That way one can have (for example) 1V per 1A, regardless of choice of Rsense.
+* Consider using one opamp as an amplifier of Rsense signal.
+10x amplification give be 1V per 1A, for Rsense=0.1ohm.
 Also maximum use the finite DAC precision, and allows using a potmeter with a voltage ref easily.
+Alternative quick-fix is to add a voltage divider for `Iset` input.
 * Test with laser diode
 * Test with a power LED
 * Verify working with 3.3v uC. Needs suitable opamp and MOSFET
-* Order SMD components
-* Tweak board for SO8 and D2PAK (opt leave TO220 compat)
 * Make production run of 10 boards
+* Order 1206/1210 capacitors. Big enough to place traces under, unlike 0805.
+* Order 0 ohm resistors, for bridges (alternative to vias). 1206.
+[Farnell](http://uk.farnell.com/webapp/wcs/stores/servlet/Search?catalogId=15001&langId=44&storeId=10151&categoryId=700000005450&pageSize=25&showResults=true&pf=110071175,111629309,111629358,111629382)
+* Order SMD 2.54mm headers. [Farnell](http://no.farnell.com/webapp/wcs/stores/servlet/Search?catalogId=15001&langId=47&storeId=10169&categoryId=700000005017&sort=P_PRICE&pageSize=25&showResults=true&pf=110063161,110178988,110195024,111981269)
+* Maybe add some PNP compliments (BC856)
+* fabmodules: Add MDX-15 preset, with `rtscts` flow type
 
 ## BOM
 
 * SO8 opamp (LM358 etc)
 * D2PAK or TO220 transitor
-* 2010 current sense resistor
-* 1uF filtering capacitor (optional, Iset PWM->DAC filter)
+* 2512 current sense resistor
+* 1uF filtering capacitors
 * 1206 resistors
+
+## Application boards
+
+Simple power LED
+
+* LED mounted on back of module
+* Zener/diodes voltage reference
+* Trimpot
+* micro-USB power connector
+
+Laserdiode
+
+* PWM and current control via microcontroller
+
+Electrolysis
+
+* 4x modules with active heatsink(s)
+* Up to 20 amp current?
+
+Functional tester
+
+* Couple of switchable loads
+* Measure current by measuring voltage over these known loads
+* Arduino as I/O extender for computer running test over USB
 
 ## Ideas
 
@@ -60,14 +92,15 @@ For producing PCB with solder mask, (and SMD solder/paste application)
 
 Initial testing done, February 23, 2015
 
-* Heat-reistive PET cut very nicely on the laser. Using raster engrave to vaporize whole areas.
-Kapton was harder, leaving a bit of dark burnt material behind. Maybe settings tweaking can improve it.
+* Heat-resistant PET cut very nicely on the laser. Using raster engrave to vaporize whole areas.
+Kapton was a bit nastier, leaving a bit of dark burnt material behind. Maybe settings tweaking can improve it.
 * 2 passes needed for clean(ish) surface afterwards. It *may* be that cleaning is needed for good solder.
 * Used 20%, 0.1mm linewidth, 200mm/s on PET, 40% on Kapton
 * Heat-resistive PET tape was spectacular fail: melted and shrank in solderoven, leaving a horrible mess.
 * Kapton tape worked OK in oven, no melting.
 * Kapton/PET tapes way too thin for applying solderpaste.
 Need separate layer of thicker tape. Ducttape tested, seems suitable thickness.
+* The solder paste tape-mask worked also when separate and manually aligned afterwards.
 
 Next steps
 
@@ -75,6 +108,7 @@ Next steps
 * Research more safety of lasering reflective materials
 * Make some jig for having good registration between CNC mill and lasercutter.
 [fellesverkstedet/tool-connections](https://github.com/fellesverkstedet/tool-connections) good basis.
+* Try Mylar as alternative to Kapton (source: Jensa)
 
 Might want to take extra care add test-probe pads to circuits made in this manner, cause
 otherwise they will be underneath the soldermask.
@@ -92,7 +126,7 @@ Parts
 * [Farnell: Current sense resistors](http://no.farnell.com/webapp/wcs/stores/servlet/Search?catalogId=15001&langId=47&storeId=10169&categoryId=700000050528&sort=P_PRICE&pageSize=25&showResults=true&aa=true&pf=110005192,110005252,110018072,110030112,110035095,110056631,110057315,110071516,110081932,110083417,110103671,110112375&min=110071516)
 * [Farnell: Power MOSFET TO220](http://uk.farnell.com/webapp/wcs/stores/servlet/Search?catalogId=15001&langId=44&storeId=10151&categoryId=700000043507&sort=P_PRICE&st=mosfet&pageSize=25&showResults=true&aa=true&pf=110029860,110126877,110126879,110126886,110126931,110126938,110126950,110127029,110127508,110137512,110137513,110148318,110148320,110148322,110148324,110148364,110148372,110148418,110148808,110158844,110158845,110158855,110169483,110169484,110169489,110169512,110169536,110169579,110169624,110174022,110180370,110184753,110187489,110187528,110189467,110190503,110196584,110199950,110203560,110204181,111489640,111489641,111997170&min=110126877)
 * [Farnell: Power MOSFET D2PAK](http://no.farnell.com/webapp/wcs/stores/servlet/Search?catalogId=15001&langId=47&storeId=10169&categoryId=700000043507&sort=P_PRICE&st=TO-263&pageSize=25&showResults=true&aa=true&pf=110007507,110007518,110007519,110007533,110007539,110007545,110007548,110007553,110007561,110007565,110007578,110007581,110007585,110007596,110007598,110007622,110007624,110007626,110007632,110007639,110007642,110007658,110008044,110022458,110022462,110022466,110022474,110022479,110022488,110022502,110022512,110022541,110022564,110022566,110022567,110022568,110022578,110022874,110022934,110022942,110022981,110022985,110029860,110037381,110037389,110037394,110037403,110037430,110037433,110037442,110037464,110037469,110037471,110037476,110037498,110037508,110037529,110037530,110037539,110037543,110037548,110037875,110037983,110042613,110046420,110046957,110048153,110049699,110050383,110052390,110053053,110053986,110054480,110054664,110054775,110056057,110056386,110056949,110059363,110059575,110061128,110063195,110065847,110066405,110068302,110068488,110068571,110068614,110069541,110069895,110072650,110073084,110073210,110074963,110075747,110076804,110076853,110077367,110078553,110078659,110078671,110078828,110079346,110080754,110081438,110081805,110082056,110083858,110083923,110084326,110084521,110085559,110086600,110086684,110086975,110087589,110087915,110088383,110089430,110089730,110090476,110090809,110092103,110092244,110092768,110093363,110093446,110093522,110093557,110094890,110095521,110095928,110096195,110097020,110099720,110102046,110104615,110107838,110108215,110109136,110109642,110111423,110112864,110113287,110113669,110116270,110116401,110117335,110117787,110158844,110302329,110325262,110451461,110451578,110453114,110453209,110453402,110453404,110453490,110453491,110453581,110453582,110453668,110453751,110453752,111229742,111229800,111229823,111229838,111229909,111229966,111230005,111230012,111230022,111270354,111332330,111334918&max=110007518)
-* [Farnell: ~1uF electrolyt capacitor](http://no.farnell.com/webapp/wcs/stores/servlet/Search?catalogId=15001&langId=47&storeId=10169&categoryId=700000005421&sort=P_PRICE&pageSize=25&showResults=true&aa=true&pf=110029771,110057658,110059735,110119879,110119880,110119924,110141127,110141196,110151934,110162468,110192894,111711281,111711305,111854873,111875561&min=110029771&max=110057658,110141127)
+* [Farnell: ~1uF electrolyt capacitor](http://no.farnell.com/webapp/wcs/stores/servlet/Search?catalogId=15001&langId=47&storeId=10169&categoryId=700000005423&sort=P_PRICE&pageSize=25&showResults=true&sf=502,722&pf=110000001,110029771,110055165,110057658,110059735,110116694,110119861,110124836,110129851,110130340,110130369,110141064,110141066,110141074,110141096,110141101,110141104,110141112,110141155,110151906,110183885,110195220,110200287,110202689,110202702,110203983,111439590,111854956,111854958&min=110029771,110130369&max=110057658)
 * [Farnell: 1uF ceramic capacitor](http://no.farnell.com/webapp/wcs/stores/servlet/Search?catalogId=15001&langId=47&storeId=10169&categoryId=700000005423&sort=P_PRICE&pageSize=25&showResults=true&aa=true&sf=502,722&pf=110000001,110029771,110055165,110057658,110059735,110116694,110119861,110124836,110129851,110130340,110130369,110141064,110141066,110141074,110141096,110141101,110141104,110141112,110141155,110151906,110183885,110195220,110200287,110202689,110202702,110203983,111439590,111854952,111854956,111854958&min=110029771,110130369&max=110057658)
 * [Farnell: SOT-23 NPN transistor](http://no.farnell.com/webapp/wcs/stores/servlet/Search?catalogId=15001&langId=47&storeId=10169&categoryId=700000004650&sort=P_PRICE&st=sot-23&pageSize=25&showResults=true&aa=true&sf=502,722&pf=110007698,110007702,110007742,110022626,110022627,110022629,110022654,110029860,110037580,110037581,110037598,110037599,110048867,110067889,110082473,110083316,110090637,110108049,110115116,110126933,110126969,110126992,110126995,110127003,110148362,110148434,110148436,110148439,110148441,110158858,110158899,110158968,110169515,110169599,110172521,110177947,110181557,110183000,110184539,110185777,110189047,110192807,110194959,110195841,110196287,110198727,110199149,110201688,110203007,110203830,110204108,110231779,110286384&min=110082473,110158858)
 
