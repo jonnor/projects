@@ -34,9 +34,9 @@ but often having a component of C/C++ and low-level/hardware/electronics compone
 In rough order of time spent / maturity.
 
 - Dataflow/flow-based-programming [Flowhub](http://flowhub.io) + [MicroFlo](http://microflo.org)
-- Finite State Automata/Machines: [Finito](https://github.com/jonnor/finito)
 - [Design by Contract](https://en.wikipedia.org/wiki/Design_by_contract)
 / Contracts Programming: [Agree](https://github.com/jonnor/agree)
+- Finite State Automata/Machines: [Finito](https://github.com/jonnor/finito)
 - Equations & "spreadsheets": [Formulate](https://github.com/jonnor/formulate)
 - Constraint Satisfaction: [1](./cstrain.coffee)
 - Promises incl chains/composition
@@ -44,6 +44,16 @@ In rough order of time spent / maturity.
 - [Behavioral trees](https://en.wikipedia.org/wiki/Behavior_Trees_%28artificial_intelligence,_robotics_and_control%29)
 
 Combinations would make sense.
+
+# Applications / experiments
+
+- [guv](https://github.com/the-grid/guv)
+Automatic scaling. Focus on tools for understanding config of a dynamic system reflecting changing world conditions.
+- [syncrony](https://github.com/jonnor/synchrony).
+How simulation and visual programming can help experiment in order to create interesting interactive art quicker.
+- [microfridge](https://github.com/jonnor/microfridge).
+Home electronics, control systems. Multi-level access, ending with full reprogrammability.
+- mirosumo
 
 # Interconnected ideas
 
