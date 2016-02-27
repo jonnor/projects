@@ -33,15 +33,33 @@ Parts:
 | [STL](./export/rml-roundclamp-2.stl)
 
 
+## Noise isolating box
+
+[FreeCAD source](box.fcstd) |
+
+Parts
+
+* 5 mm acrylic or polycarbonate
+* http://www.clasohlson.com/no/b/Jernvare/Beslag-og-opphengning/Tetningslister
 
 
 ## TODO
 
+* Mount Raspberry PI. Install fabmodules on it
+* QR code + link for accessing webinterface
+* Consider mounting a tablet
 * Vacum attachment / dust-shoe
-* Noise isolating container
+* Toolbox. For replacement parts
+
+Fabmodules
+
+* Add code upload/send (from any source)
+* Make the sender report progress over Webinterface instead of native TKinter.
+Consider checking out the work in [ChiliPeppr](http://chilipeppr.com/), and reusing the server part/interface.
 
 
 References
 ------------
 
+* [Nice dust extraction system](http://wiki.makeitlabs.com/projects/roland-mill-upgrade/upgrades)
 * Cyclonic dust separator. [Vid](https://www.youtube.com/watch?v=YsrURCK-H_M)
