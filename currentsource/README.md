@@ -29,10 +29,8 @@ MOSFET pinout was wrong, otherwise worked OK. This has now been rectified.
 ## TODO
 
 * Verify current sharing using multiple modules
-* Consider using one opamp as an amplifier of Rsense signal.
-10x amplification give be 1V per 1A, for Rsense=0.1ohm.
-Also maximum use the finite DAC precision, and allows using a potmeter with a voltage ref easily.
-Alternative quick-fix is to add a voltage divider for `Iset` input.
+* Use one of opamps as a 10x amplifier of Rsense signal, instead of attenuating Iset input.
+Also maximum use the finite DAC precision, and easier to test/debug.
 * Test with laser diode
 * Test with a power LED
 * Verify working with 3.3v uC. Needs suitable opamp and MOSFET
