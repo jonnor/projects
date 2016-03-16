@@ -39,8 +39,12 @@ Parts:
 
 Parts
 
+* 8 mm MDF or other woods. Parametric design can be easily tweaked for 5-10 mm.
 * 5 mm acrylic or polycarbonate
 * http://www.clasohlson.com/no/b/Jernvare/Beslag-og-opphengning/Tetningslister
+
+Inspired by the [boxes at Fablab Lyngen](http://www.dyvikdesign.com/site/research/fablab/the-modela-insulation-boxes-of-fablab-lyngen.html),
+redesigned in FreeCAD and using joinery that avoids glues and screws.
 
 
 ## TODO
@@ -49,7 +53,7 @@ Parts
 * QR code + link for accessing webinterface
 * Consider mounting a tablet
 * Vacum attachment / dust-shoe
-* Toolbox. For replacement parts
+* Toolbox. For replacement parts, milling bits, double-sided tape, allen keys etc
 
 Fabmodules
 
