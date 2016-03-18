@@ -35,16 +35,18 @@ Parts:
 
 ## Noise isolating box
 
+Inspired by the [boxes at Fablab Lyngen](http://www.dyvikdesign.com/site/research/fablab/the-modela-insulation-boxes-of-fablab-lyngen.html),
+redesigned in FreeCAD and using joinery that avoids glues and screws.
+
+![Box for Roland Modela MDX-15](./img/mdx-15-box.jpg)
+
 [FreeCAD source](box.fcstd) |
 
 Parts
 
-* 8 mm MDF or other woods. Parametric design can be easily tweaked for 5-10 mm.
+* 6 mm MDF or other woods. Parametric design can be easily tweaked for 5-10 mm.
 * 5 mm acrylic or polycarbonate
 * http://www.clasohlson.com/no/b/Jernvare/Beslag-og-opphengning/Tetningslister
-
-Inspired by the [boxes at Fablab Lyngen](http://www.dyvikdesign.com/site/research/fablab/the-modela-insulation-boxes-of-fablab-lyngen.html),
-redesigned in FreeCAD and using joinery that avoids glues and screws.
 
 
 ## TODO
@@ -65,5 +67,12 @@ Consider checking out the work in [ChiliPeppr](http://chilipeppr.com/), and reus
 References
 ------------
 
+Addons
+
 * [Nice dust extraction system](http://wiki.makeitlabs.com/projects/roland-mill-upgrade/upgrades)
 * Cyclonic dust separator. [Vid](https://www.youtube.com/watch?v=YsrURCK-H_M)
+
+Replacement parts
+
+* [Spindle motor (MM-40)](https://www.rolanddgastore.com/product.aspx?zpid=1475)
+* [Spindle 3mm (PS-3)](https://www.rolanddgastore.com/product.aspx?zpid=1500)
