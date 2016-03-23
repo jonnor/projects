@@ -9,32 +9,26 @@ Live-programming microcontrollers-based devices,
 by having the microcontroller serve tools/frontend in JS/HTML
 over HTTP to a standard browser.
 
-* Reflash program memory, reload application state
+## Possible implementations
+
+* Rebuild app, reflash whole program memory, reload application state
 * Virtual machine with bytecode interpreter, reload a 'script'
 * Virtual machine with transactional mutable AST
 * Partial program memory updates, like swapping out functions
 
+All of these requires a toolchain that can be embedded onto
+the microcontroller itself, possibly split over implemented in assembler
 
-## Possible implementations
+## Stack based VM
+Many of these exists already. Forth-like systems are very popular,
+and are often self-hosted with a text-based 'programming environment built-in'.
+The most advanced even have built-in assemblers for their targets.
 
-### Stack based VM
-Forth style
+Learning to program in Forth however, is quite a barrier, perhaps especially
+for programmers experienced ALGOL/C-decendent languages.
+There is also very little tooling apart from the low-level text ones.
 
-Each cell of the stack has
-
-* a size (in bytes)
-* buffer of N bytes
-* (maybe) some type annotation? or maybe that should be done by boxing into a cell
-
-Opcodes
-
-* read memory, N bytes starting at P
-* write memory, N bytes starting at P
-
-FFI to C code?
-
-
-## References
+### References
 
 Microcontroller virtual machines
 
@@ -62,6 +56,37 @@ Ethereum VM
 
 * [Original paper](http://gavwood.com/paper.pdf)
 * [Ethereum Script 2.0](https://blog.ethereum.org/2014/02/03/introducing-ethereum-script-2-0/)
+
+
+## Mutable ASTs
+Have a VM which has an AST of the currently running program, which can then be changed from user interface/terminal.
+Probably the most crazy/esoteric idea?
+
+`TODO: research`
+
+MicroFlo graph commands work in this way, but this is not a general purpose mechanism.
+Unless one also allows uploading of machine/VM code to (re)define components.
+
+## Full-app rebuild
+Conceptually the most straight-forward.
+
+Need a full-fledged compiler for the source language.
+Challenge is that there are very few, if any, compilers which can be self-hosted in an uC/JS context.
+
+Also most traditional languages are not very suited for deeper 'introspection'.
+
+Also need some sort of tools/best-practices for doing reloadable apps.
+Redux and module-reloading from JavaScript might serve some inspiration here.
+
+
+### References
+
+JavaScript / browser compilers.  `TODO: research`
+
+* 
+
+
+## Related
 
 Related motivations
 
