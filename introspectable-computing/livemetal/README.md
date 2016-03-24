@@ -51,6 +51,11 @@ based on [Riscy Pygness](http://pygmy.utoh.org/riscy/cortex/)
 with a tutorial [Dive into Forth](http://jeelabs.org/2016/02/dive-into-forth/)
 * [J1a SwapForth on ICE40 FPGA with open toolchain](http://www.excamera.com/sphinx/article-j1a-swapforth.html)
 * [CoreForth](https://github.com/ekoeppen/CoreForth), for ARM Cortex M0/M3, originally based on JonesForth
+* Simple Forth [using C as intermediate languge](http://yosefk.com/blog/c-as-an-intermediate-language.html).
+Very simple & pragmatic integration.
+* A more practical Forth-like language would probably benefit a lot from:
+a) declaration and checking of the stack effects of words,
+b) data-driven unit-tests: Put testdata to stack, execute word, check stack. Integrated with word declaration, Python doctest style
 
 Ethereum VM
 
@@ -59,8 +64,12 @@ Ethereum VM
 
 
 ## Mutable ASTs
-Have a VM which has an AST of the currently running program, which can then be changed from user interface/terminal.
+Have a VM which has an AST of the currently running program,
+which can then be *changed* from user interface/terminal.
 Probably the most crazy/esoteric idea?
+
+Would probably have to use some language with a minimal syntax that closely corresponds to emitted code?
+Like a LISP or maybe a FORTH.
 
 `TODO: research`
 
@@ -83,7 +92,17 @@ Redux and module-reloading from JavaScript might serve some inspiration here.
 
 JavaScript / browser compilers.  `TODO: research`
 
-* 
+* [LLVM.js](https://kripken.github.io/llvm.js/demo.html), experimental port of LLVM to JS using Emscripten. Takes LLVM IR as input
+* [LiteScript](https://github.com/luciotato/LiteScript) compile-to-C and compile-to-JS, implemented in JavaScript
+* [Nim](http://nim-lang.org/) can supposedly compile both to C and to JS
+
+JavaScript parser generators
+
+* [language.js](https://github.com/tolmasky/language) emits SyntaxError nodes instead of causing exception
+
+Retargeting compilers
+
+* [LLC: Retargetable ANSI C compiler](https://sites.google.com/site/lccretargetablecompiler/), can maybe be compiled to JS via Emscripten?
 
 
 ## Related
@@ -100,3 +119,12 @@ Related motivations
 > Tough luck: you have to leave the flow of design and implementation,
 > and enter the (completely different) world of remote debugging.
 [Forget what you know, please](http://jeelabs.org/article/1608a/)
+
+
+## Dream design programming language
+
+* indent- for blocks, instead of brackets/keyword
+* Variables are constants by default, mutable is opt-in
+
+* Easy creation of DSLs. TODO: define more clearly
+

@@ -70,6 +70,12 @@ Opinions that I bring to the table in relation to this work.
 
 # References
 
+Logic programming
+
+- [miniKamren](http://minikanren.org/) is a embedded logic programming DSL, that for instance powers Clojure `core.logic`.
+[veneer](https://github.com/tca/veneer) looks to be the only maintained JavaScript/browser version,
+but [microScopeKamren](https://github.com/asolove/microScopeKanren) has the explicit focus "inspecting logic programs as they run".
+
 Research
 
 - [metamodels for structured interaction with machine intelligence](http://ppig.org/sites/default/files/2015-PPIG-26th-Sarkar-2.pdf).
