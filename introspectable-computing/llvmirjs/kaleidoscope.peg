@@ -3,7 +3,7 @@ kaleidoscope
 
 Comment "comment"
   = "#" _ text: exceptnew* newline
-  { return "# " + text.join(''); }
+  { return { comment: text.join('') } }
 
 // FIXME: dunno yet
 // Expressions
