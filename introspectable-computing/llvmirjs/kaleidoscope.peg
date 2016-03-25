@@ -1,0 +1,69 @@
+kaleidoscope
+  = Statement*
+
+Comment
+  = "#" _ text: exceptnew* newline { return text.join(''); }
+
+// FIXME: dunno yet
+// Expressions
+Expr
+  = BasicPrimary
+
+// FIXME: add rest
+BasicPrimary
+  = If
+  / Call
+  / NumberExpr
+
+Call
+  = id: Identifier+ "(" expr: Expr ")" _
+  {
+  	return { call: id.join(''), expr: expr };
+  }
+
+// Literals
+NumberExpr
+  = [0-9]+
+  {
+  	return parseInt(text(), 10);
+  }
+
+// Conditional (are expressions)
+If
+  = _ "if" Expr "then" Expr "else" Expr { return 'if'; }
+
+// Statements
+// FIXME: get rid of , in output
+Def
+  = "def" _ id: Identifier+ "(" args: Identifier+ ")" newline
+  {
+  	return { def: id.join(''), args: args.join('') };
+  }
+Extern
+  = "extern" exceptnew+ newline
+Statement
+  = Def
+  / Extern
+  / Comment
+  / Expr
+
+Identifier
+ = [a-zA-Z][a-zA-Z0-9]*
+
+
+
+Integer "integer"
+  = [0-9]+ { return parseInt(text(), 10); }
+
+_ "whitespace"
+  = [ \t\n\r]*
+
+newline "end of line"
+  = [\n\r\u2028\u2029]
+  
+anychar "any character"
+   = exceptnew
+exceptnew 
+  = [^\n\r\u2028\u2029]
+
+
