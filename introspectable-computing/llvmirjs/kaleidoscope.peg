@@ -1,25 +1,47 @@
 kaleidoscope
   = Statement*
 
-Comment
-  = "#" _ text: exceptnew* newline { return text.join(''); }
+Comment "comment"
+  = "#" _ text: exceptnew* newline
+  { return "# " + text.join(''); }
 
 // FIXME: dunno yet
 // Expressions
 Expr
-  = BasicPrimary
+  = lhs: Unary _ rhs: BinaryRHS?
+  {
+    if (rhs) { return [lhs, rhs] }
+    else { return lhs }
+  }
+  
+BinaryRHS
+  = op: Operator _ rhs: Unary
+  { return { op: op, rhs: rhs} }
 
-// FIXME: add rest
-BasicPrimary
+Unary
+  = Primary
+
+// FIXME: add var,for,parens
+Primary
   = If
   / Call
   / NumberExpr
+  / Identifier
 
-Call
+Call "function call"
   = id: Identifier+ "(" expr: Expr ")" _
   {
   	return { call: id.join(''), expr: expr };
   }
+
+// Binary operators
+ComparisonOp
+  = ">" / "<" / "="
+ArtimeticOp
+  = "+"/"-"/"*"/"/"
+Operator "operator"
+	= ArtimeticOp
+    / ComparisonOp
 
 // Literals
 NumberExpr
@@ -30,11 +52,14 @@ NumberExpr
 
 // Conditional (are expressions)
 If
-  = _ "if" Expr "then" Expr "else" Expr { return 'if'; }
+  = _ "if" _ condition: Expr _ "then" _ thenb: Expr _ "else" _ elseb: Expr
+  {
+  	return { if: condition, then: thenb, else: elseb };
+  }
 
 // Statements
-// FIXME: get rid of , in output
-Def
+// FIXME: also capture body
+Def "function definition"
   = "def" _ id: Identifier+ "(" args: Identifier+ ")" newline
   {
   	return { def: id.join(''), args: args.join('') };
@@ -42,15 +67,13 @@ Def
 Extern
   = "extern" exceptnew+ newline
 Statement
-  = Def
-  / Extern
-  / Comment
-  / Expr
+ = Def
+ / Extern
+ / Comment
+ / Expr
 
-Identifier
- = [a-zA-Z][a-zA-Z0-9]*
-
-
+Identifier "identifier"
+ = [a-zA-Z][a-zA-Z0-9]* { return text(); }
 
 Integer "integer"
   = [0-9]+ { return parseInt(text(), 10); }
