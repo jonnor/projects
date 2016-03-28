@@ -1,5 +1,5 @@
 
-## LiveMetalVM
+# LiveMetal
 
 Note: name totally arbitrary so far
 
