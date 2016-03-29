@@ -118,6 +118,8 @@ Need separate layer of thicker tape. Ducttape tested, seems suitable thickness.
 Next steps
 
 * Do complete test one PCB with CNC-milled traces
+* Document the process with step-by-step instruction with images
+* Make a short video walkthrough
 * Research more safety of lasering reflective materials
 * Make some jig for having good registration between CNC mill and lasercutter.
 [fellesverkstedet/tool-connections](https://github.com/fellesverkstedet/tool-connections) good basis.

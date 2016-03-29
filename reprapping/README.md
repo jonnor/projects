@@ -61,6 +61,18 @@ Research
 [Table](http://www.goodfellow.com/catalogue/GFCat2C.php?ewd_token=Q4ZIFOAVRhE2dSOYkbUxPMdSBZyxXk&n=Ab6sV0qHM8iAeitFJGlgDA1qjQCrhQ&ewd_urlNo=GFCat26&type=30&prop=3)
 Kapton/Polyimide: 0.45, Teflon/PTFE: 0.05-0.2, UHMW PE: 0.1-0.2.
 
+Laser diode buying
+
+* [Banggood](http://www.banggood.com/Wholesale-Laser-Equipment-c-3491.html)
+* Osram PL TB450B [DigiKey](http://www.digikey.com/product-detail/en/osram-opto-semiconductors-inc/PL%20TB450B/PL%20TB450B-ND/5719266)
+* [DTR's Laser Shop](https://sites.google.com/site/dtrlpf/home/diodes)
+* [Laserdirect@Ebay](http://www.ebay.com/sch/laserdirect/m.html?_nkw&_armrs=1&_ipg&_from&rt=nc&_mPrRngCbx=1)
+
+Existing low-cost laser diode engravers
+
+* [smartDIYs](http://www.thingiverse.com/thing:1026345) open source kit. Lasercut acrylic, steelrods+timingbelts, motor on gantry.
+* [Mr. Beam](https://www.mr-beam.org/) open source kit. Kickstarter 2014. 3d-printed + wood-frame. [Octoprint-based](https://github.com/mrbeam/OctoPrint) software
+
 ## Related projects...
 
 Of mine
@@ -70,8 +82,13 @@ Of mine
 
 Of others
 
-* [MPlus One](http://www.thingiverse.com/thing:1104249) Cantilevered, moving bed like PrinterBot Simple and Smartrap, with lasered/milled structure.
+* [MPlus One](http://www.thingiverse.com/thing:1104249).
+Cantilevered, moving bed like PrinterBot Simple and Smartrap, with lasered/milled structure.
 Maybe has potential in combination with tape principle, possibly making even cheaper than a CoreXY?
+
+Possible addons
+
+* [Lasercut vacuum table](http://hackaday.com/2016/03/19/diy-vacuum-table-makes-lasering-even-easier)
 
 ## TapeZ
 
@@ -204,6 +221,7 @@ To loosen belt one would push out the ratchet.
 Work by others
 
 * [3d-printed bushing](http://www.thingiverse.com/thing:1196801), replaces speciality linear bearings
+* [3d-printed beam surface](http://www.thingiverse.com/thing:9080/#comments)
 
 # Interesting designs
 

@@ -8,6 +8,9 @@
 # Indent-significant blocks in PEG.js
 # https://www.bountysource.com/issues/1362807-support-parsing-of-indentation-based-languages
 # https://gist.github.com/dmajda/04002578dd41ae8190fc
+#
+# CoffeScript parser with Jison, with indent-based blocks
+# http://maxtaco.github.io/coffee-script/documentation/docs/grammar.html
 
 peg = require 'pegjs'
 ll = require './ll'
