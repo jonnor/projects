@@ -34,6 +34,7 @@ Drawbacks
 
 * PC/cooling fan. Radial or axial. 80/120 mm.
 * Peristaltic pump (fluids). Might need gearing
+* Impeller pump (fluids), for instance for hydroponics.
 * Camera jig, using belt/wires to translate to linear motion
 * Electromagnet winding tool, so it can help replicate itself!
 * Extruder/print cooling fan. Requires minimization
@@ -51,6 +52,47 @@ Drawbacks
 Also shows use of tapered air-gaps to ensure known starting position of rotor (and direction?).
 * [uC centric, well documented brushless motor driver board](http://danstrother.com/2011/01/12/brushless-dc-motor-controller-board/)
 * [DIY brushless motor implemented on PCB](https://www.youtube.com/watch?v=dSkj-OdujoU)
+
+## Firmware
+
+Existing open source firmware.
+Used in multi-copter etc, compatible with many many ESC packages.
+Many using AVR atmega8/16 uCs.
+These typically take servo-style 1ms -> 2ms pulse widths to mean 0% -> 100%.
+Though on some high performance setups, the maximum pulsewidth is sometimes set to 125 us instead.
+
+* [SimonK](https://github.com/sim-/tgy) (assembler, some german license)
+* [BLHeli](https://github.com/bitdump/BLHeli) (assembler, GPL)
+
+## ESC
+
+Example [Atmel-based ESCs](https://github.com/bitdump/BLHeli/blob/master/Atmel/BLHeli%20supported%20Atmel%20ESCs.pdf).
+BlueSeries 12A, HobbyKing 6A and YEP 7A are quite simple-looking designs. Most things look to be variations around exacly the same pattern.
+
+Commercial
+
+* Available for RC-use for `< 10 EUR`.
+[HobbyKing](http://www.hobbyking.com/hobbyking/store/uh_listCategoriesAndProducts.asp?cwhl=XX&idCategory=61&v=&sortlist=P&LiPoConfig=&CatSortOrder=asc)
+
+Principles
+
+* Well explained [principle circuit](http://www.rcgroups.com/forums/showthread.php?t=1679621)
+* [Another simple schematic](http://www.avrfreaks.net/comment/435508#comment-435508)
+
+Open source
+
+* [VESC - open source ESC](http://vedder.se/2014/01/a-custom-bldc-motor-controller/) [github](https://github.com/vedderb/bldc)
+* [Open-BLDC](http://open-bldc.org/wiki/Open-BLDC), not updated since 2012.
+[github](https://github.com/open-bldc) has links to simulation tools and firmware in C.
+* [Simple with board and code](http://davidegironi.blogspot.no/2013/09/a-simple-brushless-sensorless-motor.html#.VvxblbPuRhE),
+using [IR2101 driver](http://www.irf.com/part/High-and-Low-Side-Driver/_/A~IRS2001).
+
+## Existing motors
+
+* Outrunners available for `10 EUR`
+[HobbyKing: 22-27 mm](http://www.hobbyking.com/hobbyking/store/uh_listCategoriesAndProducts.asp?cwhl=XX&idCategory=1219&v=&sortlist=P&LiPoConfig=&CatSortOrder=asc)
+[HobbyKing: micro](http://www.hobbyking.com/hobbyking/store/uh_listCategoriesAndProducts.asp?cwhl=XX&idCategory=518&v=&sortlist=P&LiPoConfig=&CatSortOrder=asc)
+* [Banggood](http://www.banggood.com/search/brushless-motor/0-0-0-1-3-45-0-price-0-100_p-1.html?sortType=asc)
 
 # Fabricated stepper motor
 
