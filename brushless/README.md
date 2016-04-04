@@ -16,7 +16,7 @@ but is hopefully practical and powerful enough to be useful in realistic scenari
 * Outrunner design instead of inrunner
 * Using iron-core (M4 bolts) electromagnets instead of air
 * Has a bearing (608) and a metal axel (M8)
-* 6 pole stator, 8-10 pole rotor instead of 3/4
+* 6 teeh stator, 8-10 pole rotor instead of 3/4
 * Smaller distance between rotor and stator magnets
 
 Important features retained
@@ -38,6 +38,9 @@ Drawbacks
 * Camera jig, using belt/wires to translate to linear motion
 * Electromagnet winding tool, so it can help replicate itself!
 * Extruder/print cooling fan. Requires minimization
+* Spindle motor for CNC. For instance by letting motor wrap around a ER chuck+shank.
+[1](http://www.openbuilds.com/threads/brushless-dc-motor-spindle.266/)
+[2](http://kreature.org/projects/mini-cnc/collet_spindle/spindle.jpg)
 
 ## TODO
 
@@ -52,6 +55,24 @@ Drawbacks
 Also shows use of tapered air-gaps to ensure known starting position of rotor (and direction?).
 * [uC centric, well documented brushless motor driver board](http://danstrother.com/2011/01/12/brushless-dc-motor-controller-board/)
 * [DIY brushless motor implemented on PCB](https://www.youtube.com/watch?v=dSkj-OdujoU)
+
+
+> The thickness of the iron lamination sheets varies between about 0.05 and 0.5 mm in most electrical machines.
+The choice of lamination thickness depends on a balance between performance and cost.
+[Ementor: Lamination thickness](http://www.emetor.org/glossary/lamination-thickness/)
+
+## Winding
+
+> Y pattern gives high torque at low RPM and the ∆ pattern gives low torque at low RPM
+> ...
+> The higher the number of rotor poles, the higher the torque but the lower speed
+> ...
+http://www.edn.com/design/sensors/4406682/Brushless-DC-Motors---Part-I--Construction-and-Operating-Principles
+
+* [Common winding schemes](http://www.bavaria-direct.co.za/scheme/common/)
+* [Electric motor winding calculator](https://www.emetor.com/edit/windings/)
+* [Very thourough walkthrough (text+picture) of rewinding brushless mototor](http://www.rcgroups.com/forums/showthread.php?t=666877)
+* [Winding diagram table](http://www.bavaria-direct.co.za/info/#), from 3n2p to 18n20p
 
 ## Firmware
 
@@ -93,6 +114,12 @@ using [IR2101 driver](http://www.irf.com/part/High-and-Low-Side-Driver/_/A~IRS20
 [HobbyKing: 22-27 mm](http://www.hobbyking.com/hobbyking/store/uh_listCategoriesAndProducts.asp?cwhl=XX&idCategory=1219&v=&sortlist=P&LiPoConfig=&CatSortOrder=asc)
 [HobbyKing: micro](http://www.hobbyking.com/hobbyking/store/uh_listCategoriesAndProducts.asp?cwhl=XX&idCategory=518&v=&sortlist=P&LiPoConfig=&CatSortOrder=asc)
 * [Banggood](http://www.banggood.com/search/brushless-motor/0-0-0-1-3-45-0-price-0-100_p-1.html?sortType=asc)
+
+## Sourcing locally
+
+* Neodym magnets.
+[Kjell](http://www.kjell.com/se/sortiment/hus-halsa-fritid/ovrigt/gadgets/neodymmagnet-8-mm-10-pack-p50070)
+Clas Ohlson
 
 # Fabricated stepper motor
 
@@ -268,8 +295,41 @@ Coupled with a linear encoder, could maybe be used for a shape display.
 * [YouTube: Simple DIY version](https://www.youtube.com/watch?v=3PLWTF_6odc). Quite jerky motion.
 * [YouTube: DIY version with sinusoidal commutation](https://www.youtube.com/watch?v=PXybuXsqEWo)
 * [Youtube: DIY controller with position control](https://www.youtube.com/watch?v=PWSf_NWGty8)
-* Background on [shaft motors](https://electromate.wordpress.com/2012/01/29/linear-motor-lowdown/)
+* Background on [shaft motors](https://electromate.wordpress.com/2012/01/29/linear-motor-lowdown/) 
 
+# Coil winding automation
+
+Commercial systems
+
+* [Youtube: BLDC coil winding machine](https://www.youtube.com/watch?v=MrdzaA8CClk).
+For an inrunner, whole cycle shown in real-time.
+Does complex patterns by 'tieing off' the copper wire on a post outside the stator.
+* [Youtube](https://www.youtube.com/watch?v=d77b1C-ruw8). Another inrunner using same principle, doing 4-5 simultanously.
+* [Youtube: Winding of a 4" brushless motor](https://www.youtube.com/watch?v=2JsRYUTK5Pw).
+* [2](https://www.youtube.com/watch?v=nFZVhA13EfY)
+* [Youtube: rushless dc motor supplier auto winding](https://www.youtube.com/watch?v=3ws1P5hZBWo),
+shows sliding geometry used on spinner to lay out wire back and forth on armature.
+* [Youtube](https://www.youtube.com/watch?v=IcmNN4ZSLeo), also shows guiding mechanism working
+relative to the armature geometry, and also the arm which spins the wire.
+
+General principles
+
+* Stator sits on a turntable/spike, which can rotate 360 degrees
+* One armature is wound at a time, from start to finish
+* Some winding configurations requires some windings go one way, and some the opposite
+* The armature can be all wound with loose ends at each side,
+then connected to form correct configuration afterwards.
+* For small-ish motors, easier to autowind outrunners than inrunners.
+This because the spinner can put windings onto stator from outside.
+* Thinner gauge wire is preferred because it is easier to automatically wind
+(number of windings will affect Kv number).
+* For outrunners, a large wheel spins the incoming wire, guided into right place by some (motor size specific) geometry
+* For inrunners, a 'finger' guides the wire around the , with a reprociating motion.
+* This spinner wheel moves in and out on the armature to lay out the wire
+
+Open sources
+
+* [Coil winding machine](http://www.thingiverse.com/thing:981327)
 
 # Servomotor
 
@@ -289,7 +349,6 @@ Either resistive, capacitive or inductive
 
 # References
 
-* [Coil winding machine](http://www.thingiverse.com/thing:981327)
 * [Thingiverse: Open Motor](http://www.thingiverse.com/thing:46428)
 * [15-deg stepper motor (halfstep capable)](https://www.youtube.com/watch?v=v2FNUNALSTw)
 * [Another printed brushless](http://3dprint.com/89359/3d-print-brushless-pulse-motor)
