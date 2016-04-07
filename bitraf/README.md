@@ -24,3 +24,21 @@ Handle:
 * Add lasercut T-wedge to handle, to replace having to use M4 screws...
 * Add `Oslo, Norway` to the stamp
 * MAYBE: a version with `member`, and one version with `guest`?
+
+# 3d-printer shelves
+
+Concept
+
+* One compartment per printer (Ultimaker Original)
+* Fully enclosed when running
+* Openable from the front, with drawer
+* Space below/above for materials/accessories/tools/maintenance parts
+* Maybe a computer terminal attached
+
+Possible parts
+
+* Drawer slides.
+Biltema [1](http://www.biltema.no/no/Bygg/Hengsel/Ovrig/Ekspansjonsbeslag-2-stk-2000018627/)
+Biltema [2](http://www.biltema.no/no/Bygg/Hengsel/Ovrig/Ekspansjonsbeslag-2-stk-2000018657/)
+* Compartment box.
+Ikea [1](http://www.ikea.com/no/no/catalog/products/30263660/)
