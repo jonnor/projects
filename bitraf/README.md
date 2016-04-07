@@ -35,10 +35,17 @@ Concept
 * Space below/above for materials/accessories/tools/maintenance parts
 * Maybe a computer terminal attached
 
+Dimensions
+
+* Ultimaker Original supposedly, somewhere around `X Y Z: 35.7 cm × 34.2 cm × 38.8 cm`.
+* So 60 cm deep, 60 cm tall and 40+ cm wide compartments could be good.
+
 Possible parts
 
 * Drawer slides.
 Biltema [1](http://www.biltema.no/no/Bygg/Hengsel/Ovrig/Ekspansjonsbeslag-2-stk-2000018627/)
 Biltema [2](http://www.biltema.no/no/Bygg/Hengsel/Ovrig/Ekspansjonsbeslag-2-stk-2000018657/)
-* Compartment box.
+* Compartments box.
 Ikea [1](http://www.ikea.com/no/no/catalog/products/30263660/)
+ClashOlson [1](http://www.clasohlson.com/no/St%C3%A5lreol/Pr408943002)
+Jernia [1](http://www.jernia.no/produkt/-/vis-produkt/fixit-hyllereol-metall-tre-180x90x40cm/58010253)
