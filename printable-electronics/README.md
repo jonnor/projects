@@ -216,8 +216,13 @@ Ideas for pieces
 --------
 
 * An electronic windchime, where conductive filament is used to sense wind/movement?
-* Joystick 4/8-way
 * Microswitch for use as endstops
+* Keypad, resistive/press. Maybe using NinjaFlex for flexing/springing of pushbuttons
+* Keypad, capacitive/touch. Buttons can have any shape, use to illustrate function
+* Joystick 4/8-way
+
+Shields, say for Arduino or Raspberry Pi are interesting form-factors.
+Alternatively have 100 mil header spacing, for breadboard compatibility.
 
 
 Key process parameters
@@ -228,6 +233,20 @@ Key process parameters
 * Strength and flexibility of material
 * Bonding to other conductive materials: component, PCBs etc
 * Bonding to non-conductive material
+
+
+## Electroetching
+
+Allows to make metal parts. Both conductive and solderable (copper),
+as well as magnetic (iron).
+
+If one can use the 3d-printer to make masks, no other machine is needed.
+This would maximizes accessibility for 3d-printer people.
+Maybe use flexible filament like NinjaFlex, printed directly onto metal?
+Requires setting custom zeropoint on top of material, or calibrated 'print in air',
+or doing a hacky 'Z axis override'.
+Can for instance prime nozzle upwards a wall next to the material stock,
+to reach (at least) thickness of material, then move onto it.
 
 
 Thoughs on designing for print

@@ -210,7 +210,7 @@ Examples: cutting speeds, laser power. Raster versus vector, pocket versus cut. 
 
 Objects suitable or designed for fabrication from scrap material
 
-* [Trashcan](../random/thrasbin.fcstd) designed to only use short staves. Inspired by Waste Bin by Astrid Lubsen
+* [Trashcan](../random/thrashbin.fcstd) designed to only use short staves. Inspired by Waste Bin by Astrid Lubsen
 * [SketchChair](http://www.sketchchair.cc/), slice-based open source chair, could possibly be suited
 * [POD by Samuelle Javelle](http://teobonobo.blogspot.no/2013/12/pod-samuel-javelle_6.html)
 * Pintres: CNC'ed furniture inspiration [1](https://www.pinterest.com/pin/478789004105748170/)
