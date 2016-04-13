@@ -248,6 +248,17 @@ or doing a hacky 'Z axis override'.
 Can for instance prime nozzle upwards a wall next to the material stock,
 to reach (at least) thickness of material, then move onto it.
 
+### 3d-printing mask onto metal
+
+NinjaFlex onto stainless steel. Sicks a little bit, but easily comes undone.
+When adding some gluestick, sticks OK ehough to print thin masks, but the glue
+is likely to interfere with etching process.
+Furthermore, NinjaFlex has a nasty tendecy to become stringy.
+This bridges over the small gaps in the mast that is intended to be the etchline,
+which would likely cause serious defects in the etch.
+
+
+
 
 Thoughs on designing for print
 ---------------
@@ -456,6 +467,7 @@ Signal connectors
 Power connectors
 
 * Mains/Wall socket plug. 110/230V
+* Barrel jack (Arduino etc)
 * USB male&female. 5V
 * Car/sigarrette adapter. 12V
 

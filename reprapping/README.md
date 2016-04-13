@@ -227,3 +227,22 @@ Work by others
 
 * [Delta-T, rail-free, wire-based delta](http://forums.reprap.org/read.php?1,525804)
 * [SkyDelta, rail-free, wire-based delta](https://groups.google.com/forum/#!topic/deltabot/Jj6vyPf7jJ8)
+
+# Electronic discharge machining
+
+Looks promising as a non-contact method of machining metals.
+Particularly for small/fine things, like PCB isolation engraving or.
+
+Can be used with a wide array of tool-heads, to make custom shapes.
+
+Disadvantages are heavy tool erosion. But maybe can use 0.5 mm grafite leads from pencils??
+
+Needs some regulation circutry which constantly keeps the head at appropriate level from workpiece.
+Bonus sideeffect : built-in Z-height autolevel.
+
+References
+
+* [YouTube: Principle test from Fablab India](https://www.youtube.com/watch?v=Zf7_GY7GMV40), part of Fabacademy 2016.
+* [YouTube: Principle test from 2012](https://www.youtube.com/watch?v=GVSST58x_FE). Looks to be working quite well.
+* [RepRap forums: DIY EDM](http://forums.reprap.org/read.php?1,262452)
+* [Hackaday.io: Not Your Father's EDM](https://hackaday.io/project/3232-not-your-fathers-edm). Last update in Feb 2015.

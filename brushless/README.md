@@ -104,6 +104,7 @@ Open source
 
 * [VESC - open source ESC](http://vedder.se/2014/01/a-custom-bldc-motor-controller/) [github](https://github.com/vedderb/bldc)
 * [Open-BLDC](http://open-bldc.org/wiki/Open-BLDC), not updated since 2012.
+* [Hackaday.io; OpenBLDC](https://hackaday.io/project/1490-openbldc), schematics and [Arduio controller code](https://github.com/Neuromancer2701/BLDC_ros_controller). MIT licensed.
 [github](https://github.com/open-bldc) has links to simulation tools and firmware in C.
 * [Simple with board and code](http://davidegironi.blogspot.no/2013/09/a-simple-brushless-sensorless-motor.html#.VvxblbPuRhE),
 using [IR2101 driver](http://www.irf.com/part/High-and-Low-Side-Driver/_/A~IRS2001).
