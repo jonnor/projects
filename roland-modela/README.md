@@ -48,6 +48,54 @@ Parts
 * 5 mm acrylic or polycarbonate
 * http://www.clasohlson.com/no/b/Jernvare/Beslag-og-opphengning/Tetningslister
 
+## Course in making PCBs
+
+
+Theory intro
+
+* Motivation for making PCBs locally
+* CNC milling PCB versus etching
+* How isolation milling works
+* Safety considerations, fibreglass and copperdust
+* Where to get materials/tools
+* Important design (minimal trace distance, traces width)
+* SMD is easier/nicer than holes
+* Exporting design (Fritzing/EAGLE/KiCAD)
+
+Demo
+
+* How to prepare exported design. Flipping if export is from underside. Aligning cutouts
+* Importing
+* Settings
+* 
+* Traces isolation milling
+* Changing tool, setting Z-height
+* Board cutout
+
+Practical
+
+* Each participant imports demo design traces
+* Puts in the board
+* Sets up settings and positions XY, Z
+* Runs the job
+* MAYBE: let people personalize
+
+Prepare
+
+* TODO: design a simple demo circuit. LED on a USB stick?
+* TODO: find supplier(s) of PCB blanks
+* TODO: order PCB blanks for Bitmart
+* TODO: check how long demo milling takes
+* TODO: test drilling using 1mm engraver bit
+* MAYBE: mill the bed level
+* Document the process on wiki
+* Pre-cut a number of boards, 1 per participant
+* Make some slides for theory intro
+
+Related
+
+* Electronics: Working with surface mount components
+
 
 ## TODO
 
@@ -60,8 +108,9 @@ Parts
 Fabmodules
 
 * Add code upload/send (from any source)
-* Make the sender report progress over Webinterface instead of native TKinter.
-Consider checking out the work in [ChiliPeppr](http://chilipeppr.com/), and reusing the server part/interface.
+* Make the sender report progress over Webinterface instead of native TKinter. https://github.com/FabModules/fabmodules-html5/issues/23
+Consider checking out the work in [ChiliPeppr](http://chilipeppr.com/), and reusing the server part/interface?
+* Make  https://github.com/FabModules/fabmodules-html5/issues/22
 
 
 References
