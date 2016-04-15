@@ -28,19 +28,28 @@ MOSFET pinout was wrong, otherwise worked OK. This has now been rectified.
 
 ## TODO
 
+0.1
+
 * Verify current sharing using multiple modules
-* Use one of opamps as a 10x amplifier of Rsense signal, instead of attenuating Iset input.
-Also maximum use the finite DAC precision, and easier to test/debug.
 * Test with laser diode
 * Test with a power LED
 * Verify working with 3.3v uC. Needs suitable opamp and MOSFET
-* Make production run of 10 boards
+* Make 1 or 2 testing jigs
+* Make production run of 5 boards
+
+Related
+
 * Order 1206/1210 capacitors. Big enough to place traces under, unlike 0805.
 * Order 0 ohm resistors, for bridges (alternative to vias). 1206.
 [Farnell](http://uk.farnell.com/webapp/wcs/stores/servlet/Search?catalogId=15001&langId=44&storeId=10151&categoryId=700000005450&pageSize=25&showResults=true&pf=110071175,111629309,111629358,111629382)
 * Order SMD 2.54mm headers. [Farnell](http://no.farnell.com/webapp/wcs/stores/servlet/Search?catalogId=15001&langId=47&storeId=10169&categoryId=700000005017&sort=P_PRICE&pageSize=25&showResults=true&pf=110063161,110178988,110195024,111981269)
 * Maybe add some PNP compliments (BC856)
-* fabmodules: Add MDX-15 preset, with `rtscts` flow type
+
+0.2
+
+* Use one of opamps as a 10x amplifier of Rsense signal, instead of attenuating Iset input.
+Maximises use the finite DAC precision, reduces Iset ripple, and easier to test/debug.
+* Use KiCAD instead of Fritzing
 
 ## BOM
 
@@ -88,6 +97,31 @@ Could possibly make Phillips Hue compatible. Resources:
 * ~ 1W/100lumen/350mA looks to be around 10 NOK/piece.
 [Farnell](http://no.farnell.com/webapp/wcs/stores/servlet/Search?catalogId=15001&langId=47&storeId=10169&categoryId=700000006148&sort=P_PRICE&pageSize=25&showResults=true&aa=true&sf=722&pf=110123293,110123306,110123341,110123356,110133845,110133852,110133859,110133881,110133882,110133887,110133892,110133897,110133904,110133914,110144659,110144664,110144668,110144714,110155291,110155292,110155296,110155302,110155310,110155374,110155388,110165919,110165952,110165956,110165957,110182255,110184700,110186475,110193711,110195065,110197226,110201762,110418066,110418258,110433218&min=110165956&max=110433218,110133881)
 3W/200lm/750mA around 5/NOK per watt. [AdaFruit](https://www.sparkfun.com/products/13104)
+
+Aluminum plate could make for good armature basis, acts both as a heatsink and reflector.
+Can be bent into many different shapes. May also be able to use it as conductor.
+Sandblasted or opal-colored acrylic could be used as diffusor.
+
+For on-the-cheap, may be possible to use cardboard plus aluminum foil.
+Layering paper and al-foil one could also make the traces for connecting the LEDs.
+White print paper, or baking-paper could be used for diffusors.
+Possibly interesting for fast experimentation with shapes, with hand-cut or laser-cut cardboard.
+
+If one could construct a socket for the LED, which would take conductors in-out, and press
+them against the connectors on the LED, could avoid soldering. Possibly 3d-printed. Examples
+[1](http://www.thingiverse.com/thing:897957) [2](http://www.thingiverse.com/thing:170562)
+
+Could maybe make a multi-conductor tape by cutting up foil in strips, applied next to eachother
+onto a (possibly double sided) tape. A device with cutters, dividers and rollers could do this semi-automatically.
+
+## Thermal design
+
+* [Elliot Sound: Primer on heatsinks](http://sound.westhost.com/heatsinks.htm)
+* [Heat sink calculator](http://www.daycounter.com/Calculators/Heat-Sink-Temperature-Calculator.phtml)
+* [How to design flat-plate heatsink](http://www.heatsinkcalculator.com/blog/how-to-design-a-flat-plate-heat-sink/)
+* [Calculator: Thermal resistance in solid](http://mustcalculate.com/electronics/thermalresistance.php?mat=al&w=100&wu=mm&l=100&lu=mm&t=0.01&tu=mm)
+* [Calculator: Natural Convection on Isothermal Vertical Plate](http://www.thermal-wizard.com/tmwiz/convect/natural/vp-isot/vp-isot.htm)
+* [Calculator: Natural convection on isothermal horizontal plate](http://www.thermal-wizard.com/tmwiz/convect/natural/hup-isot/hup-isot.htm)
 
 ## Ideas
 

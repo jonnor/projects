@@ -258,6 +258,12 @@ This bridges over the small gaps in the mast that is intended to be the etchline
 which would likely cause serious defects in the etch.
 
 
+## Integrating conductors
+
+Aluminum
+
+* [Youtube: How to solder aluminium (foil)](https://www.youtube.com/watch?v=_mYkM9lHMho).
+Using oil to prevent oxidization, and mechanically rubbing existing layer off.
 
 
 Thoughs on designing for print

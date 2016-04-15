@@ -13,7 +13,7 @@ TODO: link pictures here
 * Making magnetic parts for [motors](../brushless). 
 * Making decorations or jewelry. Ex: gothic style black+stainless
 * Printing plates
-* Marking objects
+* Marking objects, informational.
 * Branding objects
 * Graffiti/streetart??? (not seen yet)
 

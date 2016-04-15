@@ -82,12 +82,13 @@ Practical
 
 Prepare
 
-* TODO: design a simple demo circuit. LED on a USB stick?
-* TODO: find supplier(s) of PCB blanks
 * TODO: order PCB blanks for Bitmart
+[Conrad: FR1 160x100 mm](http://www.conrad.com/ce/en/product/528382/) [100x50 mm](http://www.conrad.com/ce/en/product/528200)
+* TODO: design a simple demo circuit. LED on a USB stick?
 * TODO: check how long demo milling takes
 * TODO: test drilling using 1mm engraver bit
-* MAYBE: mill the bed level
+* TODO: mill the bed level
+* TODO: get a new Allen key, switch the spindle set-screws
 * Document the process on wiki
 * Pre-cut a number of boards, 1 per participant
 * Make some slides for theory intro
