@@ -204,6 +204,10 @@ Holes will likely be needed to let water escape.
 Or, lay material around a negative shape - then use vacum-bagging to pull it tight.
 Will water escape into vacum pump?
 
+### Injection molding
+
+* [engineerguy: Plastic Injection Molding](https://www.youtube.com/watch?v=RMjtmsr3CqA). Very thorough and easy to understand.
+
 ## References
 
 * [US Patent: Process of insoluzibiling protein fibres during manufacture](http://www.google.com/patents/US2297397).

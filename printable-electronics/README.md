@@ -470,6 +470,21 @@ Signal connectors
 * 1/4" 6.3mm 'jack'. Male/female
 * 1/8" 3.5mm 'minijack', Male/female
 
+Electromechanics
+
+* Toggle/latched switches:
+* Slide [reference](http://johnscabin.com/Basic_speaker/switches.htm)
+* Rocker
+[ref 1](http://www.directindustry.com/prod/nkk-switches-9308.html#product-item_948559)
+* Throw
+[ref 1](https://www.nkk.com/products/toggle/s.html)
+[printable toggle latch](http://www.thingiverse.com/thing:238134)
+* Push-push
+[printable pen mechanism](http://www.thingiverse.com/thing:99950) |
+[Youtube: Push-push retractable ballpoint pen](https://www.youtube.com/watch?v=MhVw-MHGv4s&ebc), using a rotating cam.
+* Rotary
+* Potmeter, linear or rotational
+
 Power connectors
 
 * Mains/Wall socket plug. 110/230V

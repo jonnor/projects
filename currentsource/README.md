@@ -89,16 +89,13 @@ Functional tester
 
 Big armatures by having multiple LEDs in a chain on a single current source.
 With a 24volt powersupply should be able to put 6 LEDs (maaybe 7). And 3 on 12V supply.
+Or one single on 5V/USB.
 
-Could possibly make Phillips Hue compatible. Resources:
+Something I'd actually want/need is a lamp for bookreading, both next to bed and in sofa.
 
-* [Instructables: RGB moodlamp syncs with Hue](http://www.instructables.com/id/High-Power-RGB-LED-Moodlamp-which-syncs-with-Phili/)
-* [Control Hue from Arduino](http://www.makeuseof.com/tag/control-philips-hue-lights-arduino-and-motion-sensor/)
-* [ESP8266HueEmulator](https://github.com/probonopd/ESP8266HueEmulator)
-* [Hue bridge in Python](https://github.com/mjg59/ulfire)
-* ~ 1W/100lumen/350mA looks to be around 10 NOK/piece.
-[Farnell](http://no.farnell.com/webapp/wcs/stores/servlet/Search?catalogId=15001&langId=47&storeId=10169&categoryId=700000006148&sort=P_PRICE&pageSize=25&showResults=true&aa=true&sf=722&pf=110123293,110123306,110123341,110123356,110133845,110133852,110133859,110133881,110133882,110133887,110133892,110133897,110133904,110133914,110144659,110144664,110144668,110144714,110155291,110155292,110155296,110155302,110155310,110155374,110155388,110165919,110165952,110165956,110165957,110182255,110184700,110186475,110193711,110195065,110197226,110201762,110418066,110418258,110433218&min=110165956&max=110433218,110133881)
-3W/200lm/750mA around 5/NOK per watt. [AdaFruit](https://www.sparkfun.com/products/13104)
+### Construction ideas
+
+Tincans can possibly make a nice body
 
 Aluminum plate could make for good armature basis, acts both as a heatsink and reflector.
 Can be bent into many different shapes. May also be able to use it as conductor.
@@ -116,7 +113,30 @@ them against the connectors on the LED, could avoid soldering. Possibly 3d-print
 Could maybe make a multi-conductor tape by cutting up foil in strips, applied next to eachother
 onto a (possibly double sided) tape. A device with cutters, dividers and rollers could do this semi-automatically.
 
-## Thermal design
+### Controls
+
+Would want at minimum physical controls, to set the current/lightlevel (potmeter/rotary encoder etc).
+and to turn on and off (toggle switch). Perhaps a tiny not-brigth LED for locating the light in the dark,
+and indicating when thing is powered but turned off/down. This could be the voltage-reference also?
+
+If making mood-lights, candle-emulation flickering migth be interesting.
+
+Could possibly make Phillips Hue compatible. Resources:
+
+* [Instructables: RGB moodlamp syncs with Hue](http://www.instructables.com/id/High-Power-RGB-LED-Moodlamp-which-syncs-with-Phili/)
+* [Control Hue from Arduino](http://www.makeuseof.com/tag/control-philips-hue-lights-arduino-and-motion-sensor/)
+* [ESP8266HueEmulator](https://github.com/probonopd/ESP8266HueEmulator)
+* [Hue bridge in Python](https://github.com/mjg59/ulfire)
+
+
+### Parts
+
+* ~ 1W/100lumen/350mA looks to be around 10 NOK/piece.
+[Farnell](http://no.farnell.com/webapp/wcs/stores/servlet/Search?catalogId=15001&langId=47&storeId=10169&categoryId=700000006148&sort=P_PRICE&pageSize=25&showResults=true&aa=true&sf=722&pf=110123293,110123306,110123341,110123356,110133845,110133852,110133859,110133881,110133882,110133887,110133892,110133897,110133904,110133914,110144659,110144664,110144668,110144714,110155291,110155292,110155296,110155302,110155310,110155374,110155388,110165919,110165952,110165956,110165957,110182255,110184700,110186475,110193711,110195065,110197226,110201762,110418066,110418258,110433218&min=110165956&max=110433218,110133881)
+* 3W/200lm/750mA around 5/NOK per watt.
+[AdaFruit](https://www.sparkfun.com/products/13104)
+
+### Thermal design
 
 * [Elliot Sound: Primer on heatsinks](http://sound.westhost.com/heatsinks.htm)
 * [Heat sink calculator](http://www.daycounter.com/Calculators/Heat-Sink-Temperature-Calculator.phtml)
