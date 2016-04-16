@@ -47,16 +47,18 @@ Related
 
 0.2
 
+* Use KiCAD instead of Fritzing
 * Use one of opamps as a 10x amplifier of Rsense signal, instead of attenuating Iset input.
 Maximises use the finite DAC precision, reduces Iset ripple, and easier to test/debug.
-* Use KiCAD instead of Fritzing
+* Expose the amplified `Ifeedback` signal, for detecting when failing to regulate
+* Arduino library and MicroFlo component for controlling
 
 ## BOM
 
 * SO8 opamp (LM358 etc)
-* D2PAK or TO220 transitor
+* D2PAK transitor
 * 2512 current sense resistor
-* 1uF filtering capacitors
+* 1206 1uF filtering capacitors
 * 1206 resistors
 
 ## Application boards
@@ -161,6 +163,88 @@ Next steps
 
 Might want to take extra care add test-probe pads to circuits made in this manner, cause
 otherwise they will be underneath the soldermask.
+
+### Automated testing
+
+Ideally want to use the same testcases to drive both
+
+* pre-build simulation verification
+* acceptance test of completed board/system
+
+Could be specified using an FBP graph and fbp-spec (data-driven). NoFlo and MicroFlo could be useful here.
+The data-centered approach is nice because it reflects how electronics datasheets are usually setup.
+Alternatively, could perhaps use Gherkin-style (behavior driven) prose.
+For sure one would want to be able to generate documentation, of which tests are ran
+and what their outcome is. Primarily for datasheet 'what can it do',
+and secondarily as a QA report for a particular device.
+
+A Arduino/microcontroller based setup with some standardized extensions might be able to test most systems.
+One could then adapt/add a application-specific test circuit to this, for instance via another shield.
+This should then have connectors that directly interface with the device-under-test,
+so that it can be plugged in, tests ran, -> done. For acceptance test it would end there.
+When debugging it may be useful to be able to stimulate the tests again and again,
+and observe/capture data (possibly using additional instruments) of other testpoints.
+
+When manufacturing is done by another party, one should be able to send such a test setup to them,
+so that verification can happen on-site, before shipping. And be used to improve process / yield rates.
+
+Best practice would be that all points needed to test and verify function and perfomance
+is available from the outside, via the normal module connectors 'black box testing'.
+Having dedicated testing connectors 'grey box testing'.
+
+### Currentsource v1 tests
+
+System has
+
+    Inputs:
+        Iset
+        PWM
+    Outputs:
+        Iout. Where a variable load Rl can be connected, which current Iload flows through
+        Ifeedback. Voltage reflecting Iout
+    Two power sources: VCC and VPWR
+
+    NC: not connected
+
+Testcases (VCC=3.3 unless otherwise noted)
+    
+    # basic regulation,
+    # should set current to Iset, and no failure signalled
+    Iset=1V, PWM=NC, VPWR=5V, Rl=1ohm
+    => Iload=1A, Ifeedback == Iset == 1V
+
+    # insufficient voltage for load,
+    # should do its best and signal failure
+    Iset=1V, PWM=NC, VPWR=5V, Rl=10ohm
+    => Iload=0.2A, Ifeedback less than Iset
+
+    # pwm connected but not used,
+    # current is what Iset
+
+    # pwm modulation
+    # Iload varies between 0 and Iset
+
+    # two modules connected together with no PWM,
+    # should share current evenly, and double in load
+    
+    # two modules connected together with same PWM,
+    # should share current evenly, and double in load
+
+
+### References
+
+Simulation tools, open source
+
+* [Tutorial: Simulating KiCAD schematics with ngSPICE](http://stffrdhrn.github.io/electronics/2015/04/28/simulating_kicad_schematics_in_spice.html).
+[demo repo](https://github.com/stffrdhrn/kicad-spice-demo)
+* [Quick Guide: KiCAD SPICE simulation](http://mithatkonar.com/wiki/doku.php/kicad/kicad_spice_quick_guide)
+* [gnucap](http://www.gnucap.org/dokuwiki/doku.php?id=gnucap:start) "modern post-spice circuit simulator"
+* [gnucap emscripten](https://github.com/logical/Gnucap-Emscripten), compiled to JavaScript. Proof-of-concept
+* [ngscipe emscripten](https://github.com/concord-consortium/build-ngspice-js), compiled to JavaScript. Proof-of-concept
+
+Testing hardware
+
+* TODO: figure out what exists, both Arduino-based and specialized DAQ/testing hardware
 
 ## References
 
