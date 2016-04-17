@@ -1,4 +1,32 @@
 
+# MQTT
+
+For connecting devices in the hackerspace, and outside, together.
+
+## Done
+
+* Run mosquitto
+* Run `boxy4` doorlock on MQTT
+
+## TODO
+
+* Setup `mqtt.bitraf.no` DNS record
+* Setup bitraf.no MQTT SRV DNS record
+* Transition `boxy2` to use MQTT also
+* Create 'interface' for doorlock, decouple from host (boxyX).
+`/door/lab/open (opentime: Int seconds door is to be open)` | 
+`/door/lab/isopen (status: Bool true if door is open, else false`
+* Declare Msgflo participants for dlock13 devices
+* Setup [Msgflo](http://msgflo.org) coordinator on bomba/users
+* Have a QR/NFC code for accessing MsgFlo network with Flowhub
+* Also setup pretty HTTP redirect for Flowhub live URL
+
+## Ideas
+
+* participant which monitors tweets to #bitraffineriet, sends out on MQTT
+* participant which allows to send tweet as #bitraf-iot
+* Physical device for doorlock status/opening, MQTT participant(s)
+
 # Hackerspace stamp
 
 Designed to use in the [hackerspace passport](https://www.noisebridge.net/wiki/passport), with overall size of 40 x 25 mm.
