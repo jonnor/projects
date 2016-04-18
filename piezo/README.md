@@ -1,5 +1,8 @@
 
-[https://en.wikipedia.org/wiki/Piezoelectric_sensor]
+Experiments around the piezeoelectric effect,
+both [sensors](https://en.wikipedia.org/wiki/Piezoelectric_sensor) and transducers.
+
+
 
 ## Piezo preamp
 
@@ -52,3 +55,29 @@ Digital fabrication
 * [Speakers](https://en.wikipedia.org/wiki/Piezoelectric_speaker) and buzzers
 * Ultrasound transducer vaperizators, for aeroponics
 * Micro-pumps and droplet valves
+
+## Synthetization
+
+There are many recipies to make Rochelle salts, which are piezo-electric.
+
+* http://makezine.com/2008/07/31/how-to-make-piezo-crystal/
+* http://www.seawhy.com/xlroch.html 
+* https://www.youtube.com/watch?v=K3G2QM5a-9U
+* [Very detailed](http://www.extremenxt.com/blog/?page_id=77)
+
+Rochell salts are [Potassium sodium tartrate](https://en.wikipedia.org/wiki/Potassium_sodium_tartrate),
+which can be purchased directly [Amazon](http://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=Potassium+sodium+tartrate).
+
+It can also be made from two fairly common ingredients
+
+* [Potassium bitartrate](https://en.wikipedia.org/wiki/Potassium_bitartrate) "Cream of tartar"
+* [Sodium carbonate](https://en.wikipedia.org/wiki/Sodium_carbonate) "soda ash" or "washing soda",
+which can be make easily from sodium bicarbonate.
+
+This should be usable for simple piezo sensors, like for triggering samples/drums.
+
+Some cool things could be possible when synthesizing the piezo elements / crystals oneself.
+For instance, can possibly create a shape that is needed / desired,
+both for astetic effects and to make particular objects. Say like a speaker driver.
+
+One could possibly embed electrical wire, solving the issue of 
