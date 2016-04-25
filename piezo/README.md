@@ -3,7 +3,6 @@ Experiments around the piezeoelectric effect,
 both [sensors](https://en.wikipedia.org/wiki/Piezoelectric_sensor) and transducers.
 
 
-
 ## Piezo preamp
 
 For a capacitive sensor like a piezo element, a [Charge amplifier](https://en.wikipedia.org/wiki/Charge_amplifier)
@@ -49,6 +48,16 @@ Digital fabrication
 * Vibration sensing of CNC spindles, for auto-calibration
 * Touch-probe measurements for 3d-printer using differences in free-running and touching resonance
 
+
+## Piezo trigger amp
+
+[KiCAD files](./crystaltriggeramp/).
+
+Parts
+
+* Input protection diode, or zener. SOD-123 nice size, around 3.5mm, similar to 1206
+[Farnell: Zener 3.3v](http://no.farnell.com/webapp/wcs/stores/servlet/Search?catalogId=15001&langId=47&storeId=10169&categoryId=700000004649&sort=P_PRICE&showResults=true&aa=true&sf=722&pf=110130987,110152539,110152576,113162575)
+[Farnell: Signal diode](http://no.farnell.com/webapp/wcs/stores/servlet/Search?catalogId=15001&langId=47&storeId=10169&categoryId=700000004638&sort=P_PRICE&beginIndex=1&showResults=true&aa=true&pf=110130987,110152539,111439590,113162575)
 
 ## Piezo driver
 
