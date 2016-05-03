@@ -36,7 +36,11 @@ For instance allowing it to be:
 
 There are some FreeCAD source files included here.
 
+[Needle](./needle.fcstd)
+
 ![Needle prototype model](./doc/needle-prototype.png)
+
+[Track](./track.fcstd)
 
 ![Track prototype model](./doc/track-prototype.png)
 
