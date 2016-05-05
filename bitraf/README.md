@@ -1,11 +1,37 @@
 
+# Lasercutter
+
+https://bitraf.no/wiki/Laser
+
+Requires lots of maintenance work. Generally breaks once a month.
+
+## Power supply
+
+Says [www.jnmydy.com](http://www.jnmydy.com) and `MYO047-D`
+
+H: high?
+L: low?
+P: Protection?
+G: Ground?
+IN: 
+5V: input or output??
+
+L~: (black)
+FG: safety ground
+AC: hot/neutral
+AC: hot/neutral
+
+References
+
+* [Thourough run-though of several DC power supplies for laser tubes](http://donklipstein.com/laserapd.htm)
+
 # MQTT
 
 For connecting devices in the hackerspace, and outside, together.
 
 ## Done
 
-* Run mosquitto
+* Run MQTT/mosquitto broker
 * Run `boxy4` doorlock on MQTT
 
 ## TODO
@@ -25,6 +51,8 @@ For connecting devices in the hackerspace, and outside, together.
 
 * participant which monitors tweets to #bitraffineriet, sends out on MQTT
 * participant which allows to send tweet as #bitraf-iot
+* Wire up the cockoo clock to tweet when getting tweets. Maybe also have a little (Manga?) screen on
+* participant which sends image URL when new images are posted to http://bitraf.no/galleri
 * Physical device for doorlock status/opening, MQTT participant(s)
 
 # Hackerspace stamp

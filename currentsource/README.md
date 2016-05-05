@@ -113,6 +113,11 @@ them against the connectors on the LED, could avoid soldering. Possibly 3d-print
 Could maybe make a multi-conductor tape by cutting up foil in strips, applied next to eachother
 onto a (possibly double sided) tape. A device with cutters, dividers and rollers could do this semi-automatically.
 
+Stained glass soldered together also looks quite epic.
+[instruction video](https://www.youtube.com/watch?v=EGx90bUJCPc)
+[2](https://www.youtube.com/watch?v=CvckB6ToyQU).
+Can also be used to construct 3d-shapes, like [this terrarium](https://www.youtube.com/watch?v=JUo5q0rKOn8)
+
 ### Controls
 
 Would want at minimum physical controls, to set the current/lightlevel (potmeter/rotary encoder etc).

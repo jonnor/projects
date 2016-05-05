@@ -342,6 +342,7 @@ Either resistive, capacitive or inductive
 ## References
 
 * [OpenServo, PCB/encoder replacement for servos](http://www.openservo.com/FrontPage)
+* [IntelliServo, digitally controllable servo board](http://hackaday.com/2016/04/22/intelliservo/)
 
 # Research
 
