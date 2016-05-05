@@ -22,16 +22,20 @@ Unfamiliar with them, though I expect that many things may apply also there.
 
 # The shitlist
 
+Typical problems
+
 ## 1. Not embeddable.
-Integrate into own programs
+Cannot integrate the runtime and things built with it into own programs.
+Cannot use functionality built with visual programming from 'regular' code easily.
 ## 2. Cannot run standalone, without GUI.
+Usually the runtime and the programming UI is tightly coupled, one cannot run without the other.
 Problematic on devices where one does not have or want a GUI system.
 Or where just want to expose a custom GUI on top of a program built with the IDE
 ## 3. No seamless transiton between assembling visual components and working with code
-All the systems have a way of defining a component/block.
+All the systems have a way of defining a component/block, as an extension API.
 Usually also a way to install more, via plugins/modules etc.
-But often one cannot see the code of a component, or create a new one from the IDE
-Should be able to pick and chose what to use.
+But often one cannot see the code of a component, or create a new one from the IDE.
+Should be able to pick and chose when to use textual versus visual, on a case-by-case basis.
 ## 4. Not version controllable, or diff-able
 Makes it hard to collaborate in a team. Code reviews etc
 ## 5. No keyboard-friendly workflows. Even the most common operations can often only be done with mouse/touch.
