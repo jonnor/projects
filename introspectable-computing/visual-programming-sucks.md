@@ -99,7 +99,9 @@ Flowhub supports showing data on individual connections, as text, as it comes th
 The way data on connections is presented (no way to see relationships) makes it very hard to find/understand any non-trivial issue.
 There is no built-in support for retroactive debugging, configuring something like a breakpoint, or searching/matching in data.
 
-[flowtrace](https://github.com/flowbased/flowtrace)
+[flowtrace](https://github.com/flowbased/flowtrace) has a dataformat and tools for retroactive debugging, with basic support
+in NoFlo for capturing , and playing back to Flowhub. [Lack of subgraph support](https://github.com/noflo/noflo-runtime-base/issues/32)
+makes it not-that-useful at the moment for non-trivial programs.
 
 ## 8. How-to/bestpractice docs `0%`
 There is essentially nothing? Maybe 10 answers on StackOverflow 'noflo' cover how-to-program,
