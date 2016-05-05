@@ -65,6 +65,29 @@ Existing low-cost laser diode engravers
 
 * [smartDIYs](http://www.thingiverse.com/thing:1026345) open source kit. Lasercut acrylic, steelrods+timingbelts, motor on gantry.
 * [Mr. Beam](https://www.mr-beam.org/) open source kit. Kickstarter 2014. 3d-printed + wood-frame. [Octoprint-based](https://github.com/mrbeam/OctoPrint) software
+* [Emblaser](https://darklylabs.com/emblaser-overview) [2](https://sites.google.com/site/3dprinterlist/lasercutters/darklylabs-a3-diode-laser)
+
+## Reproducability
+
+### Power needed to reproduce itself.
+
+Mr.Beam II says that with 5W they can cut 4 mm plywood in two passes (no focus adjustment).
+It seems to be a blue LED with no air assist. Adding air-assist might improve cutting efficiency a bit.
+
+This probably sets 5W as the a lower limit. If one could cut 4 mm acrylic instead, or 5-6 mm plywood, that would make it simpler to make a more rigid machine.
+This _might_ be doable with 8-10 watts IR diode. If more is needed, may need to assemble 15-20 watt using multiple diodes.
+
+### Construction tricks
+
+To make more reproducible
+
+* Use I/H beam or similar structures to achieve stiffness
+* Use 2x 2-3mm material instead of 1x 4-6mm, sandwiched using interlocking geometry.
+
+General best practices
+
+* Use same bearings and screws types everywhere
+
 
 ## Laser diodes
 
@@ -82,7 +105,6 @@ and [5W](http://www.ebay.com/itm/Laser-Diode-5-Watt-915nm-Fiber-Coupled-100um-JD
 Should be possible to [combine](https://www.rp-photonics.com/beam_combining.html) multiple such fibre laser diodes with one focusing lens (maybe with colliminator).
 To achieve powers of N times the individual laser source. Though with simple combinators, the brightness will not increase so much, due to widening of beam size.
  Also the heatsink no longer needs to be on the head, reducing weight of moving parts.
-
 
 ## CO2 lasers
 
