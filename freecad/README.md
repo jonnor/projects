@@ -100,6 +100,33 @@ See 'export project' macro
 
 * TODO: allow exporting preview, both 2d-image (PNG) and 3d interactive (HTML5)
 * TODO: integrate with CAM support, for directly exporting machine code
+* TODO: allow to create variations on the same part.
+Could work by having the 'exported properties' defined in a spreadsheet (FreeCAD 0.16+).
+Then for each variation have its own column, with a cell of overidden values.
+Script would then apply each variation (and reset back when done), export file(s).
+Can maybe infer name from the properties/values, or allow a variation/name column
+
+#### Web-based parametrization
+
+OpenSCAD on Thingiverse has a nice feature 'Customizer', where one can change exported parameters
+and get a custom ready-to-print .STL out, without having to download any tools.
+We should have the same for FreeCAD.
+Could for instance look for a spreadsheet or other specially-marked object with the properties.
+Might also have tags to annotate if a property should be hidden, grouping and data-type, description etc
+
+Need to be able to find such properties in file, and build up webui for it.
+Then when user decides on parameters, add job to queue for creating the files.
+And then actually generate them, upload and notify user of results.
+
+Can be built on top of the 'Export Project' macro/script.
+
+* Should be able to export any format.
+Like .STEP for refencing in any 3d-software, and .DXF for lasercutting/CNCing
+* Should be able to export multiple files
+
+MsgFlo workers/queueing. IPFS-first storage? Docker on Heroku deploy?
+
+Allowing arbitrary Python scripts is desirable long-term, but is tricky for security reasons.
 
 #### Documentation generation
 
