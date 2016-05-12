@@ -45,6 +45,58 @@ There are some FreeCAD source files included here.
 ![Track prototype model](./doc/track-prototype.png)
 
 
+## How to use
+
+Basics
+
+* [Youtube: How to thread (Innovations 42)](https://www.youtube.com/watch?v=0SZPREeMlgU)
+* [Youtube: Knitting flat panels (Addi Express)](https://www.youtube.com/watch?v=_O2npMrNRbY)
+
+Advanced
+
+* [Youtube: Croque cast-on and making pointed panel (Innovations 42)](https://www.youtube.com/watch?v=du3rM5xAC4E)
+* [Youtube: 1x1 ribbint (Innovations 42)](https://www.youtube.com/watch?v=4g534u90JPw)
+* [Youtube: Fairisl, alternating color patterns (Addi)](https://www.youtube.com/watch?v=szqzJ5g-WUQ)
+
+Debugging & Maintenance
+
+* [Youtube: Tips&Tricks Addi Express](https://www.youtube.com/watch?v=cgz758TeJh0)
+
+## Breakdown
+
+Of a cheap China clone from China.
+
+`TODO: post pictures/video`
+
+* Mechanical principle
+* Needle guide
+* Stopper for plain-knit
+
+## Mods
+
+* 3d-printable replacement needles
+* Crank-motor attachment. For circular knitting. Should still allow manual-cranking, at least slowly.
+* End-stops for crank-motor, to support automated plain-knitting
+* Automated swapping of thread, by fusing/tying one yarn to another.
+* Programmable moving of thread guide position. For automatic cast-on/off.
+If able to manipulate 2 threads can do color patterns (like Fairisl).
+
+## Alternate uses
+... apart from creating clothing.
+
+Light-weight construction tubes/trusses using polyester/epoxy resin. Possibly these could be continiously 'extruded',
+by having the knitted thread be soaked/sprayed with resin right after being knitted. Then solidifying,
+possibly assisted by heating to ~60 deg C.
+
+Fiber for strengthening custom parts. For instance, using vacum-bagging.
+
+Probably requires using a high-strength fiber like nylon, linen, jute, slik, fiberglass or carbon fiber.
+Perhaps one can knit braided / multifilament fishing line (PE, nylon or fluocarbon),
+thought these may have coatings that prevent resin filling?. They are cheap, and looks to be available up to 1-2 mm thickness.
+Examples of carbon fiber yarn is [Zoltek PX-30](http://zoltek.com/products/panex-30/yarns/), and glass fiber is
+[PPG E-glass](http://www.ppgfiberglass.com/Products/Yarn.aspx)
+
+
 References
 ----------
 
@@ -56,3 +108,12 @@ a cheap copy (30 USD) with 22 needles. I purchased one of these for testing on M
 * Barbie / Mattel also has a [circular knitting machine](https://www.flickr.com/photos/plusea/3675240262)
 * [List of antique manufacturers](cskms.org/where-to-find-a-csm/) for "circular sock machines".
 These are often made of steel, as small-scale industrial units dating back to late 1800.
+
+Research
+
+* [How to knit carbon fiber](http://www.materialsviews.com/how-to-knit-carbon-fibers/)
+* [Development of 3D knitted fabrics for advanced composite materials](http://cdn.intechopen.com/pdfs-wm/14297.pdf)
+
+Random
+
+* Vacum bags [1](http://www.clasohlson.com/no/Vakuumpose/34-3518) [2](http://www.clasohlson.com/no/Vakuumposer/34-3517)
