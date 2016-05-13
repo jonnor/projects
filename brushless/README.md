@@ -122,6 +122,10 @@ using [IR2101 driver](http://www.irf.com/part/High-and-Low-Side-Driver/_/A~IRS20
 [Kjell](http://www.kjell.com/se/sortiment/hus-halsa-fritid/ovrigt/gadgets/neodymmagnet-8-mm-10-pack-p50070)
 Clas Ohlson
 
+## Related
+
+* [DC Through Coil Motor](http://www.thingiverse.com/thing:1555528). Kinda like a circular rail-gun
+
 # Fabricated stepper motor
 
 * Should be able to mill 0.5mm silicone iron on Shopbot
@@ -131,12 +135,19 @@ Clas Ohlson
 
 [FreeCAD project file](./stepper-motor.fcstd)
 
+
+## Drivers
+
+Would be good to have an integrated driver, on the motor, which could be controlled smartly from a central unit.
+
+* [Robodigg Gecko](http://www.robotdigg.com/product/615/Size+17+Pulse+n+Direct+Gecko+Driver), integrated but step/dir/enable based interface.
+
 ## Etching steel
 
 Tin-can materials are magnetic (3/3 tested). A thickness of 0.3 mm (approx 0.012") seems to be common.
-The material is some form of steel.
+The material is some form of low-carbon steel.
 
-Steel can be etched using a acid and electrical current.
+Steel can be etched using a electrolyte and electrical current.
 Here is one [etching steel with vinegar, salt and 12v battery charged](https://www.youtube.com/watch?v=zhWNmNYT-Q4).
 Another electro etch [using a metallic electrolyte](http://www.nontoxicprint.com/electroetching.htm).
 

@@ -12,6 +12,7 @@ specialization may be needed in order to compete on cost/time per unit.
 
 ## Related work
 
-* [3d-printed power hacksaw](https://3dprint.com/126525/3d-printed-power-hacksaw/)
-
+* [3d-printed power hacksaw](https://3dprint.com/126525/3d-printed-power-hacksaw/).
+[version 4](http://www.thingiverse.com/thing:1555072)
+* [Ribbon Microphone Corrugator](http://www.thingiverse.com/thing:1558683), 3d-printed
 

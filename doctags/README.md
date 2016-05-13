@@ -58,6 +58,14 @@ Can also invert and instead have dark paint, and mill carve out to reveal the li
 Or one could use a clearance tool, to leave pieces standing out of material
 with the other color on the tops.
 
+### Using nailpolish as paint
+
+Nailpolish is very quick drying (couple of minutes), easily accessible.
+Recommended to first make a pocket, which acts as the guide on where to put paint.
+Then paint. While paint dries, change to V-bit in the mill.
+
+![Black nailpolish for contrast on material](./img/qrdoc-nailpolish.jpg)
+
 ### Milling with endmill
 
 6mm end-mill is common to use for large-scale work in ply/wood/OSB/MDF.
