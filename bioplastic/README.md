@@ -134,6 +134,18 @@ Migitation ideas
 * Strengthen using complex geometric micro/macro structures (3d print etc)
 * Strengthen by adding fibers, from celloluse, hemp/jute etc
 
+## Biocomposites
+
+* Linen should have excellent properties, but fairly expensive.
+* Nice [linen eating trays](http://www.shop-foglinen.com/products/linen-tray-natural)
+* Ekoa by [Lingrove](http://lingrove.com/) flax linen fabric + bioepoxy
+* Thermoformable biocomposite using [linen + PLA](https://vimeo.com/119629687)
+* Flax + PLA [Biotex FlaxPLA](http://www.compositesevolution.com/products/biotex-flaxpla-400gm2-2x2-twill/)
+[sold per meter](http://www.easycomposites.co.uk/#!/fabric-and-reinforcement/natural-flax-and-jute-fibres/thermoplastic-flax-and-jute/flax-44-plain-500g-pla-thermoplastic.html)
+* Burlap [Panduro](http://www.pandurohobby.no/Catalogue/40-Sy-Strikk/4010-Tekstil/401055-Ovrige-tekstiler/1/725179-Strie-Natur-130-cm)
+[Amazon](http://www.amazon.com/Linen-Burlap-40-Inch-40-Yard-Natural/dp/B00KSXGL9I/ref=sr_1_21?s=arts-crafts&ie=UTF8&qid=1463161429&sr=1-21&keywords=linen+fabric)
+Roughly same cost as woven glass-fiber locally. Should be cut-able on lasercutter.
+
 
 Sourcing locally in Oslo/Norway
 -----------------------------
