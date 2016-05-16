@@ -62,7 +62,7 @@ Debugging & Maintenance
 
 * [Youtube: Tips&Tricks Addi Express](https://www.youtube.com/watch?v=cgz758TeJh0)
 
-## Breakdown
+## Teardown
 
 Of a cheap China clone from China.
 
@@ -74,8 +74,24 @@ Of a cheap China clone from China.
 
 ## Mods
 
+### Crank motor attachment
+
+Status: **Proof-of-concept**. [Video of initial test](https://www.youtube.com/watch?v=loaOWbuzrhs).
+
+TODO: 
+
+* Use a pulley with belt (or thread!) to connect
+* Add a hand-crank on outside of pulley, so manual operation still possible
+* Design connector for stepper-motor
+
+[FreeCAD source](./motorattach.fcstd)|
+
+The bevel gear was created using the FreeCAD macro/workbench [FCGear](http://www.freecadweb.org/wiki/index.php?title=Macro_FCGear).
+
+
+### Ideas
+
 * 3d-printable replacement needles
-* Crank-motor attachment. For circular knitting. Should still allow manual-cranking, at least slowly.
 * End-stops for crank-motor, to support automated plain-knitting
 * Automated swapping of thread, by fusing/tying one yarn to another.
 * Programmable moving of thread guide position. For automatic cast-on/off.
