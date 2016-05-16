@@ -78,16 +78,40 @@ Of a cheap China clone from China.
 
 Status: **Proof-of-concept**. [Video of initial test](https://www.youtube.com/watch?v=loaOWbuzrhs).
 
-TODO: 
-
-* Use a pulley with belt (or thread!) to connect
-* Add a hand-crank on outside of pulley, so manual operation still possible
-* Design connector for stepper-motor
+![Model of 3d-printable motor attachment crank](./doc/motorattach-crank.jpg)
 
 [FreeCAD source](./motorattach.fcstd)|
 
+TODO: 
+
+* Design bracket for stepper-motor. Needs slots for belt adjustment
+* Switch to use GT-2 belts
+* Run some longer tests
+
 The bevel gear was created using the FreeCAD macro/workbench [FCGear](http://www.freecadweb.org/wiki/index.php?title=Macro_FCGear).
 
+The pulley is for MXL timing belts. It was created with from [Parametric Pulley OpenSCAD](http://www.thingiverse.com/thing:16627/#files),
+using the following parameters. It was done in the OpenSCAD workbench in FreeCAD, to get a solid instead of a mesh.
+
+```
+teeth = 28;			// Number of teeth, standard Mendel T5 belt = 8, gives Outside Diameter of 11.88mm
+profile = 1;		// 1=MXL
+
+motor_shaft = 12.2;	// NEMA17 motor shaft exact diameter = 5
+m3_dia = 3.2;		// 3mm hole diameter
+m3_nut_hex = 1;		// 1 for hex, 0 for square nut
+m3_nut_flats = 5.7;	// normal M3 hex nut exact width = 5.5
+m3_nut_depth = 2.7;	// normal M3 hex nut exact depth = 2.4, nyloc = 4
+
+retainer = 1;		// Belt retainer above teeth, 0 = No, 1 = Yes
+retainer_ht = 1.5;	// height of retainer flange over pulley, standard = 1.5
+idler = 1;			// Belt retainer below teeth, 0 = No, 1 = Yes
+idler_ht = 1.5;		// height of idler flange over pulley, standard = 1.5
+
+pulley_t_ht = 7.5;	// length of toothed part of pulley, standard = 12
+pulley_b_ht = 0;		// pulley base height, standard = 8. Set to same as idler_ht if you want an idler but no pulley.
+pulley_b_dia = 22;	// pulley base diameter, standard = 20
+```
 
 ### Ideas
 
