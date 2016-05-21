@@ -2,7 +2,8 @@
 Idda: A circular knitting machine
 ==================
 
-Reverse engineered from the [Addi Express](https://www.google.no/?#q=addi+express).
+Reverse engineered from modern circular knitting machines made from injection-molded plastic,
+like the [Addi Express](https://www.google.no/?#q=addi+express).
 
 Features
 
@@ -65,6 +66,8 @@ Debugging & Maintenance
 ## Teardown
 
 Of a cheap China clone from China.
+Looks to be identical to the "new Singer".
+
 
 `TODO: post pictures/video`
 
@@ -137,6 +140,10 @@ Examples of carbon fiber yarn is [Zoltek PX-30](http://zoltek.com/products/panex
 [PPG E-glass](http://www.ppgfiberglass.com/Products/Yarn.aspx)
 
 
+[Quick demo of knitting with (elamelled) wires](https://www.youtube.com/watch?v=okO2RyFfPE4), for artistic effect.
+Could possibly be used to make sparse metal structures, by later soldering together joints?
+
+
 References
 ----------
 
@@ -157,3 +164,62 @@ Research
 Random
 
 * Vacum bags [1](http://www.clasohlson.com/no/Vakuumpose/34-3518) [2](http://www.clasohlson.com/no/Vakuumposer/34-3517)
+
+Other opensource work
+
+* [OpenKnit](http://openknit.org/), an open source linear/flatbed knitting machine
+* [Knitic](http://), replacement electronics for Brother flatbed knitting machines. Streaming control via computer. [demo video](https://www.youtube.com/watch?v=ShXOvGzu60U)
+* [Becky Stern: .JPG patterns on Brother KH-930e](https://www.youtube.com/watch?v=GhnTSWMMtdU&index=3&list=LLB9kP5NQGu0JLWa9UlkxklQ), by emulating a serial floppy drive with a modified USB-serial adapter
+
+
+## Stiching
+
+* Weft versus waft
+* Single knit types: knit, tuck, float  [video](https://www.youtube.com/watch?v=mWB8JReKTuY).
+* Tuck gives a mesh-like appearance. Used for instance for pique shirts
+* Float are used for color patterns, bringing different yarns to front. Also uses as basis of fleece
+* Double knit types [double jersey](https://www.youtube.com/watch?v=ho9Ut9uzsGI), rib-gating and interlock-gating
+Realized by having two sets of needles which can work independently, interleaving odd/even along knitting path.
+For instance on a circularg knitting machine, one set forms a disc, pointing out in cylinder, another set is along the cylinder, pointing up.
+Alternatively on a linear V-bed machine, two flatbeds form a V, each side with a separate needle set.
+* [Rib-gated](https://www.youtube.com/watch?v=wMvjGS8dQpU) knits. 1x1 and 2x2.
+
+
+## Needles
+
+The Addi-style machines uses a plain hook needle, and there is a V in the.
+Most other types of machines requires other, more advanced needles. Even the Circular Knitic seems to use latched needles.
+Currently such needles are speciality parts. Being able to 3d-print would make the machines more reproducable.
+
+How the different needle types work
+
+* [Stitch Formation with Latch Needle](https://www.youtube.com/watch?v=Ivhs7yGQm7I)
+* [Stitch Formation with bearded Needle](https://www.youtube.com/watch?v=rh4pSj-DecM)
+* [Stitch Formation with compund Needle](https://www.youtube.com/watch?v=xLhVy_F2oik)
+
+Bearded needles are simpler than latch needles, but requires more complex machinery as something has to press the hook down to close.
+With latches the sideways motion of the yarn causes hook closing automatically.
+
+The [Singer spool knit machine](https://www.youtube.com/watch?v=QR-hAb7KTn8) looks to have plastic / injection molded latch needles.
+
+## Spool knitting machines
+
+A related type of machine, also available cheaply allows to make "i-cord".
+Typically has 4 (latch) needles.
+
+Examples
+
+* Embellish Knit Automatic Spool Loom [video](https://www.youtube.com/watch?v=z9tgjUBpmLA)
+* http://www.amazon.com/PRYM-PRYM_624145-Knitting-Mill/dp/B000TQHWP6
+* Singler spool knit
+* https://www.youtube.com/watch?v=lxpya0KP7jU
+* Swe Mate [video](https://www.youtube.com/watch?v=rAoylAqsxsc)
+* PRYM [amazon.de](http://www.amazon.de/ADDI-PRYM_624145-Prym-624145-Strickm%C3%BChle/dp/B000TQHWP6/ref=pd_sim_201_2?ie=UTF8&dpID=51yXX%2BSufFL&dpSrc=sims&preST=_AC_UL160_SR160%2C160_&refRID=1PVAMW5VYQDNDV3J6D7D)
+
+How to
+
+* http://techknitting.blogspot.no/2010/01/i-cord-from-mill.html
+
+Uses
+
+* [Making a stretch sensor](https://www.youtube.com/watch?v=QR-hAb7KTn8), by embedding conductive yarn
