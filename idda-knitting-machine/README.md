@@ -204,10 +204,16 @@ The [Singer spool knit machine](https://www.youtube.com/watch?v=QR-hAb7KTn8) loo
 
 ### 3d-printed latch needle
 
-An attempt was made at reproducing a latched needle from a Bond knitting machine, as-is on a PrintrBot FDM 3d-printer.
-Based on a [reference picture from OpenKnit mailing list](https://groups.google.com/forum/#!topic/openknit/KgyJhvOa6Hc).
-As expected, the features of the latch mechanism - especially the rivet which makes up the pivot point was too small
-to be reproduced in a functional manner. The rivet was less than 1 mm in diameter, and broke when attempting to loosen it from the print-in-place part.
+An attempt was made at reproducing a latched needle from a Bond knitting machine (XKN8).
+It was modelled as-is based on a [reference picture from OpenKnit mailing list](https://groups.google.com/forum/#!topic/openknit/KgyJhvOa6Hc),
+and printed with PLA on a PrintrBot FDM 3d-printer.
+
+![Latch needle model](bond-latch-needle-model.png)
+
+[FreeCAD source](./latch-needle.fcstd) |
+
+As expected, the features of the latch mechanism - especially the rivet which makes up the pivot point was too small to be reproduced in a functional manner.
+The rivet was less than 1 mm in diameter, and broke when attempting to loosen it from the print-in-place part.
 The hook which was only 0.8 mm wide (and 3 mm tall), was however suprisingly strong.
 It is estimated that a 5mm tall needle, with 5 mm wide stem at the widest is the lower practical limit on needle size.
 
