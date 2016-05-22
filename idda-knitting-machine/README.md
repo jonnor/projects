@@ -202,6 +202,16 @@ With latches the sideways motion of the yarn causes hook closing automatically.
 
 The [Singer spool knit machine](https://www.youtube.com/watch?v=QR-hAb7KTn8) looks to have plastic / injection molded latch needles.
 
+### 3d-printed latch needle
+
+An attempt was made at reproducing a latched needle from a Bond knitting machine, as-is on a PrintrBot FDM 3d-printer.
+Based on a [reference picture from OpenKnit mailing list](https://groups.google.com/forum/#!topic/openknit/KgyJhvOa6Hc).
+As expected, the features of the latch mechanism - especially the rivet which makes up the pivot point was too small
+to be reproduced in a functional manner. The rivet was less than 1 mm in diameter, and broke when attempting to loosen it from the print-in-place part.
+The hook which was only 0.8 mm wide (and 3 mm tall), was however suprisingly strong.
+It is estimated that a 5mm tall needle, with 5 mm wide stem at the widest is the lower practical limit on needle size.
+
+
 ## Spool knitting machines
 
 A related type of machine, also available cheaply allows to make "i-cord".
@@ -223,3 +233,5 @@ How to
 Uses
 
 * [Making a stretch sensor](https://www.youtube.com/watch?v=QR-hAb7KTn8), by embedding conductive yarn
+* braided sleeves for cables etc
+* 
