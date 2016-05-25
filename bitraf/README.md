@@ -83,25 +83,38 @@ Handle:
 
 # 3d-printer shelves
 
-Concept
+Goal was to have a fully enclosable compartment for each printer, for both sound and heat insulation.
+And to be able to use the space above and below the compartments, to have space for materials/parts - and more printers.
 
-* One compartment per printer (Ultimaker Original)
-* Fully enclosed when running
-* Openable from the front, with drawer
-* Space below/above for materials/accessories/tools/maintenance parts
-* Maybe a computer terminal attached
+![3d-printer compartments](./img/3dprinter-shelves.jpg)
 
-Dimensions
+We rotated the Ultimakers, such that the filament and extruder is on front right side instead of the back.
+This provides better usability due to better access, but was also neccesary due cabinets only being 50 cm deep.
+This means cutting a new hole for the display-box cables, and moving the box to the side that now faces forward.
+
+## Parts
+
+Following recipe from [Reprap Wilson blog](http://reprapwilson.discoursehosting.net/t/make-a-simple-ikea-enclosure/123)
+
+* STUVA Frame - http://www.ikea.com/us/en/catalog/products/30128177/52
+* SINDVIK Glass door - http://www.ikea.com/us/en/catalog/products/90291858/28
+* BESTA Soft closing hinges -http://www.ikea.com/us/en/catalog/products/80261258/23
+
+Total cost was 500 NOK per compartment.
+
+## Possible extensions
+
+* Add drawer slides and plate to put printer on. For even better access
+Biltema [1](http://www.biltema.no/no/Bygg/Hengsel/Ovrig/Ekspansjonsbeslag-2-stk-2000018627/)
+Biltema [2](http://www.biltema.no/no/Bygg/Hengsel/Ovrig/Ekspansjonsbeslag-2-stk-2000018657/)
+* Replace table with 60x60 cm cabinets, with doors. Helps to organize materials.
+Ikea [1](http://www.ikea.com/no/no/catalog/products/30263660/)
+
+## Dimensions
 
 * Ultimaker Original supposedly, somewhere around `X Y Z: 35.7 cm × 34.2 cm × 38.8 cm`.
 * So 60 cm deep, 60 cm tall and 40+ cm wide compartments could be good.
 
-Possible parts
 
-* Drawer slides.
-Biltema [1](http://www.biltema.no/no/Bygg/Hengsel/Ovrig/Ekspansjonsbeslag-2-stk-2000018627/)
-Biltema [2](http://www.biltema.no/no/Bygg/Hengsel/Ovrig/Ekspansjonsbeslag-2-stk-2000018657/)
-* Compartments box.
-Ikea [1](http://www.ikea.com/no/no/catalog/products/30263660/)
-ClashOlson [1](http://www.clasohlson.com/no/St%C3%A5lreol/Pr408943002)
-Jernia [1](http://www.jernia.no/produkt/-/vis-produkt/fixit-hyllereol-metall-tre-180x90x40cm/58010253)
+# Vacum former
+
