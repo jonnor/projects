@@ -87,18 +87,17 @@ Status: **Proof-of-concept**. [Video of initial test](https://www.youtube.com/wa
 
 TODO: 
 
-* Design bracket for stepper-motor. Needs slots for belt adjustment
-* Switch to use GT-2 belts
-* Run some longer tests
+* Wire up stepper motor
+* Run some tests
 
 The bevel gear was created using the FreeCAD macro/workbench [FCGear](http://www.freecadweb.org/wiki/index.php?title=Macro_FCGear).
 
-The pulley is for MXL timing belts. It was created with from [Parametric Pulley OpenSCAD](http://www.thingiverse.com/thing:16627/#files),
+The pulley is for GT2 timing belts. It was created with from [Parametric Pulley OpenSCAD](http://www.thingiverse.com/thing:16627/#files),
 using the following parameters. It was done in the OpenSCAD workbench in FreeCAD, to get a solid instead of a mesh.
 
 ```
 teeth = 28;			// Number of teeth, standard Mendel T5 belt = 8, gives Outside Diameter of 11.88mm
-profile = 1;		// 1=MXL
+profile = 12;		// 1=GT2
 
 motor_shaft = 12.2;	// NEMA17 motor shaft exact diameter = 5
 m3_dia = 3.2;		// 3mm hole diameter
@@ -115,6 +114,42 @@ pulley_t_ht = 7.5;	// length of toothed part of pulley, standard = 12
 pulley_b_ht = 0;		// pulley base height, standard = 8. Set to same as idler_ht if you want an idler but no pulley.
 pulley_b_dia = 22;	// pulley base diameter, standard = 20
 ```
+
+
+Pulley on the motor
+```
+teeth = 28;			// Number of teeth, standard Mendel T5 belt = 8, gives Outside Diameter of 11.88mm
+profile = 12;		// 1=MXL 2=40DP 3=XL 4=H 5=T2.5 6=T5 7=T10 8=AT5 9=HTD_3mm 10=HTD_5mm 11=HTD_8mm 12=GT2_2mm 13=GT2_3mm 14=GT2_5mm
+
+motor_shaft = 4.2;	// NEMA17 motor shaft exact diameter = 4
+m3_dia = 3.2;		// 3mm hole diameter
+m3_nut_hex = 1;		// 1 for hex, 0 for square nut
+m3_nut_flats = 5.7;	// normal M3 hex nut exact width = 5.5
+m3_nut_depth = 2.7;	// normal M3 hex nut exact depth = 2.4, nyloc = 4
+
+retainer = 1;		// Belt retainer above teeth, 0 = No, 1 = Yes
+retainer_ht = 1.5;	// height of retainer flange over pulley, standard = 1.5
+idler = 0;			// Belt retainer below teeth, 0 = No, 1 = Yes
+idler_ht = 1.5;		// height of idler flange over pulley, standard = 1.5
+
+pulley_t_ht = 7;	// length of toothed part of pulley, standard = 12
+pulley_b_ht = 8;		// pulley base height, standard = 8. Set to same as idler_ht if you want an idler but no pulley.
+pulley_b_dia = 20;	// pulley base diameter, standard = 20
+no_of_nuts = 1;		// number of captive nuts required, standard = 1
+nut_angle = 90;		// angle between nuts, standard = 90
+nut_shaft_distance = 1.2;	// distance between inner face of nut and shaft, can be negative.
+```
+
+Closed loop belt. Can be printed in NinjaFlex Semiflex using
+OpenSCAD parametric [timing belt generator](https://www.youmagine.com/designs/parametric-timing-belt-generator).
+```
+belting("loop","GT2_2mm", belt_length=228, belting_width = 6, backing_thickness=0.8 );
+```
+Best results when hacking Cura nozzle size to make it avoid doing partial infills with jogs in between.
+Might be worthwhile to go up a little bit in thickness for less flexibility.
+
+Alternatively one can buy it, ie [from Robodigg](http://www.robotdigg.com/product/282).
+
 
 ### Ideas
 
