@@ -87,8 +87,11 @@ Status: **Proof-of-concept**. [Video of initial test](https://www.youtube.com/wa
 
 TODO: 
 
-* Wire up stepper motor
-* Run some tests
+* Make base version 2
+* Make better fasteners for feet
+* Slightly bigger pulley on motor?
+* Do more testing
+* Maybe need to add a tensioning idler?
 
 The bevel gear was created using the FreeCAD macro/workbench [FCGear](http://www.freecadweb.org/wiki/index.php?title=Macro_FCGear).
 
