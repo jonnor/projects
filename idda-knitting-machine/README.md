@@ -45,6 +45,27 @@ There are some FreeCAD source files included here.
 
 ![Track prototype model](./doc/track-prototype.png)
 
+## Background
+
+The project was initially started at CCC31, where Hong Phuc presented 
+[Let’s build our own personalized open textile production line](https://media.ccc.de/v/31c3_-_6447_-_en_-_saal_6_-_201412271400_-_let_s_build_our_own_personalized_open_textile_production_line_-_hong_phuc_dang)
+([on YouTube](https://www.youtube.com/watch?v=n0FZdl7LBbk)), calling for open-source.
+
+At that time the Circular Knitic had not been announced yet.
+
+The machines are now sold by a number of manufacturers under various names, including
+`Addi Express`, `Innovations Knitting machine`, `Singer Knitting Machine`,
+`Barbie / Mattel Knitting machine`, `PRYM Strickmühle` and generic `DIY scarf hat knitting machine`.
+
+These machines are all minor variations on the patent
+[US 6360566 B1: Household circular knitting machine](http://www.google.com/patents/US6360566) (lapsed).
+
+One of the key features is that it does not use the typical knitting needle (latched needles).
+This needle type and mechanism is described in the original Mattel patent,
+[US3983719 A: Knitting needle](http://www.google.com/patents/US3983719) from 1976 (now long expired).
+
+The machine is also similaries to [US 6276986 B1: Toy knitting machine](http://www.google.com/patents/US6276986) (lapsed).
+
 
 ## How to use
 
@@ -68,7 +89,6 @@ Debugging & Maintenance
 Of a cheap China clone from China.
 Looks to be identical to the "new Singer".
 
-
 `TODO: post pictures/video`
 
 * Mechanical principle
@@ -79,19 +99,26 @@ Looks to be identical to the "new Singer".
 
 ### Crank motor attachment
 
-Status: **Proof-of-concept**. [Video of initial test](https://www.youtube.com/watch?v=loaOWbuzrhs).
+Status: **Minimally useful**. [Video of initial test](https://www.youtube.com/watch?v=loaOWbuzrhs).
 
 ![Model of 3d-printable motor attachment crank](./doc/motorattach-crank.jpg)
 
 [FreeCAD source](./motorattach.fcstd)|
 
-TODO: 
+TODO v1, minimally useful
 
-* Make base version 2
-* Make better fasteners for feet
 * Slightly bigger pulley on motor?
-* Do more testing
 * Maybe need to add a tensioning idler?
+* Produce first useful object. Simple tube socks?
+
+TODO v2, works stand-alone (not tethered to computer):
+
+* Define desired stand-alone functionality.
+Potmeter for speed-control, button for start/stop, LED for status? Maybe also button+LED for direction?
+* Create firmware
+* Create electronics-board.
+Either a shield for Arduino Uno, or a base-board using Arduino Nano.
+Should use A4988 or DRV8825
 
 The bevel gear was created using the FreeCAD macro/workbench [FCGear](http://www.freecadweb.org/wiki/index.php?title=Macro_FCGear).
 
@@ -153,7 +180,6 @@ Might be worthwhile to go up a little bit in thickness for less flexibility.
 
 Alternatively one can buy it, ie [from Robodigg](http://www.robotdigg.com/product/282).
 
-
 ### Ideas
 
 * 3d-printable replacement needles
@@ -161,6 +187,23 @@ Alternatively one can buy it, ie [from Robodigg](http://www.robotdigg.com/produc
 * Automated swapping of thread, by fusing/tying one yarn to another.
 * Programmable moving of thread guide position. For automatic cast-on/off.
 If able to manipulate 2 threads can do color patterns (like Fairisl).
+
+## Tools
+
+### Weight hooks
+
+For keeping some tension in the knitted fabric, it is advisable to hang some weights on it.
+This makes the loops more evenly spaced, and gives more reliable operation.
+
+![3d-model of weighthooks](./doc/weighthooks-model.png)
+
+There are quite general, can be used on any size machine - linear or circular.
+Just print the number needed, and tie together with a string. And then hang weights in the string.
+
+A bit time-consuming to set up, as each individual one must be hooked manually and moves around very easily.
+For use on a specific machine, would maybe be better to design quarter-circles
+which would fit perfectly and hook many loops at the same time.
+
 
 ## Alternate uses
 ... apart from creating clothing.
@@ -186,7 +229,7 @@ References
 ----------
 
 * [Replacement needles](http://www.amazon.com/Express-Knitting-Machine-Replacement-Needles/dp/B004T2MHVA) for Adda Express
-* [BangGood: DIY scart hat knitting machine](http://www.banggood.com/Creative-DIY-Scarf-Hat-Quick-Knitting-Machine-Handheld-Handwork-Weaving-Tool-for-Adult-Child-p-1030934.html),
+* [BangGood: DIY scarf hat knitting machine](http://www.banggood.com/Creative-DIY-Scarf-Hat-Quick-Knitting-Machine-Handheld-Handwork-Weaving-Tool-for-Adult-Child-p-1030934.html),
 a cheap copy (30 USD) with 22 needles. I purchased one of these for testing on May 03 2016.
 * [Listing of different circular knitting machines](http://www.kobakant.at/DIY/?p=1144).
 [PRYM 624170 Strickmühle MAXI](http://www.amazon.de/PRYM-624170-Strickm%C3%BChle-MAXI/dp/B000VKFJ32/ref=sr_1_4?ie=UTF8&s=garden&qid=1245759008&sr=8-4) seems to be the cheapest 44 needle, at around 50 EUR.
@@ -207,8 +250,8 @@ Other opensource work
 
 * [OpenKnit](http://openknit.org/), an open source linear/flatbed knitting machine
 * [Knitic](http://), replacement electronics for Brother flatbed knitting machines. Streaming control via computer. [demo video](https://www.youtube.com/watch?v=ShXOvGzu60U)
-* [Becky Stern: .JPG patterns on Brother KH-930e](https://www.youtube.com/watch?v=GhnTSWMMtdU&index=3&list=LLB9kP5NQGu0JLWa9UlkxklQ), by emulating a serial floppy drive with a modified USB-serial adapter
-
+* [Becky Stern: .JPG patterns on Brother KH-930e](https://www.youtube.com/watch?v=GhnTSWMMtdU&index=3&list=LLB9kP5NQGu0JLWa9UlkxklQ),
+by emulating a serial floppy drive with a modified USB-serial adapter.
 
 ## Stiching
 
