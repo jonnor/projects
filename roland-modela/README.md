@@ -32,6 +32,12 @@ Parts:
 | [FreeCAD](./clamping-roundpuck.fcstd)
 | [STL](./export/rml-roundclamp-2.stl)
 
+### Planing
+
+Use a 6 mm endmill at 5 mm/sec, 0.5 mm cut depth.
+Fill a rectangle of 152 x 100 mm (with origin X=0, Y=0).
+Might want to go 2 passes, for total depth of 1 mm.
+
 
 ## Noise isolating box
 
@@ -44,9 +50,14 @@ redesigned in FreeCAD and using joinery that avoids glues and screws.
 
 Parts
 
-* 6 mm MDF or other woods. Parametric design can be easily tweaked for 5-10 mm.
+* 6 mm MDF or other woods. Parametric design; can be easily tweaked for 5-10 mm.
 * 5 mm acrylic or polycarbonate
 * http://www.clasohlson.com/no/b/Jernvare/Beslag-og-opphengning/Tetningslister
+
+TODO
+
+* Redesign front to be in MDF too, with an acrylic door/plate which slides up.
+Then don't have to lift the box all the time.
 
 ## Course in making PCBs
 
@@ -113,6 +124,46 @@ Fabmodules
 Consider checking out the work in [ChiliPeppr](http://chilipeppr.com/), and reusing the server part/interface?
 * Make  https://github.com/FabModules/fabmodules-html5/issues/22
 
+## Ideas
+
+Make a streaming gcode-2-RML converter, translating gcode on the fly to the propritary (and badly supported) .RML format.
+Can then use all tools which output gcode. Like Vectric VCarve (used for Shopbot), Fusion 360, FreeCAD and various PCB-specific gcode tools.
+
+Auto-leveling would be very desirable, especially for milling PCBs.
+[Autoleveling with Shapeoko+GRBL](http://www.shapeoko.com/forum/viewtopic.php?f=28&t=3797).
+
+
+## Replacement spindle
+
+Motivation
+
+* Motor is very weak, and (semi-expensive) consumable
+* Tool fastening is pretty bad. Need to replace entire
+
+Prior art
+
+* https://grabcad.com/library/collet-type-spindle-unit-for-roland-modela-mdx-15-20
+
+Parts
+
+* ER11 C8 spin
+* 608 bearings
+* 
+* Custom machined
+
+TODO
+
+* Figure out efficient way of machining spindle mount/adapter.
+Few pieces, few-sided milling job, good registration.
+Can we split part down the middle? Then becomes two-part, one-sided milling, no registration.
+Challenge is cutting good (half) circles for the bearings to sit in.
+In the naive (evenly segmented XY) approach.  A continous half-circle path in XZ will do much better. Can this be done with FreeCAD Path/CAM?
+* Design & make spindle mount/adapter.
+Preferably attach to the 4 hex screws that originals use.
+* Find a replacement motor. Brushless with ESC seems ideal?
+Should start on the spindle-on signal from MDX. Is this just 12v?
+Ideally can use the same power-supply and connector also.
+* Make 
 
 References
 ------------
