@@ -135,10 +135,16 @@ Auto-leveling would be very desirable, especially for milling PCBs.
 
 ## Replacement spindle
 
+![Initial model of ER11 collet spindle mount "ER11 collet"](./doc/er11-spindlemount-model.png)
+
+[FreeCAD source](./er11-spindlemount.fcstd)|
+
 Motivation
 
-* Motor is very weak, and (semi-expensive) consumable
-* Tool fastening is pretty bad. Need to replace entire
+* Tool fastening is not that great.
+Need to replace entire unit for different shank size, only some sizes are available.
+Each type is pretty expensive.
+* Motor is very weak, and (semi-expensive) consumable.
 
 Prior art
 
@@ -146,10 +152,10 @@ Prior art
 
 Parts
 
-* ER11 C8 spin
+* ER11 C8 spindle
+* ER11 collets for different shank sizes
 * 608 bearings
-* 
-* Custom machined
+* Custom machined adapter
 
 TODO
 
@@ -157,13 +163,14 @@ TODO
 Few pieces, few-sided milling job, good registration.
 Can we split part down the middle? Then becomes two-part, one-sided milling, no registration.
 Challenge is cutting good (half) circles for the bearings to sit in.
-In the naive (evenly segmented XY) approach.  A continous half-circle path in XZ will do much better. Can this be done with FreeCAD Path/CAM?
+In the naive (evenly segmented XY) approach, bearing will be held in by an N-gon with only edges connecting.
+A continous half-circle path in XZ will do much better. Can this be done with FreeCAD Path/CAM?
 * Design & make spindle mount/adapter.
 Preferably attach to the 4 hex screws that originals use.
 * Find a replacement motor. Brushless with ESC seems ideal?
 Should start on the spindle-on signal from MDX. Is this just 12v?
 Ideally can use the same power-supply and connector also.
-* Make 
+* Make adapter for replacement motor unit
 
 References
 ------------
