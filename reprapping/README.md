@@ -1,5 +1,47 @@
 
+The [RepRap](http://reprap.org/). 
+
+# State of FDM 3d-printer reproducability
+
+As of mid 2016, reproducability in terms of number of parts is typically around 50-60%.
+
+The [Reprap Snappy](https://www.youtube.com/watch?v=3b7BE8HRyWw) is at the forefront, with 73% reproduability.
+It is a notable improvement by having basically no screws (using snap/click-fit pieces instead),
+having the linear motion be printed slides with rack+pinion drive.
+
+But still has one 686 mm bearing (for extruder idler) and uses 2x threaded rods (for the Z axis).
+
+
+## Reproducable, commonly done
+
+* Structural connectors
+* Extruder mechanics
+
+## Reproducable, but not typically done
+
+* Drivechain. Timing belts or rack+pinion
+* Machine structure. Usually wood/acrylic or aluminium profiles.
+* Linear motion guides. Usually LMx linear bearings on steel rods.
+
+## Not reproducable, specialized
+
+* Hotend. Consists of several pieces, usually machined of metal on a lathe.
+* Extruder drive gear
+* Motor controller electronics
+
+## Not reproducable, generic
+
+* Drive motors (stepper/servo). Found in old computer equipment
+* Cooling fans. Found in old computer equipment
+* Power supply.
+Being able to 3d-print a generator, powered by natural resources or human power would be great.
+* Limit switches. Should be able to use any kind of switch really, including two wires touching.
+But not seen any 3d-printed designs.
+
+
 # TapeXY
+
+`TODO: move to separate repo`
 
 Experiment in super low-cost XY stage, for uses in digital fabrication techniques
 which have minimal weight and forces on head (laser engraving, 3d-printing).
@@ -244,6 +286,67 @@ It is however desirable to be compatible with a standard solution,
 or at least also allow a standard solution - since a hacked thing will (probably?)
 never be as good as a proper bearing.
 
+## Extruders
+
+In the typical design (as of 2016), filament is driven with hobbed bolt/extruder gear, pressed against an idler.
+Because of the small contact area, the press is very high.
+Therefore a metal bolt is needed, and an bearing as/for the idler.
+It also relies on the pre-existing bearing(s) in the extruder stepper-motor.
+
+It should be possible to incrementally improve this by
+
+
+An alternative design would be to distribute the force along a larger area.
+There is at least one example of this on Thingiverse. `TODO: find and link`
+
+## Endstops
+
+For XY the precision or repeatability is not so important, around 1 mm would be fine.
+However for Z it is desirable to have repeatability on order of 0.1mm.
+Ability to put the endstop on the head and use it as a probe is also highly desriable.
+
+Various options for detection principle is possible.
+
+* Conductivity (mechanical contact)
+* Optical (ambient light or active light)
+* Magnetic (hall effect)
+* Inductive (magnetic field)
+
+A mechanical contact using two wires, and printed spring should be possible.
+Challenge is noise from bounce, and repeatability - as well as ensuring it can withstand the wear.
+Using some lever or other mechanical advantage principle
+to connect to the moving part may give flexibility to more easily design good spring/contact mechanism.
+
+An optical also possible. However adding an LED and LDR/phototransistor does not lower the part-count.
+Non-contact means durability should not be issue. 
+May be easily extendable to more general purpose, linear- or rotary encoders.
+
+Inductive switches need a metal target. The pre-built ones are already popular used as Z-level probe.
+They consist of an oscillator, an inductive coil, measuring the voltage/current going through and acting on that.
+Here is a [Teensy-based DIY example](https://sehrainder.wordpress.com/2013/12/11/a-diy-crude-inductive-proximity-switch/).
+If the microcontroller is fast enough (and frequency low enough), it maybe possible to remove the peak-detector in software.
+
+May be able to use wire as the inductive sensor. Or use a coil wound from same wire as for 3d-printed stepper motor.
+One can [compensate for a small inductance in the sensor element](https://e2e.ti.com/blogs_/b/analogwire/archive/2014/06/10/inductive-sensing-how-to-use-a-tiny-2mm-pcb-inductor-as-a-sensor)
+using a series inductor.
+
+Maximum reduction in partcount and assembly of using printable endstops, would also mean eliminating their wiring.
+This could maybe be done if the motors of each axis had smart driver-electronics with neccesary endstop logic built in.
+
+## Power
+
+A typical reprap, without a heated bed, requires around 100 watts peak. Average will maybe be 30-50 watts.
+This should be doable by human power, or pretty small wind/solar installation on a good day.
+Solar is not so interesting for reprap-purposes, as the solar-cells require special manufacturing -
+through arguably the techniques are same as for the semi-conductors of the controller electronics.
+
+A wind-generator which could be hand/foot cranked as a backup would maybe be the ideal.
+This is essentially just a motor in reverse, so can hopefully be done without adding materials/part types,
+compared to when also having 3d-printed motors.
+
+`TOOD: test the PrintBot average and peak current draw`.
+
+
 ## Ideas
 
 * Use a lightweight CNC milling head with thin tool to precicely score/drill acrylic.
@@ -270,7 +373,7 @@ If well designed, could also be more overload tolerant as well
 The belt could be printed out of NinjaFlex ([work by others](http://www.thingiverse.com/search/page:1?q=ninjaflex+belt&sa=)).
 With some clever work on axel, bearings and belt-tensioner, it may be possible to make it zero-vitamins.
 
-One application for such a gearbox, would be for a belted Z-axis of a printer using NEMA17 stepper.
+One application for such a gearbox, would be for a belted Z-axis of a printer using a standard NEMA17 stepper.
 
 ## Printed belt tensioner
 

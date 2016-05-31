@@ -41,18 +41,65 @@ An earlier Youtube video showed using a stepper-motor as the generator on a smal
 DC voltage generation generally is easier than AC mains, because not needing to regulate the frequency, and can use many poles.
 Efficient and cheap DC/DC converters, as well as inverter electronics for AC mains voltage exists.
 
-Open designs
+## Axial versus radial
+
+* 
+
+References
+
+* [Axial-flux vs. radial-flux permanent-magnet synchronous generators for micro-wind turbine application ](http://innowecs.utcluj.ro/art_pulicate/0764-epe2013-full-15251784.pdf)
+Compares using FEA, two types of axial-flux and one type of radial-flux. `The results show that the axial-flux PMSG is the best solution for micro-wind turbine application`.
+
+## Axial flux
+
+Design for fabbability
+
+* Laser-cut or CNC-milled wooden base-plates
+* Laser-cut fabric (linen/hemp/jute)
+* Impregnated with polyester resin
+* Less than 50 cm diameter
+* Design in room for the wires
+* Design in coil bobbins, and other things needed for sub-assemblies
+
+References
+
+* [Design and Testing of a Permanent Magnet Axial Flux Wind Power Generator](http://ijme.us/cd_08/PDF/190%20ENT%20202.pdf).
+Gives a `analytic solution for magnetic field strength in the airgap`. Allows to evaluate back emf, and machine torque
+and voltages for specified electrical loading conditions. Uses a method `of dividing the machine into radial slices`.
+* [Excel spreadsheet](http://www.nadaparasiempre.com/hobbies/wind-energy/generator/index.html) for calculating parameters of generator
+[Alternative source](http://www.fieldlines.com/index.php?topic=143174.0)
+
+## Coil winding
+
+Could one wind coil bobbins with a lightweight XYZ machine, like a 3d-printer or small CNC mill?
+By movin
+
+[Thingiverse: Coil Winding Machine](http://www.thingiverse.com/thing:981327)
+
+
+## Open designs
 
 * [3d-printable 50w by Energy Creator](http://www.3ders.org/articles/20160305-3d-printed-pmg-generator-has-everything-you-need-to-power-a-50w-lightbulb.html).
 Seems to use an original stator configuration, which is claimed to be more efficient and easy to construct.
 35 USD download for files and instruction videos.
+* [3d-printable, 12volt+ axial flux](http://www.thingiverse.com/thing:633603)
+* [3d-printable axial flux](http://www.thingiverse.com/thing:687743)
+* [3d-printable axial flux](http://www.thingiverse.com/thing:1416740)
 
 Off-the-shelf
 
 * Using a car/motorcycle alternator. Example: [Biltema](http://www.biltema.no/no/Bil---MC/Bilreservedeler/Elektrisk-anlegg/Dynamo/)
 
+## People
+
+* Haakon at Fablab Lyngen is interested in developing a windmill
+
 # Vertical turbines
 
 * Using a [single-side consentrator](https://youtu.be/NiHG5ahf4zQ?t=945), increasing efficiency `from <20% to 30% efficiency`
 
+# Horizontal turbines
 
+Open designs
+
+* [Functional horizontal wind turbine with axial flow generator](http://www.thingiverse.com/thing:948375)

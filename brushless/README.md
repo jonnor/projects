@@ -135,6 +135,17 @@ Clas Ohlson
 
 [FreeCAD project file](./stepper-motor.fcstd)
 
+## Conventional manufacturing
+
+Typically made by
+* CNC machining or casting metal body
+* Punched rotor laminates, assembled into stacks
+* Stator coils are automatically wound
+
+Low heat-dissipation of plastic a challenge, may need to go open-body.
+Rotor is usually magneticed in-place.
+[How Stepper Motors are created](https://www.youtube.com/watch?v=pUBhWmYqMSg)
+[How Servo motors are created](https://www.youtube.com/watch?v=Pi5v1idToeU)
 
 ## Drivers
 

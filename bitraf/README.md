@@ -33,10 +33,10 @@ For connecting devices in the hackerspace, and outside, together.
 
 * Run MQTT/mosquitto broker
 * Run `boxy4` doorlock on MQTT
+* Setup `mqtt.bitraf.no` DNS record
 
 ## TODO
 
-* Setup `mqtt.bitraf.no` DNS record
 * Setup bitraf.no MQTT SRV DNS record
 * Transition `boxy2` to use MQTT also
 * Create 'interface' for doorlock, decouple from host (boxyX).
@@ -117,4 +117,18 @@ Ikea [1](http://www.ikea.com/no/no/catalog/products/30263660/)
 
 
 # Vacum former
+
+A vacuum former would be good addition. Especially interesting for prop-making, and mold-making for edibles like chocolate etc.
+
+This oven can fit plates of 25x40 cm.
+
+## Plastic plate based vacuum former
+
+This [laser-cut design](http://www.thingiverse.com/thing:1586801) uses . It also has very nice laser-cut clamps
+
+Material availability in Norway
+
+* [Clas Ohlson](http://www.clasohlson.com/no/Plasttallerken/44-1435-4) D=22 cm. Polypropylene. Pink only?
+* [Ikea](http://www.ikea.com/no/no/catalog/products/50192959/). Polypropylene. Multiple colors. 19 cm diameter. 2 NOK/piece
+* Staples bulk. [PP](https://www.staplesnetshop.no/web/ePortal/ctrl?action=showiteminfo&itemNo=782973) [PS](https://www.staplesnetshop.no/web/ePortal/ctrl?action=showiteminfo&itemNo=885253&loc=simplesearch)
 

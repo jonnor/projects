@@ -69,6 +69,11 @@ Exported DXF files:
 * [lid wedge](./export/bobbinplate-wedge-3.dxf)
 * [box](./export/bobbinholder-box-1.dxf)
 
+# Machines
+
+## [Idda circular knitting machine](https://github.com/jonnor/idda-knitting-machine)
+
+Is developed in the dedicated project repository.
 
 # Ideas
 
@@ -151,6 +156,7 @@ Maybe one can also using some activation chemical for coloring, similar to metal
 
 By others
 
+* [How to 3D Print on Tulle, Net, or Lace Fabrics](http://makezine.com/projects/how-to-3d-print-on-tulle-net-or-lace-fabrics/)
 * [Iron-on 3d-printed artworks](http://www.thingiverse.com/thing:25318)
 * [3d lasercut textiles](http://blog.ponoko.com/2010/08/03/3d-laser-cut-textiles-by-camilla-diedrich/)
 [2](http://blog.ponoko.com/2009/06/20/neocon09-coverage-3form/)
@@ -209,7 +215,7 @@ Open source
 * Linear knitting machine.
 [Knitic](http://www.knitic.com/),
 [OpenKnit](http://makezine.com/2014/02/27/openknit-an-open-source-knitting-machine/)
-* Circular knitting machine [Circular Knitic](http://www.knitic.com/2014/12/27/circular-knitic/)
+* Circular knitting machine [Circular Knitic](http://www.knitic.com/2014/12/27/circular-knitic/) [Idda](https://github.com/jonnor/idda-knitting-machine)
 * Pattern-making software [Valentina](http://valentinaproject.bitbucket.org/) [KnitWeb](https://github.com/fashiontec/knitweb)
 * Communities
 [FashionTec](https://fashiontec.wordpress.com/)
@@ -298,7 +304,7 @@ References
 # Fiber production
 
 * [Making Rayon (artificial silk)](https://www.youtube.com/watch?v=f_AvqnMTJjg).
-Cellulose is used as input. Final fibers are made by extruding into a bath of sulphuric acid. Could this be used to directly manufacture
+Cellulose is used as input. Final fibers are made by extruding into a bath of sulphuric acid. Could this be used to directly manufacture?
 
 # Related
 

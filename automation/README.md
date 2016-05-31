@@ -16,3 +16,6 @@ specialization may be needed in order to compete on cost/time per unit.
 [version 4](http://www.thingiverse.com/thing:1555072)
 * [Ribbon Microphone Corrugator](http://www.thingiverse.com/thing:1558683), 3d-printed
 
+* 3d-printed mini-lathe, [demo video](https://www.youtube.com/watch?v=k-f7Dvw6EnA),
+several alternatives on Thingiverse. Could be automated with couple of steppers.
+Tool change and registration are challenges for full automation.
