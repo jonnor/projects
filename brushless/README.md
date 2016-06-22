@@ -365,6 +365,7 @@ Either resistive, capacitive or inductive
 
 * [OpenServo, PCB/encoder replacement for servos](http://www.openservo.com/FrontPage)
 * [IntelliServo, digitally controllable servo board](http://hackaday.com/2016/04/22/intelliservo/)
+* [Mechaduino, servocontrol for steppers](https://hackaday.io/project/11224-mechaduino). Open source, programmable standalone, board mounts at back of NEMA17.
 
 # Research
 
