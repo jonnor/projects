@@ -73,35 +73,40 @@ Assembly: [FreeCAD](./tapexy.fcstd)
 Done
 
 * First working prototype of XY stage, driven by RAMPS/Cura
-* Laser diode driver. DIY, linear constant-current source based on op-amp+NPN for 5volt supply
+* [Laser diode driver](../currentsource). Linear constant-current source based on op-amp+MOSFET, for 5volt supply.
 
 TODO:
 
-* Make second iteration (with belts/pulleys in single plane)
+* Order some UHMW PE and/or PTFE tape. 
+[UHMWPE 1in 3mil](https://www.amazon.com/JVCC-UHMW-PE-3-UHMW-Polyethylene-Film/dp/B00WUU61AQ) |
+[UHMWPE 0.5in 5mil](https://www.amazon.com/gp/aw/d/B00XK9V9ZS) |
+[PTFE](https://www.amazon.com/TapeCase-width-36yd-length-Converted/dp/B0185RADU6)
+* Make the second iteration (with belts/pulleys in single plane)
 * Design a proper belt/line attachment and tensioning system
 * Design and make mount for laser diode
 * Add mounting holes for endstops
 * Run tests with laser
 * Design some self-adjusting system for friction parts
-* Create schematic and document laser diode driver
 
-Later:
+Next:
 
-* Devise some way of testing tape friction coefficient
-* Test alternative tapes, like packaging 'Scotch' and PET
-* Test cutting Kapton tape with laser. Both CO2 and with the 445nm diode
-* Test removing idler bearings, and just let Nylon wire slide on Kapton?
+* Try to switch pulleys to the fixed-end type used in deltas.
+* Test cutting the low-friction tape with diode laser
 * Reduce number of screws used, by having lasercut pins instead
-* Prototype a matching Z-bed/table design
-* Test FDM printing
-* Test some lightweight CNC milling, like wax, PCB traces or engraving.
 * Test a build for full-size laser envelope
+
+Maybe:
+
+* Test removing idler bearings, and just let Nylon wire slide on Kapton?
+* Test some lightweight CNC milling, like wax, PCB traces or engraving.
+* Test FDM printing
+* Prototype a matching Z-bed/table design
 
 Research
 
 * Coefficient of friction.
 [Table](http://www.goodfellow.com/catalogue/GFCat2C.php?ewd_token=Q4ZIFOAVRhE2dSOYkbUxPMdSBZyxXk&n=Ab6sV0qHM8iAeitFJGlgDA1qjQCrhQ&ewd_urlNo=GFCat26&type=30&prop=3)
-Kapton/Polyimide: 0.45, Teflon/PTFE: 0.05-0.2, UHMW PE: 0.1-0.2.
+Kapton/Polyimide: 0.45, Teflon/PTFE: 0.05-0.2, UHMW PE: 0.1-0.2. UHMW apparently has the best abrasion resistance, seems somewhat cheaper than PTFE.
 
 Existing low-cost laser diode engravers
 
@@ -130,6 +135,12 @@ General best practices
 
 * Use same bearings and screws types everywhere
 
+Self-reproducability.
+
+* Need to create structure bigger than own working area.
+Let I/II-beams consist of multiple sections, with staggered joints?
+Do testing of a long beam (50 cm+). Flatness, stiffness, maximum load.
+Keep compatible with alu profiles? T-slot/Makerbeam/Openbeam
 
 ## Laser diodes
 
@@ -271,8 +282,8 @@ When pressing the inner part of the bearing in, would easily
 move the carefully aligned tape... Avoiding folds/creases was quite tricky.
 
 I was able to succesfully assemble one bearing, with tape only on the inner part.
-This rotated quite nicely, with not too much play
-(considering the application of belt pulley, where some excentricity is quite OK).
+This rotated quite nicely, with not too much play.
+Considering the application of belt pulley, where some excentricity is quite OK.
 Indicates that if one can figure out a practical assembly, the idea has some merit.
 
 It could be that in larger scale, and with a more adhesive tape and, or with simpler geometry,
@@ -286,6 +297,15 @@ It is however desirable to be compatible with a standard solution,
 or at least also allow a standard solution - since a hacked thing will (probably?)
 never be as good as a proper bearing.
 
+TODO
+
+* Test cutting low-friction tape to revolved V-shape using laser.
+If necessary, try to use additional glue. A jig for pressing the tape against when adhering could also help?
+* Try an inverted design: inward V on inner part, outward V on outer ring.
+This should be easier to adhere tape to, as the ring has shape towards the top/bottom, not hidden inside.
+* Test using UHMW PE / PTFE tape.
+* Design an integrated bearing+belt idler for CoreXY usage, compatible with 608-based
+
 ## Extruders
 
 In the typical design (as of 2016), filament is driven with hobbed bolt/extruder gear, pressed against an idler.
@@ -293,7 +313,7 @@ Because of the small contact area, the press is very high.
 Therefore a metal bolt is needed, and an bearing as/for the idler.
 It also relies on the pre-existing bearing(s) in the extruder stepper-motor.
 
-It should be possible to incrementally improve this by
+It should be possible to incrementally improve this to remove the bearing (while still using a special hobbed bolt).
 
 
 An alternative design would be to distribute the force along a larger area.
