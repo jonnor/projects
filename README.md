@@ -16,7 +16,7 @@ Misc projects. Electronics, physical/mechanical, software.
 
 # Open hardware
 
-* [TapeXY](./reprappping), an laserengraver and CNC motion platform
+* [TapeXY](./reprapping), an laserengraver and CNC motion platform
 * [Idda](./idda-knitting-machine), a reverse-engineered ciruclar knitting machine.
 
 # Digital fabrication tools

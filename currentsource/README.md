@@ -32,8 +32,7 @@ MOSFET pinout was wrong, otherwise worked OK. This has now been rectified.
 
 * Verify current sharing using multiple modules
 * Test with laser diode
-* Test with a power LED
-* Verify working with 3.3v uC. Needs suitable opamp and MOSFET
+* Verify working with 3.3v uC.
 * Make 1 or 2 testing jigs
 * Make production run of 5 boards
 
