@@ -141,6 +141,26 @@ Let I/II-beams consist of multiple sections, with staggered joints?
 Do testing of a long beam (50 cm+). Flatness, stiffness, maximum load.
 Keep compatible with alu profiles? T-slot/Makerbeam/Openbeam
 
+## Beam structures
+
+Couple of designs for lasercut beams, mostly untested.
+
+* I-beam. [FreeCAD source](./ibeam-20.fcstd)
+* II-beam. [FreeCAD source](./ibeam-30.fcstd)
+
+TODO
+
+* Check squareness and flatness of a fabricated beam
+* Calculate stiffness, and do experimental test
+
+Tools for calculating stiffness of beams
+
+* http://www.had2know.com/technology/I-beam-calculator-moments-engineering.html
+* http://www.engineersedge.com/section_properties_menu.shtml
+* http://www.amesweb.info/SectionalPropertiesTabs/SectionalPropertiesIbeam.aspx
+* https://en.m.wikipedia.org/wiki/Deflection_(engineering)
+* https://en.m.wikipedia.org/wiki/List_of_second_moments_of_area
+
 ## Laser diodes
 
 * [Banggood](http://www.banggood.com/Wholesale-Laser-Equipment-c-3491.html), 1.6W - [5.5W](http://www.banggood.com/445nm-5_5W-5500mW-Blue-Laser-Module-With-Heatsink-For-DIY-Laser-Cutter-Engraver-p-999283.html)
