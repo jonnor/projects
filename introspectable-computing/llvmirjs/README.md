@@ -18,6 +18,9 @@ to allow instant inspection and reprogramming by owner.
 But it could also be used for implementing self-hosted languages which target the
 browser/JavaScript, using LLVM.js+Emscripten for code generation.
 
+Related projects
+
+* [numpile](http://dev.stephendiehl.com/numpile/), on-the-fly LLVM codegeneration from Python
 
 ## Backend
 
@@ -40,3 +43,4 @@ Related projects
 Includes assembler with backends for arm, avr, msp430
 * [DynASM](https://github.com/luapower/dynasm/blob/master/dynasm.md)
 Dynamic code generation in Lua, for x86/x86-64. (linker/encoder written in C)
+
