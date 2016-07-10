@@ -11,7 +11,6 @@ having the linear motion be printed slides with rack+pinion drive.
 
 But still has one 686 mm bearing (for extruder idler) and uses 2x threaded rods (for the Z axis).
 
-
 ## Reproducable, commonly done
 
 * Structural connectors
@@ -313,11 +312,13 @@ Because of the small contact area, the press is very high.
 Therefore a metal bolt is needed, and an bearing as/for the idler.
 It also relies on the pre-existing bearing(s) in the extruder stepper-motor.
 
-It should be possible to incrementally improve this to remove the bearing (while still using a special hobbed bolt).
-
+It should be possible to incrementally improve this to remove the bearing
+(while still using a special hobbed bolt), with something (more) printable.
 
 An alternative design would be to distribute the force along a larger area.
-There is at least one example of this on Thingiverse. `TODO: find and link`
+There are some example of this idea on Thingiverse:
+
+* [Filament pusher](http://www.thingiverse.com/thing:1664969), using rollers wheels and groved disc
 
 ## Endstops
 
