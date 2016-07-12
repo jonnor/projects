@@ -22,3 +22,6 @@ TODO
 * Relay for turning on/off printer from RPi
 
 
+## Ninjastruder
+
+With original direct extruder (and Ubis hotend). `M92 X83.00 Y85.50 Z2010.00 E95.00`.
