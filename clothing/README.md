@@ -240,6 +240,11 @@ Clothing production steps
 * `fabric -> clothing`. Sewing
 * Other processing: Dying, filting
 
+Semi-automated
+
+* [Doti](http://thecreatorsproject.vice.com/blog/digital-loom-open-source-desktop-fabric-printer), Jaquis loom. automated heddles, manual weft and pull.
+
+
 # Automated industrial loom
 
 For use with locally sourced material. For instance (in Norway), wool and linen.
