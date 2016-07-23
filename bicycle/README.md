@@ -52,7 +52,7 @@ For centering the hub relative to the rim when building wheels.
 ![Wheel dishing tool](./doc/wheel-dishing-tool.jpg)
 
 [FreeCAD source](./wheel-dishing-tool.fcstd) |
-[DXF for laser](./export/wheel-dishing-tool.dxf)
+[DXF for laser](./export/wheel-dishing-tool2.dxf)
 
 
 
