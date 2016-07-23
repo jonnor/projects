@@ -49,7 +49,7 @@ Printed and tested for fit. Have not used it yet.
 
 For centering the hub relative to the rim when building wheels.
 
-![Wheel dishing tool](./doc/wheel-disc-shaping-tool.jpg)
+![Wheel dishing tool](./doc/wheel-dishing-tool.jpg)
 
 [FreeCAD source](./wheel-dishing-tool.fcstd) |
 [DXF for laser](./wheel-dishing-tool.dxf)
