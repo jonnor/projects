@@ -45,6 +45,16 @@ In the mounting direction, the casette stops naturally.
 
 Printed and tested for fit. Have not used it yet.
 
+# Wheel dishing tool
+
+For centering the hub relative to the rim when building wheels.
+
+![Wheel dishing tool](./doc/wheel-disc-shaping-tool.jpg)
+
+[FreeCAD source](./wheel-dishing-tool.fcstd) |
+[DXF for laser](./wheel-dishing-tool.dxf)
+
+
 
 # In progress
 
