@@ -206,6 +206,17 @@ it does not update...
 Draft::Shape2dView does update, but often gives not the results wanted.
 For instance, duplicate lines projected etc. Also a bit trickier/not-so-nice to use, due to bad preview.
 
+### Stitching path-effect
+
+For creating stiched lines, for creating lines where piece should bend.
+For instance using lasercutter in thin
+Kinda related to sheet-bending workbench.
+
+Right now doing this with a sketch, and Draft::CopyAlongPath.
+It is pretty nice, but it can only follow one path, which is quite tedious.
+One also need to calculate the number of items using expressions, also tedious.
+`count=(targetlength)/(stitchon-stitchoff)`
+
 
 ## Learned
 
