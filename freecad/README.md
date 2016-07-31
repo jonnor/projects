@@ -217,6 +217,15 @@ It is pretty nice, but it can only follow one path, which is quite tedious.
 One also need to calculate the number of items using expressions, also tedious.
 `count=(targetlength)/(stitchon-stitchoff)`
 
+### Dogbone/t-bone operator
+
+When milling internal shapes that are required to be at least as big as geometry, must use
+dogbone/t-bone to compensate for the radius of the milling bit.
+
+Similar to ordinary fillet in operation: Select edges to work on, set radius.
+Should be a parametric operation, with radius as changeable property.
+Ideally should be able to select an edge loop as well, and have all the corners automatically fixed.
+
 
 ## Learned
 
