@@ -228,6 +228,7 @@ Maybe has potential in combination with tape principle, possibly making even che
 Possible addons
 
 * [Lasercut vacuum table](http://hackaday.com/2016/03/19/diy-vacuum-table-makes-lasering-even-easier)
+* [Air assist for diode laser](http://www.thingiverse.com/thing:1688209), 3d-printed using a radial fan
 
 ## TapeZ
 
