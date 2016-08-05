@@ -52,51 +52,81 @@ Inspired by the [RishaLaser](http://rishalaser.org) project.
 
 Key features:
 
-* Using Kapton tape as basis for gliding surfaces,
+* Using low-friction tape as basis for gliding surfaces,
 inspired by [a design](http://www.thingiverse.com/thing:3554) by Peter Jansen
 * Using braided Nylon/Polyamid wire ("Spectra line") instead of timing belts.
 Like on Tantillus and some Delta printers.
 * Reproduction with primarily lasercutter (or CNC mill), in wood/acrylics.
 * [CoreXY](http://corexy.com) kinematics
 
-Parts:
+### Parts
+
+Fabricated
 
 * Frame [FreeCAD](./tapexy-frame.fcstd)
 * Gantry [FreeCAD](./tapexy-gantry.fcstd)
 * Head [FreeCAD](./tapexy-head.fcstd)
 * Pulleys. NinjaFlex/SemiFlex for friction. [FreeCAD](./pulley-ninjaflex.fcstd)
-* Idlers. 8 pieces, each consisting of 1x 608 bearing, 1x M8-40mm bolt and 2x [sideguides](http://www.thingiverse.com/thing:31216)
+* Idlers. 2x [sideguides](http://www.thingiverse.com/thing:31216) for 608 bearing
 
 Assembly: [FreeCAD](./tapexy.fcstd)
 
-Done
+Main vitamins
+
+* MDF/Plywood/Acrylic 3-6 mm.
+* 2x NEMA17 stepper motors.
+* 1x Motion driver board. RAMPS or similar
+* Cables for motors and endstops
+* Low-friction tape, width at least 20mm. Recommened:
+[UHMWPE 1in 3mil](https://www.amazon.com/JVCC-UHMW-PE-3-UHMW-Polyethylene-Film/dp/B00WUU61AQ) |
+Alternative: Kapton tape, as used for Reprap 3d-printers.
+* Strong line. Recommended: Braided fishing line (Spectra or similar).
+Alternative: Nylon, Polyester or linen.
+* 2x Endstops.
+
+Misc vitamins
+
+* 8x 608 bearings, for idlers.
+* 8x M8x40 bolts, for idlers.
+* 8x M3x10 bolts, for stepper.
+* 4x M4x25 bolts, for head/gantry.
+
+Effector
+
+* 1x Laser diode module including driver.
+
+
+## Done
 
 * First working prototype of XY stage, driven by RAMPS/Cura
 * [Laser diode driver](../currentsource). Linear constant-current source based on op-amp+MOSFET, for 5volt supply.
 
-TODO:
+### TODO
 
-* Order some UHMW PE and/or PTFE tape. 
-[UHMWPE 1in 3mil](https://www.amazon.com/JVCC-UHMW-PE-3-UHMW-Polyethylene-Film/dp/B00WUU61AQ) |
-[UHMWPE 0.5in 5mil](https://www.amazon.com/gp/aw/d/B00XK9V9ZS) |
-[PTFE](https://www.amazon.com/TapeCase-width-36yd-length-Converted/dp/B0185RADU6)
-* Make the second iteration (with belts/pulleys in single plane)
+v2 testing
+
+* Add tape layers (2x) to gantry to avoid clamping head too hard
+* Make the head geometry slightly smaller (too tight). Maybe remove
 * Design a proper belt/line attachment and tensioning system
-* Design and make mount for laser diode
+* Design and make mount for laser diode.
+Alt: Make a vinyl/pen actuator
 * Add mounting holes for endstops
 * Run tests with laser
 * Design some self-adjusting system for friction parts
 
 Next:
 
+* Reduce touchpoints/area for the gantry slides.
+* Find a solution for managing the cables going to head/effector. 4mm ID bowden tube?
+* Design in space for the RAMPS/controlboard
 * Try to switch pulleys to the fixed-end type used in deltas.
+* Test replacing the 608 bearings with printed+tape bearings
 * Test cutting the low-friction tape with diode laser
 * Reduce number of screws used, by having lasercut pins instead
 * Test a build for full-size laser envelope
 
 Maybe:
 
-* Test removing idler bearings, and just let Nylon wire slide on Kapton?
 * Test some lightweight CNC milling, like wax, PCB traces or engraving.
 * Test FDM printing
 * Prototype a matching Z-bed/table design
