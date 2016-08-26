@@ -190,6 +190,7 @@ Work by others
 
 * [Delta-T, rail-free, wire-based delta](http://forums.reprap.org/read.php?1,525804)
 * [SkyDelta, rail-free, wire-based delta](https://groups.google.com/forum/#!topic/deltabot/Jj6vyPf7jJ8)
+* [Cantilevered CoreXY printer](https://www.youtube.com/watch?v=6EtJfaiQ9H0)
 
 # Electronic discharge machining
 
