@@ -126,6 +126,12 @@ Clas Ohlson
 
 * [DC Through Coil Motor](http://www.thingiverse.com/thing:1555528). Kinda like a circular rail-gun
 
+# Open designs needing electromotors
+
+Pumps
+
+* [Small diaphragm air/water pump](http://www.thingiverse.com/thing:1757881), uses rubber flap as one-way valve. Could probably be NinjaFlex.
+
 # Fabricated stepper motor
 
 * Should be able to mill 0.5mm silicone iron on Shopbot
