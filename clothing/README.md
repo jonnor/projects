@@ -225,6 +225,7 @@ OpenSourceEcology [wiki](http://opensourceecology.org/wiki/Clothes) [discussion]
 * Embroidery machine mod (XY stage) for existing sewing machine.
 [Openbuilds](http://www.openbuilds.com/builds/embroidery-machine-with-xy-belt-and-pinion-drive.691/)
 * Spinning machines. [Electric Eel](http://www.electriceelwheel.com/wp/)
+* [Braiding machine](https://www.thingiverse.com/thing:1498470). 3d-printed. However sadly needs 10" buildplatform?
 
 Existing in industry
 
