@@ -98,6 +98,12 @@ good info on camera models, joining line segments, detecting orthogonal and revo
 * [Nexus 5 insintric camera parameters](http://rkdasari.com/2013/02/14/camera-calibration-matrix-finding-intrinsic-parameters/)
 * [4-point perpective calibration](http://w3.impa.br/~zang/qtcalib/nochess.html)
 
+References
+
+* [Generative Image Segmentation Using Random Walks with Restart](http://cv.snu.ac.kr/newhome/publication/pdf/conf/ic061.pdf).
+Allows to mark image segments roughly, then use this to create a detailed segmentation.
+For extracting individual features, ignoring background and other objects.
+
 Movable parts & Animation
 ---------------------
 
@@ -337,7 +343,6 @@ Seems most rely on a RS232/USB cable, which is a bit of a bummer.
 But perhaps one could fabricate some, using PCB etching, with wireless support??
 
 
-
 # Inspiration
 
 [Design at Large- Stefanie Mueller](https://www.youtube.com/watch?v=cLUyTK72xXU)
@@ -345,7 +350,7 @@ But perhaps one could fabricate some, using PCB etching, with wireless support??
 In order to enable non-professional users to digitally fabricate, we need to:
 * increase the
 * 
-Need to move to 'direct '
+Need to move to 'direct shaping'
 
 LaserOrigimi, folding to make 3d objects
 LaserSheet
