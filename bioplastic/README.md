@@ -323,6 +323,16 @@ Polymers general
 * Condensation Polymers: [Polyesters](https://www.youtube.com/watch?v=usRnJP8lDxM)
 * Condensation Polymers: [Polyamides](https://www.youtube.com/watch?v=ILy-Jlfnonw)
 
+PHA production
+
+* [PHA/PHB wikipedia](https://en.wikipedia.org/wiki/Polyhydroxyalkanoates)
+* Advantages over PLA include UV stability and heat resistance
+* Typically produced by bacteria causing fermentation, with sugar or vegetable oil as feedstock.
+* The extraction of PHA from the bacteria is a tricky part of the process
+* Can also be produced by bacteria from methane gas.
+[Mango Materials](http://mangomaterials.com/) seem to be the leader in this.
+[Interview](http://www.dordan.com/blog/qa-with-dr.-molly-morse-of-mango-materials-on-methane-based-bioplastic)
+
 Automation
 
 * [Industrial robotic system for polymer synthesis](https://www.youtube.com/watch?v=Bdrrr48oVP0). Software defined, Operator programmable.
