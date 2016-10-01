@@ -128,6 +128,30 @@ MsgFlo workers/queueing. IPFS-first storage? Docker on Heroku deploy?
 
 Allowing arbitrary Python scripts is desirable long-term, but is tricky for security reasons.
 
+#### Automillling
+
+* TODO: Make a post-processor for Shopbot.
+Seemingly only needs to replace spindle start command in the gcode?
+
+#### Autolaser
+
+* Make a post-processor for HPGL dialects like Epilog/GCC/Universal.
+* Make a post-processor for g-code dialects like grbl/Marlin. M106
+* Button for sending HPGL to printer device
+* Support a tool type "laserbeam". Can hold properties like power/air-assist
+* Automatically generate toolpath operations for objects. 
+Chose which objects to be included. Default to everything within machine area.
+Start with things only needing cutting.
+Should automatically do inside-out cutting.
+
+#### CAM integration
+
+* Have a save-to-file for gcode, that goes via post-processor. If not existing already??
+* FreeCAD: Selecting integrated post-processors should be a dropdown
+* Button for sending g-code to Octoprint (and start)
+* Tool/macro for lay-flat/set Z-direction. Automatically put with thinnest part up
+* Tool/macro for autolayout/nesting
+
 #### Documentation generation
 
 * TODO: generate links/embeds to exported artifacts, as Markdown
