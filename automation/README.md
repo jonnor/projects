@@ -19,3 +19,6 @@ specialization may be needed in order to compete on cost/time per unit.
 * 3d-printed mini-lathe, [demo video](https://www.youtube.com/watch?v=k-f7Dvw6EnA),
 several alternatives on Thingiverse. Could be automated with couple of steppers.
 Tool change and registration are challenges for full automation.
+
+* [Automated candy maker](http://www.thingiverse.com/thing:1786518).
+For Halloween. Lasercut and 3d-printed

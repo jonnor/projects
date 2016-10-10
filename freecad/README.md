@@ -250,6 +250,13 @@ Similar to ordinary fillet in operation: Select edges to work on, set radius.
 Should be a parametric operation, with radius as changeable property.
 Ideally should be able to select an edge loop as well, and have all the corners automatically fixed.
 
+### Live-coding
+For tools / advanced models
+
+CadQuery and its FreeCAD plugin looks promising.
+* https://github.com/dcowden/cadquery
+* https://github.com/jmwright/cadquery-freecad-module
+
 
 ## Learned
 

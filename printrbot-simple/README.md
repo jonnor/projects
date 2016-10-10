@@ -56,4 +56,6 @@ Next
 
 ### Notes
 
+[NinjaStruder gear upgrade 2:1](http://www.thingiverse.com/thing:1785884)
+
 With original direct extruder (and original Ubis hotend). `M92 X83.00 Y85.50 Z2010.00 E95.00`.

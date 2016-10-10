@@ -509,6 +509,7 @@ various classes of electronics (sub) circuits:
 Work by others
 
 * [Servo mount for lightswitch](http://www.thingiverse.com/thing:1156995)
+* [Reed switch](http://www.thingiverse.com/thing:1770916), for detecting door open/closed state.
 * Functionalize: [Circuitboard with uC and touchscreen](http://functionalize.com/you-can-now-3d-print-circuits-and-mount-for-your-own-arduino-compatible-wifi-connected-320x240-touchscreen/).
 Using silver conductive ink/paint to overcome surface resistance problems, bringing trace resistance down from 1k to 100 ohms.
 

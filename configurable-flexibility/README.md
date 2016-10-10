@@ -103,5 +103,11 @@ Possible properties
 * Using conductive filament for active wearables
 * 'Textile' could also be paper. Or fibreglass/carbonfibre. Epoxying later?
 
+# References
 
+Work by others
+
+* 3d-printed metamaterials creates flexible machines. Using structures designed for controlled shearing
+[Make](http://makezine.com/2016/09/14/3d-printed-metamaterials-create-flexible-machines/)
+[Research paper](http://alexandraion.com/wp-content/uploads/2016UIST-Metamaterial-Mechanisms-authors-copy.pdf)
 
