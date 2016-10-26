@@ -97,3 +97,8 @@ Established ideas
 Recent development
 
 - [Node machines, spec for declaring meta info about JavaScript functions](http://node-machine.org/), and [Treeline](https://treeline.io/), a visual IDE built on top of it.
+
+Model-based development
+
+- [ImProve](https://github.com/tomahawkins/improve/wiki/ImProve), Haskell based DSL for high-assurance embedded applications, verified using SMT model checking.
+Compiles to C/Ada/Modelica (and Simulink).
