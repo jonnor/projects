@@ -6,21 +6,23 @@
 #include <vector>
 #include <string>
 
+static const int NUMBER_OF_LEDS = 10;
 
-static const int NUMBER_OF_LEDS = 4;
-
-// Anything that may influence the system (cause state to change)
-// Since this is a non-interactive animation, only time
-struct Input {
-    int timeMs;
-};
-
-// State of system
 struct RgbColor {
     uint8_t r;
     uint8_t g;
     uint8_t b;
 };
+
+// Anything that may influence the system (cause state to change)
+// Since this is a non-interactive animation, only time
+struct Input {
+    int timeMs;
+    int periodMs;
+    RgbColor color;
+};
+
+// State of system
 struct State {
     RgbColor ledColors[NUMBER_OF_LEDS];
 };
@@ -46,17 +48,15 @@ onInsideSegment(float position, int index, int steps) {
 
 State
 nextState(const Input &input, const State& previous) {
-    const int period = 1700;
+    const int period = input.periodMs;
     const float pos = input.timeMs % period;
     
     State s = previous;
-    /*
-    const float mod = pos/period;
-    s.ledColors[0] = { 255*mod, 255*mod, 100*mod };
-    s.ledColors[1] = { 255, 20, 255 };
-    s.ledColors[2] = { 10, 20+(100*mod), 255 };
-    s.ledColors[3] = { 10, 255, 1 };
-    */
+
+
+    // TODO: model one point moving back and forth, allow to calculate distance and effects based on this
+    // ie. trailing color, with/or without color shift
+
     const float fromLeft = pos/(period/2.0);
     const float fromRight = 2.0f-(pos/(period/2.0));
     const bool moveRight = ( pos/period > 0.5f );
@@ -65,7 +65,7 @@ nextState(const Input &input, const State& previous) {
 //        pos, fromLeft, fromRight, pos/period, moveRight ? "true" : "false");
     for (int i=0; i<NUMBER_OF_LEDS; i++) {
         const float mod = onInsideSegment(dist, i, NUMBER_OF_LEDS);
-        s.ledColors[i] = { 255*mod, 255*mod, 0 };
+        s.ledColors[i] = { input.color.r*mod, input.color.g*mod, input.color.b*mod };
     }
 
     return s;
@@ -84,10 +84,11 @@ bool
 realizeState(const State& state, const Config &config) {
     // TODO: implement for hardware
     // TODO: implement via MsgFlo, sending MQTT message to HW-unit
+    printf("|%s", "");
     for (int i=0; i<config.ledNumber; i++) {
         colorRenderTerminal(state.ledColors[i], "("+std::to_string(i)+")");
     }
-    printf("%s\n", "");
+    printf("%s|\n", "");
     return true;
 }
 
@@ -98,16 +99,19 @@ main(int argc, char *argv[]) {
 
     std::vector<Input> history;
 
+    const int simulationInterval = 100;
+    const int simulationTime = 7*1000;
+
     int currentTime = 0;
-    State previousState = { currentTime };
+    State previousState;
     Config config;
-    while (currentTime < 7*1000) {
-        const Input in = { currentTime };
+    while (currentTime < simulationTime) {
+        const Input in = { currentTime, 2100, { 255, 255, 0 } };
         const State state = nextState(in, previousState);
         realizeState(state, config);
         history.push_back(in);
         previousState = state;
-        currentTime += 200;
+        currentTime += simulationInterval;
     }
 
 }
