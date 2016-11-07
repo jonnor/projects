@@ -16,12 +16,12 @@ Misc projects. Electronics, physical/mechanical, software.
 
 # Open hardware
 
-* [TapeXY](./reprapping), an laserengraver and CNC motion platform
+* [TapeCore / TapeXY](./tapecore), an laserengraver and CNC motion platform
 * [Idda](./idda-knitting-machine), a reverse-engineered ciruclar knitting machine.
 
 # Digital fabrication tools
 
-* [FreeCAD](./freecad) single-sourc /continious-integration
+* [FreeCAD](./freecad) single-source /continious-integration
 * [doctags](./doctags)
 
 # Other interests
