@@ -1,4 +1,6 @@
 
+CXXFLAGS:=-Wall -Werror -Wno-narrowing
+
 build: neopixels
 
 run: ./neopixels
