@@ -341,3 +341,23 @@ Politics
 ----------
 
 * [Nowegian government considering taxing pretroplastics](http://www.tu.no/meninger/2015/03/12/norge-kan-bli-en-spydspiss-internasjonalt-pa-fornybar-plast)
+
+
+## Bacterial cellulose
+
+Can synthesise/grow cellulosis using bacteria, consuming a carbon source like sucrose/glucose.
+
+* https://en.wikipedia.org/wiki/Microbial_cellulose
+* https://en.wikipedia.org/wiki/Bacterial_cellulose
+
+The most extensively studied species is Gluconacetobacter xylinus,
+formerly known as Acetobacter xylinum and since reclassified as Komagataeibacter xylinus
+
+Bacterial, or microbial, cellulose has different properties from plant cellulose and
+is characterized by high purity, strength, moldability and increased water holding ability.
+
+A. xylinum is the model microorganism for basic and applied studies on cellulose due to its ability
+to produce relatively high levels of polymer from a wide range of carbon and nitrogen sources.
+
+* [YouTube: Simple growing of bacterial cellulosis](https://www.youtube.com/watch?v=1d_JscPIaPI), [Kumbucha](https://en.wikipedia.org/wiki/Kombucha) style
+* [2](https://www.youtube.com/watch?v=gHQmW5qFSoU)
