@@ -126,6 +126,11 @@ using a series inductor.
 Maximum reduction in partcount and assembly of using printable endstops, would also mean eliminating their wiring.
 This could maybe be done if the motors of each axis had smart driver-electronics with neccesary endstop logic built in.
 
+### Work by others
+
+* [3d-printable endstop](http://www.thingiverse.com/thing:389006), using copper wire and a spring.
+* [3d-printable endstop housing](http://www.thingiverse.com/thing:756126), using a standard microswitch
+
 ## Power
 
 A typical reprap, without a heated bed, requires around 100 watts peak. Average will maybe be 30-50 watts.

@@ -76,6 +76,11 @@ Logic programming
 [veneer](https://github.com/tca/veneer) looks to be the only maintained JavaScript/browser version,
 but [microScopeKamren](https://github.com/asolove/microScopeKanren) has the explicit focus "inspecting logic programs as they run".
 
+Pattern-matching programming
+
+- [Senenca.js](http://senecajs.org/getting-started/), async-first pattern-matching library for Node.js microservices
+- [Eve](http://witheve.com/), pattern-matching on records as a general purpose computational model.
+
 Research
 
 - [metamodels for structured interaction with machine intelligence](http://ppig.org/sites/default/files/2015-PPIG-26th-Sarkar-2.pdf).
