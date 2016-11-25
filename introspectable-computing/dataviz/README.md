@@ -25,13 +25,8 @@ each of the apects are present *and* that they are interconnected, supporting ea
 `{ x: 1.0, y: 3.0 }` (most likely) represents a point in 2d space.
 It should be visualizable and manipulatable as such.
 
-Idea: Use "structural typing" (ref TypeScript) to decide how data may be treated.
-Benefit: Explicit type information, and agreement on type system not neeed
-
-Data in the FBP protocol is primarily represented as JSON.
-Tools for operating with/on JSON, or JSON-like data.
-Json Schema, JsonPath. `jq`
-
+Data in the FBP protocol is primarily represented as JSON, and this is
+a common serialization format also outside.
 
 TODO: include notes from paper, 2015-2016.
 
@@ -44,10 +39,63 @@ Existing:
 * Debuggers with support for graphs. Like [ddd](https://www.gnu.org/software/ddd/)
 * Scripting debugger, like Python scripts in gdb generate graphs. TODO: link blogpost, from HackerNews
 * Visualizer nodes, or custom UI on nodes in node-based-programming. Like PureData
+* [Custom visualization plugins for Kibana](http://logz.io/blog/kibana-visualizations/)
 
 Wanted
 
 * Reverse-engineering of dataformats and/or protocols, visually?
+
+
+
+
+### JSON tools
+
+Transformations
+
+* Json Schema
+* [JsonPath](http://goessner.net/articles/JsonPath), XPath for JSON. Spec with multiple implementations, including JS
+* [jq](https://stedolan.github.io/jq/) "like sed for JSON data". Portable C.
+
+Viewers
+
+* Interactive drill-down graphs. Lots of these, http://visualizer.json2html.com/, http://jsonviewer.stack.hu/. Tiny bit better than a text-editor and pretty formatted JSON..
+* Tabular view. http://jabulr.com nice but no sorting support?
+* [jsonviewer](http://jsonviewer.codeplex.com/), with support for plugins for custom object visualizations. .NET
+* [JSON Editor](https://github.com/jdorn/json-editor). Creates HTML UI for manipulation data given a JSON Schema.
+* [json-schema-viewer](http://jlblcc.github.io/json-schema-viewer/). Interactive drill-down viewer of JSON Schemas, with details shown on the side.
+
+Other
+
+* [jsonDiscovered](https://github.com/SOM-Research/jsonDiscoverer/), can find/build schemas given examples of JSON documents.
+
+Dataformats / semantic tools
+
+* [JSON-LD](https://en.wikipedia.org/wiki/JSON-LD)
+* [schema.org schemas](http://schema.org/docs/schemas.html)
+* [json-stat](https://json-stat.org/), standarized format for datasets, especially those used as basis for visualizations. Defined via JSON schema
+
+General graphing/dataviz
+
+* [DynaGraph](http://dygraphs.com/gallery/#g/temperature-sf-ny). Basic looks, good for timelines with lots of data. Has error-bars/variation indication.
+* [Paper.JS](http://paperjs.org/features/). Interactive vector-graphics library, with SVG import/export
+* [Vega](http://vega.github.io/vega-editor/index.html?mode=vega&spec=falkensee), specify data and their visualizations in JSON.
+
+### Ideas
+
+Use "structural typing" (ref TypeScript) to decide how data may be treated.
+Benefit: Explicit type information, and agreement on type system not neeed.
+
+Plugins with a matching/ranking predicate ran against the data.
+Support both single-value visualizers, as well as sets (array/object)
+
+JSON Path for specifying search/filters
+Could maybe also allow JS functions for mapping.
+Also support JS for reductions? Basically creating derived-data in that case
+
+Tool should persist the view/visualization selected, usable on data updates.
+Maybe remember earlier views as history in LocalStorage
+URL should contain data and view parameters, so it can be sent to someone else
+
 
 ### Prerequisites
 
