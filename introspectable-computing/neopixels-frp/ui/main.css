@@ -1,0 +1,26 @@
+
+/* Reset */
+* {
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+  position: relative;
+}
+
+body {
+  color: white;
+  background-color: black;
+}
+
+
+/* Loading files */
+#loadfileinput {
+  position: fixed;
+  bottom: 0;
+  left: 150px;
+}
+#loadfilelabel {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
