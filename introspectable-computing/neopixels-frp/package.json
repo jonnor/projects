@@ -1,0 +1,21 @@
+{
+  "name": "neopixels-frp",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  },
+  "dependencies": {
+    "coffee-script": "^1.11.1",
+    "debug": "^2.3.3",
+    "flowtrace": "~0.0.12",
+    "simple-server": "^1.0.1"
+  }
+}
