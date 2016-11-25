@@ -6,12 +6,27 @@
 #include <vector>
 #include <string>
 
+#ifdef HAVE_JSON11
+#include <json11.hpp>
+#include <json11.cpp>
+#endif
+
 static const int NUMBER_OF_LEDS = 10;
 
 struct RgbColor {
     uint8_t r;
     uint8_t g;
     uint8_t b;
+#ifdef HAVE_JSON11
+    json11::Json to_json() const {
+    using namespace json11;
+    return Json::object {
+            {"r", r},
+            {"g", g},
+            {"b", b},
+    };
+}
+#endif
 };
 
 // Anything that may influence the system (cause state to change)
@@ -20,6 +35,16 @@ struct Input {
     int timeMs;
     int periodMs;
     RgbColor color;
+#ifdef HAVE_JSON11
+    json11::Json to_json() const {
+    using namespace json11;
+    return Json::object {
+            {"timeMs", timeMs},
+            {"periodMs", periodMs},
+            {"color", color.to_json()},
+    };
+}
+#endif
 };
 
 // State of system
@@ -92,7 +117,7 @@ realizeState(const State& state, const Config &config) {
     return true;
 }
 
-// TODO: create live/interactive debugger in webui using MsgFlo+FBP-protocol?
+// TODO: serialize inputs and outputs as a Flowtrace
 
 int
 main(int argc, char *argv[]) {
@@ -104,9 +129,11 @@ main(int argc, char *argv[]) {
 
     int currentTime = 0;
     State previousState;
+    Input in = { currentTime, 2100, { 255, 255, 0 } };
+    printf("%s", in.to_json().dump().c_str());
     Config config;
     while (currentTime < simulationTime) {
-        const Input in = { currentTime, 2100, { 255, 255, 0 } };
+        in.timeMs = currentTime;
         const State state = nextState(in, previousState);
         realizeState(state, config);
         history.push_back(in);
