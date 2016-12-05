@@ -49,10 +49,13 @@ struct RgbColor {
 // Anything that may influence the system (cause state to change)
 struct Input {
     long timeMs;
+
     int breathingPeriodMs;
     RgbColor breathingColor;
+
     int heartRate; // BPM
     RgbColor heartbeatColor;
+    int heartbeatLengthMs;
 
 #ifdef HAVE_JSON11
     json11::Json to_json() const {
@@ -94,6 +97,8 @@ mix(RgbColor a, RgbColor b, int balance) {
     return ret;
 }
 
+#define between(val, lower, upper) (val >= lower && val <= upper) ? 1 : 0
+
 State
 nextState(const Input &input, const State& previous) {
     // FIXME: the integer math here is not sound, overflows or something
@@ -113,7 +118,7 @@ nextState(const Input &input, const State& previous) {
     RgbColor heartbeat = input.heartbeatColor;
     const long heartbeatPeriod = (1000*60)/input.heartRate;
     const long heartbeatPos = input.timeMs % heartbeatPeriod;
-    const int heartbeatMix = ( !heartbeatPos ) ?  1000 : 0;
+    const int heartbeatMix = ( between(heartbeatPos, 1, input.heartbeatLengthMs ) ) ?  1000 : 0;
 
     // Combine
     State s = previous;
@@ -182,7 +187,8 @@ main(int argc, char *argv[]) {
         breathingPeriodMs: 2100,
         breathingColor: { 200, 200, 255 },
         heartRate: 80,
-        heartbeatColor: { 255, 10, 10 }
+        heartbeatColor: { 255, 10, 10 },
+        heartbeatLengthMs: 100,
     };
 #ifdef HAVE_JSON11
     printf("%s", in.to_json().dump().c_str());
