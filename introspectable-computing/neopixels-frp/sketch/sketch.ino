@@ -20,7 +20,7 @@ realizeState(const State &state, const Config &config) {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  const Input input = { (long)millis(), 1000, { 0, 255, 255 } };
+  const Input input = { (long)millis(), 100, { 255, 0, 255 } };
   state = nextState(input, state);
   //delay(1);
   realizeState(state, config);

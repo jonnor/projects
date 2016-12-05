@@ -123,7 +123,9 @@ main(int argc, char *argv[]) {
     int currentTime = 0;
     State previousState;
     Input in = { currentTime, 2100, { 255, 255, 0 } };
+#ifdef HAVE_JSON11
     printf("%s", in.to_json().dump().c_str());
+#endif
     Config config;
     while (currentTime < simulationTime) {
         in.timeMs = currentTime;
