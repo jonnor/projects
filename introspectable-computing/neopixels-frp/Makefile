@@ -3,7 +3,7 @@
 CXXFLAGS:=-Wall -Werror -Wno-narrowing ${DEPS_CXXFLAGS}
 CXXFLAGS+=-g
 
-build: neopixels rebirth
+build: neopixels
 
 run: ./neopixels
 	./neopixels
