@@ -33,8 +33,8 @@ struct RgbColor {
 // Anything that may influence the system (cause state to change)
 struct Input {
     long timeMs;
-    int periodMs;
-    RgbColor color;
+    int breathingPeriodMs;
+    RgbColor breathingColor;
 #ifdef HAVE_JSON11
     json11::Json to_json() const {
     using namespace json11;
@@ -60,7 +60,7 @@ struct Config {
 State
 nextState(const Input &input, const State& previous) {
     // FIXME: the integer math here is not sound, overflows or something
-    const int period = input.periodMs;
+    const int period = input.breathingPeriodMs;
     const long pos = input.timeMs % period;
     
     State s = previous;
@@ -68,9 +68,9 @@ nextState(const Input &input, const State& previous) {
     const long time = (input.timeMs) ? input.timeMs : 1; // prevent division by zero
     const long mod = (pos*255) / time;
     s.ledColor = {
-      (uint8_t)(input.color.r*mod/255),
-      (uint8_t)(input.color.g*mod/255),
-      (uint8_t)(input.color.b*mod/255)
+      (uint8_t)(input.breathingColor.r*mod/255),
+      (uint8_t)(input.breathingColor.g*mod/255),
+      (uint8_t)(input.breathingColor.b*mod/255)
     };
 
     return s;
@@ -106,7 +106,7 @@ main(int argc, char *argv[]) {
 
     int currentTime = 0;
     State previousState;
-    Input in = { currentTime, 2100, { 255, 255, 0 } };
+    Input in = { currentTime, 2100, { 255, 255, 255 } };
 #ifdef HAVE_JSON11
     printf("%s", in.to_json().dump().c_str());
 #endif
