@@ -77,7 +77,8 @@ nextState(const Input &input, const State& previous) {
     State s = previous;
 
     for (int i=0; i<NUMBER_OF_LEDS; i++) {
-        const long mod = (pos*255) / input.timeMs;
+        const long time = (input.timeMs) ? input.timeMs : 1; // prevent division by zero
+        const long mod = (pos*255) / time;
         s.ledColors[i] = {
           (uint8_t)(input.color.r*mod/255),
           (uint8_t)(input.color.g*mod/255),
