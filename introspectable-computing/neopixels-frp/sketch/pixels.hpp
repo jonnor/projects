@@ -14,8 +14,6 @@
 #include <json11.cpp>
 #endif
 
-static const int NUMBER_OF_LEDS = 4;
-
 struct RgbColor {
     uint8_t r;
     uint8_t g;
@@ -33,7 +31,6 @@ struct RgbColor {
 };
 
 // Anything that may influence the system (cause state to change)
-// Since this is a non-interactive animation, only time
 struct Input {
     long timeMs;
     int periodMs;
@@ -52,19 +49,11 @@ struct Input {
 
 // State of system
 struct State {
-    RgbColor ledColors[NUMBER_OF_LEDS];
-};
-
-// Configuration of system
-struct LedConfig {
-  int pinR = 6;
-  int pinG = 3;
-  int pinB = 5;
+    RgbColor ledColor;
 };
 
 struct Config {
-    int ledNumber = NUMBER_OF_LEDS;
-    LedConfig leds[NUMBER_OF_LEDS];
+    bool _;
 };
 
 
@@ -75,16 +64,14 @@ nextState(const Input &input, const State& previous) {
     const long pos = input.timeMs % period;
     
     State s = previous;
-
-    for (int i=0; i<NUMBER_OF_LEDS; i++) {
-        const long time = (input.timeMs) ? input.timeMs : 1; // prevent division by zero
-        const long mod = (pos*255) / time;
-        s.ledColors[i] = {
-          (uint8_t)(input.color.r*mod/255),
-          (uint8_t)(input.color.g*mod/255),
-          (uint8_t)(input.color.b*mod/255)
-        };
-    }
+    
+    const long time = (input.timeMs) ? input.timeMs : 1; // prevent division by zero
+    const long mod = (pos*255) / time;
+    s.ledColor = {
+      (uint8_t)(input.color.r*mod/255),
+      (uint8_t)(input.color.g*mod/255),
+      (uint8_t)(input.color.b*mod/255)
+    };
 
     return s;
 }
@@ -103,11 +90,7 @@ bool
 realizeState(const State& state, const Config &config) {
     // TODO: implement for hardware
     // TODO: implement via MsgFlo, sending MQTT message to HW-unit
-    printf("|%s", "");
-    for (int i=0; i<config.ledNumber; i++) {
-        colorRenderTerminal(state.ledColors[i], "("+std::to_string(i)+")");
-    }
-    printf("%s|\n", "");
+    colorRenderTerminal(state.ledColor, "(#####)\n");
     return true;
 }
 
