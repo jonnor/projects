@@ -4,10 +4,11 @@
 An octagonal display case, designed for mounting around a column -
 especially the huge Norway spruce that holds the roof of [MIT Fablab Norway](http://www.fablab.no/).
 
-![Render of design](./img/displaycase-render.png)
+![Displaycase mounted and in use at Lyngen fablab](./img/lyngen-assembled-1.jpg)
 
 Concept by Haakon Karlsen, modelling & fabricated by [Jon Nordby](http://jonnor.com), with help from [Jens Dyvik](http://dyvikdesign.com).
 First version made in Lyngen, after Nordic Fablab basecamp, January 2016.
+In March [Siemen Cuypers](http://www.siemencuypers.com/) adapted, CNC-milled and outfitted each of the columns of the fablab.
 
 ## Materials
 
@@ -17,6 +18,8 @@ By changing the parameters in the source files, can adapt to approx 5-8 mm.
 Glass instead of acrylic can be used for the front, and vertical panels could be wood (plywood or MDF) instead of acrylic.
 
 ## Sources
+
+![Render of design](./img/displaycase-render.png)
 
 DXF parts are made for a circular central column between 800-1000 mm circumference.
 Adapt the parameters in the design for different sizes.
@@ -52,6 +55,11 @@ To be able to slide the front window out, the top plate groves should be cut all
 * Attach bottom plate to brackets using screws, or use three-four wedges to prevent sideways motion.
 * (optional) Use 2 brackets to fasten top plate to column, or add two wedges to prevent sideways motion.
 
+## Pictures
+
+![Objects on top of shelf](./img/lyngen-topshelf.jpg)
+
+![In use](./img/lyngen-assembled-2.jpg)
 
 # QR description tags
 
