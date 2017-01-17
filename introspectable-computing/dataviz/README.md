@@ -161,6 +161,11 @@ Related
 * Brett Victor "Seeing Spaces"
 * Idea of first building a toolkit for the problem domain, that allows to experiment in that domain. Alan Kay?
 
+References
+
+* [On the industrial adoptiation of model driven engineering](http://www.uajournals.com/ijisebc/journal/1/4.pdf).
+Thourough analysis of current state of model-driven software engineering, including benefits, inhibitors.
+
 ### Prerequisites
 
 Need a way to observe a programs effects on its environment, and.
