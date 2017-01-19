@@ -41,6 +41,22 @@ Implementation
 * Multiplex/charlieplex the LED channels. 7 pins?
 * Use the timed-discharge trick for capacitive sensing. 4 pins?
 
+### TODO
+
+Make v0 hardware.
+* Just hand-solder a stripboard.
+* Use single-channel LED.
+* Can use aluminum foil instead of copper.
+* Use cardboard instead of 3d-print.
+* Tape the shit together.
+
+Make v0 software
+* Split `msgflo-arduino` out of `bitraf-iot`
+* Setup on ESP8266
+* On/off cap sensing
+* On/off LED support
+
+
 ## 433 gateway
 
 Bridges to 433Mhz devices.
