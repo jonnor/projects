@@ -166,6 +166,35 @@ References
 * [On the industrial adoptiation of model driven engineering](http://www.uajournals.com/ijisebc/journal/1/4.pdf).
 Thourough analysis of current state of model-driven software engineering, including benefits, inhibitors.
 
+> Hypothesis: [discrete-event] Simulations can be used within a specification-based testing regime to help
+developers of distributed systems define and apply effective system-level test suites.
+[Simulation-Based Test Adequacy Criteria for Distributed Systems](http://mjrutherford.org/files/RutherfordCarzanigaWolfFSE06.pdf)
+
+> Simulations are used to understand and evaluate the functionality and performance
+> of complex inter-component protocols and algorithms.
+> They abstract away low-level details of the implementation of a dis-tributed system,
+> as well as details of the operational environment, yet still provide a faithful model of the
+> expected behavior of the system in its environment.
+> ...
+> Simulations embody abstractions for the underlying mechanisms and environmental conditions
+> that affect the distribution properties of systems.
+> In addition to operating on the normal functional inputs of a system, simulations are parameterized
+> by a set of inputs for controlling a wide range of environmental phenomena,
+> such as message sequences, delays, and bandwidths.
+> ...
+> In summary, a simulation is an abstract, executable specification of a distributed system,
+> where the specification language happens to be a programming language.
+
+> We are interested in the relationship of simulation-code coverage to measures of
+> effectiveness in causing fault-revealing implementation failures.
+> We argue that a test suite with a higher level of simulation-code coverage,
+> under a valid adequacy criterion, will have a greater effectiveness
+> at causing such failures in the implementation.
+> ...
+> Moreover, we are able to show that we can successfully establish an effectiveness ranking
+> among adequate test suites, as well as among the adequacy criteria themselves.
+
+
 ### Prerequisites
 
 Need a way to observe a programs effects on its environment, and.
