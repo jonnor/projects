@@ -120,37 +120,33 @@ Additional ideas
 * Using a "sized" 
 
 
+# Implementaition ideas
 
+```
+Classifier
+  Given a value, return true if value belongs in a class, else false
+  Use a set of such classifiers to determine class(es) of value
+  alternative, given a value, return names of classes the value belongs to
 
-# 
-
-Classifier: Given a value, return true if value belongs in a class, else false
-Use a set of such classifiers to determine class(es) of value
-alternative, given a value, return names of classes the value belongs to
-
-Generator: For a given class, generate values that belong in this class
-Should have ways of guiding order of generation? Resume from particular point, do each side of
+Generator
+  For a given class, generate values that belong in this class
+  Should have ways of guiding order of generation? Resume from particular point, do each side of
 
 Each Generator should have a corresponding Classifier. 
 
-PropertyChecker: Can execute unit-under-test and verify a certain Property
-It is given the input values, and the output values.
+PropertyChecker
+  Can execute unit-under-test and verify a certain Property
+  It is given the input values, and the output values.
 
-Property. A general rule 
-
-each property has an associated PropertyChecker, which can execute unit-under-test and.
-It is given the input values, and the output values.
-
-each property has an associated domain. The domain is expressed
-
-
-Do we need/want to parametrize generators?
-Does that imply some new subclass(es) are created?
+Property
+  Each property has PropertyChecker and associated input domain.
+  The input domain is expressed as a class name, and the associated Generator used to create input values
+  The output domain is declared as a class name, and output values are checked using the associated Classifier 
+```
 
 Output (equivalence) paritions.
 Two output values can be considered part of the same equivalence partition if
 they have the same classes (as returned by classifiers) 
-
 
 Test adequacy:
 (of testcases). Output from each partition has been produced.
@@ -164,25 +160,26 @@ Sub-classifications may assist this?
 Both for inputs, and for outputs?
 
 Can create a Generator using a set of sub-class generators, and picking between them?
-First one-of-each, then random selection 
+First one-of-each, then random selection inside each afterwards.
 
 Errors as a class? Like everything else can be subclassified
 
+Do we need/want to parametrize generators?
+Does that imply some new subclass(es) are created?
 
-Internal system properties
+## Internal system properties
 
-Generator-Classifier correspondence.
+### Generator-Classifier correspondence.
 Each value produced by a Generator for class `C` shall be classified as `C` by the classifier 
 
-Classification subsets. 
+### Classification subsets. 
 If "mysub" is a subset of "my"
 each value generated of class "mysub" is classified as "my"
 some but not all, values generated in class "my" is classified as "mysub"
 
 Example: "positive integer" is a subset of "integer", is a subset of (real) "number"
 
-
-Examples
+## Examples
 
 Multiplication. Inputs: A, B. Outputs: M
 

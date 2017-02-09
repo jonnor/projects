@@ -165,11 +165,13 @@ References
 
 * [On the industrial adoptiation of model driven engineering](http://www.uajournals.com/ijisebc/journal/1/4.pdf).
 Thourough analysis of current state of model-driven software engineering, including benefits, inhibitors.
+* [](https://www.cs.cmu.edu/~music/cmsip/readings/intro-discrete-event-sim.html)
+
+[Simulation-Based Test Adequacy Criteria for Distributed Systems](http://mjrutherford.org/files/RutherfordCarzanigaWolfFSE06.pdf)
 
 > Hypothesis: [discrete-event] Simulations can be used within a specification-based testing regime to help
 developers of distributed systems define and apply effective system-level test suites.
-[Simulation-Based Test Adequacy Criteria for Distributed Systems](http://mjrutherford.org/files/RutherfordCarzanigaWolfFSE06.pdf)
-
+> ...
 > Simulations are used to understand and evaluate the functionality and performance
 > of complex inter-component protocols and algorithms.
 > They abstract away low-level details of the implementation of a dis-tributed system,
@@ -184,7 +186,7 @@ developers of distributed systems define and apply effective system-level test s
 > ...
 > In summary, a simulation is an abstract, executable specification of a distributed system,
 > where the specification language happens to be a programming language.
-
+> ..
 > We are interested in the relationship of simulation-code coverage to measures of
 > effectiveness in causing fault-revealing implementation failures.
 > We argue that a test suite with a higher level of simulation-code coverage,
