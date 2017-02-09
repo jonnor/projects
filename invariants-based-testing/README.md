@@ -4,7 +4,34 @@ we can more exaustively test a system compared to example-based (unit-testing et
 
 # Property-based testing
 
-References
+Modern implementations
+
+* [Theft](https://github.com/silentbicycle/theft), property-based-testing for C
+* [quickcheck in Racket](https://docs.racket-lang.org/quickcheck/index.html)
+* [quickcheck for Rust](https://github.com/BurntSushi/quickcheck)
+* [Property-based testing in ScalaTest](http://www.scalatest.org/user_guide/property_based_testing)
+* [JsVerify](http://jsverify.github.io/)
+* [Property-based testing without framework in CoffeeScript](https://graeme-lockley.github.io/posts/20160201-coffeescript_string_calculator_with_predicate_tests/)
+* [quick_check.js](https://github.com/gampleman/quick_check.js/), includes lots of combinators
+
+> Many partial and fragmentary open-source tools claim to be "quickcheck clones" but they lack two really important parts: search-space optimization and failure minimization
+http://thinkrelevance.com/blog/2013/11/26/better-than-unit-tests
+
+Generators
+
+* [popcorn](https://github.com/asmyczek/popcorn), a JSON generator/fuzzer
+* [json-schema-faker](https://github.com/json-schema-faker/json-schema-faker), generate JSON from a JSON Schema.
+Also has some inference for the schemas itself (like type).
+* [generate-schema](https://github.com/nijikokun/generate-schema) can infer a schema from example data.
+
+Additional ideas
+
+* [gencheck](https://hackage.haskell.org/package/gencheck) (Haskell), allows selection strategies and composing generators.
+* JSCheck uses "claim" instead of "property", to avoid the existing definition of "property" in languages like JavaScript.
+
+## References
+
+### QuickCheck
 
 [QuickCheck](http://www.cse.chalmers.se/~rjmh/QuickCheck/). The original project, in and for Haskell.
 [paper](http://www.cs.tufts.edu/~nr/cs257/archive/john-hughes/quick.pdf).
@@ -28,6 +55,8 @@ was able to check more things than with a formal theorem prover (because they on
 > (with exceptions for loops) be followed in at least one test.
 > A wide variety of adequacy critera have been proposed; a recent survey is [19].
 > We have chosen not to base QuickCheck on such an adequacy criterion..
+
+### Test Adequacy
 
 > [19]: http://www.cs.toronto.edu/~chechik/courses07/csc410/p366-zhu.pdf
 > Line, Statement, Branch, Path, Mutation (score)
@@ -55,7 +84,6 @@ Requires some notion of the shape, size and partitions of the value domains?
 In FBP, the connections activated by executing a graph with particular inputs can classify.
 However not so easy to find via analysis. Would need to use symbolic execution in the components used
 
- 
 > https://www.st.cs.uni-saarland.de/edu/automatedtestingverification12/slides/02-AdequacyCategoryPartition.pdf
 > Why not Random [input selection]?
 > Non-uniform fault distribution
@@ -89,38 +117,13 @@ Simple example: Erronous value needs only be excercised in one case? (assumes in
 > the number of test cases
 
 
+## Question
+
 If we have specifications which associate classified/partitioned input with partitioned/classified outputs,
 this is an implicit definition about the (inherent) structure of the program?
 
 
-Modern implementations
-
-* [Theft](https://github.com/silentbicycle/theft), property-based-testing for C
-* [quickcheck in Racket](https://docs.racket-lang.org/quickcheck/index.html)
-* [quickcheck for Rust](https://github.com/BurntSushi/quickcheck)
-* [Property-based testing in ScalaTest](http://www.scalatest.org/user_guide/property_based_testing)
-* [JsVerify](http://jsverify.github.io/)
-* [Property-based testing without framework in CoffeeScript](https://graeme-lockley.github.io/posts/20160201-coffeescript_string_calculator_with_predicate_tests/)
-* [quick_check.js](https://github.com/gampleman/quick_check.js/), includes lots of combinators
-
-> Many partial and fragmentary open-source tools claim to be "quickcheck clones" but they lack two really important parts: search-space optimization and failure minimization
-http://thinkrelevance.com/blog/2013/11/26/better-than-unit-tests
-
-Generators
-
-* [popcorn](https://github.com/asmyczek/popcorn), a JSON generator/fuzzer
-* [json-schema-faker](https://github.com/json-schema-faker/json-schema-faker), generate JSON from a JSON Schema.
-Also has some inference for the schemas itself (like type).
-* [generate-schema](https://github.com/nijikokun/generate-schema) can infer a schema from example data.
-
-Additional ideas
-
-* [gencheck](https://hackage.haskell.org/package/gencheck) (Haskell), allows selection strategies and composing generators.
-* JSCheck uses "claim" instead of "property", to avoid the existing definition of "property" in languages like JavaScript.
-* Using a "sized" 
-
-
-# Implementaition ideas
+## Implementaition ideas
 
 ```
 Classifier
