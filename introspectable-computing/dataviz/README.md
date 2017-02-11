@@ -196,11 +196,26 @@ developers of distributed systems define and apply effective system-level test s
 > Moreover, we are able to show that we can successfully establish an effectiveness ranking
 > among adequate test suites, as well as among the adequacy criteria themselves.
 
+[Alloy](http://alloy.mit.edu/alloy) is a model checker. Its syntax maps very closely to Object-Oriented Programming,
+and seems a very practically and pragmatic tool.
+D.Jackson argues for such "lightweight methods" in [Dependable Software by Design](https://pdfs.semanticscholar.org/fb88/0db022e60ae3bfc07636b356dccf4b1d7853.pdf), especially in using it to verify *design* of a system.
+
+> First, regarding checking versus proof. Alloy is indeed a model finder and not a prover, so it cannot prove theorems without additional help (eg, a small model theorem). 
+[Lambda the Ultimate: Alloy the book](http://lambda-the-ultimate.org/node/1555).
+
+It argues that (small scope hypothesis):
+> a high proportion of bugs can be found by testing a program for all test inputs within some small scope
+
+[On the Small-Scope Hypothesis for Testing Answer-Set Programming](https://publik.tuwien.ac.at/files/PubDat_211480.pdf)
+and [Evaluating the Small Scope Hypothesis, Andoni, 2002](http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.63.9997) (PostScript only).
 
 http://alloy.mit.edu/alloy/tutorials/online/sidenote-operational-declarative.html
 > Roughly speaking, there are two ways to describe a system: operationally (also called "imperative") and declaratively.
 > An operational modeller asks "how would I make X happen?".
 > A declarative modeller asks "how would I recognize that X has happened?". 
+
+[An Approach for Embedded Software Generation Based in Declarative Alloy Models](http://www.lume.ufrgs.br/bitstream/handle/10183/22812/000740300.pdf). Models are developed in Alloy, and then Java is generated, and JVM bytecode runs on the embedded target.
+A model+generation pattern is implemented for finite state machines.
 
 
 ### Prerequisites
