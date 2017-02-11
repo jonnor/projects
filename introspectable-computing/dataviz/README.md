@@ -197,6 +197,12 @@ developers of distributed systems define and apply effective system-level test s
 > among adequate test suites, as well as among the adequacy criteria themselves.
 
 
+http://alloy.mit.edu/alloy/tutorials/online/sidenote-operational-declarative.html
+> Roughly speaking, there are two ways to describe a system: operationally (also called "imperative") and declaratively.
+> An operational modeller asks "how would I make X happen?".
+> A declarative modeller asks "how would I recognize that X has happened?". 
+
+
 ### Prerequisites
 
 Need a way to observe a programs effects on its environment, and.
