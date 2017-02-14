@@ -26,6 +26,7 @@ But still has one 686 mm bearing (for extruder idler) and uses 2x threaded rods 
 ## Not reproducable, specialized
 
 * Hotend. Consists of several pieces, usually machined of metal on a lathe.
+[Ubis/PrintrBot hotend CNCed](https://www.youtube.com/watch?v=U-m8Jrj5zDA)
 * Extruder drive gear
 * Motor controller electronics
 

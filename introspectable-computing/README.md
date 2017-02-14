@@ -107,3 +107,9 @@ Model-based development
 
 - [ImProve](https://github.com/tomahawkins/improve/wiki/ImProve), Haskell based DSL for high-assurance embedded applications, verified using SMT model checking.
 Compiles to C/Ada/Modelica (and Simulink).
+
+AST-based tools
+
+- [OilShell: From AST to Lossless Syntax Tree](http://www.oilshell.org/blog/2017/02/11.html).
+Offering two-way translation between source code, and parsed syntax tree.
+[HN discussion](https://news.ycombinator.com/item?id=13628412)
