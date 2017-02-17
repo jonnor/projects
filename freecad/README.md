@@ -254,8 +254,17 @@ Ideally should be able to select an edge loop as well, and have all the corners 
 For tools / advanced models
 
 CadQuery and its FreeCAD plugin looks promising.
+
 * https://github.com/dcowden/cadquery
 * https://github.com/jmwright/cadquery-freecad-module
+
+## Learning material
+
+By others
+
+* 1 - Basic - Design a Knob - https://vimeo.com/158161787
+* 2 - intermediate - Design a Box - https://vimeo.com/158928871
+* 3 - Advanced - Design a Ketchup Bottle - https://vimeo.com/203816107
 
 
 ## Learned
