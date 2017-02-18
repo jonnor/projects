@@ -15,13 +15,13 @@ Large scale production needed to justify investment
 * Lower costs drastically
 * Reduced longevity compared to commercial scale
 * Reduced production speed compared to commercial scale
-* Share facilities. Like, or in a, makerspace
+* Share facilities. Like a makerspace, or in a makerspace.
 
 Often need just a few bits produced
 * Sell surplus in shared facilities
 * Focus on things that *are* generally needed.
 Life consumables. Food,water,clothing,soap.
-Materials. Plastic,wood,
+Materials. Plastic,wood,metals
 
 Specialized skills / training needed for operations.
 * Very high degree of automation.
@@ -29,9 +29,29 @@ Specialized skills / training needed for operations.
 * Shared facilities as scaleable learning
 * Online community, world-scale
 
-## 
+## Reconfigurability
 
+Instead of building entirely purpose-built systems, it makes sense to see a particular system
+as a particular configuration of re-usable modules.
 
+[Reconfigurable Manufacturing System](https://en.wikipedia.org/wiki/Reconfigurable_Manufacturing_System)
+"The components of RMS are:
+CNC machines, Reconfigurable Machine Tools, Reconfigurable Inspection Machines and material transport systems".
+
+"Ideal Reconfigurable Manufacturing Systems possess six core characteristics:
+Modularity, Integrability, Customized flexibility, Scalability, Convertibility, and Diagnosability"
+
+## Submodules
+
+* 3-axis CNC-machining. Router/mill. Vertical,horizontal
+* 3d-printing. Plastics. Reprap project.
+* Robotic arm.
+
+## Module coordination
+
+* Conveyers. Belts,rollers,wheels,shaking
+* Selecting and diverting. Quality,re-processing,sampling
+* Part registration
 
 ## Cases
 
