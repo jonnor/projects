@@ -118,6 +118,65 @@ Can the flexibility of a woven cloth be used to shape, then affix the shape usin
 It usually has mild heat-shrinking capability.
 Can the filament be used instead of wire 
 
+### Hotend for flat filament
+
+![CAD model](./doc/flatfilament-hotend-concept.png) |
+[FreeCAD source](./flatfilament-hotend.fcstd)
+
+Designed to be machined on a 3-axis CNC-mill, from top side only, using 3mm+ endmill.
+Two mirrored sides which are then sandwhiched together using screws.
+The central liner is slightly thicker (0.6mm) than its pockets, so that it mates first when tightening the screws.
+This will hopefully avoid plastic seeping out along the seamline...
+A side-effect of the sandwitched design is that the entire thing can be opened up, for instance to do maintenance after a clog.
+
+* Hotend and cold-end (heatsink) in 10mm aluminium.
+* Inner liner in PTFE or steel (3mm).
+* Using standard 6mm OD heater cartridge, thermocouple and M6 nozzle.
+* Mounting holes for 40 mm fan. Also acts as mount onto machine.
+
+This design could likely be adapted for a standard circular 1.75mm filament.
+Would use a 4mm OD, 2mm ID tube as the liner, and a 4mm ballnose to make the pocket.
+This could either be PTFE or stainless steel.
+A supporting disc between hotend and heatsink would likely be needed for strength.
+
+As the tolerances needed are relatively loose, it is possible that the aluminum pieces could be cast without CNC-finishing.
+
+### Extruder for flat filament
+
+![Conceptual CAD model](./doc/flatfilament-extruder-concept.png)
+| [FreeCAD source](./flatfilament-extruder.fcstd)
+
+* Using a rubber O-ring as drive, against metal bearing idlers
+* Bearings are standard 608
+
+The O-ring would be tensioned hard enough to compress slightly, hopefully ensuring sufficient friction for reliable drive.
+
+For abrasion protection, likely some surfaces would be covered by thin aluminum (from beverage can or similar).
+
+## Converting flat sheets
+
+For creating flat filament out of a standard 1mm plastic sheet.
+
+![Conceptual CAD model](./doc/flatfilament-sheetstripper-concept.png)
+| [FreeCAD source](./flatfilament-sheetstripper.fcstd)
+
+Space for a sheet around 2000x1000. At 1mm, this is approx 2000cm3 or 2 kg of plastic.
+PETG, ABS, HIPS, HDPE, PolyPropylene and PolyCarbonate are all easily and cheapely available in such sizes. 
+
+This sheet-cutting machine would be slaved to the extruder motion.
+For instance by an optical tracker which detects and controls motion such that there is no gap between the
+filament piece being pulled by the extruder, and the piece currently being produced.
+Can possibly be done with just a slotted optical sensor, and binary logic:
+When light shines through, run the machine. While no light, don't run.
+
+A challenge is retracts. A buffer-zone which allows filament strip to bend up along a longer path than straight ahead.
+
+Another is challenge transportation between strip-maker and extruder.
+Because of the discontinuities some Bowden-like support is needed along the path, however a circular cable does not fit.
+Possibly a closed U-profile made from a sandwich of several layers of similar thin sheets can be used.
+If the layers can move with respect to eachother, flexibility should be OK.
+Reducing the surface area by making them perforated may reduce friction. 
+
 ## Plastic/composite sheets
 
 See [fabricatable-machines/sheet-maker](https://github.com/fellesverkstedet/fabricatable-machines/tree/master/sheet-maker)
