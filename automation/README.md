@@ -63,7 +63,7 @@ But what if we can slice the bottle(s) into a long strip, and then feed this dir
 
 ### Existing manual tools
 
-![Manually cutting a continouos strip from a bottle](doc/plastic-bottle-rope.png)
+![Manually cutting a continouos strip from a bottle](./doc/plastic-bottle-rope.png)
 
 There exist many DIY (manual) tools for making this easy, usually based on standard utility knife blades.
 After cutting off the base of the bottle, and making a small cut for entering, feed the bottle into knife slot.
@@ -157,6 +157,9 @@ For creating flat filament out of a standard 1mm plastic sheet.
 ![Conceptual CAD model](./doc/flatfilament-sheetstripper-concept.png)
 | [FreeCAD source](./flatfilament-sheetstripper.fcstd)
 
+A utility-blad knife is at the bottom, spaced at desired strip thickness.
+The entire sheet of material rotates into this knife.
+
 Space for a sheet around 2000x1000. At 1mm, this is approx 2000cm3 or 2 kg of plastic.
 PETG, ABS, HIPS, HDPE, PolyPropylene and PolyCarbonate are all easily and cheapely available in such sizes. 
 
@@ -166,7 +169,8 @@ filament piece being pulled by the extruder, and the piece currently being produ
 Can possibly be done with just a slotted optical sensor, and binary logic:
 When light shines through, run the machine. While no light, don't run.
 
-A challenge is retracts. A buffer-zone which allows filament strip to bend up along a longer path than straight ahead.
+A challenge is retracts.
+A buffer-zone which allows filament strip to bend up along a longer path than straight ahead?
 
 Another is challenge transportation between strip-maker and extruder.
 Because of the discontinuities some Bowden-like support is needed along the path, however a circular cable does not fit.
@@ -177,12 +181,11 @@ Reducing the surface area by making them perforated may reduce friction.
 ### Related ideas
 
 The filament is also useful to use as a material with other processes.
-It can be woven.
-Can it be braided?
-Perhaps it can be woven/cross-laminated, and then heat-pressed into sheets?
-Then again, could just cut along middle and flatten it directly!
+It can be woven. Can it be braided to form thicker rope?
+
 Can the flexibility of a woven cloth be used to shape, then affix the shape using heat?
 It usually has mild heat-shrinking capability.
+
 Can very thin filament be used instead of wire for wire-driven stepper motion? 
 
 ## Plastic/composite sheets
