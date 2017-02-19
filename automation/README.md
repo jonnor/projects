@@ -82,6 +82,18 @@ It seems the PET moving through is abrasive, so some metal parts are needed to p
 Must ensure that there is something forcing, so strips don't get thinner than desired. For instance by a slight press on top of bottle
 Would heating up the blade be of any benefit? 
 
+### Bottle recyling
+
+Assuming a 0.5 liter bottle. With average radius=60mm, and 160 mm usable height.
+Lateral surface area of 60318 mm2. Around 6000mm = 6 meters of 9mm strip.
+
+Assuming 200 mm/second pulling speed, around 30 seconds per bottle.
+With 10 seconds switchover between bottles, can make 1 kg filament of 100 bottles in around 1 hour.
+((30+10)*100)/(60*60).
+
+How much plastic is in one plastic bottle? A 0.5 liter bottle is around 10 grams.
+In Norway, each bottle can be recycled for 1 krone, giving a 100 kr/kg. price. 3d-printer filament is around 250 kr/kg.
+
 ### Using flat filament for 3d-printing
 
 May requires custom extruder, and possibly custom hotend.
@@ -102,18 +114,6 @@ Can the hotend be more efficient, due to higher 2-3x higher ratio of surface are
 A challenge is that filament is usually continious, and 1 bottle will not print a whole part.
 Either one can try to join the filament, probably by fusing it.
 Or possibly one could design an extruder which can feed multiple independent strands of filament coming after eachother?
-
-### Bottle recyling
-
-Assuming a 0.5 liter bottle. With average radius=60mm, and 160 mm usable height.
-Lateral surface area of 60318 mm2. Around 6000mm = 6 meters of 9mm strip.
-
-Assuming 200 mm/second pulling speed, around 30 seconds per bottle.
-With 10 seconds switchover between bottles, can make 1 kg filament of 100 bottles in around 1 hour.
-((30+10)*100)/(60*60).
-
-How much plastic is in one plastic bottle? A 0.5 liter bottle is around 10 grams.
-In Norway, each bottle can be recycled for 1 krone, giving a 100 kr/kg. price. 3d-printer filament is around 250 kr/kg.
 
 ### Hotend for flat filament
 
