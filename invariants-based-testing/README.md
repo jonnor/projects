@@ -10,7 +10,9 @@ Modern implementations
 * [quickcheck in Racket](https://docs.racket-lang.org/quickcheck/index.html)
 * [quickcheck for Rust](https://github.com/BurntSushi/quickcheck)
 * [Property-based testing in ScalaTest](http://www.scalatest.org/user_guide/property_based_testing)
-* [JsVerify](http://jsverify.github.io/)
+* [Hypothesis](https://hypothesis.readthedocs.io/en/latest/data.html), property-based testing for Python.
+Uses decorators, well-developed library of strategies for generating values.
+* [JsVerify](http://jsverify.github.io/). Supports minimization of cases
 * [Property-based testing without framework in CoffeeScript](https://graeme-lockley.github.io/posts/20160201-coffeescript_string_calculator_with_predicate_tests/)
 * [quick_check.js](https://github.com/gampleman/quick_check.js/), includes lots of combinators
 
@@ -197,4 +199,20 @@ A * <-1     <-A
 
 ... and the same holds for B
 
+
+## Related
+
+### Program synthesis
+
+> By working in a series of steps where after each step the
+> result is a program that is correct for a subset of the input space,
+> our system is able to more effectively narrow down the search space than prior work.
+
+[Test-Driven Synthesis](http://homes.cs.washington.edu/~djg/papers/tds-pldi2014.pdf)
+
+Uses component-based synthesis
+
+> In component-based synthesis, a set of components  (expressions  and  methods) are  provided  as  inpu
+> and iteratively combined to produce expressions in order of increasing size
+> until an expression is generated that matches the specification.
 
