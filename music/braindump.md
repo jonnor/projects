@@ -4,16 +4,57 @@
 Dark electronic
 
 EBM. Aggrotech. Industrial.
-Darkwave. Newwave. 
 
-Dark rock/metal
+Grendel - Hate this. Synth in chorus to intensify.
+Agonoize - Glaubenskrieger. Slooow hard beat. Anti-religious (holywar) lyrics.
+Asphyxia - Digital War / Sense Of Decay. Haunting piano motif going into harsh electro.
+Suicide Commando - God is in the rain. Semi-distorted vocoder lyrics. "if god is in the rain, please let it down on me"
+God Module - False Pretense. Trance-like synth lead.
+
+Futurepop
+
+Covenant - Tears in the Rain. Lyrics+vocals, describing another world, its essence. Contrasted with personal experience.
+A million burning books... A thousand generations... A second of reflection...  A fraction of a heartbeat...
+Covenant - Call our Ships to Port. Lyrics, describing eternal sameness.
+VNV Nation - Control. Vocal+lyrics driven, simplistic backing music.
+The Birthday Massacre - Superstition. Switching between synth,guitar,beat,vocal driven very fluently.
+VNV Nation - Beloved. Looooong buildup of the synth melody. "Eternity awaits".
+
+Darkwave. Newwave.
+
+Wolfsheim - The Sparrows And The Nightingales. Arythmic repeating voice samples. 
+Deine Lakaien - Reincarnation. Question+answer/repeat vocals.
+Diary of Dreams - Traumtaenzer. Somehow managing to make slow ballads dark...
+
+Other dark electro
+
+Dear Strange - The Unicorn. Indrawn breath samples. Deep but shrill voice.
+
+Dark/progressive rock/metal
+
+Riverside - After. Wispering speaking intro. Chanting lead, chanting backing vocals.
+Riverside - I believe. Intro with ambient restaurant/cafe, people talking. 
+Katatonia - Evidence, Omerta. Lyrics, first-person narrative, personal,concrete thing somewhere otherwordly 
+
+Threshold - The Ravages Of Time. Lyrics, how the world revolves in circles.
+then there was a city then a pile of rocks and a town again
+Sieges Even - Mounting Castles in the Blood Red Sky. Samples of Martin Luther King "I have a dream".
+Sieges Even - Paramount. JFK samples, announcing the space program
 
 Dark Ambient.
 Drone. 
 
 Book of Eli OST.
 Epic distorted trumped-like things (Panoramic, Amen). Rusty metallic percussion. Arabic like chants.
+Fever Ray 'If I Had A Heart'. Whispered/chanted/faint vocals. Matching backing but with slight variations.
+
 Lunatic Soul
+
+Neofolk. Neopagan.
+
+Ordo rosarius equilibrio - From copenhagen with love. Storytelling vocals, supported by by piano/violi/drums.
+
+
 
 ## Learning
 
