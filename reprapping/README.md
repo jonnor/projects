@@ -191,11 +191,13 @@ Work by others
 
 * [3d-printed bushing](http://www.thingiverse.com/thing:1196801), replaces speciality linear bearings
 * [3d-printed beam surface](http://www.thingiverse.com/thing:9080/#comments)
+* [Bushing using PTFE inserts](http://www.thingiverse.com/thing:1673678). Can glide on alu or coated carbon rods.
 
 # Interesting designs
 
 * [Delta-T, rail-free, wire-based delta](http://forums.reprap.org/read.php?1,525804)
 * [SkyDelta, rail-free, wire-based delta](https://groups.google.com/forum/#!topic/deltabot/Jj6vyPf7jJ8)
+* [Hangpinter: rail-free, wire-based delta-like](https://github.com/tobbelobb/hangprinter). For large-scale printing.
 * [Cantilevered CoreXY printer](https://www.youtube.com/watch?v=6EtJfaiQ9H0)
 
 # Electronic discharge machining
