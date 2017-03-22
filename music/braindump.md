@@ -29,6 +29,7 @@ Diary of Dreams - Traumtaenzer. Somehow managing to make slow ballads dark...
 Other dark electro
 
 Dear Strange - The Unicorn. Indrawn breath samples. Deep but shrill voice.
+SIRUS - Neon Dominion. Sounds dark while mostly staying away from typical genre marks? For instance the smooth kicks and straight claps.
 
 Dark/progressive rock/metal
 
@@ -89,6 +90,8 @@ where current sound is overlayed into.
 
 [Sound like Deadmau5 with LMMS](https://youtu.be/zDjkhdUPJ74?t=641).
 Shows how to do side-chain compressor thing in LMMS. Otherwise not so interesting.
+
+[Making an Industrial/Aggrotech Track - PART 1 (KICK)](https://www.youtube.com/watch?v=ZFllofHA5jM&t=797s). In FL Studio.
 
 [Making an Industrial/Aggrotech Track - PART 2 (SNARE)](https://www.youtube.com/watch?v=rraXXAV9uHM). In FL Studio.
 Using layered samples. Should be relatively long ones, as this is common in aggrotech.

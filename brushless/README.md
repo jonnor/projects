@@ -380,6 +380,7 @@ Either resistive, capacitive or inductive
 
 # References
 
+* [MakeSea: Brusless motor](https://www.makesea.com/brushless-motor), using Protopasta magnetic PLA. Through design and testing.
 * [Thingiverse: Open Motor](http://www.thingiverse.com/thing:46428)
 * [15-deg stepper motor (halfstep capable)](https://www.youtube.com/watch?v=v2FNUNALSTw)
 * [Another printed brushless](http://3dprint.com/89359/3d-print-brushless-pulse-motor)
