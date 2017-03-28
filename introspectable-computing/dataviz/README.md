@@ -217,6 +217,9 @@ http://alloy.mit.edu/alloy/tutorials/online/sidenote-operational-declarative.htm
 [An Approach for Embedded Software Generation Based in Declarative Alloy Models](http://www.lume.ufrgs.br/bitstream/handle/10183/22812/000740300.pdf). Models are developed in Alloy, and then Java is generated, and JVM bytecode runs on the embedded target.
 A model+generation pattern is implemented for finite state machines.
 
+To review
+
+* Model Building in Mathematical Programming, H. PAUL WILLIAMS
 
 ### Prerequisites
 
@@ -238,3 +241,4 @@ collect data about the real system, to validate the model with.
 ## Unrelated
 
 [Tools for Thought by Howard Rheingold](http://www.rheingold.com/texts/tft/1.html)
+
