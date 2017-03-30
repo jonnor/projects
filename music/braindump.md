@@ -26,6 +26,10 @@ Wolfsheim - The Sparrows And The Nightingales. Arythmic repeating voice samples.
 Deine Lakaien - Reincarnation. Question+answer/repeat vocals.
 Diary of Dreams - Traumtaenzer. Somehow managing to make slow ballads dark...
 
+Post-punk
+
+Sexbeat - Sexbeat. Very simple but effective lyric structure. 'some ..., some ...'
+
 Other dark electro
 
 Dear Strange - The Unicorn. Indrawn breath samples. Deep but shrill voice.
