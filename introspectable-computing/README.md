@@ -28,7 +28,7 @@ Where the entity using the introspection information is another program, instead
 # Areas of research
 
 Some of the areas I have done work in, or think could be fruitful to research.
-Most are prototyped in CoffeeScript and can be run in webbrowser + Node.js,
+Most are prototyped in JavaScript/CoffeeScript and can be run in webbrowser + Node.js,
 but often having a component of C/C++ and low-level/hardware/electronics component too it.
 
 In rough order of time spent / maturity.
@@ -42,18 +42,24 @@ In rough order of time spent / maturity.
 - Promises incl chains/composition
 - Functional programming/composition
 - [Behavioral trees](https://en.wikipedia.org/wiki/Behavior_Trees_%28artificial_intelligence,_robotics_and_control%29)
+- [Decision trees](https://en.wikipedia.org/wiki/Decision_tree)
 
 Combinations would make sense.
 
 # Applications / experiments
 
-- [guv](https://github.com/the-grid/guv)
-Automatic scaling. Focus on tools for understanding config of a dynamic system reflecting changing world conditions.
+- [dhang](https://github.com/jonnor/hangdrum).
+MIDI controller / input device. Using recorded sensor data and simulation to determine triggering logic,
+make software and hardware improvements.
+- [rebirth](https://github.com/jonnor/rebirth).
+Visual interactive sculpture. Using simulation of time-series to see animations of LED color.
 - [syncrony](https://github.com/jonnor/synchrony).
 How simulation and visual programming can help experiment in order to create interesting interactive art quicker.
 - [microfridge](https://github.com/jonnor/microfridge).
 Home electronics, control systems. Multi-level access, ending with full reprogrammability.
-- mirosumo
+- [guv](https://github.com/flowhub/guv)
+Automatic scaling of servers in cloud-environment.
+Focus on tools for understanding config of a dynamic system reflecting changing world conditions.
 
 # Interconnected ideas
 
@@ -98,6 +104,11 @@ Books
 Established ideas
 
 - [Python docstrings](https://en.wikipedia.org/wiki/Docstring), `doc()` and `help()` functions
+
+Ideas applicable to standard programming
+
+- Use a collection to define related functions, for instance implementation for each message type in a protocol. 
+Can then introspect the collection to check completeness and common properties/invariants, or generate documentation.
 
 Recent development
 
