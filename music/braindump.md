@@ -119,7 +119,47 @@ Master kick to 0db with compressor/level, then adjust others accordingly.
 Neat tricks for positioning sounds. Pan left/right with LFO, and an invert left/right effect
 causing sounds like it comes from back of headphones. 
 
+[Trap Beat Tutorial in LMMS](https://youtu.be/RX6WlfI0VYU?t=1071). Nice simple bass beat. Same tone, then a octave slide up. 
 
+[LMMS: Sweep/uplifter](https://www.youtube.com/watch?v=NecaKxuk_HE). Sweeping a white-noise source with an automation track. Using echo for smoothing transition when off.
+
+[LMMS Tutorial | How to add Sidechain Compression](https://www.youtube.com/watch?v=4e_if3-fGso).
+Using a Peak Controller on driving FX channel, and then bind it as the 'Controller' of the FX channel to drive.
+
+[How to Make Wobble Bass in LMMS](https://www.youtube.com/watch?v=2jTyKMwN60E).
+Using a LFO in the Controller Rack, connected to the Frequency of synth filter. Then using automation to change the speed of the LFO.
+
+[Mixing in LMMS 1: Gain Staging ](https://www.youtube.com/watch?v=8kdbwnay8R8).
+Set individual instruments/FX channels to a low base volume, then adjust their relative volumes with low volume.
+Then can bring the volume up to desired level with the master level, or using a maximizer.
+
+[Mixing in LMMS 2: Compression](https://www.youtube.com/watch?v=tDl7j-mKMHc).
+Making the onset of percussion very clear with a compressor with a low threshold and very high ratio (basically a limiter), with an attack (ignoring) delay. So that first onset is not limited by the compressor, but rest is.
+
+[Mixing in LMMS 3: Panning](https://www.youtube.com/watch?v=J2iWR-YOpjY).
+Basic to 'widen' the sound: Pan one instrument slight to left, and another similar instrument to the right. 
+Also using per-note panning in Pianoroll to bring different low notes to one channel, and high to the other.
+A Stereophonic Matrix to cancel out centered content in favor of things that are left/right.
+
+[Music Hacker(Advanced LMMS) - S1E4 - Filters, automation, and building up](https://youtu.be/oTzSpVBjQlo?t=142).
+Really nice supersaw sound using the Synth1 VST. Could be used for some hard/harsh electro.
+
+[LMMS tutorial: Create Chord-arpeggios In LMMS](https://www.youtube.com/watch?v=qBN6Hjom6S0).
+Using a combination of the 'Apeggio' synth option, and then drawing the chords in Pianoroll.
+Offset each notes of the chord to determine which note of the chord is triggered when.
+
+[LMMS tutorial: Slide or Glissando-chords part 1](https://www.youtube.com/watch?v=PcyMSpHyL8I).
+Using an automation on the pitch of synth to gradually go from one note to another.
+
+[How to Imitate a Whole Lot of Hollywood Film Music In Four Easy Steps](https://youtu.be/YSKAt3pmYBs?t=341).
+Major (M) has note intervals 4-3 from root, minor (m) 3-4. A chord-progression has a number of semi-tones between it, for instance `m2M`, or `M4m`. Around 10 such progressions are listed with examples.
+
+[How to Imitate Even More Closely a Whole Lot of Hollywood Film Music with One More Easy Step ](https://www.youtube.com/watch?v=W1DK4m2tuiw).
+Using chord inversions (moving the 3rd or 5th) by an octave. Shifting the root by an octave when doing the progression.
+
+[Tutorial: Advanced Sidechaining in LMMS ](https://www.youtube.com/watch?v=Il0OH4I0-LE).
+Using a dedicated synth as the sidechain driver (instead of the kick itself). Can adjust envelope separately.
+Using a CALF Sidechaining compressor as an effect on instrument, and automating the SC Level from the Peak Controller.
 
 
 ## Musical terms
