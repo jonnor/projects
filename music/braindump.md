@@ -46,6 +46,10 @@ then there was a city then a pile of rocks and a town again
 Sieges Even - Mounting Castles in the Blood Red Sky. Samples of Martin Luther King "I have a dream".
 Sieges Even - Paramount. JFK samples, announcing the space program
 
+Gothic rock
+
+Type O Negative - Love You To Death. Black No 1. Slow bassy, fuzzy, riffing.
+
 Dark Ambient.
 Drone. 
 
@@ -165,3 +169,13 @@ Using a CALF Sidechaining compressor as an effect on instrument, and automating 
 ## Musical terms
 
 Lilt. Syncopated.
+
+
+## DJing
+
+[Mixxx](http://mixxx.org) is the leading open source virtual DJ application.
+Can be used in most DJ setups (incl multi-soundcard). Beat and tonal analysis.
+
+## Analysis
+
+[aubio](https://aubio.org/). Note onset, pitch tracking, beat/tempo tracking.
