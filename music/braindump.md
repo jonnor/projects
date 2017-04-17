@@ -25,6 +25,9 @@ Darkwave. Newwave.
 Wolfsheim - The Sparrows And The Nightingales. Arythmic repeating voice samples. 
 Deine Lakaien - Reincarnation. Question+answer/repeat vocals.
 Diary of Dreams - Traumtaenzer. Somehow managing to make slow ballads dark...
+Diary of Dreams - Butterfly Dance. Minimal synth, but very driving guitar-like chords.
+Diary of Dreams - She And Her Darkness. Piano song with synth electronics layered.
+Dreamy vocals. Great use of two/three voice tracks, as well as orchestral unison.
 
 Post-punk
 
@@ -199,6 +202,48 @@ If they can remember it after two hours, then its good.
 If they can remember it the next morning, then it is a hit"
 2) imagine a pub..drunken people..singing around a piano. BADLY..
 Can you imagine them singing your chorus? If no, simplify it.
+
+[Terror EBM lead tutorial - "The Terror Swap"](https://www.youtube.com/watch?v=XnWASjepnM8).
+Synth lead starts with has notes on the downbeat, then swapping to be on the offbeat.
+Changing roughly every 1 measure. Ending the section on the downbeat normally.
+Can fill in the 'gaps' by adding notes at the root.
+These notes can be moved to follow along the chord progression (or be contra).
+
+Also taking super basic pattern of 4 notes. Duplicating and then trying to offset 
+at different locations to 'find' interesting rhythms.
+
+[Creating Audio Textures that Groove Tutorial - Breath & Decay](https://www.youtube.com/watch?v=Y3S3k4c4dHI).
+Taking a short speech sample (6). Then using distortion and a heavy multi-delay to make it a bit more musical.
+Bringing it down an octave or two too make it less speech and more abstract.
+Also using swaps of effect presets for each measure to add some more motion in the sound.
+
+[How to get harsh EBM or Industrial Vocals in FL Studio (or any DAW, really)](https://www.youtube.com/watch?v=YLlM3P5SE1g).
+Pitch Shifter - Distortion - Delay - Reverb.
+Pitch shifting by multiple. -1 semitone, -2 semitone, -3.
+The VST used can do it itself, might need multiple and mix it with other VSTs.
+Rest is pretty standard.
+
+[How to aggrotech industrial snare drum](https://www.youtube.com/watch?v=wmjCSF4zXuY).
+Use a snare sample which is a bit distorted from the start.
+Then Distortion effect. Then Reverb.
+Some comments say that using a gate to kill the Reverb at end of the snare can make it more punchy.
+Using a bitcrusher (clips and quantizes) distortion at the end.
+
+[Music Theory - Make Effective Basslines - Warbeats Tutorial](https://www.youtube.com/watch?v=MMFr2WzBKYw)
+Lead back to the beginning pattern, by 2 semitones below the root/beginning.
+Ghost note. Add a short note with lower velocity, just before moving to next note.
+Can do a fill by running up/down notes of scale at end of measure. Using an interval of 2 semitones over the root/beginning.
+Octave jump. Note start as normal, then shortly up one octave, then down again.
+
+[How To Make a classic Goa/Psy lead](https://www.youtube.com/watch?v=H1PX2gV62So).
+Sound really stands out, dynamic. Could maybe also be used in darker music.
+Using Sylenth1. Dual detuned saws, with unison. Offsetting somewhat using phase.
+Using short envelope, then extending the sound using a delay+reverb.
+Quickly modulated resonant bandpass filter, using automation create.
+
+[How To Create Psytrance Style Driving Beat And Bassline In FL Studio](https://www.youtube.com/watch?v=pP593h4DQU4).
+Using note->ghostnote (and ghost->note) on both open and closed.
+Using a subtle LFO phaser on open hithats to create a bit of motion in the sound.
 
 ## Motivation
 
