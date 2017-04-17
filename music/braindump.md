@@ -179,3 +179,30 @@ Can be used in most DJ setups (incl multi-soundcard). Beat and tonal analysis.
 ## Analysis
 
 [aubio](https://aubio.org/). Note onset, pitch tracking, beat/tempo tracking.
+
+
+# Lyrics
+
+## Ideas
+
+Fame is a #falseauthority
+Celebrity
+Kind-of a pyramid scheme.
+To become famous, support people who already are famous (making them famous)
+Narrow unrepresentative selection from groups (ex: 'actors') distorts peoples beliefs.
+"actors earn a lot of money".
+People seeking fame willing to work for not-so-much-money,
+believing it will come in the future.
+Exploited/abused
+Lottery.
+
+Cult of personality
+'famous for being famous'
+'15 minutes of fame' Warhol/Finkenstein
+Banksy: 'In the future everyone will be anonymous for fifteen minutes'
+
+
+
+
+
+
