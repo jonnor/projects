@@ -165,6 +165,45 @@ Using chord inversions (moving the 3rd or 5th) by an octave. Shifting the root b
 Using a dedicated synth as the sidechain driver (instead of the kick itself). Can adjust envelope separately.
 Using a CALF Sidechaining compressor as an effect on instrument, and automating the SC Level from the Peak Controller.
 
+[Angelspit's Patreon: Mixing Vocals](https://www.youtube.com/watch?v=HFkEA_rYaJQ).
+When trying to determine where vocals come from in the mix, and ensuring that different clips is balanced to the same place.
+Close your eyes and 'touch the person singing on the nose'.
+
+[ANGELSPIT Blipvert #1 : Writing Lyrics](https://www.youtube.com/watch?v=WYDjNKESS5A).
+
+Very standard: aaaa, abab.
+abcb. 1,2,3 does not rhyhme, 4 rhymes with 2. "works best when rhyme goes for 4,8 or 16 bars"
+
+[ANGELSPIT Blipvert #2 : Songwriting](https://www.youtube.com/watch?v=Bmkz-wIlOG8)
+"cant think of anything to go with your brilliant riff [chorus]? Take that riff and simplify it and call it a verse.
+so that the verse and the chorus riff are basically the same, but one is more simplified. Example: "
+
+[BLIPVERT: Lyric Content](https://www.youtube.com/watch?v=ClWne9Xh_i8).
+"don't write about the act, write about the mood surrounding the act"
+"write about the feeling itself, but without saying 'I feel..'"
+Kind-of a show,don't tell.
+"Remember: the best writing partner already exists, within the audiences head.
+If you describe the shadow of a monster, the audience will imagine something
+probably more horrifying than you can ever describe"
+
+"the verses are the questions. They are setting up the background story.
+Chorus is like the punchline. Its the resolutions, answers, and twists
+to all the confusion you express in the verses"
+"start the chorus with a big Major chord. This will add power.
+Especially if writing dark, angry music"
+
+"chorus lyrics are the most important part of a song.
+You need a *short, memorable hook*. I got two ultimate tests for a chorus:
+1) say the chorus twice to a friend.
+If they can remember it after two hours, then its good.
+If they can remember it the next morning, then it is a hit"
+2) imagine a pub..drunken people..singing around a piano. BADLY..
+Can you imagine them singing your chorus? If no, simplify it.
+
+## Motivation
+
+[Angelspit's Patreon: Stop Being Over Critical](https://www.youtube.com/watch?v=rIKnAMh-DT4). 3 min.
+
 
 ## Musical terms
 
@@ -202,6 +241,20 @@ Cult of personality
 Banksy: 'In the future everyone will be anonymous for fifteen minutes'
 
 
+
+
+Selling shovels at the goldrush
+Becoming rich by supplying neccesities (real or preceived) to
+people seeking to become rich (often by longshots)
+Playing people
+
+## Themes
+Manipulation of people
+Psychology, the mind. Perception
+'how we see the world'
+
+Human experience. Finding the core
+'things that stay the same'
 
 
 
