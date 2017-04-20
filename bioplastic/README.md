@@ -220,6 +220,22 @@ Will water escape into vacum pump?
 
 * [engineerguy: Plastic Injection Molding](https://www.youtube.com/watch?v=RMjtmsr3CqA). Very thorough and easy to understand.
 
+### Melting down
+
+Some melt plastic in oil. Especially plastic bags.
+
+* [Instructable: Plastic Smithing](http://www.instructables.com/id/HomemadePlastic/). Plastic bags.
+* [Youtube: HDPE](https://www.youtube.com/watch?v=vlQJDgB3Iyc). Plastic bags.
+* [Youtube: Melting plastic with oil](https://www.youtube.com/watch?v=Cfm8w0UzEX8). Melting plastic drinking straws
+
+Nice advantage is that basically any energy source can be used. Transfer of heat should be much better than with air.
+Could it make it possible to melt down plastic without shredding?
+Can the molten blob injection molded or roller-extruded without extra heating sources?
+
+### Sheet roller
+
+![Rollers for extruding into flat sheets](./img/roller-extuder-concept.png)
+
 ## References
 
 * [US Patent: Process of insoluzibiling protein fibres during manufacture](http://www.google.com/patents/US2297397).
