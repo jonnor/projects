@@ -105,6 +105,18 @@ Established ideas
 
 - [Python docstrings](https://en.wikipedia.org/wiki/Docstring), `doc()` and `help()` functions
 
+Interactive-notebook programming
+
+- Mathematica and Wolfram Alpha very established in this area.
+- Jupyter. For Python primarily, but supports wide-range of alternate 'kernels' in different languages.
+Kernel communicates with frontend over a ZeroMQ+JSON based message protocol.
+Can visualize the outputs of code blocks, using a `display` protocol.
+`interact` decorator allows to get interactive widgets for a function.
+`nbviewer` tool can render to static HTML, and a service on-demand render a notebook from URL. Output is included.
+`Bokeh` visualization embeds JavaScript, so plots can be interactive in a rendered notebook.
+Lots of uptake in data science, data journalism - focusing on reproducability and 'interactive', 'data-driven' stories.
+The interactive visualization widgets are accessible as an NPM module, [jupyter-js-widgets](https://github.com/jupyter-widgets/ipywidgets)
+
 Ideas applicable to standard programming
 
 - Use a collection to define related functions, for instance implementation for each message type in a protocol. 
