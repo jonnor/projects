@@ -117,7 +117,8 @@ Or possibly one could design an extruder which can feed multiple independent str
 
 ### Hotend for flat filament
 
-![CAD model](./doc/flatfilament-hotend-concept.png) |
+![CAD model](./doc/flatfilament-hotend-concept.png)
+
 [FreeCAD source](./flatfilament-hotend.fcstd)
 
 Designed to be machined on a 3-axis CNC-mill, from top side only, using 3mm+ endmill.
@@ -141,7 +142,8 @@ As the tolerances needed are relatively loose, it is possible that the aluminum 
 ### Extruder for flat filament
 
 ![Conceptual CAD model](./doc/flatfilament-extruder-concept.png)
-| [FreeCAD source](./flatfilament-extruder.fcstd)
+
+[FreeCAD source](./flatfilament-extruder.fcstd)
 
 * Using a rubber O-ring as drive, against metal bearing idlers
 * Bearings are standard 608
@@ -155,7 +157,8 @@ For abrasion protection, likely some surfaces would be covered by thin aluminum 
 For creating flat filament out of a standard 1mm plastic sheet.
 
 ![Conceptual CAD model](./doc/flatfilament-sheetstripper-concept.png)
-| [FreeCAD source](./flatfilament-sheetstripper.fcstd)
+
+[FreeCAD source](./flatfilament-sheetstripper.fcstd)
 
 A utility-blad knife is at the bottom, spaced at desired strip thickness.
 The entire sheet of material rotates into this knife.
