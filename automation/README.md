@@ -106,8 +106,7 @@ How wide do strips need to be to be same volume as standard circular filament?
 Wall thickness seems to be between 0.5mm to 1.5mm, with average of 0.75mm
 [1](http://www.justanswer.com/general/7qbsc-thick-wall-squeezable-pet-bottle-millimetres.html).
 
-* 1.75 mm, A=9.62 mm2, C=11mm. ~9mm wide strip, C=~20 mm (2x)
-* 2.85 mm, A=25.52 mm2 C=18mm. ~25mm wide strip, C=~52 mm (3x)
+* 2.85 mm, A=6.38 mm2 C=9mm. ~6mm wide strip, C=~14 mm (5x)
 
 Can the hotend be more efficient, due to higher 2-3x higher ratio of surface area to volume?
 
@@ -125,16 +124,18 @@ Designed to be machined on a 3-axis CNC-mill, from top side only, using 3mm+ end
 Two mirrored sides which are then sandwhiched together using screws.
 The central liner is slightly thicker (0.6mm) than its pockets, so that it mates first when tightening the screws.
 This will hopefully avoid plastic seeping out along the seamline...
-A side-effect of the sandwitched design is that the entire thing can be opened up, for instance to do maintenance after a clog.
+A side-effect of the sandwiched design is that the entire thing can be opened up, for instance to do maintenance after a clog.
 
 * Hotend and cold-end (heatsink) in 10mm aluminium.
-* Inner liner in PTFE or steel (3mm).
+* Inner liner steel or PTFE (3mm).
 * Using standard 6mm OD heater cartridge, thermocouple and M6 nozzle.
 * Mounting holes for 40 mm fan. Also acts as mount onto machine.
 
+If using a larger nozzle size (1mm+), then its realistic to mill the nozzle also. Which means that it can be one-piece with the steel liner. 
+
 This design could likely be adapted for a standard circular 1.75mm filament.
 Would use a 4mm OD, 2mm ID tube as the liner, and a 4mm ballnose to make the pocket.
-This could either be PTFE or stainless steel.
+This could either be stainless steel or PTFE.
 A supporting disc between hotend and heatsink would likely be needed for strength.
 
 As the tolerances needed are relatively loose, it is possible that the aluminum pieces could be cast without CNC-finishing.
@@ -151,6 +152,17 @@ As the tolerances needed are relatively loose, it is possible that the aluminum 
 The O-ring would be tensioned hard enough to compress slightly, hopefully ensuring sufficient friction for reliable drive.
 
 For abrasion protection, likely some surfaces would be covered by thin aluminum (from beverage can or similar).
+
+## Edge banding as material
+
+Plastic edge banding is commonly used in furniture. Local or regional supply should be OK most places in the world.
+
+Thicknesses from 1-3mm and typical widths of around 20 mm.
+ABS and PVC are common materials.
+Delivered in long strips per meter, or on rolls. A roll may be 100 meter long, 1-3 kg of plastic.
+
+* [Hranipex ABS edge banding](http://www.hranipex.co.uk/en/catalogue/abs-edges/high-gloss-90/?all=1). Mostly around 22x1mm
+* [Quasar tooling ABS edging tape](http://quasartooling.com/prod-abs-edging-tape.html)
 
 ## Converting flat sheets
 
