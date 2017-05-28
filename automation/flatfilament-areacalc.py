@@ -9,5 +9,5 @@ thickness=1
 W=A/thickness
 Cr=(thickness*2)+W+W
 print("W=%f, Cr=%f" % (W, Cr))
-ratio=Cr/D
+ratio=Cr/C
 print("ratio=%f" % ratio)

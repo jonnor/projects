@@ -103,12 +103,15 @@ Because the width of the strip can be controlled well, if one can measure the th
 Assumes uniform thickness in cross-section.
 
 How wide do strips need to be to be same volume as standard circular filament?
-Wall thickness seems to be between 0.5mm to 1.5mm, with average of 0.75mm
+
+* 1.75 mm, A=2.40 mm2 C=5.5mm. ~2.4mm wide strip, C=~6.8 mm (1.25x)
+* 2.85 mm, A=6.38 mm2 C=9mm. ~6mm wide strip, C=~14 mm (1.65x)
+
+Can the hotend be more efficient, due to higher ratio of surface area to volume?
+
+
+Bottle wall thickness seems to be between 0.5mm to 1.5mm, with average of 0.75mm
 [1](http://www.justanswer.com/general/7qbsc-thick-wall-squeezable-pet-bottle-millimetres.html).
-
-* 2.85 mm, A=6.38 mm2 C=9mm. ~6mm wide strip, C=~14 mm (5x)
-
-Can the hotend be more efficient, due to higher 2-3x higher ratio of surface area to volume?
 
 A challenge is that filament is usually continious, and 1 bottle will not print a whole part.
 Either one can try to join the filament, probably by fusing it.
@@ -163,6 +166,10 @@ Delivered in long strips per meter, or on rolls. A roll may be 100 meter long, 1
 
 * [Hranipex ABS edge banding](http://www.hranipex.co.uk/en/catalogue/abs-edges/high-gloss-90/?all=1). Mostly around 22x1mm
 * [Quasar tooling ABS edging tape](http://quasartooling.com/prod-abs-edging-tape.html)
+
+A 22x1mm strip would have a crossection area of 22mm; 10x of 1.75mm and 3x+ of 2.85mm.
+
+Is 1mm to thin/flimsy to push through? Is the volume/cross-section too large to efficiently heat up? 
 
 ## Converting flat sheets
 
