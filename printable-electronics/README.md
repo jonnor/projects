@@ -220,6 +220,7 @@ Ideas for pieces
 * Keypad, resistive/press. Maybe using NinjaFlex for flexing/springing of pushbuttons
 * Keypad, capacitive/touch. Buttons can have any shape, use to illustrate function
 * Joystick 4/8-way
+* Header cable. Collecting a bunch of standard header/proto cables into one plug. Incl keys etc
 
 Shields, say for Arduino or Raspberry Pi are interesting form-factors.
 Alternatively have 100 mil header spacing, for breadboard compatibility.

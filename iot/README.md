@@ -51,7 +51,6 @@ Make v0 hardware.
 * Tape the shit together.
 
 Make v0 software
-* Split `msgflo-arduino` out of `bitraf-iot`
 * Setup on ESP8266
 * On/off cap sensing
 * On/off LED support
@@ -79,6 +78,12 @@ Features
 * PIR motion
 * Sound level
 * Ambient light
+
+## Device current sensing
+
+Allegro ACS712 is a nice fully-integrated IC based on Hall-sensor, available from many places online:
+
+* [Sparkfun](https://www.sparkfun.com/products/11005)
 
 # References
 

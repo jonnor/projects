@@ -45,9 +45,12 @@ Riverside - I believe. Intro with ambient restaurant/cafe, people talking.
 Katatonia - Evidence, Omerta. Lyrics, first-person narrative, personal,concrete thing somewhere otherwordly 
 
 Threshold - The Ravages Of Time. Lyrics, how the world revolves in circles.
-then there was a city then a pile of rocks and a town again
+"then there was a city then a pile of rocks and a town again"
 Sieges Even - Mounting Castles in the Blood Red Sky. Samples of Martin Luther King "I have a dream".
 Sieges Even - Paramount. JFK samples, announcing the space program
+
+Ayreon - Isis and Osiris. Distinct characters, one vocalist per each.
+Prototypical (fantasy) figures, presenting different viewpoints on same situation.
 
 Gothic rock
 
@@ -301,6 +304,30 @@ Psychology, the mind. Perception
 Human experience. Finding the core
 'things that stay the same'
 
+## Quotes
 
+"We don't know who struck first, us or them, but we know that it was us that scorched the sky."
+[1.](http://matrix.wikia.com/wiki/Operation_Dark_Storm)
+Morpheous, The Matrix
+
+```
+Let me tell you why you're here. You're here because you know something.
+What you know you can't explain, but you feel it.
+You've felt it your entire life, that there's something wrong with the world.
+You don't know what it is, but it's there, like a splinter in your mind, driving you mad.
+It is this feeling that has brought you to me. Do you know what I'm talking about?
+(The Matrix)
+...
+(The Matrix) is everywhere
+...
+It is the world that has been pulled over your eyes to blind you from the truth. 
+...
+(That) you are a slave, Neo.
+Like everyone else you were born into bondage.
+Into a prison that you cannot taste or see or touch.
+A prison for your mind.
+```
+[1](http://www.imdb.com/title/tt0133093/quotes?item=qt0324255)
+Morpheous, The Matrix
 
 

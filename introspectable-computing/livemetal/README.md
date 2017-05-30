@@ -17,7 +17,8 @@ over HTTP to a standard browser.
 * Partial program memory updates, like swapping out functions
 
 All of these requires a toolchain that can be embedded onto
-the microcontroller itself, possibly split over implemented in assembler
+the microcontroller itself, possibly hosted partially on the microcontroller
+and partially in JavaScript (executed in browser).
 
 ## Stack based VM
 Many of these exists already. Forth-like systems are very popular,
@@ -87,14 +88,66 @@ Also most traditional languages are not very suited for deeper 'introspection'.
 Also need some sort of tools/best-practices for doing reloadable apps.
 Redux and module-reloading from JavaScript might serve some inspiration here.
 
+## Compiler as JavaScript eDSL
 
-### References
+Instead of inventing a new programming language, and a compiler for it,
+use JavaScript as the language to program in, and then generate machine code directly from this.
+The most basic level would be assembly instructions, then one could build (JS) libraries with higher-level
+constructs on top.
 
-JavaScript / browser compilers.  `TODO: research`
+For some degree of static checking, should use TypeScript to implement core library.
+
+An existing compiler, like GCC or LLVM could be used as an oracle to test against.
+Executing (possibly in an emulator) can provide additional verification.
+Data-driven and property-based testing techniques can be used for wide coverage.
+
+It may be interesting to track the effects of instructions/snippets in the DSL,
+for instance on registers, stack, memory, program counter.
+
+For testing, can be useful to implement basic supports for asm mnemonics,
+easy to keep stable and understandable for unit-tests.
+
+## Dataflow with component compiler
+
+Could use MicroFlo (or similar) dataflow engine as component and cross-component communication mechanism.
+Then allow custom components to be implemented using a dedicated compiler.
+Such a compiler/language can be relatively simple, due to the limited scope of implementing a component.
+Interpreting input packet data, storing internal state, processing data and creating new output packets.
+Can we even disallow general reading/writing to memory? At least for most components
+
+Components can be hot-reloaded individually, updating done by removing the old component instance(s),
+replacing component code, creating new instances. 
+
+### Resources
+
+Loading code at runtime
+
+* [TockOS: Dynamic code loading on MCU](https://www.tockos.org/blog/2016/dynamic-loading/),
+explains position-independent-code (PIC) with relative addresses to support multiple "apps".
+* The rad1o CCCamp badge could load different apps from Flash. Flash was also accessible over USB
+* [ArduinoOTA](http://esp8266.github.io/Arduino/versions/2.0.0/doc/ota_updates/ota_updates.html), over-the-air update
+for ESP8266 chips based on Arduino.
+
+ARM Cortex-M assembly
+
+* [Blinking LEDs in Assembly](http://pygmy.utoh.org/riscy/cortex/led-stm32.html)
+* [ARM Cortex-M instruction sets](https://en.wikipedia.org/wiki/ARM_Cortex-M#Instruction_sets).
+Thumb1/2 combo, several optional extensions depending on family
+* [ARM: Cortex-M4 reference manual](http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.ddi0439b/CHDDIGAC.html)
+* [Stack Overflow: Software divide/multiply](https://stackoverflow.com/questions/2390354/where-can-i-find-soft-multiply-and-divide-algorithms)
+* [Whirlwind tour of ARM Assembly](https://www.coranac.com/tonc/text/asm.htm)
+
+## References
+
+JavaScript compilers.
 
 * [LLVM.js](https://kripken.github.io/llvm.js/demo.html), experimental port of LLVM to JS using Emscripten. Takes LLVM IR as input
-* [LiteScript](https://github.com/luciotato/LiteScript) compile-to-C and compile-to-JS, implemented in JavaScript
-* [Nim](http://nim-lang.org/) can supposedly compile both to C and to JS
+* [Keystone.js](https://alexaltea.github.io/keystone.js/), Emscripten port of Keystone assembler. Supports many archs. GPLv2
+* [assembler.js](https://www.npmjs.com/package/ass-js), x86 assembler as JavaScript library. Goal of supporting ARM
+
+JavaScript transpilers (to C or similar)
+
+* [LiteScript](https://github.com/luciotato/LiteScript) compile-to-C and compile-to-JS.
 
 JavaScript parser generators
 
@@ -103,6 +156,11 @@ JavaScript parser generators
 Retargeting compilers
 
 * [LLC: Retargetable ANSI C compiler](https://sites.google.com/site/lccretargetablecompiler/), can maybe be compiled to JS via Emscripten?
+
+JavaScript-based emulators
+
+* [Unicorn.js](https://alexaltea.github.io/unicorn.js/). Emscripten port of Unicorn, a C-based emulator framework.
+Supports many architectures, incl ARM. GPLv2
 
 
 ## Related

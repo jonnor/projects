@@ -15,6 +15,13 @@ Typical robotics demo projects
 * Obstacle avoidance
 * Cathing objects
 
+## Positioning
+
+### HTC Vive Lighthouse
+
+Designed for room-scale VR, tracking hand/head. Based on timed scanned IR lasers.
+[DIY sensor implementation](https://github.com/ashtuchkin/vive-diy-position-sensor), using the stock transmitters.
+
 # Learning
 
 ## Kalman filters
