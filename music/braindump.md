@@ -3,7 +3,7 @@
 
 Dark electronic
 
-EBM. Aggrotech. Industrial.
+### EBM. Aggrotech. Industrial.
 
 Grendel - Hate this. Synth in chorus to intensify.
 Agonoize - Glaubenskrieger. Slooow hard beat. Anti-religious (holywar) lyrics.
@@ -11,7 +11,7 @@ Asphyxia - Digital War / Sense Of Decay. Haunting piano motif going into harsh e
 Suicide Commando - God is in the rain. Semi-distorted vocoder lyrics. "if god is in the rain, please let it down on me"
 God Module - False Pretense. Trance-like synth lead.
 
-Futurepop
+### Futurepop
 
 Covenant - Tears in the Rain. Lyrics+vocals, describing another world, its essence. Contrasted with personal experience.
 A million burning books... A thousand generations... A second of reflection...  A fraction of a heartbeat...
@@ -20,7 +20,7 @@ VNV Nation - Control. Vocal+lyrics driven, simplistic backing music.
 The Birthday Massacre - Superstition. Switching between synth,guitar,beat,vocal driven very fluently.
 VNV Nation - Beloved. Looooong buildup of the synth melody. "Eternity awaits".
 
-Darkwave. Newwave.
+### Darkwave. Newwave.
 
 Wolfsheim - The Sparrows And The Nightingales. Arythmic repeating voice samples. 
 Deine Lakaien - Reincarnation. Question+answer/repeat vocals.
@@ -29,16 +29,19 @@ Diary of Dreams - Butterfly Dance. Minimal synth, but very driving guitar-like c
 Diary of Dreams - She And Her Darkness. Piano song with synth electronics layered.
 Dreamy vocals. Great use of two/three voice tracks, as well as orchestral unison.
 
-Post-punk
+### Post-punk
 
 Sexbeat - Sexbeat. Very simple but effective lyric structure. 'some ..., some ...'
 
-Other dark electro
+### Other dark electro
 
-Dear Strange - The Unicorn. Indrawn breath samples. Deep but shrill voice.
+Dear Strange - The Unicorn. Indrawn breath samples. Deep but shrill female voice.
 SIRUS - Neon Dominion. Sounds dark while mostly staying away from typical genre marks? For instance the smooth kicks and straight claps.
+Faderhead - Know your Darkness. Filters/synths in intro 'teasing' to go harder by opening up the highs.
+Faderhead - Escape Gravity. Basic 'love' themed lyrics, but nicely connected to ephemeral concepts (stars,gravity), making it not-as-cheesy.
+IAMX - Nightlife. Great compressed,distorted guitarsounds. First background, then in foreground. Simple, effective upbeat riff
 
-Dark/progressive rock/metal
+### Dark/progressive rock/metal
 
 Riverside - After. Wispering speaking intro. Chanting lead, chanting backing vocals.
 Riverside - I believe. Intro with ambient restaurant/cafe, people talking. 
@@ -52,24 +55,35 @@ Sieges Even - Paramount. JFK samples, announcing the space program
 Ayreon - Isis and Osiris. Distinct characters, one vocalist per each.
 Prototypical (fantasy) figures, presenting different viewpoints on same situation.
 
-Gothic rock
+Epica - Living a Lie, Fools of Damnation.
+Great sounding spoken latin church lithurgy, contrasting the metal sound and growls/soprano vocals.
+Nice arabic chanted lithurgy in transition to next song.
+
+### Gothic rock
 
 Type O Negative - Love You To Death. Black No 1. Slow bassy, fuzzy, riffing.
 
-Dark Ambient.
+### Dark Ambient.
 Drone. 
 
 Book of Eli OST.
 Epic distorted trumped-like things (Panoramic, Amen). Rusty metallic percussion. Arabic like chants.
 Fever Ray 'If I Had A Heart'. Whispered/chanted/faint vocals. Matching backing but with slight variations.
+Hypnotic/trance-like repetitive drone through entire song, fading into background.
 
-Lunatic Soul
+Lunatic Soul - Summerland. Dreamy smooth 'faint' vocals (esp. at end). Mixed percussion instruments sampled, mashup as main drums.
+Lunatic Soul - The in-between Kingdom. Nice distortion on mid/top range drums against soft booomy tom. 
+Lunatic Soul - Cold. Driving & repetitive basslines. One for initial leitmotif, then modified heavier form later.
+Vocals/lyrics without chorus, and misc effects make the track go forward
 
-Neofolk. Neopagan.
+### Neofolk. Neopagan.
 
-Ordo rosarius equilibrio - From copenhagen with love. Storytelling vocals, supported by by piano/violi/drums.
+Ordo rosarius equilibrio - From copenhagen with love. Storytelling vocals, kinky lyrics, supported by by piano/violin/drums.
 
 
+### Soundtracky
+
+House M.D. intro theme (Teardrop by Massive Attack). Pi 
 
 ## Learning
 
@@ -184,7 +198,7 @@ abcb. 1,2,3 does not rhyhme, 4 rhymes with 2. "works best when rhyme goes for 4,
 "cant think of anything to go with your brilliant riff [chorus]? Take that riff and simplify it and call it a verse.
 so that the verse and the chorus riff are basically the same, but one is more simplified. Example: "
 
-[BLIPVERT: Lyric Content](https://www.youtube.com/watch?v=ClWne9Xh_i8).
+[Angelspit BLIPVERT: Lyric Content](https://www.youtube.com/watch?v=ClWne9Xh_i8).
 "don't write about the act, write about the mood surrounding the act"
 "write about the feeling itself, but without saying 'I feel..'"
 Kind-of a show,don't tell.
@@ -247,6 +261,35 @@ Quickly modulated resonant bandpass filter, using automation create.
 [How To Create Psytrance Style Driving Beat And Bassline In FL Studio](https://www.youtube.com/watch?v=pP593h4DQU4).
 Using note->ghostnote (and ghost->note) on both open and closed.
 Using a subtle LFO phaser on open hithats to create a bit of motion in the sound.
+
+[Making Ambient Soundscapes](https://www.youtube.com/watch?v=tns4FVaJfb8), using FL Studio.
+Minor chord/arpeggio samples (piano/guitars), time-stretching (keeping pitch) and reversing,
+with lots of reverbs, compression to keep dynamics steady. First starting with 'tonal' parts, along a chord progression.
+Using percussion samples, stretching and tuning them down to form bassline.
+Using environmental sounds, like waves of water, cars passing to place the listener somewhere else. 
+
+
+[Serum Tutorial - Ambient Drone Pro Tips](https://www.youtube.com/watch?v=WtgMa3nDJD8).
+Sampling a piano synth, with very long reverb (30 seconds decay).
+Then use that as a base sample for a synth, with giga long attack and release (10s+).
+Sliding the base frequency slighty upwards over time to create tension.
+Another OSC with white noise mixed in to spread/reduce tonal elements a bit.
+Using wavetable with multiple voices detuned to make the sound a bit wider.
+
+[[Tutorial] Dark Ambient Pads in FL Studio 11 ALL NATIVE PLUGINS](https://www.youtube.com/watch?v=Jm2L9xqSUlk).
+Nice low tuned ambient pads.
+Using 3 OSC, layered with Harmor. Both using unison/multiple voices, with phase randomization.
+Using a 2x LowPass, with really slow LFO (64 beats) to get some movement. 
+
+[Wavetable Synthesis in Supercollider Tutorial](https://www.youtube.com/watch?v=wNGmFOi7mJ8).
+Implementing a synth from an tutorial of a commercial synth VST.
+Audio syntheis by looking up time/amp mapping in a wavetables. Many synths, including `VOsc3` in SuperCollider, can interpolate between two tables. Example wavetables available from https://github.com/elosine/wavetablesynthesis/tree/master/wavetables
+
+[Synthesis Recipe - Lead Synth in Supercollider](https://www.youtube.com/watch?v=_QZEx1Yd83c). Based on Wavetable synthesis. Using `\t_gate` to turn on/off.
+
+[Tutorial - Make A Basic Sampler in Supercollider](https://www.youtube.com/watch?v=cMobYdvTrJ0). Using `\t_trig` to trigger.
+
+[Tutorial - Make A Multi-Tap Delay in Supercollider](https://www.youtube.com/watch?v=QUD4aA2RQk0). At end, also shows swept/periodic panning between stereo channels.
 
 ## Motivation
 
@@ -330,4 +373,9 @@ A prison for your mind.
 [1](http://www.imdb.com/title/tt0133093/quotes?item=qt0324255)
 Morpheous, The Matrix
 
+> 'Not only are there no happy endings,' she told him, 'there aren't even any endings.'
+- Neil Gaiman, American Gods
+
+> Imagination is the only weapon in the war against reality.
+― Cheshire Cat from “Alice in Wonderland” by Lewis Carroll
 
