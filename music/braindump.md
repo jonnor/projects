@@ -10,6 +10,9 @@ Agonoize - Glaubenskrieger. Slooow hard beat. Anti-religious (holywar) lyrics.
 Asphyxia - Digital War / Sense Of Decay. Haunting piano motif going into harsh electro.
 Suicide Commando - God is in the rain. Semi-distorted vocoder lyrics. "if god is in the rain, please let it down on me"
 God Module - False Pretense. Trance-like synth lead.
+Project Pitchfork - Lament. Gritty type semi-distorted vocals. Modulated noise source mixed in? Or just dry signal?
+Rotersand - Monopole. Suprising transition in middle, re-starting with a different synth lead. 3/4 restarting to original again
+Angels and Agony - Forever. Soft/distant vocals 
 
 ### Futurepop
 
@@ -19,6 +22,13 @@ Covenant - Call our Ships to Port. Lyrics, describing eternal sameness.
 VNV Nation - Control. Vocal+lyrics driven, simplistic backing music.
 The Birthday Massacre - Superstition. Switching between synth,guitar,beat,vocal driven very fluently.
 VNV Nation - Beloved. Looooong buildup of the synth melody. "Eternity awaits".
+Neuroticfish - The Bomb. Somewhat banal lyrics but the absurdness makes it work. "I wear my bomb near my heart... I hope it never hurts me" 
+Neuroticfish - Silence. Great lyrics. Could be written as a poem, then simply put into song.
+Colony 5 - My World. "Welcome to my world, It's calm and cold"
+Apoptygma Berzerk - Eclipse. About advent of nuclear winter? 
+"One day we'll awake by a bright light on the horizon, In one second every eye will see the same"
+Torul — ‬Saviour of Love. Big buzzy pads used sparsely.
+Asbury Heights - Glow. Anthem/ode to non-conformity
 
 ### Darkwave. Newwave.
 
@@ -40,6 +50,8 @@ SIRUS - Neon Dominion. Sounds dark while mostly staying away from typical genre 
 Faderhead - Know your Darkness. Filters/synths in intro 'teasing' to go harder by opening up the highs.
 Faderhead - Escape Gravity. Basic 'love' themed lyrics, but nicely connected to ephemeral concepts (stars,gravity), making it not-as-cheesy.
 IAMX - Nightlife. Great compressed,distorted guitarsounds. First background, then in foreground. Simple, effective upbeat riff
+Aesthetic Perfection - Never Enough. Supersmooth/round bass and bassline sound.
+Eisfabrik - Walking towards the sun. Subtly distorted vocals on refrain, a bit raspy.
 
 ### Dark/progressive rock/metal
 
@@ -52,6 +64,14 @@ Threshold - The Ravages Of Time. Lyrics, how the world revolves in circles.
 Sieges Even - Mounting Castles in the Blood Red Sky. Samples of Martin Luther King "I have a dream".
 Sieges Even - Paramount. JFK samples, announcing the space program
 
+Queensryche - Revolution Calling. First person lyrics, following a character through entire Operation Mindcrime album.
+Outsider/alternative perspective, critical of society.
+
+Soen - Fracctions ending, around 4:00. 3+ voice harmony, chanty/dreamy. 
+Wolverine - Into the Great Nothing. Slow, steady buildup. Strong, clear punctuation in the vocals. "now more is more, and less is... nothing".
+
+Amaseffer - Slaves for Life. Hebrew chants, oriental sounding instruments (flute), well done environmental sound effects.
+Epic lyrics from the Book of Moses. Raspy 'pained' vocals.
 Ayreon - Isis and Osiris. Distinct characters, one vocalist per each.
 Prototypical (fantasy) figures, presenting different viewpoints on same situation.
 
@@ -290,6 +310,43 @@ Audio syntheis by looking up time/amp mapping in a wavetables. Many synths, incl
 [Tutorial - Make A Basic Sampler in Supercollider](https://www.youtube.com/watch?v=cMobYdvTrJ0). Using `\t_trig` to trigger.
 
 [Tutorial - Make A Multi-Tap Delay in Supercollider](https://www.youtube.com/watch?v=QUD4aA2RQk0). At end, also shows swept/periodic panning between stereo channels.
+
+[Vocal Effect Tutorial - Reverse Reverb / Reverse Echo](https://www.youtube.com/watch?v=WQEBS3NXCiU). Fadein/Buildup effect.
+Reverse the sample (typically first utterance), apply reverb, reverse back again.
+Align with original sample and mix in only the buildup (reversed reverb).
+
+[How To: Create a Chorus Effect in Audacity](https://www.youtube.com/watch?v=-xSKxEeT19M).
+Record the sample track once more. No need to make purposeful changes, as any recording will be slighty different, which already helps.
+Duplicate the second sample. Then slighty timeshift once clip forward, the other by same amount backwards. Pan the secondary clips to left/right. 
+
+[Audacity Tutorial: Cool Spooky/Ghostly Voice Effect](https://www.youtube.com/watch?v=fLkXFepSwU0).
+Ghostly/demonic effect. Like in fantasy/scifi game characters. 
+Duplicate track. Reversing the clip, applying reverb, and reverse back again. 'large room' preset.
+Sounds like Ayreon - Universal Migrator?
+On the original clip, apply reverb. Then can downtune the sample to get a really deep voice.
+
+[Sing Harmony With Yourself (2014)](https://www.youtube.com/watch?v=gJ3xfTpeDHY).
+Recording a counting "one, two, three, four" before singing "aah".
+Record additional tracks (one fifth up, one octave etc), each doing the count-in to syncronize roughly.
+
+[Glitch Effect Audacity Tutorial](https://www.youtube.com/watch?v=TKNDp3PfPkk).
+Selecting small sections of vocals (typically vowels, but not critical) then repeat it by 2-3 times. Do it a bunch of places.
+Can also apply to such small sections downpitching by a huge amount (50). Also duplicate track, pitchshift up a bunch and mix in.
+Also glitching music by importing some piano/strings combo, downpitching by ~12 percent and reversing.
+
+[How to Make Creepy Horror Music in Audacity](https://www.youtube.com/watch?v=C_c2Awf-S1s). Gives a dark ambient .
+Import a full song (any really). Change tempo down a couple of times, to make it around 10 seconds long.
+Then change pitch down, then up "until it sounds like a baby". Then reverse. And then Paulstrech by around 10.
+
+[HOW TO AMBIENT DRONE MUSIC IN AUDACITY](https://www.youtube.com/watch?v=QX2h1nJEeZY).
+Super sarcastic tutorial to create ambient drone, but result is pretty interesting startingpoint.
+Import Raw a executable file (or similar non-audio data).
+Remove the white noise (by filtering)?
+Then stretch the audio out a bunch. Then reverb, delay. Only at the end normalize the audio level.
+
+[How to make a heart beat effect in Audacity](https://www.youtube.com/watch?v=WZ4IpQBCVmo). Sounds pretty good.
+Generating two sine chirps, starting at 1xx Hz ending at 1Hz. Second one with slightly higher frequency,
+offset a bit to be the distance. Then adding a fade-in. Using a treble remove to smoothen it out a bit. 
 
 ## Motivation
 
