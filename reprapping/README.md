@@ -192,6 +192,8 @@ Work by others
 * [3d-printed bushing](http://www.thingiverse.com/thing:1196801), replaces speciality linear bearings
 * [3d-printed beam surface](http://www.thingiverse.com/thing:9080/#comments)
 * [Bushing using PTFE inserts](http://www.thingiverse.com/thing:1673678). Can glide on alu or coated carbon rods.
+* [3d-printed slew bearing](https://hackaday.com/2017/06/12/big-slew-bearings-can-be-3d-printed). Primarily for large bearings.
+Using cylindrical (or conical) rollers, in a crossed roller bearings. Good design walkthrough in Fusion 360.
 
 # Interesting designs
 
