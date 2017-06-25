@@ -348,6 +348,31 @@ Then stretch the audio out a bunch. Then reverb, delay. Only at the end normaliz
 Generating two sine chirps, starting at 1xx Hz ending at 1Hz. Second one with slightly higher frequency,
 offset a bit to be the distance. Then adding a fade-in. Using a treble remove to smoothen it out a bit. 
 
+[Growing Music: musical interpretations of L-Systems](https://pdfs.semanticscholar.org/8c2f/caaf3153779ec3e838b416cd6e6d7feecdb9.pdf).
+Uses Lindenmayer systems to create compositions with a formal grammar rooted in musical theory.
+The stocastic subdivision approach looks promising.
+
+[Score generation with L−systems (1968)](http://algorithmicbotany.org/papers/score.icmc86.pdf).
+Uses a Hilbert curve to map the traditional graphical Lindenmayer systems onto a timeline.
+Seems a bit roundabout way of generating a composition, but the co-creation of graphics and sound may be of interest.
+Although for music visualization, maybe better to create a graphical representation by mapping audio-rules of a composition
+to a graphical action/effect.
+
+[Musical L-systems (128 pages)](http://carlosreynoso.com.ar/archivos/manousakis.pdf).
+Comprehensive, with a methodological approach with lots of explanations. 
+
+[Space Ambient Part 1: Mega Pads](https://www.youtube.com/watch?v=MafvNBjqcGI).
+Really nice sounds using Reaktor Migraine (granular synthesis?).
+Also using samples of various kinds stretched with PaulStretch into Absynth.
+Have to make sure its constant pitch during the sample.
+Stereo samples gets good width automatically when stretched.
+Long linear-rampup for envelope attack and release.
+Using many voice polyphony to handle simultanious notes.
+Using 'etherizer' effect, which does granualar re-synthesis.
+Layering sounds by adding in a second sample to another OSC. Using envelopes to mix them
+Can match the pitch, either same note or a harmonic relative (like a 5th).
+If using 'rawer' sound, could be good base for something like Book of Eli OST? 
+
 ## Motivation
 
 [Angelspit's Patreon: Stop Being Over Critical](https://www.youtube.com/watch?v=rIKnAMh-DT4). 3 min.
