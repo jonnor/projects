@@ -29,31 +29,7 @@ References
 
 For connecting devices in the hackerspace, and outside, together.
 
-## Done
-
-* Run MQTT/mosquitto broker
-* Run `boxy4` doorlock on MQTT
-* Setup `mqtt.bitraf.no` DNS record
-
-## TODO
-
-* Setup bitraf.no MQTT SRV DNS record
-* Transition `boxy2` to use MQTT also
-* Create 'interface' for doorlock, decouple from host (boxyX).
-`/door/lab/open (opentime: Int seconds door is to be open)` | 
-`/door/lab/isopen (status: Bool true if door is open, else false`
-* Declare Msgflo participants for dlock13 devices
-* Setup [Msgflo](http://msgflo.org) coordinator on bomba/users
-* Have a QR/NFC code for accessing MsgFlo network with Flowhub
-* Also setup pretty HTTP redirect for Flowhub live URL
-
-## Ideas
-
-* participant which monitors tweets to #bitraffineriet, sends out on MQTT
-* participant which allows to send tweet as #bitraf-iot
-* Wire up the cockoo clock to tweet when getting tweets. Maybe also have a little (Manga?) screen on
-* participant which sends image URL when new images are posted to http://bitraf.no/galleri
-* Physical device for doorlock status/opening, MQTT participant(s)
+Moved to [bitraf-iot](https://github.com/bitraf/bitraf-iot) project.
 
 # Hackerspace stamp
 
@@ -120,15 +96,32 @@ Ikea [1](http://www.ikea.com/no/no/catalog/products/30263660/)
 
 A vacuum former would be good addition. Especially interesting for prop-making, and mold-making for edibles like chocolate etc.
 
-This oven can fit plates of 25x40 cm.
+Our non-food oven can fit plates of 25x40 cm.
 
 ## Plastic plate based vacuum former
 
-This [laser-cut design](http://www.thingiverse.com/thing:1586801) uses . It also has very nice laser-cut clamps
+This [laser-cut design](http://www.thingiverse.com/thing:1586801) is tailored for plastic dining plates.
+It also has very nice laser-cut clamps.
 
 Material availability in Norway
 
 * [Clas Ohlson](http://www.clasohlson.com/no/Plasttallerken/44-1435-4) D=22 cm. Polypropylene. Pink only?
 * [Ikea](http://www.ikea.com/no/no/catalog/products/50192959/). Polypropylene. Multiple colors. 19 cm diameter. 2 NOK/piece
 * Staples bulk. [PP](https://www.staplesnetshop.no/web/ePortal/ctrl?action=showiteminfo&itemNo=782973) [PS](https://www.staplesnetshop.no/web/ePortal/ctrl?action=showiteminfo&itemNo=885253&loc=simplesearch)
+
+## Tool locks
+
+MQTT-based smart locks for portable equipment. Each tool has a station that they belong at, and attached on the tool a unique key.
+
+Electronics
+
+* ESP8266 Wifi microcontroller board. NodeMCU / Weemos D1. 
+* Powersupply 12V, 1A.
+* IR led 0805, 120deg. [Kingbright kp-2012f3c](http://no.farnell.com/kingbright/kp-2012f3c/led-ir-0805-940nm/dp/2290432)
+* IR phototransistor 0805, 120 deg. [Kingbright kp-2012p3c](http://no.farnell.com/kingbright/kp-2012p3c/phototransistor-0805-940nm/dp/2290434)
+* Mosfet N-channel.
+* Solenoid, cabinet drawer lock. 12V
+[1](https://www.banggood.com/12V-24V-Electronic-Door-Lock-Rfid-Access-Control-for-Cabinet-Drawer-p-1011146.html)
+[2](https://www.banggood.com/12V-DC-Cabinet-Door-Drawer-Electric-Lock-Assembly-Solenoid-Lock-27x29x18mm-p-1048590.html)
+
 
