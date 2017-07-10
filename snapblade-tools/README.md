@@ -15,7 +15,9 @@ In development
 * Food slicer
 * Folding knife
 
-Planned
+## Ideas
+
+Crafts/tools
 
 * Guiliotine for paper/cardboard
 * Mandolin/foodslicer for Julienne cuts
@@ -24,6 +26,12 @@ Planned
 * Hand/finger plane for soft woods
 * Plain knife
 * Adjustable blade knife (typical for snap-off blades)
+* Safety cutter for rope. Diving/climbing etc
+* Safety boxopener. Tiny knife that comes out only when pressed
+* Wire strippers. For stripping electronics wiring. V-blades with adjustable stopper
+
+Foodstuffs
+
 * Cheese cutter/slicer. Maybe using non-sharp side or dulled blade
 
 Probably bad/unsafe ideas
