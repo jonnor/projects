@@ -8,8 +8,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "generate": "microflo generate --library ./components.json --target=arduino graphs/blink.fbp build/blink/blink.ino",
-    "start": "microflo runtime --wait-connect 3 --graph graphs/blink.fbp --componentmap build/blink/componentlib-map.json",
+    "generate": "microflo generate --library ./components.json --target=arduino graphs/spindlecontrol.json build/blink/blink.ino",
+    "start": "microflo runtime --wait-connect 3 --graph graphs/spindlecontrol.json --componentmap build/blink/componentlib-map.json",
     "build": "`node build.js`"
   },
   "author": "",

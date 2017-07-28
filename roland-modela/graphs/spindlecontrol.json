@@ -1,0 +1,91 @@
+{
+    "caseSensitive": false,
+    "properties": {
+        "name": "blink",
+        "environment": {
+            "type": "microflo"
+        }
+    },
+    "inports": {},
+    "outports": {},
+    "groups": [],
+    "processes": {
+        "timer": {
+            "component": "Timer",
+            "metadata": {
+                "x": 36,
+                "y": 36,
+                "width": 72,
+                "height": 72,
+                "label": "timer"
+            }
+        },
+        "led": {
+            "component": "DigitalWrite",
+            "metadata": {
+                "x": 288,
+                "y": 36,
+                "width": 72,
+                "height": 72,
+                "label": "led"
+            }
+        },
+        "DigitalRead_bi3ws": {
+            "component": "DigitalRead",
+            "metadata": {
+                "label": "DigitalRead",
+                "x": 144,
+                "y": 108,
+                "width": 72,
+                "height": 72
+            }
+        }
+    },
+    "connections": [
+        {
+            "src": {
+                "process": "timer",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "DigitalRead_bi3ws",
+                "port": "trigger"
+            },
+            "metadata": {
+                "route": null
+            }
+        },
+        {
+            "src": {
+                "process": "DigitalRead_bi3ws",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "led",
+                "port": "in"
+            },
+            "metadata": {}
+        },
+        {
+            "data": "13",
+            "tgt": {
+                "process": "led",
+                "port": "pin"
+            }
+        },
+        {
+            "data": "100",
+            "tgt": {
+                "process": "timer",
+                "port": "interval"
+            }
+        },
+        {
+            "data": "7",
+            "tgt": {
+                "process": "DigitalRead_bi3ws",
+                "port": "pin"
+            }
+        }
+    ]
+}
