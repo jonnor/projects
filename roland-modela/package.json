@@ -1,0 +1,21 @@
+{
+  "name": "roland-modela",
+  "version": "0.0.0",
+  "description": "Designed for Roland Modela MDX-15 at [Bitraf](http://bitraf.no) hackerspace.",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate": "microflo generate --library ./components.json --target=arduino graphs/blink.fbp build/blink/blink.ino",
+    "start": "microflo runtime --wait-connect 3 --graph graphs/blink.fbp --componentmap build/blink/componentlib-map.json",
+    "build": "`node build.js`"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "microflo": "^0.4.1",
+    "microflo-core": "^0.3.38"
+  }
+}
