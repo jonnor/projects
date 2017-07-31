@@ -42,3 +42,14 @@ DSP libraries
 
 * [liquid-dsp](https://github.com/jgaeddert/liquid-dsp). Plain C, no external dependencies, MIT/X11 licensed.
 Designed for Software-Defined-Radio, but has tons of generally useful filters, incl good documentation.
+
+Preventing aliasing
+
+* [PolyBLEP oscillator](http://www.martin-finke.de/blog/articles/audio-plugins-018-polyblep-oscillator/),
+using Polynomial Bandlimited Step. Applied to saw/square. Done by adding ripple to signal around the discontinous regions.
+Also creating triangle wave by integrating the square wave with a lossy integrator.
+* [Bandlimited Impulse Train (BLIT)](http://www.cs.cmu.edu/~eli/papers/icmc01-hardsync.pdf)
+* [Minimum-Phase Bandlimited Step (MinBLEP)](https://ccrma.stanford.edu/~stilti/papers/blit.pdf)
+
+
+
