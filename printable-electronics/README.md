@@ -524,3 +524,58 @@ Using ultrasound (probably piezo), to control dispensing.
 References
 
 * [Jeri Ellsworth: Resistive Multi-touch Pad Prototype](https://www.youtube.com/watch?v=eP0PUwS4jzI)
+
+
+## Conductive copper ink
+
+Using copper as a base can make for a very conductive ink, much better than carbon-based filaments.
+However when not protected by a capping agent, the copper oxidices quickly.
+It can also be unstable in solution.
+
+### Ideas
+
+* Creating copper nano-particles in a binder. Deposit with syringe.
+Can one deposit thin traces, say 20 mil / 0.5mm wide?
+Is layer thick enough to have good conductivity?
+Will it stick OK to a substrate, say FR4 or Kapton?
+Can one hand-solder to such a trace after it has dried?
+Can one coat/cover in solder paste and cure in reflow oven? Without waiting for drying?
+Idea that a 3d-printer do the trace depositing with a syringe.
+
+* If using glass substrate, can one use CO2 laser to selectively etch in where traces should go?
+Idea that ink will mostly stick to the roughed surface, and this will be a bit lower allowing to apply and wipe off excess?
+
+* Can one create masks for traces using lasercutter? Then apply conductive ink through the mask.
+Let islands be connected in places, but use two layers with islands-connectors in different places to get trace fully connected.
+
+* Can one laser-cut masks with screen-print like mesh patterns?
+This instructable achieved 75 dpi in 2mil Mylar sheets.
+[1](http://www.instructables.com/id/From-artwork-to-completed-silkscreen-in-15-minutes/)
+Another one used cardboard stock, with half-tone patterning in Photoshop. [2](http://www.instructables.com/id/Photo-Screen-Printing-without-Emulsion-laser-etch)
+Or back a masking layer with screen-print mesh for supporting islands?
+Does metal meshes exist?
+[50 micron stainless steel](https://www.amazon.com/Rosin-Tech-Micron-Screen-Stainless/dp/B018N2KVCS
+[25 micron](https://www.amazon.com/dp/B01N1X9NZ8)
+[80 micron aperture, 60% open](http://www.themeshcompany.com/products/-200-Mesh---0.082mm-Aperture---0.028mm-Wire-Diameter---SS304-Grade---Woven-Wire-Mesh-312.html#SID=61), many other sizes
+
+* Could one copper electroplate traces after made into circuit? Needs conducivity between anode/cathode.
+Maybe have them on two wipers that move across board, separated by 1-0.1mm?
+Can move across multiple times, and also mix horizontally/vertically.
+Deposition rate would be dependent on how many traces wide...
+If problematic, could be compensated by in software.
+If using ground planes around traces could also be come negligble.
+
+### References
+
+* [Homemade copper conductive paint / ink](https://www.youtube.com/watch?v=9iyRUBvd260).
+Copper sulfate into ascorbic acid solution under . Wait and precepitate out fluids to leave fine copper powder.
+Gum arabic as binder for a water-soluable ink.
+* [Copper Nanoparticles In Gelatin](https://www.youtube.com/watch?v=K4j6naFO1qg)
+* [Copper nanoparticles for conductive inks by water and polyol synthesis](https://www.youtube.com/watch?v=oVN9DV1LmSU).
+Making very fine copper nanoparticles. Should be good enough for
+Copper(sulfate) concentration and reaction time controls particle sizes.
+* [How To Make Copper Nanoparticles Suitable For Ink Jet Printing and Photonic Sintering](https://www.youtube.com/watch?v=MzTiZp01_qs).
+* [Make: Inkjet Printable Circuits](https://www.youtube.com/watch?v=V0AHc3CA9NU). AgIC company, did Kickstarter now doing industrial.
+* [No-etch circuit boards with your laser printer](https://www.youtube.com/watch?v=mwwA1d2s2OQ).
+Printing with laser on glossy photopaper, then applying layer of silver conductive paint.
+Pre-curing paint allows to wipe off where nothing was printed. Doing 2 layers allows traces of around 5 ohms per cm.
