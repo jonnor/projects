@@ -143,6 +143,11 @@ A supporting disc between hotend and heatsink would likely be needed for strengt
 
 As the tolerances needed are relatively loose, it is possible that the aluminum pieces could be cast without CNC-finishing.
 
+#### References
+
+* [What is the best length of the melting zone in the hotend?](https://3dprinting.stackexchange.com/questions/572/what-is-the-best-length-of-the-melting-zone-in-the-hotend)
+
+
 ### Extruder for flat filament
 
 ![Conceptual CAD model](./doc/flatfilament-extruder-concept.png)
@@ -227,3 +232,6 @@ Tool change and registration are challenges for full automation.
 
 * [Automated candy maker](http://www.thingiverse.com/thing:1786518).
 For Halloween. Lasercut and 3d-printed
+* [DIY Wire Spooler with Clever Auto-Tensioning System](http://hackaday.com/2017/02/05/diy-wire-spooler-with-clever-auto-tensioning-system/)
+For winding smaller spools of wire from huge ones.
+* [M&Ms and Skittles Sorting Machine](http://hackaday.com/2017/02/06/mms-and-skittles-sorting-machine-is-both-entertainment-and-utility/)

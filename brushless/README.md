@@ -372,6 +372,9 @@ Either resistive, capacitive or inductive
 * [OpenServo, PCB/encoder replacement for servos](http://www.openservo.com/FrontPage)
 * [IntelliServo, digitally controllable servo board](http://hackaday.com/2016/04/22/intelliservo/)
 * [Mechaduino, servocontrol for steppers](https://hackaday.io/project/11224-mechaduino). Open source, programmable standalone, board mounts at back of NEMA17.
+* [ODrive, high-performance closed loop driver](https://hackaday.io/project/11583-odrive-high-performance-motor-control/details).
+[Encoder 600P/R Incremental Rotary Encoder](m.ebay.co.uk/itm/301553008421), used in ODrive.
+* [Ultra Servo](https://hackaday.io/project/21332-ultra-servo)
 
 # Research
 

@@ -35,7 +35,7 @@ In rough order of time spent / maturity.
 
 - Dataflow/flow-based-programming [Flowhub](http://flowhub.io) + [MicroFlo](http://microflo.org)
 - [Design by Contract](https://en.wikipedia.org/wiki/Design_by_contract)
-/ Contracts Programming: [Agree](https://github.com/jonnor/agree)
+/ Contracts Programming: [Agree.js](https://github.com/jonnor/agree)
 - Finite State Automata/Machines: [Finito](https://github.com/jonnor/finito)
 - Equations & "spreadsheets": [Formulate](https://github.com/jonnor/formulate)
 - Constraint Satisfaction: [1](./cstrain.coffee)
