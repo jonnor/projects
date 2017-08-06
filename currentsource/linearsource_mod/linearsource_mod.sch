@@ -28,6 +28,7 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
+LIBS:linearsource_mod-cache
 EELAYER 25 0
 EELAYER END
 $Descr User 7874 5906
@@ -135,9 +136,7 @@ Wire Wire Line
 Wire Wire Line
 	2900 4100 2900 3600
 Wire Wire Line
-	2000 3700 2150 3700
-Wire Wire Line
-	2150 3700 2200 3700
+	2000 3700 2200 3700
 Wire Wire Line
 	2000 3700 2000 3800
 Wire Wire Line
@@ -159,28 +158,20 @@ F 3 "" H 3850 1600 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3850 1600 3850 1700
-Wire Wire Line
-	3850 1700 3850 2300
+	3850 1600 3850 2300
 Wire Wire Line
 	4700 2600 4850 2600
 Wire Wire Line
-	5150 2800 5150 2850
-Wire Wire Line
-	5150 2850 5150 2950
+	5150 2800 5150 2950
 Wire Wire Line
 	5150 3250 5150 3450
 Connection ~ 5150 2850
 Wire Wire Line
-	2000 4100 2000 4200
-Wire Wire Line
-	2000 4200 2000 4350
+	2000 4100 2000 4350
 Wire Wire Line
 	1800 3800 1800 3500
 Wire Wire Line
-	1700 3500 1800 3500
-Wire Wire Line
-	1800 3500 2200 3500
+	1700 3500 2200 3500
 Wire Wire Line
 	1800 4100 1800 4200
 Wire Wire Line
@@ -199,9 +190,7 @@ Wire Wire Line
 Wire Wire Line
 	4250 2600 4400 2600
 Wire Wire Line
-	2800 3600 2900 3600
-Wire Wire Line
-	2900 3600 3000 3600
+	2800 3600 3000 3600
 $Comp
 L R R6
 U 1 1 57115B1C
@@ -381,9 +370,7 @@ F 3 "" H 1950 2650 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	2850 2850 2850 2950
-Wire Wire Line
-	2850 2950 2850 3000
+	2850 2850 2850 3000
 Wire Wire Line
 	2850 2450 2850 2400
 Wire Wire Line
@@ -391,11 +378,9 @@ Wire Wire Line
 Wire Wire Line
 	3350 2500 3650 2500
 Wire Wire Line
-	2100 2000 2250 2000
+	2100 2000 2400 2000
 Wire Wire Line
-	2250 2000 2850 2000
-Wire Wire Line
-	2850 2000 3350 2000
+	2700 2000 3350 2000
 Wire Wire Line
 	3350 2000 3350 2500
 Wire Wire Line
@@ -422,8 +407,6 @@ F 3 "" H 1950 2000 50  0000 C CNN
 	1    1950 2000
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	2250 2000 2250 2000
 Wire Wire Line
 	2250 2000 2250 2100
 Connection ~ 2250 2000
@@ -487,14 +470,23 @@ $EndComp
 Wire Wire Line
 	1100 5050 800  5050
 Wire Wire Line
-	1500 5050 1500 5200
+	1500 5200 1500 5050
 Wire Wire Line
-	1500 5200 1200 5200
-Wire Wire Line
-	1200 5200 800  5200
+	800  5200 1500 5200
 Wire Wire Line
 	1000 5350 1200 5350
 Wire Wire Line
 	1200 5350 1200 5200
 Connection ~ 1200 5200
+$Comp
+L R R?
+U 1 1 59871E1C
+P 2550 2000
+F 0 "R?" V 2630 2000 50  0000 C CNN
+F 1 "100k" V 2550 2000 50  0000 C CNN
+F 2 "" V 2480 2000 50  0001 C CNN
+F 3 "" H 2550 2000 50  0001 C CNN
+	1    2550 2000
+	0    1    1    0   
+$EndComp
 $EndSCHEMATC
