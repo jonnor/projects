@@ -136,9 +136,7 @@ Wire Wire Line
 Wire Wire Line
 	2900 4100 2900 3600
 Wire Wire Line
-	2000 3700 2150 3700
-Wire Wire Line
-	2150 3700 2200 3700
+	2000 3700 2200 3700
 Wire Wire Line
 	2000 3700 2000 3800
 Wire Wire Line
@@ -160,28 +158,20 @@ F 3 "" H 3850 1600 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3850 1600 3850 1700
-Wire Wire Line
-	3850 1700 3850 2300
+	3850 1600 3850 2300
 Wire Wire Line
 	4700 2600 4850 2600
 Wire Wire Line
-	5150 2800 5150 2850
-Wire Wire Line
-	5150 2850 5150 2950
+	5150 2800 5150 2950
 Wire Wire Line
 	5150 3250 5150 3450
 Connection ~ 5150 2850
 Wire Wire Line
-	2000 4100 2000 4200
-Wire Wire Line
-	2000 4200 2000 4350
+	2000 4100 2000 4350
 Wire Wire Line
 	1800 3800 1800 3500
 Wire Wire Line
-	1700 3500 1800 3500
-Wire Wire Line
-	1800 3500 2200 3500
+	1700 3500 2200 3500
 Wire Wire Line
 	1800 4100 1800 4200
 Wire Wire Line
@@ -200,9 +190,7 @@ Wire Wire Line
 Wire Wire Line
 	4250 2600 4400 2600
 Wire Wire Line
-	2800 3600 2900 3600
-Wire Wire Line
-	2900 3600 3000 3600
+	2800 3600 3000 3600
 $Comp
 L R R6
 U 1 1 57115B1C
@@ -229,24 +217,13 @@ F 3 "" H 5150 3400 50  0000 C CNN
 	1    5150 3450
 	1    0    0    -1  
 $EndComp
-$Comp
-L CONN_01X04 P1
-U 1 1 57115F44
-P 1550 1000
-F 0 "P1" H 1550 1250 50  0000 C CNN
-F 1 "CONN_01X04" V 1650 1000 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x04" H 1550 1000 50  0001 C CNN
-F 3 "" H 1550 1000 50  0000 C CNN
-	1    1550 1000
-	1    0    0    -1  
-$EndComp
-Text GLabel 1200 850  0    60   Input ~ 0
+Text GLabel 1200 1150 0    60   Input ~ 0
 VCC
-Text GLabel 1200 1050 0    60   Input ~ 0
+Text GLabel 1200 750  0    60   Input ~ 0
 PWM
 Text GLabel 1200 950  0    60   Input ~ 0
 GND
-Text GLabel 1200 1150 0    60   Input ~ 0
+Text GLabel 1200 850  0    60   Input ~ 0
 I_set
 $Comp
 L CONN_01X04 P2
@@ -281,10 +258,6 @@ Wire Wire Line
 	5450 950  5300 950 
 Wire Wire Line
 	5450 850  5300 850 
-Wire Wire Line
-	1200 850  1350 850 
-Wire Wire Line
-	1200 1150 1350 1150
 $Comp
 L C C1
 U 1 1 5711663E
@@ -378,9 +351,7 @@ F 3 "" H 1950 2650 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	2850 2850 2850 2950
-Wire Wire Line
-	2850 2950 2850 3000
+	2850 2850 2850 3000
 Wire Wire Line
 	2850 2450 2850 2400
 Wire Wire Line
@@ -388,17 +359,11 @@ Wire Wire Line
 Wire Wire Line
 	3350 2500 3650 2500
 Wire Wire Line
-	2100 2000 2250 2000
+	2100 2000 2400 2000
 Wire Wire Line
-	2250 2000 2400 2000
+	2700 2000 3350 2000
 Wire Wire Line
-	2700 2000 2850 2000
-Wire Wire Line
-	2850 2000 3350 2000
-Wire Wire Line
-	3350 1850 3350 2000
-Wire Wire Line
-	3350 2000 3350 2500
+	3350 1850 3350 2500
 Wire Wire Line
 	2850 2000 2850 2100
 $Comp
@@ -441,11 +406,9 @@ PWM
 Wire Wire Line
 	1600 2650 1800 2650
 Wire Wire Line
-	3450 3600 3300 3600
+	3300 3600 3700 3600
 Text Label 3350 2000 0    60   ~ 0
 I_target
-Text Label 3450 3600 0    60   ~ 0
-I_feedback
 Connection ~ 3450 3600
 Connection ~ 3350 2000
 Wire Wire Line
@@ -488,9 +451,7 @@ Wire Wire Line
 Wire Wire Line
 	1500 5200 1500 5050
 Wire Wire Line
-	800  5200 1200 5200
-Wire Wire Line
-	1200 5200 1500 5200
+	800  5200 1500 5200
 Wire Wire Line
 	1000 5350 1200 5350
 Wire Wire Line
@@ -507,19 +468,40 @@ F 3 "" H 2550 2000 50  0001 C CNN
 	1    2550 2000
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	1200 1050 1350 1050
-Wire Wire Line
-	1200 950  1350 950 
 $Comp
-L TEST TP?
+L TEST TP1
 U 1 1 598733DB
 P 3350 1850
-F 0 "TP?" H 3350 2150 50  0000 C BNN
+F 0 "TP1" H 3350 2150 50  0000 C BNN
 F 1 "TEST" H 3350 2100 50  0000 C CNN
-F 2 "" H 3350 1850 50  0001 C CNN
+F 2 "SMD_Packages:1Pin" H 3350 1850 50  0001 C CNN
 F 3 "" H 3350 1850 50  0001 C CNN
 	1    3350 1850
 	1    0    0    -1  
 $EndComp
+Text GLabel 3700 3600 2    60   BiDi ~ 0
+I_feedback
+$Comp
+L CONN_01X05 P1
+U 1 1 59873CDC
+P 1650 950
+F 0 "P1" H 1650 1250 50  0000 C CNN
+F 1 "CONN_01X05" V 1750 950 50  0000 C CNN
+F 2 "Edge:Pin_Header_Edge_1x05_Pitch2.54mm" H 1650 950 50  0001 C CNN
+F 3 "" H 1650 950 50  0001 C CNN
+	1    1650 950 
+	1    0    0    -1  
+$EndComp
+Text GLabel 1250 1050 0    60   Output ~ 0
+I_feedback
+Wire Wire Line
+	1200 950  1450 950 
+Wire Wire Line
+	1250 1050 1450 1050
+Wire Wire Line
+	1200 1150 1450 1150
+Wire Wire Line
+	1200 850  1450 850 
+Wire Wire Line
+	1200 750  1450 750 
 $EndSCHEMATC
