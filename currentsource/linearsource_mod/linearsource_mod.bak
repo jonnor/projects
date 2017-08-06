@@ -219,11 +219,11 @@ F 3 "" H 5150 3400 50  0000 C CNN
 $EndComp
 Text GLabel 1200 1150 0    60   Input ~ 0
 VCC
-Text GLabel 1200 850  0    60   Input ~ 0
+Text GLabel 1200 750  0    60   Input ~ 0
 PWM
 Text GLabel 1200 950  0    60   Input ~ 0
 GND
-Text GLabel 1200 750  0    60   Input ~ 0
+Text GLabel 1200 850  0    60   Input ~ 0
 I_set
 $Comp
 L CONN_01X04 P2
@@ -495,13 +495,13 @@ $EndComp
 Text GLabel 1250 1050 0    60   Output ~ 0
 I_feedback
 Wire Wire Line
-	1200 750  1450 750 
-Wire Wire Line
-	1200 850  1450 850 
-Wire Wire Line
 	1200 950  1450 950 
 Wire Wire Line
 	1250 1050 1450 1050
 Wire Wire Line
 	1200 1150 1450 1150
+Wire Wire Line
+	1200 850  1450 850 
+Wire Wire Line
+	1200 750  1450 750 
 $EndSCHEMATC
