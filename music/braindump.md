@@ -13,6 +13,7 @@ God Module - False Pretense. Trance-like synth lead.
 Project Pitchfork - Lament. Gritty type semi-distorted vocals. Modulated noise source mixed in? Or just dry signal?
 Rotersand - Monopole. Suprising transition in middle, re-starting with a different synth lead. 3/4 restarting to original again
 Angels and Agony - Forever. Soft/distant vocals 
+Spark! - Maskiner / Brinner Som Vackrast. Fun,upbeat music with dystopian (but catchy) lyrics. Lyrics very vivid, painting pictures
 
 ### Futurepop
 
@@ -22,7 +23,10 @@ Covenant - Call our Ships to Port. Lyrics, describing eternal sameness.
 VNV Nation - Control. Vocal+lyrics driven, simplistic backing music.
 The Birthday Massacre - Superstition. Switching between synth,guitar,beat,vocal driven very fluently.
 VNV Nation - Beloved. Looooong buildup of the synth melody. "Eternity awaits".
-Neuroticfish - The Bomb. Somewhat banal lyrics but the absurdness makes it work. "I wear my bomb near my heart... I hope it never hurts me" 
+Neuroticfish - The Bomb. Somewhat banal lyrics but the absurdness makes it work.
+"I wear my bomb near my heart... I hope it never hurts me".
+Simple rhythmic synth lick repeated almost each bar, with some minor variations.
+
 Neuroticfish - Silence. Great lyrics. Could be written as a poem, then simply put into song.
 Colony 5 - My World. "Welcome to my world, It's calm and cold"
 Apoptygma Berzerk - Eclipse. About advent of nuclear winter? 
@@ -52,6 +56,8 @@ Faderhead - Escape Gravity. Basic 'love' themed lyrics, but nicely connected to 
 IAMX - Nightlife. Great compressed,distorted guitarsounds. First background, then in foreground. Simple, effective upbeat riff
 Aesthetic Perfection - Never Enough. Supersmooth/round bass and bassline sound.
 Eisfabrik - Walking towards the sun. Subtly distorted vocals on refrain, a bit raspy.
+Mind.In.A.Box - Change. Starts with synth lick leitmotif. Cool vocoder-type voice effects, changing per verse to set mood, aspects of character.
+Lick leitmotif comes back more dancy upbeat in mid chorus.
 
 ### Dark/progressive rock/metal
 
