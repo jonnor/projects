@@ -21,13 +21,29 @@ TODO: link pictures here
 
 Key practical challenge.
 
-* Hand-cut. For instance in wax
-* Phototransfer
-* Lasercutter
+Ways of making pattern
+
+* Hand- Scraped or cut
+* Photolitography
+* Toner transfer
+* Laser ablation
 * Vinylcutter
+
+Traditionally for a "hard ground" a mix of beeswax and bitumen/asphaltum (a kind of tar) was used.
+
+[Vid](https://www.youtube.com/watch?v=wRTfDfH6mrs) recommends using floor wax, with a bit of pigment added to see the color.
+[Blogpost](http://www.kobakant.at/DIY/?p=2575) says that vaseline works great, and wax from candle works OK.
+
+Very important to degrease metal plate first, to ensure the ground sticks. Using a solvent like acetone etc.
+Using a bit of abrasive to roughen the surface up can improve it sticking further. For instance steel whool.
+
+Several references online to nail-polish working well. Dries quickly, easily available in small amounts.
+
+[Video using nail polish with 1 watt blue laser diode](https://www.youtube.com/watch?v=t8zkrFdetjk)
 
 ## Safety
 
+# Electroforming
 
 ## Conductive ink/paint
 
