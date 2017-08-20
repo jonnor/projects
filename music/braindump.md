@@ -43,6 +43,8 @@ Diary of Dreams - Butterfly Dance. Minimal synth, but very driving guitar-like c
 Diary of Dreams - She And Her Darkness. Piano song with synth electronics layered.
 Dreamy vocals. Great use of two/three voice tracks, as well as orchestral unison.
 
+Billy Idol - White Wedding. Very rocky
+
 ### Post-punk
 
 Sexbeat - Sexbeat. Very simple but effective lyric structure. 'some ..., some ...'
@@ -391,12 +393,36 @@ Lilt. Syncopated.
 
 ## DJing
 
-[Mixxx](http://mixxx.org) is the leading open source virtual DJ application.
+Software
+
+* [Mixxx](http://mixxx.org) is the leading open source virtual DJ application.
 Can be used in most DJ setups (incl multi-soundcard). Beat and tonal analysis.
+
+Techniques
+
+[Are You Stuck In The Tempo Trap? Why and how to change tempo](https://www.digitaldjtips.com/2011/06/how-to-change-tempo-dj-sets/)
+[7 tips for changing BPM while DJing](https://www.digitaldjtips.com/2014/04/7-insider-tips-making-exciting-tempo-changes-djing/)
 
 ## Analysis
 
+Software
+
 [aubio](https://aubio.org/). Note onset, pitch tracking, beat/tempo tracking.
+
+Tempo of of dark scene music
+
+[BPM by tapping, online tool](http://www.beatsperminuteonline.com/)
+
+Clan of Xymox - Loneliness. Beat=75bpm
+Wolfsheim - Sparrows & The Nightingales. beat=120?. Feels very slow though. snare=2x beat (60bpm)
+Suicide Commando - God is in the rain. beat=125. Good for simple strong stomp (1-2). 
+Mind.In.A.Box - Change. beat=125. Only clear in the refrain. Feels a bit faster than etc Suicide Commando.
+Apoptygma Berzerk - Non-Stop Violence. beat=125? feels much faster/upbeat!
+And One - TimeKiller. beat=130
+Covenant - Dead Stars. beat=133
+Icon Of Coil - Floorkiller. beat=135
+VNV Nation - Control. beat=140 
+Covenant- call the ships to port. beat=140-145
 
 
 # Lyrics
