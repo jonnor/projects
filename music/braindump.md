@@ -61,6 +61,9 @@ Eisfabrik - Walking towards the sun. Subtly distorted vocals on refrain, a bit r
 Mind.In.A.Box - Change. Starts with synth lick leitmotif. Cool vocoder-type voice effects, changing per verse to set mood, aspects of character.
 Lick leitmotif comes back more dancy upbeat in mid chorus.
 
+Assemblage 23 - Call the dawn. Laidback, smooth sound, almost a dark 'chillout'.
+Ruined Conflict - Labeled Enemy. Metal-style guitar riffing and vocals with electro builds and drums+bass. Good lyrics, vocals so-so.
+
 ### Dark/progressive rock/metal
 
 Riverside - After. Wispering speaking intro. Chanting lead, chanting backing vocals.
@@ -69,6 +72,7 @@ Katatonia - Evidence, Omerta. Lyrics, first-person narrative, personal,concrete 
 
 Threshold - The Ravages Of Time. Lyrics, how the world revolves in circles.
 "then there was a city then a pile of rocks and a town again"
+Threshold - Staring at the Sun. Excellent combo of hard and soft, transitions between them.
 Sieges Even - Mounting Castles in the Blood Red Sky. Samples of Martin Luther King "I have a dream".
 Sieges Even - Paramount. JFK samples, announcing the space program
 
@@ -390,6 +394,9 @@ If using 'rawer' sound, could be good base for something like Book of Eli OST?
 
 Lilt. Syncopated.
 
+Reprise. A part from earlier comes back again, often played by a different instrument and/or with small variations.
+Relatively common in prog rock/metal.
+
 
 ## DJing
 
@@ -451,7 +458,19 @@ Banksy: 'In the future everyone will be anonymous for fifteen minutes'
 Selling shovels at the goldrush
 Becoming rich by supplying neccesities (real or preceived) to
 people seeking to become rich (often by longshots)
-Playing people
+Playing people to follow their folly,
+so one can harvest the tangible 
+House always wins
+
+
+The Fear Itself (ref R.Franklin)
+Fear of the unknown, all in our head
+Monsters under the bed
+'the thing' that is feared grow strongers for as long as its not challenged
+even if there is nothing at all *the fear itself* can have real effects
+Freeze, fight or flight
+ 
+Panic attacks 'the fear of fear itself'
 
 ## Themes
 Manipulation of people
