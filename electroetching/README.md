@@ -41,6 +41,10 @@ Several references online to nail-polish working well. Dries quickly, easily ava
 
 [Video using nail polish with 1 watt blue laser diode](https://www.youtube.com/watch?v=t8zkrFdetjk)
 
+[Video of (acrylic?) spray pay with 1 watt blue laser](https://www.youtube.com/watch?v=1hFNj86L7sk)
+
+[Forum post saying PCB etching with laser-ablated spraypaint works but toner transfer is preferred](http://www.eevblog.com/forum/beginners/practical-proscon-of-laser-vs-milling-of-pcb's/msg766269/#msg766269)
+
 ## Safety
 
 # Electroforming
