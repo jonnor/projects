@@ -317,3 +317,45 @@ Cellulose is used as input. Final fibers are made by extruding into a bath of su
 Work by others
 
 * [3d-printed Textile fastener](http://www.thingiverse.com/thing:7544), can be used without puncturing textile. For clothing or technical uses.
+
+
+# Ultrasonic cutter
+
+
+* [SONOFILE](http://www.sonotec.com/en/tec.html): Workings of the ultrasonic cutter.
+Cutting in 
+
+Existing products
+
+* [Hair scissors](https://www.aliexpress.com/item/New-Hair-Scissor-Hairate-Ultrasonic-Hot-Vibrating-with-Razor-Blades-for-for-Hair-Cut-Styling-Avoid/32261969663.html). 20 USD
+* [Honda ultrasonic cutter](http://www.ebay.com/itm/New-HONDA-USW-334-Electronics-Ultrasonic-Cutter-From-Japan/122678188605). Professional unit, 250 USD.
+* [Industrial ultrasonic cutter](http://www.ebay.com/itm/Plastic-Ultrasonic-Cutter-Knife-Fabric-Rubber-Ultrasonic-Knife-40-kHz-100W-/192196980870?hash=item2cbfd53086:g:GJEAAOSwfpVZJsQP). 990 USD
+
+Knife
+
+* [VHF](https://shop.vhf.de/articleGroups/Carbide-lances-W_LM_HL.htm)
+
+Components
+
+* Ultrasonic transducer. [Banggood](https://www.banggood.com/search/ultrasonic-transducer.html)
+* Horn (connecting transducer to knife).
+* Knife blade.
+
+Other
+
+Schematic Ultrasonic cleaner
+http://www.repairfaq.org/sam/samschem.htm
+
+Ultrasonic cleaner
+http://jumperone.com/2012/02/ultrasonic-cleaner-re/
+
+Transducer specs
+http://www.ebay.com/itm/1PC-50W-28KHz-Ultrasonic-Transducer-Cleaner-1PC-Power-Driver-Board-220VAC-/122225614095
+
+Frequency 28±0.3 KHZ
+Capacity 3200PF
+Radiating surface 59 mm
+Impedance <=20Ω
+
+http://www.instructables.com/id/Home-Made-Ultrasonic-Cleaning-Tank/
+
