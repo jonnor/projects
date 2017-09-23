@@ -46,10 +46,12 @@ Different lighting conditions, background, angles can severely influence effecti
 Pipeline
 
 * Camera/lens correction. Noise removal.
-Input=camera/lens-model or calibration/characterization data. Use heuristics based on metadata to provide default
+Input=camera/lens-model or calibration/characterization data.
+Use heuristics based on metadata to provide default?
 * Projection correction.
 Input=4 points forming a rectangle.
 Computer-vision could suggest defaults.
+Also do horizont-correction? Chose a line to be horizontal, or one to be vertical
 * Mapping to physical/real-world units.
 Input=distance between two points.
 If there is a scale/meter in picture, computer-vision defaults.
@@ -57,11 +59,19 @@ If there is a scale/meter in picture, computer-vision defaults.
 Input=resolution in physical unit (can be default or presets, 0.1mm or so)
 * Cropping/selecting area of interest.
 Possibly done N times, for multiple objects from single image
-* Adaptive feature extractors.
-Maybe including image normalization (contrast,levels)
-Filtering, gaussian/box/blur
+* Feature extraction pre-processing
+Maybe including image pre-procesisng normalization (contrast,levels). Automatic-contrast adjustment?
+Filtering. Median or weighted-median is quite robust? Alt: gaussian
 Morphopogical noise removal, erosion/dilation/opening/closing
-Allow specifying constraints, on both number of features, which areas have features/not
+* Simple feature extraction
+Adaptive? Allow specifying constraints:
+smallest+largest desired feature, which areas have features/not, inside+outside object/feature.
+Can be used to tune noise removal, aid segmentation etc.
+Sobel (or extended Sobel) OK edge finding filter. Or use a Laplace-of-Gaussians (needs low noise, low-pass filtered).
+Must then combine edges using a Hough transform (or similar).
+However might be better to use a dedicated filter, like Canny operator.
+[Adaptive Contour](http://scikit-image.org/docs/dev/auto_examples/edges/plot_active_contours.html#sphx-glr-auto-examples-edges-plot-active-contours-py) could be interesting for organic shapes
+[Watershed](http://scikit-image.org/docs/dev/user_guide/tutorial_segmentation.html) is a robust region-based segmentation
 * Higher-level features, derived on basic features
 Combining multiple lines into one.
 Making use of repetition to determine groups.
