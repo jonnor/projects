@@ -41,34 +41,7 @@ But not seen any 3d-printed designs.
 
 # Doverail
 
-TODO v0.1
-
-* Test taped flex-slider with stepper-motor.
-* Test polyurethane coating on PLA
-
-TODO
-
-* Make the adjustable slider work properly
-* Design a machine that uses the rail system.
-For the Hiwin-style rail, a Delta (3d-printer) is the ideal.
-A horizontal CoreXY (laser/plotter/printer) with dual rails on gantry would also work, but have to align them carefully.
-A wider rail with side-loading capability would be suited for more kinematic systems.
-* Do coefficient-of-friction tests for common materials (and combinations).
-Candle wax. Polyurethane coating, epoxy coating. Lubricants: vegetable oil, sewing-machine-oil, mineral oil.
-Surface treatment: Sanding
-* Test with UHWM PE tape. Is the tape easy to apply?
-
-Ideas
-
-* Coat rail with melted candle wax, similar to how skis are prepared? And/or maybe use actual HF ski wax, it is relatively available
-* Create sanding jigs, by adhering glue to inner/outer shape, then slide one across the other.
-
-Learnings
-
-* Poor adhesion of tape to printed PLA is a challenge.
-Office-tape, Kapton and PET all stick pretty bad to the rough surfaces.
-Especially for internal curvature. Rail is tricky due to its length. Having a precise
-Edges to be taped should be: flat, tolerate slight misaligment and excess, ideally allow wrapping tape to adhere to itself
+Moved to [TapeCore project](https://github.com/jonnor/tapecore/blob/master/README.md#doverail-slim)
 
 # TapeXY
 
