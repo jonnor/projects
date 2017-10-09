@@ -226,14 +226,23 @@ Maybe related: http://www.freecadweb.org/wiki/index.php?title=Macro_unrollRuledS
 Currently the Part::CrossSection creates a copy which is not updated on changes to the part it comes from.
 I often used this for DXF export (for lasercut/milling). Then it is irritating (and error-prone) that
 it does not update...
+Especially because the object also needs to be rotated (to XY plane) and moved (to avoid overlaps), each time.
 
 Draft::Shape2dView does update, but often gives not the results wanted.
 For instance, duplicate lines projected etc. Also a bit trickier/not-so-nice to use, due to bad preview.
 
+Internally Part::CrossSection uses `myobj.shape.slice(plane, height)`, and puts the results into a Compund path.
+Should be doable to create a parametric tool in Python using the same.
+Base object should be selectable, as well as cutting plane (default=XY) and height (default=mid).
+Would be convenient if it also has option for output rotation (default=XY), then cutting plane can default to across-thinnest.
+
+Would be great if the tool produced output that was openable in FreeCAD also without the tool installed,
+that it would just be non-parametric CrossSection.
+
 ### Stitching path-effect
 
 For creating stiched lines, for creating lines where piece should bend.
-For instance using lasercutter in thin
+For instance using lasercutter in materials like cardboard, thin plastics
 Kinda related to sheet-bending workbench.
 
 Right now doing this with a sketch, and Draft::CopyAlongPath.
