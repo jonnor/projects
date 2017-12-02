@@ -34,7 +34,7 @@ Apoptygma Berzerk - Eclipse. About advent of nuclear winter?
 Torul — ‬Saviour of Love. Big buzzy pads used sparsely.
 Asbury Heights - Glow. Anthem/ode to non-conformity
 
-### Darkwave. Newwave.
+### Darkwave
 
 Wolfsheim - The Sparrows And The Nightingales. Arythmic repeating voice samples. 
 Deine Lakaien - Reincarnation. Question+answer/repeat vocals.
@@ -42,6 +42,12 @@ Diary of Dreams - Traumtaenzer. Somehow managing to make slow ballads dark...
 Diary of Dreams - Butterfly Dance. Minimal synth, but very driving guitar-like chords.
 Diary of Dreams - She And Her Darkness. Piano song with synth electronics layered.
 Dreamy vocals. Great use of two/three voice tracks, as well as orchestral unison.
+
+## New wave
+
+Tears for Fears - Shout. Very catchy lyrics. Iconic song, widely covered
+
+## Rocky 
 
 Billy Idol - White Wedding. Very rocky
 
@@ -91,9 +97,15 @@ Epica - Living a Lie, Fools of Damnation.
 Great sounding spoken latin church lithurgy, contrasting the metal sound and growls/soprano vocals.
 Nice arabic chanted lithurgy in transition to next song.
 
+Circus Maximus - Zero. Slow and dark piano ballad with some epic builds. Mostly lower vocals (for CM).
+
 ### Gothic rock
 
 Type O Negative - Love You To Death. Black No 1. Slow bassy, fuzzy, riffing.
+
+Angels of Liberty - Ritual & Tradition. Bass has that UK. post-punk/protogoth feel. Somehow 100% old-school goth style, without being a copy.
+Angels of Liberty - Talk About Nothing. Straight-up, no-bullshit gothic rock
+
 
 ### Dark Ambient.
 Drone. 
@@ -112,6 +124,9 @@ Vocals/lyrics without chorus, and misc effects make the track go forward
 
 Ordo rosarius equilibrio - From copenhagen with love. Storytelling vocals, kinky lyrics, supported by by piano/violin/drums.
 
+### Folky
+
+Eivør - Min Modir / Trollabundin (esp. live at Skraaen version). Powerful, passionate chanting. Rhytmic patterns by quick indrawn/expulsed breaths
 
 ### Soundtracky
 
@@ -459,8 +474,9 @@ Selling shovels at the goldrush
 Becoming rich by supplying neccesities (real or preceived) to
 people seeking to become rich (often by longshots)
 Playing people to follow their folly,
-so one can harvest the tangible 
+so one can harvest the tangible wins
 House always wins
+People looking for quick fixes, easy answers
 
 
 The Fear Itself (ref R.Franklin)
@@ -471,6 +487,12 @@ even if there is nothing at all *the fear itself* can have real effects
 Freeze, fight or flight
  
 Panic attacks 'the fear of fear itself'
+
+## Fictional styles
+
+Dystopian scifi. Cyberpunk. Dark, dirty, gritty. Urban. Post-industrial. Cyborgish.
+Gothic. Fantasy. Dark, minimalist, sleek. Medival. Magical.
+
 
 ## Themes
 Manipulation of people
