@@ -47,6 +47,17 @@ Dreamy vocals. Great use of two/three voice tracks, as well as orchestral unison
 
 Tears for Fears - Shout. Very catchy lyrics. Iconic song, widely covered
 
+## Synthwave / retrowave / new retro
+
+[Scandroid - Rendevouz](https://www.youtube.com/watch?v=DoCasZ3HrRo&t=432s).
+Super catchy lyrics and tune. Intro synth and full instrumental buildup use the theme of the main lyrics hook to come.
+Instant understanding of the main part when it shows, and instantly reminder when relistening.
+you know I want to... 'Rendezvous' - smoothely suggestive.
+
+[Scandroid - Pro-bots and Robophobes](https://www.youtube.com/watch?v=wfxDIyYU9nM&t=3237s).
+Upbeat but gritty sound. Dark lyrics with strong cyberpunk feel.
+Simple rhymes but the non-standard words make it not cheesy.
+
 ## Rocky 
 
 Billy Idol - White Wedding. Very rocky
@@ -351,6 +362,7 @@ Ghostly/demonic effect. Like in fantasy/scifi game characters.
 Duplicate track. Reversing the clip, applying reverb, and reverse back again. 'large room' preset.
 Sounds like Ayreon - Universal Migrator?
 On the original clip, apply reverb. Then can downtune the sample to get a really deep voice.
+[Another example](https://www.youtube.com/watch?v=02FidrUw6Z8).
 
 [Sing Harmony With Yourself (2014)](https://www.youtube.com/watch?v=gJ3xfTpeDHY).
 Recording a counting "one, two, three, four" before singing "aah".
@@ -400,7 +412,47 @@ Layering sounds by adding in a second sample to another OSC. Using envelopes to 
 Can match the pitch, either same note or a harmonic relative (like a 5th).
 If using 'rawer' sound, could be good base for something like Book of Eli OST? 
 
-## Motivation
+[Electronic Music Theory: 3/4, 6/8 and Triplets](https://www.youtube.com/watch?v=3OPhnvaDT58)
+3/4 is waltz time. When people say 3-time in electronic music however, and what is more common, is 6/8. 
+"Even though based in 3 - it has a 2 feeling, since can have accent is falling on 4th"
+Sometimes people mean triplets, which is just 3 notes in span of 4th note, with meter still at 4/4.
+Tempo does not change, and is not a total
+
+[Music Theory for Electronic Musicians: The Unified Theory of Basslines Pt. 2](https://www.youtube.com/watch?v=YVV3_f5QZBw).
+Using the kick drum as basis for the bassline. Copy/pasting over. Basic is just following the kick pattern, and chord progression.
+Then can start to move some notes to be part of the chord progression triad chords, add passing notes etc.
+Can also invert to always avoid the kick, 
+
+[Ableton Live Operator Tutorial: Techno Fundamentals - More Than A Bassline w/ John Selway](https://www.youtube.com/watch?v=tZVM9sxBZOI).
+Using FM synthesis to create interesting bassline.
+Have a sine C0-C1 subbass with glissando and a bit of swing, then adding another wave with percussive envelope to bring mids.
+Can play around with modulate envelop and level of the second waveform to tweak the effect.
+End sound shown could sound killer if made more harsh/agressive. 
+
+[Ableton Live Tutorial: Techno Fundamentals Pt 3 - One Note To Rule Them All - Effects + Automation](https://www.youtube.com/watch?v=6oPrWo-fB28)
+From 14:30 is the interesting part, when actually playing with it. Using a single note, with a lot of modulation parameter on the synth,
+then experimenting with these parameters live to get ideas for building/deconstructing music.
+Sidechained chorus, envelope times, filter frequncies.
+
+Also: Abelton Reverb module has nice early reflection 'spin' which changes frequencies a bit.
+And filters for the diffusion network, which allows to tune how. Can have long/huge chorus without bass booming taking over. 
+
+[](https://www.youtube.com/watch?v=Z5hYS05kkLc).
+Playing complete random things on keyboard, then 1/16th quantize starts, make it monophonic,
+and then using looped selection to find interesting sections.  
+
+[How I Produce A Groove Where Every Sound Talks To Eachother](https://www.youtube.com/watch?v=9n6FAo_T878)
+Using time, reverbs/pan to create call-answer ping-pong.
+Then using this as composition technique, adding percussion samples successively that keep the conversation going.
+Also using sharp automations curves on filters to create similar play-offs.
+
+[When I Started Out Producing I Made Little Ideas](https://www.youtube.com/watch?v=TKzcEejHFgk). Ramble of things.
+Using two kicks, with second one off-beat as the 'bassline'. 
+Grabbing loops, then cutting/stretching/moving pieces of it, then using EQ shaping to make it fit.
+House basic by taking samples from disco music, carving out pieces, using repetition to form a loop,
+then heavy lowpass and compress, sidechain. After laying down beats around the samples, can also explore alt part of the samples. 
+
+## Motivational
 
 [Angelspit's Patreon: Stop Being Over Critical](https://www.youtube.com/watch?v=rIKnAMh-DT4). 3 min.
 
