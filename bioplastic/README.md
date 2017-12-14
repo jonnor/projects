@@ -99,11 +99,24 @@ Tools
 * Vacuum table: 1) Make from scrapwood 2) CNC/laser MDF
 * Magnet stirrer, when doing hydrolysis of plastic
 
-[Open source mini plastic shredder](https://grabcad.com/library/mini-shredder--1)
-[Appropedia page on shredders](http://www.appropedia.org/Waste_plastic_extruder#Plastic_Grinding)
-[Filamaker open hardware shredder](http://filamaker.eu/product/mini-shredder/)
+## Shredder
+
+Should automatically
+
+* [Precious plastics shredder](https://preciousplastic.com/en/videos/build/shredder.html).
+Mechanics designed to be built in mechanical workshop. Steel parts, for laser/plasma/watercutting.
+Good teeth profile, has space for mesh in bottom for decicing particule size.
+Could be improved for making in a fablab? M8 threaded rods instead of hexagonal, with 608 bearings.
+Existing M10 rods should also become M8.
+Knife pices are a mix of 5 and 6mm thickness, to provide clearance in cut.
+Can it be made in wood (ply/HDF) instead of metal? Much faster to CNC.
+Either using epoxy coating to harden surface, or 1mm steelplate along.
+Could one use a more "standard" motor? Could NEMA23 with large gear be enough? 
+* [Open source mini plastic shredder](https://grabcad.com/library/mini-shredder--1)
+* [Appropedia page on shredders](http://www.appropedia.org/Waste_plastic_extruder#Plastic_Grinding)
+* [Filamaker open hardware shredder](http://filamaker.eu/product/mini-shredder/)
 Can a similar type shredder be build using bicyle gears/sprockets?
-[Clas Olhson shredder](http://www.clasohlson.com/no/Cotech-kompostkvern-/40-6000), needs simple hack to work well
+* [Clas Olhson shredder](http://www.clasohlson.com/no/Cotech-kompostkvern-/40-6000), needs simple hack to work well
 
 Interesting objects to make
 --------------------------
