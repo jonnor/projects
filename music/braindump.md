@@ -1,5 +1,5 @@
 
-## Genres I'm interested in
+## Inspiration
 
 Dark electronic
 
@@ -551,7 +551,7 @@ Manipulation of people
 Psychology, the mind. Perception
 'how we see the world'
 
-Human experience. Finding the core
+Human condition. Finding the core
 'things that stay the same'
 
 ## Quotes
@@ -586,3 +586,20 @@ Morpheous, The Matrix
 > Imagination is the only weapon in the war against reality.
 ― Cheshire Cat from “Alice in Wonderland” by Lewis Carroll
 
+
+> And the faker the fodder is the more you love it because fake fodder’s the only thing that works anymore,
+> fake fodder is all that we can stomach
+> ....
+> All we know is fake fodder and buying shit.
+> That’s how we speak to each other, how we express ourselves is buying shit.
+Bings spech, Black Mirror
+
+
+## Samples
+
+> There's no cure for the Internet. It would never go away
+Black Mirror, 
+
+> Please don't make me do it. No, I'm I'm frightened, darling, please Don't make me.
+> I don't want to die. Oh, God, I don't want to die. I'm frightened, I don't want to die
+Android Ash in Be Right Back, Black Mirror 
