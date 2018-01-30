@@ -15,7 +15,6 @@
   "dependencies": {
     "coffee-script": "^1.11.1",
     "debug": "^2.3.3",
-    "flowtrace": "~0.0.12",
-    "simple-server": "^1.0.1"
+    "flowtrace": "~0.0.12"
   }
 }
