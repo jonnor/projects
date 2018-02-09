@@ -334,19 +334,6 @@ due to its low consumption of energy and high conversion rate, which is of about
 Using washing liquid as foaming agent, kitchen machine to whip it. Gelatin sets below 45 deg C, and is reheatable.
 Using 5 ml Listerine (mouth wash) as an anti-bacterial agent.
 
-
-PLA production
-
-* [Youtube exlanation](https://www.youtube.com/watch?feature=player_detailpage&v=99DeqVBEDFI#t=128),
-both Ring-opening polymerization using metal-catalyzed lactide, and Direct Polycondenzation of Lactic Acid.
-Includes references to a Direct Polycondensation step without catalysts, reaching 1.49*10^-22 kg,
-also produced Lactide as a side-effect. And a section on blending with other biodegradable.
-PCL, rubbery-like. With Dextrene. Collagene
-Zinc, Titanium, Tin (or Tin Octuate). Sodium Carbonate is used to extract the Tin Octuate afterwards.
-
-* [Youtube lab demo of PLA syntheis](https://www.youtube.com/watch?v=lKJUFV2pSpk). Silent with french subs..
-Lactic acid is mixed with sulhuric acid. Heated to 110 C and left there for 30 mins.
-
 Polymers general
 
 * Condensation Polymers: [Polyesters](https://www.youtube.com/watch?v=usRnJP8lDxM)
@@ -371,6 +358,35 @@ Politics
 
 * [Nowegian government considering taxing pretroplastics](http://www.tu.no/meninger/2015/03/12/norge-kan-bli-en-spydspiss-internasjonalt-pa-fornybar-plast)
 
+
+## PLA production
+
+Challenge: Reach molecular weight high enough to be useful for mechanical applications.
+
+Direct polycondensation
+Solid-state polycondensation. 
+Ring-opening
+
+
+Open questions:
+
+* How can one dermine how much PLA vs lactide vs lactic acid result has?
+* Can one determine molecular weights without expensive equipment?
+Most important is to be able to compare results from different runs, to see
+
+
+
+* [Youtube exlanation](https://www.youtube.com/watch?feature=player_detailpage&v=99DeqVBEDFI#t=128),
+both Ring-opening polymerization using metal-catalyzed lactide, and Direct Polycondenzation of Lactic Acid.
+Includes references to a Direct Polycondensation step without catalysts, reaching 1.49*10^-22 kg,
+also produced Lactide as a side-effect. And a section on blending with other biodegradable.
+PCL, rubbery-like. With Dextrene. Collagene
+Zinc, Titanium, Tin (or Tin Octuate). Sodium Carbonate is used to extract the Tin Octuate afterwards.
+
+* [Youtube lab demo of PLA syntheis](https://www.youtube.com/watch?v=lKJUFV2pSpk). Silent with french subs..
+Lactic acid is mixed with sulphuric acid. Heated to 110 C and left there for 30 mins.
+A clear yellowish substance is obtained. At 110C it looks to have viscocity of vegetable oil.
+Probably mainly lactide, or very low molecular weight PLA?
 
 ## Bacterial cellulose
 
