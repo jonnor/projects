@@ -2,6 +2,7 @@
 Experiments around the piezeoelectric effect,
 both [sensors](https://en.wikipedia.org/wiki/Piezoelectric_sensor) and transducers.
 
+Paper with [lots of detailed info](http://www.openmusiclabs.com/wp/wp-content/uploads/2011/11/piezo.pdf).
 
 ## Piezo preamp
 

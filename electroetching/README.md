@@ -63,4 +63,10 @@ Using graphite, getting conductivity results about 4x better than Bare Conductiv
 * [How To Airbrush Conductive Ink](https://www.youtube.com/watch?v=s5HnXabZqSQ).
 Using thinner from water/isoproponal, soap, filtering out big particles using screenprinting film.
 
+# PCB etching
 
+Challenge: In finished board, most traces are isolated from ground.
+For etching to work, must have a connection. 
+
+Idea: Have a sponge divided into two parts, separated by a thin non-conductive layer (film).
+One side is connected to +, the other to -.

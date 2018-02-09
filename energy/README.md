@@ -11,6 +11,9 @@ The most common design is a Darrieus, which uses the lift of airfoils. Its major
 Using a Darrieus/Savonius hybrid is the simplest solution, but reduces maximum efficiency.
 More original solutions includes foldable [airfoils](http://www.webalice.it/acecere48/finalreport.pdf)
 
+## Costs
+Banggood.com has both horizontal and vertical turbine designs for 12-24V. Prices down to 200 USD for 200W. 
+
 ## Airfoil design
 
 [NACA](https://en.wikipedia.org/wiki/NACA_airfoil) is a series of airfoil designs, defined by a formula with 4/5 parameters.

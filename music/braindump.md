@@ -90,6 +90,7 @@ Katatonia - Evidence, Omerta. Lyrics, first-person narrative, personal,concrete 
 Threshold - The Ravages Of Time. Lyrics, how the world revolves in circles.
 "then there was a city then a pile of rocks and a town again"
 Threshold - Staring at the Sun. Excellent combo of hard and soft, transitions between them.
+Threshold - Narcissus. Fantastic lyrics. Brutal, in an elegant
 Sieges Even - Mounting Castles in the Blood Red Sky. Samples of Martin Luther King "I have a dream".
 Sieges Even - Paramount. JFK samples, announcing the space program
 
@@ -109,6 +110,10 @@ Great sounding spoken latin church lithurgy, contrasting the metal sound and gro
 Nice arabic chanted lithurgy in transition to next song.
 
 Circus Maximus - Zero. Slow and dark piano ballad with some epic builds. Mostly lower vocals (for CM).
+
+Pure Reason Revolution - AVO. Simple piano leitmotif, synthbass backing, synth.
+Fantastic vocal harmonies after bridge, same phrase repeated, low-pass filtered then looseing up.
+Outro also iva 'Amor Vincit Omnia' phrases. Ends by filtering/distoring vocals with some whitenoise/phasing thing
 
 ### Gothic rock
 
@@ -130,6 +135,7 @@ Lunatic Soul - Summerland. Dreamy smooth 'faint' vocals (esp. at end). Mixed per
 Lunatic Soul - The in-between Kingdom. Nice distortion on mid/top range drums against soft booomy tom. 
 Lunatic Soul - Cold. Driving & repetitive basslines. One for initial leitmotif, then modified heavier form later.
 Vocals/lyrics without chorus, and misc effects make the track go forward
+
 
 ### Neofolk. Neopagan.
 
@@ -452,6 +458,21 @@ Grabbing loops, then cutting/stretching/moving pieces of it, then using EQ shapi
 House basic by taking samples from disco music, carving out pieces, using repetition to form a loop,
 then heavy lowpass and compress, sidechain. After laying down beats around the samples, can also explore alt part of the samples. 
 
+[Vocal Delay Effect Tricks and Tips - Into The Lair #73](https://www.youtube.com/watch?v=MUb0Ln5GOCU).
+Using a filter on the feedback of a delay, so that each delay pitch gets more and more filtered.
+
+[Into The Lair #35 - Vocal Delay Techniques](https://www.youtube.com/watch?v=Z-RUkACxaAU).
+Using delay synced to quarter note. Also adding some filtering and distortion, similar to old analog delay units.
+Tuning values of effect by using only listening to the sound o .
+Ping-pong delay by having two mono delays, one for each stereo channel, twice the delay on one side.
+
+[Audacity Auto Ducking](https://www.youtube.com/watch?v=HW5Ga5NGeO8)
+ducking a music track by voice track to ensure music stays in background.
+
+[6 Ways to Get Creative with Vocal Doubles](https://theproaudiofiles.com/vocal-doubles/).
+Includes tip for improving intonation/pitch: Take a good vocal recording, pitch-correct it with autotune,
+then play it back and sing along.
+
 ## Motivational
 
 [Angelspit's Patreon: Stop Being Over Critical](https://www.youtube.com/watch?v=rIKnAMh-DT4). 3 min.
@@ -587,7 +608,8 @@ Morpheous, The Matrix
 ― Cheshire Cat from “Alice in Wonderland” by Lewis Carroll
 
 
-> And the faker the fodder is the more you love it because fake fodder’s the only thing that works anymore,
+> And the faker the fodder is the more you love it
+> because fake fodder’s the only thing that works anymore,
 > fake fodder is all that we can stomach
 > ....
 > All we know is fake fodder and buying shit.
