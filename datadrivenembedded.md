@@ -15,15 +15,26 @@ Sometimes one might want to keep latest input value even if not current.
 Maybe people then should need to transfer it into State?
 
 
-## Requirement / goals
+## Requirements
 
 * C++11 without stdlib. Exception-free and no-dynamic-allocations
-* Strongly-typed, plain-data objects going in/out of the application code 
+* Strongly-typed, plain-data objects going in/out of the application code
+
+Goals
 * Declarative input/output setup. With reference implementation, at least for Arduino
 * Easy (de)serialization of in/out data
-* 
+* Supports host-based simulation in C++, using dedicated IoDevice implementations
 
-Decisions:
+Want
+* Streaming data from device to host, for debugging
+* A way to visualize the streamed data. Jupyter?
+
+Nice-to-have
+* Can live update config
+* Can use simulated IoDevices on real device
+* GUI for setting up simulation scenarios
+
+## Decisions:
 
 * IO modules statically declared.
 Solution: Put them into main file as a class
@@ -40,6 +51,7 @@ Use something like `std::optional` to indicate no-data-available?
 Use a filesystem watcher on the application file(s),
 when input updated, delete old generated file, re-generate and write to disk 
 
+Common code
 ```
 class Setupable {
     virtual bool setup() = 0
@@ -51,8 +63,10 @@ class NoSetup : public Setupable {
 template class Result<StateT, OutputT> {
     
 }
+```
 
 // Arduino I/O implementations
+```
 class TimeMicros : public NoSetup {
     long get() { return micros();  }
 
@@ -108,7 +122,9 @@ class DigitalOut : public Setupable {
     
 };
 
-#define NEXT_DEFAULT_SETUP()
+#define NEXT_DEFAULT_SETUP(IoDeviceT)
+static IoDeviceT _g_next_io;
+
 void setup() {
     _g_next_io.setup();
 }
@@ -116,39 +132,36 @@ void setup() {
 
 #define NEXT_DEFAULT_MAIN(ConfigT, IoDeviceT, StateT, input_func, next_func, output_func)
 
-static IoDeviceT _g_next_io;
-
 void loop() {
     static const ConfigT config;
     static StateT current_state;
 
     auto in = input_func(io);
     auto next = next_func(config, current_state, in);
-    output_func(io, next.outputs);
+    output_func(_g_next_io, next.outputs);
     current_state = next.state;
 }
 #endif
+```
 
+Generated code
 
+```
 #define NEXT_SERIALIZE_IMPLEMENT(...)
 #endif
-```
 
-## Application code
-
-```
 class IoDevices : public Setupable {
 public:
-    TimeMicros time;
-    DigitalIn buttonA(11, true);
-    AnalogIn waterLevel(10, true);
-    DigitalOut motorOn(0);
+    // inputs
+    TimeMicros current_time;
+    AnalogIn water_level(10, true);
+    // outputs
+    DigitalOut pump_on(0);
 
     Setupable &setups[] = {
-        time,
-        buttonA,
-        buttonB,
-        motorOn,
+        current_time,
+        water_level,
+        pump_on,
     };
 
 public:
@@ -162,17 +175,15 @@ public:
 
 class Inputs {
     long current_time;
-    bool button_a;
-    long input_b;
+    long water_level;
 };
 
 Inputs
 get_inputs(IoDevices &io)
 {
     return {
-        current_time: time.get(),
-        buttonA: buttonA.get(),
-        inputB: buttonB.get(),
+        current_time: current_time.get(),
+        water_level: water_level.get(),
     };
 }
 
@@ -183,7 +194,7 @@ class Outputs {
 bool
 set_outputs(IoDevices &io, const Outputs &out)
 {
-    io.motorOn.set(out.motor_on);
+    io.pump_on.set(out.pump_on);
     return true;
 }
 ```
@@ -203,12 +214,13 @@ NEXT_AUTO_INPUTS(Inputs, get_input, {
 NEXT_AUTO_OUTPUTS(Outputs, set_outputs, {
     bool pump_on : DigitalOut(22),
 })
+NEXT_SERIALIZE_IMPLEMENT(Inputs, Outputs);
 
 class Config {
     long threshold = 100;
 };
 class State {
-    bool was_on = 100;
+    bool was_on = false;
 };
 NEXT_SERIALIZE_IMPLEMENT(State, Config);
 
@@ -227,8 +239,6 @@ next(const Config &config, const State &current_state, const Inputs &in)
 NEXT_DEFAULT_SETUP();
 NEXT_DEFAULT_MAIN(Config, IoDevices, State, get_inputs, next, set_outputs);
 ```
-
-
 
 
 ## Related
