@@ -325,10 +325,6 @@ References
 * [Starch-based plastic review](http://www.biodeg.net/fichiers/Starch-based_Plastics.pdf): "PLA seems to be the only plastic from vegetal source with chances to be commercialized,
 due to its low consumption of energy and high conversion rate, which is of about 80% of each kilo of sugar."
 * [Bioplasticsinfo.com: PHA appications](http://bioplasticsinfo.com/polyhydroxy-alkonates/applications-of-pha-as-bioplastic/)
-* [Quest for bio-styrene, foam from PLA/PHA](http://greenchemicalsblog.com/2013/02/17/the-quest-for-bio-polystyrene/)
-* [Polylactic acid foaming](http://www.sciencedirect.com/science/article/pii/S0079670014000392)
-[PDF](www.researchgate.net/profile/MReza_Nofar/publication/261372821_Poly_%28lactic_acid%29_foaming/links/5436f64d0cf2dc341db4c5ff.pdf)
-* [Foamed PLA Shows Promise In Biodegradable Meat Trays](http://www.ptonline.com/articles/foamed-pla-shows-promise-in-biodegradable-meat-trays)
 * [How To Make A Gelatin Foam ](https://www.youtube.com/watch?v=FDAiX9mxvCI). Based on a [long tutorial](https://www.youtube.com/watch?v=u4rxnovwN_0).
 100 ml gelatin / 50 ml water, 50 ml honey and 100 ml glyserin plastizer. Need to heat, but not boil, to dissolve.
 Using washing liquid as foaming agent, kitchen machine to whip it. Gelatin sets below 45 deg C, and is reheatable.
@@ -392,11 +388,13 @@ Opportunities:
 
 Production methods
 
-* Direct polycondensation. Lactic acid is condensated, typically with a metal-based catalyst and under vacuum.
+* Direct/melt polycondensation. Lactic acid is condensated, typically with a metal-based catalyst and under vacuum.
 * Solid-state polycondensation. Multi-step process:
 1) Lactic acid is converted to a precursor, like the dimer lactide or oligio PLLA.
 2) Polycondensation is performed on the precursor.
-* Ring-opening polymerization. -Requires high purity lactic acid, catalysts.
+* Ring-opening polymerization. Lactic acid is converted to the lactide dimer and concentrated.
+A second step with catalysts breaks open the rings of the dimer to form polymer chains. 
+-Requires high purity precursors, catalysts.
 
 
 Open questions:
@@ -420,6 +418,7 @@ Lactic acid is mixed with sulphuric acid. Heated to 110 C and left there for 30 
 A clear yellowish substance is obtained. At 110C it looks to have viscocity of vegetable oil.
 Probably mainly lactide, or very low molecular weight PLA?
 
+* [Melt/solid polycondensation of l-lactic acid: an alternative route to poly(l-lactic acid) with high molecular weight](https://www.sciencedirect.com/science/article/pii/S0032386100008892). 2001. Polycondensate with a molecular weight of 20,000 Da is first prepared by ordinary melt-polycondensation, crystallized by heat-treatment around 105°C, and heated at 140 or 150°C for 10–30 h for further polycondensation. A high-quality polymer of PLLA can be obtained in high yield in a relatively short reaction time and its molecular weight exceeds 500kDa.
 
 
 Effects of impurities.
@@ -543,6 +542,34 @@ Has a recycling initiative, https://re-add.com/
 Also does R&D on cellulose-based PLA production.
 Possible partner?
 
+## PLA foaming
+
+Expanded PLA. Challenging due to low melt strength.
+PolyPropylene also has same problem, may be that research/practices can be transferred.
+
+* [Quest for bio-styrene, foam from PLA/PHA](http://greenchemicalsblog.com/2013/02/17/the-quest-for-bio-polystyrene/)
+* [Polylactic acid foaming](http://www.sciencedirect.com/science/article/pii/S0079670014000392)
+[PDF](www.researchgate.net/profile/MReza_Nofar/publication/261372821_Poly_%28lactic_acid%29_foaming/links/5436f64d0cf2dc341db4c5ff.pdf)
+* [Foamed PLA Shows Promise In Biodegradable Meat Trays](http://www.ptonline.com/articles/foamed-pla-shows-promise-in-biodegradable-meat-trays)
+
+* [Physical extruder foaming of poly(lactic acid)—processing and foam properties](http://onlinelibrary.wiley.com/doi/10.1002/pen.23341/abstract),
+using carbon dioxide as foaming agent. Densities down to 20–30 kg/m3. Using a physical foaming process, injected into polymer melt.
+Then thermodynamic instability is induced by reducing the pressure and thus facilitating a phase transition starting with cell nucleation. Then third, after the nucleation there is cell growth.
+At 105°C and 100 bar CO2 pressure, the solubility of CO2 in a PLA melt was approximately 100 g/kg.
+Batch foaming includes a step of gas saturation at an elevated temperature followed by a cooling step prior to depressurization.
+Typical pressure drop rates in batch foaming are of the order of 1 MPa/s whereas in extrusion foaming pressure drop rates of the order of 1-10 GPa/s are reported. The CO2 temperature in the range 12–14°C, CO2 pressure on injection was in the range 100–130 bar. Keeping the melt pressure at the die at 200 bar, for CO2 to be in supercritical state.
+* [Carbon dioxide-induced crystallization in poly(L-lactic acid) and its effect on foam morphologies](http://onlinelibrary.wiley.com/doi/10.1002/pi.2910/full).
+* [Improving the Stability of Polylactic Acid Foams by Interfacially Adsorbed Particles](https://www.pitt.edu/~velankar/www/papers/PolymEngSciLobos2016.pdf). Adding a few percent of polytetrafluoroethylene (PTFE) particles can stabilize PLA foams.
+Using a chemical blowing agent (CBA), Azodicarbonamide at 5% wt loading. Mixed in in extruder at 150 deg (foaming agent activates at 210)
+* [BioPolymerNetwork PLA foam](http://www.biopolymernetwork.com/Data/Default/Documents/Crystallinity%20Effects%20in%20PLA%20Based%20Foams.pdf)
+[Methods of manufacture of polylactic acid foams ](https://patents.google.com/patent/WO2008093284A1). Patented 2007
+* [Microcellular Foaming of Poly(lactic acid)/Silica Nanocomposites in Compressed CO2: Critical Influence of Crystallite Size on Cell Morphology and Foam Expansion](https://pubs.acs.org/doi/abs/10.1021/ie302281c)
+* [Method of impregnating and purifying polylactic acid resin](https://patents.google.com/patent/WO2012138282A1). Patented 2011.
+* [Method for producing expanded polylactic acid resin particle](https://patents.google.com/patent/WO2013058056A1/en). Patent filed 2011.
+
+## PLA fibers
+
+* [Porous bead-on-string poly(lactic acid) fibrous membranes for air filtration](https://www.sciencedirect.com/science/article/pii/S0021979714008972). Using electrospinning
 
 ## Bacterial cellulose
 
