@@ -361,11 +361,42 @@ Politics
 
 ## PLA production
 
-Challenge: Reach molecular weight high enough to be useful for mechanical applications.
+## Background
 
-Direct polycondensation
-Solid-state polycondensation. 
-Ring-opening
+> PLA...is the biodegradable material that has the largest scope to replace the position of the petroleum based plastics
+> ...
+> The production cost of PLA is also approaching the cost of traditional plastic
+> ...
+> [From 2012] the average annual growth rate of lactic acid and PLA will be 18.7% [2].
+> ...
+> The global PLA market, by application, was valued at $304.9 million in 2014, projected to reach $851.5 million by 2019
+> ...
+> Currently the total production capacity of PLA in the world is about 180,000 tonnes
+[State of the art and future prospectives of poly(lactic acid) based blends and composites](http://onlinelibrary.wiley.com/doi/10.1002/pc.23906/full) (2016)
+
+
+### Production
+
+Challenge: Reach molecular weight high enough to be useful for mechanical construction. Want around 100kDA
+Challenge: Make production economically viable at low scales.
+Challenge: Make production operatable by a small community, ie makerspace. 
+
+Opportunities:
+
+* Divesting from oil. Scarcity, rising prices, political interest, repurpose skills/equipment
+* Biodegradable. 
+* Circular economy, integrated recycling
+* Vertical integration, designing for particular end-uses
+* Biocompatibility. Medical uses
+
+
+Production methods
+
+* Direct polycondensation. Lactic acid is condensated, typically with a metal-based catalyst and under vacuum.
+* Solid-state polycondensation. Multi-step process:
+1) Lactic acid is converted to a precursor, like the dimer lactide or oligio PLLA.
+2) Polycondensation is performed on the precursor.
+* Ring-opening polymerization. -Requires high purity lactic acid, catalysts.
 
 
 Open questions:
@@ -373,20 +404,145 @@ Open questions:
 * How can one dermine how much PLA vs lactide vs lactic acid result has?
 * Can one determine molecular weights without expensive equipment?
 Most important is to be able to compare results from different runs, to see
+* How to test the mechanical properties?
 
-
+References
 
 * [Youtube exlanation](https://www.youtube.com/watch?feature=player_detailpage&v=99DeqVBEDFI#t=128),
 both Ring-opening polymerization using metal-catalyzed lactide, and Direct Polycondenzation of Lactic Acid.
 Includes references to a Direct Polycondensation step without catalysts, reaching 1.49*10^-22 kg,
-also produced Lactide as a side-effect. And a section on blending with other biodegradable.
+also produced Lactide as a side-effect. And a section on blending with other biodegradable plastics.
 PCL, rubbery-like. With Dextrene. Collagene
-Zinc, Titanium, Tin (or Tin Octuate). Sodium Carbonate is used to extract the Tin Octuate afterwards.
+Catalysts used Zinc, Titanium, Tin (or Tin Octuate). Sodium Carbonate is used to extract the Tin Octuate afterwards.
 
 * [Youtube lab demo of PLA syntheis](https://www.youtube.com/watch?v=lKJUFV2pSpk). Silent with french subs..
 Lactic acid is mixed with sulphuric acid. Heated to 110 C and left there for 30 mins.
 A clear yellowish substance is obtained. At 110C it looks to have viscocity of vegetable oil.
 Probably mainly lactide, or very low molecular weight PLA?
+
+
+
+Effects of impurities.
+[From Lactic Acid to Poly(lactic acid) (PLA): Characterization and Analysis of PLA and Its Precursors](https://pubs.acs.org/doi/full/10.1021/bm101302t) 2011
+
+### PLA composites
+
+Up to 50% fibre contents (by weight). Cotton, flax, hemp, bast,
+
+https://www.sciencedirect.com/science/article/pii/S1359835X09000840
+
+[State of the art and future prospectives of poly(lactic acid) based blends and composites](http://onlinelibrary.wiley.com/doi/10.1002/pc.23906/full) (2016)
+
+### PLA adhesive
+
+Could one use this for
+
+### PLA 
+
+### TODO
+
+Test making low-DA PLA/lactide
+
+* Buy lactic acid from brewing store
+* Use hotplate with mechanical stirrer, no vacuum, no catalyst.
+* Test use as glue, for PLA parts and/or wood
+* Test use as binder for wooddust, 3d-milling
+* Test use as binder for textile composite, compression molding
+
+Test making high-DA PLA
+
+* Buy a vacuum pump
+* Buy/borrow a vacuum chamber
+* Get a catalyst. Stannous chloride?
+* Test compression molding as mechanical part
+
+Resource building
+
+* Visit Eik ideverksted @ NMBU, ask about access to mechanical test equipment
+* Visit NMBU chemistry lab, ask about access to chemical test equipment
+
+## 3d-printer filament production
+
+
+### Short term goals
+
+Establish a finanically sustainable business, producing PLA filament from PLA pellets.
+Production line with high degree of automation.
+Experiment with recycling to learn what viable possibilities there are for circular production.
+
+### Long term goals
+
+Further state-of-art in:
+
+* bioplastics manufacturing
+* open-source hardware/manufacturing business
+* small-scale automation
+
+### Market research
+
+How many kilos of PLA filament is sold per year?
+Existing sellers. 3dnet.no, e3printable.no, Clas Ohlson 
+
+#### Initial survey
+
+Done
+
+* Goals.
+1) Find out whether one can sell enough and 2) What dimensions/colors is needed.
+Secondary: Be open for people interested in contributing. Ideas/skills
+* Survey (Norwegian): [Google Form](https://docs.google.com/forms/d/e/1FAIpQLSfYLa8AcFxCMVTD_asDpsIwSYN4UsC52nGaEEyjQzgsBBNiRQ/viewform)
+* 17.02.2018. Sent to Facebook groups: Bitraf (1700 members) and 3d-printer Norge (1800 members). Around 50 responses in 1 hour.
+
+Feedback
+
+* Many worried about quality.
+* Several especially interested in delivering back
+* Some say Norwegian produced does not matter / not interesting.
+
+
+TODO
+
+* Analyze survey results
+
+
+### Quality parameters
+
+Final results
+* Mechanical strength of printed parts
+* Temperature tolerance of printed parts
+* Color. Repeatability, uniformity
+* Surface finish. Repeatability, uniformity
+
+While printing
+* Melting point uniformity
+* Diameter. Repeatability, uniformity
+* Ductility on roll (not breaking easily)
+
+
+### Recycling
+
+Quality control is the most challenging.
+
+* Different PLA manufactures, blends, additives.
+* Mixed with other types of plastic (ABS,HIPS,PHA)
+* Contaminant particles. Dust,wood,metal
+* Contaminant materials. Oils,paint
+
+Ideas
+* Only deliver recycled for rough prints. Nozzle sizes 0.8mm++
+* Sheet material production. For laser/CNC/
+* Extrusions production of standardized profiles. Used as base for bigger parts, in combination with 3d-printed adapters.
+* Make some unique material. Foamcore composite, expanded center with coating on each side?
+* Use internally for less-critical things? (extrusions, injection molding, roughprint+CNC) Combine with manufacturing service?
+
+
+## Others
+
+* https://addnorth.com/, Swedish filament manufacturer, start-up.
+Has a recycling initiative, https://re-add.com/
+Also does R&D on cellulose-based PLA production.
+Possible partner?
+
 
 ## Bacterial cellulose
 
