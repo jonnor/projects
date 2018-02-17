@@ -222,7 +222,6 @@ either as part of one production series, or because one often makes similar obje
 As an example, 3d-milled busts/portraits could benefit from a custom stock instead of being a block.
 Making use of this advantage may require particular CNC toolpath generation, however.
 
-
 The mold could be a two-sided mold of wood, which is then put in a press.
 Holes will likely be needed to let water escape.
 
@@ -244,6 +243,18 @@ Some melt plastic in oil. Especially plastic bags.
 Nice advantage is that basically any energy source can be used. Transfer of heat should be much better than with air.
 Could it make it possible to melt down plastic without shredding?
 Can the molten blob injection molded or roller-extruded without extra heating sources?
+
+### Extrusion
+
+Can maybe make a general-purpose extrusion? Think Makeblock, 20x20 T-slot, circular tubes. Chamferrail?
+Suitable for a continious process, possibly with addition of cut-to-length.
+Could also produce circular 'shots' that would then be used for transfer/injection molding?
+However requires that people have access to (make) molds to be actually useful.
+
+* Hollow extrusions require a two
+* [Extrusion design guide](http://www.aluminiumdesign.net/design-support/extrusion-design-guide/)
+* [Design of Extrusion Heads](http://bc.pollub.pl/Content/101/Design+of+Extrusion+Heads.pdf), for polymers
+* Design of Extrusion Forming Tools, book. PDF online
 
 ### Sheet roller
 
@@ -421,8 +432,7 @@ Probably mainly lactide, or very low molecular weight PLA?
 * [Melt/solid polycondensation of l-lactic acid: an alternative route to poly(l-lactic acid) with high molecular weight](https://www.sciencedirect.com/science/article/pii/S0032386100008892). 2001. Polycondensate with a molecular weight of 20,000 Da is first prepared by ordinary melt-polycondensation, crystallized by heat-treatment around 105°C, and heated at 140 or 150°C for 10–30 h for further polycondensation. A high-quality polymer of PLLA can be obtained in high yield in a relatively short reaction time and its molecular weight exceeds 500kDa.
 
 
-Effects of impurities.
-[From Lactic Acid to Poly(lactic acid) (PLA): Characterization and Analysis of PLA and Its Precursors](https://pubs.acs.org/doi/full/10.1021/bm101302t) 2011
+*  [From Lactic Acid to Poly(lactic acid) (PLA): Characterization and Analysis of PLA and Its Precursors](https://pubs.acs.org/doi/full/10.1021/bm101302t) 2011. Discusses effects of impurities.
 
 ### PLA composites
 
@@ -434,9 +444,8 @@ https://www.sciencedirect.com/science/article/pii/S1359835X09000840
 
 ### PLA adhesive
 
-Could one use this for
-
-### PLA 
+Could one use this for smoothening out 3d-prints? Immerse in a cooking bath of low-MW PLA?
+Challenge is keeping at 200 deg C... And not melt too much of the part to be processed.
 
 ### TODO
 
@@ -520,7 +529,11 @@ While printing
 
 ### Recycling
 
-Quality control is the most challenging.
+Finanical sustainability challenge.
+
+* As an input, has to compete with price of PLA pellets. 5USD/kg.
+
+Quality control challenge.
 
 * Different PLA manufactures, blends, additives.
 * Mixed with other types of plastic (ABS,HIPS,PHA)
@@ -528,11 +541,20 @@ Quality control is the most challenging.
 * Contaminant materials. Oils,paint
 
 Ideas
+
 * Only deliver recycled for rough prints. Nozzle sizes 0.8mm++
 * Sheet material production. For laser/CNC/
 * Extrusions production of standardized profiles. Used as base for bigger parts, in combination with 3d-printed adapters.
 * Make some unique material. Foamcore composite, expanded center with coating on each side?
 * Use internally for less-critical things? (extrusions, injection molding, roughprint+CNC) Combine with manufacturing service?
+
+Heating mechanism
+
+* Extruder screw
+* Extruder hot+cold-end.
+* Boiling in water. Need 150 psia for 180deg C.
+* Boiling in oil. Tested quite successfully.
+
 
 
 ## Others
