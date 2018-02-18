@@ -5,3 +5,8 @@
 
 *.dxf
 *.stl
+
+*cache.lib
+*.bak
+*.kicad_pcb-bak
+*_saved_*
