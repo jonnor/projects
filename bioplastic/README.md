@@ -244,6 +244,14 @@ Nice advantage is that basically any energy source can be used. Transfer of heat
 Could it make it possible to melt down plastic without shredding?
 Can the molten blob injection molded or roller-extruded without extra heating sources?
 
+Heating mechanism
+
+* Extruder screw
+* Extruder hot+cold-end.
+* Boiling in water. Need 150 psia for 180deg C.
+* Boiling in oil. Tested quite successfully.
+* Microwave oven?
+
 ### Extrusion
 
 Can maybe make a general-purpose extrusion? Think Makeblock, 20x20 T-slot, circular tubes. Chamferrail?
@@ -251,10 +259,49 @@ Suitable for a continious process, possibly with addition of cut-to-length.
 Could also produce circular 'shots' that would then be used for transfer/injection molding?
 However requires that people have access to (make) molds to be actually useful.
 
+Advantages over producing 3d-printer filament
+
+* Much lower quality demands.
+Easier to deliver acceptable quality from pristine plastic,
+easier to incorporate recycled plastic.
+* Not a pure commodity.
+Plastic construction profiles not so common (though alu profiles are),
+not paying directly per kilo of material.
+* Likely fewer SKUs, easier to keep stock.
+
+Disadvantages
+
+* Not such an established market
+* Lower performance than available product (alu profile). How much?
+
+Financial profitability?
+
+20x40mm profile. Would have to compete with local suppliers. Ie Kjell.com sells alu 20x40mm at 50cm length for 89 NOK.
+
+>>> l=50; d=1.25; Ap=3; w=Ap*l*d; price=60; price_per_kg=price/(w/1000); price_per_kg
+320.0
+
+12 pieces for 500 kr? Free shipping at 24 pieces, 1000kr?
+
+Could one offer discount for returning N kg of plastic? 50 NOK/kg, roughly pristine material cost?
+Would not actually more profitable, since recyling has extra cost in handling/quality assurance.
+But would start feeding back to a circular economy, establish the practice and supply chain.
+Of course also good for marketing.
+
+Extrusion die design
+
 * Hollow extrusions require a two
 * [Extrusion design guide](http://www.aluminiumdesign.net/design-support/extrusion-design-guide/)
 * [Design of Extrusion Heads](http://bc.pollub.pl/Content/101/Design+of+Extrusion+Heads.pdf), for polymers
 * Design of Extrusion Forming Tools, book. PDF online
+
+Extruder
+
+* Typical small single screw, 'lab extruder'.
+* Price under 3000 EUR.
+* 30mm 2.2KW motor power, 3KW heater power, 3-15 kg/hour plastic output.
+* Ex, [1](https://www.alibaba.com/product-detail/Mini-Plastic-Extruder-Machine-Single-Screw_60591030334.html),
+[2](https://www.alibaba.com/product-detail/Mini-Plastic-Lab-Extruder-Machine_60298300596.html)
 
 ### Sheet roller
 
@@ -548,16 +595,14 @@ Ideas
 * Make some unique material. Foamcore composite, expanded center with coating on each side?
 * Use internally for less-critical things? (extrusions, injection molding, roughprint+CNC) Combine with manufacturing service?
 
-Heating mechanism
-
-* Extruder screw
-* Extruder hot+cold-end.
-* Boiling in water. Need 150 psia for 180deg C.
-* Boiling in oil. Tested quite successfully.
 
 
+### 
 
-## Others
+l=50; d=1.25; Ap=3; w=Ap*l*d; price=60; price_per_kg=price/(w/1000); price_per_kg
+
+
+### Others
 
 * https://addnorth.com/, Swedish filament manufacturer, start-up.
 Has a recycling initiative, https://re-add.com/
