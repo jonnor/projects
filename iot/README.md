@@ -93,3 +93,41 @@ Solar cell panels
 * http://www.dx.com/p/lx-b580-0-8w-pet-laminated-solar-monocrystalline-silicon-cell-panel-black-blue-184629
 * http://www.dx.com/p/si-solar-cell-panel-4-5v-5ma-12984
 * http://www.dx.com/p/si-solar-cell-panel-4v-6ma-12985
+
+# Ideas
+
+## Universal control UI
+
+IoT device using capacitive sensing and LEDs to enable wide range of IoT controls
+
+Can chose which functionality to have by
+
+* Reconfigure software remotely, using a web UI
+* Print new faceplate on inkjet printer
+
+Functions provided:
+
+* Button instantaneous
+* Toggle button
+* Horizontal+vertical slider
+* Radial slider
+* Up/down buttons, hold to go faster
+
+Buildup
+
+* Single two-sided PCB board
+* Front side covered with capacitive areas
+* Backside has LEDs shining trough to front
+* Dedicated controller/MCU for capacitive sensing. LEDs can use some I/O extender
+* Transparent plastic cover on front, UI plate slides inside 
+* Casing for attaching to wall.
+
+v1. USB powered. WiFi connectivity. ESP8266 module
+v2. Battery powered. Bluetooth LE? Zigbee? 
+
+
+Ideas
+
+* Should be able to test UI in the UI builder
+* Can sell larger units, using multiple PCBs side-by-side
+* Could one use piezo elements to give haptic feedback?
