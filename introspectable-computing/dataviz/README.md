@@ -45,8 +45,33 @@ Wanted
 
 * Reverse-engineering of dataformats and/or protocols, visually?
 
+## Detecting datatypes
 
+{
+    a: 1.0
+    b: {
+     inner: "foo",
+    },
+    c: [ 'FOO', 'bar' ],
+}
 
+* Flatten the data, giving each piece a `path` that uniquely identifies it, and can be used for lookup
+* For each piece of data, run it through a set of feature detectors.
+* A feature detector is a predicate function. It which gets the data and returns true|false(|Error)
+* Object key names and array indice (at least leaves) should also be stored as features
+* Feature detector funtions are registered with library and name. Ex 'json'.'number' or ''
+* Can have API for registering a whole set with same prefix, defaulting name to the name of function
+* Reasoning about composite data. Should be able to query to find data with N items, each having M features.
+The related data should be within D distance from eachother. Sibling=1,uncle=2,cousin=3,...
+* If need to give *one* answer about what type of data something is, what would it be?
+The composite which is the most specific (matches the most features)?
+What to detect things like: Timeseries (has datapoints, each associated with a timestamp) 
+* Could one **PULL** in the detectors to run based on a query?
+Avoids calculating many features which are never used
+Still should be possible to specify 'all'
+* Need to run this on large datastructures in-the-wild to see if it works/is-useful/scales.
+Just grab random JSONs from Github,Stack-Overflow etc?
+* Can maybe use memoization to good effect to avoid recomputing detectors?
 
 ### JSON tools
 
