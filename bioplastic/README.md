@@ -303,6 +303,20 @@ Extruder
 * Ex, [1](https://www.alibaba.com/product-detail/Mini-Plastic-Extruder-Machine-Single-Screw_60591030334.html),
 [2](https://www.alibaba.com/product-detail/Mini-Plastic-Lab-Extruder-Machine_60298300596.html)
 
+Distribution Oslo-area
+
+* Makerpaces. Bitraf, Fellesverkstedet
+* Science centers. Vitensentere.
+* To schools. Kodegenet, 3dnet
+
+TODO
+
+* Do simulation of profile strength, PLA versus alu.
+* Make an initial die
+* Perform a manual extrusion
+* Do strength/stiffnest tests
+* Aquire/build a extruder machine
+
 ### Sheet roller
 
 ![Rollers for extruding into flat sheets](./img/roller-extuder-concept.png)
