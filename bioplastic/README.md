@@ -294,6 +294,10 @@ Extrusion die design
 * [Extrusion design guide](http://www.aluminiumdesign.net/design-support/extrusion-design-guide/)
 * [Design of Extrusion Heads](http://bc.pollub.pl/Content/101/Design+of+Extrusion+Heads.pdf), for polymers
 * Design of Extrusion Forming Tools, book. PDF online
+* Tubular profile dies.
+[Bridge die](http://www.open.edu/openlearn/science-maths-technology/engineering-and-technology/design-and-innovation/design/manufacturing/content-section-3.5).
+[Spider die](http://pslc.ws/macrog/process/dies.htm), also called clotheshanger.
+* [NanoBeam](https://www.thingiverse.com/thing:509373), simple profile in 20x20 style
 
 Extruder
 
@@ -316,6 +320,9 @@ TODO
 * Perform a manual extrusion
 * Do strength/stiffnest tests
 * Aquire/build a extruder machine
+
+]
+
 
 ### Sheet roller
 
