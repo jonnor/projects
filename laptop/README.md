@@ -1,7 +1,7 @@
 
 ## Requirements
 
-Absolute
+Must-have
 
 * Approx A4 size, 14"
 * Thickness: under 25mm total (screen+base)
@@ -16,15 +16,14 @@ Maybe: Tablet mode
 * Battery in screen part
 * Tabled can dock into base w/keyboard
 * Separatable keyboard. Bluetooth?
-* Can then drop touchpad?? Or have touchpad on side, Apple Magic style. Mouse for CAD anyways
 
 Maybe: Stand mode
 
 * Lift screen up to be parallel to line-of-sight
-* Integrated stand
 * Needs around 25 cm lift
-* Probably better to do as a separate part that attaches
-* Can rachet down into deployed position, require releasing to go back
+* Keyboard+touchpad deattaches
+* Integrated stand.
+* Ex: Base pivots as 2 parts at hinges. One part becomes front foot, other becomes rear foot
 
 ## Parts
 
@@ -32,6 +31,7 @@ Maybe: Stand mode
 * RAM: DDR3 SODIMM, 8GB
 * SSD: M.2, 256GB
 * Display: eDP. 13" IPS panel, FullHD
+* Keyboard. Bluetooth touchpad integrated. [1by1](https://www.amazon.com/dp/B00VRC6U2C)
 * Battery. Custom LiPo pack?
 
 ## Battery
