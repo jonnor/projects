@@ -131,3 +131,31 @@ Ideas
 * Should be able to test UI in the UI builder
 * Can sell larger units, using multiple PCBs side-by-side
 * Could one use piezo elements to give haptic feedback?
+
+# Electronics modules
+
+Board-on-board modules using PCBs with castellated holes.
+Standard pitch, 100/200mil, for use in breadboards.
+Open-source, with schematic/layout that can be copy-pasted.
+Test on breadboard, proto as modules, produce as flattened PCB.
+Microcontroller-first design, modules should be very easy to connect to uC.
+
+Desirable modules
+
+* Isolated digital input. Optocoupler, 24/48V max.
+* Isolated DC output. Optocoupler+powertransistor. 24/48V, 2/5 A.
+* Isolated AC control. Optotriac. 230V, 15A
+* 4-20mA input. ADC with I2C?
+* Ethernet. SPI.
+
+Existing PCB modules (from China), could be reverse engineered
+
+* DCDC converter. Adjustable voltage, 1-3A current
+
+Existing modules from suppliers
+
+* ESP8266/ESP32 microcontroller
+* SX1276 Lora
+
+Maybe build up an online directory of these modules?
+

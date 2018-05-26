@@ -617,6 +617,8 @@ Morpheous, The Matrix
 Bings spech, Black Mirror
 
 
+> I must not fear, for fear is the mind killer
+
 ## Samples
 
 > There's no cure for the Internet. It would never go away

@@ -39,3 +39,55 @@ Softwares
 
 * TopMod3d. [Paper](https://www.viz.tamu.edu/faculty/ergun/research/topology/papers/cgi08.pdf)
 GPL-licensed software for creating generative topological 3d-meshes.
+
+# Information layout
+Ex on website.
+
+Greedy algorithm. Does optimal local choice
+Operates section by section
+Content-first layout.
+Consecutive sections consider the top N items, ask sections to lay them out.
+`O( (items/N) * templates )`
+
+A section template
+
+* Declares number of items supported
+* Must support any item type(s) for these N items
+* Given N items, scores the content-fit
+* Standardized interface, pluggable
+* Website config: template set
+
+Template ex
+
+* 1 full-spread.
+* 2: Primary above, secondary below. And v.v.
+* 2: Primary right, secondary left. And v.v.
+* 3: Primary mid, secondary left+right. Flip r/l. Flip top/bottom
+* 4: Pri/sec 1, pri/sec 2.
+* 4: Equals
+* 10: Gallery
+
+Layout fitness
+
+* Normal range: 0.0-1.0. Maybe allow impossible: infinity. 
+* Spaciness: Right amount of whitespace between items
+* Crampedness: Item should have enough space. Text legibility, image features
+* Balance: Item should fill their space to same proportion
+* Importance: Items are given space according to their relative importance
+
+Section preference
+
+* A way for user to directly influence choice
+
+Layout diversity
+
+* Pri: Avoiding repeated layouts
+* Good: Having some structure
+* maybe-nice-to-have: Rhythms of repeating elements
+
+Content ordering
+
+* Narrative
+* Posted date
+* Importance
+
