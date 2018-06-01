@@ -1,0 +1,200 @@
+EESchema Schematic File Version 4
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L touch:TPP223-BA6 U1
+U 1 1 5B1035E1
+P 2800 2400
+F 0 "U1" H 2800 2950 50  0000 C CNN
+F 1 "TPP223-BA6" H 3000 2850 50  0000 C CNN
+F 2 "TO_SOT_Packages_SMD:SOT-23-6_Handsoldering" H 2500 2500 50  0001 C CNN
+F 3 "" H 2500 2500 50  0001 C CNN
+	1    2800 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L device:C C1
+U 1 1 5B1039DE
+P 2100 2600
+F 0 "C1" H 2215 2646 50  0000 L CNN
+F 1 "C" H 2215 2555 50  0000 L CNN
+F 2 "Capacitors_SMD:C_1210_HandSoldering" H 2138 2450 50  0001 C CNN
+F 3 "" H 2100 2600 50  0001 C CNN
+	1    2100 2600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2500 2400 2100 2400
+Wire Wire Line
+	2100 2400 2100 2450
+$Comp
+L power:GND #PWR0101
+U 1 1 5B103A78
+P 2100 2950
+F 0 "#PWR0101" H 2100 2700 50  0001 C CNN
+F 1 "GND" H 2105 2777 50  0000 C CNN
+F 2 "" H 2100 2950 50  0001 C CNN
+F 3 "" H 2100 2950 50  0001 C CNN
+	1    2100 2950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2100 2950 2100 2900
+Wire Wire Line
+	2700 2800 2700 2900
+Wire Wire Line
+	2700 2900 2100 2900
+Connection ~ 2100 2900
+Wire Wire Line
+	2100 2900 2100 2750
+$Comp
+L power:VDD #PWR0102
+U 1 1 5B103B7B
+P 2700 1750
+F 0 "#PWR0102" H 2700 1600 50  0001 C CNN
+F 1 "VDD" H 2717 1923 50  0000 C CNN
+F 2 "" H 2700 1750 50  0001 C CNN
+F 3 "" H 2700 1750 50  0001 C CNN
+	1    2700 1750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2700 1750 2700 1850
+$Comp
+L device:LED D1
+U 1 1 5B1067AB
+P 3600 2250
+F 0 "D1" H 3592 1995 50  0000 C CNN
+F 1 "LED" H 3592 2086 50  0000 C CNN
+F 2 "LEDs:LED_1206_HandSoldering" H 3600 2250 50  0001 C CNN
+F 3 "" H 3600 2250 50  0001 C CNN
+	1    3600 2250
+	-1   0    0    1   
+$EndComp
+$Comp
+L device:R R1
+U 1 1 5B10686B
+P 3850 2600
+F 0 "R1" H 3920 2646 50  0000 L CNN
+F 1 "R" H 3920 2555 50  0000 L CNN
+F 2 "Resistors_SMD:R_1210_HandSoldering" V 3780 2600 50  0001 C CNN
+F 3 "" H 3850 2600 50  0001 C CNN
+	1    3850 2600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3850 2750 3850 2900
+Wire Wire Line
+	3850 2900 2700 2900
+Connection ~ 2700 2900
+Wire Wire Line
+	3100 2450 3300 2450
+Wire Wire Line
+	3300 2450 3300 1850
+Wire Wire Line
+	3300 1850 2700 1850
+Connection ~ 2700 1850
+Wire Wire Line
+	2700 1850 2700 1950
+Wire Wire Line
+	3100 2250 3450 2250
+Wire Wire Line
+	3750 2250 3850 2250
+Wire Wire Line
+	3850 2250 3850 2450
+Text Label 1650 2350 0    50   ~ 0
+touch
+Wire Wire Line
+	2100 2400 1650 2400
+Wire Wire Line
+	1650 2400 1650 2350
+Connection ~ 2100 2400
+$Comp
+L conn:Conn_01x03 J1
+U 1 1 5B106DD9
+P 950 1700
+F 0 "J1" H 870 2017 50  0000 C CNN
+F 1 "Conn_01x03" H 870 1926 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Angled_1x03_Pitch1.27mm" H 950 1700 50  0001 C CNN
+F 3 "~" H 950 1700 50  0001 C CNN
+	1    950  1700
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:VDD #PWR0103
+U 1 1 5B1073A4
+P 1400 1500
+F 0 "#PWR0103" H 1400 1350 50  0001 C CNN
+F 1 "VDD" H 1417 1673 50  0000 C CNN
+F 2 "" H 1400 1500 50  0001 C CNN
+F 3 "" H 1400 1500 50  0001 C CNN
+	1    1400 1500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1400 1500 1400 1550
+Wire Wire Line
+	1400 1600 1150 1600
+Text Label 1350 1700 0    50   ~ 0
+touch
+Wire Wire Line
+	1350 1700 1150 1700
+$Comp
+L power:GND #PWR0104
+U 1 1 5B107743
+P 1400 1950
+F 0 "#PWR0104" H 1400 1700 50  0001 C CNN
+F 1 "GND" H 1405 1777 50  0000 C CNN
+F 2 "" H 1400 1950 50  0001 C CNN
+F 3 "" H 1400 1950 50  0001 C CNN
+	1    1400 1950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1400 1950 1400 1900
+Wire Wire Line
+	1400 1800 1150 1800
+Text Notes 1000 2700 0    50   ~ 0
+0-50 pF recommended\n200 pF tested
+Text Notes 3300 1700 0    50   ~ 0
+function toggle jumper?\n
+$Comp
+L device:CP C?
+U 1 1 5B10EC0D
+P 1700 1750
+F 0 "C?" H 1818 1796 50  0000 L CNN
+F 1 "CP" H 1818 1705 50  0000 L CNN
+F 2 "" H 1738 1600 50  0001 C CNN
+F 3 "" H 1700 1750 50  0001 C CNN
+	1    1700 1750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1700 1600 1700 1550
+Wire Wire Line
+	1700 1550 1400 1550
+Connection ~ 1400 1550
+Wire Wire Line
+	1400 1550 1400 1600
+Wire Wire Line
+	1700 1900 1400 1900
+Connection ~ 1400 1900
+Wire Wire Line
+	1400 1900 1400 1800
+Text Notes 1650 1400 0    50   ~ 0
+separate connection pins?
+Text Notes 4000 2150 0    50   ~ 0
+out connection pin?
+$EndSCHEMATC
