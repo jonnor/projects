@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source /home/jon/projects/personal/jewelry/touchflower/touchflower/touchflower.sch)
-    (date "Sun 03 Jun 2018 12:39:21 PM CEST")
+    (date "Sun 03 Jun 2018 02:17:35 PM CEST")
     (tool "Eeschema (5.0.0-rc2-39-ga12b9db58)")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -17,7 +17,7 @@
   (components
     (comp (ref U1)
       (value TPP223-BA6)
-      (footprint TO_SOT_Packages_SMD:SOT-23-6_Handsoldering)
+      (footprint touchflower:SOT-223-6-extraspace)
       (libsource (lib touch) (part TPP223-BA6))
       (sheetpath (names /) (tstamps /))
       (tstamp 5B1035E1))
