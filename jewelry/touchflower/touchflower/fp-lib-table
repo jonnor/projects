@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name touchflower)(type KiCad)(uri /home/jon/projects/personal/jewelry/touchflower/touchflower)(options "")(descr ""))
+)

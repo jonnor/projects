@@ -224,4 +224,23 @@ Wire Wire Line
 	6300 1400 6550 1400
 Text Label 6300 1100 0    50   ~ 0
 out
+$Comp
+L device:Battery_Cell BT?
+U 1 1 5B13A4CA
+P 2900 1700
+F 0 "BT?" H 3018 1796 50  0000 L CNN
+F 1 "Battery_Cell" H 3018 1705 50  0000 L CNN
+F 2 "" V 2900 1760 50  0001 C CNN
+F 3 "" V 2900 1760 50  0001 C CNN
+	1    2900 1700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2900 1500 2900 1400
+Wire Wire Line
+	2900 1400 2450 1400
+Wire Wire Line
+	2900 1800 2900 1850
+Wire Wire Line
+	2900 1850 2450 1850
 $EndSCHEMATC
