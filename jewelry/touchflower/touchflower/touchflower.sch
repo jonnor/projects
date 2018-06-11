@@ -20,7 +20,7 @@ U 1 1 5B1035E1
 P 5500 1550
 F 0 "U1" H 5500 2100 50  0000 C CNN
 F 1 "TPP223-BA6" H 5700 2000 50  0000 C CNN
-F 2 "TO_SOT_Packages_SMD:SOT-23-6_Handsoldering" H 5200 1650 50  0001 C CNN
+F 2 "touchflower:SOT-223-6-extraspace" H 5200 1650 50  0001 C CNN
 F 3 "" H 5200 1650 50  0001 C CNN
 	1    5500 1550
 	1    0    0    -1  
@@ -225,12 +225,12 @@ Wire Wire Line
 Text Label 6300 1100 0    50   ~ 0
 out
 $Comp
-L device:Battery_Cell BT?
+L device:Battery_Cell BT1
 U 1 1 5B13A4CA
 P 2900 1700
-F 0 "BT?" H 3018 1796 50  0000 L CNN
+F 0 "BT1" H 3018 1796 50  0000 L CNN
 F 1 "Battery_Cell" H 3018 1705 50  0000 L CNN
-F 2 "" V 2900 1760 50  0001 C CNN
+F 2 "touchflower:BK-913" V 2900 1760 50  0001 C CNN
 F 3 "" V 2900 1760 50  0001 C CNN
 	1    2900 1700
 	1    0    0    -1  
