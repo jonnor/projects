@@ -76,29 +76,25 @@ Wire Wire Line
 $Comp
 L device:LED D1
 U 1 1 5B1067AB
-P 6700 1400
-F 0 "D1" H 6692 1145 50  0000 C CNN
-F 1 "LED" H 6692 1236 50  0000 C CNN
-F 2 "LEDs:LED_1206_HandSoldering" H 6700 1400 50  0001 C CNN
-F 3 "" H 6700 1400 50  0001 C CNN
-	1    6700 1400
+P 6950 1400
+F 0 "D1" H 6942 1145 50  0000 C CNN
+F 1 "LED" H 6942 1236 50  0000 C CNN
+F 2 "LEDs:LED_1206_HandSoldering" H 6950 1400 50  0001 C CNN
+F 3 "" H 6950 1400 50  0001 C CNN
+	1    6950 1400
 	-1   0    0    1   
 $EndComp
 $Comp
 L device:R R1
 U 1 1 5B10686B
-P 6950 1750
-F 0 "R1" H 7020 1796 50  0000 L CNN
-F 1 "R" H 7020 1705 50  0000 L CNN
-F 2 "Resistors_SMD:R_0805_HandSoldering" V 6880 1750 50  0001 C CNN
-F 3 "" H 6950 1750 50  0001 C CNN
-	1    6950 1750
-	1    0    0    -1  
+P 6450 1400
+F 0 "R1" H 6520 1446 50  0000 L CNN
+F 1 "R" H 6520 1355 50  0000 L CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 6380 1400 50  0001 C CNN
+F 3 "" H 6450 1400 50  0001 C CNN
+	1    6450 1400
+	0    1    1    0   
 $EndComp
-Wire Wire Line
-	6950 1900 6950 2050
-Wire Wire Line
-	6950 2050 5400 2050
 Connection ~ 5400 2050
 Wire Wire Line
 	5800 1600 6000 1600
@@ -109,39 +105,9 @@ Wire Wire Line
 Connection ~ 5400 1000
 Wire Wire Line
 	5400 1000 5400 1100
-Wire Wire Line
-	5800 1400 6300 1400
-Wire Wire Line
-	6850 1400 6950 1400
-Wire Wire Line
-	6950 1400 6950 1600
 Connection ~ 4800 1550
-$Comp
-L power:GND #PWR0104
-U 1 1 5B107743
-P 2450 2000
-F 0 "#PWR0104" H 2450 1750 50  0001 C CNN
-F 1 "GND" H 2455 1827 50  0000 C CNN
-F 2 "" H 2450 2000 50  0001 C CNN
-F 3 "" H 2450 2000 50  0001 C CNN
-	1    2450 2000
-	1    0    0    -1  
-$EndComp
-Text Notes 3600 2000 0    50   ~ 0
+Text Notes 3400 1850 0    50   ~ 0
 0-50 pF recommended\n200 pF tested
-$Comp
-L device:CP C2
-U 1 1 5B10EC0D
-P 2450 1650
-F 0 "C2" H 2568 1696 50  0000 L CNN
-F 1 "CP" H 2568 1605 50  0000 L CNN
-F 2 "Capacitors_SMD:C_1206_HandSoldering" H 2488 1500 50  0001 C CNN
-F 3 "" H 2450 1650 50  0001 C CNN
-	1    2450 1650
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2450 1500 2450 1400
 $Comp
 L conn:Conn_01x01 J3
 U 1 1 5B12E8EB
@@ -154,93 +120,47 @@ F 3 "~" H 4400 1550 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L power:VDD #PWR0103
-U 1 1 5B12F0ED
-P 2450 1200
-F 0 "#PWR0103" H 2450 1050 50  0001 C CNN
-F 1 "VDD" H 2467 1373 50  0000 C CNN
-F 2 "" H 2450 1200 50  0001 C CNN
-F 3 "" H 2450 1200 50  0001 C CNN
-	1    2450 1200
-	1    0    0    -1  
-$EndComp
-$Comp
 L conn:Conn_01x01 J2
 U 1 1 5B12F106
-P 1950 1850
-F 0 "J2" H 1870 1625 50  0000 C CNN
-F 1 "Conn_01x01" H 1870 1716 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch1.27mm" H 1950 1850 50  0001 C CNN
-F 3 "~" H 1950 1850 50  0001 C CNN
-	1    1950 1850
+P 4450 2050
+F 0 "J2" H 4370 1825 50  0000 C CNN
+F 1 "Conn_01x01" H 4370 1916 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch1.27mm" H 4450 2050 50  0001 C CNN
+F 3 "~" H 4450 2050 50  0001 C CNN
+	1    4450 2050
 	-1   0    0    1   
 $EndComp
 $Comp
 L conn:Conn_01x01 J1
 U 1 1 5B12F198
-P 1950 1400
-F 0 "J1" H 1870 1175 50  0000 C CNN
-F 1 "Conn_01x01" H 1870 1266 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch1.27mm" H 1950 1400 50  0001 C CNN
-F 3 "~" H 1950 1400 50  0001 C CNN
-	1    1950 1400
+P 4400 1000
+F 0 "J1" H 4320 775 50  0000 C CNN
+F 1 "Conn_01x01" H 4320 866 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch1.27mm" H 4400 1000 50  0001 C CNN
+F 3 "~" H 4400 1000 50  0001 C CNN
+	1    4400 1000
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	2450 1800 2450 1850
-Connection ~ 2450 1850
-Wire Wire Line
-	2450 1850 2450 2000
-Wire Wire Line
-	2150 1850 2450 1850
-Wire Wire Line
-	2150 1400 2450 1400
-Wire Wire Line
-	2450 1200 2450 1400
-Connection ~ 2450 1400
-Wire Wire Line
 	4600 1550 4800 1550
-$Comp
-L conn:Conn_01x01 J4
-U 1 1 5B136276
-P 6850 1100
-F 0 "J4" H 6930 1142 50  0000 L CNN
-F 1 "Conn_01x01" H 6930 1051 50  0000 L CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch1.27mm" H 6850 1100 50  0001 C CNN
-F 3 "~" H 6850 1100 50  0001 C CNN
-	1    6850 1100
-	1    0    0    -1  
-$EndComp
 Text Notes 6000 850  0    50   ~ 0
 For instantious, cut trace\n
 Text Label 4850 1550 0    50   ~ 0
 sensor
 Wire Wire Line
-	6650 1100 6300 1100
+	4650 2050 4800 2050
 Wire Wire Line
-	6300 1100 6300 1400
-Connection ~ 6300 1400
-Wire Wire Line
-	6300 1400 6550 1400
-Text Label 6300 1100 0    50   ~ 0
+	4600 1000 5400 1000
+Text Label 6100 1400 0    50   ~ 0
 out
-$Comp
-L device:Battery_Cell BT1
-U 1 1 5B13A4CA
-P 2900 1700
-F 0 "BT1" H 3018 1796 50  0000 L CNN
-F 1 "Battery_Cell" H 3018 1705 50  0000 L CNN
-F 2 "touchflower:BK-913" V 2900 1760 50  0001 C CNN
-F 3 "" V 2900 1760 50  0001 C CNN
-	1    2900 1700
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
-	2900 1500 2900 1400
+	6600 1400 6800 1400
 Wire Wire Line
-	2900 1400 2450 1400
+	7100 1400 7250 1400
 Wire Wire Line
-	2900 1800 2900 1850
+	7250 1400 7250 2050
 Wire Wire Line
-	2900 1850 2450 1850
+	5400 2050 7250 2050
+Wire Wire Line
+	5800 1400 6300 1400
 $EndSCHEMATC
