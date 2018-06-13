@@ -59,6 +59,10 @@ TODO
 * Redesign front to be in MDF too, with an acrylic door/plate which slides up.
 Then don't have to lift the box all the time.
 
+## PCB blanks
+
+Conrad: FR1 [100x50 mm](http://www.conrad.com/ce/en/product/528200)
+
 ## Course in making PCBs
 
 
@@ -89,17 +93,10 @@ Practical
 * Puts in the board
 * Sets up settings and positions XY, Z
 * Runs the job
-* MAYBE: let people personalize
 
 Prepare
 
-* TODO: order PCB blanks for Bitmart
-[Conrad: FR1 160x100 mm](http://www.conrad.com/ce/en/product/528382/) [100x50 mm](http://www.conrad.com/ce/en/product/528200)
-* TODO: design a simple demo circuit. LED on a USB stick?
-* TODO: check how long demo milling takes
-* TODO: test drilling using 1mm engraver bit
-* TODO: mill the bed level
-* TODO: get a new Allen key, switch the spindle set-screws
+* TODO: demo circuit. Is touchflower CR2032 OK? 6-8 per board. Approx 2 min isolation
 * Document the process on wiki
 * Pre-cut a number of boards, 1 per participant
 * Make some slides for theory intro
@@ -111,18 +108,18 @@ Related
 
 ## TODO
 
-* Mount Raspberry PI. Install fabmodules on it
-* QR code + link for accessing webinterface
-* Consider mounting a tablet
-* Vacum attachment / dust-shoe
-* Toolbox. For replacement parts, milling bits, double-sided tape, allen keys etc
+Course
 
-Fabmodules
+* Get 3x 230v extension cord
+* Maybe elevate machine a bit
+* Attach spindle bracket better in bottom corner
+* Document PCB mills. Burr, isolation engraver. Buy for Bitmart?
+* Fix front slide up
+* Get dedicated wrench set. 11 + 17mm
 
-* Add code upload/send (from any source)
-* Make the sender report progress over Webinterface instead of native TKinter. https://github.com/FabModules/fabmodules-html5/issues/23
-Consider checking out the work in [ChiliPeppr](http://chilipeppr.com/), and reusing the server part/interface?
-* Make  https://github.com/FabModules/fabmodules-html5/issues/22
+After
+
+* Test vacuum bed. Pockets dedicated for PCB blanks. Dedicated 12V vacuum pump
 
 ## Ideas
 

@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:touchuc-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -177,7 +178,7 @@ Wire Wire Line
 	7350 1800 7300 1800
 Connection ~ 7350 1800
 Wire Wire Line
-	7550 2300 7300 2300
+	7550 2300 7400 2300
 $Comp
 L conn:Conn_01x01 J5
 U 1 1 5B2145CD
@@ -211,8 +212,6 @@ F 3 "~" H 3950 2200 50  0001 C CNN
 	1    3950 2200
 	-1   0    0    -1  
 $EndComp
-Wire Wire Line
-	4150 2200 4600 2200
 Text Label 4650 2200 0    47   ~ 0
 reset
 Text Label 4650 2000 0    47   ~ 0
@@ -225,7 +224,7 @@ U 1 1 5B215B61
 P 6250 4800
 F 0 "R1" H 6320 4846 50  0000 L CNN
 F 1 "R" H 6320 4755 50  0000 L CNN
-F 2 "Resistors_SMD:R_0805_HandSoldering" V 6180 4800 50  0001 C CNN
+F 2 "Resistors_SMD:R_0603_HandSoldering" V 6180 4800 50  0001 C CNN
 F 3 "" H 6250 4800 50  0001 C CNN
 	1    6250 4800
 	1    0    0    -1  
@@ -262,7 +261,7 @@ U 1 1 5B2169F7
 P 6650 4800
 F 0 "R2" H 6720 4846 50  0000 L CNN
 F 1 "R" H 6720 4755 50  0000 L CNN
-F 2 "Resistors_SMD:R_0805_HandSoldering" V 6580 4800 50  0001 C CNN
+F 2 "Resistors_SMD:R_0603_HandSoldering" V 6580 4800 50  0001 C CNN
 F 3 "" H 6650 4800 50  0001 C CNN
 	1    6650 4800
 	1    0    0    -1  
@@ -280,30 +279,6 @@ F 3 "" H 6650 4450 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	6650 4600 6650 4650
-$Comp
-L device:R R3
-U 1 1 5B216E5E
-P 7050 4800
-F 0 "R3" H 7120 4846 50  0000 L CNN
-F 1 "R" H 7120 4755 50  0000 L CNN
-F 2 "Resistors_SMD:R_0805_HandSoldering" V 6980 4800 50  0001 C CNN
-F 3 "" H 7050 4800 50  0001 C CNN
-	1    7050 4800
-	1    0    0    -1  
-$EndComp
-$Comp
-L device:LED D3
-U 1 1 5B216E65
-P 7050 4450
-F 0 "D3" V 7088 4333 50  0000 R CNN
-F 1 "LED" V 6997 4333 50  0000 R CNN
-F 2 "LEDs:LED_1206_HandSoldering" H 7050 4450 50  0001 C CNN
-F 3 "" H 7050 4450 50  0001 C CNN
-	1    7050 4450
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	7050 4600 7050 4650
 Wire Wire Line
 	6650 4950 6650 5150
 Wire Wire Line
@@ -311,18 +286,13 @@ Wire Wire Line
 Connection ~ 6250 5150
 Wire Wire Line
 	6250 5150 6250 5200
-Wire Wire Line
-	7050 4950 7050 5150
-Wire Wire Line
-	7050 5150 6650 5150
-Connection ~ 6650 5150
 $Comp
 L device:C C1
 U 1 1 5B2176C8
 P 1950 1700
 F 0 "C1" H 2065 1746 50  0000 L CNN
 F 1 "C" H 2065 1655 50  0000 L CNN
-F 2 "Capacitors_SMD:C_1206_HandSoldering" H 1988 1550 50  0001 C CNN
+F 2 "Capacitors_SMD:C_0603_HandSoldering" H 1988 1550 50  0001 C CNN
 F 3 "" H 1950 1700 50  0001 C CNN
 	1    1950 1700
 	1    0    0    -1  
@@ -355,12 +325,8 @@ Wire Wire Line
 	6250 4100 6250 4300
 Text GLabel 6650 4100 1    47   Input ~ 0
 LED2
-Text GLabel 7050 4100 1    47   Input ~ 0
-LED3
 Wire Wire Line
 	6650 4100 6650 4300
-Wire Wire Line
-	7050 4100 7050 4300
 Text GLabel 4400 2350 3    47   Output ~ 0
 LED1
 Wire Wire Line
@@ -370,18 +336,11 @@ Wire Wire Line
 	4400 1900 4900 1900
 Text GLabel 4500 2350 3    47   Output ~ 0
 LED2
-Text GLabel 4600 2350 3    47   Output ~ 0
-LED3
 Wire Wire Line
 	4500 2350 4500 2000
 Connection ~ 4500 2000
 Wire Wire Line
 	4500 2000 4900 2000
-Wire Wire Line
-	4600 2350 4600 2200
-Connection ~ 4600 2200
-Wire Wire Line
-	4600 2200 4900 2200
 Text GLabel 4250 1600 1    47   Input ~ 0
 TOUCH
 Wire Wire Line
@@ -395,7 +354,7 @@ U 1 1 5B223115
 P 2000 4500
 F 0 "1k1" V 1793 4500 50  0000 C CNN
 F 1 "R" V 1884 4500 50  0000 C CNN
-F 2 "Resistors_SMD:R_0805_HandSoldering" V 1930 4500 50  0001 C CNN
+F 2 "Resistors_SMD:R_0603_HandSoldering" V 1930 4500 50  0001 C CNN
 F 3 "" H 2000 4500 50  0001 C CNN
 	1    2000 4500
 	0    1    1    0   
@@ -421,4 +380,22 @@ Text Label 1450 4500 0    47   ~ 0
 sense
 Wire Wire Line
 	7350 1800 7550 1800
+Wire Wire Line
+	4150 2200 4900 2200
+$Comp
+L power:GND #PWR?
+U 1 1 5B23016C
+P 7400 2350
+F 0 "#PWR?" H 7400 2100 50  0001 C CNN
+F 1 "GND" H 7405 2177 50  0000 C CNN
+F 2 "" H 7400 2350 50  0001 C CNN
+F 3 "" H 7400 2350 50  0001 C CNN
+	1    7400 2350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7400 2350 7400 2300
+Connection ~ 7400 2300
+Wire Wire Line
+	7400 2300 7300 2300
 $EndSCHEMATC

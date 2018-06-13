@@ -12,6 +12,10 @@ Maybe silver + resin cast rings has good opportunity? Not found, might be able t
 
 Oxididation. Electroetching with laser-engraved masks?
 
+# Gemstones
+
+Small oval gemstones, 10-20 mm. [1](https://www.gemselect.com/group/gemselect.php?a=0&base_shape=Oval,Pear,Round&min_l=10.00&max_l=20.00&min_w=10.00&max_w=20.00&styles=Cabochon%27,%27Plain-Cut&price_asc=1&page=1)
+
 # Integrated electronics
 
 ## Power source
@@ -27,10 +31,10 @@ Commonly available.
 * SR54 11.6x3.1mm 80mAh 1.5V
 * SR44 11.6x5.4mm 140mAh 1.5V
 
-## 
+## Structures
 
 * Necklace, 2 parts on front connected with a tube. LED (and switch?) in one, battery in other.
-* Pendant with small lit gemstone. LED and switch IC PCB underneath gemstone. Battery in/on clasp. 
+* Pendant small. Eg with lit gemstone. LED and switch IC PCB underneath gemstone. Battery in/on clasp. 
 * Pendant big. All electronics, incl battery, in pendant.
 
 ## Tested

@@ -64,7 +64,7 @@ Template ex
 * 2: Primary right, secondary left. And v.v.
 * 3: Primary mid, secondary left+right. Flip r/l. Flip top/bottom
 * 4: Pri/sec 1, pri/sec 2.
-* 4: Equals
+* 4: 4 equals
 * 10: Gallery
 
 Layout fitness
@@ -74,6 +74,11 @@ Layout fitness
 * Crampedness: Item should have enough space. Text legibility, image features
 * Balance: Item should fill their space to same proportion
 * Importance: Items are given space according to their relative importance
+* Should these also be reported as 'features'?
+* Might want/need to normalize scores based on the templates optimism to get fairness.
+Calculate across (sample of) all possibilities contents.
+For one template, can show content according to preference order.
+For a piece of content, can show top-3 templates.
 
 Section preference
 
@@ -84,6 +89,11 @@ Layout diversity
 * Pri: Avoiding repeated layouts
 * Good: Having some structure
 * maybe-nice-to-have: Rhythms of repeating elements
+
+Content importance/emphasis
+
+* Headlines+ 
+* Images++
 
 Content ordering
 
