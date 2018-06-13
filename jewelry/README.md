@@ -43,11 +43,45 @@ Using bent copper wires on PCB for coincell battery holder.
 GND as wire loop lying on PCB, VBAT as a loop standing out from board, that coincell slides underneath. Works nicely.
 A jig could help bending correct wires before placing.
 
+## Lights in motion
+
+Animation ideas
+
+* Subtle glow
+* Glitter/sparkle. Random high-intensity bursts, alternating positions
+* Together<->apart / center<->sides. 
+* Swipe across. Random triggered, varying intensity
+
+Modulate intensity using touch proximity?
+
 # TODO
+
+Touchflower
+
+* Double-check size constraints in rosebud
+* Mill and assemble updated PCB
+
+Softtouch
+
+* Check 0603 resistors/capacitors at Bitraf.
+* Order part for `touchuc`. 0603 cap/resistors. attiny10, SOT-23-6. pogopins. white LEDs. CR12xx batteries.
+* Test CNC mill `touchuc` board
+* Assemble couple PCB ex microcontroller
+* Finish code simulation setup
+* Add simple animation, ex subtle glow
+* Add hardware drivers for Arduino, test with LEDs on partial PCB
+* -- need ordered parts --
+* Create programming adapter with pogopins
+* Test/finish Attiny11 hardware driver. QTouch or TinyTouchLib
 
 Capacitive touch on/off
 
-* Test connecting jewelry to GND. Have a hole/slit in housing, where a metallic piece/wire rests as the electrode.
+* Test have a hole/slit in housing, where a metallic piece/wire rests as the electrode.
+Jewelry connected to GND.
+* Test having a wire antenna sticking out towards front of rosebud.
+With high sensitivity, can one switch using a gesture?
+
+# Ideas
 
 Practical sizes
 
@@ -58,24 +92,6 @@ Reduces thickness by board+component height, approx 3 mm.
 Challenge: Has to be safe to have them touching, avoid shorts.
 Current limiter. Active, passive resistor.
 * Test milling PCBs for TSSOP8, 0.65mm pitch.
-* Use the microcontroller also for low-power capacitive sensing? Looks feasible with QTouch or TinyTouchLib on Attiny
-Removing dedicated switch IC simplifies architecture, smaller footprint. Ex: AtTiny10 in SOT-23-6.
-Makes software tuning of sensitivity possible?
-Also enables riches UIs.
-
-Lights in motion
-
-* Add microcontroller
-* Add 3-4 LEDs
-* Decide how uC,battery,switch,LED parts should go together.
-Challenges:
-Need ability to move LEDs around to fit purpose
-LEDS ofte need some distance to lit object
-Battery is quite big.
-Want to keep touchcap wire short.
-Want to minimize wiring
-
-* Find a good multiconductor cable?
 
 Consumer friendliness
 
