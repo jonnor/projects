@@ -52,7 +52,17 @@ Animation ideas
 * Together<->apart / center<->sides. 
 * Swipe across. Random triggered, varying intensity
 
+## Interactivity
+
+* Capacitive sensing
+* Accelerometer
+* Audio
+* Temperature
+
 Modulate intensity using touch proximity?
+
+Accelerometers are available with `<10uA` consumption in low power mode.
+I2C communication and configurable interrupts. Ex: LIS3DE, MMA8653FC 
 
 # TODO
 
