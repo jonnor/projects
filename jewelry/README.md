@@ -74,7 +74,7 @@ Touchflower
 Softtouch
 
 * Check 0603 resistors/capacitors at Bitraf.
-* Order part for `touchuc`. 0603 cap/resistors. attiny10, SOT-23-6. pogopins. white LEDs. CR12xx batteries.
+* Order part for `touchuc`. 0603 cap/resistors
 * Test CNC mill `touchuc` board
 * Assemble couple PCB ex microcontroller
 * Finish code simulation setup
