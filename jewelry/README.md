@@ -64,12 +64,21 @@ Modulate intensity using touch proximity?
 Accelerometers are available with `<10uA` consumption in low power mode.
 I2C communication and configurable interrupts. Ex: LIS3DE, MMA8653FC 
 
+# Learnings
+
+Minimum hole size in cardboard. Vector: 0.5mm
+
 # TODO
 
 Tradition piece
 
-* Design and test a twist lock mechanism
-With integrated battery holder.
+* Twistlock. 
+Tagholes should open to other side in outer ring
+Add hole for connecting sides
+Add room for battery wire
+Add holes for connecting front
+Add slot for PCB
+More space for finger to push battery out.
 * Try mounting LEDs sideways to project outwards. 4x at center?
 * Measure existing LED current, estimate need.
 Should stay below 20mA@3V total for 10 hour runtime.
