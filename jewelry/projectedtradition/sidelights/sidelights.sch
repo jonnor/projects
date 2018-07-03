@@ -1,0 +1,92 @@
+EESchema Schematic File Version 4
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L device:LED D1
+U 1 1 5B3C64D4
+P 2550 2550
+F 0 "D1" V 2588 2433 50  0000 R CNN
+F 1 "LED" V 2497 2433 50  0000 R CNN
+F 2 "LEDs:LED_1206" H 2550 2550 50  0001 C CNN
+F 3 "" H 2550 2550 50  0001 C CNN
+	1    2550 2550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L device:LED D2
+U 1 1 5B3C656D
+P 2550 2950
+F 0 "D2" V 2588 2833 50  0000 R CNN
+F 1 "LED" V 2497 2833 50  0000 R CNN
+F 2 "LEDs:LED_1206" H 2550 2950 50  0001 C CNN
+F 3 "" H 2550 2950 50  0001 C CNN
+	1    2550 2950
+	0    -1   -1   0   
+$EndComp
+$Comp
+L device:LED D3
+U 1 1 5B3C658D
+P 2550 3350
+F 0 "D3" V 2588 3233 50  0000 R CNN
+F 1 "LED" V 2497 3233 50  0000 R CNN
+F 2 "LEDs:LED_1206" H 2550 3350 50  0001 C CNN
+F 3 "" H 2550 3350 50  0001 C CNN
+	1    2550 3350
+	0    -1   -1   0   
+$EndComp
+$Comp
+L device:LED D4
+U 1 1 5B3C65B8
+P 2550 3750
+F 0 "D4" V 2588 3633 50  0000 R CNN
+F 1 "LED" V 2497 3633 50  0000 R CNN
+F 2 "LEDs:LED_1206" H 2550 3750 50  0001 C CNN
+F 3 "" H 2550 3750 50  0001 C CNN
+	1    2550 3750
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2550 2700 2550 2800
+Wire Wire Line
+	2550 3100 2550 3200
+Wire Wire Line
+	2550 3500 2550 3600
+$Comp
+L conn:Conn_01x01 J1
+U 1 1 5B3C68C5
+P 2550 2050
+F 0 "J1" V 2516 1962 50  0000 R CNN
+F 1 "Conn_01x01" V 2425 1962 50  0000 R CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch1.27mm" H 2550 2050 50  0001 C CNN
+F 3 "~" H 2550 2050 50  0001 C CNN
+	1    2550 2050
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2550 2250 2550 2400
+$Comp
+L conn:Conn_01x01 J2
+U 1 1 5B3C6A40
+P 2550 4350
+F 0 "J2" V 2423 4430 50  0000 L CNN
+F 1 "Conn_01x01" V 2514 4430 50  0000 L CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch1.27mm" H 2550 4350 50  0001 C CNN
+F 3 "~" H 2550 4350 50  0001 C CNN
+	1    2550 4350
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2550 3900 2550 4150
+$EndSCHEMATC
