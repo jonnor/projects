@@ -1,0 +1,387 @@
+EESchema Schematic File Version 4
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L touch:TPP223-BA6 U1
+U 1 1 5B1035E1
+P 4450 2200
+F 0 "U1" H 4500 1750 50  0000 C CNN
+F 1 "TPP223-BA6" H 4700 1650 50  0000 C CNN
+F 2 "touchflower:SOT-223-6-extraspace" H 4150 2300 50  0001 C CNN
+F 3 "" H 4150 2300 50  0001 C CNN
+	1    4450 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L device:C C1
+U 1 1 5B1039DE
+P 3750 2450
+F 0 "C1" H 3865 2496 50  0000 L CNN
+F 1 "C" H 3865 2405 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 3788 2300 50  0001 C CNN
+F 3 "" H 3750 2450 50  0001 C CNN
+	1    3750 2450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4150 2200 3750 2200
+Wire Wire Line
+	3750 2200 3750 2300
+$Comp
+L power:GND #PWR0101
+U 1 1 5B103A78
+P 3750 2800
+F 0 "#PWR0101" H 3750 2550 50  0001 C CNN
+F 1 "GND" H 3755 2627 50  0000 C CNN
+F 2 "" H 3750 2800 50  0001 C CNN
+F 3 "" H 3750 2800 50  0001 C CNN
+	1    3750 2800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3750 2800 3750 2700
+Wire Wire Line
+	4350 2600 4350 2700
+Wire Wire Line
+	4350 2700 3750 2700
+Connection ~ 3750 2700
+Wire Wire Line
+	3750 2700 3750 2600
+$Comp
+L power:VDD #PWR0102
+U 1 1 5B103B7B
+P 4350 1550
+F 0 "#PWR0102" H 4350 1400 50  0001 C CNN
+F 1 "VDD" H 4367 1723 50  0000 C CNN
+F 2 "" H 4350 1550 50  0001 C CNN
+F 3 "" H 4350 1550 50  0001 C CNN
+	1    4350 1550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4350 1550 4350 1650
+Wire Wire Line
+	4750 2250 4950 2250
+Wire Wire Line
+	4950 2250 4950 1650
+Wire Wire Line
+	4950 1650 4350 1650
+Connection ~ 4350 1650
+Wire Wire Line
+	4350 1650 4350 1750
+Connection ~ 3750 2200
+$Comp
+L power:GND #PWR0104
+U 1 1 5B107743
+P 1350 2450
+F 0 "#PWR0104" H 1350 2200 50  0001 C CNN
+F 1 "GND" H 1355 2277 50  0000 C CNN
+F 2 "" H 1350 2450 50  0001 C CNN
+F 3 "" H 1350 2450 50  0001 C CNN
+	1    1350 2450
+	1    0    0    -1  
+$EndComp
+Text Notes 2700 2600 0    50   ~ 0
+Touch sensitivity\n0-50 pF recommended\n200 pF tested
+$Comp
+L conn:Conn_01x01 J3
+U 1 1 5B12E8EB
+P 3350 2200
+F 0 "J3" H 3270 1975 50  0000 C CNN
+F 1 "Conn_01x01" H 3270 2066 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch1.27mm" H 3350 2200 50  0001 C CNN
+F 3 "~" H 3350 2200 50  0001 C CNN
+	1    3350 2200
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:VDD #PWR0103
+U 1 1 5B12F0ED
+P 1350 1650
+F 0 "#PWR0103" H 1350 1500 50  0001 C CNN
+F 1 "VDD" H 1367 1823 50  0000 C CNN
+F 2 "" H 1350 1650 50  0001 C CNN
+F 3 "" H 1350 1650 50  0001 C CNN
+	1    1350 1650
+	1    0    0    -1  
+$EndComp
+Connection ~ 1350 2300
+Wire Wire Line
+	1350 2300 1350 2450
+Wire Wire Line
+	1350 1650 1350 1850
+Connection ~ 1350 1850
+Wire Wire Line
+	3550 2200 3750 2200
+Text Notes 4550 1600 0    50   ~ 0
+For instantious, cut TOG trace\n
+Text Label 3800 2200 0    50   ~ 0
+sensor
+$Comp
+L device:Battery_Cell BT1
+U 1 1 5B13A4CA
+P 1800 2150
+F 0 "BT1" H 1918 2246 50  0000 L CNN
+F 1 "Battery_Cell" H 1918 2155 50  0000 L CNN
+F 2 "touchflower:BK-913" V 1800 2210 50  0001 C CNN
+F 3 "" V 1800 2210 50  0001 C CNN
+	1    1800 2150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1800 1950 1800 1850
+Wire Wire Line
+	1800 1850 1350 1850
+Wire Wire Line
+	1800 2250 1800 2300
+Wire Wire Line
+	1800 2300 1350 2300
+$Comp
+L device:C C2
+U 1 1 5B3E150B
+P 1350 2100
+F 0 "C2" H 1465 2146 50  0000 L CNN
+F 1 "C" H 1465 2055 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 1388 1950 50  0001 C CNN
+F 3 "" H 1350 2100 50  0001 C CNN
+	1    1350 2100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1350 2250 1350 2300
+Wire Wire Line
+	1350 1950 1350 1850
+$Comp
+L touch:AP3019A U2
+U 1 1 5B3E3AAA
+P 7950 2300
+F 0 "U2" H 7600 2000 50  0000 L CNN
+F 1 "AP3019A" H 8100 2000 50  0000 L CNN
+F 2 "" H 7700 2350 50  0001 C CNN
+F 3 "" H 7700 2350 50  0001 C CNN
+	1    7950 2300
+	1    0    0    -1  
+$EndComp
+Text Notes 9300 2750 0    50   ~ 0
+Iout=200mV/R
+$Comp
+L device:R R1
+U 1 1 5B3E3C95
+P 9050 2700
+F 0 "R1" H 9120 2746 50  0000 L CNN
+F 1 "R" H 9120 2655 50  0000 L CNN
+F 2 "" V 8980 2700 50  0001 C CNN
+F 3 "" H 9050 2700 50  0001 C CNN
+	1    9050 2700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7950 2950 7950 2700
+$Comp
+L conn:Conn_01x01 J2
+U 1 1 5B3E4B4B
+P 9500 2400
+F 0 "J2" H 9420 2175 50  0000 C CNN
+F 1 "Conn_01x01" H 9420 2266 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch1.27mm" H 9500 2400 50  0001 C CNN
+F 3 "~" H 9500 2400 50  0001 C CNN
+	1    9500 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L conn:Conn_01x01 J1
+U 1 1 5B3E60D8
+P 9500 1650
+F 0 "J1" H 9420 1425 50  0000 C CNN
+F 1 "Conn_01x01" H 9420 1516 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch1.27mm" H 9500 1650 50  0001 C CNN
+F 3 "~" H 9500 1650 50  0001 C CNN
+	1    9500 1650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8150 1650 8150 1850
+$Comp
+L device:C C4
+U 1 1 5B3E6D65
+P 8700 2700
+F 0 "C4" H 8815 2746 50  0000 L CNN
+F 1 "C" H 8815 2655 50  0000 L CNN
+F 2 "" H 8738 2550 50  0001 C CNN
+F 3 "" H 8700 2700 50  0001 C CNN
+	1    8700 2700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8550 2400 9050 2400
+Wire Wire Line
+	9050 2950 9050 2850
+Wire Wire Line
+	7950 2950 8700 2950
+Wire Wire Line
+	9050 2550 9050 2400
+Connection ~ 9050 2400
+Wire Wire Line
+	9050 2400 9300 2400
+Wire Wire Line
+	8150 1650 8700 1650
+Wire Wire Line
+	8700 2850 8700 2950
+Connection ~ 8700 2950
+Wire Wire Line
+	8700 2950 9050 2950
+Wire Wire Line
+	8700 2550 8700 1650
+Connection ~ 8700 1650
+Wire Wire Line
+	8700 1650 9300 1650
+Text Label 9050 1650 0    50   ~ 0
+LED+
+Text Label 9100 2400 0    50   ~ 0
+LED-
+$Comp
+L device:C C3
+U 1 1 5B3EE104
+P 7150 2700
+F 0 "C3" H 7265 2746 50  0000 L CNN
+F 1 "C" H 7265 2655 50  0000 L CNN
+F 2 "" H 7188 2550 50  0001 C CNN
+F 3 "" H 7150 2700 50  0001 C CNN
+	1    7150 2700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7150 2850 7150 2950
+Wire Wire Line
+	7150 2950 7950 2950
+Connection ~ 7950 2950
+Wire Wire Line
+	7150 2550 7150 2200
+$Comp
+L device:L_Core_Ferrite L1
+U 1 1 5B3EF485
+P 7500 1650
+F 0 "L1" H 7459 1604 50  0000 R CNN
+F 1 "L" H 7459 1695 50  0000 R CNN
+F 2 "" H 7500 1650 50  0001 C CNN
+F 3 "" H 7500 1650 50  0001 C CNN
+	1    7500 1650
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	7650 1650 7800 1650
+Wire Wire Line
+	7800 1650 7800 1850
+Wire Wire Line
+	7350 1650 7150 1650
+Wire Wire Line
+	7350 2200 7150 2200
+Connection ~ 7150 2200
+Wire Wire Line
+	7150 2200 7150 1650
+Text Notes 7700 1200 0    50   ~ 0
+Vin=2.5-16V
+$Comp
+L power:GND #PWR0105
+U 1 1 5B3F2F42
+P 7950 3100
+F 0 "#PWR0105" H 7950 2850 50  0001 C CNN
+F 1 "GND" H 7955 2927 50  0000 C CNN
+F 2 "" H 7950 3100 50  0001 C CNN
+F 3 "" H 7950 3100 50  0001 C CNN
+	1    7950 3100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7950 3100 7950 2950
+Text Notes 700  1050 0    118  ~ 0
+Battery holder
+Text Notes 3300 1050 0    118  ~ 0
+Touch on/off controller
+Text Notes 7500 1050 0    118  ~ 0
+LED driver
+Text Notes 6500 2850 0    50   ~ 0
+Shutdown\nCTRL: 0v \nIoff=4uA typ 
+Text GLabel 5150 2050 2    50   Input ~ 0
+touchon
+Text GLabel 6950 2400 0    50   Input ~ 0
+touchon
+Wire Wire Line
+	6950 2400 7350 2400
+$Comp
+L power:VDD #PWR0106
+U 1 1 5B3FA6A4
+P 7150 1450
+F 0 "#PWR0106" H 7150 1300 50  0001 C CNN
+F 1 "VDD" H 7167 1623 50  0000 C CNN
+F 2 "" H 7150 1450 50  0001 C CNN
+F 3 "" H 7150 1450 50  0001 C CNN
+	1    7150 1450
+	1    0    0    -1  
+$EndComp
+Text Notes 4450 2900 0    50   ~ 0
+Ioff=2uA typ
+Wire Wire Line
+	7150 1450 7150 1650
+Connection ~ 7150 1650
+$Comp
+L device:TEST TP1
+U 1 1 5B3FE27F
+P 1150 1850
+F 0 "TP1" V 1365 1944 50  0000 C CNN
+F 1 "TEST" V 1274 1944 50  0000 C CNN
+F 2 "" H 1150 1850 50  0001 C CNN
+F 3 "" H 1150 1850 50  0001 C CNN
+	1    1150 1850
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1150 1850 1350 1850
+$Comp
+L device:TEST TP2
+U 1 1 5B400D69
+P 1150 2300
+F 0 "TP2" V 1365 2394 50  0000 C CNN
+F 1 "TEST" V 1274 2394 50  0000 C CNN
+F 2 "" H 1150 2300 50  0001 C CNN
+F 3 "" H 1150 2300 50  0001 C CNN
+	1    1150 2300
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1150 2300 1350 2300
+$Comp
+L device:TEST TP3
+U 1 1 5B4016B4
+P 5200 2250
+F 0 "TP3" V 5154 2478 50  0000 L CNN
+F 1 "TEST" V 5245 2478 50  0000 L CNN
+F 2 "" H 5200 2250 50  0001 C CNN
+F 3 "" H 5200 2250 50  0001 C CNN
+	1    5200 2250
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4750 2050 5000 2050
+Wire Wire Line
+	5000 2250 5000 2050
+Wire Wire Line
+	5000 2250 5200 2250
+Connection ~ 5000 2050
+Wire Wire Line
+	5000 2050 5150 2050
+Text Notes 3950 1250 0    50   ~ 0
+Vdd=2.0-5.5V
+$EndSCHEMATC
