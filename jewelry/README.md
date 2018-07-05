@@ -51,6 +51,7 @@ Animation ideas
 * Glitter/sparkle. Random high-intensity bursts, alternating positions
 * Together<->apart / center<->sides. 
 * Swipe across. Random triggered, varying intensity
+* Tick-tock. Move back/forward in a way that suggests clock motion
 
 ## Interactivity
 
@@ -74,16 +75,14 @@ Tradition piece
 
 * Twistlock. 
 Tagholes should open to other side in outer ring
-Add hole for connecting sides
+Add holes for connecting sides
 Add room for battery wire
 Add holes for connecting front
 Add slot for PCB
-More space for finger to push battery out.
-* Try mounting LEDs sideways to project outwards. 4x at center?
-* Measure existing LED current, estimate need.
-Should stay below 20mA@3V total for 10 hour runtime.
+* Test PCB with integrated LED driver and LEDs projecting sideways
+* Test lasercut a reflector that covers electronics
 * Test painting electronics black, then clean off LED lenses using acetone/isoprop
-* Maybe integrate a stepup LED driver, if not getting enough current/light.
+* Add reverse polarity protection using PMOS. Ex. PMV50XPR, AO3401A
 
 Software control
 
@@ -93,12 +92,6 @@ Software control
 * Test/finish Attiny11 hardware driver. QTouch or TinyTouchLib
 * Create programming adapter with pogopins
 
-Capacitive touch on/off
-
-* Test have a hole/slit in housing, where a metallic piece/wire rests as the electrode.
-Jewelry connected to GND.
-* Test having a wire antenna sticking out towards front of rosebud.
-With high sensitivity, can one switch using a gesture?
 
 # Ideas
 
@@ -118,6 +111,13 @@ Consumer friendliness
 * Ensure that putting battery incorrectly does not cause damage?
 * Maybe allow to adjust brightness. Touch-and-hold during startup?
 
+Capacitive touch on/off
+
+* Test have a hole/slit in housing, where a metallic piece/wire rests as the electrode.
+Jewelry connected to GND.
+* Test having a wire antenna sticking out towards front of rosebud.
+With high sensitivity, can one switch using a gesture?
+
 # Parts
 
 Thin multiconductor cable.
@@ -129,3 +129,7 @@ Thin multiconductor cable.
 
 [White LEDs sidelight](https://www.digikey.no/products/en/optoelectronics/led-indication-discrete/105?FV=940066%2C940008%2C9403c3%2C9403c5%2C9403c6%2C1140160%2C89c0501%2C89c0515%2C89c0088%2C89c057f%2C89c0590%2C89c0592%2C89c0593%2C89c059a%2C89c059c%2C89c059d%2C89c00b1%2C89c00b2%2C89c00b3%2C89c00b4%2C89c00b5%2C89c00b6%2C89c00b7%2C89c00b9%2C89c00ba%2C89c00bc%2C89c00bd%2C89c00be%2C89c00c0%2C89c00c1%2C89c00c2%2C89c00c3%2C89c00c4%2C89c00c5%2C89c00c6%2C89c00c7%2C89c00c9%2C89c00cb%2C89c00cc%2C89c00cd%2C89c00ce%2C89c00d0%2C89c00d1%2C89c00d2%2C89c00d3%2C89c00d4%2C89c00d5%2C89c00d6%2C89c00d7%2C89c00da%2C89c00db%2C89c00dd%2C89c00df%2C89c00e1%2C89c00e2%2C89c00f1%2C89c00f2%2C89c00f3%2C89c00fa%2C89c0103%2C89c010a%2C89c0029%2C89c002a%2C89c002b%2C89c002c%2C89c01be%2C89c002d%2C89c002f%2C89c0030%2C89c0031%2C89c01ea%2C89c01f3%2C89c0032%2C89c01f4%2C89c01f5%2C89c01f6%2C89c01f8%2C89c0033%2C89c01fe%2C89c0200%2C89c0201%2C89c0034%2C89c0213%2C89c0214%2C89c0037%2C89c02d1%2C89c02dd%2C89c02e3%2C89c02e4%2C89c02e6%2C89c02ea%2C89c02eb%2C89c02ec%2C89c02f5%2C89c02f6%2C89c02f7%2C89c02fc%2C89c02fd%2C89c02fe%2C89c0303%2C89c0306%2C89c0328%2C89c0366%2C89c0369%2Cffe00069&quantity=10&ColumnSort=1000011&page=1&stock=1&nstock=1&datasheet=1&pageSize=25)
 
+Smaller inductors.
+https://www.digikey.no/product-detail/en/taiyo-yuden/NRH3012T220MNV/587-3554-1-ND/4694064
+https://www.digikey.no/product-detail/en/taiyo-yuden/BRC2518T220K/587-2439-1-ND/2230305
+https://www.digikey.no/product-detail/en/taiyo-yuden/LB3218T220K/587-2036-1-ND/1788983

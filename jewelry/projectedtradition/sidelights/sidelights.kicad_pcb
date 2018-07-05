@@ -2,7 +2,7 @@
 
   (general
     (thickness 1.6)
-    (drawings 3)
+    (drawings 2)
     (tracks 16)
     (zones 0)
     (modules 6)
@@ -150,7 +150,7 @@
   )
 
   (module Pin_Headers:Pin_Header_Straight_1x01_Pitch1.27mm (layer F.Cu) (tedit 5B3A94A3) (tstamp 5B5FCEE9)
-    (at 49.022 27.178)
+    (at 48.895 27.15)
     (descr "Through hole straight pin header, 1x01, 1.27mm pitch, single row")
     (tags "Through hole pin header THT 1x01 1.27mm single row")
     (path /5B3C6A40)
@@ -188,7 +188,7 @@
     )
   )
 
-  (module LEDs:LED_1206 (layer F.Cu) (tedit 57FE943C) (tstamp 5B433520)
+  (module LEDs:LED_1206 (layer F.Cu) (tedit 5B3E9780) (tstamp 5B433520)
     (at 45.466 32.004 90)
     (descr "LED 1206 smd package")
     (tags "LED led 1206 SMD smd SMT smt smdled SMDLED smtled SMTLED")
@@ -340,20 +340,8 @@
     )
   )
 
-  (dimension 3.750265 (width 0.3) (layer F.SilkS)
-    (gr_text "3.750 mm" (at 45.160152 23.96114 28.30075577) (layer F.SilkS)
-      (effects (font (size 1.5 1.5) (thickness 0.3)))
-    )
-    (feature1 (pts (xy 49.022 27.178) (xy 47.52874 24.404802)))
-    (feature2 (pts (xy 45.72 28.956) (xy 44.22674 26.182802)))
-    (crossbar (pts (xy 44.504762 26.699129) (xy 47.806762 24.921129)))
-    (arrow1a (pts (xy 47.806762 24.921129) (xy 47.09293 25.971531)))
-    (arrow1b (pts (xy 47.806762 24.921129) (xy 46.536886 24.938878)))
-    (arrow2a (pts (xy 44.504762 26.699129) (xy 45.774638 26.68138)))
-    (arrow2b (pts (xy 44.504762 26.699129) (xy 45.218594 25.648727)))
-  )
-  (gr_circle (center 48.895 31.75) (end 59.895 31.75) (layer Eco1.User) (width 0.2))
   (gr_circle (center 48.895 31.75) (end 53.895 31.75) (layer Eco2.User) (width 0.2))
+  (gr_circle (center 48.895 31.75) (end 59.895 31.75) (layer Eco1.User) (width 0.2))
 
   (segment (start 46.516 33.4) (end 45.466 33.4) (width 0.3) (layer F.Cu) (net 1))
   (segment (start 46.643 33.4) (end 46.516 33.4) (width 0.3) (layer F.Cu) (net 1))
