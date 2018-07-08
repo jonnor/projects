@@ -399,4 +399,17 @@ Wire Wire Line
 Wire Wire Line
 	6800 2950 7150 2950
 Connection ~ 7150 2950
+$Comp
+L conn:Conn_01x01 J1
+U 1 1 5B423762
+P 3350 2700
+F 0 "J1" H 3270 2475 50  0000 C CNN
+F 1 "SENSEGND" H 3270 2566 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch1.27mm" H 3350 2700 50  0001 C CNN
+F 3 "~" H 3350 2700 50  0001 C CNN
+	1    3350 2700
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3550 2700 3750 2700
 $EndSCHEMATC
