@@ -73,16 +73,19 @@ Minimum hole size in cardboard. Vector: 0.5mm
 
 Tradition piece
 
+* Make a bending jig for band. Circular. 100mm.
+* Update length of circular band. Maybe 1mm?
+* Test CNC milling silver
+* Compare LEDs projecting sideways versus down
+* Measure inductor current of LED driver. Find smaller inductor, order
+* Add reverse polarity protection using PMOS. Ex. PMV50XPR, AO3401A
 * Twistlock. 
 Tagholes should open to other side in outer ring
 Add holes for connecting sides
 Add room for battery wire
 Add holes for connecting front
-Add slot for PCB
-* Test PCB with integrated LED driver and LEDs projecting sideways
 * Test lasercut a reflector that covers electronics
 * Test painting electronics black, then clean off LED lenses using acetone/isoprop
-* Add reverse polarity protection using PMOS. Ex. PMV50XPR, AO3401A
 
 Software control
 
