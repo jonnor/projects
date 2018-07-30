@@ -4,6 +4,8 @@ both [sensors](https://en.wikipedia.org/wiki/Piezoelectric_sensor) and transduce
 
 Paper with [lots of detailed info](http://www.openmusiclabs.com/wp/wp-content/uploads/2011/11/piezo.pdf).
 
+Piezo elements have an incredibly long [list of common applications](https://www.americanpiezo.com/blog/top-uses-of-piezoelectricity-in-everyday-applications/).
+
 ## Piezo preamp
 
 For a capacitive sensor like a piezo element, a [Charge amplifier](https://en.wikipedia.org/wiki/Charge_amplifier)
@@ -56,7 +58,7 @@ Digital fabrication
 
 Parts
 
-* Input protection diode, or zener. SOD-123 nice size, around 3.5mm, similar to 1206
+* Input protection diode, or zener. SOD-123 nice size, around 3.5mm, similar to 1206. Or two diodes in SOT23?
 [Farnell: Zener 3.3v](http://no.farnell.com/webapp/wcs/stores/servlet/Search?catalogId=15001&langId=47&storeId=10169&categoryId=700000004649&sort=P_PRICE&showResults=true&aa=true&sf=722&pf=110130987,110152539,110152576,113162575)
 [Farnell: Signal diode](http://no.farnell.com/webapp/wcs/stores/servlet/Search?catalogId=15001&langId=47&storeId=10169&categoryId=700000004638&sort=P_PRICE&beginIndex=1&showResults=true&aa=true&pf=110130987,110152539,111439590,113162575)
 

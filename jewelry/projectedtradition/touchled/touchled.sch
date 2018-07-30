@@ -1,5 +1,4 @@
 EESchema Schematic File Version 4
-LIBS:touchled-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -94,7 +93,7 @@ F 3 "" H 1350 2450 50  0001 C CNN
 	1    1350 2450
 	1    0    0    -1  
 $EndComp
-Text Notes 2700 2600 0    50   ~ 0
+Text Notes 2600 2500 0    50   ~ 0
 Touch sensitivity\n0-50 pF recommended\n200 pF tested
 $Comp
 L conn:Conn_01x01 J3
@@ -175,23 +174,23 @@ F 3 "" H 7700 2350 50  0001 C CNN
 	1    7950 2300
 	1    0    0    -1  
 $EndComp
-Text Notes 9300 2750 0    50   ~ 0
+Text Notes 9600 2700 0    50   ~ 0
 Iout=200mV/R
 $Comp
 L device:R R1
 U 1 1 5B3E3C95
-P 9050 2700
-F 0 "R1" H 9120 2746 50  0000 L CNN
-F 1 "47R" H 9120 2655 50  0000 L CNN
-F 2 "Resistors_SMD:R_0805_HandSoldering" V 8980 2700 50  0001 C CNN
-F 3 "" H 9050 2700 50  0001 C CNN
-	1    9050 2700
+P 9300 2700
+F 0 "R1" H 9370 2746 50  0000 L CNN
+F 1 "12R" H 9370 2655 50  0000 L CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 9230 2700 50  0001 C CNN
+F 3 "" H 9300 2700 50  0001 C CNN
+	1    9300 2700
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	7950 2950 7950 2700
 Wire Wire Line
-	8150 1650 8150 1850
+	8150 1400 8150 1850
 $Comp
 L device:C C4
 U 1 1 5B3E6D65
@@ -204,31 +203,13 @@ F 3 "" H 8700 2700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	8550 2400 9050 2400
-Wire Wire Line
-	9050 2950 9050 2850
-Wire Wire Line
 	7950 2950 8700 2950
-Wire Wire Line
-	9050 2550 9050 2400
-Connection ~ 9050 2400
-Wire Wire Line
-	9050 2400 9300 2400
-Wire Wire Line
-	8150 1650 8700 1650
 Wire Wire Line
 	8700 2850 8700 2950
 Connection ~ 8700 2950
-Wire Wire Line
-	8700 2950 9050 2950
-Wire Wire Line
-	8700 2550 8700 1650
-Connection ~ 8700 1650
-Wire Wire Line
-	8700 1650 9300 1650
-Text Label 9050 1650 0    50   ~ 0
+Text Label 9300 1400 2    50   ~ 0
 LED+
-Text Label 9100 2400 0    50   ~ 0
+Text Label 9300 1800 2    50   ~ 0
 LED-
 $Comp
 L device:C C3
@@ -251,25 +232,25 @@ Wire Wire Line
 $Comp
 L device:L_Core_Ferrite L1
 U 1 1 5B3EF485
-P 7500 1650
-F 0 "L1" H 7459 1604 50  0000 R CNN
-F 1 "L" H 7459 1695 50  0000 R CNN
-F 2 "Inductors:Inductor_Taiyo-Yuden_NR-50xx" H 7500 1650 50  0001 C CNN
-F 3 "" H 7500 1650 50  0001 C CNN
-	1    7500 1650
+P 7500 1500
+F 0 "L1" H 7459 1454 50  0000 R CNN
+F 1 "L" H 7459 1545 50  0000 R CNN
+F 2 "Inductors:Inductor_1212" H 7500 1500 50  0001 C CNN
+F 3 "" H 7500 1500 50  0001 C CNN
+	1    7500 1500
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	7650 1650 7800 1650
+	7650 1500 7800 1500
 Wire Wire Line
-	7800 1650 7800 1850
+	7800 1500 7800 1850
 Wire Wire Line
-	7350 1650 7150 1650
+	7350 1500 7150 1500
 Wire Wire Line
 	7350 2200 7150 2200
 Connection ~ 7150 2200
 Wire Wire Line
-	7150 2200 7150 1650
+	7150 2200 7150 1500
 Text Notes 7700 1200 0    50   ~ 0
 Vin=2.5-16V
 $Comp
@@ -302,19 +283,19 @@ Wire Wire Line
 $Comp
 L power:VDD #PWR0106
 U 1 1 5B3FA6A4
-P 7150 1450
-F 0 "#PWR0106" H 7150 1300 50  0001 C CNN
-F 1 "VDD" H 7167 1623 50  0000 C CNN
-F 2 "" H 7150 1450 50  0001 C CNN
-F 3 "" H 7150 1450 50  0001 C CNN
-	1    7150 1450
+P 7150 1350
+F 0 "#PWR0106" H 7150 1200 50  0001 C CNN
+F 1 "VDD" H 7167 1523 50  0000 C CNN
+F 2 "" H 7150 1350 50  0001 C CNN
+F 3 "" H 7150 1350 50  0001 C CNN
+	1    7150 1350
 	1    0    0    -1  
 $EndComp
 Text Notes 4450 2900 0    50   ~ 0
 Ioff=2uA typ
 Wire Wire Line
-	7150 1450 7150 1650
-Connection ~ 7150 1650
+	7150 1350 7150 1500
+Connection ~ 7150 1500
 $Comp
 L device:TEST TP1
 U 1 1 5B3FE27F
@@ -361,21 +342,6 @@ Wire Wire Line
 Connection ~ 6650 2400
 Wire Wire Line
 	6650 2400 6800 2400
-$Comp
-L device:LED_Series D1
-U 1 1 5B40BFAB
-P 9300 2000
-F 0 "D1" V 9391 1912 50  0000 R CNN
-F 1 "LEDS" V 9300 1912 50  0000 R CNN
-F 2 "touchled:SIDELEDS1" V 9209 1912 50  0000 R CNN
-F 3 "" H 9200 2000 50  0000 C CNN
-	1    9300 2000
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	9300 2250 9300 2400
-Wire Wire Line
-	9300 1750 9300 1650
 Wire Wire Line
 	4750 2050 5150 2050
 $Comp
@@ -383,7 +349,7 @@ L device:R R2
 U 1 1 5B410C87
 P 6800 2700
 F 0 "R2" H 6870 2746 50  0000 L CNN
-F 1 "10k" H 6870 2655 50  0000 L CNN
+F 1 "100k" H 6870 2655 50  0000 L CNN
 F 2 "Resistors_SMD:R_0805_HandSoldering" V 6730 2700 50  0001 C CNN
 F 3 "" H 6800 2700 50  0001 C CNN
 	1    6800 2700
@@ -412,4 +378,58 @@ F 3 "~" H 3350 2700 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	3550 2700 3750 2700
+$Comp
+L device:LED D1
+U 1 1 5B5F6A35
+P 9300 1600
+F 0 "D1" V 9338 1483 50  0000 R CNN
+F 1 "LED" V 9247 1483 50  0000 R CNN
+F 2 "LEDs:LED_1206_HandSoldering" H 9300 1600 50  0001 C CNN
+F 3 "" H 9300 1600 50  0001 C CNN
+	1    9300 1600
+	0    -1   -1   0   
+$EndComp
+$Comp
+L device:Q_NMOS_GDS Q1
+U 1 1 5B5F9569
+P 9200 2050
+F 0 "Q1" H 9405 2096 50  0000 L CNN
+F 1 "Q_NMOS_GSD" H 9405 2005 50  0000 L CNN
+F 2 "TO_SOT_Packages_SMD:SOT-23" H 9400 2150 50  0001 C CNN
+F 3 "" H 9200 2050 50  0001 C CNN
+	1    9200 2050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8150 1400 8700 1400
+Wire Wire Line
+	9300 2400 8550 2400
+Wire Wire Line
+	8700 2550 8700 1400
+Wire Wire Line
+	9300 2950 9300 2850
+Wire Wire Line
+	8700 2950 9300 2950
+Wire Wire Line
+	9300 2550 9300 2400
+Wire Wire Line
+	9300 1450 9300 1400
+Wire Wire Line
+	9300 1400 8700 1400
+Connection ~ 8700 1400
+Wire Wire Line
+	9300 1850 9300 1750
+Wire Wire Line
+	9300 2250 9300 2400
+Connection ~ 9300 2400
+Text Notes 9600 2000 0    50   ~ 0
+VIN is passed to VOUT when CTRL=off\nFor *single LED* need switch to avoid\nLED turning on in this case.
+Wire Wire Line
+	9000 2050 8550 2050
+Wire Wire Line
+	8550 2050 8550 1750
+Wire Wire Line
+	8550 1750 6800 1750
+Wire Wire Line
+	6800 1750 6800 2400
 $EndSCHEMATC
