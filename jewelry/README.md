@@ -73,7 +73,7 @@ Minimum hole size in cardboard. Vector: 0.5mm
 
 Competition
 
-* Add reverse polarity protection using PMOS. Ex. PMV50XPR, AO3401A
+* Test new circuit. Inductor,NMOSswitch,reversepol
 * Test using a pogopin to connect back to PCB
 * Twistlock. 
 Add room for battery wire
