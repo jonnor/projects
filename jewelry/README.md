@@ -71,18 +71,33 @@ Minimum hole size in cardboard. Vector: 0.5mm
 
 # TODO
 
-Competition
+Rev 1.1
 
-* Test new circuit. Inductor,NMOSswitch,reversepol
 * Test using a pogopin to connect back to PCB
-* Twistlock. 
+* Twistlock tweaks. 
 Add room for battery wire
 Add holes for connecting sides
 Add holes for connecting front
-Tagholes should open to other side in outer ring
-Update sizes
-* Paint electronics black, clean off LED lenses using acetone/isoprop
+More size for
 
+Rev 2.0 concept test
+
+* Etch flexible PCB for APA102-2020 array.
+Footprint. https://sc01.alicdn.com/kf/HTB1UE2.RpXXXXa_apXX760XFXXXt/221092177/HTB1UE2.RpXXXXa_apXX760XFXXXt.png
+KiCAD. https://github.com/greatscottgadgets/gsg-kicad-lib/blob/master/gsg-modules.pretty/APA102-2020.kicad_mod
+* Implement APA102 control for Arduino/AtTiny85
+
+Rev 2.0
+
+* Implement capacitive touch on AtTiny. TinyTouchLib
+* Finish code simulation setup
+* Add simple animation, ex subtle glow
+* Fabricate PCB for controller
+* Make docking station hardware
+* Deign and make docking PCB. MicroUSB,
+* Implement power saving
+* Implement undervoltage protection.
+http://www.ti.com/product/lm2623 ? Or just in uC software?
 
 Later
 
@@ -95,10 +110,6 @@ OR Convex reflector/mirror.
 
 Software control
 
-* Test CNC mill `touchuc` board
-* Finish code simulation setup
-* Add simple animation, ex subtle glow
-* Test/finish Attiny11 hardware driver. QTouch or TinyTouchLib
 * Create programming adapter with pogopins
 
 
@@ -112,7 +123,6 @@ Reduces thickness by board+component height, approx 3 mm.
 * Test using silver chains as conductor to battery.
 Challenge: Has to be safe to have them touching, avoid shorts.
 Current limiter. Active, passive resistor.
-* Test milling PCBs for TSSOP8, 0.65mm pitch.
 
 Consumer friendliness
 
