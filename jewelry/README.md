@@ -55,10 +55,11 @@ Animation ideas
 
 ## Interactivity
 
-* Capacitive sensing
-* Accelerometer
-* Audio
-* Temperature
+* Touch. Proximity. Gestures. Capacitive sensing.
+* Motion. Angle. Accelerometer
+* Sound. Music, wearer talking. Microphone.
+* Body state. Temperature, breathing, heartbeat.
+* Distance
 
 Modulate intensity using touch proximity?
 
@@ -68,6 +69,39 @@ I2C communication and configurable interrupts. Ex: LIS3DE, MMA8653FC
 # Learnings
 
 Minimum hole size in cardboard. Vector: 0.5mm
+
+# Rev2
+
+* LiPo battery, integrated charger. LIR2450-LIR2016
+* Low-power MCU with hardware CapSense. Wake-on-touch.
+[ATTiny3217 family](https://www.microchip.com/design-centers/8-bit/avr-mcus/device-selection/attiny3217)
+* LED RGB array support. APA102 type. Two-wire, hardware SPI. 5V stepup.
+* Pogopin connector, charge/reprogram. TX/RX/GND/VCC/RESET
+* Pogopin to Micro USB docking-board. Incl USB-serial adapter.
+* 20mm diameter max
+* ? couple of APA102-2020 on board. For easy experimentation
+* ? photodiode for configuring from phone.
+* ? TC2030-MCP-BL ISP connection. http://www.tag-connect.com/tag-connect-pinout-specifications
+
+ATTiny1617
+Running. 10uA @ 32kHz, 4V. 2.5mA @ 5 Mhz.
+Idle. Approx half.
+Standby. 0.1uA (no pheripherals)
+ADC/PTC and RTC can operate in Standby.
+24QFN packages, 0.5mm pitch.
+2.7V needed for 10Mhz.
+ADC @ 50ksps: 325 uA.
+10us wakeup from Standby.
+
+PTC Low Power Mode, uses Sleepwalking to autonomously perform touch detection on a single sensor.
+Only interrupts CPU when a valid touch is registered. Typical power consumption `<10uA`.
+100mAh, 10uA => 1 year.
+
+References
+
+* UPDI is new 1-wire program and debug interface [pyupdi](https://github.com/mraardvark/pyupdi/blob/master/pyupdi.py)
+* ATTiny with UPDI on Tag-Connect header, schematic. https://smayze.wordpress.com/2017/12/29/a-look-into-integrated-light-sources/
+* [](AT12405: Low Power Sensor Design with PTC)
 
 # TODO
 
@@ -85,16 +119,18 @@ Rev 2.0 concept test
 * Etch flexible PCB for APA102-2020 array.
 Footprint. https://sc01.alicdn.com/kf/HTB1UE2.RpXXXXa_apXX760XFXXXt/221092177/HTB1UE2.RpXXXXa_apXX760XFXXXt.png
 KiCAD. https://github.com/greatscottgadgets/gsg-kicad-lib/blob/master/gsg-modules.pretty/APA102-2020.kicad_mod
-* Implement APA102 control for Arduino/AtTiny85
+* Implement APA102 control
+* Test capacitive touch proximity
 
 Rev 2.0
 
-* Implement capacitive touch on AtTiny. TinyTouchLib
+* Design and send
+* Implement capacitive touch on AtTiny.
 * Finish code simulation setup
 * Add simple animation, ex subtle glow
 * Fabricate PCB for controller
 * Make docking station hardware
-* Deign and make docking PCB. MicroUSB,
+* Deign and make docking PCB.
 * Implement power saving
 * Implement undervoltage protection.
 http://www.ti.com/product/lm2623 ? Or just in uC software?

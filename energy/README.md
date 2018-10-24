@@ -88,14 +88,12 @@ Seems to use an original stator configuration, which is claimed to be more effic
 * [3d-printable, 12volt+ axial flux](http://www.thingiverse.com/thing:633603)
 * [3d-printable axial flux](http://www.thingiverse.com/thing:687743)
 * [3d-printable axial flux](http://www.thingiverse.com/thing:1416740)
+* [3d-printable dual axial flux](https://hackaday.io/project/159568/logs). 100watt. Seems well designed.
 
 Off-the-shelf
 
 * Using a car/motorcycle alternator. Example: [Biltema](http://www.biltema.no/no/Bil---MC/Bilreservedeler/Elektrisk-anlegg/Dynamo/)
 
-## People
-
-* Haakon at Fablab Lyngen is interested in developing a windmill
 
 # Vertical turbines
 
