@@ -181,3 +181,8 @@ Replacement parts
 
 * [Spindle motor (MM-40)](https://www.rolanddgastore.com/product.aspx?zpid=1475)
 * [Spindle 3mm (PS-3)](https://www.rolanddgastore.com/product.aspx?zpid=1500)
+
+
+## Working with small parts
+
+Castellated breakouts of fine-pitch pacakges to 1.27mm castellated: https://github.com/coddingtonbear/kicad-castellated-breakouts
