@@ -56,9 +56,9 @@ Animation ideas
 ## Interactivity
 
 * Touch. Proximity. Gestures. Capacitive sensing.
-* Motion. Angle. Accelerometer
+* "move me". Motion. Angle. Accelerometer
 * Sound. Music, wearer talking. Microphone.
-* Body state. Temperature, breathing, heartbeat.
+* "I feel you". Body state. Temperature, breathing, heartbeat.
 * Distance
 
 Modulate intensity using touch proximity?
