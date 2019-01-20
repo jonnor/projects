@@ -18,19 +18,6 @@ Small oval gemstones, 10-20 mm. [1](https://www.gemselect.com/group/gemselect.ph
 
 # Integrated electronics
 
-## Power source
-
-Commonly available.
-
-* CR2032 20x3.2mm 200mAh 3V. CR2025/CR2016
-* CR1632 16x3.2mm 135mAh 3V. CR1620/CR1616
-* CR1225 12x2.5mm 50mAh 3V.
-
-1.5V, need multiple cells, or step-up
-
-* SR54 11.6x3.1mm 80mAh 1.5V
-* SR44 11.6x5.4mm 140mAh 1.5V
-
 ## Structures
 
 * Necklace, 2 parts on front connected with a tube. LED (and switch?) in one, battery in other.
@@ -72,47 +59,24 @@ Minimum hole size in cardboard. Vector: 0.5mm
 
 # Rev2
 
+* Total size `<40mm` diam, `<12 mm` height. PCB 20mm diam, `<3mm` component height.
 * LiPo battery, integrated charger. LIR2450-LIR2016
-* Low-power MCU with hardware CapSense. Wake-on-touch.
-[ATTiny3217 family](https://www.microchip.com/design-centers/8-bit/avr-mcus/device-selection/attiny3217)
-* LED RGB array support. APA102 type. Two-wire, hardware SPI. 5V stepup.
+* Low-power MCU with hardware CapSense. Wake-on-touch. STM32L4.
+* LED RGB array support. APA102 type. Two-wire, hardware SPI. 5V stepup. FPC connector.
+* Two capacitive sensor support. FPC connector.
 * Pogopin connector, charge/reprogram. TX/RX/GND/VCC/RESET
-* Pogopin to Micro USB docking-board. Incl USB-serial adapter.
-* 20mm diameter max
-* ? couple of APA102-2020 on board. For easy experimentation
-* ? photodiode for configuring from phone.
+* Docking station with pogopin to Micro USB.
 * ? TC2030-MCP-BL ISP connection. http://www.tag-connect.com/tag-connect-pinout-specifications
+* ? one/two APA102-2020 on base board. For easy experimentation
+* ? photodiode for configuring from phone.
 
-ATTiny1617
-Running. 10uA @ 32kHz, 4V. 2.5mA @ 5 Mhz.
-Idle. Approx half.
-Standby. 0.1uA (no pheripherals)
-ADC/PTC and RTC can operate in Standby.
-24QFN packages, 0.5mm pitch.
-2.7V needed for 10Mhz.
-ADC @ 50ksps: 325 uA.
-10us wakeup from Standby.
+FPC connector.
+https://www.digikey.com/products/en/connectors-interconnects/ffc-fpc-flat-flexible-connectors/399?FV=fff40016%2Cfff80421%2C1600018%2C1600006%2C1b4c0008%2Cffe0018f%2Cfffc0017%2Cfffc0384&quantity=20&ColumnSort=1000011&page=2&stock=1&nstock=1&pageSize=25
 
-PTC Low Power Mode, uses Sleepwalking to autonomously perform touch detection on a single sensor.
-Only interrupts CPU when a valid touch is registered. Typical power consumption `<10uA`.
 100mAh, 10uA => 1 year.
 
-References
-
-* UPDI is new 1-wire program and debug interface [pyupdi](https://github.com/mraardvark/pyupdi/blob/master/pyupdi.py)
-* ATTiny with UPDI on Tag-Connect header, schematic. https://smayze.wordpress.com/2017/12/29/a-look-into-integrated-light-sources/
-* [](AT12405: Low Power Sensor Design with PTC)
 
 # TODO
-
-Rev 1.1
-
-* Test using a pogopin to connect back to PCB
-* Twistlock tweaks. 
-Add room for battery wire
-Add holes for connecting sides
-Add holes for connecting front
-More size for
 
 Rev 2.0 concept test
 
@@ -124,29 +88,20 @@ KiCAD. https://github.com/greatscottgadgets/gsg-kicad-lib/blob/master/gsg-module
 
 Rev 2.0
 
-* Design and send
-* Implement capacitive touch on AtTiny.
+* Design and send base PCB
+* Send flex PCB for order
+* Implement capacitive touch driver.
 * Finish code simulation setup
 * Add simple animation, ex subtle glow
-* Fabricate PCB for controller
+* Fabricate PCB for dock
 * Make docking station hardware
-* Deign and make docking PCB.
 * Implement power saving
 * Implement undervoltage protection.
 http://www.ti.com/product/lm2623 ? Or just in uC software?
 
 Later
 
-* Setup simulation in Blender. Or raytracing in FreeCAD
-* Test lasercut a reflector that covers electronics
-* Find a way to put lightsource on top, battery/electronics in bottom.
-LED w/connectors.
-OR Convex reflector/mirror. 
-* Move to separate repository 
-
-Software control
-
-* Create programming adapter with pogopins
+* Move to separate repository
 
 
 # Ideas
