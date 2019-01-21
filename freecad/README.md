@@ -6,6 +6,8 @@ which I use for almost all my modelling. Here are some tools, tips & tricks that
 
 ## Macros
 
+License: Same as FreeCAD, LGPL2+
+
 ## Image scale to reference
 
 When you import an image into 3d-view using a ImagePlane, the image is sized based on DPI x pixels.
