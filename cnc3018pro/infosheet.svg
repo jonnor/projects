@@ -40,9 +40,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.8940943"
-     inkscape:cx="257.90443"
-     inkscape:cy="828.33982"
+     inkscape:zoom="1.0232168"
+     inkscape:cx="340.04753"
+     inkscape:cy="877.73807"
      inkscape:document-units="mm"
      inkscape:current-layer="g4692"
      showgrid="false"
@@ -72,50 +72,50 @@
        transform="translate(-1.4627503,54.487398)">
       <text
          id="text817"
-         y="33.300831"
-         x="46.175728"
-         style="font-style:normal;font-weight:normal;font-size:2.28197169px;line-height:1.42623234px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05704929px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         y="41.401421"
+         x="15.196026"
+         style="font-style:normal;font-weight:normal;font-size:4.15989828px;line-height:2.59993625px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.10399745px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          xml:space="preserve"><tspan
            id="tspan848"
-           style="fill:#0000ff;stroke-width:0.05704929px"
-           y="33.300831"
-           x="46.175728"
+           style="fill:#0000ff;stroke-width:0.10399745px"
+           y="41.401421"
+           x="15.196026"
            sodipodi:role="line">https://bitraf.no/wiki/CNC3-3018Pro</tspan></text>
       <text
          id="text821"
-         y="18.795692"
-         x="14.262288"
-         style="font-style:normal;font-weight:normal;font-size:2.28197169px;line-height:1.42623234px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05704929px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         y="19.774099"
+         x="12.641392"
+         style="font-style:normal;font-weight:normal;font-size:2.66622782px;line-height:1.66639233px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.06665569px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          xml:space="preserve"><tspan
            id="tspan829"
-           style="stroke-width:0.05704929px"
-           y="18.795692"
-           x="14.262288"
+           style="font-weight:bold;stroke-width:0.06665569px"
+           y="19.774099"
+           x="12.641392"
            sodipodi:role="line">Usage requires</tspan></text>
       <text
          id="text854"
-         y="13.590517"
-         x="13.785723"
-         style="font-style:normal;font-weight:normal;font-size:4.11914062px;line-height:1.60903943px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.06436156px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         y="14.216304"
+         x="12.157203"
+         style="font-style:normal;font-weight:normal;font-size:4.94279623px;line-height:1.93077981px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.07723117px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.11914062px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.06436156px"
-           y="13.590517"
-           x="13.785723"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.94279623px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.07723117px"
+           y="14.216304"
+           x="12.157203"
            id="tspan852"
            sodipodi:role="line">CNC mill for PCBs</tspan></text>
       <text
          id="text877"
-         y="33.167789"
-         x="14.698141"
-         style="font-style:normal;font-weight:normal;font-size:2.28197169px;line-height:1.42623234px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff6600;fill-opacity:1;stroke:none;stroke-width:0.05704929px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         y="34.853657"
+         x="15.151487"
+         style="font-style:normal;font-weight:normal;font-size:3.10792184px;line-height:1.94245112px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff6600;fill-opacity:1;stroke:none;stroke-width:0.07769804px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          xml:space="preserve"><tspan
-           style="font-weight:bold;fill:#ff6600;stroke-width:0.05704929px"
-           y="33.167789"
-           x="14.698141"
+           style="font-weight:bold;fill:#ff6600;stroke-width:0.07769804px"
+           y="34.853657"
+           x="15.151487"
            id="tspan875"
            sodipodi:role="line">PCB milling only!</tspan></text>
       <g
-         transform="matrix(0.2844438,0,0,0.2680659,3.7426399,-5.2071435)"
+         transform="matrix(0.42444354,0,0,0.40000463,-37.09788,-15.184329)"
          id="g4790">
         <g
            style="fill:#000000"
@@ -4799,8 +4799,8 @@ XqQ2bmMeW0OCluaG5rQ3obn+uKOmzZlUf/HpTdNSqAMciZBx8Lr0fwFsLnhLvstyBwAAAABJRU5E
 rkJggg==
 "
          id="image3837"
-         x="55.808857"
-         y="9.9762535" />
+         x="48.350994"
+         y="16.558624" />
       <rect
          ry="0.50568819"
          rx="0.21394534"
@@ -4811,67 +4811,71 @@ rkJggg==
          id="rect3840"
          style="opacity:1;fill:none;fill-opacity:0.23222752;stroke:#001600;stroke-width:0.91825211;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
       <g
-         transform="matrix(0.03016411,0,0,0.03016411,15.192619,17.69475)"
-         id="g3912">
+         id="g4760"
+         transform="matrix(1.0520222,0,0,1.0520222,-3.4361868,0.13181782)">
         <g
-           style="display:none"
-           id="Layer_3"
-           display="none">
+           id="g3912"
+           transform="matrix(0.03314444,0,0,0.03314444,15.192619,17.423294)">
+          <g
+             display="none"
+             id="Layer_3"
+             style="display:none">
 	<path
-   style="display:inline;fill:#ed1c24"
-   inkscape:connector-curvature="0"
-   d="M 0,0 V 128 H 128 V 0 Z m 64,109.97 c -5.129,0 -9.287,-4.158 -9.287,-9.287 h 18.573 c 0,5.13 -4.158,9.29 -9.286,9.29 z M 101.22,98.377 H 26.778 v -7.132 c 0,0 2.937,-1.024 3.863,-1.485 1.135,-0.564 3.563,-1.649 4.309,-2.675 0.76,-1.045 1.332,-5.217 1.635,-6.984 0.46,-2.689 0.737,-8.276 0.966,-10.995 0.265,-3.151 0.664,-9.333 0.966,-12.481 0.215,-2.238 0.712,-6.718 1.188,-8.915 0.461,-2.125 1.451,-6.432 2.526,-8.321 0.845,-1.486 2.183,-3.692 4.606,-5.052 3.329,-1.868 7.429,-2.824 7.429,-2.824 0,-5.17 4.191,-9.361 9.361,-9.361 5.171,0 9.362,4.191 9.362,9.361 0,0 4.089,0.794 7.279,2.972 3.047,2.08 3.798,3.414 4.642,4.927 1.1,1.967 1.745,7.13 2.194,9.337 0.441,2.179 0.434,6.119 0.742,8.321 0.406,2.89 0.906,8.708 1.293,11.599 0.371,2.762 1.129,8.288 1.721,11.011 0.402,1.842 0.895,5.759 2.039,7.257 0.789,1.033 3.281,2.124 4.457,2.674 0.926,0.433 3.863,1.338 3.863,1.338 v 7.428 z"
+   id="path3894"
    display="inline"
-   id="path3894" />
-
-</g>
-        <g
-           id="Layer_5">
-	<path
-   style="fill:#39b54a;stroke-width:0.64420795"
+   d="M 0,0 V 128 H 128 V 0 Z m 64,109.97 c -5.129,0 -9.287,-4.158 -9.287,-9.287 h 18.573 c 0,5.13 -4.158,9.29 -9.286,9.29 z M 101.22,98.377 H 26.778 v -7.132 c 0,0 2.937,-1.024 3.863,-1.485 1.135,-0.564 3.563,-1.649 4.309,-2.675 0.76,-1.045 1.332,-5.217 1.635,-6.984 0.46,-2.689 0.737,-8.276 0.966,-10.995 0.265,-3.151 0.664,-9.333 0.966,-12.481 0.215,-2.238 0.712,-6.718 1.188,-8.915 0.461,-2.125 1.451,-6.432 2.526,-8.321 0.845,-1.486 2.183,-3.692 4.606,-5.052 3.329,-1.868 7.429,-2.824 7.429,-2.824 0,-5.17 4.191,-9.361 9.361,-9.361 5.171,0 9.362,4.191 9.362,9.361 0,0 4.089,0.794 7.279,2.972 3.047,2.08 3.798,3.414 4.642,4.927 1.1,1.967 1.745,7.13 2.194,9.337 0.441,2.179 0.434,6.119 0.742,8.321 0.406,2.89 0.906,8.708 1.293,11.599 0.371,2.762 1.129,8.288 1.721,11.011 0.402,1.842 0.895,5.759 2.039,7.257 0.789,1.033 3.281,2.124 4.457,2.674 0.926,0.433 3.863,1.338 3.863,1.338 v 7.428 z"
    inkscape:connector-curvature="0"
-   d="M 0,91.082782 V 173.5414 H 82.458617 V 91.082782 Z m 38.740733,72.698868 -29.1008053,-29.19679 7.1803413,-8.04165 19.572971,19.48278 28.052035,-44.37304 9.033083,6.62374 z"
-   id="path3897" />
+   style="display:inline;fill:#ed1c24" />
 
 </g>
-      </g>
-      <text
-         id="text3938"
-         y="22.613338"
-         x="19.02516"
-         style="font-style:normal;font-weight:normal;font-size:2.52814841px;line-height:4.16476679px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.06320371px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"><tspan
-           id="tspan3942"
-           style="line-height:4.16476679px;stroke-width:0.06320371px"
-           y="22.613338"
-           x="19.02516"
-           sodipodi:role="line">Course certification</tspan><tspan
-           id="tspan3978"
-           style="line-height:4.16476679px;stroke-width:0.06320371px"
-           y="26.778105"
-           x="19.02516"
-           sodipodi:role="line">Paying membership</tspan></text>
-      <g
-         transform="matrix(0.01943196,0,0,0.01943196,15.243497,24.544507)"
-         id="g3912-2">
-        <g
-           style="display:none"
-           id="Layer_3-9"
-           display="none">
-          <path
-             style="display:inline;fill:#ed1c24"
-             inkscape:connector-curvature="0"
-             d="M 0,0 V 128 H 128 V 0 Z m 64,109.97 c -5.129,0 -9.287,-4.158 -9.287,-9.287 h 18.573 c 0,5.13 -4.158,9.29 -9.286,9.29 z M 101.22,98.377 H 26.778 v -7.132 c 0,0 2.937,-1.024 3.863,-1.485 1.135,-0.564 3.563,-1.649 4.309,-2.675 0.76,-1.045 1.332,-5.217 1.635,-6.984 0.46,-2.689 0.737,-8.276 0.966,-10.995 0.265,-3.151 0.664,-9.333 0.966,-12.481 0.215,-2.238 0.712,-6.718 1.188,-8.915 0.461,-2.125 1.451,-6.432 2.526,-8.321 0.845,-1.486 2.183,-3.692 4.606,-5.052 3.329,-1.868 7.429,-2.824 7.429,-2.824 0,-5.17 4.191,-9.361 9.361,-9.361 5.171,0 9.362,4.191 9.362,9.361 0,0 4.089,0.794 7.279,2.972 3.047,2.08 3.798,3.414 4.642,4.927 1.1,1.967 1.745,7.13 2.194,9.337 0.441,2.179 0.434,6.119 0.742,8.321 0.406,2.89 0.906,8.708 1.293,11.599 0.371,2.762 1.129,8.288 1.721,11.011 0.402,1.842 0.895,5.759 2.039,7.257 0.789,1.033 3.281,2.124 4.457,2.674 0.926,0.433 3.863,1.338 3.863,1.338 v 7.428 z"
-             display="inline"
-             id="path3894-3" />
+          <g
+             id="Layer_5">
+	<path
+   id="path3897"
+   d="M 0,91.082782 V 173.5414 H 82.458617 V 91.082782 Z m 38.740733,72.698868 -29.1008053,-29.19679 7.1803413,-8.04165 19.572971,19.48278 28.052035,-44.37304 9.033083,6.62374 z"
+   inkscape:connector-curvature="0"
+   style="fill:#39b54a;stroke-width:0.64420795" />
+
+</g>
         </g>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:2.54366708px;line-height:4.19033146px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.06359167px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="18.409496"
+           y="22.761349"
+           id="text3938"><tspan
+             sodipodi:role="line"
+             x="18.409496"
+             y="22.761349"
+             style="font-weight:bold;line-height:4.19033146px;stroke-width:0.06359167px"
+             id="tspan3942">Course certification</tspan><tspan
+             sodipodi:role="line"
+             x="18.409496"
+             y="26.951679"
+             style="font-weight:bold;line-height:4.19033146px;stroke-width:0.06359167px"
+             id="tspan3978">Paying membership</tspan></text>
         <g
-           id="Layer_5-9">
-          <path
-             style="fill:#39b54a"
-             inkscape:connector-curvature="0"
-             d="M 0,0 V 128 H 128 V 0 Z M 60.137,112.85 14.964,67.528 26.11,55.045 56.493,85.288 100.038,16.408 114.06,26.69 Z"
-             id="path3897-0" />
+           id="g3912-2"
+           transform="matrix(0.02135191,0,0,0.02135191,15.248524,24.949834)">
+          <g
+             display="none"
+             id="Layer_3-9"
+             style="display:none">
+            <path
+               id="path3894-3"
+               display="inline"
+               d="M 0,0 V 128 H 128 V 0 Z m 64,109.97 c -5.129,0 -9.287,-4.158 -9.287,-9.287 h 18.573 c 0,5.13 -4.158,9.29 -9.286,9.29 z M 101.22,98.377 H 26.778 v -7.132 c 0,0 2.937,-1.024 3.863,-1.485 1.135,-0.564 3.563,-1.649 4.309,-2.675 0.76,-1.045 1.332,-5.217 1.635,-6.984 0.46,-2.689 0.737,-8.276 0.966,-10.995 0.265,-3.151 0.664,-9.333 0.966,-12.481 0.215,-2.238 0.712,-6.718 1.188,-8.915 0.461,-2.125 1.451,-6.432 2.526,-8.321 0.845,-1.486 2.183,-3.692 4.606,-5.052 3.329,-1.868 7.429,-2.824 7.429,-2.824 0,-5.17 4.191,-9.361 9.361,-9.361 5.171,0 9.362,4.191 9.362,9.361 0,0 4.089,0.794 7.279,2.972 3.047,2.08 3.798,3.414 4.642,4.927 1.1,1.967 1.745,7.13 2.194,9.337 0.441,2.179 0.434,6.119 0.742,8.321 0.406,2.89 0.906,8.708 1.293,11.599 0.371,2.762 1.129,8.288 1.721,11.011 0.402,1.842 0.895,5.759 2.039,7.257 0.789,1.033 3.281,2.124 4.457,2.674 0.926,0.433 3.863,1.338 3.863,1.338 v 7.428 z"
+               inkscape:connector-curvature="0"
+               style="display:inline;fill:#ed1c24" />
+          </g>
+          <g
+             id="Layer_5-9">
+            <path
+               id="path3897-0"
+               d="M 0,0 V 128 H 128 V 0 Z M 60.137,112.85 14.964,67.528 26.11,55.045 56.493,85.288 100.038,16.408 114.06,26.69 Z"
+               inkscape:connector-curvature="0"
+               style="fill:#39b54a" />
+          </g>
         </g>
       </g>
     </g>
