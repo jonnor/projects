@@ -1,0 +1,70 @@
+# -*- coding: utf-8 -*-
+
+import FreeCAD
+import FreeCADGui
+
+def precondition(predicate, msg):
+	if not predicate:
+		print(msg)
+
+# TODO: for objects that belong to a part, need to find the part it belongs to and set Placement there
+# TODO: when entire object is selected (not face), automatically determine likely part to be up
+
+# Cases to test
+# Select face of rotated object made in XY
+# Select face of object which is drawn in YZ and XZ (not XY)
+# Select face of object belonging to Body
+# Select face of object belonging to Part
+
+
+def layflat(obj):
+	doc = App.activeDocument() 
+	material = doc.getObjectsByLabel('Material_reference')
+	precondition(len(material) <= 1, "Error: Found multiple material references")
+	material = material[0] if len(material) else None
+
+	if obj.HasSubObjects:
+		precondition(len(obj.SubObjects) == 1, 'Only one thing should be selected in each object')
+		sub = obj.SubObjects[0]
+	obj = obj.Object
+
+	kind = sub.__class__.__name__
+	precondition(kind == 'Face', 'Must select face')
+
+	# Rotate face to XY
+	nn = sub.normalAt(0,0)
+	zUp = FreeCAD.Vector(0.0, 0.0, 1.0)
+	rot = App.Rotation(nn, zUp)
+	# XXX: when Axis is something like 1,0,1 this does not quite work?
+	pla = obj.Placement.multiply(App.Placement(App.Vector(0,0,0), rot))
+	obj.Placement = pla
+
+	# The face should now lie in XY
+	bb  = obj.Shape.BoundBox
+
+	# Move such that bottom is at Z=0.0
+	moveZ0 = App.Vector(0.0, 0.0, 0.0-bb.ZMin)
+	obj.Placement.move(moveZ0)
+
+	def boundIsInsideXY(a, b):
+		xInside = a.XMin >= b.XMin and a.XMax <= b.XMax
+		yInside = a.YMin >= b.YMin and a.YMax <= b.YMax
+		return xInside and yInside
+
+	# Move to material, if needed
+	if material:
+		objOnMaterial = boundIsInsideXY(obj.Shape.BoundBox, material.Shape.BoundBox)
+		materialCenter = material.Shape.CenterOfMass
+		objCenter = obj.Shape.CenterOfMass
+		if not objOnMaterial:
+			moveToMaterial = materialCenter - objCenter
+			moveToMaterial[2] = 0.0 # dont move Z
+			obj.Placement.move(moveToMaterial)
+
+
+# User selects face(s) of part to CNC mill
+selection = FreeCADGui.Selection.getSelectionEx()
+
+for obj in selection:
+	layflat(obj)
+
