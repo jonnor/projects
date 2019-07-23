@@ -51,7 +51,7 @@ U 1 1 5BAAAE11
 P 4050 5350
 F 0 "BT1" H 4168 5446 50  0000 L CNN
 F 1 "LIR2450" H 4168 5355 50  0000 L CNN
-F 2 "" V 4050 5410 50  0001 C CNN
+F 2 "Battery:BatteryHolder_Keystone_3008_1x2450" V 4050 5410 50  0001 C CNN
 F 3 "~" V 4050 5410 50  0001 C CNN
 	1    4050 5350
 	1    0    0    -1  
@@ -135,7 +135,7 @@ U 1 1 5BAAC9B2
 P 800 4150
 F 0 "J3" H 720 4567 50  0000 C CNN
 F 1 "DOCK" H 720 4476 50  0000 C CNN
-F 2 "" H 800 4150 50  0001 C CNN
+F 2 "Connector_PinHeader_1.27mm:PinHeader_1x06_P1.27mm_Vertical" H 800 4150 50  0001 C CNN
 F 3 "~" H 800 4150 50  0001 C CNN
 	1    800  4150
 	-1   0    0    -1  
@@ -334,7 +334,7 @@ U 1 1 5BAB67A6
 P 10450 4650
 F 0 "J4" H 10530 4642 50  0000 L CNN
 F 1 "Leds" H 10530 4551 50  0000 L CNN
-F 2 "Connector_FFC-FPC:Molex_200528-0040_1x04-1MP_P1.00mm_Horizontal" H 10450 4650 50  0001 C CNN
+F 2 "Connector_PinHeader_1.27mm:PinHeader_1x04_P1.27mm_Vertical" H 10450 4650 50  0001 C CNN
 F 3 "~" H 10450 4650 50  0001 C CNN
 	1    10450 4650
 	1    0    0    -1  
@@ -438,16 +438,16 @@ F 3 "" H 1250 4500 50  0001 C CNN
 	1    1250 4500
 	1    0    0    -1  
 $EndComp
-Text Label 3950 2300 0    47   ~ 0
+Text Label 3950 2100 0    47   ~ 0
 LED_ENABLE
 Text Label 3950 2000 0    47   ~ 0
 LED_CLK
 Text Label 3950 2200 0    47   ~ 0
 LED_DATA
-Text Label 1550 1950 0    47   ~ 0
+Text Label 1600 1400 0    47   ~ 0
 TOUCH_1
 Text Label 2950 3000 2    47   ~ 0
-TOUCH_1
+TOUCH_CS
 $Comp
 L power:VCC #PWR0113
 U 1 1 5BAC53BB
@@ -500,12 +500,12 @@ $EndComp
 $Comp
 L Device:R R1
 U 1 1 5BB8444E
-P 1200 1950
-F 0 "R1" V 1407 1950 50  0000 C CNN
-F 1 "R" V 1316 1950 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 1130 1950 50  0001 C CNN
-F 3 "~" H 1200 1950 50  0001 C CNN
-	1    1200 1950
+P 1250 1400
+F 0 "R1" V 1350 1450 50  0000 C CNN
+F 1 "1k" V 1350 1300 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 1180 1400 50  0001 C CNN
+F 3 "~" H 1250 1400 50  0001 C CNN
+	1    1250 1400
 	0    -1   -1   0   
 $EndComp
 $Comp
@@ -669,8 +669,6 @@ Text Label 3950 2600 0    47   ~ 0
 USB_D-
 Text Label 3950 2700 0    47   ~ 0
 USB_D+
-Text Label 4000 2100 0    47   ~ 0
-SPI1_MISO
 Text Label 4300 2800 0    47   ~ 0
 USB_NOE
 Text Label 3950 2500 0    47   ~ 0
@@ -745,12 +743,12 @@ BATT_SENSE
 $Comp
 L Device:C C1
 U 1 1 5C41EB95
-P 1600 2450
-F 0 "C1" H 1715 2496 50  0000 L CNN
-F 1 "C" H 1715 2405 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 1638 2300 50  0001 C CNN
-F 3 "~" H 1600 2450 50  0001 C CNN
-	1    1600 2450
+P 1600 1850
+F 0 "C1" H 1715 1896 50  0000 L CNN
+F 1 "C" H 1715 1805 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 1638 1700 50  0001 C CNN
+F 3 "~" H 1600 1850 50  0001 C CNN
+	1    1600 1850
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -859,7 +857,7 @@ U 1 1 5D39AFF0
 P 850 6900
 F 0 "J5" H 770 7317 50  0000 C CNN
 F 1 "SWD" H 770 7226 50  0000 C CNN
-F 2 "" H 850 6900 50  0001 C CNN
+F 2 "Connector_PinHeader_1.27mm:PinHeader_1x06_P1.27mm_Vertical" H 850 6900 50  0001 C CNN
 F 3 "~" H 850 6900 50  0001 C CNN
 	1    850  6900
 	-1   0    0    -1  
@@ -1139,9 +1137,9 @@ Text Label 3950 1500 0    47   ~ 0
 ANALOG+
 Text Label 3950 1600 0    47   ~ 0
 ANALOG-
-Text Label 1000 5300 0    47   ~ 0
+Text Label 1000 5500 0    47   ~ 0
 I2C_SCL
-Text Label 1000 5400 0    47   ~ 0
+Text Label 1000 5600 0    47   ~ 0
 I2C_SDA
 Text Label 3950 2400 0    47   ~ 0
 I2C_SCL
@@ -1151,7 +1149,7 @@ U 1 1 5D523CCC
 P 800 5400
 F 0 "J6" H 720 5817 50  0000 C CNN
 F 1 "EXT" H 720 5726 50  0000 C CNN
-F 2 "" H 800 5400 50  0001 C CNN
+F 2 "Connector_PinHeader_1.27mm:PinHeader_1x06_P1.27mm_Vertical" H 800 5400 50  0001 C CNN
 F 3 "~" H 800 5400 50  0001 C CNN
 	1    800  5400
 	-1   0    0    -1  
@@ -1162,7 +1160,7 @@ Text Notes 650  6250 0    118  ~ 0
 SWD
 Text Notes 4400 2450 0    50   ~ 0
 I2C1
-Text Label 3950 3000 0    47   ~ 0
+Text Label 2550 3350 0    47   ~ 0
 TOUCH_2
 Text Notes 2300 3100 0    50   ~ 0
 PB7=TSC_G2_IO4
@@ -1190,13 +1188,9 @@ F 3 "" H 1100 5750 50  0001 C CNN
 	1    1100 5750
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	1100 5750 1100 5500
-Wire Wire Line
-	1100 5500 1000 5500
-Text Label 1000 5600 0    47   ~ 0
+Text Label 1000 5300 0    47   ~ 0
 ANALOG+
-Text Label 1000 5700 0    47   ~ 0
+Text Label 1000 5400 0    47   ~ 0
 ANALOG-
 $Comp
 L Sensor_Audio:MP45DT02 MK1
@@ -1231,32 +1225,28 @@ F 3 "" H 2650 6700 50  0001 C CNN
 	1    2650 6700
 	1    0    0    -1  
 $EndComp
-Text Notes 3950 3300 0    50   ~ 0
-PA15=TSC_G3_1
 Text Notes 2150 2000 0    50   ~ 0
 PC14/15=OSC32
 $Comp
-L Connector_Generic:Conn_01x06 J1
+L Connector_Generic:Conn_01x03 J1
 U 1 1 5D5664C2
-P 750 2150
-F 0 "J1" H 670 2567 50  0000 C CNN
-F 1 "TOUCH" H 670 2476 50  0000 C CNN
-F 2 "" H 750 2150 50  0001 C CNN
-F 3 "~" H 750 2150 50  0001 C CNN
-	1    750  2150
+P 700 1500
+F 0 "J1" H 620 1917 50  0000 C CNN
+F 1 "TOUCH" H 620 1826 50  0000 C CNN
+F 2 "Connector_PinHeader_1.27mm:PinHeader_1x03_P1.27mm_Vertical" H 700 1500 50  0001 C CNN
+F 3 "~" H 700 1500 50  0001 C CNN
+	1    700  1500
 	-1   0    0    -1  
 $EndComp
-Text Label 1550 2050 0    47   ~ 0
-TOUCH_2
 $Comp
 L power:GND #PWR0133
 U 1 1 5D5677D4
-P 1100 2500
-F 0 "#PWR0133" H 1100 2250 50  0001 C CNN
-F 1 "GND" H 1105 2327 50  0000 C CNN
-F 2 "" H 1100 2500 50  0001 C CNN
-F 3 "" H 1100 2500 50  0001 C CNN
-	1    1100 2500
+P 1600 2000
+F 0 "#PWR0133" H 1600 1750 50  0001 C CNN
+F 1 "GND" H 1605 1827 50  0000 C CNN
+F 2 "" H 1600 2000 50  0001 C CNN
+F 3 "" H 1600 2000 50  0001 C CNN
+	1    1600 2000
 	1    0    0    -1  
 $EndComp
 Text Label 3050 7000 0    47   ~ 0
@@ -1374,7 +1364,7 @@ Wire Wire Line
 Wire Wire Line
 	5400 7300 5300 7300
 Connection ~ 4900 7550
-Text Notes 3900 3500 0    50   ~ 0
+Text Notes 4400 1700 0    50   ~ 0
 Wakeup: PA0, PA2
 Text Label 3950 1700 0    47   ~ 0
 ACCEL_INT
@@ -1385,10 +1375,10 @@ NoConn ~ 4400 6800
 Text Notes 2000 7750 0    59   ~ 0
 FIXME: switch to a non-obsolete mic
 $Comp
-L Device:C C?
+L Device:C C11
 U 1 1 5D5D5BBB
 P 1700 7200
-F 0 "C?" H 1815 7246 50  0000 L CNN
+F 0 "C11" H 1815 7246 50  0000 L CNN
 F 1 "1uF" H 1815 7155 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 1738 7050 50  0001 C CNN
 F 3 "~" H 1700 7200 50  0001 C CNN
@@ -1396,10 +1386,10 @@ F 3 "~" H 1700 7200 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:VCC #PWR?
+L power:VCC #PWR0139
 U 1 1 5D5D61BA
 P 1700 7050
-F 0 "#PWR?" H 1700 6900 50  0001 C CNN
+F 0 "#PWR0139" H 1700 6900 50  0001 C CNN
 F 1 "VCC" H 1717 7223 50  0000 C CNN
 F 2 "" H 1700 7050 50  0001 C CNN
 F 3 "" H 1700 7050 50  0001 C CNN
@@ -1407,14 +1397,58 @@ F 3 "" H 1700 7050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0140
 U 1 1 5D5D66F5
 P 1700 7350
-F 0 "#PWR?" H 1700 7100 50  0001 C CNN
+F 0 "#PWR0140" H 1700 7100 50  0001 C CNN
 F 1 "GND" H 1705 7177 50  0000 C CNN
 F 2 "" H 1700 7350 50  0001 C CNN
 F 3 "" H 1700 7350 50  0001 C CNN
 	1    1700 7350
 	1    0    0    -1  
 $EndComp
+Text Label 2950 2700 2    47   ~ 0
+TOUCH_1
+Text Label 1600 1700 0    47   ~ 0
+TOUCH_CS
+Wire Wire Line
+	1100 1400 900  1400
+Wire Wire Line
+	1600 1400 1400 1400
+Text Label 2950 2900 2    47   ~ 0
+TOUCH_2
+Text Label 1600 1550 0    47   ~ 0
+TOUCH_2
+$Comp
+L Device:R R2
+U 1 1 5D6AD242
+P 1250 1550
+F 0 "R2" V 1150 1600 50  0000 C CNN
+F 1 "1k" V 1150 1450 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 1180 1550 50  0001 C CNN
+F 3 "~" H 1250 1550 50  0001 C CNN
+	1    1250 1550
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1600 1550 1400 1550
+Wire Wire Line
+	1100 1550 1000 1550
+Wire Wire Line
+	1000 1550 900  1500
+$Comp
+L power:GND #PWR0141
+U 1 1 5D743427
+P 900 1600
+F 0 "#PWR0141" H 900 1350 50  0001 C CNN
+F 1 "GND" H 905 1427 50  0000 C CNN
+F 2 "" H 900 1600 50  0001 C CNN
+F 3 "" H 900 1600 50  0001 C CNN
+	1    900  1600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1100 5750 1100 5700
+Wire Wire Line
+	1100 5700 1000 5700
 $EndSCHEMATC
