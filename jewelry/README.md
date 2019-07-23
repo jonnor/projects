@@ -42,11 +42,11 @@ Animation ideas
 
 ## Interactivity
 
-* Touch. Proximity. Gestures. Capacitive sensing.
+* "touch me". Touch. Proximity. Gestures. Capacitive sensing.
 * "move me". Motion. Angle. Accelerometer
-* Sound. Music, wearer talking. Microphone.
+* "I hear you". Sound. Music, wearer talking. Microphone.
 * "I feel you". Body state. Temperature, breathing, heartbeat.
-* Distance
+* "get close to me". Distance
 
 Modulate intensity using touch proximity?
 
@@ -68,7 +68,7 @@ Minimum hole size in cardboard. Vector: 0.5mm
 * Docking station with pogopin to Micro USB.
 * ? TC2030-MCP-BL ISP connection. http://www.tag-connect.com/tag-connect-pinout-specifications
 * ? one/two APA102-2020 on base board. For easy experimentation
-* ? photodiode for configuring from phone.
+* ? photodiode for configuring from phone. Color sensor?
 
 FPC connector.
 https://www.digikey.com/products/en/connectors-interconnects/ffc-fpc-flat-flexible-connectors/399?FV=fff40016%2Cfff80421%2C1600018%2C1600006%2C1b4c0008%2Cffe0018f%2Cfffc0017%2Cfffc0384&quantity=20&ColumnSort=1000011&page=2&stock=1&nstock=1&pageSize=25
