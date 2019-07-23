@@ -78,26 +78,39 @@ https://www.digikey.com/products/en/connectors-interconnects/ffc-fpc-flat-flexib
 
 # TODO
 
-Rev 2.0 concept test
+## Projected rev 2.0
+
+Base board
+
+* Fix DRC errors
+* Fix microphone footprint
+* Check BOM on DigiKey
+* Order from PCBWay
+
+Flex led array
 
 * Etch flexible PCB for APA102-2020 array.
 Footprint. https://sc01.alicdn.com/kf/HTB1UE2.RpXXXXa_apXX760XFXXXt/221092177/HTB1UE2.RpXXXXa_apXX760XFXXXt.png
 KiCAD. https://github.com/greatscottgadgets/gsg-kicad-lib/blob/master/gsg-modules.pretty/APA102-2020.kicad_mod
-* Implement APA102 control
-* Test capacitive touch proximity
+* Test with Arduino or Nucleo board
+* Test fits on 3d-printed model
+* Test connector with base board OK
 
-Rev 2.0
+Rev 2.0 proof of concept
 
-* Design and send base PCB
-* Send flex PCB for order
-* Implement capacitive touch driver.
-* Finish code simulation setup
-* Add simple animation, ex subtle glow
+* Validate base board
+* Implement APA102 driver
+* Implement capacitive touch
+
+Dock
+
 * Fabricate PCB for dock
-* Make docking station hardware
+* Make docking station mechanics
+
+Rev 2.0 later
+
 * Implement power saving
 * Implement undervoltage protection.
-http://www.ti.com/product/lm2623 ? Or just in uC software?
 
 Later
 
