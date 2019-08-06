@@ -80,12 +80,26 @@ https://www.digikey.com/products/en/connectors-interconnects/ffc-fpc-flat-flexib
 
 ## Projected rev 2.0
 
-Base board
+Baseboard testing
 
-* Fix DRC errors
-* Fix microphone footprint
-* Check BOM on DigiKey
-* Order from PCBWay
+* Battery charging. Seems to work.
+Goes up to 4.19V from 4.10V. 40 mA draw from VBUS.
+* Power from battery. Works.
+But only 2.8V VCC with VBATT 4.0V ?
+* LED power stepup.
+PA6 output works OK.
+R7 pull was cut off during testing.
+TP1 (enable) is only 2.0V with 100k R13. Should be 90% of VBATT to enable
+When putting 220ohm in parallel, it reaches 3.77V
+But Vout is still just 0.5 V.
+Cout is only 1uF. But min is 10uF, max 100uF.
+Adding 47 uF did not seem to help
+* Test LED data lines
+
+Baseboard bugs
+
+* PC14 should not be used to drive LED.
+Has limited ability to source current, ref datasheet
 
 Flex led array
 
