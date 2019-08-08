@@ -90,11 +90,36 @@ But only 2.8V VCC with VBATT 4.0V ?
 PA6 output works OK.
 R7 pull was cut off during testing.
 TP1 (enable) is only 2.0V with 100k R13. Should be 90% of VBATT to enable
-When putting 220ohm in parallel, it reaches 3.77V
+When putting 220ohm in parallel, it reaches 3.77V.
+Seems input is very low impdance, unexpected.
 But Vout is still just 0.5 V.
 Cout is only 1uF. But min is 10uF, max 100uF.
-Adding 47 uF did not seem to help
+Adding 47 uF did not seem to help.
+Layout is not ideal wrt recommendations.
+In particular GND of Cin is connected through a huge detour.
+Try connect directly? Try increase Cin? No improvement.
+Soldered up a new regulator, gives 5.0V out no problem.
+Conclusion, failure was due to reverse current from battery during testing.
+TODO: Test output under load. 10-100 mA
+TODO: Test enable signal. Does transistor coupling work OK?
+
 * Test LED data lines
+* Test touch controller input
+
+Baseboard advanced tests
+
+* Test USB communication
+* Test microphone. PDM
+* Test accelerometer. I2C
+
+Minimally useful
+
+* Order some APA102 5x5mm. Colored and white.
+https://www.digikey.com/products/en/optoelectronics/addressable-specialty/126?FV=ffe0007e&quantity=10&ColumnSort=1000011&page=1&stock=1&nstock=1&k=APA102&pageSize=25&pkeyword=APA102
+Maybe also some SK9822? (APA102 clone)
+https://www.aliexpress.com/item/32814778563.html?spm=a2g0o.productlist.0.0.41de121cISteIU&algo_pvid=fe3fdec9-1e16-42d0-ae08-855af399b14f&algo_expid=fe3fdec9-1e16-42d0-ae08-855af399b14f-0&btsid=b966ba3f-90d2-442f-9ffe-870f4855d5ac&ws_ab_test=searchweb0_0,searchweb201602_5,searchweb201603_52
+* Order solder paste
+
 
 Baseboard bugs
 
