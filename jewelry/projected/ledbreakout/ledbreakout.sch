@@ -1,0 +1,181 @@
+EESchema Schematic File Version 4
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L LED:APA102-2020 D1
+U 1 1 5D4DC3E0
+P 3000 2300
+F 0 "D1" H 3300 1800 50  0000 C CNN
+F 1 "APA102-2020" H 3500 1950 50  0000 C CNN
+F 2 "LED_SMD:LED-APA102-2020" H 3050 2000 50  0001 L TNN
+F 3 "http://www.led-color.com/upload/201604/APA102-2020%20SMD%20LED.pdf" H 3100 1925 50  0001 L TNN
+	1    3000 2300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J1
+U 1 1 5D4DEC32
+P 2500 2200
+F 0 "J1" H 2418 1975 50  0000 C CNN
+F 1 "Conn_01x01" H 2418 2066 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 2500 2200 50  0001 C CNN
+F 3 "~" H 2500 2200 50  0001 C CNN
+	1    2500 2200
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J2
+U 1 1 5D4DF02B
+P 2500 2300
+F 0 "J2" H 2418 2075 50  0000 C CNN
+F 1 "Conn_01x01" H 2550 2500 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 2500 2300 50  0001 C CNN
+F 3 "~" H 2500 2300 50  0001 C CNN
+	1    2500 2300
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J5
+U 1 1 5D4DF870
+P 3500 2200
+F 0 "J5" H 3580 2242 50  0000 L CNN
+F 1 "Conn_01x01" H 3500 2350 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 3500 2200 50  0001 C CNN
+F 3 "~" H 3500 2200 50  0001 C CNN
+	1    3500 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J6
+U 1 1 5D4DFC14
+P 3500 2300
+F 0 "J6" H 3580 2342 50  0000 L CNN
+F 1 "Conn_01x01" H 3500 2150 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 3500 2300 50  0001 C CNN
+F 3 "~" H 3500 2300 50  0001 C CNN
+	1    3500 2300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J4
+U 1 1 5D4E04C0
+P 3500 950
+F 0 "J4" H 3580 992 50  0000 L CNN
+F 1 "Conn_01x01" H 3500 800 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 3500 950 50  0001 C CNN
+F 3 "~" H 3500 950 50  0001 C CNN
+	1    3500 950 
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J3
+U 1 1 5D4E0E3C
+P 2600 1150
+F 0 "J3" H 2680 1192 50  0000 L CNN
+F 1 "Conn_01x01" H 2600 1000 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 2600 1150 50  0001 C CNN
+F 3 "~" H 2600 1150 50  0001 C CNN
+	1    2600 1150
+	0    1    1    0   
+$EndComp
+$Comp
+L power:VCC #PWR0101
+U 1 1 5D4E34B9
+P 3000 2000
+F 0 "#PWR0101" H 3000 1850 50  0001 C CNN
+F 1 "VCC" H 3017 2173 50  0000 C CNN
+F 2 "" H 3000 2000 50  0001 C CNN
+F 3 "" H 3000 2000 50  0001 C CNN
+	1    3000 2000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VCC #PWR0102
+U 1 1 5D4E3A2F
+P 2600 950
+F 0 "#PWR0102" H 2600 800 50  0001 C CNN
+F 1 "VCC" H 2617 1123 50  0000 C CNN
+F 2 "" H 2600 950 50  0001 C CNN
+F 3 "" H 2600 950 50  0001 C CNN
+	1    2600 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J7
+U 1 1 5D4E46FB
+P 2900 1150
+F 0 "J7" H 2980 1192 50  0000 L CNN
+F 1 "Conn_01x01" H 2900 1000 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 2900 1150 50  0001 C CNN
+F 3 "~" H 2900 1150 50  0001 C CNN
+	1    2900 1150
+	0    1    1    0   
+$EndComp
+$Comp
+L power:VCC #PWR0103
+U 1 1 5D4E4855
+P 2900 950
+F 0 "#PWR0103" H 2900 800 50  0001 C CNN
+F 1 "VCC" H 2917 1123 50  0000 C CNN
+F 2 "" H 2900 950 50  0001 C CNN
+F 3 "" H 2900 950 50  0001 C CNN
+	1    2900 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0104
+U 1 1 5D4E4EBA
+P 3000 2600
+F 0 "#PWR0104" H 3000 2350 50  0001 C CNN
+F 1 "GND" H 3005 2427 50  0000 C CNN
+F 2 "" H 3000 2600 50  0001 C CNN
+F 3 "" H 3000 2600 50  0001 C CNN
+	1    3000 2600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0105
+U 1 1 5D4E5988
+P 3500 1150
+F 0 "#PWR0105" H 3500 900 50  0001 C CNN
+F 1 "GND" H 3505 977 50  0000 C CNN
+F 2 "" H 3500 1150 50  0001 C CNN
+F 3 "" H 3500 1150 50  0001 C CNN
+	1    3500 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J8
+U 1 1 5D4E5BD9
+P 3800 950
+F 0 "J8" H 3880 992 50  0000 L CNN
+F 1 "Conn_01x01" H 3800 800 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 3800 950 50  0001 C CNN
+F 3 "~" H 3800 950 50  0001 C CNN
+	1    3800 950 
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR0106
+U 1 1 5D4E5F81
+P 3800 1150
+F 0 "#PWR0106" H 3800 900 50  0001 C CNN
+F 1 "GND" H 3805 977 50  0000 C CNN
+F 2 "" H 3800 1150 50  0001 C CNN
+F 3 "" H 3800 1150 50  0001 C CNN
+	1    3800 1150
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC
