@@ -58,6 +58,9 @@ extern "C" {
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
 
+void HAL_TSC_ErrorCallback(TSC_HandleTypeDef* htsc);
+void HAL_TSC_ConvCpltCallback(TSC_HandleTypeDef* htsc);
+
 /* USER CODE END ET */
 
 /* Exported constants --------------------------------------------------------*/
@@ -79,6 +82,7 @@ void Error_Handler(void);
 
 /* Private defines -----------------------------------------------------------*/
 /* USER CODE BEGIN Private defines */
+
 
 /* USER CODE END Private defines */
 

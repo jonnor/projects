@@ -167,48 +167,6 @@ int main(void)
   /* USER CODE END 3 */
 }
 
-// Interrupt for Touch Sensing Controller
-void HAL_TSC_ConvCpltCallback(TSC_HandleTypeDef* htsc)
-{  
-  /* Discharge the touch-sensing IOs */
-  HAL_TSC_IODischarge(htsc, ENABLE);
-  /* Note: a delay can be added here */
-  /* wait 100us */
-  uint32_t wait_loop_index = (SystemCoreClock / 10000);
-  while (wait_loop_index != 0)
-  {
-    wait_loop_index--;
-  }
-
-  /*##-6- Check if the acquisition is correct (no max count) #################*/
-  if (HAL_TSC_GroupGetStatus(htsc, TSC_GROUP1_IDX) == TSC_GROUP_COMPLETED)
-  {
-    /*##-7- Read the acquisition value */
-    __IO uint32_t uhTSCAcquisitionValue = HAL_TSC_GroupGetValue(htsc, TSC_GROUP1_IDX);  
-
-#if 0
-    /* Note: Show the touch activity on LEDs.
-       The threshold values are indicative and may need to be adjusted */
-    if (uhTSCAcquisitionValue < TSCx_TS1_MAXTHRESHOLD)
-    {
-      BSP_LED_On(LED1);
-    }
-    else
-    {
-      BSP_LED_Off(LED1);
-    }
-#endif
-
-  }
-
-  /* Re-start acquisition  */
-  if (HAL_TSC_Start_IT(htsc) != HAL_OK)
-  {
-    /* Acquisition Error */
-    Error_Handler();
-  }
-}
-
 /**
   * @brief System Clock Configuration
   * @retval None
@@ -303,11 +261,54 @@ static void MX_GPIO_Init(void)
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
-  __HAL_RCC_GPIOC_CLK_ENABLE();
 
 }
 
 /* USER CODE BEGIN 4 */
+
+// Interrupt for Touch Sensing Controller
+void HAL_TSC_ConvCpltCallback(TSC_HandleTypeDef* htsc)
+{
+  /* Discharge the touch-sensing IOs */
+  HAL_TSC_IODischarge(htsc, ENABLE);
+  /* Note: a delay can be added here */
+  /* wait 100us */
+  uint32_t wait_loop_index = (SystemCoreClock / 10000);
+  while (wait_loop_index != 0)
+  {
+    wait_loop_index--;
+  }
+
+  /*##-6- Check if the acquisition is correct (no max count) #################*/
+  if (HAL_TSC_GroupGetStatus(htsc, TSC_GROUP2_IDX) == TSC_GROUP_COMPLETED)
+  {
+    /*##-7- Read the acquisition value */
+    volatile uint32_t val = HAL_TSC_GroupGetValue(htsc, TSC_GROUP2_IDX);  
+    volatile uint32_t two = val;
+
+#if 0
+    /* Note: Show the touch activity on LEDs.
+       The threshold values are indicative and may need to be adjusted */
+    if (uhTSCAcquisitionValue < TSCx_TS1_MAXTHRESHOLD)
+    {
+      BSP_LED_On(LED1);
+    }
+    else
+    {
+      BSP_LED_Off(LED1);
+    }
+#endif
+
+  }
+
+  /* Re-start acquisition  */
+  if (HAL_TSC_Start_IT(htsc) != HAL_OK)
+  {
+    /* Acquisition Error */
+    Error_Handler();
+  }
+}
+
 
 /* USER CODE END 4 */
 

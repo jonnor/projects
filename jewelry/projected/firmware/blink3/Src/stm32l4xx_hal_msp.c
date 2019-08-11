@@ -135,6 +135,9 @@ void HAL_TSC_MspInit(TSC_HandleTypeDef* htsc)
     GPIO_InitStruct.Alternate = GPIO_AF9_TSC;
     HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
+    /* TSC interrupt Init */
+    HAL_NVIC_SetPriority(TSC_IRQn, 0, 0);
+    HAL_NVIC_EnableIRQ(TSC_IRQn);
   /* USER CODE BEGIN TSC_MspInit 1 */
 
   /* USER CODE END TSC_MspInit 1 */
@@ -155,6 +158,8 @@ void HAL_TSC_MspDeInit(TSC_HandleTypeDef* htsc)
   if(htsc->Instance==TSC)
   {
   /* USER CODE BEGIN TSC_MspDeInit 0 */
+  __HAL_RCC_TSC_FORCE_RESET();
+  __HAL_RCC_TSC_RELEASE_RESET();
 
   /* USER CODE END TSC_MspDeInit 0 */
     /* Peripheral clock disable */
@@ -167,8 +172,9 @@ void HAL_TSC_MspDeInit(TSC_HandleTypeDef* htsc)
     */
     HAL_GPIO_DeInit(GPIOB, GPIO_PIN_4|GPIO_PIN_6|GPIO_PIN_7);
 
+    /* TSC interrupt DeInit */
+    HAL_NVIC_DisableIRQ(TSC_IRQn);
   /* USER CODE BEGIN TSC_MspDeInit 1 */
-
   /* USER CODE END TSC_MspDeInit 1 */
   }
 
