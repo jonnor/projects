@@ -97,6 +97,83 @@ void HAL_MspInit(void)
   /* USER CODE END MspInit 1 */
 }
 
+/**
+* @brief TSC MSP Initialization
+* This function configures the hardware resources used in this example
+* @param htsc: TSC handle pointer
+* @retval None
+*/
+void HAL_TSC_MspInit(TSC_HandleTypeDef* htsc)
+{
+
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
+  if(htsc->Instance==TSC)
+  {
+  /* USER CODE BEGIN TSC_MspInit 0 */
+
+  /* USER CODE END TSC_MspInit 0 */
+    /* Peripheral clock enable */
+    __HAL_RCC_TSC_CLK_ENABLE();
+  
+    __HAL_RCC_GPIOB_CLK_ENABLE();
+    /**TSC GPIO Configuration    
+    PB4 (NJTRST)     ------> TSC_G2_IO1
+    PB6     ------> TSC_G2_IO3
+    PB7     ------> TSC_G2_IO4 
+    */
+    GPIO_InitStruct.Pin = GPIO_PIN_4|GPIO_PIN_6;
+    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+    GPIO_InitStruct.Alternate = GPIO_AF9_TSC;
+    HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+    GPIO_InitStruct.Pin = GPIO_PIN_7;
+    GPIO_InitStruct.Mode = GPIO_MODE_AF_OD;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+    GPIO_InitStruct.Alternate = GPIO_AF9_TSC;
+    HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  /* USER CODE BEGIN TSC_MspInit 1 */
+
+  /* USER CODE END TSC_MspInit 1 */
+  }
+
+}
+
+/**
+* @brief TSC MSP De-Initialization
+* This function freeze the hardware resources used in this example
+* @param htsc: TSC handle pointer
+* @retval None
+*/
+
+void HAL_TSC_MspDeInit(TSC_HandleTypeDef* htsc)
+{
+
+  if(htsc->Instance==TSC)
+  {
+  /* USER CODE BEGIN TSC_MspDeInit 0 */
+
+  /* USER CODE END TSC_MspDeInit 0 */
+    /* Peripheral clock disable */
+    __HAL_RCC_TSC_CLK_DISABLE();
+  
+    /**TSC GPIO Configuration    
+    PB4 (NJTRST)     ------> TSC_G2_IO1
+    PB6     ------> TSC_G2_IO3
+    PB7     ------> TSC_G2_IO4 
+    */
+    HAL_GPIO_DeInit(GPIOB, GPIO_PIN_4|GPIO_PIN_6|GPIO_PIN_7);
+
+  /* USER CODE BEGIN TSC_MspDeInit 1 */
+
+  /* USER CODE END TSC_MspDeInit 1 */
+  }
+
+}
+
 /* USER CODE BEGIN 1 */
 
 /* USER CODE END 1 */

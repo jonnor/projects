@@ -62,6 +62,7 @@
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
+TSC_HandleTypeDef htsc;
 
 /* USER CODE BEGIN PV */
 
@@ -70,8 +71,10 @@
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
+static void MX_TSC_Init(void);
 /* USER CODE BEGIN PFP */
 
+void HAL_TSC_ConvCpltCallback(TSC_HandleTypeDef* htsc);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -107,7 +110,33 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_TSC_Init();
   /* USER CODE BEGIN 2 */
+
+ 
+  // Touch sensing inputs
+  // XXX: not needed when specified during INIT?
+#if 0
+  IoConfig.ChannelIOs  =(TSC_GROUP2_IO1|TSC_GROUP2_IO3);
+  IoConfig.SamplingIOs = TSC_GROUP2_IO4;
+  IoConfig.ShieldIOs = 0;
+  if (HAL_TSC_IOConfig(&htsc, &IoConfig) != HAL_OK)
+  {
+    /* Initialization Error */
+    Error_Handler();
+  }
+#endif
+
+  /* Discharge the touch-sensing IOs */
+  HAL_TSC_IODischarge(&htsc, ENABLE);
+  HAL_Delay(1); /* 1 ms is more than enough to discharge all capacitors */
+
+  /* Start TSC acquisition process */
+  if (HAL_TSC_Start_IT(&htsc) != HAL_OK)
+  {
+    /* Acquisition Error */
+    Error_Handler();
+  }
 
   // PA1, use analog- as output
    // PA6, LED_ENABLE
@@ -126,17 +155,58 @@ int main(void)
   {
     /* USER CODE END WHILE */
 
-	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_SET);
-	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_1, GPIO_PIN_SET);
-    HAL_Delay(5000);
-
-	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_RESET);
-	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_1, GPIO_PIN_RESET);
-    HAL_Delay(5000);
-
     /* USER CODE BEGIN 3 */
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_SET);
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_1, GPIO_PIN_SET);
+    HAL_Delay(500);
+
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_1, GPIO_PIN_RESET);
+    HAL_Delay(500);
   }
   /* USER CODE END 3 */
+}
+
+// Interrupt for Touch Sensing Controller
+void HAL_TSC_ConvCpltCallback(TSC_HandleTypeDef* htsc)
+{  
+  /* Discharge the touch-sensing IOs */
+  HAL_TSC_IODischarge(htsc, ENABLE);
+  /* Note: a delay can be added here */
+  /* wait 100us */
+  uint32_t wait_loop_index = (SystemCoreClock / 10000);
+  while (wait_loop_index != 0)
+  {
+    wait_loop_index--;
+  }
+
+  /*##-6- Check if the acquisition is correct (no max count) #################*/
+  if (HAL_TSC_GroupGetStatus(htsc, TSC_GROUP1_IDX) == TSC_GROUP_COMPLETED)
+  {
+    /*##-7- Read the acquisition value */
+    __IO uint32_t uhTSCAcquisitionValue = HAL_TSC_GroupGetValue(htsc, TSC_GROUP1_IDX);  
+
+#if 0
+    /* Note: Show the touch activity on LEDs.
+       The threshold values are indicative and may need to be adjusted */
+    if (uhTSCAcquisitionValue < TSCx_TS1_MAXTHRESHOLD)
+    {
+      BSP_LED_On(LED1);
+    }
+    else
+    {
+      BSP_LED_Off(LED1);
+    }
+#endif
+
+  }
+
+  /* Re-start acquisition  */
+  if (HAL_TSC_Start_IT(htsc) != HAL_OK)
+  {
+    /* Acquisition Error */
+    Error_Handler();
+  }
 }
 
 /**
@@ -178,6 +248,48 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
+}
+
+/**
+  * @brief TSC Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TSC_Init(void)
+{
+
+  /* USER CODE BEGIN TSC_Init 0 */
+
+  /* USER CODE END TSC_Init 0 */
+
+  /* USER CODE BEGIN TSC_Init 1 */
+
+  /* USER CODE END TSC_Init 1 */
+  /**Configure the TSC peripheral 
+  */
+  htsc.Instance = TSC;
+  htsc.Init.CTPulseHighLength = TSC_CTPH_2CYCLES;
+  htsc.Init.CTPulseLowLength = TSC_CTPL_2CYCLES;
+  htsc.Init.SpreadSpectrum = DISABLE;
+  htsc.Init.SpreadSpectrumDeviation = 1;
+  htsc.Init.SpreadSpectrumPrescaler = TSC_SS_PRESC_DIV1;
+  htsc.Init.PulseGeneratorPrescaler = TSC_PG_PRESC_DIV4;
+  htsc.Init.MaxCountValue = TSC_MCV_8191;
+  htsc.Init.IODefaultMode = TSC_IODEF_OUT_PP_LOW;
+  htsc.Init.SynchroPinPolarity = TSC_SYNC_POLARITY_FALLING;
+  htsc.Init.AcquisitionMode = TSC_ACQ_MODE_NORMAL;
+  htsc.Init.MaxCountInterrupt = DISABLE;
+  htsc.Init.ChannelIOs = TSC_GROUP2_IO1|TSC_GROUP2_IO3;
+  htsc.Init.ShieldIOs = 0;
+  htsc.Init.SamplingIOs = TSC_GROUP2_IO4;
+  if (HAL_TSC_Init(&htsc) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TSC_Init 2 */
+
+  /* USER CODE END TSC_Init 2 */
+
 }
 
 /**
