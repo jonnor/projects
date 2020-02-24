@@ -1,0 +1,290 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Device:R R2
+U 1 1 5E549891
+P 2400 2050
+F 0 "R2" H 2470 2096 50  0000 L CNN
+F 1 "100k" H 2470 2005 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 2330 2050 50  0001 C CNN
+F 3 "~" H 2400 2050 50  0001 C CNN
+	1    2400 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C2
+U 1 1 5E549CDE
+P 2400 2500
+F 0 "C2" H 2515 2546 50  0000 L CNN
+F 1 "100nF" H 2515 2455 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 2438 2350 50  0001 C CNN
+F 3 "~" H 2400 2500 50  0001 C CNN
+	1    2400 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C1
+U 1 1 5E54A300
+P 1450 2500
+F 0 "C1" H 1565 2546 50  0000 L CNN
+F 1 "1nF" H 1565 2455 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 1488 2350 50  0001 C CNN
+F 3 "~" H 1450 2500 50  0001 C CNN
+	1    1450 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xGxx:74LVC2G04 U1
+U 1 1 5E54A59F
+P 1900 1800
+F 0 "U1" H 1875 2067 50  0000 C CNN
+F 1 "74LVC2G04" H 1875 1976 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-6_Handsoldering" H 1900 1800 50  0001 C CNN
+F 3 "http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf" H 1900 1800 50  0001 C CNN
+	1    1900 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xGxx:74LVC2G04 U1
+U 2 1 5E54B35D
+P 3000 1800
+F 0 "U1" H 2975 2067 50  0000 C CNN
+F 1 "74LVC2G04" H 2975 1976 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-6_Handsoldering" H 3000 1800 50  0001 C CNN
+F 3 "http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf" H 3000 1800 50  0001 C CNN
+	2    3000 1800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2150 1800 2400 1800
+Wire Wire Line
+	2400 1900 2400 1800
+Connection ~ 2400 1800
+Wire Wire Line
+	2400 1800 2700 1800
+Wire Wire Line
+	2400 2200 2400 2300
+$Comp
+L Switch:SW_Push SW1
+U 1 1 5E54C43F
+P 1950 2300
+F 0 "SW1" H 1950 2585 50  0000 C CNN
+F 1 "SW_Push" H 1950 2494 50  0000 C CNN
+F 2 "" H 1950 2500 50  0001 C CNN
+F 3 "~" H 1950 2500 50  0001 C CNN
+	1    1950 2300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2150 2300 2400 2300
+Connection ~ 2400 2300
+Wire Wire Line
+	2400 2300 2400 2350
+Wire Wire Line
+	1750 2300 1450 2300
+Wire Wire Line
+	1450 2300 1450 2350
+Wire Wire Line
+	1450 2650 1450 2750
+Wire Wire Line
+	1450 2750 2400 2750
+Wire Wire Line
+	2400 2750 2400 2650
+$Comp
+L power:GND #PWR0101
+U 1 1 5E54D639
+P 2400 2750
+F 0 "#PWR0101" H 2400 2500 50  0001 C CNN
+F 1 "GND" H 2405 2577 50  0000 C CNN
+F 2 "" H 2400 2750 50  0001 C CNN
+F 3 "" H 2400 2750 50  0001 C CNN
+	1    2400 2750
+	1    0    0    -1  
+$EndComp
+Connection ~ 2400 2750
+Text Label 3350 1800 0    50   ~ 0
+OUT
+Wire Wire Line
+	3250 1800 3300 1800
+$Comp
+L Device:R R1
+U 1 1 5E54DFF3
+P 2400 1400
+F 0 "R1" V 2193 1400 50  0000 C CNN
+F 1 "10k" V 2284 1400 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 2330 1400 50  0001 C CNN
+F 3 "~" H 2400 1400 50  0001 C CNN
+	1    2400 1400
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2550 1400 3300 1400
+Wire Wire Line
+	3300 1400 3300 1800
+Connection ~ 3300 1800
+Wire Wire Line
+	3300 1800 3350 1800
+Wire Wire Line
+	2250 1400 1450 1400
+Wire Wire Line
+	1450 1400 1450 1800
+Wire Wire Line
+	1450 1800 1600 1800
+Wire Wire Line
+	1450 1800 1450 2300
+Connection ~ 1450 1800
+Connection ~ 1450 2300
+$Comp
+L Device:LED D1
+U 1 1 5E54F234
+P 3800 2400
+F 0 "D1" V 3839 2283 50  0000 R CNN
+F 1 "LED" V 3748 2283 50  0000 R CNN
+F 2 "LED_SMD:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 3800 2400 50  0001 C CNN
+F 3 "~" H 3800 2400 50  0001 C CNN
+	1    3800 2400
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:LED D2
+U 1 1 5E54FC02
+P 4150 2400
+F 0 "D2" V 4189 2283 50  0000 R CNN
+F 1 "LED" V 4098 2283 50  0000 R CNN
+F 2 "LED_SMD:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 4150 2400 50  0001 C CNN
+F 3 "~" H 4150 2400 50  0001 C CNN
+	1    4150 2400
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:LED D3
+U 1 1 5E54FF53
+P 4500 2400
+F 0 "D3" V 4539 2283 50  0000 R CNN
+F 1 "LED" V 4448 2283 50  0000 R CNN
+F 2 "LED_SMD:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 4500 2400 50  0001 C CNN
+F 3 "~" H 4500 2400 50  0001 C CNN
+	1    4500 2400
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4500 2250 4150 2250
+Connection ~ 4150 2250
+Wire Wire Line
+	4150 2250 3800 2250
+Wire Wire Line
+	4500 2550 4150 2550
+Connection ~ 4150 2550
+Wire Wire Line
+	4150 2550 3800 2550
+$Comp
+L Device:R R3
+U 1 1 5E5521FD
+P 4150 2100
+F 0 "R3" H 4220 2146 50  0000 L CNN
+F 1 "R" H 4220 2055 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 4080 2100 50  0001 C CNN
+F 3 "~" H 4150 2100 50  0001 C CNN
+	1    4150 2100
+	1    0    0    -1  
+$EndComp
+Text Label 4150 1850 0    50   ~ 0
+OUT
+Wire Wire Line
+	4150 1850 4150 1950
+$Comp
+L power:GND #PWR0102
+U 1 1 5E552E44
+P 4150 2550
+F 0 "#PWR0102" H 4150 2300 50  0001 C CNN
+F 1 "GND" H 4155 2377 50  0000 C CNN
+F 2 "" H 4150 2550 50  0001 C CNN
+F 3 "" H 4150 2550 50  0001 C CNN
+	1    4150 2550
+	1    0    0    -1  
+$EndComp
+Text Notes 1700 3250 0    50   ~ 0
+https://electronics.stackexchange.com/questions/141780/turning-a-torch-on-or-off-using-a-single-mini-switch/152909#152909
+$Comp
+L Device:Battery_Cell BT1
+U 1 1 5E555EC0
+P 5300 1700
+F 0 "BT1" H 5418 1796 50  0000 L CNN
+F 1 "Battery_Cell" H 5418 1705 50  0000 L CNN
+F 2 "Battery:Battery_Panasonic_CR1220-VCN_Vertical_CircularHoles" V 5300 1760 50  0001 C CNN
+F 3 "~" V 5300 1760 50  0001 C CNN
+	1    5300 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0103
+U 1 1 5E556662
+P 5300 1900
+F 0 "#PWR0103" H 5300 1650 50  0001 C CNN
+F 1 "GND" H 5305 1727 50  0000 C CNN
+F 2 "" H 5300 1900 50  0001 C CNN
+F 3 "" H 5300 1900 50  0001 C CNN
+	1    5300 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VCC #PWR0104
+U 1 1 5E556DB6
+P 6600 1350
+F 0 "#PWR0104" H 6600 1200 50  0001 C CNN
+F 1 "VCC" H 6617 1523 50  0000 C CNN
+F 2 "" H 6600 1350 50  0001 C CNN
+F 3 "" H 6600 1350 50  0001 C CNN
+	1    6600 1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Q_PMOS_DGS Q1
+U 1 1 5E55755E
+P 6100 1550
+F 0 "Q1" V 6442 1550 50  0000 C CNN
+F 1 "Q_PMOS_DGS" V 6351 1550 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23_Handsoldering" H 6300 1650 50  0001 C CNN
+F 3 "~" H 6100 1550 50  0001 C CNN
+	1    6100 1550
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	5300 1900 5300 1850
+Wire Wire Line
+	5300 1850 6100 1850
+Wire Wire Line
+	6100 1850 6100 1750
+Connection ~ 5300 1850
+Wire Wire Line
+	5300 1850 5300 1800
+Wire Wire Line
+	5300 1500 5300 1450
+Wire Wire Line
+	5300 1450 5900 1450
+Text Notes 5600 950  0    50   ~ 0
+Reverse polarity protect
+Text Notes 1650 1100 0    50   ~ 0
+Pushbutton toggle
+Text Notes 3950 1650 0    50   ~ 0
+LED array
+Text Notes 6350 1750 0    50   ~ 0
+FIXME: check pinout
+Wire Wire Line
+	6600 1350 6600 1450
+Wire Wire Line
+	6600 1450 6300 1450
+$EndSCHEMATC
