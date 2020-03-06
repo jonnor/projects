@@ -13,8 +13,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Wire Wire Line
-	9400 1700 9400 1800
 Text Notes 1200 3650 0    50   ~ 0
 https://electronics.stackexchange.com/questions/141780/turning-a-torch-on-or-off-using-a-single-mini-switch/152909#152909
 $Comp
@@ -58,20 +56,8 @@ Text Notes 8900 1400 0    150  ~ 0
 LED array
 Wire Wire Line
 	9400 2400 9050 2400
-$Comp
-L Device:R R3
-U 1 1 5E5521FD
-P 9400 1950
-F 0 "R3" H 9470 1996 50  0000 L CNN
-F 1 "R" H 9470 1905 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 9330 1950 50  0001 C CNN
-F 3 "~" H 9400 1950 50  0001 C CNN
-	1    9400 1950
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	9400 2100 9050 2100
-Connection ~ 9400 2100
 $Comp
 L Device:LED D2
 U 1 1 5E54FC02
@@ -450,4 +436,7 @@ Wire Wire Line
 	4100 1500 4450 1500
 Wire Wire Line
 	4100 2250 4100 2400
+Wire Wire Line
+	9400 1700 9400 2100
+Connection ~ 9400 2100
 $EndSCHEMATC
