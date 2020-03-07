@@ -354,7 +354,7 @@ U 1 1 5E62F4AD
 P 4100 2100
 F 0 "R1" H 4170 2146 50  0000 L CNN
 F 1 "100k" H 4170 2055 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 4030 2100 50  0001 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 4030 2100 50  0001 C CNN
 F 3 "" H 4100 2100 50  0001 C CNN
 	1    4100 2100
 	1    0    0    -1  
@@ -441,4 +441,60 @@ F 3 "~" H 2050 1550 50  0001 C CNN
 	1    2050 1550
 	1    0    0    -1  
 $EndComp
+Text Label 1050 1550 0    50   ~ 0
+BATT+
+Text Label 1050 2100 0    50   ~ 0
+BATT-
+Text Label 1300 3000 0    50   ~ 0
+BATT+
+Text Label 1300 3300 0    50   ~ 0
+BATT-
+$Comp
+L Connector_Generic:Conn_01x01 J3
+U 1 1 5E69BCEE
+P 1850 3000
+F 0 "J3" H 1930 3042 50  0000 L CNN
+F 1 "Conn_01x01" H 1930 2951 50  0000 L CNN
+F 2 "Connector_PinHeader_1.27mm:PinHeader_1x01_P1.27mm_Vertical" H 1850 3000 50  0001 C CNN
+F 3 "~" H 1850 3000 50  0001 C CNN
+	1    1850 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J4
+U 1 1 5E69C98F
+P 1850 3300
+F 0 "J4" H 1930 3342 50  0000 L CNN
+F 1 "Conn_01x01" H 1930 3251 50  0000 L CNN
+F 2 "Connector_PinHeader_1.27mm:PinHeader_1x01_P1.27mm_Vertical" H 1850 3300 50  0001 C CNN
+F 3 "~" H 1850 3300 50  0001 C CNN
+	1    1850 3300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J1
+U 1 1 5E69CC6D
+P 1050 3000
+F 0 "J1" H 968 2775 50  0000 C CNN
+F 1 "Conn_01x01" H 968 2866 50  0000 C CNN
+F 2 "Connector_PinHeader_1.27mm:PinHeader_1x01_P1.27mm_Vertical" H 1050 3000 50  0001 C CNN
+F 3 "~" H 1050 3000 50  0001 C CNN
+	1    1050 3000
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J2
+U 1 1 5E69EBC0
+P 1050 3300
+F 0 "J2" H 968 3075 50  0000 C CNN
+F 1 "Conn_01x01" H 968 3166 50  0000 C CNN
+F 2 "Connector_PinHeader_1.27mm:PinHeader_1x01_P1.27mm_Vertical" H 1050 3300 50  0001 C CNN
+F 3 "~" H 1050 3300 50  0001 C CNN
+	1    1050 3300
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	1250 3000 1650 3000
+Wire Wire Line
+	1250 3300 1650 3300
 $EndSCHEMATC
