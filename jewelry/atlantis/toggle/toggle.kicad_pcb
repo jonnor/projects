@@ -473,23 +473,23 @@
   )
 
   (module touchled:Battery_CR1225 (layer F.Cu) (tedit 5E6419B8) (tstamp 5E62BBBC)
-    (at 115 68 320)
+    (at 115 68 325)
     (descr "CR1225 battery")
     (tags "battery CR1225 coin cell")
     (path /5E555EC0)
     (attr virtual)
-    (fp_text reference BT1 (at 0.000001 -1 140) (layer F.SilkS) hide
+    (fp_text reference BT1 (at 0.000001 -1 145) (layer F.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)))
     )
-    (fp_text value CR1216 (at 0 0.499999 140) (layer F.Fab)
+    (fp_text value CR1216 (at 0 0.499999 145) (layer F.Fab)
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_circle (center 0 0) (end 7 0) (layer F.CrtYd) (width 0.1))
-    (pad 2 smd rect (at 7.6 0 320) (size 2.5 5) (layers F.Cu F.Paste F.Mask)
+    (pad 2 smd rect (at 7.6 0 325) (size 2.5 5) (layers F.Cu F.Paste F.Mask)
       (net 11 /BATT-))
-    (pad 2 smd rect (at -7.6 0 320) (size 2.5 5) (layers F.Cu F.Paste F.Mask)
+    (pad 2 smd rect (at -7.6 0 325) (size 2.5 5) (layers F.Cu F.Paste F.Mask)
       (net 11 /BATT-))
-    (pad 1 smd circle (at 0 0.05 320) (size 10 10) (layers F.Cu F.Paste F.Mask)
+    (pad 1 smd circle (at 0 0.05 325) (size 10 10) (layers F.Cu F.Paste F.Mask)
       (net 12 /BATT+))
     (model /home/jon/projects/personal/jewelry/atlantis/batth-cr1220.step
       (at (xyz 0 0 0))
@@ -765,7 +765,7 @@
   )
 
   (module Button_Switch_SMD:SW_SPDT_PCM12 (layer F.Cu) (tedit 5A02FC95) (tstamp 5E640A10)
-    (at 88.011 117.729 318)
+    (at 87.884 117.856 318)
     (descr "Ultraminiature Surface Mount Slide Switch, right-angle, https://www.ckswitches.com/media/1424/pcm.pdf")
     (path /5E67F978)
     (attr smd)
