@@ -206,17 +206,6 @@ Wire Wire Line
 	2250 1650 2500 1650
 Wire Wire Line
 	2500 1650 2500 1400
-$Comp
-L Device:Q_NMOS_GSD Q1
-U 1 1 5E63AFEC
-P 1700 2000
-F 0 "Q1" V 1949 2000 50  0000 C CNN
-F 1 "BSS138L" V 2040 2000 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-23_Handsoldering" H 1900 2100 50  0001 C CNN
-F 3 "~" H 1700 2000 50  0001 C CNN
-	1    1700 2000
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	1500 2100 1050 2100
 Wire Wire Line
@@ -447,7 +436,7 @@ U 1 1 5E69BCEE
 P 1850 3000
 F 0 "J3" H 1930 3042 50  0000 L CNN
 F 1 "Conn_01x01" H 1930 2951 50  0000 L CNN
-F 2 "Connector_PinHeader_1.27mm:PinHeader_1x01_P1.27mm_Vertical" H 1850 3000 50  0001 C CNN
+F 2 "touchled:PinHeader" H 1850 3000 50  0001 C CNN
 F 3 "~" H 1850 3000 50  0001 C CNN
 	1    1850 3000
 	1    0    0    -1  
@@ -458,7 +447,7 @@ U 1 1 5E69C98F
 P 1850 3300
 F 0 "J4" H 1930 3342 50  0000 L CNN
 F 1 "Conn_01x01" H 1930 3251 50  0000 L CNN
-F 2 "Connector_PinHeader_1.27mm:PinHeader_1x01_P1.27mm_Vertical" H 1850 3300 50  0001 C CNN
+F 2 "touchled:PinHeader" H 1850 3300 50  0001 C CNN
 F 3 "~" H 1850 3300 50  0001 C CNN
 	1    1850 3300
 	1    0    0    -1  
@@ -469,7 +458,7 @@ U 1 1 5E69CC6D
 P 1050 3000
 F 0 "J1" H 968 2775 50  0000 C CNN
 F 1 "Conn_01x01" H 968 2866 50  0000 C CNN
-F 2 "Connector_PinHeader_1.27mm:PinHeader_1x01_P1.27mm_Vertical" H 1050 3000 50  0001 C CNN
+F 2 "touchled:PinHeader" H 1050 3000 50  0001 C CNN
 F 3 "~" H 1050 3000 50  0001 C CNN
 	1    1050 3000
 	-1   0    0    1   
@@ -480,7 +469,7 @@ U 1 1 5E69EBC0
 P 1050 3300
 F 0 "J2" H 968 3075 50  0000 C CNN
 F 1 "Conn_01x01" H 968 3166 50  0000 C CNN
-F 2 "Connector_PinHeader_1.27mm:PinHeader_1x01_P1.27mm_Vertical" H 1050 3300 50  0001 C CNN
+F 2 "touchled:PinHeader" H 1050 3300 50  0001 C CNN
 F 3 "~" H 1050 3300 50  0001 C CNN
 	1    1050 3300
 	-1   0    0    1   
@@ -501,4 +490,15 @@ Connection ~ 9650 4200
 Connection ~ 9650 3900
 Connection ~ 9650 4700
 Connection ~ 9650 4400
+$Comp
+L Device:Q_NMOS_GSD Q1
+U 1 1 5E63AFEC
+P 1700 2000
+F 0 "Q1" V 1949 2000 50  0000 C CNN
+F 1 "BSS138L" V 2040 2000 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23_Handsoldering" H 1900 2100 50  0001 C CNN
+F 3 "~" H 1700 2000 50  0001 C CNN
+	1    1700 2000
+	0    -1   1    0   
+$EndComp
 $EndSCHEMATC

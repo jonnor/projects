@@ -206,17 +206,6 @@ Wire Wire Line
 	2250 1650 2500 1650
 Wire Wire Line
 	2500 1650 2500 1400
-$Comp
-L Device:Q_NMOS_DSG Q1
-U 1 1 5E63AFEC
-P 1700 2000
-F 0 "Q1" V 1949 2000 50  0000 C CNN
-F 1 "BSS138L" V 2040 2000 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-23_Handsoldering" H 1900 2100 50  0001 C CNN
-F 3 "~" H 1700 2000 50  0001 C CNN
-	1    1700 2000
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	1500 2100 1050 2100
 Wire Wire Line
@@ -501,4 +490,15 @@ Connection ~ 9650 4200
 Connection ~ 9650 3900
 Connection ~ 9650 4700
 Connection ~ 9650 4400
+$Comp
+L Device:Q_NMOS_GSD Q1
+U 1 1 5E63AFEC
+P 1700 2000
+F 0 "Q1" V 1949 2000 50  0000 C CNN
+F 1 "BSS138L" V 2040 2000 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23_Handsoldering" H 1900 2100 50  0001 C CNN
+F 3 "~" H 1700 2000 50  0001 C CNN
+	1    1700 2000
+	0    -1   1    0   
+$EndComp
 $EndSCHEMATC
