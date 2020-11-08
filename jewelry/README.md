@@ -16,6 +16,33 @@ Oxididation. Electroetching with laser-engraved masks?
 
 Small oval gemstones, 10-20 mm. [1](https://www.gemselect.com/group/gemselect.php?a=0&base_shape=Oval,Pear,Round&min_l=10.00&max_l=20.00&min_w=10.00&max_w=20.00&styles=Cabochon%27,%27Plain-Cut&price_asc=1&page=1)
 
+
+# Rechargable
+
+Power board
+For LiPo coincell.
+For magnetic clip on connector
+
+
+Circular PCB. Fit at the back of a 2230,2022,1610 etc.
+Directly pluggable. Alternative with wires
+- 5V,GND input
+- Vbatt output
+- Lipo charger.
+- Reverse polarity protect.
+- Output switch. Cap touch/bypassable/phys switch pluggable
+For Starnight jewellery need separate PCB with. LED booster, LED, cap plate
+- PCB pads for magnetic connector? Also have other pads
+
+# Watch
+Watch case 42 mm 43mm 
+For movement ST36 ETA6497 ETA6498 P212
+transparent back
+
+https://www.aliexpress.com/item/4000229421123.html
+https://www.aliexpress.com/item/4000689159663.html
+https://www.aliexpress.com/item/32907052343.html
+
 # Integrated electronics
 
 ## Structures
@@ -59,102 +86,52 @@ Minimum hole size in cardboard. Vector: 0.5mm
 
 # Rev2
 
-* Total size `<40mm` diam, `<12 mm` height. PCB 20mm diam, `<3mm` component height.
+* Total size `<40mm` diam, `<15 mm` height. Domed top. PCB 20mm diam, `<3mm` component height.
 * LiPo battery, integrated charger. LIR2450-LIR2016
-* Low-power MCU with hardware CapSense. Wake-on-touch. STM32L4.
-* LED RGB array support. APA102 type. Two-wire, hardware SPI. 5V stepup. FPC connector.
-* Two capacitive sensor support. FPC connector.
-* Pogopin connector, charge/reprogram. TX/RX/GND/VCC/RESET
-* Docking station with pogopin to Micro USB.
-* ? TC2030-MCP-BL ISP connection. http://www.tag-connect.com/tag-connect-pinout-specifications
-* ? one/two APA102-2020 on base board. For easy experimentation
-* ? photodiode for configuring from phone. Color sensor?
+* Pogopin connector for charging
+* TPP223 touch controller
+* 3030 or 3535 white LED. Low-profile, 1mm. Low voltage? 3V
+* LED constant-current driver
+
+0.6mm PCB is OK priced on PCBWay. 0.4 and 0.2mm twice the price.
+10mA on time.
 
 FPC connector.
 https://www.digikey.com/products/en/connectors-interconnects/ffc-fpc-flat-flexible-connectors/399?FV=fff40016%2Cfff80421%2C1600018%2C1600006%2C1b4c0008%2Cffe0018f%2Cfffc0017%2Cfffc0384&quantity=20&ColumnSort=1000011&page=2&stock=1&nstock=1&pageSize=25
 
 100mAh, 10uA => 1 year.
 
+LEDs
+
+https://www.digikey.com/products/en/optoelectronics/led-lighting-white/124?FV=7%7C2%2C37%7C421162%2C319%7C133405%2C319%7C134015%2C319%7C134067%2C319%7C134280%2C319%7C134430%2C319%7C134479%2C319%7C134532%2C319%7C134768%2C319%7C135281%2C319%7C135361%2C319%7C135451%2C319%7C135630%2C319%7C135739%2C319%7C136170%2C319%7C136604%2C319%7C136643%2C319%7C136960%2C319%7C137263%2C319%7C137391%2C319%7C202627%2C319%7C202630%2C1500%7C4992%2C1500%7C5027%2C1500%7C5068%2C1500%7C5221%2C1500%7C5295%2C1500%7C5576%2C1500%7C5588%2C1500%7C5744%2C1500%7C5802%2C1500%7C5803%2C1500%7C5812%2C1500%7C5916%2C1500%7C5964%2C1500%7C6031%2C1500%7C6094%2C1500%7C6506%2C-8%7C124%2C1291%7C182983%2C1291%7C193429&quantity=10&ColumnSort=1000011&page=2&stock=1&nstock=1&pageSize=25
 
 # TODO
 
-## Projected rev 2.0
+* Make bottom PCB.
+* Make LED PCB. Touch sensor electrode also?
 
-Baseboard testing
-
-* Battery charging. Seems to work.
-Goes up to 4.19V from 4.10V. 40 mA draw from VBUS.
-* Power from battery. Works.
-But only 2.8V VCC with VBATT 4.0V ?
-* LED power stepup.
-PA6 output works OK.
-R7 pull was cut off during testing.
-TP1 (enable) is only 2.0V with 100k R13. Should be 90% of VBATT to enable
-When putting 220ohm in parallel, it reaches 3.77V.
-Seems input is very low impdance, unexpected.
-But Vout is still just 0.5 V.
-Cout is only 1uF. But min is 10uF, max 100uF.
-Adding 47 uF did not seem to help.
-Layout is not ideal wrt recommendations.
-In particular GND of Cin is connected through a huge detour.
-Try connect directly? Try increase Cin? No improvement.
-Soldered up a new regulator, gives 5.0V out no problem.
-Conclusion, failure was due to reverse current from battery during testing.
-TODO: Test output under load. 10-100 mA
-TODO: Test enable signal. Does transistor coupling work OK?
-
-* Test LED data lines
-* Test touch controller input
-
-Baseboard advanced tests
-
-* Test USB communication
-* Test microphone. PDM
-* Test accelerometer. I2C
-
-Minimally useful
-
-* Order some APA102 5x5mm. Colored and white.
-https://www.digikey.com/products/en/optoelectronics/addressable-specialty/126?FV=ffe0007e&quantity=10&ColumnSort=1000011&page=1&stock=1&nstock=1&k=APA102&pageSize=25&pkeyword=APA102
-Maybe also some SK9822? (APA102 clone)
-https://www.aliexpress.com/item/32814778563.html?spm=a2g0o.productlist.0.0.41de121cISteIU&algo_pvid=fe3fdec9-1e16-42d0-ae08-855af399b14f&algo_expid=fe3fdec9-1e16-42d0-ae08-855af399b14f-0&btsid=b966ba3f-90d2-442f-9ffe-870f4855d5ac&ws_ab_test=searchweb0_0,searchweb201602_5,searchweb201603_52
-* Order solder paste
-
-
-Baseboard bugs
-
-* PC14 should not be used to drive LED.
-Has limited ability to source current, ref datasheet
-
-Flex led array
-
-* Etch flexible PCB for APA102-2020 array.
-Footprint. https://sc01.alicdn.com/kf/HTB1UE2.RpXXXXa_apXX760XFXXXt/221092177/HTB1UE2.RpXXXXa_apXX760XFXXXt.png
-KiCAD. https://github.com/greatscottgadgets/gsg-kicad-lib/blob/master/gsg-modules.pretty/APA102-2020.kicad_mod
-* Test with Arduino or Nucleo board
-* Test fits on 3d-printed model
-* Test connector with base board OK
-
-Rev 2.0 proof of concept
-
-* Validate base board
-* Implement APA102 driver
-* Implement capacitive touch
 
 Dock
 
-* Fabricate PCB for dock
+* Fabricate a PCB for dock
 * Make docking station mechanics
 
-Rev 2.0 later
-
-* Implement power saving
-* Implement undervoltage protection.
 
 Later
 
 * Move to separate repository
 
+
+## USB DFU
+
+USB DFU on STM32L432 and STM32L433
+not conforming to spec?
+https://community.st.com/s/question/0D50X00009XkfyUSAR/usb-dfu-on-stm32l432-and-stm32l433
+Issue seems fixed in latest st-util?
+https://sourceforge.net/p/dfu-util/tickets/40/
+
+User-mode bootloader
+https://github.com/nichtgedacht/L433CCTx-bootloader
 
 # Ideas
 
@@ -180,13 +157,5 @@ Jewelry connected to GND.
 * Test having a wire antenna sticking out towards front of rosebud.
 With high sensitivity, can one switch using a gesture?
 
-# Parts
-
-Thin multiconductor cable.
-[Digikey](https://www.digikey.com/products/en/cables-wires/multiple-conductor-cables/473?k=&pkeyword=&pv81=110&FV=138000a%2C138000b%2C138001a%2C1380056%2C674008c%2C674008d%2C67400b4%2C674013d%2C6740020%2C6740198%2C6740029%2C674019e%2C674019f%2C67401a1%2C67401b1%2C674002d%2C674002f%2C67401e3%2C67401e7%2C6740036%2C6740236%2C674003a%2C674003b%2C674003c%2C6740040%2C6740043%2C6740044%2C6740047%2C67402e1%2Cffe001d9%2C4f0000c%2C4f0007c%2C4f00002&quantity=0&ColumnSort=1000011&page=1&stock=1&nstock=1&pageSize=25)
-
-[Small white power LEDs](https://www.digikey.no/products/en/optoelectronics/led-lighting-white/124?FV=b83bfa%2Cb84343%2Cb84345%2Cb8442f%2Cb84ff4%2Cb85aca%2Cb85ada%2Cb864db%2Cb86a30%2Cb86c09%2Cb87c2f%2Cb89a25%2Cb8a3d7%2Cb8a955%2Cb8a959%2Cb8a95c%2Cb8a95e%2Cb8a95f%2Cb8a962%2Cb8a96a%2Cb8a976%2Cb8a977%2Cb8a9a2%2Cb8a9a3%2Cb8a9a7%2Cb8a9a8%2Cb8a9ab%2Cb8a9ac%2Cb8a9ad%2Cb8a9ae%2Cb8a9af%2Cb8a9b0%2Cb8a9b1%2Cb8a9b6%2Cb8a9bc%2Cb8a9bd%2Cb8a9c0%2Cb8a9c1%2Cb8a9c8%2Cb8a9c9%2Cb8a9cd%2Cb8a9cf%2Cb8a9d0%2Cb8a9d2%2Cb8ab18%2Cb8b1f6%2Cb8b748%2C1140003%2C89c0103%2C89c0029%2C89c002b%2C89c002d%2C89c002f%2C89c0033%2Cab00066%2Cab00069%2Cab0006a%2Cab0006e%2Cab00072%2Cab00074%2Cab00075%2Cab0007a%2Cab000ad%2Cab000b8%2Cab00002%2Cab000d4%2Cab000d7%2Cab000d8%2Cab000e3%2Cab000e4%2Cab000ec%2Cab000fd%2Cab000ff%2Cab00121%2Cab00123%2Cab00003%2Cab00140%2Cab00141%2Cab00173%2Cab0023f%2Cab00007%2Cab00008%2Cab00051%2Cab00053%2Cab00054%2Cab0005b%2Cab00061%2Cab00062%2Cffe0007c&quantity=10&ColumnSort=1000011&page=1&stock=1&nstock=1&pageSize=25)
-
-[White LEDs sidelight](https://www.digikey.no/products/en/optoelectronics/led-indication-discrete/105?FV=940066%2C940008%2C9403c3%2C9403c5%2C9403c6%2C1140160%2C89c0501%2C89c0515%2C89c0088%2C89c057f%2C89c0590%2C89c0592%2C89c0593%2C89c059a%2C89c059c%2C89c059d%2C89c00b1%2C89c00b2%2C89c00b3%2C89c00b4%2C89c00b5%2C89c00b6%2C89c00b7%2C89c00b9%2C89c00ba%2C89c00bc%2C89c00bd%2C89c00be%2C89c00c0%2C89c00c1%2C89c00c2%2C89c00c3%2C89c00c4%2C89c00c5%2C89c00c6%2C89c00c7%2C89c00c9%2C89c00cb%2C89c00cc%2C89c00cd%2C89c00ce%2C89c00d0%2C89c00d1%2C89c00d2%2C89c00d3%2C89c00d4%2C89c00d5%2C89c00d6%2C89c00d7%2C89c00da%2C89c00db%2C89c00dd%2C89c00df%2C89c00e1%2C89c00e2%2C89c00f1%2C89c00f2%2C89c00f3%2C89c00fa%2C89c0103%2C89c010a%2C89c0029%2C89c002a%2C89c002b%2C89c002c%2C89c01be%2C89c002d%2C89c002f%2C89c0030%2C89c0031%2C89c01ea%2C89c01f3%2C89c0032%2C89c01f4%2C89c01f5%2C89c01f6%2C89c01f8%2C89c0033%2C89c01fe%2C89c0200%2C89c0201%2C89c0034%2C89c0213%2C89c0214%2C89c0037%2C89c02d1%2C89c02dd%2C89c02e3%2C89c02e4%2C89c02e6%2C89c02ea%2C89c02eb%2C89c02ec%2C89c02f5%2C89c02f6%2C89c02f7%2C89c02fc%2C89c02fd%2C89c02fe%2C89c0303%2C89c0306%2C89c0328%2C89c0366%2C89c0369%2Cffe00069&quantity=10&ColumnSort=1000011&page=1&stock=1&nstock=1&datasheet=1&pageSize=25)
 
 
