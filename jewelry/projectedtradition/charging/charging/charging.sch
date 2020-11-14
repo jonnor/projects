@@ -1,4 +1,499 @@
-EESchema Schematic File Version 2
-EELAYER 25 0
+EESchema Schematic File Version 4
+EELAYER 30 0
 EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Connector_Generic:Conn_01x04 J?
+U 1 1 5FB0528F
+P 850 1700
+F 0 "J?" H 768 2017 50  0000 C CNN
+F 1 "Conn_01x04" H 768 1926 50  0000 C CNN
+F 2 "" H 850 1700 50  0001 C CNN
+F 3 "~" H 850 1700 50  0001 C CNN
+	1    850  1700
+	-1   0    0    -1  
+$EndComp
+Text Notes 800  1200 0    50   ~ 0
+For magnetic connector\nwith reverse polarity protect
+Text Notes 650  800  0    100  ~ 0
+Charging dock
+Text Notes 3400 950  0    100  ~ 0
+Battery charger
+Text Notes 6645 940  0    100  ~ 0
+Power switch
+Text Notes 3200 3000 0    50   ~ 0
+Extra battery connector
+Text Notes 6865 1065 0    50   ~ 0
+Capacitive touch
+$Comp
+L Connector_Generic:Conn_01x02 J?
+U 1 1 5FB06D6D
+P 3500 3250
+F 0 "J?" H 3580 3242 50  0000 L CNN
+F 1 "Conn_01x02" H 3580 3151 50  0000 L CNN
+F 2 "" H 3500 3250 50  0001 C CNN
+F 3 "~" H 3500 3250 50  0001 C CNN
+	1    3500 3250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x02 J?
+U 1 1 5FB07352
+P 6700 2350
+F 0 "J?" H 6618 2567 50  0000 C CNN
+F 1 "Conn_01x02" H 6618 2476 50  0000 C CNN
+F 2 "" H 6700 2350 50  0001 C CNN
+F 3 "~" H 6700 2350 50  0001 C CNN
+	1    6700 2350
+	-1   0    0    -1  
+$EndComp
+Text Notes 8900 800  0    50   ~ 0
+Powerswitch override
+$Comp
+L Device:Battery_Cell BT?
+U 1 1 5FB07F1B
+P 4400 1950
+F 0 "BT?" H 4518 2046 50  0000 L CNN
+F 1 "Battery_Cell" H 4518 1955 50  0000 L CNN
+F 2 "" V 4400 2010 50  0001 C CNN
+F 3 "~" V 4400 2010 50  0001 C CNN
+	1    4400 1950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Battery_Management:MCP73812T-420I-OT U?
+U 1 1 5FB086DA
+P 3800 1650
+F 0 "U?" H 4000 2150 50  0000 L CNN
+F 1 "MCP73812T-420I-OT" H 4000 2050 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-5" H 3850 1400 50  0001 L CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/22036b.pdf" H 3550 1900 50  0001 C CNN
+	1    3800 1650
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+BATT #PWR?
+U 1 1 5FB0D144
+P 3300 3250
+F 0 "#PWR?" H 3300 3100 50  0001 C CNN
+F 1 "+BATT" H 3315 3423 50  0000 C CNN
+F 2 "" H 3300 3250 50  0001 C CNN
+F 3 "" H 3300 3250 50  0001 C CNN
+	1    3300 3250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:-BATT #PWR?
+U 1 1 5FB0D4FC
+P 3300 3350
+F 0 "#PWR?" H 3300 3200 50  0001 C CNN
+F 1 "-BATT" H 3315 3523 50  0000 C CNN
+F 2 "" H 3300 3350 50  0001 C CNN
+F 3 "" H 3300 3350 50  0001 C CNN
+	1    3300 3350
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5FB16D60
+P 3250 2000
+F 0 "R?" H 3320 2046 50  0000 L CNN
+F 1 "22k" H 3320 1955 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 3180 2000 50  0001 C CNN
+F 3 "~" H 3250 2000 50  0001 C CNN
+	1    3250 2000
+	1    0    0    -1  
+$EndComp
+Text Notes 3200 2700 0    50   ~ 0
+Icharge=1000/Rprog (mA)\n22k = 45mA
+$Comp
+L power:GND #PWR?
+U 1 1 5FB1819B
+P 3800 2300
+F 0 "#PWR?" H 3800 2050 50  0001 C CNN
+F 1 "GND" H 3805 2127 50  0000 C CNN
+F 2 "" H 3800 2300 50  0001 C CNN
+F 3 "" H 3800 2300 50  0001 C CNN
+	1    3800 2300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3800 2300 3800 2250
+Wire Wire Line
+	3250 2150 3250 2250
+Wire Wire Line
+	3250 2250 3800 2250
+Connection ~ 3800 2250
+Wire Wire Line
+	3800 2250 3800 1950
+$Comp
+L Device:C C?
+U 1 1 5FB189B7
+P 2900 2000
+F 0 "C?" H 3015 2046 50  0000 L CNN
+F 1 "C" H 3015 1955 50  0000 L CNN
+F 2 "" H 2938 1850 50  0001 C CNN
+F 3 "~" H 2900 2000 50  0001 C CNN
+	1    2900 2000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2900 2150 2900 2250
+Wire Wire Line
+	2900 2250 3250 2250
+Connection ~ 3250 2250
+Wire Wire Line
+	2900 1850 2900 1550
+Wire Wire Line
+	2900 1550 3400 1550
+Wire Wire Line
+	3400 1750 3250 1750
+Wire Wire Line
+	3250 1750 3250 1850
+$Comp
+L power:VBUS #PWR?
+U 1 1 5FB19751
+P 2900 1200
+F 0 "#PWR?" H 2900 1050 50  0001 C CNN
+F 1 "VBUS" H 2915 1373 50  0000 C CNN
+F 2 "" H 2900 1200 50  0001 C CNN
+F 3 "" H 2900 1200 50  0001 C CNN
+	1    2900 1200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2900 1200 2900 1300
+Connection ~ 2900 1550
+Wire Wire Line
+	3800 1350 3800 1300
+Wire Wire Line
+	3800 1300 2900 1300
+Connection ~ 2900 1300
+Wire Wire Line
+	2900 1300 2900 1550
+$Comp
+L power:+BATT #PWR?
+U 1 1 5FB1AD8E
+P 4400 1550
+F 0 "#PWR?" H 4400 1400 50  0001 C CNN
+F 1 "+BATT" H 4415 1723 50  0000 C CNN
+F 2 "" H 4400 1550 50  0001 C CNN
+F 3 "" H 4400 1550 50  0001 C CNN
+	1    4400 1550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4400 1550 4200 1550
+$Comp
+L power:-BATT #PWR?
+U 1 1 5FB1B6F7
+P 4400 2250
+F 0 "#PWR?" H 4400 2100 50  0001 C CNN
+F 1 "-BATT" H 4415 2423 50  0000 C CNN
+F 2 "" H 4400 2250 50  0001 C CNN
+F 3 "" H 4400 2250 50  0001 C CNN
+	1    4400 2250
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4400 2250 3800 2250
+Text Label 1400 1700 0    50   ~ 0
+USB_D-
+Text Label 1400 1800 0    50   ~ 0
+USB_D+
+$Comp
+L power:VBUS #PWR?
+U 1 1 5FB26166
+P 1600 1500
+F 0 "#PWR?" H 1600 1350 50  0001 C CNN
+F 1 "VBUS" H 1615 1673 50  0000 C CNN
+F 2 "" H 1600 1500 50  0001 C CNN
+F 3 "" H 1600 1500 50  0001 C CNN
+	1    1600 1500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5FB2690B
+P 1600 1900
+F 0 "#PWR?" H 1600 1650 50  0001 C CNN
+F 1 "GND" H 1605 1727 50  0000 C CNN
+F 2 "" H 1600 1900 50  0001 C CNN
+F 3 "" H 1600 1900 50  0001 C CNN
+	1    1600 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D_Schottky D?
+U 1 1 5FB2749B
+P 1300 1600
+F 0 "D?" H 1300 1383 50  0000 C CNN
+F 1 "D_Schottky" H 1300 1474 50  0000 C CNN
+F 2 "" H 1300 1600 50  0001 C CNN
+F 3 "~" H 1300 1600 50  0001 C CNN
+	1    1300 1600
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	1450 1600 1600 1600
+Wire Wire Line
+	1600 1600 1600 1500
+Wire Wire Line
+	1050 1900 1600 1900
+Wire Wire Line
+	1400 1800 1050 1800
+Wire Wire Line
+	1400 1700 1050 1700
+Wire Wire Line
+	1150 1600 1050 1600
+Text Notes 1050 2450 0    50   ~ 0
+FIXME: verify pinout
+$Comp
+L touch:TPP223-BA6 U?
+U 1 1 5FB2FFE2
+P 7850 2350
+F 0 "U?" H 7150 2950 50  0000 C CNN
+F 1 "TPP223-BA6" H 7350 2850 50  0000 C CNN
+F 2 "" H 7550 2450 50  0001 C CNN
+F 3 "" H 7550 2450 50  0001 C CNN
+	1    7850 2350
+	1    0    0    -1  
+$EndComp
+Text Label 7500 2350 2    50   ~ 0
+TOUCH_SENSE
+Wire Wire Line
+	6900 2350 7550 2350
+$Comp
+L power:GND #PWR?
+U 1 1 5FB4224B
+P 6900 2450
+F 0 "#PWR?" H 6900 2200 50  0001 C CNN
+F 1 "GND" H 6905 2277 50  0000 C CNN
+F 2 "" H 6900 2450 50  0001 C CNN
+F 3 "" H 6900 2450 50  0001 C CNN
+	1    6900 2450
+	1    0    0    -1  
+$EndComp
+Text Label 8250 2200 0    50   ~ 0
+POWER_EN
+$Comp
+L Jumper:SolderJumper_2_Bridged JP?
+U 1 1 5FB43797
+P 8350 1900
+F 0 "JP?" V 8350 1968 50  0000 L CNN
+F 1 "SolderJ" V 8395 1968 50  0001 L CNN
+F 2 "" H 8350 1900 50  0001 C CNN
+F 3 "~" H 8350 1900 50  0001 C CNN
+	1    8350 1900
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8150 2400 8350 2400
+Wire Wire Line
+	8350 2400 8350 2050
+$Comp
+L Jumper:SolderJumper_2_Bridged JP?
+U 1 1 5FB45C58
+P 8600 1900
+F 0 "JP?" V 8600 1968 50  0000 L CNN
+F 1 "SolderJ" V 8645 1968 50  0001 L CNN
+F 2 "" H 8600 1900 50  0001 C CNN
+F 3 "~" H 8600 1900 50  0001 C CNN
+	1    8600 1900
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8150 2500 8600 2500
+Wire Wire Line
+	8600 2500 8600 2050
+Wire Wire Line
+	8350 1750 8350 1650
+Wire Wire Line
+	8350 1650 7750 1650
+Wire Wire Line
+	7750 1650 7750 1900
+Wire Wire Line
+	8600 1750 8600 1650
+Wire Wire Line
+	8600 1650 8350 1650
+Connection ~ 8350 1650
+$Comp
+L power:+BATT #PWR?
+U 1 1 5FB4765F
+P 7750 1650
+F 0 "#PWR?" H 7750 1500 50  0001 C CNN
+F 1 "+BATT" H 7765 1823 50  0000 C CNN
+F 2 "" H 7750 1650 50  0001 C CNN
+F 3 "" H 7750 1650 50  0001 C CNN
+	1    7750 1650
+	1    0    0    -1  
+$EndComp
+Connection ~ 7750 1650
+Text Notes 6700 1250 0    50   ~ 0
+TOG high to enable toggle. Else momentary\nAHLB high to have Q active low
+$Comp
+L Device:Q_PMOS_DGS Q?
+U 1 1 5FB4D011
+P 9200 1750
+F 0 "Q?" V 9542 1750 50  0000 C CNN
+F 1 "Q_PMOS_DGS" V 9451 1750 50  0000 C CNN
+F 2 "" H 9400 1850 50  0001 C CNN
+F 3 "~" H 9200 1750 50  0001 C CNN
+	1    9200 1750
+	0    1    -1   0   
+$EndComp
+Wire Wire Line
+	8850 1650 9000 1650
+Wire Wire Line
+	8850 1650 8600 1650
+Connection ~ 8850 1650
+Connection ~ 8600 1650
+Wire Wire Line
+	8850 1750 8850 1650
+$Comp
+L Device:R R?
+U 1 1 5FB50C7D
+P 8850 1900
+F 0 "R?" H 8920 1946 50  0000 L CNN
+F 1 "22k" H 8920 1855 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 8780 1900 50  0001 C CNN
+F 3 "~" H 8850 1900 50  0001 C CNN
+	1    8850 1900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9200 2200 9200 1950
+Wire Wire Line
+	8850 2200 9200 2200
+Wire Wire Line
+	8850 2050 8850 2200
+Wire Wire Line
+	8150 2200 8850 2200
+Connection ~ 8850 2200
+$Comp
+L Connector_Generic:Conn_01x02 J?
+U 1 1 5FB402C1
+P 10250 1650
+F 0 "J?" H 10200 1950 50  0000 L CNN
+F 1 "Conn_01x02" H 10200 1850 50  0000 L CNN
+F 2 "" H 10250 1650 50  0001 C CNN
+F 3 "~" H 10250 1650 50  0001 C CNN
+	1    10250 1650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10050 1650 9500 1650
+Text Label 9600 1650 0    50   ~ 0
+POWER_OUT
+$Comp
+L Connector_Generic:Conn_01x02 J?
+U 1 1 5FB077D2
+P 8850 1000
+F 0 "J?" V 8814 812 50  0000 R CNN
+F 1 "Conn_01x02" V 8723 812 50  0000 R CNN
+F 2 "" H 8850 1000 50  0001 C CNN
+F 3 "~" H 8850 1000 50  0001 C CNN
+	1    8850 1000
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	8950 1200 8950 1300
+Wire Wire Line
+	8950 1300 9500 1300
+Wire Wire Line
+	9500 1300 9500 1650
+Connection ~ 9500 1650
+Wire Wire Line
+	9500 1650 9400 1650
+$Comp
+L power:GND #PWR?
+U 1 1 5FB8652B
+P 7750 2900
+F 0 "#PWR?" H 7750 2650 50  0001 C CNN
+F 1 "GND" H 7755 2727 50  0000 C CNN
+F 2 "" H 7750 2900 50  0001 C CNN
+F 3 "" H 7750 2900 50  0001 C CNN
+	1    7750 2900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7750 2900 7750 2750
+Wire Wire Line
+	4400 1750 4400 1550
+Connection ~ 4400 1550
+Wire Wire Line
+	4400 2050 4400 2250
+Connection ~ 4400 2250
+Wire Wire Line
+	8850 1200 8850 1650
+$Comp
+L power:GND #PWR?
+U 1 1 5FBA03FD
+P 10050 1750
+F 0 "#PWR?" H 10050 1500 50  0001 C CNN
+F 1 "GND" H 10055 1577 50  0000 C CNN
+F 2 "" H 10050 1750 50  0001 C CNN
+F 3 "" H 10050 1750 50  0001 C CNN
+	1    10050 1750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED D?
+U 1 1 5FBA387A
+P 10050 3150
+F 0 "D?" V 10089 3032 50  0000 R CNN
+F 1 "LED" V 9998 3032 50  0000 R CNN
+F 2 "" H 10050 3150 50  0001 C CNN
+F 3 "~" H 10050 3150 50  0001 C CNN
+	1    10050 3150
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5FBA5439
+P 10050 2850
+F 0 "R?" H 10120 2896 50  0000 L CNN
+F 1 "1k2" H 10120 2805 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 9980 2850 50  0001 C CNN
+F 3 "~" H 10050 2850 50  0001 C CNN
+	1    10050 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5FBA6299
+P 10050 3300
+F 0 "#PWR?" H 10050 3050 50  0001 C CNN
+F 1 "GND" H 10055 3127 50  0000 C CNN
+F 2 "" H 10050 3300 50  0001 C CNN
+F 3 "" H 10050 3300 50  0001 C CNN
+	1    10050 3300
+	1    0    0    -1  
+$EndComp
+Text Label 10050 2400 2    50   ~ 0
+POWER_OUT
+Text Notes 9650 2300 0    50   ~ 0
+Test LED
+$Comp
+L Jumper:SolderJumper_2_Open JP?
+U 1 1 5FBAA1D2
+P 10050 2550
+F 0 "JP?" V 10050 2618 50  0000 L CNN
+F 1 "SolderJumper_2_Open" V 10095 2618 50  0001 L CNN
+F 2 "" H 10050 2550 50  0001 C CNN
+F 3 "~" H 10050 2550 50  0001 C CNN
+	1    10050 2550
+	0    1    1    0   
+$EndComp
 $EndSCHEMATC
