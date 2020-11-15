@@ -19,20 +19,35 @@ Small oval gemstones, 10-20 mm. [1](https://www.gemselect.com/group/gemselect.ph
 
 # Rechargable
 
-Power board
-For LiPo coincell.
-For magnetic clip on connector
+Power board for wearable or other battery powered electronics.
+
+- Integrated charger for LIR coincell batteries.
+- Integrated touch-controller for power on/off.
+- Charging via USB 4pin magnetic cable.
+- Fits LIR16xx,LIR20xx and LIR24xx directly.
+- Board fits within 20 mm diameter, 2 mm height
+
+## TODO
+- Verify USB connector pinout and sizes
+- Order PCBs
+- Order LIR16xx batteries
+
+## Parts 
+
+Diode Shottky SOD323
+https://www.digikey.com/en/products/filter/diodes-rectifiers-single/280?s=N4IgjCBcpgbFoDGUBmBDANgZwKYBoQB7KAbRAGYBOAJgBZ4DaAGJuiRlsSiAXQIAcALlBABlQQCcAlgDsA5iAC%2BBSvGghkkdNnxFSIZk3IB2ABwg%2BIISPHT5SggFpqCDVEkBXXcUhkArCAqFgLCkCAOII4B6prauAQ%2BZC6W1mFKyiBqoFIAJiKOYEzsVqHhBACOggCeIoWBINX8OCJoWMiKikA
+
+PMOS SOT-223
+https://www.digikey.com/en/products/filter/transistors-fets-mosfets-single/278?s=N4IgjCBcoGwAwyqAxlAZgQwDYGcCmANCAPZQDaIAzABwCsYclIAukQA4AuUIAyhwE4BLAHYBzEAF8iMMACYkIVJEy5CJcuBi0YsuCCKzDYGAE59IWTQAsc87NoB2KzCYHqT2lfOmwn7ybAHRGkTWV9zahsrWgjHLXMGOGiHBLgk2mpUpOp5IkSraky8uAyTM2LaUIg8hhgHGJrPMISrBDhq8BtaSoTHOAdXcD66BJNKJJSDNOodO0ofYIsHeuMWdi5IXgERcSlwWQCFJRV8IlJIClbaSiDzK5vJkFb2kwankqt6u4-ltZBObh8IRiSREAC08mgiigAgArmpzhQ3mZWP8NiBJHtEFDBAATbhghgdAGbcwARw4AE9uAxzFS2HhuBgcKgJBIgA
+
+1.27 mm headers
+
+LIR1620 / LIR1632
+LIR2032
+LIR2450
+Rainpro @ Aliexpress
 
 
-Circular PCB. Fit at the back of a 2230,2022,1610 etc.
-Directly pluggable. Alternative with wires
-- 5V,GND input
-- Vbatt output
-- Lipo charger.
-- Reverse polarity protect.
-- Output switch. Cap touch/bypassable/phys switch pluggable
-For Starnight jewellery need separate PCB with. LED booster, LED, cap plate
-- PCB pads for magnetic connector? Also have other pads
 
 # Watch
 Watch case 42 mm 43mm 
