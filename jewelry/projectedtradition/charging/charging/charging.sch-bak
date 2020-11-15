@@ -66,7 +66,7 @@ U 1 1 5FB07F1B
 P 4400 1950
 F 0 "BT1" H 4518 2046 50  0000 L CNN
 F 1 "Battery_Cell" H 4518 1955 50  0000 L CNN
-F 2 "charging:batt-lir-2012" V 4400 2010 50  0001 C CNN
+F 2 "Battery:BatteryHolder_Keystone_3002_1x2032" V 4400 2010 50  0001 C CNN
 F 3 "~" V 4400 2010 50  0001 C CNN
 	1    4400 1950
 	1    0    0    -1  
