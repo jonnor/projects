@@ -28,9 +28,23 @@ Power board for wearable or other battery powered electronics.
 - Board fits within 20 mm diameter, 2 mm height
 
 ## TODO
-- Verify USB connector pinout and sizes
+
 - Order PCBs
-- Order LIR16xx batteries
+- Order PCBA compnents
+- Design and print a test stand
+
+After receiving parts
+
+- Design and print a test holder
+- Test the PCBs
+
+Projected update
+
+- Make LED/touch PCB for top.
+Connections power,GND,touch
+- Integrate into domed design
+Add rotation lock/keying in bottom versus sides
+- Attempt to print including light-holes
 
 ## Parts 
 

@@ -34,7 +34,7 @@ Text Notes 6645 940  0    100  ~ 0
 Power switch
 Text Notes 5050 2150 0    50   ~ 0
 Extra battery connector
-Text Notes 6865 1065 0    50   ~ 0
+Text Notes 6850 2100 0    50   ~ 0
 Capacitive touch
 $Comp
 L Connector_Generic:Conn_01x02 J2
@@ -235,8 +235,6 @@ Wire Wire Line
 	1400 1700 1050 1700
 Wire Wire Line
 	1150 1600 1050 1600
-Text Notes 1050 2450 0    50   ~ 0
-FIXME: verify pinout
 $Comp
 L touch:TPP223-BA6 U2
 U 1 1 5FB2FFE2

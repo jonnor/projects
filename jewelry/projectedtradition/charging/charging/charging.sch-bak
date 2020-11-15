@@ -501,12 +501,12 @@ Wire Wire Line
 Wire Wire Line
 	4950 1900 5050 1900
 $Comp
-L Connector:TestPoint TP?
+L Connector:TestPoint TP2
 U 1 1 5FC1BDE4
 P 9100 2200
-F 0 "TP?" H 9042 2226 50  0000 R CNN
+F 0 "TP2" H 9042 2226 50  0000 R CNN
 F 1 "TestPoint" H 9042 2317 50  0000 R CNN
-F 2 "" H 9300 2200 50  0001 C CNN
+F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 9300 2200 50  0001 C CNN
 F 3 "~" H 9300 2200 50  0001 C CNN
 	1    9100 2200
 	-1   0    0    1   
@@ -515,12 +515,12 @@ Connection ~ 9100 2200
 Wire Wire Line
 	9100 2200 9200 2200
 $Comp
-L Connector:TestPoint TP?
+L Connector:TestPoint TP1
 U 1 1 5FC1E27F
 P 3250 1750
-F 0 "TP?" V 3445 1822 50  0000 C CNN
+F 0 "TP1" V 3445 1822 50  0000 C CNN
 F 1 "TestPoint" V 3354 1822 50  0000 C CNN
-F 2 "" H 3450 1750 50  0001 C CNN
+F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 3450 1750 50  0001 C CNN
 F 3 "~" H 3450 1750 50  0001 C CNN
 	1    3250 1750
 	0    -1   -1   0   
