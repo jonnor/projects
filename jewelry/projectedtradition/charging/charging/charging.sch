@@ -19,7 +19,7 @@ U 1 1 5FB0528F
 P 850 1700
 F 0 "J1" H 768 2017 50  0000 C CNN
 F 1 "Conn_01x04" H 768 1926 50  0000 C CNN
-F 2 "charging:magconnect4" H 850 1700 50  0001 C CNN
+F 2 "charging:magconnect4-poweronly" H 850 1700 50  0001 C CNN
 F 3 "~" H 850 1700 50  0001 C CNN
 	1    850  1700
 	-1   0    0    -1  
@@ -48,14 +48,14 @@ F 3 "~" H 5250 1800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector_Generic:Conn_01x02 J3
+L Connector_Generic:Conn_01x04 J3
 U 1 1 5FB07352
-P 6700 2350
-F 0 "J3" H 6618 2567 50  0000 C CNN
-F 1 "Conn_01x02" H 6618 2476 50  0000 C CNN
-F 2 "Connector_PinHeader_1.27mm:PinHeader_1x02_P1.27mm_Vertical" H 6700 2350 50  0001 C CNN
-F 3 "~" H 6700 2350 50  0001 C CNN
-	1    6700 2350
+P 8350 3450
+F 0 "J3" H 8268 3767 50  0000 C CNN
+F 1 "Conn_01x04" H 8268 3676 50  0000 C CNN
+F 2 "Connector_FFC-FPC:TE_0-1734839-5_1x05-1MP_P0.5mm_Horizontal" H 8350 3450 50  0001 C CNN
+F 3 "~" H 8350 3450 50  0001 C CNN
+	1    8350 3450
 	-1   0    0    -1  
 $EndComp
 Text Notes 8900 800  0    50   ~ 0
@@ -248,59 +248,27 @@ F 3 "" H 7550 2450 50  0001 C CNN
 $EndComp
 Text Label 7500 2350 2    50   ~ 0
 TOUCH_SENSE
-Wire Wire Line
-	6900 2350 7250 2350
 $Comp
 L power:GND #PWR0109
 U 1 1 5FB4224B
-P 6900 2450
-F 0 "#PWR0109" H 6900 2200 50  0001 C CNN
-F 1 "GND" H 6905 2277 50  0000 C CNN
-F 2 "" H 6900 2450 50  0001 C CNN
-F 3 "" H 6900 2450 50  0001 C CNN
-	1    6900 2450
-	1    0    0    -1  
+P 9400 3650
+F 0 "#PWR0109" H 9400 3400 50  0001 C CNN
+F 1 "GND" V 9405 3522 50  0000 R CNN
+F 2 "" H 9400 3650 50  0001 C CNN
+F 3 "" H 9400 3650 50  0001 C CNN
+	1    9400 3650
+	0    -1   -1   0   
 $EndComp
 Text Label 8250 2200 0    50   ~ 0
 POWER_EN
-$Comp
-L Jumper:SolderJumper_2_Bridged JP1
-U 1 1 5FB43797
-P 8350 1900
-F 0 "JP1" V 8350 1968 50  0000 L CNN
-F 1 "SolderJ" V 8395 1968 50  0001 L CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm" H 8350 1900 50  0001 C CNN
-F 3 "~" H 8350 1900 50  0001 C CNN
-	1    8350 1900
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	8150 2400 8350 2400
 Wire Wire Line
-	8350 2400 8350 2050
-$Comp
-L Jumper:SolderJumper_2_Bridged JP2
-U 1 1 5FB45C58
-P 8600 1900
-F 0 "JP2" V 8600 1968 50  0000 L CNN
-F 1 "SolderJ" V 8645 1968 50  0001 L CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm" H 8600 1900 50  0001 C CNN
-F 3 "~" H 8600 1900 50  0001 C CNN
-	1    8600 1900
-	0    1    1    0   
-$EndComp
-Wire Wire Line
 	8150 2500 8600 2500
-Wire Wire Line
-	8600 2500 8600 2050
-Wire Wire Line
-	8350 1750 8350 1650
 Wire Wire Line
 	8350 1650 7750 1650
 Wire Wire Line
 	7750 1650 7750 1900
-Wire Wire Line
-	8600 1750 8600 1650
 Wire Wire Line
 	8600 1650 8350 1650
 Connection ~ 8350 1650
@@ -358,21 +326,6 @@ Wire Wire Line
 	8150 2200 8850 2200
 Connection ~ 8850 2200
 $Comp
-L Connector_Generic:Conn_01x02 J5
-U 1 1 5FB402C1
-P 10250 1650
-F 0 "J5" H 10200 1950 50  0000 L CNN
-F 1 "Conn_01x02" H 10200 1850 50  0000 L CNN
-F 2 "Connector_PinHeader_1.27mm:PinHeader_1x02_P1.27mm_Vertical" H 10250 1650 50  0001 C CNN
-F 3 "~" H 10250 1650 50  0001 C CNN
-	1    10250 1650
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	10050 1650 9500 1650
-Text Label 9600 1650 0    50   ~ 0
-POWER_OUT
-$Comp
 L Connector_Generic:Conn_01x02 J4
 U 1 1 5FB077D2
 P 8850 1000
@@ -389,7 +342,6 @@ Wire Wire Line
 	8950 1300 9500 1300
 Wire Wire Line
 	9500 1300 9500 1650
-Connection ~ 9500 1650
 Wire Wire Line
 	9500 1650 9400 1650
 $Comp
@@ -413,17 +365,6 @@ Wire Wire Line
 Connection ~ 4400 2250
 Wire Wire Line
 	8850 1200 8850 1650
-$Comp
-L power:GND #PWR0112
-U 1 1 5FBA03FD
-P 10050 1750
-F 0 "#PWR0112" H 10050 1500 50  0001 C CNN
-F 1 "GND" H 10055 1577 50  0000 C CNN
-F 2 "" H 10050 1750 50  0001 C CNN
-F 3 "" H 10050 1750 50  0001 C CNN
-	1    10050 1750
-	1    0    0    -1  
-$EndComp
 Text Notes 9950 3000 0    50   ~ 0
 Test LED
 Text Label 10400 2550 2    50   ~ 0
@@ -474,7 +415,6 @@ F 3 "~" H 7250 2600 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	7250 2450 7250 2350
-Connection ~ 7250 2350
 Wire Wire Line
 	7250 2350 7550 2350
 Wire Wire Line
@@ -524,4 +464,50 @@ F 3 "~" H 3450 1750 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 Connection ~ 3250 1750
+Text Label 8550 3550 0    50   ~ 0
+POWER_OUT
+Text Label 8550 3350 0    50   ~ 0
+TOUCH_SENSE
+$Comp
+L power:GND #PWR0101
+U 1 1 5FC54174
+P 9400 3450
+F 0 "#PWR0101" H 9400 3200 50  0001 C CNN
+F 1 "GND" V 9405 3322 50  0000 R CNN
+F 2 "" H 9400 3450 50  0001 C CNN
+F 3 "" H 9400 3450 50  0001 C CNN
+	1    9400 3450
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	8350 1650 8350 2400
+Wire Wire Line
+	8600 1650 8600 2500
+Text Label 9500 1650 0    50   ~ 0
+POWER_OUT
+$Comp
+L Connector_Generic:Conn_01x04 J?
+U 1 1 5FC7095F
+P 9250 3550
+F 0 "J?" H 9168 3125 50  0000 C CNN
+F 1 "Conn_01x04" H 9168 3216 50  0000 C CNN
+F 2 "Connector_FFC-FPC:TE_0-1734839-5_1x05-1MP_P0.5mm_Horizontal" H 9250 3550 50  0001 C CNN
+F 3 "~" H 9250 3550 50  0001 C CNN
+	1    9250 3550
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	9050 3350 8550 3350
+Wire Wire Line
+	8550 3450 9050 3450
+Connection ~ 9050 3450
+Wire Wire Line
+	9050 3450 9400 3450
+Wire Wire Line
+	8550 3550 9050 3550
+Wire Wire Line
+	9400 3650 9050 3650
+Connection ~ 9050 3650
+Wire Wire Line
+	9050 3650 8550 3650
 $EndSCHEMATC

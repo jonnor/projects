@@ -19,7 +19,7 @@ U 1 1 5FB0528F
 P 850 1700
 F 0 "J1" H 768 2017 50  0000 C CNN
 F 1 "Conn_01x04" H 768 1926 50  0000 C CNN
-F 2 "charging:magconnect4" H 850 1700 50  0001 C CNN
+F 2 "charging:magconnect4-poweronly" H 850 1700 50  0001 C CNN
 F 3 "~" H 850 1700 50  0001 C CNN
 	1    850  1700
 	-1   0    0    -1  
@@ -34,7 +34,7 @@ Text Notes 6645 940  0    100  ~ 0
 Power switch
 Text Notes 5050 2150 0    50   ~ 0
 Extra battery connector
-Text Notes 6865 1065 0    50   ~ 0
+Text Notes 6850 2100 0    50   ~ 0
 Capacitive touch
 $Comp
 L Connector_Generic:Conn_01x02 J2
@@ -48,14 +48,14 @@ F 3 "~" H 5250 1800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector_Generic:Conn_01x02 J3
+L Connector_Generic:Conn_01x04 J3
 U 1 1 5FB07352
-P 6700 2350
-F 0 "J3" H 6618 2567 50  0000 C CNN
-F 1 "Conn_01x02" H 6618 2476 50  0000 C CNN
-F 2 "Connector_PinHeader_1.27mm:PinHeader_1x02_P1.27mm_Vertical" H 6700 2350 50  0001 C CNN
-F 3 "~" H 6700 2350 50  0001 C CNN
-	1    6700 2350
+P 8450 3350
+F 0 "J3" H 8368 3667 50  0000 C CNN
+F 1 "Conn_01x04" H 8368 3576 50  0000 C CNN
+F 2 "Connector_FFC-FPC:TE_0-1734839-5_1x05-1MP_P0.5mm_Horizontal" H 8450 3350 50  0001 C CNN
+F 3 "~" H 8450 3350 50  0001 C CNN
+	1    8450 3350
 	-1   0    0    -1  
 $EndComp
 Text Notes 8900 800  0    50   ~ 0
@@ -235,8 +235,6 @@ Wire Wire Line
 	1400 1700 1050 1700
 Wire Wire Line
 	1150 1600 1050 1600
-Text Notes 1050 2450 0    50   ~ 0
-FIXME: verify pinout
 $Comp
 L touch:TPP223-BA6 U2
 U 1 1 5FB2FFE2
@@ -250,59 +248,27 @@ F 3 "" H 7550 2450 50  0001 C CNN
 $EndComp
 Text Label 7500 2350 2    50   ~ 0
 TOUCH_SENSE
-Wire Wire Line
-	6900 2350 7250 2350
 $Comp
 L power:GND #PWR0109
 U 1 1 5FB4224B
-P 6900 2450
-F 0 "#PWR0109" H 6900 2200 50  0001 C CNN
-F 1 "GND" H 6905 2277 50  0000 C CNN
-F 2 "" H 6900 2450 50  0001 C CNN
-F 3 "" H 6900 2450 50  0001 C CNN
-	1    6900 2450
-	1    0    0    -1  
+P 8650 3550
+F 0 "#PWR0109" H 8650 3300 50  0001 C CNN
+F 1 "GND" V 8655 3422 50  0000 R CNN
+F 2 "" H 8650 3550 50  0001 C CNN
+F 3 "" H 8650 3550 50  0001 C CNN
+	1    8650 3550
+	0    -1   -1   0   
 $EndComp
 Text Label 8250 2200 0    50   ~ 0
 POWER_EN
-$Comp
-L Jumper:SolderJumper_2_Bridged JP1
-U 1 1 5FB43797
-P 8350 1900
-F 0 "JP1" V 8350 1968 50  0000 L CNN
-F 1 "SolderJ" V 8395 1968 50  0001 L CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm" H 8350 1900 50  0001 C CNN
-F 3 "~" H 8350 1900 50  0001 C CNN
-	1    8350 1900
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	8150 2400 8350 2400
 Wire Wire Line
-	8350 2400 8350 2050
-$Comp
-L Jumper:SolderJumper_2_Bridged JP2
-U 1 1 5FB45C58
-P 8600 1900
-F 0 "JP2" V 8600 1968 50  0000 L CNN
-F 1 "SolderJ" V 8645 1968 50  0001 L CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm" H 8600 1900 50  0001 C CNN
-F 3 "~" H 8600 1900 50  0001 C CNN
-	1    8600 1900
-	0    1    1    0   
-$EndComp
-Wire Wire Line
 	8150 2500 8600 2500
-Wire Wire Line
-	8600 2500 8600 2050
-Wire Wire Line
-	8350 1750 8350 1650
 Wire Wire Line
 	8350 1650 7750 1650
 Wire Wire Line
 	7750 1650 7750 1900
-Wire Wire Line
-	8600 1750 8600 1650
 Wire Wire Line
 	8600 1650 8350 1650
 Connection ~ 8350 1650
@@ -360,21 +326,6 @@ Wire Wire Line
 	8150 2200 8850 2200
 Connection ~ 8850 2200
 $Comp
-L Connector_Generic:Conn_01x02 J5
-U 1 1 5FB402C1
-P 10250 1650
-F 0 "J5" H 10200 1950 50  0000 L CNN
-F 1 "Conn_01x02" H 10200 1850 50  0000 L CNN
-F 2 "Connector_PinHeader_1.27mm:PinHeader_1x02_P1.27mm_Vertical" H 10250 1650 50  0001 C CNN
-F 3 "~" H 10250 1650 50  0001 C CNN
-	1    10250 1650
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	10050 1650 9500 1650
-Text Label 9600 1650 0    50   ~ 0
-POWER_OUT
-$Comp
 L Connector_Generic:Conn_01x02 J4
 U 1 1 5FB077D2
 P 8850 1000
@@ -391,7 +342,6 @@ Wire Wire Line
 	8950 1300 9500 1300
 Wire Wire Line
 	9500 1300 9500 1650
-Connection ~ 9500 1650
 Wire Wire Line
 	9500 1650 9400 1650
 $Comp
@@ -415,17 +365,6 @@ Wire Wire Line
 Connection ~ 4400 2250
 Wire Wire Line
 	8850 1200 8850 1650
-$Comp
-L power:GND #PWR0112
-U 1 1 5FBA03FD
-P 10050 1750
-F 0 "#PWR0112" H 10050 1500 50  0001 C CNN
-F 1 "GND" H 10055 1577 50  0000 C CNN
-F 2 "" H 10050 1750 50  0001 C CNN
-F 3 "" H 10050 1750 50  0001 C CNN
-	1    10050 1750
-	1    0    0    -1  
-$EndComp
 Text Notes 9950 3000 0    50   ~ 0
 Test LED
 Text Label 10400 2550 2    50   ~ 0
@@ -476,7 +415,6 @@ F 3 "~" H 7250 2600 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	7250 2450 7250 2350
-Connection ~ 7250 2350
 Wire Wire Line
 	7250 2350 7550 2350
 Wire Wire Line
@@ -526,4 +464,25 @@ F 3 "~" H 3450 1750 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 Connection ~ 3250 1750
+Text Label 8650 3450 0    50   ~ 0
+POWER_OUT
+Text Label 8650 3250 0    50   ~ 0
+TOUCH_SENSE
+$Comp
+L power:GND #PWR0101
+U 1 1 5FC54174
+P 8650 3350
+F 0 "#PWR0101" H 8650 3100 50  0001 C CNN
+F 1 "GND" V 8655 3222 50  0000 R CNN
+F 2 "" H 8650 3350 50  0001 C CNN
+F 3 "" H 8650 3350 50  0001 C CNN
+	1    8650 3350
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	8350 1650 8350 2400
+Wire Wire Line
+	8600 1650 8600 2500
+Text Label 9500 1650 0    50   ~ 0
+POWER_OUT
 $EndSCHEMATC

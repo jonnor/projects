@@ -27,10 +27,27 @@ Power board for wearable or other battery powered electronics.
 - Fits LIR16xx,LIR20xx and LIR24xx directly.
 - Board fits within 20 mm diameter, 2 mm height
 
+## Board connector
+
+Finish base board
+- Make notches for battery pins
+- Add throughhole connectors for outputs
+- Try to find a 1.0mm pitch connector
+Alt, is there some 1.27mm or 1.0mm flat cable
+- Finish routing
+
+Top PCB flexible
+- For 3030 LED
+Calculate length needed
+4/5 pin connetor pitch.
+- Use FPC connector also this side?
+Then need to get some standard cable
+
+
 ## TODO
 
-- Order PCBs
-- Order PCBA compnents
+- Order base PCBs
+- Order PCBA components
 - Design and print a test stand
 
 After receiving parts
@@ -61,6 +78,8 @@ LIR2032
 LIR2450
 Rainpro @ Aliexpress
 
+FPC connector
+https://www.digikey.com/en/products/detail/te-connectivity-amp-connectors/1734839-5/1860461
 
 
 # Watch
