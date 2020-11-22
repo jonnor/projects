@@ -29,20 +29,9 @@ Power board for wearable or other battery powered electronics.
 
 ## Board connector
 
-Finish base board
-- Make notches for battery pins
-- Add throughhole connectors for outputs
-- Try to find a 1.0mm pitch connector
-Alt, is there some 1.27mm or 1.0mm flat cable
-- Finish routing
-
 Top PCB flexible
 - For 3030 LED
-Calculate length needed
-4/5 pin connetor pitch.
-- Use FPC connector also this side?
-Then need to get some standard cable
-
+- 4 pin connector 1.0mm pitch
 
 ## TODO
 
