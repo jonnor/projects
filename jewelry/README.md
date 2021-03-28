@@ -29,18 +29,20 @@ Power board for wearable or other battery powered electronics.
 
 ## Board connector
 
-Top PCB flexible
-- For 3030 LED
+Top PCB
+
+- 3030 LED on top
 - 4 pin connector 1.0mm pitch
+- Touch plate on the bottom.
+Circular like on TPP223 devboards?
+- Keep below 10mm diameter?
+May want a  straight side 5mm for the connector
 
 ## TODO
 
-- Order base PCBs
-- Order PCBA components
-- Design and print a test stand
-
 After receiving parts
 
+- Design and print a test stand
 - Design and print a test holder
 - Test the PCBs
 
@@ -52,6 +54,33 @@ Connections power,GND,touch
 Add rotation lock/keying in bottom versus sides
 - Attempt to print including light-holes
 
+## Notes
+On two different magnetic USB cables, of same format. 4 pins
+5V at tip, GND at base towards cable. Same.
+However the magnets were oriented the other direction. South/North
+
+## 2 pin inline
+
+2 pin magnetic pogo pins
+Many different sizes. Pin distances from 2 to 4mm
+14 mm total length
+https://www.aliexpress.com/item/4001134405952.html
+https://www.aliexpress.com/item/33009498882.html
+https://www.cletk.com/connector/high-class-2-pin-magnetic-charging-cable-for-smart-watch
+https://www.aliexpress.com/item/4001065386444.html
+https://www.aliexpress.com/item/4000209947392.html
+https://www.aliexpress.com/item/4001149140826.html
+https://www.aliexpress.com/item/1005002013444317.html
+
+## Rotary magnetic
+
+About 7.5 to 8.5 mm diameter
+
+https://www.aliexpress.com/item/1005002177757313.html
+https://www.aliexpress.com/item/4001135270257.html
+https://www.aliexpress.com/item/4000109101082.html
+https://www.aliexpress.com/item/4000109004581.html
+
 ## Parts 
 
 Diode Shottky SOD323
@@ -60,15 +89,37 @@ https://www.digikey.com/en/products/filter/diodes-rectifiers-single/280?s=N4IgjC
 PMOS SOT-223
 https://www.digikey.com/en/products/filter/transistors-fets-mosfets-single/278?s=N4IgjCBcoGwAwyqAxlAZgQwDYGcCmANCAPZQDaIAzABwCsYclIAukQA4AuUIAyhwE4BLAHYBzEAF8iMMACYkIVJEy5CJcuBi0YsuCCKzDYGAE59IWTQAsc87NoB2KzCYHqT2lfOmwn7ybAHRGkTWV9zahsrWgjHLXMGOGiHBLgk2mpUpOp5IkSraky8uAyTM2LaUIg8hhgHGJrPMISrBDhq8BtaSoTHOAdXcD66BJNKJJSDNOodO0ofYIsHeuMWdi5IXgERcSlwWQCFJRV8IlJIClbaSiDzK5vJkFb2kwankqt6u4-ltZBObh8IRiSREAC08mgiigAgArmpzhQ3mZWP8NiBJHtEFDBAATbhghgdAGbcwARw4AE9uAxzFS2HhuBgcKgJBIgA
 
-1.27 mm headers
 
 LIR1620 / LIR1632
 LIR2032
 LIR2450
 Rainpro @ Aliexpress
 
+LED driver. Linear regulator, low-dropout
+
+BCR430U
+
+## JST SUR 0.8 mm pitch connector
+
+SM04B-SRSS-TB(LF)(SN) 
+https://www.digikey.no/product-detail/no/jst-sales-america-inc/SM04B-SRSS-TB-LF-SN/455-1804-6-ND/1963508
+
+There are now SUR connectors from JST also.
+They have 0.8 mm pitch, and 1 mm height
+
+https://www.digikey.com/en/products/detail/jst-sales-america-inc/SM04B-SURS-TF-LF-SN/7230518
+https://www.digikey.com/en/products/detail/jst-sales-america-inc/A04SUR04SUR32W102A/9947438
+
+https://www.aliexpress.com/item/32835280612.html?spm=a2g0o.cart.0.0.44853c0032a3Bk&mp=1
+https://www.aliexpress.com/item/32834920580.html?spm=a2g0o.cart.0.0.44853c0032a3Bk&mp=1
+https://www.aliexpress.com/item/4001089049756.html?spm=a2g0o.cart.0.0.44853c0032a3Bk&mp=1
+https://www.aliexpress.com/item/4001089049756.html?spm=a2g0o.cart.0.0.44853c0032a3Bk&mp=1
+
 FPC connector
 https://www.digikey.com/en/products/detail/te-connectivity-amp-connectors/1734839-5/1860461
+
+
+BCR430U
 
 
 # Watch
