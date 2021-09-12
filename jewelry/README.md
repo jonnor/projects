@@ -27,16 +27,32 @@ Power board for wearable or other battery powered electronics.
 - Fits LIR16xx,LIR20xx and LIR24xx directly.
 - Board fits within 20 mm diameter, 2 mm height
 
-## Board connector
+## Top PCB
 
-Top PCB
+Flexible PCB.
+Should make a couple of versions for different designs
+Since minimum cost is 100/135 USD
+
+Projected. 3030 with touch on back
 
 - 3030 LED on top
 - 4 pin connector 1.0mm pitch
+On both sides?
 - Touch plate on the bottom.
 Circular like on TPP223 devboards?
 - Keep below 10mm diameter?
-May want a  straight side 5mm for the connector
+May want a straight side 5mm for the connector
+
+2020 APA102
+- with touch on back
+- 4 pin connector one side
+- +2 pin connector other side
+
+0603 LED
+- LED footprint on both sides.
+- 2 pin connection, both sides
+- Space for 0603 resistor
+- Square footprint
 
 ## TODO
 
@@ -53,6 +69,22 @@ Connections power,GND,touch
 - Integrate into domed design
 Add rotation lock/keying in bottom versus sides
 - Attempt to print including light-holes
+
+## Next version
+
+Merge with "projected"
+
+TODO:
+- Test APA102 2020 / SK9822 at 3.6V power
+- Test USB and DFU functionality
+- Test touch control with STM32L433
+
+- Integrate a microcontroller.
+- Do touch control in microcontroller
+- Support USB programming over magnet connector
+- Support APA102 style LEDs. VCC,GND,clk,data
+- Switch to JST SUR 0.8mm pitch connector. 6 pin?
+- Remove test LED
 
 ## Notes
 On two different magnetic USB cables, of same format. 4 pins
