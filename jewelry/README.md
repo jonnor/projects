@@ -33,26 +33,42 @@ Flexible PCB.
 Should make a couple of versions for different designs
 Since minimum cost is 100/135 USD
 
+- Rectangular profiles for easy cutting.
+With silkscreen indicating cutlines
+Have flat back. If connector on back, use an extension that allows flipping up
+May want a straight side 5mm for the connector
+
 Projected. 3030 with touch on back
 
 - 3030 LED on top
 - 4 pin connector 1.0mm pitch
 On both sides?
 - Touch plate on the bottom.
-Circular like on TPP223 devboards?
-- Keep below 10mm diameter?
-May want a straight side 5mm for the connector
-
-2020 APA102
-- with touch on back
-- 4 pin connector one side
-- +2 pin connector other side
+Rounded rectangle
+Keep below 10mm diameter
 
 0603 LED
 - LED footprint on both sides.
 - 2 pin connection, both sides
 - Space for 0603 resistor
 - Square footprint
+
+2020 APA102 single
+- with touch on back
+- 4 pin connector
+- +2 pin connector other side
+- space for 0603 capacitor
+
+2020 APA102 array
+- ish 3 mm wide
+- 4 pin connector. On LED side?
+- space for 0603 capacitor
+- ish 30-50 mm length
+- chainable connector
+- as close as possible. Ex 3 mm spacing 
+can skip in software if not all are used
+
+Insp. https://www.pcbway.com/project/shareproject/SK9822_APA102_LED_Breakout_board_array.html
 
 ## TODO
 
@@ -66,9 +82,8 @@ Projected update
 
 - Make LED/touch PCB for top.
 Connections power,GND,touch
-- Integrate into domed design
-Add rotation lock/keying in bottom versus sides
-- Attempt to print including light-holes
+- Fix to print including light-holes
+
 
 ## Next version
 
@@ -76,6 +91,8 @@ Merge with "projected"
 
 TODO:
 - Test APA102 2020 / SK9822 at 3.6V power
+Has been reported working ok.
+https://forum.pjrc.com/threads/30020-Teensy-APA102-POV-Poi-Pixel-Poi-Build-Tutorial?p=84907&viewfull=1#post84907
 - Test USB and DFU functionality
 - Test touch control with STM32L433
 
