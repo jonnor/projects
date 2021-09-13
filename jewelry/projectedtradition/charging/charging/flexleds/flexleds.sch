@@ -60,17 +60,6 @@ Wire Wire Line
 	2200 5100 1800 5100
 Wire Wire Line
 	1800 5100 1800 4750
-$Comp
-L Device:C_Variable C2
-U 1 1 613E8AA0
-P 2900 4600
-F 0 "C2" H 3015 4646 50  0000 L CNN
-F 1 "C_Variable" H 3015 4555 50  0000 L CNN
-F 2 "" H 2900 4600 50  0001 C CNN
-F 3 "~" H 2900 4600 50  0001 C CNN
-	1    2900 4600
-	1    0    0    -1  
-$EndComp
 Text Notes 1200 3850 0    100  ~ 0
 Single 0603 LED\nwith touch plate 
 $Comp
@@ -111,11 +100,6 @@ Wire Wire Line
 	1550 4100 2900 4100
 Wire Wire Line
 	2900 4100 2900 4450
-Wire Wire Line
-	2900 4750 2900 5100
-Wire Wire Line
-	2900 5100 2200 5100
-Connection ~ 2200 5100
 Text Notes 2950 4400 0    50   ~ 0
 touch plate 
 $Comp
@@ -166,17 +150,6 @@ Wire Wire Line
 Wire Wire Line
 	4750 5100 4750 4750
 $Comp
-L Device:C_Variable C4
-U 1 1 613F37DE
-P 5850 4600
-F 0 "C4" H 5965 4646 50  0000 L CNN
-F 1 "C_Variable" H 5965 4555 50  0000 L CNN
-F 2 "" H 5850 4600 50  0001 C CNN
-F 3 "~" H 5850 4600 50  0001 C CNN
-	1    5850 4600
-	1    0    0    -1  
-$EndComp
-$Comp
 L Connector_Generic:Conn_01x04 J2
 U 1 1 613F37E8
 P 4050 4350
@@ -212,13 +185,6 @@ Wire Wire Line
 	4500 4150 4500 4100
 Wire Wire Line
 	4500 4100 5850 4100
-Wire Wire Line
-	5850 4100 5850 4450
-Wire Wire Line
-	5850 4750 5850 5100
-Wire Wire Line
-	5850 5100 5150 5100
-Connection ~ 5150 5100
 Text Notes 5900 4400 0    50   ~ 0
 touch plate 
 Text Notes 4000 3800 0    100  ~ 0
@@ -874,4 +840,28 @@ F 3 "" H 4500 5100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Connection ~ 4500 5100
+Wire Wire Line
+	5850 4100 5850 4450
+$Comp
+L Connector_Generic:Conn_01x01 J?
+U 1 1 61403F59
+P 3100 4450
+F 0 "J?" H 3180 4492 50  0000 L CNN
+F 1 "Conn_01x01" H 3180 4401 50  0000 L CNN
+F 2 "" H 3100 4450 50  0001 C CNN
+F 3 "~" H 3100 4450 50  0001 C CNN
+	1    3100 4450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J?
+U 1 1 61404518
+P 6050 4450
+F 0 "J?" H 6130 4492 50  0000 L CNN
+F 1 "Conn_01x01" H 6130 4401 50  0000 L CNN
+F 2 "" H 6050 4450 50  0001 C CNN
+F 3 "~" H 6050 4450 50  0001 C CNN
+	1    6050 4450
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
