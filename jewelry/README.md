@@ -29,63 +29,87 @@ Power board for wearable or other battery powered electronics.
 
 ## Top PCB
 
-Flexible PCB.
-Should make a couple of versions for different designs
-Since minimum cost is 100/135 USD
-
-- Rectangular profiles for easy cutting.
-With silkscreen indicating cutlines
-Have flat back. If connector on back, use an extension that allows flipping up
-May want a straight side 5mm for the connector
-
 Projected. 3030 with touch on back
 
 - 3030 LED on top
 - 4 pin connector 1.0mm pitch
-On both sides?
 - Touch plate on the bottom.
 Rounded rectangle
-Keep below 10mm diameter
+Keep below 12mm diameter?
 
-0603 LED
-- LED footprint on both sides.
-- 2 pin connection, both sides
-- Space for 0603 resistor
-- Square footprint
+## Tests
 
-2020 APA102 single
-- with touch on back
-- 4 pin connector
-- +2 pin connector other side
-- space for 0603 capacitor
+Tested charging. Seems to work as-intended.
+Tested reverse-polarity protection. Works.
 
-2020 APA102 array
-- ish 3 mm wide
+Tested attaching battery.
+The solder joints may come out on lower side of PCB.
+Can interfere with mounting. Should adapt bottom plate to accomodate.
+
+Tested attaching cable for top PCB.
+The purchased FFC just melts the backing material instantly. FAIL. Should use a Kapton-based instead.
+It was possible to remove the thick spacers, add a Kapton+HT polyester layers, and melt away the plastic, and then solder this on.
+However it remains quite tricky to do.
+A jig to help with alignment would help.
+Proper light and flux would also help.
+Longer traces and wider pitch should be considered for next revision.
+
+Need approx 45 mm FPC cable to get to top of dome.
+
+Tested having an external copper piece for touch.
+Using a resing printed dome, approx 1mm thick. Touching from outside.
+With a single wire and 47 pF, did not react.
+With alu foil of approx 10x10 mm and 47 pF, did not react.
+With alu foil of approx 10x0 mm and C2 removed, reacts easily.
+Need no or a small value for C2. Test 1 pF?
+
+
+## TODO
+
+Projected PCB rev 1 testing
+
+- Add flat part to model dome, for LED PCB
+- Assemble a complete piece
+- Make stand functional
+Thickness and tolerances on connector needs fixing
+Orientation of cable outlet should be rotated 90degrees
+- Test connector and charging, reliability/ease-of-use
+- Try plugging the chargint through-hole.
+See if one can use just SMT pads. Frees up a lot of board space for components.
+
+
+
+Projected PCB rev 2 send
+
+
+- Make LED/touch PCB for top.
+Connections power,GND,touch
+Include into main PCB project?
+- Probably, use SMT pads for charging
+- Maybe switch to 1.27mm solder tab FPC
+
+
+Projected PCB rev 2 testing
+
+- Make jig for holding PCBs and FPC cable for soldering
+- Complete assembly. 3 units
+
+
+
+## Next version
+
+
+APA102 2020 strip
+- ish 4 mm wide
 - 4 pin connector. On LED side?
 - space for 0603 capacitor
-- ish 30-50 mm length
-- chainable connector
+- at least 60mm length, for Atlantis earcuffs
+- connector for chaining
+- exposed pads between LEDs for ability to cut-to-length
 - as close as possible. Ex 3 mm spacing 
 can skip in software if not all are used
 
 Insp. https://www.pcbway.com/project/shareproject/SK9822_APA102_LED_Breakout_board_array.html
-
-## TODO
-
-After receiving parts
-
-- Design and print a test stand
-- Design and print a test holder
-- Test the PCBs
-
-Projected update
-
-- Make LED/touch PCB for top.
-Connections power,GND,touch
-- Fix to print including light-holes
-
-
-## Next version
 
 Merge with "projected"
 
@@ -93,15 +117,12 @@ TODO:
 - Test APA102 2020 / SK9822 at 3.6V power
 Has been reported working ok.
 https://forum.pjrc.com/threads/30020-Teensy-APA102-POV-Poi-Pixel-Poi-Build-Tutorial?p=84907&viewfull=1#post84907
-- Test USB and DFU functionality
-- Test touch control with STM32L433
-
-- Integrate a microcontroller.
+- Integrate a microcontroller. ATtiny1616 ?
 - Do touch control in microcontroller
-- Support USB programming over magnet connector
-- Support APA102 style LEDs. VCC,GND,clk,data
-- Switch to JST SUR 0.8mm pitch connector. 6 pin?
-- Remove test LED
+- Support USB reconfiguration/programming over magnet connector
+- Support APA102 style LEDs.
+Put 1 on PCB, then to connector
+VCC,GND,clk,data
 
 ## Notes
 On two different magnetic USB cables, of same format. 4 pins
