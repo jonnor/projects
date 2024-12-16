@@ -1,0 +1,10 @@
+*.kicad_*.lck
+*.bak
+*-backups/
+*auto_saved_files*
+*autosave*
+
+*.FCBak
+
+.ipynb_checkpoints/
+
