@@ -52,7 +52,7 @@ Can use dml10 design as starting point. Needs around 20x10mm board real estate
 Possibly using SMD inductor instead of through-hole.
 Reduces total height of pickup, which may let the neodym magnets can get into more effective range?
 And assembly is easier/cheaper.
-Candidate. Murata 22R686MC. 7.8 mm diameter. 7.5mm height.
+Candidate. Murata 22R686MC. 7.8 mm diameter. 7.5mm height. Up to 68 mH.
 
 
 ## References
@@ -75,3 +75,36 @@ The DC resistance is said to be 4 ohms.
 Elliot on Sound
 https://sound-au.com/articles/audio-xfmrs.htm
 Discusses using a series capacitance to boost/extend bass response below 300 Hz
+
+
+EMG81 Pickup Analysis
+https://www.electrosmash.com/emg81
+
+Differential amplifier. Single stage.
+Differential gain of 5.5x
+Coil is 5500-6000 turn. Which is still probably in the 1 Henry range.
+Deliberately unbalances the differential inputs, to shift the resonant peaks from coils.
+
+Bajaman make an DIY active preamp, with some modifications on the EMG-81 circuit.
+https://www.freestompboxes.org/viewtopic.php?t=880&hilit=emg&start=20
+
+
+
+Alegree: What's inside an active humbucker and how does it work?
+https://www.youtube.com/watch?v=-GizpvRJ9uw
+Explains the tone shaping done in classical active pickups.
+
+
+LM4250 replacement.
+https://www.talkbass.com/threads/g-l-mm-pre-ampers-fyi-replacement-lm4250s.1433436/#post-23991914
+With 1.5MΩ on pin 8, the op amp has a GBW of 180KHz, slew rate of 0.1V/µs, and quiescent current of about 30µA
+
+Only quite special thing here is the adjustable Iset. \
+And that it is configured for very low power.
+
+TL062 is 250 uA.
+OPA2170 is a modern alternative?
+TLV9102 also. TLV2170. 
+GBW 1 Mhz might get limiting if needing a lot of gain though.
+
+https://www.analog.com/en/resources/analog-dialogue/articles/techniques-to-avoid-instability-capacitive-loading.html
