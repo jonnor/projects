@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "digishaper152")(type "KiCad")(uri "${KIPRJMOD}/digishaper152.kicad_sym")(options "")(descr ""))
+)
