@@ -15,9 +15,9 @@ Using TPU as the outer layer.
 
 Version 1
 
-- Inner. Bit thinner wall for antenna connector. And or add nut locking
-- Inner. Add space for battery connector
-- Design outer layer
+- Inner. Make bottom section be full height. 24 mm. To be more waterproof at bottom
+- Inner. Chamfer the bottom, make sure it sits all the way down in outer
+- Inner. Make sure there is space for battery connector
 - Test throwing
 
 Version 2
