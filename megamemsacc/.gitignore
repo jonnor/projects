@@ -1,0 +1,4 @@
+zephyr/
+modules/
+.west
+*.FCBak
