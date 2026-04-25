@@ -8,11 +8,11 @@ manifest:
   projects:
     - name: zephyr
       remote: zephyrproject
-      revision: v4.4.0
+      revision: v4.2.0
       import:
         name-allowlist:
-          - cmsis
-          - hal_stm32
+          - cmsis_6       # ← required for Cortex-M on Zephyr 4.2+
+          - hal_nordic
 
   self:
-    path: firmware          # ← name of your project directory
+    path: firmware

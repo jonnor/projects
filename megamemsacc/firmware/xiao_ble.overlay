@@ -1,0 +1,48 @@
+/*
+ * xiao_ble.overlay — Comb accelerometer readout
+ *
+ * Pin assignments (XIAO nRF52840):
+ *   D0 = P0.02 → excitation +  (PWM0 CH0, normal polarity)
+ *   D1 = P0.03 → excitation −  (PWM0 CH1, inverted polarity)
+ *   A2 = P0.04 ← proof mass TIA output (ADC AIN2)
+ *   D3 = P0.28 → debug strobe (GPIO output)
+ *
+ * Both PWM channels share pwm0 so they are hardware phase-locked.
+ * PWM_POLARITY_INVERTED on ch1 gives exact 180° antiphase excitation.
+ */
+
+/ {
+};
+
+/* PWM0: assign channels to pins.
+ * Both "default" and "sleep" pinctrl states required by board DTS. */
+&pwm0 {
+    status = "okay";
+    pinctrl-0 = <&pwm0_default>;
+    pinctrl-1 = <&pwm0_sleep>;
+    pinctrl-names = "default", "sleep";
+};
+
+&pinctrl {
+    pwm0_default: pwm0_default {
+        group1 {
+            psels = <NRF_PSEL(PWM_OUT0, 0, 2)>,  /* CH0 → P0.02 = D0 */
+                    <NRF_PSEL(PWM_OUT1, 0, 3)>;   /* CH1 → P0.03 = D1 */
+            nordic,drive-mode = <NRF_DRIVE_H0H1>;
+        };
+    };
+
+    pwm0_sleep: pwm0_sleep {
+        group1 {
+            psels = <NRF_PSEL(PWM_OUT0, 0, 2)>,
+                    <NRF_PSEL(PWM_OUT1, 0, 3)>;
+            low-power-enable;
+        };
+    };
+};
+
+/* ADC: enable SAADC */
+&adc {
+    status = "okay";
+    #io-channel-cells = <1>;
+};
