@@ -5,14 +5,14 @@
  * Signal chain:
  *   PWM0 CH0 (D0, P0.02) → excitation +   10 kHz, 50% duty
  *   PWM0 CH1 (D1, P0.03) → excitation −   10 kHz, inverted (PWM_POLARITY_INVERTED)
- *   ADC SAADC AIN2 (A2, P0.04) ← proof mass TIA output (biased to Vdd/2 = 1.65V)
- *   D3 (P0.28) → debug strobe, pulses HIGH around each ADC sample
+ *   ADC SAADC AIN4 (A2, P0.28) ← proof mass TIA output (biased to Vdd/2 = 1.65V)
+ *   D9 (P0.29) → debug strobe, pulses HIGH around each ADC sample
  *
  * Two PWM channels on the same PWM peripheral share the same counter,
  * so CH0 and CH1 are inherently phase-locked — equivalent to complementary
  * outputs on STM32, achieved here via PWM_POLARITY_INVERTED on CH1.
  *
- * Sampling: k_timer fires at 40 kHz (OVERSAMPLE=4 × 10 kHz excitation).
+ * Sampling: k_timer fires at 40 kHz (OVERSAMPLE=4 × 10 kHz excitation)
  * Each ISR callback demodulates and decimates to 200 Hz via accumulation.
  * Main loop runs IIR low-pass at 200 Hz, prints at 10 Hz.
  *
@@ -25,7 +25,7 @@
  *   D0 (P0.02) ──[100Ω]──> comb fingers set A  (excitation +)
  *   D1 (P0.03) ──[100Ω]──> comb fingers set B  (excitation −)
  *   A2 (P0.04) <── TIA output (proof mass)
- *   D3 (P0.28)  ──> scope CH2 (ADC strobe)
+ *   D9 (P0.29)  ──> scope CH2 (ADC strobe)
  *   Scope CH1   ──> D0 (excitation +)
  */
 
@@ -34,6 +34,7 @@
 #include <zephyr/drivers/pwm.h>
 #include <zephyr/drivers/adc.h>
 #include <zephyr/drivers/gpio.h>
+#include <zephyr/drivers/counter.h>
 #include <zephyr/logging/log.h>
 #include <zephyr/usb/usb_device.h>
 #include <zephyr/drivers/uart.h>
@@ -41,7 +42,7 @@
 LOG_MODULE_REGISTER(comb_readout, LOG_LEVEL_INF);
 
 /* ── Parameters ──────────────────────────────────────────────────────────────*/
-#define EXCITATION_HZ   10000U
+#define EXCITATION_HZ   2000U
 #define OVERSAMPLE      4U
 #define SAMPLE_HZ       (EXCITATION_HZ * OVERSAMPLE)   /* 40 kHz            */
 #define OUTPUT_HZ       200U
@@ -64,9 +65,9 @@ LOG_MODULE_REGISTER(comb_readout, LOG_LEVEL_INF);
 #define PWM_CH_POS      0U                      /* CH0 → P0.02 = D0 */
 #define PWM_CH_NEG      1U                      /* CH1 → P0.03 = D1 */
 
-/* ADC: SAADC channel 2 on AIN2 (P0.04 = A2 on XIAO) */
+/* ADC: SAADC channel 4 on AIN4 (P0.28 = A2 on XIAO) */
 #define ADC_NODE        DT_NODELABEL(adc)
-#define ADC_CHANNEL     2               /* AIN2 = P0.04 = XIAO A2           */
+#define ADC_CHANNEL     4               /* AIN4 = P0.28 = XIAO A2          */
 #define ADC_RESOLUTION  12
 
 static const struct device *adc_dev;
@@ -76,7 +77,7 @@ static const struct adc_channel_cfg adc_ch_cfg = {
     .reference        = ADC_REF_INTERNAL,
     .acquisition_time = ADC_ACQ_TIME(ADC_ACQ_TIME_MICROSECONDS, 10),
     .channel_id       = ADC_CHANNEL,
-    .input_positive   = SAADC_CH_PSELP_PSELP_AnalogInput2,
+    .input_positive   = SAADC_CH_PSELP_PSELP_AnalogInput4,
 };
 
 static int16_t adc_buf;
@@ -88,13 +89,13 @@ static struct adc_sequence adc_seq = {
 };
 
 /* ── Debug strobe pin ────────────────────────────────────────────────────────
- * D3 = P0.28 on XIAO nRF52840. Pulses HIGH for the duration of adc_read().
+ * D9 = P0.29 on XIAO nRF52840. Pulses HIGH for the duration of adc_read().
  * Access gpio0 directly — it is always present on nRF52840 and does not
- * need a custom DTS node. Pin 28 = P0.28.
+ * Pin 29 = P0.29.
  * Probe on scope CH2 alongside CH1 (D0 excitation) to verify phase alignment.
  * Expected: 4 evenly spaced pulses per 10 kHz excitation cycle, fixed offset. */
 #define DEBUG_GPIO_NODE  DT_NODELABEL(gpio0)
-#define DEBUG_PIN        28U
+#define DEBUG_PIN        29U
 
 /* ── Message queue: ISR → main loop ─────────────────────────────────────────
  * Decimated demodulated samples at 200 Hz.
@@ -105,9 +106,11 @@ K_MSGQ_DEFINE(raw_msgq, sizeof(int32_t), 16, 4);
 static const struct device *debug_gpio_dev;
 static uint8_t phase = 0;
 
-/* ── 40 kHz sampling timer ───────────────────────────────────────────────────
+/* ── 40 kHz sampling — k_timer ───────────────────────────────────────────────
  *
- * k_timer fires every 25 µs. This is the sampling and demodulation engine.
+ * k_timer callback runs in system work queue. At 40 kHz this is frequent
+ * but the USB work queue priority is raised in prj.conf to ensure USB TX
+ * is not starved (CONFIG_USB_WORKQUEUE_PRIORITY).
  *
  * Demodulation principle (software lock-in amplifier):
  *
@@ -122,59 +125,28 @@ static uint8_t phase = 0;
  *   phase:         0  1  2  3  0  1  2  3
  *   ref (×±1):    +1 +1 -1 -1 +1 +1 -1 -1      locked to excitation
  *
- *   At rest (balanced):
- *     Proof mass sees equal charge from both comb sets → zero net current.
- *     TIA output = Vbias = 1.65V → ADC = 2048 → adc - ADC_MID = 0.
- *     Demodulated sum → 0.
- *
- *   Displaced (e.g. Cx+ > Cx−):
- *     More charge on positive half-cycle → TIA swings positive.
- *     Multiplying by ref makes both half-cycles contribute same sign.
- *     Accumulated sum → positive DC proportional to displacement.
- *
- *   Noise rejection:
- *     Any signal not phase-coherent with the 10 kHz reference averages
- *     to zero over the accumulation window. Mechanical vibration, 1/f
- *     noise, and EMI are all suppressed by this mechanism.
- *
- *   Decimation:
- *     DECIMATE_BY = 200 samples are accumulated then averaged, posting
- *     one value at 200 Hz. The averaging acts as a boxcar pre-filter
- *     before the IIR LPF in the main loop.
+ *   At rest (balanced):  demodulated sum → 0
+ *   Displaced (Cx+ > Cx−): sum → positive DC proportional to displacement
+ *   Noise rejection: incoherent signals average to zero over DECIMATE_BY window
  */
 static void sampling_timer_cb(struct k_timer *timer)
 {
-    /* Strobe debug pin HIGH: scope can now see exact ADC sample timing */
     gpio_pin_set(debug_gpio_dev, DEBUG_PIN, 1);
-
-    /* Step 1: sample proof mass TIA output, remove DC bias */
     adc_read(adc_dev, &adc_seq);
+    gpio_pin_set(debug_gpio_dev, DEBUG_PIN, 0);
     int32_t adc = (int32_t)adc_buf - ADC_MID;
 
-    gpio_pin_set(debug_gpio_dev, DEBUG_PIN, 0);
-
-    /* Step 2: multiply by reference square wave (demodulate).
-     * phase 0,1 → excitation D0 is HIGH → reference = +1
-     * phase 2,3 → excitation D0 is LOW  → reference = −1
-     * The k_timer and PWM share the same Zephyr clock but are started
-     * sequentially, so there is a small fixed phase offset. This is
-     * constant across all samples and only affects overall scale, not
-     * linearity. Adjust the OVERSAMPLE/2 boundary if polarity is inverted. */
     int8_t ref = (phase < (OVERSAMPLE / 2U)) ? 1 : -1;
     phase = (phase + 1U) % OVERSAMPLE;
 
-    /* Step 3: accumulate demodulated samples */
     static int32_t  accum = 0;
     static uint32_t count = 0;
 
     accum += adc * ref;
-
-    /* Step 4: decimate — post boxcar average at OUTPUT_HZ (200 Hz) */
     if (++count >= DECIMATE_BY) {
         int32_t avg = accum / (int32_t)DECIMATE_BY;
         accum = 0;
         count = 0;
-        /* K_NO_WAIT: never block timer callback; drop if main loop is behind */
         k_msgq_put(&raw_msgq, &avg, K_NO_WAIT);
     }
 }
@@ -189,7 +161,7 @@ int main(void)
      * does not start automatically — without this the host sees the device
      * but enumeration fails (error -110 / timeout on config read).      */
     if (usb_enable(NULL) != 0) {
-        LOG_ERR("USB enable failed");
+        LOG_ERR("USB enable fail");
         //return -ENODEV;
     }
 
@@ -252,8 +224,8 @@ int main(void)
 
     /* ── Start 40 kHz sampling timer ────────────────────────────────────────*/
     k_timer_start(&sampling_timer,
-                  K_USEC(1000000U / SAMPLE_HZ),    /* first fire: 25 µs    */
-                  K_USEC(1000000U / SAMPLE_HZ));    /* period:     25 µs    */
+                  K_USEC(1000000U / SAMPLE_HZ),
+                  K_USEC(1000000U / SAMPLE_HZ));
 
     LOG_INF("Comb readout started — 10 kHz excitation, 200 Hz output, 32 Hz LPF");
 
@@ -280,7 +252,7 @@ int main(void)
         /* Print at 10 Hz (every 20th sample at 200 Hz) */
         if (++print_count >= 20U) {
             print_count = 0;
-            printk("filtered: %.2f\n", (double)iir_state);
+            LOG_INF("filtered: %.2f  raw: %d", (double)iir_state, (int)raw);
         }
     }
 

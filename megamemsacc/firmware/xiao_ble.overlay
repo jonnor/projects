@@ -1,18 +1,13 @@
 /*
  * xiao_ble.overlay — Comb accelerometer readout
+ * USB CDC ACM console is provided by the cdc-acm-console snippet (-S flag).
  *
  * Pin assignments (XIAO nRF52840):
  *   D0 = P0.02 → excitation +  (PWM0 CH0, normal polarity)
  *   D1 = P0.03 → excitation −  (PWM0 CH1, inverted polarity)
- *   A2 = P0.04 ← proof mass TIA output (ADC AIN2)
- *   D3 = P0.28 → debug strobe (GPIO output)
- *
- * Both PWM channels share pwm0 so they are hardware phase-locked.
- * PWM_POLARITY_INVERTED on ch1 gives exact 180° antiphase excitation.
+ *   A2 = P0.28 = AIN4 ← proof mass TIA output (ADC)
+ *   D9 = P0.29        → debug strobe
  */
-
-/ {
-};
 
 /* PWM0: assign channels to pins.
  * Both "default" and "sleep" pinctrl states required by board DTS. */
