@@ -35,6 +35,8 @@
 #include <zephyr/drivers/adc.h>
 #include <zephyr/drivers/gpio.h>
 #include <zephyr/logging/log.h>
+#include <zephyr/usb/usb_device.h>
+#include <zephyr/drivers/uart.h>
 
 LOG_MODULE_REGISTER(comb_readout, LOG_LEVEL_INF);
 
@@ -182,6 +184,25 @@ K_TIMER_DEFINE(sampling_timer, sampling_timer_cb, NULL);
 /* ── Main ────────────────────────────────────────────────────────────────────*/
 int main(void)
 {
+    /* ── USB enable ──────────────────────────────────────────────────────────
+     * Must be called before any printk() output. The legacy USB device stack
+     * does not start automatically — without this the host sees the device
+     * but enumeration fails (error -110 / timeout on config read).      */
+    if (usb_enable(NULL) != 0) {
+        LOG_ERR("USB enable failed");
+        //return -ENODEV;
+    }
+
+    /* Wait up to 5 seconds for DTR (host terminal opened the port).
+     * After timeout, proceed anyway so the board works unattended. */
+    const struct device *console = DEVICE_DT_GET(DT_CHOSEN(zephyr_console));
+    uint32_t dtr = 0;
+    uint32_t dtr_timeout = 500;   /* 500 × 10ms = 5 seconds */
+    while (!dtr && dtr_timeout--) {
+        uart_line_ctrl_get(console, UART_LINE_CTRL_DTR, &dtr);
+        k_msleep(10);
+    }
+
     int ret;
 
     /* ── ADC init ────────────────────────────────────────────────────────────*/
@@ -242,8 +263,13 @@ int main(void)
 
     while (1) {
         int32_t raw;
-        /* Block until ISR posts a decimated sample (~every 5 ms at 200 Hz) */
-        k_msgq_get(&raw_msgq, &raw, K_FOREVER);
+        /* Wait up to 2 seconds for a decimated sample from the ISR.
+         * Timeout indicates the sampling timer or ADC is not running —
+         * likely a timer peripheral conflict or failed device init.   */
+        if (k_msgq_get(&raw_msgq, &raw, K_SECONDS(2)) != 0) {
+            LOG_ERR("No samples received — check PWM/ADC/timer init");
+            continue;
+        }
 
         /* Single-pole IIR low-pass: y[n] = α·x[n] + (1−α)·y[n−1]
          * α = 0.632 → 32 Hz cutoff at 200 Hz sample rate.
