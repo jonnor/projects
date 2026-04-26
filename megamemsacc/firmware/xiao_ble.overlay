@@ -1,20 +1,19 @@
 /*
  * xiao_ble.overlay — Comb accelerometer readout
- * Console: hardware UART on D6 (TX=P1.11) / D7 (RX=P1.12)
- *          Connect USB-UART adapter, use: screen /dev/ttyUSB0 115200
+ * ADC handled directly via nrfx_saadc — no Zephyr ADC driver node needed.
  *
- * Pin assignments (XIAO nRF52840):
- *   D0 = P0.02 → excitation +  (PWM0 CH0, normal polarity)
- *   D1 = P0.03 → excitation −  (PWM0 CH1, inverted polarity)
- *   A2 = P0.28 = AIN4 ← proof mass TIA output (ADC)
+ * Pin assignments:
+ *   D0 = P0.02 → excitation +  (PWM0 CH0)
+ *   D1 = P0.03 → excitation −  (PWM0 CH1, inverted)
+ *   A2 = P0.28 = AIN4 ← proof mass TIA (nrfx_saadc, configured in code)
  *   D9 = P0.29 → debug strobe
- *   D6 = P1.11 → UART TX (to USB-UART adapter RX)
- *   D7 = P1.12 → UART RX (to USB-UART adapter TX)
+ *   D6 = P1.11 → UART TX
+ *   D7 = P1.12 → UART RX
  */
 
 / {
     chosen {
-        zephyr,console = &uart0;
+        zephyr,console    = &uart0;
         zephyr,shell-uart = &uart0;
     };
 };
@@ -30,8 +29,8 @@
 &pinctrl {
     uart0_default: uart0_default {
         group1 {
-            psels = <NRF_PSEL(UART_TX, 1, 11)>,   /* D6 = P1.11 */
-                    <NRF_PSEL(UART_RX, 1, 12)>;    /* D7 = P1.12 */
+            psels = <NRF_PSEL(UART_TX, 1, 11)>,
+                    <NRF_PSEL(UART_RX, 1, 12)>;
         };
     };
     uart0_sleep: uart0_sleep {
@@ -41,21 +40,11 @@
             low-power-enable;
         };
     };
-};
 
-/* PWM0: excitation channels */
-&pwm0 {
-    status = "okay";
-    pinctrl-0 = <&pwm0_default>;
-    pinctrl-1 = <&pwm0_sleep>;
-    pinctrl-names = "default", "sleep";
-};
-
-&pinctrl {
     pwm0_default: pwm0_default {
         group1 {
-            psels = <NRF_PSEL(PWM_OUT0, 0, 2)>,   /* CH0 → P0.02 = D0 */
-                    <NRF_PSEL(PWM_OUT1, 0, 3)>;    /* CH1 → P0.03 = D1 */
+            psels = <NRF_PSEL(PWM_OUT0, 0, 2)>,
+                    <NRF_PSEL(PWM_OUT1, 0, 3)>;
             nordic,drive-mode = <NRF_DRIVE_H0H1>;
         };
     };
@@ -68,8 +57,9 @@
     };
 };
 
-/* ADC: enable SAADC */
-&adc {
+&pwm0 {
     status = "okay";
-    #io-channel-cells = <1>;
+    pinctrl-0 = <&pwm0_default>;
+    pinctrl-1 = <&pwm0_sleep>;
+    pinctrl-names = "default", "sleep";
 };
