@@ -4,6 +4,7 @@
 - Check and fix midpoint subtraction for ADC
 - Verify that the design of fingers is actually correct
 - Do some calculations on the expected capacitive change from the finger structure
+- Try a dedicated capacitive sensing chip. Like MS3110, AD7746, FDC1004
 - Try improving the opamp. Charge amplifier, or transimpedance amplifier? Might need amplification
 - Create a small jig to allow rotating the setup without touching it
 - Increase the excitaiton/sample frequency.
@@ -11,6 +12,8 @@
 - Try increasing capacitance of the fingers. Can 3x the height?
 - Create a PCB to reduce noise from long cables
 - Try a metal version of the fingers
+
+
 
 ## Test with 3d-printed fingers
 
