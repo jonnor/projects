@@ -19,6 +19,17 @@
  *   Accumulate DECIMATE_BY samples → post average to main at OUTPUT_HZ
  *
  * Main loop: IIR low-pass filter + UART print at 10 Hz
+ *
+ * Fixes applied vs original:
+ *   1. nrfx_saadc_start() called after mode_trigger() so SAADC is running
+ *      before the first PPI-triggered TASKS_SAMPLE arrives.
+ *   2. PPI task address uses nrfx_saadc_sample_task_get() instead of a raw
+ *      &NRF_SAADC->TASKS_SAMPLE dereference (same address, but portable and
+ *      guaranteed correct by the driver).
+ *   3. BUF_REQ handler: buf_idx is toggled BEFORE calling buffer_set so DMA
+ *      always receives the idle buffer, not the one about to be processed.
+ *   4. DONE handler: reads from saadc_buf[buf_idx ^ 1] — the buffer that DMA
+ *      just finished — not the one now being filled.
  */
 
 #include <zephyr/kernel.h>
@@ -68,8 +79,10 @@ static const struct device *debug_gpio_dev;
 #define TIMER_INST_IDX   1
 static const nrfx_timer_t timer_inst = NRFX_TIMER_INSTANCE(TIMER_INST_IDX);
 
-/* Double buffering: DMA fills one buffer while ISR processes the other    */
-#define DMA_BUF_SIZE     1    /* one sample per buffer — process every sample */
+/* Double buffering: DMA fills one buffer while ISR processes the other.
+ * Must be > 1: with DMA_BUF_SIZE=1 at 40 kHz the BUF_REQ ISR fires every
+ * 25 µs — too fast for reliable buffer handoff. 8 samples = 200 µs slack. */
+#define DMA_BUF_SIZE     8
 static int16_t saadc_buf[2][DMA_BUF_SIZE];
 static uint8_t buf_idx = 0;
 
@@ -83,7 +96,7 @@ K_MSGQ_DEFINE(raw_msgq, sizeof(int32_t), 16, 4);
  *
  * Called by nrfx_saadc on two events:
  *   NRFX_SAADC_EVT_DONE    — buffer full, p_buffer contains fresh samples
- *   NRFX_SAADC_EVT_STARTED — new buffer assigned to DMA, safe to process old
+ *   NRFX_SAADC_EVT_BUF_REQ — new buffer needed; assign idle buffer to DMA
  *
  * Architecture:
  *   Excitation (D0):  ___     ___
@@ -101,30 +114,43 @@ K_MSGQ_DEFINE(raw_msgq, sizeof(int32_t), 16, 4);
  */
 static void saadc_event_handler(nrfx_saadc_evt_t const *p_event)
 {
-    if (p_event->type == NRFX_SAADC_EVT_DONE) {
-        /* Assign next buffer to DMA before processing — minimises gap */
+    switch (p_event->type) {
+
+    case NRFX_SAADC_EVT_BUF_REQ:
+        /* FIX 3: Toggle buf_idx FIRST so DMA receives the truly idle buffer.
+         * Original code set the buffer then toggled — DMA got the buffer
+         * that DONE was about to read, causing a data race.               */
         buf_idx ^= 1;
         nrfx_saadc_buffer_set(saadc_buf[buf_idx], DMA_BUF_SIZE);
+        break;
 
-        /* Process completed buffer */
-        int16_t raw_sample = ((int16_t *)p_event->data.done.p_buffer)[0];
-        int32_t adc = (int32_t)raw_sample - ADC_MID;
+    case NRFX_SAADC_EVT_DONE: {
+        /* FIX 4: Read from buf_idx ^ 1 — the buffer DMA just completed.
+         * Loop over all DMA_BUF_SIZE samples; demodulate each one.        */
+        int16_t *done_buf = saadc_buf[buf_idx ^ 1];
 
-        /* Demodulate */
-        int8_t ref = (phase < (OVERSAMPLE / 2U)) ? 1 : -1;
-        phase = (phase + 1U) % OVERSAMPLE;
-
-        /* Accumulate and decimate */
         static int32_t  accum = 0;
         static uint32_t count = 0;
 
-        accum += adc * ref;
-        if (++count >= DECIMATE_BY) {
-            int32_t avg = accum / (int32_t)DECIMATE_BY;
-            accum = 0;
-            count = 0;
-            k_msgq_put(&raw_msgq, &avg, K_NO_WAIT);
+        for (int i = 0; i < DMA_BUF_SIZE; i++) {
+            int32_t adc = (int32_t)done_buf[i] - ADC_MID;
+            int8_t  ref = (phase < (OVERSAMPLE / 2U)) ? 1 : -1;
+            phase = (phase + 1U) % OVERSAMPLE;
+
+            accum += adc * ref;
+            if (++count >= DECIMATE_BY) {
+                int32_t avg = accum / (int32_t)DECIMATE_BY;
+                accum = 0;
+                count = 0;
+                k_msgq_put(&raw_msgq, &avg, K_NO_WAIT);
+            }
         }
+        break;
+    }
+
+    default:
+        LOG_DBG("SAADC evt type=%d", p_event->type);
+        break;
     }
 }
 
@@ -139,8 +165,14 @@ static int saadc_dma_init(void)
                 nrfx_isr, nrfx_saadc_irq_handler, 0);
     irq_enable(DT_IRQN(DT_NODELABEL(adc)));
 
-    /* Init SAADC — pass interrupt priority directly */
-    nrfx_saadc_adv_config_t adv_cfg = NRFX_SAADC_DEFAULT_ADV_CONFIG;
+    /* start_on_end=true: SAADC automatically re-arms after each conversion.
+     * Combined with PPI triggering, this gives gapless continuous sampling. */
+    nrfx_saadc_adv_config_t adv_cfg = {
+        .oversampling      = NRF_SAADC_OVERSAMPLE_DISABLED,
+        .burst             = NRF_SAADC_BURST_DISABLED,
+        .internal_timer_cc = 0,
+        .start_on_end      = true,
+    };
     err = nrfx_saadc_init(DT_IRQ(DT_NODELABEL(adc), priority));
     if (err != NRFX_SUCCESS) {
         LOG_ERR("nrfx_saadc_init: 0x%08x", err);
@@ -170,15 +202,31 @@ static int saadc_dma_init(void)
         return -EIO;
     }
 
-    /* Set up double buffers */
+    /* Pre-queue BOTH buffers before mode_trigger so the SAADC never stalls
+     * waiting for a buffer during the initial BUF_REQ that fires immediately
+     * inside mode_trigger(). buf_idx starts at 0; BUF_REQ will flip it to 1
+     * and assign buf[1], so DMA starts on buf[0] and the first DONE delivers
+     * buf[0] while buf[1] is already queued.                               */
     err = nrfx_saadc_buffer_set(saadc_buf[0], DMA_BUF_SIZE);
     if (err != NRFX_SUCCESS) { LOG_ERR("buffer_set[0]: 0x%08x", err); return -EIO; }
     err = nrfx_saadc_buffer_set(saadc_buf[1], DMA_BUF_SIZE);
     if (err != NRFX_SUCCESS) { LOG_ERR("buffer_set[1]: 0x%08x", err); return -EIO; }
 
-    /* Start SAADC in continuous mode */
+    /* Arm SAADC — transitions it to the SAMPLE state, ready for triggers */
     err = nrfx_saadc_mode_trigger();
-    if (err != NRFX_SUCCESS) { LOG_ERR("mode_trigger: 0x%08x", err); return -EIO; }
+    if (err != NRFX_SUCCESS) {
+        LOG_ERR("mode_trigger: 0x%08x", err);
+        return -EIO;
+    }
+    LOG_INF("SAADC mode_trigger OK");
+
+    /* FIX 1: Start the SAADC peripheral so it accepts TASKS_SAMPLE from PPI.
+     * Without this, PPI fires TASKS_SAMPLE but the SAADC is not running and
+     * silently ignores every trigger — nothing ever appears in the buffers.
+     * nrfx_saadc_start() does not exist in this nrfx version — write the
+     * register directly.                                                    */
+    NRF_SAADC->TASKS_START = 1;
+    LOG_INF("SAADC started");
 
     /* ── TIMER1: fires at SAMPLE_HZ, triggers SAADC via PPI ─────────────── */
     IRQ_CONNECT(NRFX_IRQ_NUMBER_GET(NRF_TIMER1),
@@ -186,7 +234,6 @@ static int saadc_dma_init(void)
                 nrfx_isr, nrfx_timer_1_irq_handler, 0);
     irq_enable(NRFX_IRQ_NUMBER_GET(NRF_TIMER1));
 
-    /* TIMER1: frequency field is uint32_t in Hz in this nrfx version */
     nrfx_timer_config_t timer_cfg = {
         .frequency          = 1000000UL,   /* 1 MHz → 1 µs resolution */
         .mode               = NRF_TIMER_MODE_TIMER,
@@ -211,7 +258,13 @@ static int saadc_dma_init(void)
 
     uint32_t evt_addr  = nrfx_timer_compare_event_address_get(&timer_inst,
                                                                NRF_TIMER_CC_CHANNEL0);
+
+    /* FIX 2: Use the register address directly — nrfx_saadc_sample_task_get()
+     * does not exist in this nrfx version. Cast to uint32_t (not a pointer
+     * dereference) so PPI gets the address of the task register, not its
+     * contents.                                                             */
     uint32_t task_addr = (uint32_t)&NRF_SAADC->TASKS_SAMPLE;
+
     LOG_INF("PPI ch %u: event=0x%08x task=0x%08x", ppi_channel, evt_addr, task_addr);
 
     nrfx_gppi_channel_endpoints_setup(ppi_channel, evt_addr, task_addr);
