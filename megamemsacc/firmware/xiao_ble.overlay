@@ -1,16 +1,49 @@
 /*
  * xiao_ble.overlay — Comb accelerometer readout
- * USB CDC ACM console is provided by the cdc-acm-console snippet (-S flag).
+ * Console: hardware UART on D6 (TX=P1.11) / D7 (RX=P1.12)
+ *          Connect USB-UART adapter, use: screen /dev/ttyUSB0 115200
  *
  * Pin assignments (XIAO nRF52840):
  *   D0 = P0.02 → excitation +  (PWM0 CH0, normal polarity)
  *   D1 = P0.03 → excitation −  (PWM0 CH1, inverted polarity)
  *   A2 = P0.28 = AIN4 ← proof mass TIA output (ADC)
- *   D9 = P0.29        → debug strobe
+ *   D9 = P0.29 → debug strobe
+ *   D6 = P1.11 → UART TX (to USB-UART adapter RX)
+ *   D7 = P1.12 → UART RX (to USB-UART adapter TX)
  */
 
-/* PWM0: assign channels to pins.
- * Both "default" and "sleep" pinctrl states required by board DTS. */
+/ {
+    chosen {
+        zephyr,console = &uart0;
+        zephyr,shell-uart = &uart0;
+    };
+};
+
+&uart0 {
+    status = "okay";
+    current-speed = <115200>;
+    pinctrl-0 = <&uart0_default>;
+    pinctrl-1 = <&uart0_sleep>;
+    pinctrl-names = "default", "sleep";
+};
+
+&pinctrl {
+    uart0_default: uart0_default {
+        group1 {
+            psels = <NRF_PSEL(UART_TX, 1, 11)>,   /* D6 = P1.11 */
+                    <NRF_PSEL(UART_RX, 1, 12)>;    /* D7 = P1.12 */
+        };
+    };
+    uart0_sleep: uart0_sleep {
+        group1 {
+            psels = <NRF_PSEL(UART_TX, 1, 11)>,
+                    <NRF_PSEL(UART_RX, 1, 12)>;
+            low-power-enable;
+        };
+    };
+};
+
+/* PWM0: excitation channels */
 &pwm0 {
     status = "okay";
     pinctrl-0 = <&pwm0_default>;
@@ -21,12 +54,11 @@
 &pinctrl {
     pwm0_default: pwm0_default {
         group1 {
-            psels = <NRF_PSEL(PWM_OUT0, 0, 2)>,  /* CH0 → P0.02 = D0 */
-                    <NRF_PSEL(PWM_OUT1, 0, 3)>;   /* CH1 → P0.03 = D1 */
+            psels = <NRF_PSEL(PWM_OUT0, 0, 2)>,   /* CH0 → P0.02 = D0 */
+                    <NRF_PSEL(PWM_OUT1, 0, 3)>;    /* CH1 → P0.03 = D1 */
             nordic,drive-mode = <NRF_DRIVE_H0H1>;
         };
     };
-
     pwm0_sleep: pwm0_sleep {
         group1 {
             psels = <NRF_PSEL(PWM_OUT0, 0, 2)>,

@@ -34,10 +34,7 @@
 #include <zephyr/drivers/pwm.h>
 #include <zephyr/drivers/adc.h>
 #include <zephyr/drivers/gpio.h>
-#include <zephyr/drivers/counter.h>
 #include <zephyr/logging/log.h>
-#include <zephyr/usb/usb_device.h>
-#include <zephyr/drivers/uart.h>
 
 LOG_MODULE_REGISTER(comb_readout, LOG_LEVEL_INF);
 
@@ -100,17 +97,16 @@ static struct adc_sequence adc_seq = {
 /* ── Message queue: ISR → main loop ─────────────────────────────────────────
  * Decimated demodulated samples at 200 Hz.
  * Depth 16 = 80 ms headroom if main loop is briefly delayed.             */
-K_MSGQ_DEFINE(raw_msgq, sizeof(int32_t), 16, 4);
 
 /* ── Debug GPIO device pointer (set in main before timer starts) ─────────────*/
 static const struct device *debug_gpio_dev;
 static uint8_t phase = 0;
 
-/* ── 40 kHz sampling — k_timer ───────────────────────────────────────────────
+/* ── Sampling semaphore — timer signals, main thread reads ADC ───────────────
  *
- * k_timer callback runs in system work queue. At 40 kHz this is frequent
- * but the USB work queue priority is raised in prj.conf to ensure USB TX
- * is not starved (CONFIG_USB_WORKQUEUE_PRIORITY).
+ * adc_read() on nRF52840 SAADC uses k_sem internally and must run in a
+ * thread context, not a work queue callback. The k_timer callback only
+ * gives a semaphore; all ADC work happens in main().
  *
  * Demodulation principle (software lock-in amplifier):
  *
@@ -118,37 +114,18 @@ static uint8_t phase = 0;
  *                    |   |   |   |   |   |
  *                 ___|   |___|   |___|   |___   10 kHz
  *
- *   Excitation (D1):  ___     ___     ___        (exact inverse via PWM CH1)
- *                 ‾‾‾   ‾‾‾‾‾   ‾‾‾‾‾   ‾‾‾
+ *   Excitation (D1): ‾‾‾|___|‾‾‾|___|‾‾‾      (inverted, PWM CH1)
  *
- *   ADC samples:   ^  ^  ^  ^  ^  ^  ^          40 kHz (4 per cycle)
- *   phase:         0  1  2  3  0  1  2  3
- *   ref (×±1):    +1 +1 -1 -1 +1 +1 -1 -1      locked to excitation
- *
- *   At rest (balanced):  demodulated sum → 0
- *   Displaced (Cx+ > Cx−): sum → positive DC proportional to displacement
- *   Noise rejection: incoherent signals average to zero over DECIMATE_BY window
+ *   ADC samples:   ^  ^  ^  ^                  4 per excitation cycle
+ *   phase:         0  1  2  3
+ *   ref (×±1):    +1 +1 -1 -1                  locked to excitation
  */
+K_SEM_DEFINE(sample_sem, 0, 1);
+
 static void sampling_timer_cb(struct k_timer *timer)
 {
-    gpio_pin_set(debug_gpio_dev, DEBUG_PIN, 1);
-    adc_read(adc_dev, &adc_seq);
-    gpio_pin_set(debug_gpio_dev, DEBUG_PIN, 0);
-    int32_t adc = (int32_t)adc_buf - ADC_MID;
-
-    int8_t ref = (phase < (OVERSAMPLE / 2U)) ? 1 : -1;
-    phase = (phase + 1U) % OVERSAMPLE;
-
-    static int32_t  accum = 0;
-    static uint32_t count = 0;
-
-    accum += adc * ref;
-    if (++count >= DECIMATE_BY) {
-        int32_t avg = accum / (int32_t)DECIMATE_BY;
-        accum = 0;
-        count = 0;
-        k_msgq_put(&raw_msgq, &avg, K_NO_WAIT);
-    }
+    /* Signal main thread to take an ADC sample — never block */
+    k_sem_give(&sample_sem);
 }
 
 K_TIMER_DEFINE(sampling_timer, sampling_timer_cb, NULL);
@@ -156,25 +133,7 @@ K_TIMER_DEFINE(sampling_timer, sampling_timer_cb, NULL);
 /* ── Main ────────────────────────────────────────────────────────────────────*/
 int main(void)
 {
-    /* ── USB enable ──────────────────────────────────────────────────────────
-     * Must be called before any printk() output. The legacy USB device stack
-     * does not start automatically — without this the host sees the device
-     * but enumeration fails (error -110 / timeout on config read).      */
-    if (usb_enable(NULL) != 0) {
-        LOG_ERR("USB enable fail");
-        //return -ENODEV;
-    }
-
-    /* Wait up to 5 seconds for DTR (host terminal opened the port).
-     * After timeout, proceed anyway so the board works unattended. */
-    const struct device *console = DEVICE_DT_GET(DT_CHOSEN(zephyr_console));
-    uint32_t dtr = 0;
-    uint32_t dtr_timeout = 500;   /* 500 × 10ms = 5 seconds */
-    while (!dtr && dtr_timeout--) {
-        uart_line_ctrl_get(console, UART_LINE_CTRL_DTR, &dtr);
-        k_msleep(10);
-    }
-
+    /* ── Hardware UART console — no init needed, Zephyr handles it ──────────*/
     int ret;
 
     /* ── ADC init ────────────────────────────────────────────────────────────*/
@@ -229,30 +188,43 @@ int main(void)
 
     LOG_INF("Comb readout started — 10 kHz excitation, 200 Hz output, 32 Hz LPF");
 
-    /* ── Main loop: IIR filter + print ──────────────────────────────────────*/
+    /* ── Main loop: sample, demodulate, IIR filter, print ───────────────────*/
     float    iir_state   = 0.0f;
     uint32_t print_count = 0;
+    int32_t  accum       = 0;
+    uint32_t count       = 0;
 
     while (1) {
-        int32_t raw;
-        /* Wait up to 2 seconds for a decimated sample from the ISR.
-         * Timeout indicates the sampling timer or ADC is not running —
-         * likely a timer peripheral conflict or failed device init.   */
-        if (k_msgq_get(&raw_msgq, &raw, K_SECONDS(2)) != 0) {
-            LOG_ERR("No samples received — check PWM/ADC/timer init");
+        /* Wait for timer signal — blocks until next 40 kHz tick */
+        if (k_sem_take(&sample_sem, K_SECONDS(2)) != 0) {
+            LOG_ERR("No timer signal — sampling timer not running");
             continue;
         }
 
-        /* Single-pole IIR low-pass: y[n] = α·x[n] + (1−α)·y[n−1]
-         * α = 0.632 → 32 Hz cutoff at 200 Hz sample rate.
-         * Attenuates residual demodulation artefacts and mechanical
-         * resonances above 32 Hz before output.                          */
-        iir_state += IIR_ALPHA * ((float)raw - iir_state);
+        /* ADC read in thread context (required by nRF52840 SAADC driver) */
+        gpio_pin_set(debug_gpio_dev, DEBUG_PIN, 1);
+        adc_read(adc_dev, &adc_seq);
+        gpio_pin_set(debug_gpio_dev, DEBUG_PIN, 0);
+        int32_t adc = (int32_t)adc_buf - ADC_MID;
 
-        /* Print at 10 Hz (every 20th sample at 200 Hz) */
-        if (++print_count >= 20U) {
-            print_count = 0;
-            LOG_INF("filtered: %.2f  raw: %d", (double)iir_state, (int)raw);
+        /* Demodulate: multiply by reference square wave */
+        int8_t ref = (phase < (OVERSAMPLE / 2U)) ? 1 : -1;
+        phase = (phase + 1U) % OVERSAMPLE;
+
+        /* Accumulate and decimate to OUTPUT_HZ */
+        accum += adc * ref;
+        if (++count >= DECIMATE_BY) {
+            int32_t avg = accum / (int32_t)DECIMATE_BY;
+            accum = 0;
+            count = 0;
+
+            /* IIR low-pass: α=0.632 → 32 Hz cutoff at 200 Hz */
+            iir_state += IIR_ALPHA * ((float)avg - iir_state);
+
+            if (++print_count >= 20U) {
+                print_count = 0;
+                printk("filtered: %.2f\n", (double)iir_state);
+            }
         }
     }
 
