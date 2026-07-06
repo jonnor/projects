@@ -38,6 +38,16 @@ Need about 1 slot spacing extra.
 The 5060ti "dual" fan style are quite short, from 230mm to 260mm.
 That allows fitting a reasonably sized while still being within typical E-ATX width of 330 mm.
 
+Could create a passive style shroud.
+Which then has attachment points at the end a blower fan.
+Blower fan might need a small adapter.
+
+Blower fan candidates.
+https://www.digikey.no/no/products/detail/cui-devices/CBM-979433B-135-540-22/16581760?so=87691300&content=productdetail_NO
+
+Digikey has a large selection
+https://www.digikey.no/no/products/filter/vifter/b%C3%B8rstel%C3%B8se-dc-vifter-bldc/217?__cf_chl_f_tk=j_ejDJl170NzwfQ9dq8ZXW1UDotKy0EABavd4shxLAQ-1783333677-1.0.1.1-fVfNwHPEhlOWzjiSgJFYk.C6ChEamfxjHHJZew0sVR8&s=N4IgjCBcoOwJwAYqgMZQGYEMA2BnApgDQgD2UA2iAMwBMCALDTCMbQ1QKwgC6xADgBcoIAMoCATgEsAdgHMQAXwXEAbMhCSAJsIC0YBBH5DIIFiAEBPPvmGZcaJUA
+
 #### Passive style
 
 For passive style, the cross-section of a single fan is rather small.
@@ -68,6 +78,7 @@ For 5060 TI 16 GB.
 
 Cooling fins in rear direction :D
 
+- Old ASUS RTX2060 
 - MSI GeForce RTX 5060 Ti 16G VENTUS 2X OC PLUS.  227 x 126 x 41 mm
 - ASUS DUAL RTX 5060 Ti 16 GB. 229 x 120 x 50mm
 
@@ -99,6 +110,11 @@ https://www.ioi.com.tw/products/proddetail.aspx?AppID=1008&CatID=116&HostID=2121
 ### Passive style GPUs
 
 What are typical dimensions?
+
+The Intertech 4W2 has 328 mm space for the GPU.
+267 mm seems standard for NVidia.
+330 is E-ATX standard.
+
 
 - Tesla P40
 https://www.techpowerup.com/gpu-specs/tesla-p40.c2878
@@ -170,4 +186,8 @@ https://www.printables.com/model/322158-gpu-airboxsupport
 Retroffittable lower-fan attachment for regular GPUs.
 That takes the air and vents it out back.
 https://videocardz.com/newz/cooler-master-develoed-a-blower-fan-attachment-for-all-modern-gpus-lowers-temps-by-up-to-6c
+
+8x 4090/5090 servers. 300 watt TDP per each.
+Used a 7U/10U rack, to have two stories of 4x GPUs.
+https://www.youtube.com/watch?v=CgsDEFaGLJ0
 
