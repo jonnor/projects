@@ -25,6 +25,8 @@ Need a VHF Yagi. Build it DIY!
 Maybe
 
 - Build adjustable loading coil
+- Build a QRP QMX+ kit. 160-6m multi-mode transceiver
+https://qrp-labs.com/qmxp.html
 
 # DONE
 
@@ -32,5 +34,7 @@ Latest entries up front.
 
 - First radio contact. On 2m VHF, at Field Day 05.09.2026
 - First RX antenna built. Dipole for 2m VHF
-- Flash custom firmware on UV5K radio
+- Used spectrogram on UV5K to find signals
+- Setup custom CHRIP plugin for F4HWN on UV5K
+- Flashed custom F4HWN firmware onto UV5K radio
 

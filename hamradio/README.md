@@ -12,6 +12,8 @@ Standardized shorthand for common question/answers.
 Collection of online accessible SDR receivers across the entire world.
 - [WSJT-X](https://wsjtx.github.io/wsjtx/index.html). Most popular software for digital communication such as FT8.
 - [](https://www.pskreporter.info/pskmap.html). 20m is most popular, then 40/15/17/30.
+- [](https://armel.github.io/uvstudio/#flash). Flasher for F4HWN firmware for UV5K
+- [SOTATAS](https://sotl.as/about). Map for Summits on the Air (SOTA) spots.
 
 ## Terminology
 
@@ -23,4 +25,5 @@ Collection of online accessible SDR receivers across the entire world.
 ## More notes
 
 - [Antennas](./antennas.md)
+- [SDR](./sdr.md)
 

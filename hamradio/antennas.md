@@ -46,6 +46,27 @@ https://hamradiodx.net/easy-to-build-10-meter-28-mhz-vertical-antenna-for-dx/
 
 ? need 12 meter of RG58 cable, and 2.5 meter of insulated copper 1–1.5 mm conductor. 
 
+## Inverted V shape dipole for 10/20 meter
+
+Need some rods on each side. Maybe 1-2 meters.
+Need a mast in the center. Maybe 2-3 meters
+
+https://www.kjell.com/no/produkter/lyd-og-bilde/kabler-og-adaptere/hoyttalerkabler/hoyttalerkabel-075-mm-hvit-25-m-p69242
+https://www.clasohlson.com/no/p/49-333-25
+
+https://www.kjell.com/no/produkter/elektro-og-verktoy/maleinstrumenter/malekabler-sonder-kontakter/polskruer/bnc-hann-til-polskrue-p37450
+
+0,75 mm²
+Bit smaller than 20 gauge.
+Could use as small as 22 gauge, 0.66 mm2
+
+https://km1ndy.com/diy-dipole-how-does-antenna-work/
+
+https://www.youtube.com/watch?v=GZO2VsLRCZM
+https://www.youtube.com/watch?v=xXSjSWqwXUQ
+https://www.youtube.com/watch?v=1ifZt6kVzOo
+
+
 ## Loading coils
 
 Adjustable loading coil can be made with just wire, and tapping in at specific point to tune.
