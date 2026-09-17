@@ -11,9 +11,11 @@ Standardized shorthand for common question/answers.
 - [WebSDR](http://websdr.org/).
 Collection of online accessible SDR receivers across the entire world.
 - [WSJT-X](https://wsjtx.github.io/wsjtx/index.html). Most popular software for digital communication such as FT8.
-- [](https://www.pskreporter.info/pskmap.html). 20m is most popular, then 40/15/17/30.
-- [](https://armel.github.io/uvstudio/#flash). Flasher for F4HWN firmware for UV5K
+- [fldigi](https://sourceforge.net/projects/fldigi/). 
+- [PSKReporter map](https://www.pskreporter.info/pskmap.html). Collects FT8 etc reports. 20m is most popular, then 40/15/17/30.
+- [UVStudio](https://armel.github.io/uvstudio/#flash). Flasher for F4HWN firmware for UV5K
 - [SOTATAS](https://sotl.as/about). Map for Summits on the Air (SOTA) spots.
+- [QTH.COM FCC Callsign Lookup](https://www.qth.com/callsign.php)
 
 ## Terminology
 

@@ -21,6 +21,7 @@ This is highly beneficial for the longer HF bands.
 - Quarter Wave ground-plane antenna. Vertical monopole with 4 radials pointing slightly downwards
 - End-fed half-wave (EFHW). High impedance, requires 1:9 to 1:49 impedance transformer.
 - End-Fed Long Wire (EFLW). Non-resonant. Can be used on multiple bands.
+- Delta Loop. Triangular full-wavelength loop.
 
 ## Impedance matching
 

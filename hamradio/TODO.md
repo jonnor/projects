@@ -8,6 +8,8 @@
 - Complete the exam
 - Get the call sign
 - Register in a logbook
+- First contacts
+- First POTA/SOTA
 
 # Questions
 
@@ -15,12 +17,13 @@
 
 # Projects
 
-- Recive beacon data with QV-K5 or RTL-SDR.
-For example FT8 on 20m or 10m
-Need antenna for the band!
+- Receive APRS with QV-K5 on VHF
 For QV-K5 need analog audio to PC/phone. USB soundcard useful.
 - Receive data from a sattelite. ISS or similar.
 Need a VHF Yagi. Build it DIY!
+- Build a CW transmitter and receiver
+- Receive FT8 with QV-K5 on 10m
+Need antenna for the band!
 
 Maybe
 
