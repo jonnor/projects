@@ -89,6 +89,31 @@ https://www.youtube.com/watch?v=JQw_2BnLbUQ
 Can chose whether objects are local-only or repeated.
 One can register an object in direwolf.
 
+## APRS on the go
+
+BLE specification for TCN
+https://github.com/hessu/aprs-specs/blob/master/BLE-KISS-API.md
+Supported by for example the aprs.fi app
+USB KISS TNC. Serial based.
+TCP KISS port. With Direwolf etc
+
+Some apps can decode APRS from phone input.
+For example APRSdroid or aprs.fi app.
+With APRSdroid, have to go to Preferences -> Connection -> AFSK.
+
+## APRS from UV-K5 handlheld
+
+A 2.5mm to 3.5mm adapter with 3.5mm TRRS connection, to USB-C worked fine.
+With both PC analog input, USB soundcard and Android phone.
+
+https://www.kjell.com/no/produkter/lyd-og-bilde/kabler-og-adaptere/aux-kabel/35-mm-til-25-mm/adapterkabel-35-mm-til-25-mm-vinklet-p39116
+https://www.kjell.com/no/produkter/lyd-og-bilde/kabler-og-adaptere/aux-kabel/35-mm-kabler/luxorparts-lydkabel-med-35-mm-kontakt-1-m-p65395
+https://www.kjell.com/no/produkter/data/kabler-og-adaptere/usb/usb-til-35-mm/linocell-usb-c-til-35-mm-svart-p65369
+
+! Must be TRRS. With a TRS 3.5 mm cable, had noisy shifts when using with USB soundcoard.
+And PC does not detect as plugged in. Not tested on phone.
+
+
 ## Ideas
 
 
