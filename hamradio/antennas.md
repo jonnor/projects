@@ -23,6 +23,7 @@ This is highly beneficial for the longer HF bands.
 - End-Fed Long Wire (EFLW). Non-resonant. Can be used on multiple bands.
 - Delta Loop. Triangular full-wavelength loop.
 - Quadrifilar Helix antenna (QFH). Used for sattelite comms on VHF/UFH. Top feedpoint. Circular polarization.
+- Moxon. Directional antenna from a dipole and a reflector, connected via insulators
 
 
 ## Impedance matching
@@ -92,6 +93,48 @@ Square-ish wire coils. Seems rather simple to build.
 
 
 ## Projects
+
+## Directional antenna for LoRa
+
+Goal. Establish reliable connection from home to MeshCore.
+Would be nice to enclose the antenna so it looks less odd.
+Flag-style.
+! should measure impedance and resonance with shell added
+
+Needs boom and/or wall mounting. Screw holes and/or zipties.
+Also need mounting for LoRa node. Maybe best kept separate?
+
+Moxon is a simpler alternative to Yagi. Single reflector.
+Integrated angle adjustments.
+https://makerworld.com/en/models/1925186-moxon-antenna-868-mhz-wall-desk-mount#profileId-2066038
+
+Integrated balun/choke by wrapping the coax
+https://makerworld.com/en/models/1379081-433-mhz-moxon-antenna-1-1-swr#profileId-2964615
+
+Simple frame, many makes
+https://www.thingiverse.com/thing:3931824
+
+Direct mount on SMA connector
+https://www.printables.com/model/1378116-moxon-antenna-868mhz-meshtastic
+
+https://la4o.no/medlemsmote-antennebygging-moxon-2m-antenne-onsdag-5-november
+
+Could also be fun with a handheld one for wardriving.
+Testing whether connection can be established with directional antenna over omnidirectional.
+Using MeshMapper etc.
+! must reduce transmit power to stay within limits
+
+https://www.instructables.com/DIY-Yagi-Antenna-for-LoRa/
+3d-printed square boom. Intended for handheld. Can easily be adapted.
+Successful in establishing 40 km connection.
+
+https://3g-aerial.biz/en/online-calculations/antenna-calculations/dl6wu-yagi-uda-antenna-online-calculator
+Calculator supports boom correction. Can also output files for simulation.
+
+For EU868.
+4 elements can be under 20 cm long.
+5 elements under 25 cm. Might fit diagonally on typical 3d-printer.
+
 
 ## Dipole for VHF/UHF 2m/70cm
 
