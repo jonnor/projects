@@ -2,8 +2,12 @@
 # TODO
 
 - Move USB zipties to inner
-- Move top attachment to side
-- Add some wall to inner on top, to ensure parallel
-- Maybe cutouts around the lock, to allow flexing and pushing in
-- Add attachment on side for bottom
+
+- Add some wall to inner near top, to ensure parallel
+Use for internal SMA connector?
+
+- Make lock slightly wider, 15-20mm. For finger
+- Make lock slightly taller. Maybe 2 mm total
+
 - Integrate Moxon geometry into back
+- Add text markings to top surface
