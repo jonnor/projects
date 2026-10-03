@@ -31,6 +31,37 @@ Uses TNC-2 Monitoring
 
 https://how.aprs.works/lora-aprs-bringing-aprs-into-the-21st-century/
 
+Can be done all-in-one on an ESP32 board. Often also have GPSR boards.
+Can be used unlicensed. Hams can run higher power levels (at least in US?).
+Better link budget.
+
+LoRa APRS Tracker for ESP32 devices.
+https://github.com/richonguzman/LoRa_APRS_Tracker
+Active project since 2023.
+Implements digipeater/iGate and tracker functionality.
+Mostly Heltec and LilyGo plug-and-play support.
+! no XIAO mentioned. But has "other" ESP32 or NRF52 with SX12xx.
+
+Open hardware board targetting APRS Lora explicitly, by QRP Labs
+vhttps://github.com/lightaprs/LightGateway-1.0
+
+https://www.youtube.com/watch?v=xBdmFCjSfgA
+Did 64 meeter on Lora digipeater.
+4 18650 cells, around 40 Wh.
+
+LoRa APRS as TNC
+https://www.youtube.com/watch?v=awmvX_MxEpg
+https://www.youtube.com/watch?v=lsa-ZPBKMj4
+
+Graywolf can connect to Remote KISS TNC. Can be a LoRa APRS digipeater.
+https://chrissnell.com/software/graywolf/remote-kiss-tnc.html
+
+Bridging Lora APRS and VHF APRS with Direwolf
+https://github.com/wb2osz/direwolf-doc/blob/main/APRS-LoRa-VHF-APRS-Bridge.pdf?ref=how.aprs.works
+
+Various ways to take in LoRa APRS, including one about VHF APRS also
+https://lora-aprs.org/lora-on-pi/
+
 ## APRS monitoring websites
 
 - [aprs.fi](https://aprs.fi/#!lat=59.9133&lng=10.7389)
@@ -101,6 +132,15 @@ Some apps can decode APRS from phone input.
 For example APRSdroid or aprs.fi app.
 With APRSdroid, have to go to Preferences -> Connection -> AFSK.
 
+## APRS software for Linux
+
+direwolf. The canonical APRS software
+https://github.com/wb2osz/direwolf
+
+graywolf. New Rust-based, with web interface.
+https://github.com/chrissnell/graywolf
+
+
 ## APRS from UV-K5 handlheld
 
 A 2.5mm to 3.5mm adapter with 3.5mm TRRS connection, to USB-C worked fine.
@@ -113,13 +153,35 @@ https://www.kjell.com/no/produkter/data/kabler-og-adaptere/usb/usb-til-35-mm/lin
 ! Must be TRRS. With a TRS 3.5 mm cable, had noisy shifts when using with USB soundcoard.
 And PC does not detect as plugged in. Not tested on phone.
 
+## Portable APRS gear
+
+PicoAPRS V4.
+http://www.db1nto.de/index_en.php
+2 meter only. Tiiny. Supports being a KISS TNC modem.
 
 ## Ideas
+
+### Bridging APRS to MeshCore
+
+MeshCore has advanatage of being very user-friendly, also for unlicensed operators.
+
+Can one have APRS briding into MeshCore?
+Both VHF APRS and Lora 433mhz APRS is relevant here.
+
+APRStac has Meshtastic and MeshCore Bridge?
+https://aprstac.com/
+!? APRStac not open source.
+"Bridge LoRa mesh networks to APRS". 
+Meshtastic LoRa devices used as transport APRS and AX.25 packets.
+Also says that BBS and Fileshare connected-mode sessions work over Meshtastic ports.
+Can then on the other end of mesh, be IGated to APRS-IS, digipeated to RF port.
+Can utilize a Meshtastic/MeshCore device either over USB or BLE.
 
 
 ### APRS for sensor network
 
-Maybe it to could be interesting to use sensors to detect phenomena, and then notify on APRS.
+Maybe it to could be interesting to use sensors to detect phenomena,
+and then notify on APRS.
 
 Requiresments for a good fit.
 - Should be quite rare / low frequency information. Either rare regular updates, or rare events. Limited channel space.

@@ -1,8 +1,6 @@
 
 # License
 
-
-- Measure Lora antennas with VNA
 - Establish home gateway on MeshCore
 - Register quizzes
 - Complete the entire course by NRRL
@@ -14,6 +12,7 @@
 - First contacts
 - First POTA/SOTA
 - First QSO over sattelite
+- Do a presentation on LoRa/MeshCore
 
 # Questions
 
@@ -21,9 +20,9 @@
 
 # Projects
 
-- Build a CW transmitter and receiver
-- Receive APRS with self-built receiver using Si4732
-- Build a bandpass
+- Build a CW transmitter and receiver. WIP med Martin
+- Build a bandpass filter
+- APRS decoder module for MicroPython
 - Receive data from a sattelite. ISS, FRAMSAT-1, Sonate-2 or similar.
 Use SatNOGS with RPI and RTL-SDR.
 https://wiki.satnogs.org/Build
@@ -31,8 +30,10 @@ Recommended to have a bandpass and LNA.
 Need a VHF antenna suitable for radio. Build it DIY!
 https://iz7boj.wordpress.com/2018/12/02/double-turnstile-construction-for-satellites-receiving-in-435mhz-band/
 Turnstile, crossed dipole, Yagi, Eggbeater.
-- Receive FT8 with QV-K5 on 10m/15m/17m
-Have made initial antenna. But there is almost no activity?
+- Receive FT8 with RTL-SDR on 20m/17m/15m/10m
+Have made initial inverted V antenna for 15m (untuned).
+But there is almost no activity?
+- Receive APRS with self-built receiver using Si4732 or SA818-V /  SA828-V
 
 Maybe
 
@@ -42,6 +43,8 @@ Maybe
 
 Latest entries up front.
 
+- Made Moxon LoRa antennas and verified with VNA
+- Measured stock Lora antennas with VNA
 - Mapped Frognerparken, Bekkestua-Majorstuen and Ringstabekk area for MeshCore using Meshmapper
 - Made MeshCore contact across Oslo, from Gardlaushøgda to Grefsen
 - Received APRS with UV-K5 combined with direwolf
