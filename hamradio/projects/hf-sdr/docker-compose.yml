@@ -1,0 +1,34 @@
+services:
+  owrx:
+    image: 'slechev/openwebrxplus:latest'
+    container_name: owrx-mbe
+    restart: unless-stopped
+    ports:
+      - '8073:8073'
+      - '5678:5678'
+    environment:
+      TZ: Europe/Oslo
+      #FORWARD_LOCALPORT_1234: 5678
+      OPENWEBRX_ADMIN_USER: myuser
+      OPENWEBRX_ADMIN_PASSWORD: password
+      #HEALTHCHECK_USB_0BDA_2838: 1
+      #HEALTHCHECK_SDR_DEVICES: 1
+    devices:
+      - /dev/bus/usb:/dev/bus/usb
+    volumes:
+      - /opt/owrx-docker/etc:/etc/openwebrx
+      - /opt/owrx-docker/var:/var/lib/openwebrx
+      - /opt/owrx-docker/plugins:/usr/lib/python3/dist-packages/htdocs/plugins
+    # mount /tmp in memory, for RPi devices, to avoid SD card wear and make dump1090 work faster
+    tmpfs:
+      - /tmp:mode=1777
+
+# if you want your container to restart automatically if the HEALTHCHECK fails
+# (see here: https://stackoverflow.com/a/48538213/420585)
+  autoheal:
+    restart: always
+    image: willfarrell/autoheal
+    environment:
+      - AUTOHEAL_CONTAINER_LABEL=all
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
