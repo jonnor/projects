@@ -16,6 +16,8 @@ Collection of online accessible SDR receivers across the entire world.
 - [UVStudio](https://armel.github.io/uvstudio/#flash). Flasher for F4HWN firmware for UV5K
 - [SOTATAS](https://sotl.as/about). Map for Summits on the Air (SOTA) spots.
 - [QTH.COM FCC Callsign Lookup](https://www.qth.com/callsign.php)
+- [OpenWebRX documentation](https://fms.komkon.org/OWRX/#Docs). Describes many radio one can receive to using RTL-SDR etc.
+- [Signal Identification Guide](https://www.sigidwiki.com/wiki/Signal_Identification_Guide). How to identify radio signals from example sounds and waterfall diagrams.
 
 ## Terminology
 

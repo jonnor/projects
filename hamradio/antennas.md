@@ -33,6 +33,9 @@ Poor impedance matching will cause reflected energy back into transmitter.
 Reduces efficiency of transmitted power.
 May destroy the transmitter.
 
+## Jungle antenna
+
+A portable 1/4 wave ground plane, made from wires and sticks.
 
 ## Turnstile antenna
 
@@ -44,10 +47,15 @@ Omnidirectional.
 Made by crossing two half-wave dipole elements at 90-degree angles,
 and connecting them with a coaxial phasing harness to achieve circular polarization.
 
-
 https://alicja.space/blog/how-to-build-turnstile-antenna
+For 435 Mhz / 70 cm.
 Practical build using 3d-printed parts.
 ! need 75 ohm cable stub
+Ex RG59
+https://www.kjell.com/no/sok?q=RG59&search=true
+
+4mm tubes
+https://www.elefun.no/vare-27547/materialer-metall-ror-ks-aluminiumsror-4mm-3stk
 
 How To Build A MILSAT SATCOM Turnstile Antenna 
 https://www.youtube.com/watch?v=Xdc7l0O5fYo&t=57s
@@ -142,7 +150,34 @@ Initial build done.
 Brief RX testing.
 Extremly brief testing on TX by an operator.
 
-## First 10 meter band antenna
+## Moxon for VHF
+
+2M (144MHz) Pocket Moxon Antenna Build and Demo
+https://www.youtube.com/watch?v=3HqDZlxQKCs
+3d-printed parts and wire.
+Folds down neatly.
+
+Build a 2 Meter Ham Radio Moxon Antenna in 10 Minutes! 
+https://www.youtube.com/watch?v=AOU2pBo0whA
+Using stiff steal wire onto a BNC connector
+
+Antennenbau 📡 2m & 70cm Moxon Beam
+https://www.youtube.com/watch?v=YVxoLn2rXCw
+Using stiff steel wire, and a PVC tube in the center
+
+DL1DN/DL2MAN Moxon 2M/70cm Foldable Beam Antenna 
+https://www.youtube.com/watch?v=pTfb-mkgNZM
+3d-printed parts, glass fiber tubes with wire inside.
+Longest pipes are 347 mm. Could be 2 printed pieces?
+
+DL1DN/DL2MAN Moxon with 3d-printed printed rods instead of purchased
+https://www.printables.com/model/1252145-tubes-for-moxon-antenna
+DL1DN/DL2MAN Moxon adapted with shorter 3d-printed rods
+https://www.printables.com/model/1392861-2m-moxon-tubes-for-smaller-printers
+
+Camping style rod connectors are nice for quick assembly.
+
+## Easy 10 meter band antenna
 
 A flowerpot style is feasible for 10 meter band.
 Overall length would be short of 3 meters.

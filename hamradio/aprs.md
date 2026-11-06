@@ -1,6 +1,5 @@
 
-
-##
+# APRS
 
 Uses FM modulation with AFSK AX.25 framing, 1200-baud.
 
@@ -155,9 +154,22 @@ And PC does not detect as plugged in. Not tested on phone.
 
 ## Portable APRS gear
 
+!many handheld radios support it. Often with GPS, for automatic regular positioning.
+
 PicoAPRS V4.
 http://www.db1nto.de/index_en.php
 2 meter only. Tiiny. Supports being a KISS TNC modem.
+
+LilyGO T-TWR Plus
+ESP32 with VHF module. Suitable for APRS tracker, igate or digipeater?
+
+
+## APRS in MicroPython
+
+micro-aprs
+https://github.com/stephanelsmith/micro-aprs/tree/master
+Newish library for APRS.
+Targets LilyGo T-TWR Plus.
 
 ## Ideas
 
@@ -184,13 +196,14 @@ Maybe it to could be interesting to use sensors to detect phenomena,
 and then notify on APRS.
 
 Requiresments for a good fit.
+
 - Should be quite rare / low frequency information. Either rare regular updates, or rare events. Limited channel space.
 - Should be of public interest. Meaningful/useful to broadcast.
 - Most interesting for things relevant to the local area. Local sensing gives that automatically?
 - Things of interest to hams. Since they are most likely to have APRS
-- 
-Must also avoid flooding channel. Ex: maximum of transmission every 10-30 minutes.
+- Must use a callsign? Since only persons can transmit, or repeaters, etc, kind-of-limits?
 
+Must also avoid flooding channel. Ex: maximum of transmission every 10-30 minutes.
 
 - Weather station. A bit boring
 - Lighting strike tracking. Cooler. Rare, testing difficult

@@ -1,18 +1,26 @@
 
 # License
 
-- Establish home gateway on MeshCore
-- Register quizzes
+Pre exam
+
+- Register for quizzes in Moodle
+- Register for radiokurs.no, download previous exams
 - Complete the entire course by NRRL
 - Do the quizzes on Moodle
 - Make flash cards for exam topics
+- Read the law. https://lovdata.no/dokument/LTI/forskrift/2026-03-23-465
+- Do the trial
 - Complete the exam
 - Get the call sign
+
+Post certification
+
 - Register in a logbook
 - First contacts
 - First POTA/SOTA
 - First QSO over sattelite
 - Do a presentation on LoRa/MeshCore
+- Read the ITU R SM.329
 
 # Questions
 
@@ -20,9 +28,13 @@
 
 # Projects
 
+- Setup a mini shack server using RPI 3b.
+MeshCore USB companion. 
+RTL-SDR APRS igate with graywolf
+OpenWebRX with RTL-SDR?
+SDRangel with RTL-SDR? https://github.com/f4exb/sdrangel/wiki/SDRangel-server
 - Build a CW transmitter and receiver. WIP med Martin
-- Build a bandpass filter
-- APRS decoder module for MicroPython
+- Build a bandpass filter. WIP with Martin
 - Receive data from a sattelite. ISS, FRAMSAT-1, Sonate-2 or similar.
 Use SatNOGS with RPI and RTL-SDR.
 https://wiki.satnogs.org/Build
@@ -34,6 +46,7 @@ Turnstile, crossed dipole, Yagi, Eggbeater.
 Have made initial inverted V antenna for 15m (untuned).
 But there is almost no activity?
 - Receive APRS with self-built receiver using Si4732 or SA818-V /  SA828-V
+- APRS/AFSK decoder module for MicroPython
 
 Maybe
 
@@ -43,6 +56,7 @@ Maybe
 
 Latest entries up front.
 
+- Setup OpenWebRX with RTL-SDR on PI.
 - Made Moxon LoRa antennas and verified with VNA
 - Measured stock Lora antennas with VNA
 - Mapped Frognerparken, Bekkestua-Majorstuen and Ringstabekk area for MeshCore using Meshmapper

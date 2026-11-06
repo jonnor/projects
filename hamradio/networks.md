@@ -9,8 +9,22 @@ Maximum of 0.5 watts RF.
 DMR uses the internet as the backbone for carrying communications.
 Adding an MMDVM board to a Raspberry Pi is one common way to create a hotspot.
 
-
 Uses AMBE vocoder.
+
+## DMR handhelds
+
+Baofeng DM-32UV seems nice. 80 USD. Also has GPS and APRS.
+! no open firmware as of November 2026?
+
+Lilygo T-TWR plus. Development kit. Using SA868 module with ESP32.
+https://github.com/Xinyuan-LilyGO/T-TWR
+Supported by OpenRTX.
+
+## Open source firmware
+
+OpenRTX. Firmware for various digital mode handheld/portable radios.
+https://github.com/OpenRTX/OpenRTX/
+
 
 ## AMBE vocoder
 
@@ -36,6 +50,20 @@ https://brandmeister.no/repeaters
 A weekly international net operating on Talk Group 91 of the BrandMeister network.
 Every Saturday at 16:00 UTC.
 
+## EchoLink
+
+https://echolink.org/
+
+A VoIP system that links FM repeaters and simplex nodes to the internet,
+and to PC or phone users.
+It needs licensed-callsign validation.
+
+Very few to no EchoLink repeaters in Norway?
+
+## AllStarLink 
+
+A VoIP linking system for FM.
+
 ## SVTLink
 
 https://github.com/sm0svx/svxlink
@@ -50,6 +78,9 @@ https://www.reflector-network.com/
 
 Swedish network
 https://svxportal.sm2ampr.net/map.php
+
+Presentation om SvxLink på SSA:s Årsmöte 2025
+https://youtu.be/RFMwINp5ucA?si=T6USLPnryCVNx-C5
 
 ### TETRA - Terrestrial Trunked Radio 
 Formerly Trans-European Trunked Radio
