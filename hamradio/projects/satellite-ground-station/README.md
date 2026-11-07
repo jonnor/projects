@@ -46,6 +46,8 @@ https://wiki.satnogs.org/Build
 Hostname: jon-satnogs
 ```
 
+https://network.satnogs.org/stations/5310/
+
 ## Antenna
 
 

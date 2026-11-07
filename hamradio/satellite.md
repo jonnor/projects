@@ -6,28 +6,6 @@
 
 UFH in 70 cm band. ITU from 430 to 440 MHz, US 420 to 450 MHz.
 
-### Bias-Tee
-
-Bias-Tee is 3 port passive circuit sed to inject DC power into an RF signal path.
-Useful to provide power to a Low Noise Amplifier (LNA).
-
-RTL-SDR V4 can provide it Bias Tee, at 4.5 volts.
-
-Hard to find bandpass LNA with Bias Tee power support integrated.
-
-
-https://gpio.com/blogs/news/what-is-a-bias-tee-circuit-how-it-works-and-which-one-you-need
-
-> Narrowband bias tee design is straightforward.
-> Broadband design across multiple decades of frequency is genuinely hard
-> 
-> Real broadband bias tees often use multiple inductors in series
-> to avoid the self-resonant frequency of inductor
-
-There exists filtered bias tees, which integrate a bandpass for the RF bands of interest.
-
-
-https://nuclearrambo.com/wordpress/designing-and-testing-a-low-noise-amplifier-part-1/
 
 ## Two-Line Element Set (TLE)
 

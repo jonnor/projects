@@ -139,6 +139,10 @@ https://github.com/wb2osz/direwolf
 graywolf. New Rust-based, with web interface.
 https://github.com/chrissnell/graywolf
 
+## APRS on microcontrollers
+
+https://github.com/sq8vps/vp-digi
+VP-Digi - a functional, cheap, easy to assemble and configure STM32-based APRS digipeater controller with built-in KISS modem.
 
 ## APRS from UV-K5 handlheld
 
@@ -152,6 +156,7 @@ https://www.kjell.com/no/produkter/data/kabler-og-adaptere/usb/usb-til-35-mm/lin
 ! Must be TRRS. With a TRS 3.5 mm cable, had noisy shifts when using with USB soundcoard.
 And PC does not detect as plugged in. Not tested on phone.
 
+
 ## Portable APRS gear
 
 !many handheld radios support it. Often with GPS, for automatic regular positioning.
@@ -162,6 +167,13 @@ http://www.db1nto.de/index_en.php
 
 LilyGO T-TWR Plus
 ESP32 with VHF module. Suitable for APRS tracker, igate or digipeater?
+
+
+https://github.com/skuep/AIOC
+Ham Radio All-in-one-Cable
+For UV-K5 etc.
+Can run APRS using vp-digi
+
 
 
 ## APRS in MicroPython
