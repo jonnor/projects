@@ -22,6 +22,31 @@ Post certification
 - Do a presentation on LoRa/MeshCore
 - Read the ITU R SM.329
 
+# Stuff to check more
+
+Parallel and series resonance.
+How are bandstop vs bandpass
+How does resonance frequency change with inductor and capacitor
+Formula for resonance
+
+How does inductor value change with turns
+
+decibel. Typical values in gain and vv.
+Amplitude vs power
+
+Speilfrekvens. Beregning
+
+Intermodulasjon og inteferens
+
+Lagene i ionosfæren og deres effekt
+MUF i relasjon til solaktivitet
+
+Ringmodulatoren. SSB generation
+
+Phonetic alphabet
+
+Frekvensbånd i båndplanen
+
 # Questions
 
 - What is a counterpoise?

@@ -66,3 +66,32 @@ Latter is adapted from a circuit in the ARRL Handbook.
 https://sound-au.com/articles/am-radio.htm
 
 Suitable JFET SMD? MMBFJ310
+
+
+### Bias-Tee
+
+Bias-Tee is 3 port passive circuit used to provide DC power over an RF signal path.
+Same circuit can in principle be used to inject DC power, and extract DC power.
+Useful to provide power to a Low Noise Amplifier (LNA).
+
+RTL-SDR V4 can provide it Bias Tee, at 4.5 volts.
+
+Hard to find off-the-shelf bandpass LNA with Bias Tee power support integrated.
+
+
+https://gpio.com/blogs/news/what-is-a-bias-tee-circuit-how-it-works-and-which-one-you-need
+
+> Narrowband bias tee design is straightforward.
+> Broadband design across multiple decades of frequency is genuinely hard
+> 
+> Real broadband bias tees often use multiple inductors in series
+> to avoid the self-resonant frequency of inductor
+
+There exists filtered bias tees, which integrate a bandpass for the RF bands of interest.
+
+Bias Tee LNA with bandpass filter. PGA-103+ based. 4th order LC filter, for 2 meter + weatherbands.
+https://nuclearrambo.com/wordpress/designing-and-testing-a-low-noise-amplifier-part-1/
+! mentions parts are sensitive to ESD. Used BAV-99 for input protection.
+Schematic and board layout is shown. Gerber files available for download.
+https://nuclearrambo.com/wordpress/designing-and-testing-a-low-noise-amplifier-part-2/
+Explains testing done using NanoVNA and TinySA, and RTL-SDR.

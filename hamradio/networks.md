@@ -82,6 +82,9 @@ https://svxportal.sm2ampr.net/map.php
 Presentation om SvxLink på SSA:s Årsmöte 2025
 https://youtu.be/RFMwINp5ucA?si=T6USLPnryCVNx-C5
 
+LB4OK - Stian near Bergen is a Norwegian ham that has tested SvxLink with success.
+https://lb4ok.no/svxlink-node-in-a-box/
+
 ### TETRA - Terrestrial Trunked Radio 
 Formerly Trans-European Trunked Radio
 Digital protocol. Uses TDMA.

@@ -24,7 +24,7 @@ This is highly beneficial for the longer HF bands.
 - Delta Loop. Triangular full-wavelength loop.
 - Quadrifilar Helix antenna (QFH). Used for sattelite comms on VHF/UFH. Top feedpoint. Circular polarization.
 - Moxon. Directional antenna from a dipole and a reflector, connected via insulators
-
+- Magnetic loop.
 
 ## Impedance matching
 
@@ -98,6 +98,74 @@ Used #10 gauge - 2.5 mm diameter copper
 
 https://rz01.org/70cm-eggbeater-antenna/
 Square-ish wire coils. Seems rather simple to build.
+
+## Magnetic loop
+
+Magnetic loop is narrow-band antenna that is magnetic-field dominant.
+Main coupling mechanism is through the H-field, and it exhibits significant rejection of electric-field noise sources, particularly those in the near field.
+
+The loop acts like a magnetic dipole.
+The field strength near the loop is tied to the circulating current, which depends on the loop’s inductance and the tuning capacitor.
+
+Can use multiple turns to increase inductance.
+
+Radiation resistance is the part of the loop’s resistance that actually turns power into radio waves. For small loops (perimeter much less than a wavelength), radiation resistance is really low—usually under 1 ohm.
+That means that low resistivity is critical to be effective at transmitting.
+
+
+Figure 8 directivity pattern. Strong nulls at the side.
+Can be used to cancel particular RF noise sources.
+
+Narrow bandwidth and E-field rejection make it have excellent SNR.
+important in locations with a lot of RF noise.
+Which is common in many apartments/houses.
+
+Want narrow bandwidth (high Q) at resonance.
+For any specific frequency and magnetic loop antenna, its Q is proportional to its radiation efficiency.
+Need a tuning capacitor. Variable is highly beneficial.
+Need a VNA to check/tune it.
+
+Circular configurations common.
+
+Efficiency improves with higher cross section of the radiating elements.
+Often built with copper tubing.
+Quick and dirty version can be made with just coax cable.
+Most designs do not pack small?
+
+Magnetic loop antennas are often mounted on a tripod.
+
+Popular variants
+
+- Möbius loop
+Made with
+
+- YouLoop
+Constructed from three semi-rigid coax cables.
+Portable, can fold down into a smaller loop easily.
+https://airspy.com/youloop/
+Passive antenna. But would benefit from a VNA near the antenna.
+For RTL-SDR should use AGC for low-signal.
+
+## On the ground loop
+
+## Active antennas
+
+Contains active components integrated into the antenna design.
+Most commonly a Low Noise Amplifier.
+
+Popular active antennas
+
+- Active magnetic loop
+- Active mini whip
+
+## PA0RDT active mini whip
+RX only antenna for 10kHz-30Mhz listening.
+Super small! Just 15 cm tall antenna element.
+
+Antenna is built on a PCB.
+Also uses simple cricuit consisting of one JFET and one bipolar transistor.
+Using a Bias-T type power-feed unit to inject 12v.
+
 
 
 ## Projects
