@@ -4,8 +4,7 @@
 Goal: Receive metrics from sattelites like ISS, FRAMSAT-1, Sonate-2 or similar.
 UHF. 435 Mhz range
 
-Use SatNOGS with RPI and RTL-SDR.
-https://wiki.satnogs.org/Build
+
 Recommended to have a bandpass and LNA.
 
 ## TODO
@@ -17,8 +16,31 @@ Recommended to have a bandpass and LNA.
 - Measure antenna with NanoVNA
 - Test with RTL-SDR
 
+## System architecture
+
+```
+Antenna. Turnstile
+VNA
+435 Mhz bandpass
+Bias Tee extrator
+SMA male
+---
+Coax RG58
+---
+RTL-SDR. w/bias tee 4.5V
+Rasberry PI
+SatNOGS
+---
+```
+
 ## Software
 
+
+Use SatNOGS with RPI and RTL-SDR.
+https://wiki.satnogs.org/Build
+```
+Hostname: jon-satnogs
+```
 
 ## Antenna
 
