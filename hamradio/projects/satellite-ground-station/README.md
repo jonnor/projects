@@ -11,6 +11,10 @@ Recommended to have a bandpass and LNA.
 
 - Setup SatNOGS on RPI
 - Buy materials. Clas/Kjell
+https://www.kjell.com/no/sok?q=RG59&search=true
+https://www.clasohlson.com/no/p/11-992-4
+https://www.clasohlson.com/no/Skive-DIN-125-A/p/11-1203-4
+https://www.clasohlson.com/no/Tannskive-DIN-6798/p/31-2698-4
 - Print all v1 parts
 - Assemble antenna
 - Measure antenna with NanoVNA
@@ -44,7 +48,45 @@ Hostname: jon-satnogs
 
 ## Antenna
 
-Turnstile.
+
+
+### jonnor 435 turnstile
+
+Basically a mix of IZ7BOJ and alicja.space
+
+From alicja.space, the 3d printed parts, and putting the coax inside the structure.
+From IZ7BOJ, the use of threaded rods and wire lugs.
+
+Principle
+
+- 3d printed caps on each side
+- Tubular middle part. Pick common PVC tube diam
+- Antenna connector. SMA? BNC? Hide inside tube
+- Threaded rods as active element and reflector
+- Attach threaded rods to 3dp with nuts
+- Connect theaded rods using cableshoes and nuts. ! space to screw
+- Connection to. Tubular under? Need cable out on side
+- V2: Integrat VNA, bandpass. With bias tee power
+
+Materials needed
+
+- RG58 cable
+- 75 ohm cable stub. Ex RG59
+- Rods Threaded M4.
+Approx (17*4)+(35*2) = 138 cm
+Min 2x 1 meter.
+- Nuts. M4
+- Washers. M4
+- Cableshoes. M4
+- SMA female chassis connector
+
+Dimensioning
+
+Inner coax stuff.
+One around 12 cm long.
+Other around 24 cm
+Outer diameter 6.1 mm.
+2x wide
 
 
 ### References
@@ -119,43 +161,3 @@ Proposes a dual Moxon turnstile.
 Compares with crossed dipole. Both with screen reflector and 2-element turnstile.
 Moxon version has wider beam. So better for low-angles than the 2-element turnstile.
 
-### jonnor 435 turnstile
-
-Basically a mix of IZ7BOJ and alicja.space
-
-From alicja.space, the 3d printed parts, and putting the coax inside the structure.
-From IZ7BOJ, the use of threaded rods and wire lugs.
-
-Principle
-
-- 3d printed caps on each side
-- Tubular middle part. Pick common PVC tube diam
-- Antenna connector. SMA? BNC? Hide inside tube
-- Threaded rods as active element and reflector
-- Attach threaded rods to 3dp with nuts
-- Connect theaded rods using cableshoes and nuts. ! space to screw
-- Connection to. Tubular under? Need cable out on side
-- V2: Integrat VNA, bandpass. With bias tee power
-
-Materials needed
-
-- RG58 cable
-! 75 ohm cable stub. Ex RG59
-https://www.kjell.com/no/sok?q=RG59&search=true
-
-- Rods Threaded M4.
-Approx (17*4)+(35*2) = 138 cm
-Min 2x 1 meter.
-https://www.clasohlson.com/no/p/11-992-4
-- Nuts. M4
-- Washers. M4
-
-- Cableshoes M4
-
-Dimensioning
-
-Inner coax stuff.
-One around 12 cm long.
-Other around 24 cm
-Outer diameter 6.1 mm.
-2x wide
