@@ -24,6 +24,17 @@ https://www.clasohlson.com/no/Tannskive-DIN-6798/p/31-2698-4
 - Receive Heltec V3 433Mhz
 - Setup TinyGS station
 
+## Ideas
+
+- Portable quarterwave groundplane antenna.
+Threaeed rods, that can be taken out for transport/packing.
+SMA female connector as basis.
+3d printed part with holes for radiator and radials.
+Screw in to push on.
+Try self-tapping/threading first.
+Maybe add a bit of soldering to make wider+softer connection points.
+
+
 ## System architecture
 
 ```

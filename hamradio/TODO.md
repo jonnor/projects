@@ -64,9 +64,15 @@ RTL-SDR APRS igate with graywolf
 OpenWebRX with RTL-SDR?
 SDRangel with RTL-SDR? https://github.com/f4exb/sdrangel/wiki/SDRangel-server
 
+# Ideas
+
 Maybe
 
 - Build adjustable loading coil
+
+Ideas
+
+- 
 
 # DONE
 

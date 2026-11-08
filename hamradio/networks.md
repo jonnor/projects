@@ -93,6 +93,7 @@ https://lb4ok.no/svxlink-node-in-a-box/
 
 ## Repeater hardware
 
+NOTE: Lots of similarities to what one would want for an (VHF) APRS node beacon/igate/digipeater. 
 
 https://www.repeater-builder.com/rbtip/index.html
 Huge index of information about repeaters.
@@ -103,13 +104,15 @@ https://www.youtube.com/watch?v=HD7Lx-6K384&t=95s
 - Kits4Hams Shari. https://kits4hams.com/shari
 - HotSpotRadios.com HSR Mini Repeater. Dual SA818
 - HotSpotRadio USB. Single SA818 module. Direct USB connection
-
+- Torun Digi Gate V2. https://torun.com.bd/digi_gate/
 
 USB to Radio interfaces
 Soundcard, PTT control.
 
 - Repeater Builder RIM Lite, https://www.repeater-builder.com/products/usb-rim-lite.html
 - TOADs Digital Interface, https://temporarilyoffline.com/products/toads-digital-interface?variant=42091745378438&utm_source=youtube&utm_medium=video&utm_campaign=TO&utm_content=880allstar
+
+
 
 ### TETRA - Terrestrial Trunked Radio 
 Formerly Trans-European Trunked Radio
