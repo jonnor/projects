@@ -9,16 +9,20 @@ Recommended to have a bandpass and LNA.
 
 ## TODO
 
-- Setup SatNOGS on RPI
+- Quarterwave. Assemble antenna
+- Quarterwave. Measure with NanoVNA
 - Buy materials. Clas/Kjell
+https://www.kjell.com/no/produkter/lyd-og-bilde/foto-og-video/minnekort/sandisk-microsd-ultra-go-minnekort-32-gb-120-mbs-p66739
 https://www.kjell.com/no/sok?q=RG59&search=true
 https://www.clasohlson.com/no/p/11-992-4
 https://www.clasohlson.com/no/Skive-DIN-125-A/p/11-1203-4
 https://www.clasohlson.com/no/Tannskive-DIN-6798/p/31-2698-4
-- Print all v1 parts
-- Assemble antenna
-- Measure antenna with NanoVNA
-- Test with RTL-SDR
+- Setup SatNOGS on RPI. !Need 32 GB card
+- Turnstile. Assemble antenna
+- Turnstile. Measure antenna with NanoVNA
+- Turnstile. Test with RTL-SDR
+- Receive Heltec V3 433Mhz
+- Setup TinyGS station
 
 ## System architecture
 

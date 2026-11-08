@@ -56,7 +56,8 @@ Frekvensbånd i båndplanen
 
 - Build a CW transmitter and receiver. WIP med Martin
 - Build a bandpass filter. WIP with Martin
-- Receive data from a sattelite. WIP
+- Receive data from sattelite using SatNOGS (FM 435 Mhz). WIP
+- Receive data from sattelite using TinyGS (LoRa 433 Mhz). WIP
 - Setup a mini shack server using RPI 3b.
 MeshCore USB companion. 
 RTL-SDR APRS igate with graywolf

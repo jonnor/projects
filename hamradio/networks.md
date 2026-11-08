@@ -64,6 +64,12 @@ Very few to no EchoLink repeaters in Norway?
 
 A VoIP linking system for FM.
 
+- Built on Asterisk
+- nodes link directly to each other in a mesh/network of nodes
+
+https://allstarlink.github.io/
+
+
 ## SVTLink
 
 https://github.com/sm0svx/svxlink
@@ -84,6 +90,26 @@ https://youtu.be/RFMwINp5ucA?si=T6USLPnryCVNx-C5
 
 LB4OK - Stian near Bergen is a Norwegian ham that has tested SvxLink with success.
 https://lb4ok.no/svxlink-node-in-a-box/
+
+## Repeater hardware
+
+
+https://www.repeater-builder.com/rbtip/index.html
+Huge index of information about repeaters.
+
+6 Most Popular Allstar Hotspots Among Ham Radio Operators 
+https://www.youtube.com/watch?v=HD7Lx-6K384&t=95s
+
+- Kits4Hams Shari. https://kits4hams.com/shari
+- HotSpotRadios.com HSR Mini Repeater. Dual SA818
+- HotSpotRadio USB. Single SA818 module. Direct USB connection
+
+
+USB to Radio interfaces
+Soundcard, PTT control.
+
+- Repeater Builder RIM Lite, https://www.repeater-builder.com/products/usb-rim-lite.html
+- TOADs Digital Interface, https://temporarilyoffline.com/products/toads-digital-interface?variant=42091745378438&utm_source=youtube&utm_medium=video&utm_campaign=TO&utm_content=880allstar
 
 ### TETRA - Terrestrial Trunked Radio 
 Formerly Trans-European Trunked Radio
